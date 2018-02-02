@@ -1,0 +1,1 @@
+Watch-Directory -Path "C:\inetpub\wwwroot" -Destination "C:\Sitecore\Website"
