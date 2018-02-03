@@ -6,6 +6,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 ENV SITENAME='sc'
 ARG INSTALL_TEMP='c:\\install'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cm.json
+ARG SIF_PACKAGE=${INSTALL_TEMP}\\'Sitecore 9.0.1 rev. 171219 (OnPrem)_cm.scwdp.zip'
 ARG WEBDEPLOY_MSI=${INSTALL_TEMP}\\webdeploy.msi
 ARG URLREWRITE_MSI=${INSTALL_TEMP}\\urlrewrite.msi
 
@@ -29,12 +30,12 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     ConvertTo-Json $config -Depth 50 | Set-Content -Path $env:SIF_CONFIG; `
     Remove-Website -Name 'Default Web Site'; `
     Install-SitecoreConfiguration -Path $env:SIF_CONFIG `
-    -Package (Join-Path $env:INSTALL_TEMP '\\Sitecore*_cm.scwdp.zip') `
+    -Package $env:SIF_PACKAGE `
     -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
     -Sitename $env:SITENAME `
     -SqlDbPrefix $env:SITENAME `  
     -SolrCorePrefix $env:SITENAME `
-    -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "StartAppPool", "StartWebsite", "UpdateSolrSchema"; `
+    -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "UpdateSolrSchema"; `
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
     Clear-WebConfiguration -PSPath ('IIS:\Sites\{0}' -f $env:SITENAME) -Filter '/system.webserver/rewrite/rules/rule'; `
     Set-WebConfiguration -PSPath ('IIS:\Sites\{0}' -f $env:SITENAME) -Filter '/system.web/customErrors/@mode' -Value 'Off'
@@ -43,6 +44,4 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
 RUN Start-Process msiexec.exe -ArgumentList '/x', $env:WEBDEPLOY_MSI, '/quiet', '/norestart' -NoNewWindow -Wait; `
     Uninstall-Module SitecoreInstallFramework -Force; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
-    Set-Itemproperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name ServerPriorityTimeLimit -Value 0 -Type DWord; `
-    Start-WebAppPool -Name $env:SITENAME; `
-    Start-Website -Name $env:SITENAME
+    Set-Itemproperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name ServerPriorityTimeLimit -Value 0 -Type DWord;
