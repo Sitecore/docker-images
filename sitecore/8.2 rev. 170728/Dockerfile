@@ -1,5 +1,5 @@
 # escape=`
-FROM microsoft/aspnet:4.7.1-windowsservercore-1709_KB4048955
+FROM microsoft/aspnet:4.7.1-windowsservercore-1709
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 

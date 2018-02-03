@@ -1,3 +1,3 @@
-# Automated repository of Sitecore Docker base images
+# Repository of Sitecore Docker base images
 
 ...

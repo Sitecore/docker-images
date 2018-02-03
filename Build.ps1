@@ -1,8 +1,5 @@
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
-    [string]$VersionsPath,
     [Parameter(Mandatory = $false)]
     [string]$VersionsFilter = "*",
     [Parameter(Mandatory = $true)]
@@ -16,6 +13,31 @@ param(
     [Parameter(Mandatory = $false)]
     [switch]$SkipPush
 )
+function Find-BaseImages
+{
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+        [string]$Path,
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()] 
+        [string]$Filter
+    )
+
+    Get-ChildItem -Path $Path -Filter $Filter | Foreach-Object {
+        Get-ChildItem -Path $_.FullName -Filter "Dockerfile" | Foreach-Object {
+            $fromImage = Get-Content -Path $_.FullName | Where-Object { $_.StartsWith("FROM ") } | ForEach-Object { Write-Output $_.Replace("FROM ", "").Trim() }
+
+            if ([string]::IsNullOrEmpty($fromImage))
+            {
+                throw "Invalid dockerfile '$($_.FullName)', FROM image could not be read."
+            }
+
+            Write-Output $fromImage
+        }
+    }
+}
 
 function Find-SitecoreVersions
 {
@@ -58,8 +80,15 @@ function Find-SitecoreVersions
 
 $ErrorActionPreference = "STOP"
 
+$imagesPath = (Join-Path $PSScriptRoot "\sitecore")
+
+# Pull latest bases images
+Find-BaseImages -Path $imagesPath -Filter $VersionsFilter | Select-Object -Unique | ForEach-Object {
+    docker pull $_
+}
+
 # What to build...
-Find-SitecoreVersions -Path $VersionsPath -InstallSourcePath $InstallSourcePath -Filter $VersionsFilter | ForEach-Object {
+Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -Filter $VersionsFilter | ForEach-Object {
     $version = $_
 
     # Build up tag to use
