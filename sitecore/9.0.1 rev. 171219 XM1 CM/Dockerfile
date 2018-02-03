@@ -6,7 +6,7 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 ENV SITENAME='sc'
 ARG INSTALL_TEMP='c:\\install'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cm.json
-ARG SIF_PACKAGE=${INSTALL_TEMP}\\'Sitecore 9.0.1 rev. 171219 (OnPrem)_cm.scwdp.zip'
+ARG SIF_PACKAGE=${INSTALL_TEMP}\\'Sitecore*_cm.scwdp.zip'
 ARG WEBDEPLOY_MSI=${INSTALL_TEMP}\\webdeploy.msi
 ARG URLREWRITE_MSI=${INSTALL_TEMP}\\urlrewrite.msi
 
@@ -36,6 +36,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     -SqlDbPrefix $env:SITENAME `  
     -SolrCorePrefix $env:SITENAME `
     -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "StartAppPool", "StartWebsite", "UpdateSolrSchema"; `
+    Remove-Item -Path 'C:\\*.log'; `
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
     Clear-WebConfiguration -PSPath ('IIS:\Sites\{0}' -f $env:SITENAME) -Filter '/system.webserver/rewrite/rules/rule'; `
     Set-WebConfiguration -PSPath ('IIS:\Sites\{0}' -f $env:SITENAME) -Filter '/system.web/customErrors/@mode' -Value 'Off'

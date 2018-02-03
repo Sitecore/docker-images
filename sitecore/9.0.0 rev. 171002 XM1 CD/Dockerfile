@@ -5,7 +5,8 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 
 ENV SITENAME='sc'
 ARG INSTALL_TEMP='c:\\install'
-ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cm.json
+ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cd.json
+ARG SIF_PACKAGE=${INSTALL_TEMP}\\'Sitecore*_cd.scwdp.zip'
 ARG WEBDEPLOY_MSI=${INSTALL_TEMP}\\webdeploy.msi
 ARG URLREWRITE_MSI=${INSTALL_TEMP}\\urlrewrite.msi
 
@@ -24,19 +25,18 @@ RUN Start-Process msiexec.exe -ArgumentList '/i', $env:WEBDEPLOY_MSI, '/quiet', 
 RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*Configuration files*.zip') -DestinationPath $env:INSTALL_TEMP; `
     $config = Get-Content $env:SIF_CONFIG | Where-Object { $_ -notmatch '^\s*\/\/'} | Out-String | ConvertFrom-Json; `
-    $config.Tasks.InstallWDP.Params.Arguments | Add-Member -Name 'Skip' -Value @(@{'ObjectName' = 'dbDacFx'}, @{'ObjectName' = 'dbFullSql'}) -MemberType NoteProperty; `
     $config.Variables.'Site.PhysicalPath' = 'C:\inetpub\{0}' -f $env:SITENAME; `
     ConvertTo-Json $config -Depth 50 | Set-Content -Path $env:SIF_CONFIG; `
     Remove-Website -Name 'Default Web Site'; `
     Install-SitecoreConfiguration -Path $env:SIF_CONFIG `
-    -Package (Join-Path $env:INSTALL_TEMP '\\Sitecore*_cm.scwdp.zip') `
+    -Package $env:SIF_PACKAGE `
     -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
     -Sitename $env:SITENAME `
     -SqlDbPrefix $env:SITENAME `  
     -SolrCorePrefix $env:SITENAME `
-    -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "StartAppPool", "StartWebsite"; `
+    -Skip "CreateHostHeader", "CreateBindings", "StartAppPool", "StartWebsite"; `
+    Remove-Item -Path 'C:\\*.log'; `
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
-    Clear-WebConfiguration -PSPath ('IIS:\Sites\{0}' -f $env:SITENAME) -Filter '/system.webserver/rewrite/rules/rule'; `
     Set-WebConfiguration -PSPath ('IIS:\Sites\{0}' -f $env:SITENAME) -Filter '/system.web/customErrors/@mode' -Value 'Off'
 
 # Cleanup, post installation tweaks and start site

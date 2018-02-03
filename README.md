@@ -4,8 +4,10 @@ Build your own Docker images of every released Sitecore version since 8.2 rev. 1
 
 ## How to use
 
-1. Configure your build server to trigger a build on any changes to this git repository - to get new versions.
-1. Configure your build server to trigger this repository once a week - to get updated bases images when Microsoft releases patched images.
+Configure your build server to trigger:
+
+1. A build on any changes to this git repository - to get new versions.
+1. Scheduled once a week - to get updated bases images when Microsoft releases patched images.
 
 /Build.ps1 should be called like this:
 
