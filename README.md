@@ -1,6 +1,6 @@
 # Repository of Sitecore Docker base images
 
-Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3), the first version that officially supported Windows Server 2016.
+Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. You can use this repository directly from you own build server so it will build and push images to your Docker repository.
 
 ## Prerequisites
 
@@ -9,7 +9,7 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
   * Windows 10 or Windows Server 2016 that is up to date and at least the 1709 build.
   * Hyper-V installed.
   * Latest stable Docker engine and cli.
-* A file share that your build agents can reach where you have placed zip files downloaded from [https://dev.sitecore.net/](https://dev.sitecore.net/) and your license.xml.
+* A file share that your build agents can reach, where you have placed zip files downloaded from [https://dev.sitecore.net/](https://dev.sitecore.net/) and your license.xml.
 
 ## How to use
 
@@ -27,6 +27,6 @@ Configure your build server to:
 # Build
 . (Join-Path $PSScriptRoot "Build.ps1") `
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
-    -Organization "YOUR ORG/USER NAME" `
+    -Organization "YOUR ORG NAME" ` # On Docker Hub it's your username unless you create an organization
     -Repository "sitecore"
 ````
