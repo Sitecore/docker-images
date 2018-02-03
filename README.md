@@ -15,7 +15,7 @@ Build your own Docker images of every released Sitecore version since 8.2 rev. 1
 
 # Build
 . (Join-Path $PSScriptRoot "Build.ps1") `
-    -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENCE.XML" `
+    -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
     -Repository "sitecore" `
     -Organization "mycompany" # Optional
 ````
