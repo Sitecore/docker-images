@@ -2,7 +2,7 @@
 
 Build your own Docker images of every released Sitecore version since 8.2 rev. 170407 (Update 3), the first version that officially supported Windows Server 2016.
 
-# How to use
+## How to use
 
 1. Configure your build server to trigger a build on any changes to this git repository - to get new versions.
 1. Configure your build server to trigger this repository once a week - to get updated bases images when Microsoft releases patched images.
