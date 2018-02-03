@@ -1,13 +1,22 @@
 # Repository of Sitecore Docker base images
 
-Build your own Docker images of every released Sitecore version since 8.2 rev. 170407 (Update 3), the first version that officially supported Windows Server 2016.
+Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3), the first version that officially supported Windows Server 2016.
+
+## Prerequisites
+
+* A **private** Docker repository. Any will do, but the easiest is to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), the cheapest one is $7/mo.
+* Some kind of build server for example TeamCity, with agents that runs:
+  * Windows 10 or Windows Server 2016 that is up to date and at least the 1709 build.
+  * Hyper-V installed.
+  * Latest stable Docker engine and cli.
+* A file share that your build agents can reach where you have placed zip files downloaded from [https://dev.sitecore.net/](https://dev.sitecore.net/) and your license.xml.
 
 ## How to use
 
-Configure your build server to trigger:
+Configure your build server to:
 
-1. A build on any changes to this git repository - to get new versions.
-1. Scheduled once a week - to get updated bases images when Microsoft releases patched images.
+1. Trigger a build on changes to this git repository - to get new versions.
+1. Trigger once a week - to get updated bases images when Microsoft releases patched images.
 
 /Build.ps1 should be called like this:
 
@@ -18,6 +27,6 @@ Configure your build server to trigger:
 # Build
 . (Join-Path $PSScriptRoot "Build.ps1") `
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
-    -Repository "sitecore" `
-    -Organization "mycompany" # Optional
+    -Organization "YOUR ORG/USER NAME" `
+    -Repository "sitecore"
 ````
