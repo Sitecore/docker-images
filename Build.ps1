@@ -124,10 +124,7 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
     # Build image
     docker image build --isolation "hyperv" --tag $tag $version.Path
 
-    if ($LASTEXITCODE -ne 0)
-    {
-        throw ("Build of '{0}' failed" -f $tag)
-    }
+    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Build of '{0}' failed" -f $tag) }
 
     # Determine if we need to push
     $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
@@ -149,10 +146,7 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
     # Push image
     docker image push $tag
 
-    if ($LASTEXITCODE -ne 0)
-    {
-        throw ("Push of '{0}' failed" -f $tag)
-    }
+    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Push of '{0}' failed" -f $tag) }
 
     Write-Host ("Image '{0}' pushed." -f $tag) -ForegroundColor Green
 }
