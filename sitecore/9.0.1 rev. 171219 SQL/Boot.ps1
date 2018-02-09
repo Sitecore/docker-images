@@ -11,9 +11,9 @@ param(
     [string]$DatabasePrefix
 )
 
-$noData = (Get-ChildItem -Path $DataPath) -eq $null
+$noData = (Get-ChildItem -Path $DataPath -Filter "*.mdf") -eq $null
 
-# If no data found, install from dacpac files
+# If no databases found in data directory, install from dacpac files
 if ($noData)
 {
     Write-Host "### Sitecore databases not found, installing..."
