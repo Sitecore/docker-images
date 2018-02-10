@@ -57,6 +57,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
 RUN Start-Process msiexec.exe -ArgumentList '/x', $env:WEBDEPLOY_MSI, '/quiet', '/norestart' -NoNewWindow -Wait; `
     Uninstall-Module SitecoreInstallFramework -Force; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
-    Set-Itemproperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name ServerPriorityTimeLimit -Value 0 -Type DWord; `
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name ServerPriorityTimeLimit -Value 0 -Type DWord; `
+    setx /M PATH $($env:PATH + ';C:\Sitecore\Scripts'); `
     Start-WebAppPool -Name $env:SITENAME; `
     Start-Website -Name $env:SITENAME
