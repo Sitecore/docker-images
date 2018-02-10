@@ -48,6 +48,9 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
     Set-WebConfiguration -PSPath ('IIS:\Sites\{0}' -f $env:SITENAME) -Filter '/system.web/customErrors/@mode' -Value 'Off'
 
+# TEMPORARAY HACK: This assembly can't be loaded so site can't start...
+RUN Remove-Item -Path ('C:\\inetpub\\{0}\\bin\\ChilkatDotNet46.dll' -f $env:SITENAME) -Force;
+
 # Cleanup, post installation tweaks and start site
 RUN Start-Process msiexec.exe -ArgumentList '/x', $env:WEBDEPLOY_MSI, '/quiet', '/norestart' -NoNewWindow -Wait; `
     Uninstall-Module SitecoreInstallFramework -Force; `
