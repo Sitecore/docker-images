@@ -4,6 +4,12 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 There are some more background and details in this post: [https://invokecommand.net/posts/automatically-build-and-update-base-images](https://invokecommand.net/posts/automatically-build-and-update-base-images).
 
+### Updates
+
+- [Added] Specialized SQL Server images with all Sitecore databases embedded **and** volume support, for Sitecore 9.
+- [Changed] all Sitecore 9 images now default has connection strings matching the new specialized SQL Server images.
+- [Added] XM1 CM and CD role images for Sitecore 9.
+
 ## Prerequisites
 
 * A **private** Docker repository. Any will do, but the easiest is to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), the cheapest one is $7/mo.
