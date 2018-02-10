@@ -122,7 +122,15 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
     }
     
     # Build image
-    docker image build --isolation "hyperv" --tag $tag $version.Path
+    if ($tag -like "*SQL*")
+    {
+        # Building SQL based images requires more memory than the default 2GB
+        docker image build --isolation "hyperv" --memory 4GB --tag $tag $version.Path
+    }
+    else
+    {
+        docker image build --isolation "hyperv" --tag $tag $version.Path
+    }
 
     $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Build of '{0}' failed" -f $tag) }
 

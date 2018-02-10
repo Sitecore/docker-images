@@ -4,6 +4,7 @@ FROM microsoft/aspnet:4.7.1-windowsservercore-1709
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 ENV SITENAME='sc'
+ARG SQLADMIN_PASSWORD='HASH-epsom-sunset-cost7!'
 ARG INSTALL_TEMP='c:\\install'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cm.json
 ARG SIF_PACKAGE=${INSTALL_TEMP}\\'Sitecore*_cm.scwdp.zip'
@@ -33,7 +34,17 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     -Package $env:SIF_PACKAGE `
     -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
     -Sitename $env:SITENAME `
+    -SqlServer "sql" `
     -SqlDbPrefix $env:SITENAME `  
+    -SqlAdminPassword $env:SQLADMIN_PASSWORD `
+    -SqlCoreUser "sa" `
+    -SqlCorePassword $env:SQLADMIN_PASSWORD `
+    -SqlMasterUser "sa" `
+    -SqlMasterPassword $env:SQLADMIN_PASSWORD `
+    -SqlWebUser "sa" `
+    -SqlWebPassword $env:SQLADMIN_PASSWORD `
+    -SqlFormsUser "sa" `
+    -SqlFormsPassword $env:SQLADMIN_PASSWORD `
     -SolrCorePrefix $env:SITENAME `
     -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "StartAppPool", "StartWebsite", "UpdateSolrSchema"; `
     Remove-Item -Path 'C:\\*.log'; `
