@@ -28,10 +28,15 @@ function Find-BaseImages
     Get-ChildItem -Path $Path -Filter $Filter | Foreach-Object {
         Get-ChildItem -Path $_.FullName -Filter "Dockerfile" | Foreach-Object {
             $fromImage = Get-Content -Path $_.FullName | Where-Object { $_.StartsWith("FROM ") } | ForEach-Object { Write-Output $_.Replace("FROM ", "").Trim() }
+            
+            if ($fromImage -like "*as*")
+            {
+                $fromImage = $fromImage.Substring(0, $fromImage.IndexOf(" as "))
+            }
 
             if ([string]::IsNullOrEmpty($fromImage))
             {
-                throw "Invalid dockerfile '$($_.FullName)', FROM image could not be read."
+                throw ("Invalid dockerfile '{0}', FROM image could not be read." -f $_.FullName)
             }
 
             Write-Output $fromImage
@@ -84,7 +89,13 @@ $imagesPath = (Join-Path $PSScriptRoot "\sitecore")
 
 # Pull latest bases images
 Find-BaseImages -Path $imagesPath -Filter $VersionsFilter | Select-Object -Unique | ForEach-Object {
-    docker pull $_
+    $tag = $_
+
+    Write-Host ("Pulling latest base image '{0}'..." -f $tag)
+
+    docker pull $tag
+
+    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Pulling '{0}' failed" -f $tag) }
 }
 
 # What to build...
