@@ -27,19 +27,23 @@ function Find-BaseImages
 
     Get-ChildItem -Path $Path -Filter $Filter | Foreach-Object {
         Get-ChildItem -Path $_.FullName -Filter "Dockerfile" | Foreach-Object {
-            $fromImage = Get-Content -Path $_.FullName | Where-Object { $_.StartsWith("FROM ") } | ForEach-Object { Write-Output $_.Replace("FROM ", "").Trim() }
+            $fromImages = Get-Content -Path $_.FullName | Where-Object { $_.StartsWith("FROM ") } | ForEach-Object { Write-Output $_.Replace("FROM ", "").Trim() }
             
-            if ($fromImage -like "*as*")
-            {
-                $fromImage = $fromImage.Substring(0, $fromImage.IndexOf(" as "))
-            }
+            $fromImages | ForEach-Object {
+                $image = $_
 
-            if ([string]::IsNullOrEmpty($fromImage))
-            {
-                throw ("Invalid dockerfile '{0}', FROM image could not be read." -f $_.FullName)
-            }
+                if ($image -like "* as *")
+                {
+                    $image = $image.Substring(0, $image.IndexOf(" as "))
+                }
 
-            Write-Output $fromImage
+                if ([string]::IsNullOrEmpty($image))
+                {
+                    throw ("Invalid dockerfile '{0}', FROM image could not be read." -f $_.FullName)
+                }
+
+                Write-Output $image
+            }
         }
     }
 }
