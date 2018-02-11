@@ -1,6 +1,8 @@
 # escape=`
 FROM microsoft/aspnet:4.7.1-windowsservercore-1709 as builder
 
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
 # Install JAVA
 ENV JAVA_HOME C:\\ojdkbuild
 ENV JAVA_VERSION 8u161
@@ -16,7 +18,7 @@ RUN setx /M PATH ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); `
 
 # Install Solr
 ARG SOLR_VERSION=6.6.2
-RUN powershell -Command Invoke-WebRequest -Method Get -Uri ('http://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SOLR_VERSION) -OutFile /solr.zip; `
+RUN Invoke-WebRequest -Uri ('http://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SOLR_VERSION) -OutFile /solr.zip; `
     Expand-Archive -Path /solr.zip -DestinationPath /temp; `
     Move-Item -Path "C:/temp/solr-*" -Destination c:\solr;
 
@@ -40,21 +42,25 @@ RUN c:/solr/bin/solr.cmd start -port 8983; `
     -CorePrefix $env:SOLR_PREFIX `
     -Skip "StopSolr", "StartSolr";
 
+# Copy the clean cores for later use
+RUN New-Item -Path 'c:/clean' -ItemType Directory | Out-Null; `
+    Get-ChildItem -Path 'c:/solr/server/solr' | Foreach-Object { Copy-Item -Path $_.FullName -Destination 'c:/clean' -Recurse }
+
 # Runtime image
-FROM openjdk:8u151-jdk-nanoserver
+FROM openjdk:8u151-jdk-nanoserver as final
 
-# Copy output from builder image
 COPY --from=builder /solr /solr
+COPY --from=builder /clean /clean
 
-# TODO: Boot script like SQL, that copies clean cores into new SOLR_HOME
+VOLUME c:/data
 
-# # Workaround for java issues with Windows container symlinks: https://github.com/moby/moby/issues/27537#issuecomment-271546031
-#VOLUME c:/data
-
-#RUN REG ADD 'HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' /v 'G:' /d '\??\C:\data' /reg:64
+# Workaround for java issues with Windows container symlinks: https://github.com/moby/moby/issues/27537#issuecomment-271546031
+RUN REG ADD 'HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' /v 'G:' /d '\??\C:\data' /reg:64
 
 # Set solr home dir to above mapped drive
-#ENV SOLR_HOME=g:/
+ENV SOLR_HOME=g:/
+
+# TODO: Boot script like SQL, that copies clean cores into new SOLR_HOME
 
 # Expose default port
 EXPOSE 8983
