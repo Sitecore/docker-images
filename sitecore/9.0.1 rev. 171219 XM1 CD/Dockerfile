@@ -41,7 +41,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     -SqlWebPassword $env:SQLADMIN_PASSWORD `
     -SqlFormsUser "sa" `
     -SqlFormsPassword $env:SQLADMIN_PASSWORD `
-    -SolrUrl "https://solr:8983/solr" `
+    -SolrUrl "http://solr:8983/solr" `
     -SolrCorePrefix $env:SITENAME `
     -Skip "CreateHostHeader", "CreateBindings", "StartAppPool", "StartWebsite"; `
     Remove-Item -Path 'C:\\*.log'; `
