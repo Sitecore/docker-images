@@ -2,6 +2,11 @@
 param(
     [Parameter(Mandatory = $true)]
     [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [string]$SolrPath,
+    [Parameter(Mandatory = $true)]
+    [int]$SolrPort,
+    [Parameter(Mandatory = $true)]
+    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
     [string]$InstallPath,
     [Parameter(Mandatory = $true)]
     [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
@@ -12,7 +17,7 @@ $noData = ((Get-ChildItem -Path $DataPath -Filter "sc_*") -eq $null -or (Get-Chi
 
 if ($noData)
 {
-    Write-Host "### Sitecore solr cores not found in '$DataPath', seeding clean cores..."
+    Write-Host "### No Sitecore solr cores found in '$DataPath', seeding clean cores..."
 
     Get-ChildItem -Path $InstallPath | ForEach-Object {
         Copy-Item -Path $_.FullName -Destination $DataPath -Recurse
@@ -25,4 +30,4 @@ else
 
 Write-Host "### Starting solr..."
 
-& "c:/solr/bin/solr.cmd" start -port 8983 -f
+& (Join-Path $SolrPath "/bin/solr.cmd") start -port $SolrPort -f

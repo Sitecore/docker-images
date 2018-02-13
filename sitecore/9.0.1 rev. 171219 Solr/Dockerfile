@@ -66,5 +66,5 @@ EXPOSE 8983
 
 # Boot
 ADD Boot.ps1 .
-#TODO: add c:/solr parameter and port
-CMD C:/Boot.ps1 -InstallPath 'c:/clean' -DataPath 'c:/data'
+
+CMD C:/Boot.ps1 -SolrPath 'c:/solr' SolrPort 8983 -InstallPath 'c:/clean' -DataPath 'c:/data'
