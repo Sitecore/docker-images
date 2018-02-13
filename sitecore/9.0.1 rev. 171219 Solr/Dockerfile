@@ -15,7 +15,7 @@ RUN setx /M PATH ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); `
     Expand-Archive ojdkbuild.zip -DestinationPath C:\; `
     Move-Item -Path ('C:\{0}' -f ($env:JAVA_OJDKBUILD_ZIP -Replace '.zip$', '')) -Destination $env:JAVA_HOME; `
     Remove-Item ojdkbuild.zip -Force;
-
+    
 # Install Solr
 ARG SOLR_VERSION=6.6.2
 RUN Invoke-WebRequest -Uri ('http://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SOLR_VERSION) -OutFile /solr.zip; `
@@ -27,12 +27,12 @@ RUN Install-PackageProvider -Name NuGet -Force | Out-Null; `
     Register-PSRepository -Name SitecoreGallery -SourceLocation https://sitecore.myget.org/F/sc-powershell/api/v2; `
     Install-Module SitecoreInstallFramework -RequiredVersion 1.1.0 -Force;
 
-# Start solr, install Sitecore Solr cores using SIF, stop solr
+# Install Sitecore Solr cores using SIF
 ARG INSTALL_TEMP='c:\\install'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-solr.json
 ENV SOLR_PREFIX='sc'
 ADD . ${INSTALL_TEMP}
-RUN c:/solr/bin/solr.cmd start -port 8983; `
+RUN & 'c:/solr/bin/solr.cmd' start -p 8983; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*Configuration files*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Install-SitecoreConfiguration -Path $env:SIF_CONFIG `
@@ -40,7 +40,8 @@ RUN c:/solr/bin/solr.cmd start -port 8983; `
     -SolrRoot "c:/solr" `
     -SolrService "void" `
     -CorePrefix $env:SOLR_PREFIX `
-    -Skip "StopSolr", "StartSolr";
+    -Skip "StopSolr", "StartSolr"; `
+    Get-Process -Name "java" | Stop-Process -Force;
 
 # Copy the clean cores for later use
 RUN New-Item -Path 'c:/clean' -ItemType Directory | Out-Null; `
@@ -60,12 +61,10 @@ RUN REG ADD 'HKLM\SYSTEM\CurrentControlSet\Control\Session Manager\DOS Devices' 
 # Set solr home dir to above mapped drive
 ENV SOLR_HOME=g:/
 
-# TODO: Boot script like SQL, that copies clean cores into new SOLR_HOME
-
 # Expose default port
 EXPOSE 8983
 
-# Start solr
-ENTRYPOINT [ "c:/solr/bin/solr.cmd" ]
-
-CMD [ "start", "-port 8983", "-f" ]
+# Boot
+ADD Boot.ps1 .
+#TODO: add c:/solr parameter and port
+CMD C:/Boot.ps1 -InstallPath 'c:/clean' -DataPath 'c:/data'
