@@ -4,7 +4,7 @@ param(
     [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
     [string]$SolrPath,
     [Parameter(Mandatory = $true)]
-    [int]$SolrPort,
+    [string]$SolrPort,
     [Parameter(Mandatory = $true)]
     [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
     [string]$InstallPath,
