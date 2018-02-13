@@ -6,6 +6,7 @@ There are some more background and details in this post: [https://invokecommand.
 
 ### Updates
 
+- [Added] Specialized Solr image with all Sitecore cores embedded **and** volume support, for Sitecore 9.0.1.
 - [Added] Specialized SQL Server images with all Sitecore databases embedded **and** volume support, for Sitecore 9.
 - [Changed] all Sitecore 9 images now default has connection strings matching the new specialized SQL Server images.
 - [Added] XM1 CM and CD role images for Sitecore 9.
