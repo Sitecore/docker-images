@@ -52,6 +52,7 @@ FROM openjdk:8u151-jdk-nanoserver as final
 
 COPY --from=builder /solr /solr
 COPY --from=builder /clean /clean
+COPY --from=builder /windows/system32/find.exe /windows/system32/
 
 VOLUME c:/data
 
