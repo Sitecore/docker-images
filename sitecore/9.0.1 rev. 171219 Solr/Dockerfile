@@ -10,6 +10,7 @@ ENV JAVA_OJDKBUILD_VERSION 1.8.0.161-1
 ENV JAVA_OJDKBUILD_ZIP java-1.8.0-openjdk-1.8.0.161-1.b14.ojdkbuild.windows.x86_64.zip
 
 RUN setx /M PATH ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); `
+    [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `
     $url = ('https://github.com/ojdkbuild/ojdkbuild/releases/download/{0}/{1}' -f $env:JAVA_OJDKBUILD_VERSION, $env:JAVA_OJDKBUILD_ZIP); `
     Invoke-WebRequest -Uri $url -OutFile 'ojdkbuild.zip'; `
     Expand-Archive ojdkbuild.zip -DestinationPath C:\; `
