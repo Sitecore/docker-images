@@ -37,7 +37,7 @@ Configure your build server to:
 
 # Build and push
 . (Join-Path $PSScriptRoot "Build.ps1") `
-    -VersionsFilter "*" # optional, set to for example "9.0*" to only build 9.0 images
+    -VersionsFilter "*" ` # optional, set to for example "9.0*" to only build 9.0 images
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
     -Organization "YOUR ORG NAME" ` # On Docker Hub it's your username unless you create an organization
     -Repository "sitecore"
