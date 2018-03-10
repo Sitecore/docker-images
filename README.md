@@ -4,8 +4,10 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 There are some more background and details in this post: [https://invokecommand.net/posts/automatically-build-and-update-base-images](https://invokecommand.net/posts/automatically-build-and-update-base-images).
 
-### Updates
+## Updates
 
+- [Fixed] Added UrlRewrite outbound rule to handle Sitecore redirect after login when container is running on another port than 80 (possible in Windows 10 Insider builds for the upcoming 1803 release in April).
+- [Fixed] Solr build errors regarding downloads from github (TLS 1.2 now used).
 - [Added] Specialized Solr image with all Sitecore cores embedded **and** volume support, for Sitecore 9.0.1 (which defaults to use Solr).
 - [Added] Specialized SQL Server images with all Sitecore databases embedded **and** volume support, for Sitecore 9.
 - [Changed] all Sitecore 9 images now default has connection strings matching the new specialized SQL Server images.
@@ -13,12 +15,12 @@ There are some more background and details in this post: [https://invokecommand.
 
 ## Prerequisites
 
-* A **private** Docker repository. Any will do, but the easiest is to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), the cheapest one is $7/mo.
-* A file share that your build agents can reach, where you have placed zip files downloaded from [https://dev.sitecore.net/](https://dev.sitecore.net/) **and** your license.xml.
-* Some kind of build server for example TeamCity, with agents that runs:
-  * Windows 10 or Windows Server 2016 that is up to date and at least the 1709 build.
-  * Hyper-V installed.
-  * Latest stable Docker engine and cli.
+- A **private** Docker repository. Any will do, but the easiest is to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), the cheapest one is $7/mo.
+- A file share that your build agents can reach, where you have placed zip files downloaded from [https://dev.sitecore.net/](https://dev.sitecore.net/) **and** your license.xml.
+- Some kind of build server for example TeamCity, with agents that runs:
+  - Windows 10 or Windows Server 2016 that is up to date and at least the 1709 build.
+  - Hyper-V installed.
+  - Latest stable Docker engine and cli.
 
 ## How to use
 
@@ -35,6 +37,7 @@ Configure your build server to:
 
 # Build and push
 . (Join-Path $PSScriptRoot "Build.ps1") `
+    -VersionsFilter "*" # optional, set to for example "9.0*" to only build 9.0 images
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
     -Organization "YOUR ORG NAME" ` # On Docker Hub it's your username unless you create an organization
     -Repository "sitecore"
