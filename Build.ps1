@@ -13,6 +13,7 @@ param(
     [Parameter(Mandatory = $false)]
     [switch]$SkipPush
 )
+
 function Find-BaseImages
 {
     [CmdletBinding()]
