@@ -1,8 +1,12 @@
 # Repository of Sitecore Docker base images
 
+
 Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. You can use this repository *directly* from you own build server and have it build and push images to your own private Docker repository.
 
 There are some more background and details in this post: [https://invokecommand.net/posts/automatically-build-and-update-base-images](https://invokecommand.net/posts/automatically-build-and-update-base-images).
+
+### Important Note about this repository:
+This repository was created to help consolidate efforts around Sitecore and Docker. Although some Sitecore employees may contribute to the efforts, the code and examples found in this repository are created and maintained by the Community, unsupported by Sitecore and to be used for example purposes only and without official support.
 
 ## Updates
 
