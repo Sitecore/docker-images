@@ -153,6 +153,9 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
     # Determine if we need to push
     $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
 
+    Write-Host "Done with Installation Source - Removing  $targetPath" -ForegroundColor Green
+    Remove-Item $targetPath -Force
+
     if ($currentDigest -eq $previousDigest)
     {
         Write-Host "Done, current digest is the same as the previous, image has not changed since last build." -ForegroundColor Green
