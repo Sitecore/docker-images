@@ -8,6 +8,8 @@ There are some more background and details in this post: [https://invokecommand.
 ### Important Note about this repository:
 This repository was created to help consolidate efforts around Sitecore and Docker. Although some Sitecore employees may contribute to the efforts, the code and examples found in this repository are created and maintained by the Community, unsupported by Sitecore and to be used for example purposes only and without official support.
 
+This repository was created by combining efforts / assets from repos such as [sitecoreops](https://github.com/sitecoreops/sitecore-images) and [sitecore-nine-docker](https://github.com/pbering/sitecore-nine-docker) and [sitecore-docker](https://github.com/avivasolutionsnl/sitecore-docker) repos. Thanks everyone for the great start and please feel free to continue providing feedback by creating an issue, PR, etc.
+
 ## Updates
 
 - [Fixed] Added UrlRewrite outbound rule to handle Sitecore redirect after login when container is running on another port than 80 (possible in Windows 10 Insider builds for the upcoming 1803 release in April).
