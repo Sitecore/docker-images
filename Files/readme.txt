@@ -1,1 +1,1 @@
-Place generate certificate files and other interim build files here
+Place generated certificate files and other interim build files here
