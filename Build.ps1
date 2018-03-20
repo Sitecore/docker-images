@@ -16,6 +16,7 @@ param(
     [switch]$RemoveInstallationSourceFiles
 )
 
+
 function Find-BaseImages {
     [CmdletBinding()]
     param(
@@ -127,6 +128,11 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
 
         if (!(Test-Path -Path $targetPath)) {
             Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
+        }
+        if ($tag -like "*Solr*") {
+            $certificateTargetPath = Join-Path $version.path "solr.pfx"
+            if (!(Test-Path -Path $certificateTargetPath)) {
+            Copy-Item .\Files\solr.pfx $certificateTargetPath
         }
     }
     
