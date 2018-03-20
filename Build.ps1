@@ -165,7 +165,7 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
 
             return
         }
-        Write-Host $SkipPush
+        
         if ($SkipPush) {
             Write-Warning "Done, SkipPush switch used."
 
