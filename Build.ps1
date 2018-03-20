@@ -129,48 +129,54 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
         if (!(Test-Path -Path $targetPath)) {
             Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
         }
+        
+        $scriptsPath = Join-Path $version.path "scripts"
+        if (!(Test-Path -Path $scriptsPath)) {
+            Copy-Item .\Scripts $scriptsPath -Recurse
+        }
         if ($tag -like "*Solr*") {
             $certificateTargetPath = Join-Path $version.path "solr.pfx"
             if (!(Test-Path -Path $certificateTargetPath)) {
-            Copy-Item .\Files\solr.pfx $certificateTargetPath
+                Copy-Item .\Files\solr.pfx $certificateTargetPath
+            }
         }
-    }
     
-    # Build image
-    if ($tag -like "*SQL*") {
-        # Building SQL based images requires more memory than the default 2GB
-        docker image build --isolation "hyperv" --memory 4GB --tag $tag $version.Path
-    }
-    else {
-        docker image build --isolation "hyperv" --tag $tag $version.Path
-    }
+        # Build image
+        if ($tag -like "*SQL*") {
+            # Building SQL based images requires more memory than the default 2GB
+            docker image build --isolation "hyperv" --memory 4GB --tag $tag $version.Path
+        }
+        else {
+            docker image build --isolation "hyperv" --tag $tag $version.Path
+        }
 
-    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Build of '{0}' failed" -f $tag) }
+        $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Build of '{0}' failed" -f $tag) }
 
-    # Determine if we need to push
-    $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
+        # Determine if we need to push
+        $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
     
-    if ($RemoveInstallationSourceFiles) {
-        Write-Host "Done with Installation Source - Removing  $targetPath" -ForegroundColor Green
-        Remove-Item $targetPath -Force
-    }
+        if ($RemoveInstallationSourceFiles) {
+            Write-Host "Done with Installation Source - Removing  $targetPath" -ForegroundColor Green
+            Remove-Item $targetPath -Force
+        }
 
-    if ($currentDigest -eq $previousDigest) {
-        Write-Host "Done, current digest is the same as the previous, image has not changed since last build." -ForegroundColor Green
+        if ($currentDigest -eq $previousDigest) {
+            Write-Host "Done, current digest is the same as the previous, image has not changed since last build." -ForegroundColor Green
 
-        return
-    }
+            return
+        }
+        Write-Host $SkipPush
+        if ($SkipPush) {
+            Write-Warning "Done, SkipPush switch used."
+
+            return
+        }
     
-    if ($SkipPush) {
-        Write-Warning "Done, SkipPush switch used."
+        # Push image
+        docker image push $tag
 
-        return
+        $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Push of '{0}' failed" -f $tag) }
+
+        Write-Host ("Image '{0}' pushed." -f $tag) -ForegroundColor Green
     }
-    
-    # Push image
-    docker image push $tag
-
-    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Push of '{0}' failed" -f $tag) }
-
-    Write-Host ("Image '{0}' pushed." -f $tag) -ForegroundColor Green
 }

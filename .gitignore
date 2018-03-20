@@ -1,4 +1,5 @@
 ﻿sitecore/*/*.zip
 license.xml
+*.pfx
 *-Local.ps1
 Files/
