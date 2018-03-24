@@ -13,7 +13,7 @@ ARG WEBDEPLOY_MSI=${INSTALL_TEMP}\\webdeploy.msi
 ARG URLREWRITE_MSI=${INSTALL_TEMP}\\urlrewrite.msi
 ARG VCREDISTX64_EXE=${INSTALL_TEMP}\\VC_redist.x64.exe
 
-ADD . ${INSTALL_TEMP}
+COPY . ${INSTALL_TEMP}
 ADD http://download.microsoft.com/download/0/1/D/01DC28EA-638C-4A22-A57B-4CEF97755C6C/WebDeploy_amd64_en-US.msi ${WEBDEPLOY_MSI}
 ADD http://download.microsoft.com/download/D/D/E/DDE57C26-C62C-4C59-A1BB-31D58B36ADA2/rewrite_amd64_en-US.msi ${URLREWRITE_MSI}
 ADD https://aka.ms/vs/15/release/VC_redist.x64.exe ${VCREDISTX64_EXE}

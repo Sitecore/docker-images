@@ -32,7 +32,7 @@ RUN Install-PackageProvider -Name NuGet -Force | Out-Null; `
 ARG INSTALL_TEMP='c:\\install'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-solr.json
 ENV SOLR_PREFIX='sc'
-ADD . ${INSTALL_TEMP}
+COPY . ${INSTALL_TEMP}
 RUN & 'c:/solr/bin/solr.cmd' start -p 8983; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*Configuration files*.zip') -DestinationPath $env:INSTALL_TEMP; `
@@ -67,6 +67,6 @@ ENV SOLR_HOME=g:/
 EXPOSE 8983
 
 # Boot
-ADD Boot.ps1 .
+COPY Boot.ps1 .
 
 CMD C:/Boot.ps1 -SolrPath 'c:/solr' -SolrPort 8983 -InstallPath 'c:/clean' -DataPath 'c:/data'
