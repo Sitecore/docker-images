@@ -11,11 +11,12 @@ param(
     [ValidateNotNullOrEmpty()] 
     [string]$Repository,
     [Parameter(Mandatory = $false)]
-    [switch]$SkipPush
+    [switch]$SkipPush,
+    [Parameter(Mandatory = $false)]
+    [switch]$RemoveInstallationSourceFiles
 )
 
-function Find-BaseImages
-{
+function Find-BaseImages {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -33,13 +34,11 @@ function Find-BaseImages
             $fromImages | ForEach-Object {
                 $image = $_
 
-                if ($image -like "* as *")
-                {
+                if ($image -like "* as *") {
                     $image = $image.Substring(0, $image.IndexOf(" as "))
                 }
 
-                if ([string]::IsNullOrEmpty($image))
-                {
+                if ([string]::IsNullOrEmpty($image)) {
                     throw ("Invalid dockerfile '{0}', FROM image could not be read." -f $_.FullName)
                 }
 
@@ -49,8 +48,7 @@ function Find-BaseImages
     }
 }
 
-function Find-SitecoreVersions
-{
+function Find-SitecoreVersions {
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -68,8 +66,7 @@ function Find-SitecoreVersions
         $version = $_
         $buildFilePath = Join-Path $version.FullName "\build.json"
 
-        if (Test-Path $buildFilePath -PathType Leaf)
-        {
+        if (Test-Path $buildFilePath -PathType Leaf) {
             $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
             $sources = $data.sources | ForEach-Object {
                 Write-Output (Join-Path $InstallSourcePath $_)
@@ -81,8 +78,7 @@ function Find-SitecoreVersions
                     Sources = $sources;
                 })
         }
-        else
-        {
+        else {
             throw ("Invalid version folder '{0}', file not found: '{1}'." -f $version.Name, $buildFilePath)
         }
     }
@@ -110,16 +106,14 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
     # Build up tag to use
     $tag = "{0}:{1}" -f $Repository, $version.Tag
 
-    if (![string]::IsNullOrEmpty($Organization))
-    {
+    if (![string]::IsNullOrEmpty($Organization)) {
         $tag = "{0}/{1}" -f $Organization, $tag
     }
    
     # Save the digest of previous builds for later comparison
     $previousDigest = $null
     
-    if ((docker image ls $tag --quiet))
-    {
+    if ((docker image ls $tag --quiet)) {
         $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
     }
 
@@ -131,20 +125,17 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
         $sourceItem = Get-Item -Path $sourcePath
         $targetPath = Join-Path $version.Path $sourceItem.Name
 
-        if (!(Test-Path -Path $targetPath))
-        {
+        if (!(Test-Path -Path $targetPath)) {
             Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
         }
     }
     
     # Build image
-    if ($tag -like "*SQL*")
-    {
+    if ($tag -like "*SQL*") {
         # Building SQL based images requires more memory than the default 2GB
         docker image build --isolation "hyperv" --memory 4GB --tag $tag $version.Path
     }
-    else
-    {
+    else {
         docker image build --isolation "hyperv" --tag $tag $version.Path
     }
 
@@ -152,16 +143,19 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
 
     # Determine if we need to push
     $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
+    
+    if ($RemoveInstallationSourceFiles) {
+        Write-Host ("Done with Installation Source - Removing  '{0}'" -f $targetPath) -ForegroundColor Green
+        Remove-Item $targetPath -Force
+    }
 
-    if ($currentDigest -eq $previousDigest)
-    {
+    if ($currentDigest -eq $previousDigest) {
         Write-Host "Done, current digest is the same as the previous, image has not changed since last build." -ForegroundColor Green
 
         return
     }
     
-    if ($SkipPush)
-    {
+    if ($SkipPush) {
         Write-Warning "Done, SkipPush switch used."
 
         return
