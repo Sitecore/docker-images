@@ -34,6 +34,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     $config.Variables.'Site.PhysicalPath' = $env:SITEPATH; `
     ConvertTo-Json $config -Depth 50 | Set-Content -Path $env:SIF_CONFIG; `
     Remove-Website -Name 'Default Web Site'; `
+    Remove-WebAppPool -Name 'DefaultAppPool'; `
     Install-SitecoreConfiguration -Path $env:SIF_CONFIG `
     -Package $env:SIF_PACKAGE `
     -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
