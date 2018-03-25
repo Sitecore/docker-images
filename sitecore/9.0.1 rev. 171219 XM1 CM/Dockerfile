@@ -64,12 +64,12 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     Add-WebConfigurationProperty -PSPath $iisPath -Filter 'system.webServer/rewrite/outboundRules/preConditions/preCondition[@name=''IsSitecoreAbsoluteRedirect'']' -Name '.' -Value @{input = '{RESPONSE_LOCATION}'; pattern = '(https?://[^:/]+):?([0-9]+)?/sitecore/(.*)'}; `
     Add-WebConfigurationProperty -PSPath $iisPath -Filter 'system.webServer/rewrite/outboundRules/preConditions/preCondition[@name=''IsSitecoreAbsoluteRedirect'']' -Name '.' -Value @{input = '{RESPONSE_STATUS}'; pattern = '3[0-9][0-9]'}; `
     $xml = New-Object XML; `
-    $xml.Load('C:\inetpub\sc\website\app_config\include\examples\DataFolder.config.example'); `
+    $xml.Load(('{0}\app_config\include\examples\DataFolder.config.example' -f $env:SITEPATH)); `
     $nsm = New-Object Xml.XmlNamespaceManager($xml.NameTable); `
     $nsm.AddNamespace('patch', 'http://www.sitecore.net/xmlconfig/'); `
     $element = $xml.SelectSingleNode('//sc.variable[@name=''dataFolder'']/patch:attribute[@name=''value'']', $nsm); `
-    $element.InnerText= 'C:\inetpub\sc\Data'; `
-    $xml.Save('C:\inetpub\sc\website\app_config\include\DataFolder.config');
+    $element.InnerText=$env:DATAPATH; `
+    $xml.Save(('{0}\app_config\include\DataFolder.config' -f $env:SITEPATH));
 
 
 # Cleanup, post installation tweaks and start site
