@@ -55,6 +55,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     -SolrUrl "http://solr:8983/solr" `
     -SolrCorePrefix $env:SITENAME `
     -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "StartAppPool", "StartWebsite", "UpdateSolrSchema"; `
+    Remove-Item -Path 'C:\\*.log'; `
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
     $iisPath = ('IIS:\Sites\{0}' -f $env:SITENAME); `
     Clear-WebConfiguration -PSPath $iisPath -Filter '/system.webserver/rewrite/rules/rule'; `
@@ -81,7 +82,6 @@ RUN Start-Process msiexec.exe -ArgumentList '/x', $env:WEBDEPLOY_MSI, '/quiet', 
     Start-Website -Name $env:SITENAME; `
     Remove-WebAppPool -Name 'DefaultAppPool'; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
-    Remove-Item -Path 'C:\\*.log'; `
 	Remove-Item -Path $env:DATAPATH -Force -Recurse; 
 
 VOLUME ${DATAPATH}
