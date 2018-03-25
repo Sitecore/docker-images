@@ -69,7 +69,6 @@ RUN Start-Process msiexec.exe -ArgumentList '/x', $env:WEBDEPLOY_MSI, '/quiet', 
     setx /M PATH $($env:PATH + ';C:\Sitecore\Scripts'); `
     Start-WebAppPool -Name $env:SITENAME; `
     Start-Website -Name $env:SITENAME; `
-    Remove-WebAppPool -Name 'DefaultAppPool'; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
     Remove-Item -Path $env:DATAPATH -Force -Recurse; 
 
