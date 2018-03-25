@@ -25,26 +25,18 @@ RUN Start-Process msiexec.exe -ArgumentList '/i', $env:WEBDEPLOY_MSI, '/quiet', 
     Start-Process $env:VCREDISTX64_EXE -ArgumentList '/install', '/passive', '/norestart' -NoNewWindow -Wait; `
     Install-PackageProvider -Name NuGet -Force | Out-Null; `
     Register-PSRepository -Name SitecoreGallery -SourceLocation https://sitecore.myget.org/F/sc-powershell/api/v2; `
-    Install-Module SitecoreInstallFramework -RequiredVersion 1.1.0 -Force; `
-	Import-Module WebAdministration;
+    Install-Module SitecoreInstallFramework -RequiredVersion 1.1.0 -Force; 
 
 # Install Sitecore
 RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*Configuration files*.zip') -DestinationPath $env:INSTALL_TEMP; `
     $config = Get-Content $env:SIF_CONFIG | Where-Object { $_ -notmatch '^\s*\/\/'} | Out-String | ConvertFrom-Json; `
+    $config.Tasks.CreatePaths.Params.Exists += '[variable(''Site.DataFolder'')]'; `
     $config.Tasks.InstallWDP.Params.Arguments | Add-Member -Name 'Skip' -Value @(@{'ObjectName' = 'dbDacFx'}, @{'ObjectName' = 'dbFullSql'}) -MemberType NoteProperty; `
     $config.Variables.'Site.PhysicalPath' = $env:SITEPATH; `
     $config.Variables.'Site.DataFolder' = $env:DATAPATH; `
-    $tasks = New-Object PSObject; `
-    $newTask = New-Object PSObject; `
-    $newTask | Add-Member -MemberType NoteProperty -Name 'Type' -Value 'EnsurePath'; `
-    $newTask | Add-Member -MemberType NoteProperty -Name 'Params' -Value @{'Exists'=@('[variable(''Site.DataFolder'')]')}; `
-    $tasks | Add-Member -MemberType NoteProperty -Name 'EnsureDataFolder' -Value $newTask; `
-    $config.Tasks.psobject.properties | % {$tasks | Add-Member -MemberType $_.MemberType -Name $_.Name -Value $_.Value}; `
-    $config.Tasks = $tasks; `
     ConvertTo-Json $config -Depth 50 | Set-Content -Path $env:SIF_CONFIG; `
     Remove-Website -Name 'Default Web Site'; `
-    Remove-WebAppPool -Name 'DefaultAppPool'; `
     Install-SitecoreConfiguration -Path $env:SIF_CONFIG `
     -Package $env:SIF_PACKAGE `
     -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
@@ -70,7 +62,15 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     Add-WebConfigurationProperty -PSPath $iisPath -Filter '/system.webServer/rewrite/outboundRules' -Name '.' -Value @{name = 'MakeLocationHeaderRelative' ; preCondition = 'IsSitecoreAbsoluteRedirect'; match = @{serverVariable = 'RESPONSE_LOCATION'; pattern = '(https?://[^:/]+):?([0-9]+)?(.*)'}; action = @{type = 'Rewrite'; value = '{R:3}'}}; `
     Add-WebConfigurationProperty -PSPath $iisPath -Filter '/system.webServer/rewrite/outboundRules/preConditions' -Name '.' -Value @{name = 'IsSitecoreAbsoluteRedirect'}; `
     Add-WebConfigurationProperty -PSPath $iisPath -Filter 'system.webServer/rewrite/outboundRules/preConditions/preCondition[@name=''IsSitecoreAbsoluteRedirect'']' -Name '.' -Value @{input = '{RESPONSE_LOCATION}'; pattern = '(https?://[^:/]+):?([0-9]+)?/sitecore/(.*)'}; `
-    Add-WebConfigurationProperty -PSPath $iisPath -Filter 'system.webServer/rewrite/outboundRules/preConditions/preCondition[@name=''IsSitecoreAbsoluteRedirect'']' -Name '.' -Value @{input = '{RESPONSE_STATUS}'; pattern = '3[0-9][0-9]'}
+    Add-WebConfigurationProperty -PSPath $iisPath -Filter 'system.webServer/rewrite/outboundRules/preConditions/preCondition[@name=''IsSitecoreAbsoluteRedirect'']' -Name '.' -Value @{input = '{RESPONSE_STATUS}'; pattern = '3[0-9][0-9]'}; `
+    $xml = New-Object XML; `
+    $xml.Load('C:\inetpub\sc\website\app_config\include\examples\DataFolder.config.example'); `
+    $nsm = New-Object Xml.XmlNamespaceManager($xml.NameTable); `
+    $nsm.AddNamespace('patch', 'http://www.sitecore.net/xmlconfig/'); `
+    $element = $xml.SelectSingleNode('//sc.variable[@name=''dataFolder'']/patch:attribute[@name=''value'']', $nsm); `
+    $element.InnerText= 'C:\inetpub\sc\Data'; `
+    $xml.Save('C:\inetpub\sc\website\app_config\include\DataFolder.config');
+
 
 # Cleanup, post installation tweaks and start site
 RUN Start-Process msiexec.exe -ArgumentList '/x', $env:WEBDEPLOY_MSI, '/quiet', '/norestart' -NoNewWindow -Wait; `
@@ -79,5 +79,6 @@ RUN Start-Process msiexec.exe -ArgumentList '/x', $env:WEBDEPLOY_MSI, '/quiet', 
     setx /M PATH $($env:PATH + ';C:\Sitecore\Scripts'); `    
     Start-WebAppPool -Name $env:SITENAME; `
     Start-Website -Name $env:SITENAME; `
+    Remove-WebAppPool -Name 'DefaultAppPool'; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
     Remove-Item -Path 'C:\\*.log';
