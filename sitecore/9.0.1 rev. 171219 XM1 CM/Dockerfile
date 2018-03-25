@@ -4,7 +4,8 @@ FROM microsoft/aspnet:4.7.1-windowsservercore-1709
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 ENV SITENAME='sc'
-ENV SITEPATH=C:\inetpub\${SITENAME}
+ENV SITEPATH=C:\inetpub\${SITENAME}\Website
+ENV DATAPATH=C:\inetpub\${SITENAME}\Data
 ARG SQLADMIN_PASSWORD='HASH-epsom-sunset-cost7!'
 ARG INSTALL_TEMP='c:\\install'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cm.json
@@ -24,7 +25,8 @@ RUN Start-Process msiexec.exe -ArgumentList '/i', $env:WEBDEPLOY_MSI, '/quiet', 
     Start-Process $env:VCREDISTX64_EXE -ArgumentList '/install', '/passive', '/norestart' -NoNewWindow -Wait; `
     Install-PackageProvider -Name NuGet -Force | Out-Null; `
     Register-PSRepository -Name SitecoreGallery -SourceLocation https://sitecore.myget.org/F/sc-powershell/api/v2; `
-    Install-Module SitecoreInstallFramework -RequiredVersion 1.1.0 -Force;
+    Install-Module SitecoreInstallFramework -RequiredVersion 1.1.0 -Force; `
+	Import-Module WebAdministration;
 
 # Install Sitecore
 RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
@@ -32,6 +34,14 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     $config = Get-Content $env:SIF_CONFIG | Where-Object { $_ -notmatch '^\s*\/\/'} | Out-String | ConvertFrom-Json; `
     $config.Tasks.InstallWDP.Params.Arguments | Add-Member -Name 'Skip' -Value @(@{'ObjectName' = 'dbDacFx'}, @{'ObjectName' = 'dbFullSql'}) -MemberType NoteProperty; `
     $config.Variables.'Site.PhysicalPath' = $env:SITEPATH; `
+    $config.Variables.'Site.DataFolder' = $env:DATAPATH; `
+    $tasks = New-Object PSObject; `
+    $newTask = New-Object PSObject; `
+    $newTask | Add-Member -MemberType NoteProperty -Name 'Type' -Value 'EnsurePath'; `
+    $newTask | Add-Member -MemberType NoteProperty -Name 'Params' -Value @{'Exists'=@('[variable(''Site.DataFolder'')]')}; `
+    $tasks | Add-Member -MemberType NoteProperty -Name 'EnsureDataFolder' -Value $newTask; `
+    $config.Tasks.psobject.properties | % {$tasks | Add-Member -MemberType $_.MemberType -Name $_.Name -Value $_.Value}; `
+    $config.Tasks = $tasks; `
     ConvertTo-Json $config -Depth 50 | Set-Content -Path $env:SIF_CONFIG; `
     Remove-Website -Name 'Default Web Site'; `
     Remove-WebAppPool -Name 'DefaultAppPool'; `
@@ -53,8 +63,6 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     -SolrUrl "http://solr:8983/solr" `
     -SolrCorePrefix $env:SITENAME `
     -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "StartAppPool", "StartWebsite", "UpdateSolrSchema"; `
-    Remove-Item -Path 'C:\\*.log'; `
-    Remove-Item -Path ('{0}\\App_Data\\logs' -f $env:SITEPATH) -Force -Recurse; `
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
     $iisPath = ('IIS:\Sites\{0}' -f $env:SITENAME); `
     Clear-WebConfiguration -PSPath $iisPath -Filter '/system.webserver/rewrite/rules/rule'; `
@@ -67,8 +75,9 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
 # Cleanup, post installation tweaks and start site
 RUN Start-Process msiexec.exe -ArgumentList '/x', $env:WEBDEPLOY_MSI, '/quiet', '/norestart' -NoNewWindow -Wait; `
     Uninstall-Module SitecoreInstallFramework -Force; `
-    Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name ServerPriorityTimeLimit -Value 0 -Type DWord; `
     setx /M PATH $($env:PATH + ';C:\Sitecore\Scripts'); `    
     Start-WebAppPool -Name $env:SITENAME; `
-    Start-Website -Name $env:SITENAME
+    Start-Website -Name $env:SITENAME; `
+    Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
+    Remove-Item -Path 'C:\\*.log';
