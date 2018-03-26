@@ -3,7 +3,7 @@ FROM microsoft/aspnet:4.7.1-windowsservercore-1709
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-ADD *.zip .
+COPY *.zip .
 
 RUN Expand-Archive -Path 'C:\Sitecore*.zip' -DestinationPath 'C:'; `
     Remove-Item 'C:\Sitecore*.zip' -Force; `
@@ -13,8 +13,8 @@ RUN Expand-Archive -Path 'C:\Sitecore*.zip' -DestinationPath 'C:'; `
     Remove-Item -Path 'C:\Sitecore\Data\logs' -Recurse -Force; `
     Remove-Item -Path 'C:\Sitecore *rev*' -Recurse -Force;
 
-ADD Sitecore /Sitecore
-ADD license.xml /Sitecore/Data
+COPY Sitecore /Sitecore
+COPY license.xml /Sitecore/Data
 
 RUN Import-Module WebAdministration; `
     Set-ItemProperty -Path 'IIS:\Sites\Default Web Site' -Name 'physicalPath' -Value 'C:\Sitecore\Website'; `
