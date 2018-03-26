@@ -4,6 +4,7 @@ FROM microsoft/aspnet:4.7.1-windowsservercore-1709
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 ENV SITENAME='sc'
+ENV SITEPATH=C:\inetpub\${SITENAME}
 ARG SQLADMIN_PASSWORD='HASH-epsom-sunset-cost7!'
 ARG INSTALL_TEMP='c:\\install'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cd.json
@@ -11,7 +12,7 @@ ARG SIF_PACKAGE=${INSTALL_TEMP}\\'Sitecore*_cd.scwdp.zip'
 ARG WEBDEPLOY_MSI=${INSTALL_TEMP}\\webdeploy.msi
 ARG URLREWRITE_MSI=${INSTALL_TEMP}\\urlrewrite.msi
 
-ADD . ${INSTALL_TEMP}
+COPY . ${INSTALL_TEMP}
 ADD http://download.microsoft.com/download/0/1/D/01DC28EA-638C-4A22-A57B-4CEF97755C6C/WebDeploy_amd64_en-US.msi ${WEBDEPLOY_MSI}
 ADD http://download.microsoft.com/download/D/D/E/DDE57C26-C62C-4C59-A1BB-31D58B36ADA2/rewrite_amd64_en-US.msi ${URLREWRITE_MSI}
 
@@ -26,7 +27,7 @@ RUN Start-Process msiexec.exe -ArgumentList '/i', $env:WEBDEPLOY_MSI, '/quiet', 
 RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*Configuration files*.zip') -DestinationPath $env:INSTALL_TEMP; `
     $config = Get-Content $env:SIF_CONFIG | Where-Object { $_ -notmatch '^\s*\/\/'} | Out-String | ConvertFrom-Json; `
-    $config.Variables.'Site.PhysicalPath' = 'C:\inetpub\{0}' -f $env:SITENAME; `
+    $config.Variables.'Site.PhysicalPath' = $env:SITEPATH; `
     ConvertTo-Json $config -Depth 50 | Set-Content -Path $env:SIF_CONFIG; `
     Remove-Website -Name 'Default Web Site'; `
     Install-SitecoreConfiguration -Path $env:SIF_CONFIG `
@@ -44,7 +45,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     -SolrCorePrefix $env:SITENAME `
     -Skip "CreateHostHeader", "CreateBindings", "StartAppPool", "StartWebsite"; `
     Remove-Item -Path 'C:\\*.log'; `
-    Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
+    Remove-Item -Path ('{0}\\App_Data\\logs' -f $env:SITEPATH) -Force -Recurse; `
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
     Set-WebConfiguration -PSPath ('IIS:\Sites\{0}' -f $env:SITENAME) -Filter '/system.web/customErrors/@mode' -Value 'Off'
 
