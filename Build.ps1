@@ -13,6 +13,8 @@ param(
     [Parameter(Mandatory = $false)]
     [switch]$SkipPush,
     [Parameter(Mandatory = $false)]
+    [switch]$ForcePush,
+    [Parameter(Mandatory = $false)]
     [switch]$RemoveInstallationSourceFiles
 )
 
@@ -149,7 +151,7 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
         Remove-Item $targetPath -Force
     }
 
-    if ($currentDigest -eq $previousDigest) {
+    if ((-Not $ForcePush) -And ($currentDigest -eq $previousDigest)) {
         Write-Host "Done, current digest is the same as the previous, image has not changed since last build." -ForegroundColor Green
 
         return
