@@ -11,9 +11,8 @@ param(
     [ValidateNotNullOrEmpty()] 
     [string]$Repository,
     [Parameter(Mandatory = $false)]
-    [switch]$SkipPush,
-    [Parameter(Mandatory = $false)]
-    [switch]$ForcePush,
+    [ValidateSet('Always', 'IfChanged', 'Never')]
+    [string]$PushMode = 'Never',
     [Parameter(Mandatory = $false)]
     [switch]$RemoveInstallationSourceFiles
 )
@@ -143,23 +142,21 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
 
     $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Build of '{0}' failed" -f $tag) }
 
-    # Determine if we need to push
-    $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
-    
     if ($RemoveInstallationSourceFiles) {
         Write-Host ("Done with Installation Source - Removing  '{0}'" -f $targetPath) -ForegroundColor Green
         Remove-Item $targetPath -Force
     }
 
-    if ((-Not $ForcePush) -And ($currentDigest -eq $previousDigest)) {
-        Write-Host "Done, current digest is the same as the previous, image has not changed since last build." -ForegroundColor Green
-
+    if ($PushMode -eq 'Never') {
+        Write-Warning "Done. PushMode is set to 'Never' therefore the image is not pushed to the remote repository."
         return
     }
     
-    if ($SkipPush) {
-        Write-Warning "Done, SkipPush switch used."
-
+    # Determine if we need to push
+    $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
+    
+    if (($PushMode -eq 'IfChanged') -And ($currentDigest -eq $previousDigest)) {
+        Write-Host "Done. PushMode is set to 'IfChanged' and the image has not changed since last build, therefore is not pushed to the remote repository." -ForegroundColor Green
         return
     }
     
