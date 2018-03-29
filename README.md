@@ -11,8 +11,8 @@ This repository was created to help consolidate efforts around Sitecore and Dock
 This repository was created by combining efforts / assets from repos such as [sitecoreops](https://github.com/sitecoreops/sitecore-images) and [sitecore-nine-docker](https://github.com/pbering/sitecore-nine-docker) and [sitecore-docker](https://github.com/avivasolutionsnl/sitecore-docker) repos. Thanks everyone for the great start and please feel free to continue providing feedback by creating an issue, PR, etc.
 
 ## Updates
-- [Changed] *Breaking Change* - Replace -SkipPush switch with PushMode parameter controlling when images get pushed to repository with values of 'Always', 'IfChanged', 'Never' 
-- [Added] RemoveInstallationSourceFiles switch to delete the sitecore package zip files from the local folder (Does not remove  from InstallationSourcePath)
+- [Changed] *Breaking Change* - Replace -SkipPush switch with -PushMode parameter controlling when images get pushed to repository with values of 'Always', 'IfChanged', 'Never' 
+- [Added] -RemoveInstallationSourceFiles optional switch to delete the sitecore package zip files from the local folder (Does not remove  from InstallationSourcePath)
 - [Fixed] Added UrlRewrite outbound rule to handle Sitecore redirect after login when container is running on another port than 80 (possible in Windows 10 Insider builds for the upcoming 1803 release in April).
 - [Fixed] Solr build errors regarding downloads from github (TLS 1.2 now used).
 - [Added] Specialized Solr image with all Sitecore cores embedded **and** volume support, for Sitecore 9.0.1 (which defaults to use Solr).
