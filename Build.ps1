@@ -17,6 +17,7 @@ param(
     [switch]$RemoveInstallationSourceFiles
 )
 
+
 function Find-BaseImages {
     [CmdletBinding()]
     param(
@@ -129,18 +130,28 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
         if (!(Test-Path -Path $targetPath)) {
             Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
         }
-    }
+        
+        $scriptsPath = Join-Path $version.path "scripts"
+        if (!(Test-Path -Path $scriptsPath)) {
+            Copy-Item .\Scripts $scriptsPath -Recurse
+        }
+        if ($tag -like "*Solr*") {
+            $certificateTargetPath = Join-Path $version.path "solr.pfx"
+            if (!(Test-Path -Path $certificateTargetPath)) {
+                Copy-Item .\Files\solr.pfx $certificateTargetPath
+            }
+        }
     
-    # Build image
-    if ($tag -like "*SQL*") {
-        # Building SQL based images requires more memory than the default 2GB
-        docker image build --isolation "hyperv" --memory 4GB --tag $tag $version.Path
-    }
-    else {
-        docker image build --isolation "hyperv" --tag $tag $version.Path
-    }
+        # Build image
+        if ($tag -like "*SQL*") {
+            # Building SQL based images requires more memory than the default 2GB
+            docker image build --isolation "hyperv" --memory 4GB --tag $tag $version.Path
+        }
+        else {
+            docker image build --isolation "hyperv" --tag $tag $version.Path
+        }
 
-    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Build of '{0}' failed" -f $tag) }
+        $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Build of '{0}' failed" -f $tag) }
 
     if ($RemoveInstallationSourceFiles) {
         Write-Host ("Done with Installation Source - Removing  '{0}'" -f $targetPath) -ForegroundColor Green
@@ -160,10 +171,11 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
         return
     }
     
-    # Push image
-    docker image push $tag
+        # Push image
+        docker image push $tag
 
-    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Push of '{0}' failed" -f $tag) }
+        $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Push of '{0}' failed" -f $tag) }
 
-    Write-Host ("Image '{0}' pushed." -f $tag) -ForegroundColor Green
+        Write-Host ("Image '{0}' pushed." -f $tag) -ForegroundColor Green
+    }
 }
