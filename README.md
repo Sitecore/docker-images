@@ -22,7 +22,6 @@ This repository was created by combining efforts / assets from repos such as [si
 
 ## Prerequisites
 
-- A **private** Docker repository. Any will do, but the easiest is to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), the cheapest one is $7/mo.
 - A file share that your build agents can reach, where you have placed zip files downloaded from [https://dev.sitecore.net/](https://dev.sitecore.net/) **and** your license.xml.
 - Some kind of build server for example TeamCity, with agents that runs:
   - Windows 10 or Windows Server 2016 that is up to date and at least the 1709 build.
@@ -51,3 +50,17 @@ Configure your build server to:
     -PushMode ` # Optional, Default to 'Never'. Possible values 'Always', 'IfChanged', 'Never'
     -RemoveInstallationSourceFiles # Optional switch to delete the sitecore package zip files from the local folder (Does not remove  from InstallationSourcePath)
 ````
+## Docker Registry
+
+A Docker registry is a storage and content delivery system, holding named Docker images, available in different tagged versions
+
+A **private** Docker registry is a registry with security restrictions which are managed by the registry's owner. It is commonly used by companies to store and share private Docker images among employees and collaborators.
+
+It is not necessary to have a private Docker registry to build this repository’s images, although it will be necessary to use them in multiple machines without having to rebuild them in each machine.
+
+Please notice that, due to licensing constraints, Docker images with Sitecore files cannot be stored or distributed through any **public** registry.
+
+Any private registry may work, although the easiest is to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), for a reasonable price.
+
+In case of having a private registry, use the parameter "-PushMode" while building the Docker images to push them to the private repository once they are built.
+
