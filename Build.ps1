@@ -90,15 +90,15 @@ $ErrorActionPreference = "STOP"
 $imagesPath = (Join-Path $PSScriptRoot "\sitecore")
 
 # Pull latest bases images
-Find-BaseImages -Path $imagesPath -Filter $VersionsFilter | Select-Object -Unique | ForEach-Object {
-    $tag = $_
+# Find-BaseImages -Path $imagesPath -Filter $VersionsFilter | Select-Object -Unique | ForEach-Object {
+#     $tag = $_
 
-    Write-Host ("Pulling latest base image '{0}'..." -f $tag)
+#     Write-Host ("Pulling latest base image '{0}'..." -f $tag)
 
-    docker pull $tag
+#     docker pull $tag
 
-    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Pulling '{0}' failed" -f $tag) }
-}
+#     $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Pulling '{0}' failed" -f $tag) }
+# }
 
 # What to build...
 Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -Filter $VersionsFilter | ForEach-Object {
