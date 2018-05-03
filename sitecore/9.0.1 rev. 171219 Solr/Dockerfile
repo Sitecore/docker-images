@@ -8,6 +8,11 @@ ENV JAVA_HOME C:\\ojdkbuild
 ENV JAVA_VERSION 8u161
 ENV JAVA_OJDKBUILD_VERSION 1.8.0.161-1
 ENV JAVA_OJDKBUILD_ZIP java-1.8.0-openjdk-1.8.0.161-1.b14.ojdkbuild.windows.x86_64.zip
+ENV SOLR_PREFIX='sc'
+
+ARG SOLR_VERSION=6.6.2
+ARG INSTALL_TEMP='c:\\install'
+ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-solr.json
 
 RUN setx /M PATH ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); `
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `
@@ -17,21 +22,16 @@ RUN setx /M PATH ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); `
     Move-Item -Path ('C:\{0}' -f ($env:JAVA_OJDKBUILD_ZIP -Replace '.zip$', '')) -Destination $env:JAVA_HOME; `
     Remove-Item ojdkbuild.zip -Force;
     
-# Install Solr
-ARG SOLR_VERSION=6.6.2
+# Install Solr & SIF
+
 RUN Invoke-WebRequest -Uri ('http://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SOLR_VERSION) -OutFile /solr.zip; `
     Expand-Archive -Path /solr.zip -DestinationPath /temp; `
-    Move-Item -Path "C:/temp/solr-*" -Destination c:\solr;
-
-# Install SIF
-RUN Install-PackageProvider -Name NuGet -Force | Out-Null; `
+    Move-Item -Path "C:/temp/solr-*" -Destination c:\solr; `
+    Install-PackageProvider -Name NuGet -Force | Out-Null; `
     Register-PSRepository -Name SitecoreGallery -SourceLocation https://sitecore.myget.org/F/sc-powershell/api/v2; `
     Install-Module SitecoreInstallFramework -RequiredVersion 1.1.0 -Force;
 
 # Install Sitecore Solr cores using SIF
-ARG INSTALL_TEMP='c:\\install'
-ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-solr.json
-ENV SOLR_PREFIX='sc'
 COPY . ${INSTALL_TEMP}
 RUN & 'c:/solr/bin/solr.cmd' start -p 8983; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
