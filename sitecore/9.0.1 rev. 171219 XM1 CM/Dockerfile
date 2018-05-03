@@ -1,5 +1,6 @@
 # escape=`
-FROM sitecore.azurecr.io/sitecore:9.0.171219-base
+ARG BASE_IMAGE
+FROM ${BASE_IMAGE}
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
