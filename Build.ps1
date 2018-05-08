@@ -1,4 +1,4 @@
-[CmdletBinding()]
+﻿[CmdletBinding()]
 param(
     [Parameter(Mandatory = $false)]
     [string]$VersionsFilter = "*",
@@ -16,101 +16,58 @@ param(
     [Parameter(Mandatory = $false)]
     [switch]$RemoveInstallationSourceFiles
 )
+Import-Module .\build-support.psm1 -Force 
 
-function Find-BaseImages {
-    [CmdletBinding()]
+function Find-ExternalBaseImages {
+    [cmdletbinding()]
     param(
-        [Parameter(Mandatory = $true)]
-        [ValidateScript( {Test-Path $_ -PathType 'Container'})]
-        [string]$Path,
-        [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [string]$Filter
-    )
-
-    Get-ChildItem -Path $Path -Filter $Filter | Foreach-Object {
-        Get-ChildItem -Path $_.FullName -Filter "Dockerfile" | Foreach-Object {
-            $fromImages = Get-Content -Path $_.FullName | Where-Object { $_.StartsWith("FROM ") } | ForEach-Object { Write-Output $_.Replace("FROM ", "").Trim() }
-            
-            $fromImages | ForEach-Object {
-                $image = $_
-
-                if ($image -like "* as *") {
-                    $image = $image.Substring(0, $image.IndexOf(" as "))
-                }
-
-                if ([string]::IsNullOrEmpty($image)) {
-                    throw ("Invalid dockerfile '{0}', FROM image could not be read." -f $_.FullName)
-                }
-
-                Write-Output $image
-            }
-        }
-    }
-}
-
-function Find-SitecoreVersions {
-    [CmdletBinding()]
-    param(
-        [Parameter(Mandatory = $true)]
-        [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
-        [string]$Path,
+        [object[]]$Images,
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()] 
-        [string]$Filter,
-        [Parameter(Mandatory = $true)]
-        [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
-        [string]$InstallSourcePath
+        [string]$Repository # Can include Organization if needed: <Organization>/<Repository>  | <Repository>
     )
-  
-    Get-ChildItem -Path $Path -Filter $Filter | Foreach-Object {
-        $version = $_
-        $buildFilePath = Join-Path $version.FullName "\build.json"
 
-        if (Test-Path $buildFilePath -PathType Leaf) {
-            $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
-            $sources = $data.sources | ForEach-Object {
-                Write-Output (Join-Path $InstallSourcePath $_)
+    $externalImages = @{}
+    Foreach ($image in $Images) {
+        if ($image.BaseImages) {
+            Foreach ($baseImage in $image.BaseImages) {
+                if (-not $externalImages.ContainsKey($baseImage) -And -not $baseImage.StartsWith($Repository, "CurrentCultureIgnoreCase")) {
+                    $externalImages.add($baseImage, $baseImage)
+                }
             }
-
-            Write-Output (New-Object PSObject -Property @{
-                    Tag     = $data.tag;
-                    Path    = $version.FullName;
-                    Sources = $sources;
-                })
-        }
-        else {
-            throw ("Invalid version folder '{0}', file not found: '{1}'." -f $version.Name, $buildFilePath)
         }
     }
+
+    $externalImages.Values
 }
 
 $ErrorActionPreference = "STOP"
 
 $imagesPath = (Join-Path $PSScriptRoot "\sitecore")
 
+if (![string]::IsNullOrEmpty($Organization) -and -not $Repository.Contains('/')) {
+    $Repository = "{0}/{1}" -f $Organization, $Repository
+}
+ 
+
+$images = Scan-ImageBuildFolders -Path $imagesPath -InstallSourcePath $InstallSourcePath -Filter $VersionsFilter -Repository $Repository 
+
+$images = Sort-Images -Images $images
+
+
 # Pull latest bases images
-Find-BaseImages -Path $imagesPath -Filter $VersionsFilter | Select-Object -Unique | ForEach-Object {
-    $tag = $_
-
-    Write-Host ("Pulling latest base image '{0}'..." -f $tag)
-
-    docker pull $tag
-
-    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Pulling '{0}' failed" -f $tag) }
+Find-ExternalBaseImages -Images $images -Repository $Repository| ForEach-Object {
+    $baseImage = $_
+    Write-Host ("Pulling latest base image '{0}'..." -f $baseImage)
+    docker pull $baseImage
+    $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Pulling '{0}' failed" -f $baseImage) }
 }
 
-# What to build...
-Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -Filter $VersionsFilter | ForEach-Object {
-    $version = $_
+$images | ForEach-Object {
+    $image = $_
 
-    # Build up tag to use
-    $tag = "{0}:{1}" -f $Repository, $version.Tag
-
-    if (![string]::IsNullOrEmpty($Organization)) {
-        $tag = "{0}/{1}" -f $Organization, $tag
-    }
-   
+    $tag = $image.FullName
+    
     # Save the digest of previous builds for later comparison
     $previousDigest = $null
     
@@ -121,25 +78,38 @@ Find-SitecoreVersions -Path $imagesPath -InstallSourcePath $InstallSourcePath -F
     Write-Host ("Building '{0}'..." -f $tag)
 
     # Copy any missing source files into build context
-    $version.Sources | ForEach-Object {
+    $image.Sources | ForEach-Object {
         $sourcePath = $_
         $sourceItem = Get-Item -Path $sourcePath
-        $targetPath = Join-Path $version.Path $sourceItem.Name
+        $targetPath = Join-Path $image.Path $sourceItem.Name
 
         if (!(Test-Path -Path $targetPath)) {
             Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
         }
     }
     
-    # Build image
-    if ($tag -like "*SQL*") {
-        # Building SQL based images requires more memory than the default 2GB
-        docker image build --isolation "hyperv" --memory 4GB --tag $tag $version.Path
-    }
-    else {
-        docker image build --isolation "hyperv" --tag $tag $version.Path
+    if ((docker image ls $tag --quiet)) {
+        $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
     }
 
+    # Build image
+    $exp = 'docker image build --isolation "hyperv"'
+    if ($image.Memory) {
+        $exp = $exp + ' --memory ' + $image.Memory
+    }
+    if ($image.Args) {
+        $image.Args.PSobject.Properties | ForEach-Object {
+            $exp = $exp + ' --build-arg "' + $_.name + '=' + $_.value + '"'
+        }
+    }
+    $exp = $exp + ' --tag ' + $tag
+    $exp = $exp + ' "' + $image.Path + '"'
+
+    Write-Host $exp
+    Invoke-Expression $exp
+    
+    
+    
     $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw ("Build of '{0}' failed" -f $tag) }
 
     if ($RemoveInstallationSourceFiles) {
