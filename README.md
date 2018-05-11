@@ -85,11 +85,11 @@ Here is the convention used when tagging images:
 "YOUR DOCKER REPOSITORY PASSWORD" | docker login --username "YOUR DOCKER REPOSITORY USERNAME" --password-stdin
 
 # Load module
-Import-Module (Join-Path $PSScriptRoot ".\modules\SitecoreImageBuilder") -Force
+Import-Module ".\modules\SitecoreImageBuilder" -Force
 
 # Build and push
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\images") `
+    -Path ".\images" `
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
     -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the DNS to your private registry.
     -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1803", "sitecore-*:9.0.1*1803" to only build 9.0.x images on 1803.
