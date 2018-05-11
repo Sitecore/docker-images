@@ -87,7 +87,7 @@ function Invoke-Build
     Write-Host "### External images is up to date..." -ForegroundColor Green
 
     # Start build...
-    $specs | Where-Object { $_.Include } | Sort-Object -Property Version, Order | ForEach-Object {
+    $specs | Where-Object { $_.Include } | ForEach-Object {
         $spec = $_
         $tag = $spec.Tag
 
