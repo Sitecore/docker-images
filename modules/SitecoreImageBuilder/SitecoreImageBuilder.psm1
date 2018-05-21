@@ -114,7 +114,15 @@ function Invoke-Build
         }
     
         # Build image
-        docker image build --isolation "hyperv" --memory 4GB --tag $tag $spec.Path
+        if ($tag -like "*sql*")
+        {
+            # Building SQL based images needs more memory than the default 2GB...
+            docker image build --isolation "hyperv" --memory 4GB --tag $tag $spec.Path
+        }
+        else
+        {
+            docker image build --isolation "hyperv" --tag $tag $spec.Path
+        }
 
         $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
 
