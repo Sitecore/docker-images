@@ -1,3 +1,7 @@
 ﻿*.zip
 license.xml
 *-Local.ps1
+
+tests/**/data/**/*
+!tests/**/data/*/
+!tests/**/data/*/README.md
