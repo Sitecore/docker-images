@@ -231,7 +231,7 @@ function Get-CurrentImages
                     OS           = $os;
                     "OS Version" = $osVersion;
                     Tag          = $spec.Tag;
-                    Path         = "images{0}/Dockerfile" -f $spec.Path.Replace($Path, "").Replace("\", "/").Replace(" ", "%20");
+                    Path         = "images{0}/Dockerfile" -f $spec.Path.Replace((Get-Item -Path $Path).FullName, "").Replace("\", "/").Replace(" ", "%20");
                 })
         }
     }
