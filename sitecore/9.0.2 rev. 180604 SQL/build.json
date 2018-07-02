@@ -1,0 +1,7 @@
+{
+    "tag": "9.0.180604-sql",
+	"memory": "4GB",
+    "sources": [
+        "Sitecore 9.0.2 rev. 180604 (WDP XP0 packages).zip"
+    ]
+}
