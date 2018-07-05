@@ -1,0 +1,8 @@
+{
+    "tag": "9.0.180604-xm1-cm",
+	"args": {"BASE_IMAGE": "${Repository}:9.0.180604-base"},
+    "sources": [
+        "license.xml",
+        "Sitecore 9.0.2 rev. 180604 (WDP XM1 packages).zip"
+    ]
+}
