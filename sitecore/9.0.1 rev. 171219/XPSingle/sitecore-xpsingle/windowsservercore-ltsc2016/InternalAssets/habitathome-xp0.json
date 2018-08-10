@@ -1,0 +1,46 @@
+{
+    "Parameters": {
+        "SSLCert": {
+            "Type": "string",
+            "Description": "The certificate to use for HTTPS web bindings. Provide the name or the thumbprint. If not provided a certificate will be generated."
+        },
+        "SiteName": {
+            "Type": "string",
+            "Description": "The name of the site deployed site in iis."
+        },
+        "HostHeader": {
+            "Type": "string",
+            "Reference": "SiteName",
+            "Description": "The hostheader to add for the site."
+        },
+        "Port": {
+            "Type": "int",
+            "DefaultValue": 443,
+            "Description": "The port to bind to."
+        }
+    },
+    "Variables": {
+        "Security.CertificateStore": "Cert:\\Localmachine\\My",
+        "Security.SSL.CertificateThumbprint": "[GetCertificateThumbprint(parameter('SSLCert'), variable('Security.CertificateStore'))]"
+    },
+    "Tasks": {
+        "CreateBindingsWithThumprint": {
+            "Type": "WebBinding",
+            "Params": {
+                "SiteName": "[parameter('SiteName')]",
+                "Add": [{
+                    "HostHeader": "[parameter('HostHeader')]",
+                    "Protocol": "https",
+                    "SSLFlags": 1,
+                    "Thumbprint": "[variable('Security.SSL.CertificateThumbprint')]"
+                }]
+            }
+        },
+        "CreateHostHeader": {
+            "Type": "HostHeader",
+            "Params": {
+                "HostName": "[parameter('HostHeader')]"
+            }
+        }
+    }
+}

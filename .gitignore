@@ -2,3 +2,6 @@
 license.xml
 *-Local.ps1
 Files/
+*.zip
+Assets/
+ExternalAssets/
