@@ -74,7 +74,7 @@ function Invoke-Build
     Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
     # Pull latest external images
-    $specs | Select-Object -ExpandProperty Base | Where-Object { $_ -notmatch "^sitecore-(.*)$" } | Select-Object -Unique | ForEach-Object {
+    $specs | Select-Object -ExpandProperty Base | Where-Object { !($_.StartsWith("sitecore")) } | Select-Object -Unique | ForEach-Object {
         $tag = $_
 
         docker pull $tag
