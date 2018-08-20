@@ -101,13 +101,13 @@ function Invoke-Build
             $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
         }
 
-        # Copy any missing source files into build context
+        # Copy license.xml and any missing source files into build context
         $spec.Sources | ForEach-Object {
             $sourcePath = $_
             $sourceItem = Get-Item -Path $sourcePath
             $targetPath = Join-Path $spec.Path $sourceItem.Name
 
-            if (!(Test-Path -Path $targetPath))
+            if (!(Test-Path -Path $targetPath) -or ($sourceItem.Name -eq "license.xml"))
             {
                 Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
             }
