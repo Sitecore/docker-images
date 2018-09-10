@@ -19,6 +19,14 @@ This repository was created by combining efforts / assets from repos such as [si
 - [Added] Specialized SQL Server images with all Sitecore databases embedded **and** volume support, for Sitecore 9.
 - [Changed] all Sitecore 9 images now default has connection strings matching the new specialized SQL Server images.
 - [Added] XM1 CM and CD role images for Sitecore 9.
+### August 2018
+- [Changed] *Breaking Change* Replaced Build.ps1 by new module "Sitecore.DockerImages.Management"
+- [New] *Breaking Change* Dependency on external module "Bendev.Assets.Management"
+- [Changed] *Breaking Change* New folder naming
+- [New] XP Single base image
+- [New] XP Single image
+- [Changed] Containers' layers optimisation
+- [Changed] Performance optimisations
 
 ## Prerequisites
 
@@ -27,29 +35,67 @@ This repository was created by combining efforts / assets from repos such as [si
   - Windows 10 or Windows Server 2016 that is up to date and at least the 1709 build.
   - Hyper-V installed.
   - Latest stable Docker engine and cli.
+  - The following PowerShell modules installed (to be installed in the same order as shown below):
+    - "Bendev.Assets.Management": Available on the PowerShell Gallery: https://www.powershellgallery.com/packages/Bendev.Assets.Management/1.0.0.1
+    - "Sitecore.DockerImages.Management": Available in this repository under "/modules/Sitecore.DockerImages.Management/"
 
 ## How to use
 
-Configure your build server to:
+### Get ready
 
-1. Trigger a build on changes to this git repository - to get new versions.
-1. Trigger once a week - to get base images updated when Microsoft releases patched images.
+The build proces is performed by the module "Sitecore.DockerImages.Management". This module replaces the old PowerShell script named "Build.ps1". 
 
-./Build.ps1 should be called like this:
+Before using the "Sitecore.DockerImages.Management" module, it needs to be imported with one of the following instructions:
+
+````PowerShell
+# Loading the module from standard PowerShell's modules folder
+Import-Module Sitecore.DockerImages.Management -Force -Verbose
+
+# Loading the module directly from the repository's code
+Import-Module –Name 'C:\docker\Sitecore\docker-images\modules\Sitecore.DockerImages.Management' -Force -Verbose
+````
+
+
+### Build process
+
+The build process should be triggered as follows:
 
 ````PowerShell
 # Login
 "YOUR DOCKER REPOSITORY PASSWORD" | docker login --username "YOUR DOCKER REPOSITORY USERNAME" --password-stdin
 
 # Build and push
-. (Join-Path $PSScriptRoot "Build.ps1") `
-    -VersionsFilter "*" ` # optional, set to for example "9.0*" to only build 9.0 images
-    -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
-    -Organization "YOUR ORG NAME" ` # On Docker Hub it's your username unless you create an organization
-    -Repository "sitecore" `
-    -PushMode ` # Optional, Default to 'Never'. Possible values 'Always', 'IfChanged', 'Never'
-    -RemoveInstallationSourceFiles # Optional switch to delete the sitecore package zip files from the local folder (Does not remove  from InstallationSourcePath)
+Invoke-SitecoreDockerImageBuild `
+  -BuildRootPath "c:\\docker\\Sitecore\\docker-images\\sitecore" `
+  -VersionsFilter ".*\\9\.0\.2 rev\. 180604\\.*sitecore-xpsingle.*\\windowsservercore-ltsc2016$" `
+  -AssetsSourcePath "c:\\Software\\Sitecore\\Repository\\" `
+  -AssetsTransformPath "c:\tmp" `
+  -Registry "YourPrivateRepo.azurecr.io" `
+  -Isolation 'None' `
+  -PushMode 'Never' 
 ````
+
+Where:
+- **BuildRootPath**: Mandatory. Path to the root folder where all images are defined.
+- **VersionsFilter**: Optional. Regular expression used to filter the images to be built based on their full path.
+- **AssetsSourcePath**: Mandatory. Path to the folder where the required installation files can be found. The Sitecore license file should also be in this folder
+- **AssetsTransformPath**: Optional. Path to the folder where the source assets will be pre-processed before being handled to the Docker build context. If missing the folder indicated with parameter "AssetsSourcePath" will be used instead.
+- **Registry**: Mandatory. Name of the private docker registry where the new docker images will belong to
+- **Isolation**: Optional. Supported values: 'None' and 'hyperv'. Default: 'hyperv'. It allows to specify the parameter "--isolation" in the [docker build](https://docs.docker.com/engine/reference/commandline/build/#specify-isolation-technology-for-container---isolation) command.
+- **PushMode**: Optional. Supported values: 'Always', 'IfChanged', 'Never'. Default: 'Never'. Indicates whether the images must be pushed to the registry after it is built.
+- **RemoveInstallationAssetFiles**: Optional. Supported values: true and false, Default: false. Indicates whether installation assets should be removed after building the images.
+- **WhatIf**: Optional. Allows to check whether the images' assets exists without performing further actions.
+
+Please notice that the module "Sitecore.DockerImages.Management" has a dependency on the module "Bendev.Assets.Management" and must be installed and imported after the "Bendev.Assets.Management" is installed.
+
+### Build Server
+
+Configure your build server to:
+
+1. Trigger a build on changes to this git repository - to get new versions.
+1. Trigger once a week - to get base images updated when Microsoft releases patched images.
+
+
 ## Docker Registry
 
 A Docker registry is a storage and content delivery system, holding named Docker images, available in different tagged versions
