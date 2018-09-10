@@ -1,7 +1,7 @@
 # Repository of Sitecore Docker base images
 
 
-Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. You can use this repository *directly* from you own build server and have it build and push images to your own private Docker repository.
+Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. You can use this repository *directly* from your own build server and build and push images to your own private Docker repository.
 
 There are some more background and details in this post: [https://invokecommand.net/posts/automatically-build-and-update-base-images](https://invokecommand.net/posts/automatically-build-and-update-base-images).
 
@@ -12,9 +12,9 @@ This repository was created by combining efforts / assets from repos such as [si
 
 ## Updates
 - [Changed] *Breaking Change* - Replace -SkipPush switch with -PushMode parameter controlling when images get pushed to repository with values of 'Always', 'IfChanged', 'Never' 
-- [Added] -RemoveInstallationSourceFiles optional switch to delete the sitecore package zip files from the local folder (Does not remove  from InstallationSourcePath)
+- [Added] -RemoveInstallationSourceFiles optional switch to delete the Sitecore package zip files from the local folder (Does not remove  from InstallationSourcePath)
 - [Fixed] Added UrlRewrite outbound rule to handle Sitecore redirect after login when container is running on another port than 80 (possible in Windows 10 Insider builds for the upcoming 1803 release in April).
-- [Fixed] Solr build errors regarding downloads from github (TLS 1.2 now used).
+- [Fixed] Solr build errors regarding downloads from GitHub (TLS 1.2 now used).
 - [Added] Specialized Solr image with all Sitecore cores embedded **and** volume support, for Sitecore 9.0.1 (which defaults to use Solr).
 - [Added] Specialized SQL Server images with all Sitecore databases embedded **and** volume support, for Sitecore 9.
 - [Changed] all Sitecore 9 images now default has connection strings matching the new specialized SQL Server images.
@@ -43,7 +43,7 @@ This repository was created by combining efforts / assets from repos such as [si
 
 ### Get ready
 
-The build proces is performed by the module "Sitecore.DockerImages.Management". This module replaces the old PowerShell script named "Build.ps1". 
+The build process is performed by the module "Sitecore.DockerImages.Management". This module replaces the old PowerShell script named "Build.ps1". 
 
 Before using the "Sitecore.DockerImages.Management" module, it needs to be imported with one of the following instructions:
 
@@ -84,7 +84,7 @@ Where:
 - **Isolation**: Optional. Supported values: 'None' and 'hyperv'. Default: 'hyperv'. It allows to specify the parameter "--isolation" in the [docker build](https://docs.docker.com/engine/reference/commandline/build/#specify-isolation-technology-for-container---isolation) command.
 - **PushMode**: Optional. Supported values: 'Always', 'IfChanged', 'Never'. Default: 'Never'. Indicates whether the images must be pushed to the registry after it is built.
 - **RemoveInstallationAssetFiles**: Optional. Supported values: true and false, Default: false. Indicates whether installation assets should be removed after building the images.
-- **WhatIf**: Optional. Allows to check whether the images' assets exists without performing further actions.
+- **WhatIf**: Optional. Allows to check whether the images' assets exist without performing further actions.
 
 Please notice that the module "Sitecore.DockerImages.Management" has a dependency on the module "Bendev.Assets.Management" and must be installed and imported after the "Bendev.Assets.Management" is installed.
 
