@@ -12,10 +12,11 @@ https://github.com/pbering/SockerVS2017
 https://github.com/pbering/solrwin
 
 **Joost Meijles (Aviva Solutions)**: His contributions in GitHub have been a source of inspiration. He is also active in community discussions about using Docker with Sitecore.
-https://github.com/sitecoreops/sitecore-images
+https://github.com/avivasolutionsnl/sitecore-commerce-docker
 https://github.com/joostmeijles/sitecore-commerce-docker
-https://github.com/joostmeijles/sitecore-docker
 https://github.com/avivasolutionsnl/sitecore-docker
+https://github.com/sitecoreops/sitecore-images
+
 
 **Benjamin Moles Segovia (ClearPeople)**: He is a major contributor on the two official Sitecore's Docker related repositories on GitHub.
 https://github.com/Ben-m-s/Bendev.Assets.Management
