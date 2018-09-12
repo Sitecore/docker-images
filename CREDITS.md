@@ -3,7 +3,7 @@
 Below is a list of people which contributions in the community have be helpful for this repository to progress.
 
 **Per Bering**: One of the first promoters of Docker for Sitecore. He is a major contributor to this repository, and actively helps peers with Docker related matters on different channels.
-https://github.com/sitecoreops/sitecore-images
+https://github.com/sitecore/docker-images
 https://github.com/Sitecore/docker-demo
 https://github.com/pbering/SitecoreContainers
 https://github.com/sitecoreops/sitecore-images
@@ -20,10 +20,11 @@ https://github.com/sitecoreops/sitecore-images
 
 **Benjamin Moles Segovia (ClearPeople)**: He is a major contributor on the two official Sitecore's Docker related repositories on GitHub.
 https://github.com/Ben-m-s/Bendev.Assets.Management
-https://github.com/sitecoreops/sitecore-images
+https://github.com/sitecore/docker-images
 https://github.com/Sitecore/docker-demo
 
-**Jonne**: His contributions on GitHub have been useful in several moments during development.
+**Jonne Kats**: His contributions in GitHub have been a source of inspiration.
+https://github.com/avivasolutionsnl/sitecore-commerce-docker
 https://github.com/avivasolutionsnl/sitecore-docker
 
 **Richard Brisley**: His repository was very useful to create the first XPSingle version.
