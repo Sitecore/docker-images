@@ -65,6 +65,7 @@ RUN Rename-Item -Path '.\001.Sitecore.Speak.Important.config' -NewName '001.Site
     Rename-Item -Path '.\Social\Sitecore.Social.ExperienceProfile.config' -NewName 'Sitecore.Social.ExperienceProfile.config.disabled'; `
     Rename-Item -Path '.\Social\Sitecore.Social.Lucene.Index.Master.config' -NewName 'Sitecore.Social.Lucene.Index.Master.config.disabled'; `
     Rename-Item -Path '.\Social\Sitecore.Social.ScalabilitySettings.config.disabled' -NewName 'Sitecore.Social.ScalabilitySettings.config'; `
+    Rename-Item -Path '.\Z.SwitchMasterToWeb\SwitchMasterToWeb.config.example' -NewName 'SwitchMasterToWeb.config'; `
     Rename-Item -Path '.\Sitecore.Update.config' -NewName 'Sitecore.Update.config.disabled'; `
     Rename-Item -Path '.\..\..\sitecore\shell\Applications\Reports\Dashboard\CampaignCategoryDefaultSettings.config' -NewName 'CampaignCategoryDefaultSettings.config.disabled'; `
     Rename-Item -Path '.\..\..\sitecore\shell\Applications\Reports\Dashboard\Configuration.config' -NewName 'Configuration.config.disabled'; `
