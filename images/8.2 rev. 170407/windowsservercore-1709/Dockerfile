@@ -16,11 +16,11 @@ RUN Expand-Archive -Path 'C:\Sitecore*.zip' -DestinationPath 'C:'; `
 COPY Sitecore /Sitecore
 COPY license.xml /Sitecore/Data
 
-USER ContainerAdministrator
+RUN Add-LocalGroupMember -Group 'Administrators' -Member 'IIS AppPool\DefaultAppPool';
 
 RUN Import-Module WebAdministration; `
     Set-ItemProperty -Path 'IIS:\Sites\Default Web Site' -Name 'physicalPath' -Value 'C:\Sitecore\Website'; `
     Set-ItemProperty -Path 'IIS:\AppPools\DefaultAppPool' -Name 'enable32BitAppOnWin64' -Value 'True'; `
     Set-Itemproperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name ServerPriorityTimeLimit -Value 0 -Type DWord; `
-    setx /M PATH $($env:PATH + ';C:\Sitecore\Scripts'); `
-    Add-LocalGroupMember -Group 'Administrators' -Member 'IIS AppPool\DefaultAppPool';
+    setx /M PATH $($env:PATH + ';C:\Sitecore\Scripts');
+
