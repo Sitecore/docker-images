@@ -16,8 +16,6 @@ RUN Expand-Archive -Path 'C:\Sitecore*.zip' -DestinationPath 'C:'; `
 COPY Sitecore /Sitecore
 COPY license.xml /Sitecore/Data
 
-RUN Add-LocalGroupMember -Group 'Administrators' -Member 'IIS AppPool\DefaultAppPool';
-
 RUN Import-Module WebAdministration; `
     Set-ItemProperty -Path 'IIS:\Sites\Default Web Site' -Name 'physicalPath' -Value 'C:\Sitecore\Website'; `
     Set-ItemProperty -Path 'IIS:\AppPools\DefaultAppPool' -Name 'enable32BitAppOnWin64' -Value 'True'; `
