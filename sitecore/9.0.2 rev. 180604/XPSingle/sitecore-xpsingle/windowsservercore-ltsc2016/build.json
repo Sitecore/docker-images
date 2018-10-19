@@ -1,0 +1,57 @@
+{
+    "repository": "sitecore-xpsingle",
+    "tags": [
+		"9.0.2.180604-windowsservercore-ltsc2016"
+	],
+	"args": {"BASE_IMAGE": "${Registry}/sitecore-xpsingle-base:9.0.2.180604-windowsservercore-ltsc2016"},
+	"memory": "8GB",
+    "assets": [
+		{"SourcePath": "License.xml", "TargetPath": "ExternalAssets"},
+        {
+			"SourcePath": "Sitecore 9.0.2 rev. 180604 (WDP XP0 packages).zip",
+			"Transforms":[
+				{"Type": "UnzipTransform", "TargetPath": "Sc9.0.2.180604_WDP_XP0"}
+			],
+			"Assets": [
+				{
+					"SourcePath": "XP0 Configuration files 9.0.2 rev. 180604.zip",
+					"Transforms":[
+						{"Type": "UnzipTransform", "TargetPath": "XP0 Configuration files 9.0.2 rev. 180604"}
+					],
+					"assets": [
+						{
+							"SourcePath": "sitecore-xp0.json",
+							"Transforms":[
+								{
+									"Type": "PowerShellScriptTransform", 
+									"PSScript": "Transforms\\sitecore-xp0.ps1", 
+									"TargetPath": "sitecore-xp0-docker.json"
+								}
+							],
+							"TargetPath": "ExternalAssets"
+						},
+						{
+							"SourcePath": "xconnect-xp0.json",
+							"Transforms":[
+								{
+									"Type": "PowerShellScriptTransform", 
+									"PSScript": "Transforms\\xconnect-xp0.ps1", 
+									"TargetPath": "xconnect-xp0-docker.json"
+								}
+							],
+							"TargetPath": "ExternalAssets"
+						}
+					]
+				},
+				{
+					"SourcePath": "Sitecore 9.0.2 rev. 180604 (OnPrem)_single.scwdp.zip",
+					"TargetPath": "ExternalAssets"
+				},
+				{
+					"SourcePath": "Sitecore 9.0.2 rev. 180604 (OnPrem)_xp0xconnect.scwdp.zip",
+					"TargetPath": "ExternalAssets"
+				}
+			]
+		}
+    ]
+}
