@@ -8,15 +8,15 @@ There are some more background and details in this post: [https://invokecommand.
 
 - [Changed] Migrated Microsoft base images to use the [new official registry "mcr.microsoft.com"](https://azure.microsoft.com/en-us/blog/microsoft-syndicates-container-catalog/).
 - [Added] Sitecore 8.2.180406 Solr on nanoserver-1803.
-- [Added] Sitecore 8.2.180406 SQL Developer variant on windowsservercore-1803.
+- [Added] Sitecore 8.2.180406 SQL Developer on windowsservercore-1803.
 - [Added] CD, CM, Processing and Reporting roles to Sitecore 8.2.180406 on windowsservercore-1803.
 - [Added] Sitecore 8.2.* on windowsservercore-1803.
-- [Added] Sitecore 9.0.2 XM1, SQL Developer and Solr on 1803.
+- [Added] Sitecore 9.0.2 XM1 CM/CD, SQL Developer and Solr on 1803.
 - [Added] Sitecore 9.0.1 on windowsservercore-1803.
 - [Added] Sitecore 9.0.1 Solr on nanoserver-1803.
-- [Added] Sitecore 9.0.1 SQL Developer variant on windowsservercore-1803.
-- [Added] Sitecore 9.0.1 Solr variant on windowsservercore-1709.
-- [Added] Sitecore 9.0.1 SQL Developer variant on windowsservercore-1709.
+- [Added] Sitecore 9.0.1 SQL Developer on windowsservercore-1803.
+- [Added] Sitecore 9.0.1 Solr on windowsservercore-1709.
+- [Added] Sitecore 9.0.1 SQL Developer on windowsservercore-1709.
 - [Breaking] Restructured versions and tags to support multiple Windows channels (ltsc2016, 1709, 1803 etc), there are now more repositories per version, one for each topology/role. See [Tags and Windows versions](#tags-and-windows-versions).
 - [Breaking] Decoupled image tags from structure by specifying full tag in "build.json".
 - [Added] Sitecore 8.2 Update 7.
@@ -31,6 +31,8 @@ There are some more background and details in this post: [https://invokecommand.
 
 | Version | Repository | OS  | OS Version | Tag |
 | ------- | ---------- | --- | -----------| --- |
+| 9.0.180604 | sitecore-base | windowsservercore | ltsc2019 | `sitecore-base:9.0.180604-windowsservercore-ltsc2019` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-ltsc2019/sitecore-base/Dockerfile) |
+| 9.0.180604 | sitecore-solr | nanoserver | 1809 | `sitecore-solr:9.0.180604-nanoserver-1809` [Dockerfile](images/9.0.2%20rev.%20180604/nanoserver-1809/sitecore-solr/Dockerfile) |
 | 9.0.180604 | sitecore-xm1-cm | windowsservercore | 1803 | `sitecore-xm1-cm:9.0.180604-windowsservercore-1803` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1803/sitecore-xm1-cm/Dockerfile) |
 | 9.0.180604 | sitecore-xm1-cd | windowsservercore | 1803 | `sitecore-xm1-cd:9.0.180604-windowsservercore-1803` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1803/sitecore-xm1-cd/Dockerfile) |
 | 9.0.180604 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:9.0.180604-windowsservercore-1803` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
