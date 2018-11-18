@@ -129,26 +129,3 @@ SitecoreImageBuilder\Invoke-Build `
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
 
 ```
-
-## Improvements in 1803
-
-Besides the ability to publish ports on localhost and better NAT throughput, startup time has improved and image sizes are also reduced quite a lot. Read more about [Network start-up and performance improvements in Windows 10 April 2018 Update and Windows Server, version 1803](https://blogs.technet.microsoft.com/networking/2018/04/27/network-start-up-and-performance-improvements-in-windows-10-spring-creators-update-and-windows-server-version-1803/).
-
-### Startup
-
-Measurements of starting up a minimal compose file with sql, solr and a cm service with `docker-compose up` and warmup is time the first request to `/sitecore/login` takes:
-
-| OS            | Up (sec) | Warmup (sec) |
-| ------------- | --------:| ------------:|
-| 1709          | 38       | 45           |
-| 1803          | **26**   | **42**       |
-
-> Tested on Windows 10 1803 with a gen. 4 i7-4790 CPU @ 3.60 GHz and a Samsung 850 EVO SSD disk.
-
-### Image sizes
-
-| Image    | 1709     | 1803        |
-| ---------| --------:| -----------:|
-| sql      | 14.00 GB | **6.95 GB** |
-| solr     | 1.50 GB  | **672 MB**  |
-| sitecore | 9.69 GB  | **6.13 GB** |
