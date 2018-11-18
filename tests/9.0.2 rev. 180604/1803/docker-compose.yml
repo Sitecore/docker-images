@@ -7,13 +7,16 @@ services:
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2000MB
-    
+    ports:
+      - "44003:1433"
+
   solr:
     image: sitecore-solr:9.0.180604-nanoserver-1803
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1000MB
-
+    ports:
+      - "44002:8983"
   cm:
     image: sitecore-xm1-cm:9.0.180604-windowsservercore-1803
     volumes:
