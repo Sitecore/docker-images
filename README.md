@@ -6,6 +6,7 @@ There are some more background and details in this post: [https://invokecommand.
 
 ## Updates
 
+- [Changed] Migrated Microsoft base images to use the [new official registry "mcr.microsoft.com"](https://azure.microsoft.com/en-us/blog/microsoft-syndicates-container-catalog/).
 - [Added] Sitecore 8.2.180406 Solr on nanoserver-1803.
 - [Added] Sitecore 8.2.180406 SQL Developer variant on windowsservercore-1803.
 - [Added] CD, CM, Processing and Reporting roles to Sitecore 8.2.180406 on windowsservercore-1803.
