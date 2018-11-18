@@ -18,7 +18,7 @@ RUN setx /M PATH ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); `
     Remove-Item ojdkbuild.zip -Force;
     
 # Install Solr
-ARG SOLR_VERSION=6.6.2
+ARG SOLR_VERSION=6.6.3
 RUN Invoke-WebRequest -Uri ('http://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SOLR_VERSION) -OutFile /solr.zip; `
     Expand-Archive -Path /solr.zip -DestinationPath /temp; `
     Move-Item -Path "C:/temp/solr-*" -Destination c:\solr;
