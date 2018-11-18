@@ -127,5 +127,4 @@ SitecoreImageBuilder\Invoke-Build `
     -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the DNS to your private registry.
     -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1803", "sitecore-*:9.0.1*1803" to only build 9.0.x images on 1803.
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
-
 ```
