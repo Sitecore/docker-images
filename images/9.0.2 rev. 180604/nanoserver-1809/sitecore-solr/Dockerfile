@@ -49,16 +49,11 @@ FROM sitecore-openjdk:8-nanoserver-1809 as final
 COPY --from=builder /solr /solr
 COPY --from=builder /clean /clean
 COPY --from=builder /windows/system32/find.exe /windows/system32/
-COPY MapDrive.cmd MapDrive.cmd
 
 VOLUME c:/data
 
-# Workaround for java issues with Windows container symlinks: https://github.com/moby/moby/issues/27537#issuecomment-271546031
-USER ContainerAdministrator
-RUN MapDrive.cmd G:
-
-# Set solr home dir to above mapped drive
-ENV SOLR_HOME=G:/
+# Set solr home dir to volume
+ENV SOLR_HOME=c:/data
 
 # Expose default port
 EXPOSE 8983
