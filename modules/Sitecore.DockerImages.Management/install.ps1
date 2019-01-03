@@ -1,6 +1,8 @@
 #
 # This script will install module in Powershell modules localization.
-# Install means copy files from repo to $env:ProgramFiles\WindowsPowerShell\Modules\$moduleName"
+# Install means copy files from repo to $env:ProgramFiles\*PowerShell\Modules\$moduleName
+# PowerShell 6 changes the default paths for identifying installed modules. The wildcard
+# in the pattern resolves the discrepancy.
 #
 $moduleName = "Sitecore.DockerImages.Management"
 $projectFolder = Split-Path -Parent $MyInvocation.MyCommand.Path
@@ -14,7 +16,8 @@ $modulePath = "$projectFolder"
 
 Foreach ($psPath in $env:PSModulePath.Split(";"))
 {
-	if ($psPath -like 'C:\Program Files\*PowerShell\Modules')
+	$pattern = "$env:ProgramFiles\*PowerShell\Modules";
+	if ($psPath -like $pattern)
 	{
 		$targetPath = Join-Path $psPath -ChildPath "$moduleName"
 
