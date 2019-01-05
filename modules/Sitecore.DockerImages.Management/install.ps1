@@ -16,8 +16,8 @@ $modulePath = "$projectFolder"
 
 Foreach ($psPath in $env:PSModulePath.Split(";"))
 {
-	$pattern = "$env:ProgramFiles\*PowerShell\Modules";
-	if ($psPath -like $pattern)
+	$pattern = ($env:ProgramFiles -replace '\\', '\\')+"\\\w*PowerShell\\Modules\\?";
+	if ($psPath -match $pattern)
 	{
 		$targetPath = Join-Path $psPath -ChildPath "$moduleName"
 

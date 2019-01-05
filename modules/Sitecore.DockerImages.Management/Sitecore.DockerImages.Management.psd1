@@ -43,7 +43,7 @@
     RequiredModules = @(
         @{
             ModuleName = "Bendev.Assets.Management"; 
-            ModuleVersion = "1.0.0.2"; 
+            ModuleVersion = "1.0.0.3"; 
             Guid = "03742115-6c2a-4f0a-8ef7-a9e31bcbad20"
         }    
     )
