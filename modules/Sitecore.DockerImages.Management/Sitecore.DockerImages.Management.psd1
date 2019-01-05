@@ -4,7 +4,7 @@
     RootModule             = 'Sitecore.DockerImages.Management.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '1.0'
+    ModuleVersion          = '1.0.0.2'
 
     # ID used to uniquely identify this module
     GUID                   = '9304670b-b5c6-4a02-b47e-cfb5c84b448e'
@@ -43,7 +43,7 @@
     RequiredModules = @(
         @{
             ModuleName = "Bendev.Assets.Management"; 
-            ModuleVersion = "1.0.0.1"; 
+            ModuleVersion = "1.0.0.2"; 
             Guid = "03742115-6c2a-4f0a-8ef7-a9e31bcbad20"
         }    
     )
@@ -55,7 +55,7 @@
     )
 
     # Script files (.ps1) that are run in the caller's environment prior to importing this module.
-    ScriptsToProcess = @('Private\Load.ps1')
+    #ScriptsToProcess = @()
 
     # Type files (.ps1xml) to be loaded when importing this module
     # TypesToProcess = @()
@@ -64,12 +64,7 @@
     # FormatsToProcess = @()
 
     # Modules to import as nested modules of the module specified in RootModule/ModuleToProcess
-    NestedModules          = @(
-			'Functions\Get-ImageBuildFolders.ps1',
-			'Functions\Invoke-SitecoreDockerImageBuild.ps1',
-			'Functions\Invoke-SitecoreDockerImageCheckSources.ps1',
-            'Functions\Invoke-SitecoreDockerImageProcessAssets.ps1'
-	)
+    # NestedModules          = @()
 
     # Functions to export from this module
     FunctionsToExport      = @(
@@ -95,7 +90,7 @@
     # FileList = @()
 
     # Private data to pass to the module specified in RootModule/ModuleToProcess. This may also contain a PSData hashtable with additional module metadata used by PowerShell.
-    PrivateData            = @{
+    PrivateData = @{
 
         PSData = @{
 

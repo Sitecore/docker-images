@@ -33,15 +33,10 @@ Foreach ($psPath in $env:PSModulePath.Split(";"))
 
 		Remove-Item "$targetPath\*" -Verbose -Recurse -Force
 
-		md "$targetPath\Functions" -Force
-		md "$targetPath\Private" -Force
-		#md "$targetPath\PublicClasses" -Force
 		$filesToExclude = @( "install.ps1", "*.tests.ps1" )
 
 		Copy-Item -Path $modulePath\* -Destination "$targetPath" -Include *.psd1, *.psm1, *.ps1, *.md -Exclude $filesToExclude   -Force -Verbose -Recurse
-		Copy-Item -Recurse -Path $modulePath\Functions\* -Destination "$targetPath\Functions" -Include *.psd1, *.psm1, *.ps1 -Exclude $filesToExclude -Force -Verbose
-		Copy-Item -Recurse -Path $modulePath\Private\* -Destination "$targetPath\Private" -Include *.psd1, *.psm1, *.ps1 -Exclude $filesToExclude -Force -Verbose
-		#Copy-Item -Recurse -Path $modulePath\PublicClasses\* -Destination "$targetPath\PublicClasses" -Include *.psd1, *.psm1, *.ps1 -Exclude $filesToExclude -Force -Verbose
+
 		Break
 	}
 }
