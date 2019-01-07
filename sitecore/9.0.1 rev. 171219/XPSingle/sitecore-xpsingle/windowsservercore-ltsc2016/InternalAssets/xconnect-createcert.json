@@ -1,0 +1,66 @@
+{
+    "Parameters": {
+        "CertificateName": {
+            "Type": "string",
+            "Description": "The name of the certificate to be created."
+        },
+        "CertPath": {
+            "Type": "string",
+            "Description": "The physical path on disk where certificates will be stored.",
+            "DefaultValue": "c:\\certificates"
+        },
+        "RootCertFileName": {
+            "Type": "string",
+            "Description": "The file name of the root certificate to be created.",
+            "DefaultValue": "SitecoreRootCert"
+        }
+    },
+    "Variables": {
+        // The name dns name of the root certificate.
+        "Root.Cert.DnsName": "[concat('DO_NOT_TRUST_', parameter('RootCertFileName'))]",
+        // The certificate store for the root certificate.
+        "Root.Cert.Store": "cert:\\LocalMachine\\Root",
+        // The certificate store for the client certificate.
+        "Client.Cert.Store": "cert:\\LocalMachine\\My"
+    },
+    "Tasks": {
+        "CreatePaths": {
+            // Create the physical disk path.
+            "Type": "EnsurePath",
+            "Params": {
+                "Exists": [
+                    "[parameter('CertPath')]"
+                ]
+            }
+        },
+        "CreateRootCert": {
+            // Create the root certificate.
+            "Type": "NewRootCertificate",
+            "Params": {
+                "Path": "[parameter('CertPath')]",
+                "Name": "[parameter('RootCertFileName')]",
+                "StoreLocation": "CurrentUser",
+                "DnsName": "[variable('Root.Cert.DnsName')]"
+            }
+        },
+        "ImportRootCertificate": {
+            // Import the root certificate.
+            "Type": "ImportCertificate",
+            "Params": {
+                "CertStoreLocation": "[variable('Root.Cert.Store')]",
+                "FilePath": "[concat(joinpath(parameter('CertPath'), parameter('RootCertFileName')), '.crt')]"
+            }
+        },
+        "CreateSignedCert": {
+            // Create a certificate signed by the root authority.
+            "Type": "NewSignedCertificate",
+            "Params": {
+                "Signer": "[GetCertificate(variable('Root.Cert.DnsName'), variable('Root.Cert.Store'))]",
+                "Path": "[parameter('CertPath')]",
+                "CertStoreLocation": "[variable('Client.Cert.Store')]",
+                "Name": "[parameter('CertificateName')]",
+                "DnsName": "[parameter('CertificateName')]"
+            }
+        }
+    }
+}
