@@ -36,9 +36,17 @@ This repository was created by combining efforts / assets from repos such as [si
   - Hyper-V installed.
   - Latest stable Docker engine and cli.
   - The following PowerShell modules installed (to be installed in the same order as shown below):
-    - "Bendev.Assets.Management": Available on the PowerShell Gallery: https://www.powershellgallery.com/packages/Bendev.Assets.Management/1.0.0.1
+    - "Bendev.Assets.Management": Available on the PowerShell Gallery: https://www.powershellgallery.com/packages/Bendev.Assets.Management
+        ````PowerShell
+        # Install module from PowerShell Gallery:
+        Install-Module -Name Bendev.Assets.Management
+        ````
     - "Sitecore.DockerImages.Management": Available in this repository under "/modules/Sitecore.DockerImages.Management/"
-
+        ````PowerShell
+        # Install module from Repository folder (path to be changed as needed):
+         CD "C:\Docker\Sitecore\docker-images\modules\Sitecore.DockerImages.Management"
+         .\install.ps1
+        ````
 ## How to use
 
 ### Get ready
