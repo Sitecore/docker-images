@@ -118,3 +118,24 @@ Any private registry may work, although the easiest is to sign-up for a private 
 
 In case of having a private registry, use the parameter "-PushMode" while building the Docker images to push them to the private repository once they are built.
 
+## Check Docker Image Definitions and their sources
+
+The process of building one or more Sitecore images may take from minutes to hours depending on the number of images to build. It is common to leave it running unattended with the possibility of failing and stopping after some some time without finishing. Therefore, it is recommended to validate some parameters before starting the build process.
+
+There is an easy way to perform a check just by adding the parameter `-WhatIf` to the same PowerShell function that is used to build the images (`Invoke-SitecoreDockerImageBuild`). This way, the function will perform a scan of the image definition files filtered by the parameter `-VersionsFilter` and will also check the existance in the source folder (indicated with the parameter `-AssetsSourcePath`) of the assets/files required by the those same images.
+
+Example:
+
+````PowerShell
+# Check parameters:
+Invoke-SitecoreDockerImageBuild `
+  -BuildRootPath "c:\\docker\\Sitecore\\docker-images\\sitecore" `
+  -VersionsFilter ".*\\9\.0\.2 rev\. 180604\\.*sitecore-xpsingle.*\\windowsservercore-ltsc2016$" `
+  -AssetsSourcePath "c:\\Software\\Sitecore\\Repository\\" `
+  -AssetsTransformPath "c:\tmp" `
+  -Registry "YourPrivateRepo.azurecr.io" `
+  -Isolation 'None' `
+  -PushMode 'Never' `
+  -WhatIf
+````
+Notice the latest parameter `-WhatIf`.
