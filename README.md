@@ -6,6 +6,7 @@ There are some more background and details in this post: [https://invokecommand.
 
 ## Updates
 
+- [Added] Sitecore 9.0.2 XM1 CM/CD, SQL Developer and Solr on 1709.
 - [Added] Sitecore 9.1.0 XM1 CM/CD, SQL Developer and Solr (7.2.1) on 1803. Please note the new XM1 specific tags for SQL and Solr.
 - [Changed] Restructured Sitecore 9.1.0 XM1 CM/CD/base docker files to use multi-stage builds, number of layers reduced from 25 to 13 and the size is also reduced to 5.06 GB on ltsc2019.
 - [Added] Sitecore 9.1.0 XM1 CM/CD, SQL Developer on ltsc2019 and Solr (7.2.1) on 1809. Please note the new XM1 specific tags for SQL and Solr.
@@ -57,6 +58,11 @@ There are some more background and details in this post: [https://invokecommand.
 | 9.0.180604 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:9.0.180604-windowsservercore-1803` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
 | 9.0.180604 | sitecore-solr | nanoserver | 1803 | `sitecore-solr:9.0.180604-nanoserver-1803` [Dockerfile](images/9.0.2%20rev.%20180604/nanoserver-1803/sitecore-solr/Dockerfile) |
 | 9.0.180604 | sitecore-base | windowsservercore | 1803 | `sitecore-base:9.0.180604-windowsservercore-1803` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1803/sitecore-base/Dockerfile) |
+| 9.0.180604 | sitecore-xm1-cm | windowsservercore | 1709 | `sitecore-xm1-cm:9.0.180604-windowsservercore-1709` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1709/sitecore-xm1-cm/Dockerfile) |
+| 9.0.180604 | sitecore-xm1-cd | windowsservercore | 1709 | `sitecore-xm1-cd:9.0.180604-windowsservercore-1709` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1709/sitecore-xm1-cd/Dockerfile) |
+| 9.0.180604 | sitecore-sqldev | windowsservercore | 1709 | `sitecore-sqldev:9.0.180604-windowsservercore-1709` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1709/sitecore-sqldev/Dockerfile) |
+| 9.0.180604 | sitecore-solr | nanoserver | 1709 | `sitecore-solr:9.0.180604-nanoserver-1709` [Dockerfile](images/9.0.2%20rev.%20180604/nanoserver-1709/sitecore-solr/Dockerfile) |
+| 9.0.180604 | sitecore-base | windowsservercore | 1709 | `sitecore-base:9.0.180604-windowsservercore-1709` [Dockerfile](images/9.0.2%20rev.%20180604/windowsservercore-1709/sitecore-base/Dockerfile) |
 | 9.0.171219 | sitecore-sqldev | windowsservercore | ltsc2016 | `sitecore-sqldev:9.0.171219-windowsservercore-ltsc2016` [Dockerfile](images/9.0.1%20rev.%20171219/windowsservercore-ltsc2016/sitecore-sqldev/Dockerfile) |
 | 9.0.171219 | sitecore-solr | nanoserver | ltsc2016 | `sitecore-solr:9.0.171219-nanoserver-ltsc2016` [Dockerfile](images/9.0.1%20rev.%20171219/nanoserver-ltsc2016/sitecore-solr/Dockerfile) |
 | 9.0.171219 | sitecore-xm1-cm | windowsservercore | 1803 | `sitecore-xm1-cm:9.0.171219-windowsservercore-1803` [Dockerfile](images/9.0.1%20rev.%20171219/windowsservercore-1803/sitecore-xm1-cm/Dockerfile) |
