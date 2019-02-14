@@ -24,6 +24,12 @@ IF %HAS_DATA%=="false" (
     XCOPY %INSTALL_PATH% %DATA_PATH% /E
 )
 
+ECHO "### Preparing Solr cores..."
+
+PUSHD %DATA_PATH%
+DEL /S "write.lock"
+POPD
+
 ECHO "### Starting Solr..."
 
 %SOLR_PATH%\bin\solr.cmd start -port %SOLR_PORT% -f
