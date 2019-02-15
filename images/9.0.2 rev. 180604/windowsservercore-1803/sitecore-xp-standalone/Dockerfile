@@ -25,7 +25,7 @@ FROM sitecore-xp-base:9.0.180604-windowsservercore-1803 as final
 COPY --from=builder ["/install/config.json", "/install/package.zip", "/install/license.xml", "/install/"]
 COPY --from=builder ["/install/Sitecore", "/Sitecore"]
 
-# Install certificates, Sitecore, apply tweaks and cleanup
+# Install Sitecore, apply tweaks and cleanup
 RUN $env:SITENAME = 'sc'; `
     $env:INSTALL_TEMP = 'C:\\install'; `
     $env:SITECORE_ADMIN_PASSWORD = 'b'; `
@@ -34,12 +34,9 @@ RUN $env:SITENAME = 'sc'; `
     $env:SQL_HOST = 'sql'; `
     $env:SQL_DB_PREFIX = 'sc'; `
     $env:SOLR_URL = 'http://solr:8983/solr'; `
-    $env:CERT_PATH = 'C:\\certificates'; `
     $env:XCONNECT_CERT_NAME = 'xconnect-client'; `
     $env:XCONNECT_SSL_NAME = 'xconnect'; `
     $env:XCONNECT_URL = 'https://xconnect'; `
-    $certPassword = (ConvertTo-SecureString -String 'Sp1JJvsrkXtWW9fOSFUh' -Force -AsPlainText); `
-    Import-PfxCertificate -FilePath (Join-Path $env:CERT_PATH ('\\{0}.pfx' -f $env:XCONNECT_SSL_NAME)) -CertStoreLocation 'cert:\localmachine\root' -Password $certPassword; `
     Install-SitecoreConfiguration -Path (Join-Path $env:INSTALL_TEMP '\\config.json') -Package (Join-Path $env:INSTALL_TEMP '\\package.zip') `
     -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
     -Sitename $env:SITENAME `
@@ -74,5 +71,4 @@ RUN $env:SITENAME = 'sc'; `
     Remove-Item -Path 'C:\\*.log'; `
     Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
-    Remove-Item -Path $env:CERT_PATH -Force -Recurse; `
     Remove-Item -Path 'C:\\Sitecore\\Config' -Force -Recurse;

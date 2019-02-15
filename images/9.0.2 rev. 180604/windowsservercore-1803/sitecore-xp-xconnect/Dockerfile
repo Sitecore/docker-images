@@ -25,7 +25,7 @@ FROM sitecore-xp-base:9.0.180604-windowsservercore-1803 as final
 COPY --from=builder ["/install/config.json", "/install/package.zip", "/install/license.xml", "/install/disable-solr-ssl.json", "/install/"]
 COPY --from=builder ["/install/Sitecore", "/Sitecore"]
 
-# Install certificates, XConnect, disable ssl, apply tweaks and cleanup
+# Install XConnect, disable ssl, apply tweaks and cleanup
 RUN $env:SITENAME = 'xconnect'; `
     $env:INSTALL_TEMP = 'C:\\install'; `
     $env:SQL_ADMIN_USER = 'sa'; `
@@ -33,11 +33,8 @@ RUN $env:SITENAME = 'xconnect'; `
     $env:SQL_HOST = 'sql'; `
     $env:SQL_DB_PREFIX = 'sc'; `
     $env:SOLR_URL = 'http://solr:8983/solr'; `
-    $env:CERT_PATH = 'C:\\certificates'; `
     $env:XCONNECT_CERT_NAME = 'xconnect-client'; `
     $env:XCONNECT_SSL_NAME = 'xconnect'; `
-    $certPassword = (ConvertTo-SecureString -String 'Sp1JJvsrkXtWW9fOSFUh' -Force -AsPlainText); `
-    Import-PfxCertificate -FilePath (Join-Path $env:CERT_PATH ('\\{0}.pfx' -f $env:XCONNECT_SSL_NAME)) -CertStoreLocation 'cert:\localmachine\my' -Password $certPassword; `
     Install-SitecoreConfiguration -Path (Join-Path $env:INSTALL_TEMP '\\config.json') -Package (Join-Path $env:INSTALL_TEMP '\\package.zip') `
     -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
     -Sitename $env:SITENAME `
@@ -59,7 +56,6 @@ RUN $env:SITENAME = 'xconnect'; `
     Add-LocalGroupMember -Group 'Performance Monitor Users' -Member ('IIS AppPool\{0}' -f $env:SITENAME); `
     Remove-Item -Path 'C:\\*.log'; `
     Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
-    Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
-    Remove-Item -Path $env:CERT_PATH -Force -Recurse;
+    Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
 
 EXPOSE 443
