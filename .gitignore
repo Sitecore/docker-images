@@ -2,6 +2,8 @@
 license.xml
 *-Local.ps1
 
+internal/
+
 tests/**/data/**/*
 !tests/**/data/*/
 !tests/**/data/*/README.md
