@@ -6,6 +6,8 @@ There are some more background and details in this post: [https://invokecommand.
 
 ## Updates
 
+- [Added] Sitecore 8.2.180406 Solr on nanoserver-1809.
+- [Added] Sitecore 8.2.180406 (BASE, CD, CM, Processing and Reporting) on windowsservercore-ltsc2019.
 - [Fixed] Solr `write.lock` files are now deleted before Solr start, see [#15](https://github.com/sitecoreops/sitecore-images/issues/15).
 - [Added] Sitecore 9.0.2 XP CM/CD/xConnect, SQL Developer and Solr on 1803.
 - [Added] Sitecore 9.0.2 XM1 CM/CD, SQL Developer and Solr on 1709.
