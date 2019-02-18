@@ -30,12 +30,14 @@ RUN $env:SITENAME = 'sc'; `
     $env:INSTALL_TEMP = 'C:\\install'; `
     $env:SQL_ADMIN_USER = 'sa'; `
     $env:SQL_ADMIN_PASSWORD = 'HASH-epsom-sunset-cost7!'; `
+    $env:IDENTITYSERVER_URL = 'https://127.0.0.1'; `
+    $env:IDENTITYSERVER_SECRET = 'R6mYfCbM4Ci0niMBuzKVHIKc'; `
     Install-SitecoreConfiguration -Path (Join-Path $env:INSTALL_TEMP '\\sitecore.json') -Package (Join-Path $env:INSTALL_TEMP '\\sitecore.zip') `
     -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
     -Sitename $env:SITENAME `
     -SitecoreAdminPassword "b" `
-    -SitecoreIdentityAuthority "https://127.0.0.1" `
-    -SitecoreIdentitySecret $env:SQL_ADMIN_PASSWORD `
+    -SitecoreIdentityAuthority $env:IDENTITYSERVER_URL `
+    -SitecoreIdentitySecret $env:IDENTITYSERVER_SECRET `
     -SolrUrl "http://solr:8983/solr" `
     -SolrCorePrefix $env:SITENAME `
     -SqlServer "sql" `

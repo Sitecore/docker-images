@@ -224,7 +224,7 @@ function Get-CurrentImages
         [string]$Path
     )
     
-    $tagParser = [regex]"(?<repository>.*):(?<version>.*)-(?<os>.*)-(?<osversion>.*)"
+    $tagParser = [regex]"(?<repository>.*):(?<version>.*)-(?<os>.*)-(?<build>.*)"
 
     Find-BuildSpecifications -Path $Path | ForEach-Object {
         $spec = $_
@@ -235,15 +235,15 @@ function Get-CurrentImages
             $repository = $match.Groups["repository"].Value
             $version = $match.Groups["version"].Value
             $os = $match.Groups["os"].Value
-            $osVersion = $match.Groups["osversion"].Value
+            $build = $match.Groups["build"].Value
 
             Write-Output (New-Object PSObject -Property @{
-                    Repository   = $repository;
-                    Version      = $version;
-                    OS           = $os;
-                    "OS Version" = $osVersion;
-                    Tag          = $spec.Tag;
-                    Path         = "images{0}/Dockerfile" -f $spec.Path.Replace((Get-Item -Path $Path).FullName, "").Replace("\", "/").Replace(" ", "%20");
+                    Repository = $repository;
+                    Version    = $version;
+                    OS         = $os;
+                    Build      = $build;
+                    Tag        = $spec.Tag;
+                    Path       = "images{0}/Dockerfile" -f $spec.Path.Replace((Get-Item -Path $Path).FullName, "").Replace("\", "/").Replace(" ", "%20");
                 })
         }
     }
@@ -258,10 +258,10 @@ function Get-CurrentImagesMarkdown
         [string]$Path
     )
     
-    Write-Output "| Version | Repository | OS  | OS Version | Tag |"
+    Write-Output "| Version | Repository | OS  | Build | Tag |"
     Write-Output "| ------- | ---------- | --- | -----------| --- |"
 
-    Get-CurrentImages -Path $Path | Sort-Object -Property Version, "OS Version", Repository -Descending | ForEach-Object {
-        Write-Output ("| {0} | {1} | {2} | {3 } | ``{4}`` [Dockerfile]({5}) |" -f $_.Version, $_.Repository, $_.OS, $_."OS Version", $_.Tag, $_.Path )
+    Get-CurrentImages -Path $Path | Sort-Object -Property Version, Build, Repository -Descending | ForEach-Object {
+        Write-Output ("| {0} | {1} | {2} | {3 } | ``{4}`` [Dockerfile]({5}) |" -f $_.Version, $_.Repository, $_.OS, $_.Build, $_.Tag, $_.Path )
     }
 }
