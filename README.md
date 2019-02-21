@@ -6,7 +6,6 @@ There are some more background and details in this post: [https://invokecommand.
 
 ## Updates
 
-- [Changed] Updated openjdk base images used for Solr to latest version: java-1.8.0-openjdk-1.8.0.201-1.b09.
 - [Added] Sitecore 9.1.0 XP CM/CD/xConnect on ltsc2019, SQL Developer and Solr (7.2.1) on 1809.
 - [Added] Sitecore 9.1.0 XP CM/CD/xConnect on 1803, SQL Developer and Solr (7.2.1) on 1803.
 - [Added] Sitecore 8.2.180406 Solr on nanoserver-1809.
