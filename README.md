@@ -6,7 +6,8 @@ There are some more background and details in this post: [https://invokecommand.
 
 ## Updates
 
-- [Added] Sitecore 9.1.0 XP CM/CD/xConnect, SQL Developer and Solr (7.2.1) on 1803.
+- [Added] Sitecore 9.1.0 XP CM/CD/xConnect on ltsc2019, SQL Developer and Solr (7.2.1) on 1809.
+- [Added] Sitecore 9.1.0 XP CM/CD/xConnect on 1803, SQL Developer and Solr (7.2.1) on 1803.
 - [Added] Sitecore 8.2.180406 Solr on nanoserver-1809.
 - [Added] Sitecore 8.2.180406 CD/CM/Processing and Reporting on windowsservercore-ltsc2019.
 - [Fixed] Solr `write.lock` files are now deleted before Solr start, see [#15](https://github.com/sitecoreops/sitecore-images/issues/15).
@@ -43,10 +44,18 @@ There are some more background and details in this post: [https://invokecommand.
 
 | Version | Repository | OS  | Build | Tag |
 | ------- | ---------- | --- | -----------| --- |
+| 9.1.001564 | sitecore-xp-xconnect-indexworker | windowsservercore | ltsc2019 | `sitecore-xp-xconnect-indexworker:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-xconnect-indexworker/Dockerfile) |
+| 9.1.001564 | sitecore-xp-xconnect-automationengine | windowsservercore | ltsc2019 | `sitecore-xp-xconnect-automationengine:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-xconnect-automationengine/Dockerfile) |
+| 9.1.001564 | sitecore-xp-xconnect | windowsservercore | ltsc2019 | `sitecore-xp-xconnect:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-xconnect/Dockerfile) |
+| 9.1.001564 | sitecore-xp-standalone | windowsservercore | ltsc2019 | `sitecore-xp-standalone:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-standalone/Dockerfile) |
+| 9.1.001564 | sitecore-xp-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sqldev:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-sqldev/Dockerfile) |
+| 9.1.001564 | sitecore-xp-cd | windowsservercore | ltsc2019 | `sitecore-xp-cd:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-cd/Dockerfile) |
+| 9.1.001564 | sitecore-xp-base | windowsservercore | ltsc2019 | `sitecore-xp-base:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-base/Dockerfile) |
 | 9.1.001564 | sitecore-xm1-sqldev | windowsservercore | ltsc2019 | `sitecore-xm1-sqldev:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xm1-sqldev/Dockerfile) |
 | 9.1.001564 | sitecore-xm1-cm | windowsservercore | ltsc2019 | `sitecore-xm1-cm:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xm1-cm/Dockerfile) |
 | 9.1.001564 | sitecore-xm1-cd | windowsservercore | ltsc2019 | `sitecore-xm1-cd:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xm1-cd/Dockerfile) |
 | 9.1.001564 | sitecore-base | windowsservercore | ltsc2019 | `sitecore-base:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-base/Dockerfile) |
+| 9.1.001564 | sitecore-xp-solr | nanoserver | 1809 | `sitecore-xp-solr:9.1.001564-nanoserver-1809` [Dockerfile](images/9.1.0%20rev.%20001564/nanoserver-1809/sitecore-xp-solr/Dockerfile) |
 | 9.1.001564 | sitecore-xm1-solr | nanoserver | 1809 | `sitecore-xm1-solr:9.1.001564-nanoserver-1809` [Dockerfile](images/9.1.0%20rev.%20001564/nanoserver-1809/sitecore-xm1-solr/Dockerfile) |
 | 9.1.001564 | sitecore-xp-xconnect-indexworker | windowsservercore | 1803 | `sitecore-xp-xconnect-indexworker:9.1.001564-windowsservercore-1803` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-1803/sitecore-xp-xconnect-indexworker/Dockerfile) |
 | 9.1.001564 | sitecore-xp-xconnect-automationengine | windowsservercore | 1803 | `sitecore-xp-xconnect-automationengine:9.1.001564-windowsservercore-1803` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-1803/sitecore-xp-xconnect-automationengine/Dockerfile) |
