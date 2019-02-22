@@ -55,8 +55,8 @@ function Invoke-Build
         $spec = $_
         $sources = @()
 
-        $spec.sources | ForEach-Object {
-            $sources += (Join-Path $InstallSourcePath  $_)
+        $spec.Sources | ForEach-Object {
+            $sources += (Join-Path $InstallSourcePath $_)
         }
         
         $spec.Sources = $sources
@@ -204,11 +204,23 @@ function Find-BuildSpecifications
             }
         }
 
+        if ([string]::IsNullOrEmpty($data.tag))
+        {
+            throw ("Tag was null or empty in '{0}'." -f $_.FullName)
+        }
+
+        $sources = @()
+
+        if ($null -ne $data.sources)
+        {
+            $sources = $data.sources
+        }
+
         Write-Output (New-Object PSObject -Property @{
-                Tag      = $data.tag;  
-                Base     = $baseImages;                      
+                Tag      = $data.tag;
+                Base     = $baseImages;
                 Path     = $_.Directory.FullName;
-                Sources  = $data.sources;
+                Sources  = $sources;
                 Priority = $null;
                 Include  = $null;
             })
