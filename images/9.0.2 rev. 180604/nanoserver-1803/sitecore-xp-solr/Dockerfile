@@ -56,7 +56,7 @@ COPY --from=builder /clean /clean
 COPY --from=builder /windows/system32/find.exe /windows/system32/
 COPY MapDrive.cmd MapDrive.cmd
 
-VOLUME c:/data
+RUN MKDIR c:\data
 
 # Workaround for java issues with Windows container symlinks: https://github.com/moby/moby/issues/27537#issuecomment-271546031
 USER ContainerAdministrator

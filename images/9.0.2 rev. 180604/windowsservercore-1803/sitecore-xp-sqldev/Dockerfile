@@ -37,8 +37,6 @@ ENV INSTALL_PATH='c:/install/'
 ENV DATA_PATH='c:/data/'
 ENV SQL_HOSTNAME='sql'
 
-VOLUME ${DATA_PATH}
-
 ADD https://dist.nuget.org/win-x86-commandline/v4.1.0/nuget.exe C:\\Windows\\nuget.exe
 
 RUN New-Item -Path 'C:/tools' -ItemType Directory | Out-Null; `
@@ -46,7 +44,8 @@ RUN New-Item -Path 'C:/tools' -ItemType Directory | Out-Null; `
 
 COPY . ${INSTALL_PATH}
 
-RUN & (Join-Path $env:INSTALL_PATH "\\Extract-Databases.ps1") -Path $env:INSTALL_PATH; `
+RUN New-Item -Path $env:DATA_PATH -ItemType Directory | Out-Null; `
+    & (Join-Path $env:INSTALL_PATH "\\Extract-Databases.ps1") -Path $env:INSTALL_PATH; `
     & (Join-Path $env:INSTALL_PATH "\\Install-Databases.ps1") -InstallPath $env:INSTALL_PATH -DataPath $env:DATA_PATH -DatabasePrefix $env:DB_PREFIX; `
     & (Join-Path $env:INSTALL_PATH "\\Install-Shards.ps1") -InstallPath $env:INSTALL_PATH -DatabasePrefix $env:DB_PREFIX; `
     Move-Item -Path (Join-Path $env:INSTALL_PATH "\\Boot.ps1") -Destination 'C:\\Boot.ps1' -Force; `

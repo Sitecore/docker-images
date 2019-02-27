@@ -50,7 +50,7 @@ COPY --from=builder /solr /solr
 COPY --from=builder /clean /clean
 COPY --from=builder /windows/system32/find.exe /windows/system32/
 
-VOLUME c:/data
+RUN MKDIR c:\data
 
 # Set solr home dir to volume
 ENV SOLR_HOME=c:/data
