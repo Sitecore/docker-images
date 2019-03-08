@@ -1,0 +1,29 @@
+version: '2.4'
+
+services:
+
+  standalone:
+    image: sitecore:7.5.150212-windowsservercore-1803
+    volumes:
+      - .\data\standalone:C:\Sitecore
+    ports:
+      - "44002:80"
+    links:
+      - sql
+      - mongodb
+  
+  mongodb:
+    image: mongo:4.1.8-windowsservercore-1803
+    volumes:
+      - .\data\mongo:C:\data\db
+    mem_limit: 2GB
+    ports:
+      - "27117:27017"
+      
+  sql:
+    image: sitecore-sqldev:7.5.150212-windowsservercore-1803
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
