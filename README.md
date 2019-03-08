@@ -6,6 +6,7 @@ There are some more background and details in this post: [https://invokecommand.
 
 ## Updates
 
+- [Added] Sitecore 7.5.150212 CM/CD and SQL on 1803.
 - [Added] Sitecore 8.2.161221 CM/CD and SQL on 1709/1803.
 - [Fixed] Removed VOLUME instructions from 9.1.0/9.0.2 Solr and SQL on 1809/ltsc2019/1803, see [#22](https://github.com/sitecoreops/sitecore-images/issues/22).
 - [Fixed] Build process now takes tag filters into account when pulling external base images.
@@ -131,9 +132,11 @@ There are some more background and details in this post: [https://invokecommand.
 | 8.2.171121 | sitecore | windowsservercore | 1709 | `sitecore:8.2.171121-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20171121/windowsservercore-1709/Dockerfile) |
 | 8.2.170728 | sitecore | windowsservercore | 1803 | `sitecore:8.2.170728-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170728/windowsservercore-1803/Dockerfile) |
 | 8.2.170728 | sitecore | windowsservercore | 1709 | `sitecore:8.2.170728-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20170728/windowsservercore-1709/Dockerfile) |
-| 8.2.170614 | sitecore | windowsservercore | 1803 | `sitecore:8.2.170614-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170614/windowsservercore-1803/Dockerfile) |
+| 8.2.170614 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:8.2.170614-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170614/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
+| 8.2.170614 | sitecore | windowsservercore | 1803 | `sitecore:8.2.170614-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170614/windowsservercore-1803/Sitecore/Dockerfile) |
 | 8.2.170614 | sitecore | windowsservercore | 1709 | `sitecore:8.2.170614-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20170614/windowsservercore-1709/Dockerfile) |
-| 8.2.170407 | sitecore | windowsservercore | 1803 | `sitecore:8.2.170407-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170407/windowsservercore-1803/Dockerfile) |
+| 8.2.170407 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:8.2.170407-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170407/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
+| 8.2.170407 | sitecore | windowsservercore | 1803 | `sitecore:8.2.170407-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170407/windowsservercore-1803/Sitecore/Dockerfile) |
 | 8.2.170407 | sitecore | windowsservercore | 1709 | `sitecore:8.2.170407-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20170407/windowsservercore-1709/Dockerfile) |
 | 8.2.161221 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:8.2.161221-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
 | 8.2.161221 | sitecore | windowsservercore | 1803 | `sitecore:8.2.161221-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1803/sitecore/Dockerfile) |
@@ -142,6 +145,8 @@ There are some more background and details in this post: [https://invokecommand.
 | 8 | sitecore-openjdk | nanoserver | 1809 | `sitecore-openjdk:8-nanoserver-1809` [Dockerfile](images/sitecore-openjdk/nanoserver-1809/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1803 | `sitecore-openjdk:8-nanoserver-1803` [Dockerfile](images/sitecore-openjdk/nanoserver-1803/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1709 | `sitecore-openjdk:8-nanoserver-1709` [Dockerfile](images/sitecore-openjdk/nanoserver-1709/Dockerfile) |
+| 7.5.150212 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
+| 7.5.150212 | sitecore | windowsservercore | 1803 | `sitecore:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore/Dockerfile) |
 
 ### Tags and Windows versions
 
