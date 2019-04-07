@@ -2,7 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. There are some older versions too if your interested! See [Current images](#current-images) for an up-to-date list of which images available. You can use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry.
+Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. There are some older versions too if your interested! See [Current images](#current-images) for an up-to-date list of which images available. You can use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry. Jump to the [How to use](#how-to-use) section for more details.
 
 ## Changelog
 
