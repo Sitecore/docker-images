@@ -16,32 +16,44 @@ RUN setx /M PATH ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); `
     Expand-Archive ojdkbuild.zip -DestinationPath C:\; `
     Move-Item -Path ('C:\{0}' -f ($env:JAVA_OJDKBUILD_ZIP -Replace '.zip$', '')) -Destination $env:JAVA_HOME; `
     Remove-Item ojdkbuild.zip -Force;
-    
+
 # Install Solr
 ARG SOLR_VERSION=7.2.1
 RUN Invoke-WebRequest -Uri ('http://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SOLR_VERSION) -OutFile /solr.zip; `
     Expand-Archive -Path /solr.zip -DestinationPath /temp; `
     Move-Item -Path "C:/temp/solr-*" -Destination c:\solr;
 
-# Install Sitecore Solr cores using SIF
+# Extract artifacts
 ARG INSTALL_TEMP='c:\\install'
 COPY . ${INSTALL_TEMP}
-RUN & 'c:/solr/bin/solr.cmd' start -p 8983; `
-    $env:SOLR_PREFIX = 'sc'; `
-    Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
+RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*Configuration files*.zip') -DestinationPath $env:INSTALL_TEMP; `
+    $zip = [IO.Compression.ZipFile]::OpenRead((Get-Item -Path (Join-Path $env:INSTALL_TEMP '*xconnect.scwdp.zip')).FullName); `
+    $zip.Entries | Where-Object { $_.Name -like 'schema.json' } | Foreach-Object { [IO.Compression.ZipFileExtensions]::ExtractToFile($_, (Join-Path $env:INSTALL_TEMP 'schema.json'), $true) }; `
+    $zip.Dispose();
+
+# Install Sitecore Solr cores using SIF
+RUN & 'c:/solr/bin/solr.cmd' start -p 8983; `
+    $env:SOLR_PREFIX = 'sc'; `  
+    $env:SOLR_URL = 'http://localhost:8983/solr'; `
+    $env:SOLR_ROOT_PATH = 'c:/solr'; `
+    $env:SOLR_SERVICE_NAME = 'void'; `
     Install-SitecoreConfiguration -Path (Join-Path $env:INSTALL_TEMP 'sitecore-solr.json') `
-    -SolrUrl "http://localhost:8983/solr" `
-    -SolrRoot "c:/solr" `
-    -SolrService "void" `
+    -SolrUrl $env:SOLR_URL `
+    -SolrRoot $env:SOLR_ROOT_PATH `
+    -SolrService $env:SOLR_SERVICE_NAME `
     -CorePrefix $env:SOLR_PREFIX `
-    -Skip "StopSolr", "StartSolr"; `
+    -Skip 'StopSolr', 'StartSolr'; `
     Install-SitecoreConfiguration -Path (Join-Path $env:INSTALL_TEMP 'xconnect-solr.json') `
-    -SolrUrl "http://localhost:8983/solr" `
-    -SolrRoot "c:/solr" `
-    -SolrService "void" `
+    -SolrUrl $env:SOLR_URL `
+    -SolrRoot $env:SOLR_ROOT_PATH `
+    -SolrService $env:SOLR_SERVICE_NAME `
     -CorePrefix $env:SOLR_PREFIX `
-    -Skip "StopSolr", "StartSolr"; `
+    -Skip 'StopSolr', 'StartSolr'; `
+    Install-SitecoreConfiguration -Path (Join-Path $env:INSTALL_TEMP 'apply-solr-commands.json') `
+    -SolrUrl $env:SOLR_URL `
+    -CorePrefix $env:SOLR_PREFIX `
+    -ArgumentsFile (Join-Path $env:INSTALL_TEMP 'schema.json'); `
     Get-Process -Name "java" | Stop-Process -Force;
 
 # Copy the clean cores for later use
