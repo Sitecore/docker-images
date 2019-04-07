@@ -13,7 +13,7 @@ RUN $env:SIF_CONFIG = 'createcert.json'; `
     Rename-Item -Path (Resolve-Path (Join-Path $env:INSTALL_TEMP $env:SIF_CONFIG)).Path -NewName 'config.json';
 
 # Runtime
-FROM sitecore-base:9.1.001564-windowsservercore-ltsc2019 as final
+FROM sitecore-base:9.1.0-windowsservercore-ltsc2019 as final
 
 COPY --from=builder ["/install/config.json", "/install/"]
 
