@@ -63,3 +63,6 @@ RUN $env:SITENAME = 'sc'; `
     Remove-Item -Path 'C:\\*.log'; `
     Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
+
+# ServiceMonitor needs to point to the Application Pool that Sitecore runs in instead of the default one, to support environment variables
+ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc", "sc"]
