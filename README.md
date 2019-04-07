@@ -1,11 +1,10 @@
 # Repository of Sitecore Docker base images
 
-Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. There are some older versions too, see [Current images](#current-images). You can use this repository (preferably from a fork so you are in control of updates) from you own build server and have it build and push images to your private Docker repository.
+Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. There are some older versions too, see [Current images](#current-images). You can use this repository (preferably from a fork so you are in control of updates) from you own build server and have it build and push images to your private Docker registry.
 
-There are some more background and details in this post: [https://invokecommand.net/posts/automatically-build-and-update-base-images](https://invokecommand.net/posts/automatically-build-and-update-base-images).
+## Changelog
 
-## Updates
-
+- [Added] Sitecore 9.1.1 XM and XP on ltsc2019/1809.
 - [Added] Sitecore 7.5.150212 CM/CD and SQL on 1803.
 - [Added] Sitecore 8.2.161221 CM/CD and SQL on 1709/1803.
 - [Fixed] Removed VOLUME instructions from 9.1.0/9.0.2 Solr and SQL on 1809/ltsc2019/1803, see [#22](https://github.com/sitecoreops/sitecore-images/issues/22).
@@ -48,6 +47,19 @@ There are some more background and details in this post: [https://invokecommand.
 
 | Version | Repository | OS  | Build | Tag |
 | ------- | ---------- | --- | -----------| --- |
+| 9.1.1 | sitecore-xp-xconnect-indexworker | windowsservercore | ltsc2019 | `sitecore-xp-xconnect-indexworker:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-xconnect-indexworker/Dockerfile) |
+| 9.1.1 | sitecore-xp-xconnect-automationengine | windowsservercore | ltsc2019 | `sitecore-xp-xconnect-automationengine:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-xconnect-automationengine/Dockerfile) |
+| 9.1.1 | sitecore-xp-xconnect | windowsservercore | ltsc2019 | `sitecore-xp-xconnect:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-xconnect/Dockerfile) |
+| 9.1.1 | sitecore-xp-standalone | windowsservercore | ltsc2019 | `sitecore-xp-standalone:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-standalone/Dockerfile) |
+| 9.1.1 | sitecore-xp-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xp-cd | windowsservercore | ltsc2019 | `sitecore-xp-cd:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-cd/Dockerfile) |
+| 9.1.1 | sitecore-xp-base | windowsservercore | ltsc2019 | `sitecore-xp-base:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-base/Dockerfile) |
+| 9.1.1 | sitecore-xm-sqldev | windowsservercore | ltsc2019 | `sitecore-xm-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xm-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xm-cm | windowsservercore | ltsc2019 | `sitecore-xm-cm:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xm-cm/Dockerfile) |
+| 9.1.1 | sitecore-xm-cd | windowsservercore | ltsc2019 | `sitecore-xm-cd:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xm-cd/Dockerfile) |
+| 9.1.1 | sitecore-base | windowsservercore | ltsc2019 | `sitecore-base:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-base/Dockerfile) |
+| 9.1.1 | sitecore-xp-solr | nanoserver | 1809 | `sitecore-xp-solr:9.1.1-nanoserver-1809` [Dockerfile](images/9.1.1%20rev.%20002459/nanoserver-1809/sitecore-xp-solr/Dockerfile) |
+| 9.1.1 | sitecore-xm-solr | nanoserver | 1809 | `sitecore-xm-solr:9.1.1-nanoserver-1809` [Dockerfile](images/9.1.1%20rev.%20002459/nanoserver-1809/sitecore-xm-solr/Dockerfile) |
 | 9.1.001564 | sitecore-xp-xconnect-indexworker | windowsservercore | ltsc2019 | `sitecore-xp-xconnect-indexworker:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-xconnect-indexworker/Dockerfile) |
 | 9.1.001564 | sitecore-xp-xconnect-automationengine | windowsservercore | ltsc2019 | `sitecore-xp-xconnect-automationengine:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-xconnect-automationengine/Dockerfile) |
 | 9.1.001564 | sitecore-xp-xconnect | windowsservercore | ltsc2019 | `sitecore-xp-xconnect:9.1.001564-windowsservercore-ltsc2019` [Dockerfile](images/9.1.0%20rev.%20001564/windowsservercore-ltsc2019/sitecore-xp-xconnect/Dockerfile) |
@@ -192,7 +204,7 @@ Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 SitecoreImageBuilder\Invoke-Build `
     -Path (Join-Path $PSScriptRoot "\images") `
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
-    -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the DNS to your private registry.
+    -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
     -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1803", "sitecore-*:9.0.1*1803" to only build 9.0.x images on 1803.
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
 ```

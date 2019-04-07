@@ -1,0 +1,6 @@
+{
+    "tag": "sitecore-xp-sqldev:9.1.1-windowsservercore-ltsc2019",
+    "sources": [
+        "Sitecore 9.1.1 rev. 002459 (WDP XP0 packages).zip"
+    ]
+}
