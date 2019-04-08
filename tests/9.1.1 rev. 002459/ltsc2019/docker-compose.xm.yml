@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: sitecore-xm-sqldev:9.1.1-windowsservercore-ltsc2019
+    image: sitecore-xm1-sqldev:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
@@ -12,7 +12,7 @@ services:
       - "44010:1433"
 
   solr:
-    image: sitecore-xm-solr:9.1.1-nanoserver-1809
+    image: sitecore-xm1-solr:9.1.1-nanoserver-1809
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1GB
@@ -21,7 +21,7 @@ services:
       - "44011:8983"
 
   cd:
-    image: sitecore-xm-cd:9.1.1-windowsservercore-ltsc2019
+    image: sitecore-xm1-cd:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cd:C:\inetpub\sc\App_Data\logs
     isolation: process
@@ -32,7 +32,7 @@ services:
       - solr
 
   cm:
-    image: sitecore-xm-cm:9.1.1-windowsservercore-ltsc2019
+    image: sitecore-xm1-cm:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
     isolation: process
