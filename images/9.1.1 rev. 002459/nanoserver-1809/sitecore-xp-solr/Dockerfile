@@ -63,13 +63,15 @@ RUN New-Item -Path 'c:/clean' -ItemType Directory | Out-Null; `
 # Runtime image
 FROM sitecore-openjdk:8-nanoserver-1809 as final
 
+USER ContainerAdministrator
+
 COPY --from=builder /solr /solr
 COPY --from=builder /clean /clean
 COPY --from=builder /windows/system32/find.exe /windows/system32/
 
 RUN MKDIR c:\\data
 
-# Set solr home dir to above mapped drive
+# Set solr home dir to volume
 ENV SOLR_HOME=c:/data
 
 # Expose default port
