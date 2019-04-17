@@ -63,7 +63,7 @@ RUN $env:SITENAME = 'sc'; `
     Add-LocalGroupMember -Group 'Performance Monitor Users' -Member ('IIS AppPool\{0}' -f $env:SITENAME); `
     Move-Item -Path ('C:\\inetpub\\{0}\\App_Config\\Include\\Examples\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config.example' -f $env:SITENAME) -Destination ('C:\\inetpub\\{0}\\App_Config\\Include\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config' -f $env:SITENAME); `
     Remove-Item -Path 'C:\\*.log'; `
-    Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
+    Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs\\*.*' -f $env:SITENAME); `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
 
 # ServiceMonitor needs to point to the Application Pool that Sitecore runs in instead of the default one, to support environment variables
