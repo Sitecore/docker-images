@@ -7,7 +7,6 @@ services:
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
-    isolation: process
     ports:
       - "44010:1433"
 
@@ -16,7 +15,6 @@ services:
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1GB
-    isolation: process
     ports:
       - "44011:8983"
 
@@ -25,7 +23,6 @@ services:
     volumes:
       - .\data\xconnect:C:\inetpub\xconnect\App_Data\logs
     mem_limit: 1GB
-    isolation: process
     links:
       - sql
       - solr
@@ -35,7 +32,6 @@ services:
     volumes:
       - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
     mem_limit: 500MB
-    isolation: process
     links:
       - sql
       - xconnect
@@ -45,7 +41,6 @@ services:
     volumes:
       - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
     mem_limit: 500MB
-    isolation: process
     links:
       - sql
       - solr
@@ -54,7 +49,6 @@ services:
     image: sitecore-xp-cd:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cd:C:\inetpub\sc\App_Data\logs
-    isolation: process
     ports:
       - "44002:80"
     links:
@@ -66,7 +60,6 @@ services:
     image: sitecore-xp-standalone:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
-    isolation: process
     ports:
       - "44001:80"
     links:

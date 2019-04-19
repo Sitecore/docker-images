@@ -7,7 +7,6 @@ services:
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
-    isolation: process
     ports:
       - "44010:1433"
 
@@ -16,7 +15,6 @@ services:
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1GB
-    isolation: process
     ports:
       - "44011:8983"
 
@@ -24,7 +22,6 @@ services:
     image: sitecore-xm1-cd:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cd:C:\inetpub\sc\App_Data\logs
-    isolation: process
     ports:
       - "44002:80"
     links:
@@ -35,7 +32,6 @@ services:
     image: sitecore-xm1-cm:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
-    isolation: process
     ports:
       - "44001:80"
     links:
