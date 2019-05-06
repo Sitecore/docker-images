@@ -18,8 +18,6 @@ $server.Properties["DefaultFile"].Value = $InstallPath
 $server.Properties["DefaultLog"].Value = $InstallPath
 $server.Alter()
 
-Write-Host "install path" + $InstallPath
-
 $sqlPackageExePath = Get-Item "C:\tools\*\lib\net46\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
 
 # attach
