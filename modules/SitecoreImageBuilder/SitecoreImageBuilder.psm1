@@ -31,6 +31,14 @@ function Invoke-Build
     $priorities.Add("^sitecore-xp-base:(.*)$", 110)
     $priorities.Add("^sitecore-xp-xconnect:(.*)$", 120)
     $priorities.Add("^sitecore-openjdk:(.*)$", 130)
+    $priorities.Add("^sitecore-xp-sqldev:(.*)$", 140)
+    $priorities.Add("^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 150)
+    $priorities.Add("^sitecore-xp-pse-(.*)-sqldev:(.*)$", 160)
+    $priorities.Add("^sitecore-xm-sqldev:(.*)$", 170)
+    $priorities.Add("^sitecore-xp-pse-(.*)-standalone:(.*)$", 180);
+    $priorities.Add("^sitecore-xm1-pse-(.*)-cm:(.*)$", 190);
+    
+    
     $priorities.Add("^(.*)$", $defaultPriority)
     
     # Find out what to build
@@ -145,7 +153,7 @@ function Invoke-Build
         }
         else
         {
-            docker image build --isolation "hyperv" --tag $tag $spec.Path
+            docker image build --isolation "hyperv" --tag $tag $spec.Path 
         }
 
         $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
