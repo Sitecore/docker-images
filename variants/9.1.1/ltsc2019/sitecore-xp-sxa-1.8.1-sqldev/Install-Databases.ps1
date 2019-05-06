@@ -18,18 +18,6 @@ $server.Properties["DefaultFile"].Value = $InstallPath
 $server.Properties["DefaultLog"].Value = $InstallPath
 $server.Alter()
 
-# detach DB
-# Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
-#     $databaseName = $_.BaseName.Replace("_Primary", "")
-
-#     Write-Host "### Detach: $databaseName"
-
-#     Invoke-Sqlcmd -Query "EXEC MASTER.dbo.sp_detach_db @dbname = N'$databaseName', @keepfulltextindexfile = N'false'"
-# }
-
-
-Write-Host "install path" + $InstallPath
-
 $sqlPackageExePath = Get-Item "C:\tools\*\lib\net46\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
 
 # attach
@@ -67,7 +55,7 @@ Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
     Invoke-Sqlcmd -Query "EXEC MASTER.dbo.sp_detach_db @dbname = N'$databaseName', @keepfulltextindexfile = N'false'"
 }
 
-# $server = New-Object Microsoft.SqlServer.Management.Smo.Server($env:COMPUTERNAME)
-# $server.Properties["DefaultFile"].Value = $DataPath
-# $server.Properties["DefaultLog"].Value = $DataPath
-# $server.Alter()
+$server = New-Object Microsoft.SqlServer.Management.Smo.Server($env:COMPUTERNAME)
+$server.Properties["DefaultFile"].Value = $DataPath
+$server.Properties["DefaultLog"].Value = $DataPath
+$server.Alter()
