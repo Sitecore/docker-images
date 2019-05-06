@@ -233,12 +233,12 @@ Example:
 # Load module
 Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 
-# Build and push
+# Build and push base images
 SitecoreImageBuilder\Invoke-Build `
     -Path (Join-Path $PSScriptRoot "\images") ` 
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
     -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
-    -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1803", "sitecore-*:9.0.1*1803" to only build 9.0.x images on 1803.
+    -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1809", "sitecore-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
 
 # Build and push variants
@@ -246,8 +246,6 @@ SitecoreImageBuilder\Invoke-Build `
     -Path (Join-Path $PSScriptRoot "\variants") ` 
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
     -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
-    -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1803", "sitecore-*:9.0.1*1803" to only build 9.0.x images on 1803.
+    -Tags "*" ` # optional (default "*"), set to for example "sitecore-xm1-sxa-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
-
-
 ```
