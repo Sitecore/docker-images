@@ -31,6 +31,14 @@ function Invoke-Build
     $priorities.Add("^sitecore-xp-base:(.*)$", 110)
     $priorities.Add("^sitecore-xp-xconnect:(.*)$", 120)
     $priorities.Add("^sitecore-openjdk:(.*)$", 130)
+    $priorities.Add("^sitecore-xp-sqldev:(.*)$", 140)
+    $priorities.Add("^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 150)
+    $priorities.Add("^sitecore-xp-pse-(.*)-sqldev:(.*)$", 160)
+    $priorities.Add("^sitecore-xm-sqldev:(.*)$", 170)
+    $priorities.Add("^sitecore-xp-pse-(.*)-standalone:(.*)$", 180);
+    $priorities.Add("^sitecore-xm1-pse-(.*)-cm:(.*)$", 190);
+    
+    
     $priorities.Add("^(.*)$", $defaultPriority)
     
     # Find out what to build
@@ -64,8 +72,8 @@ function Invoke-Build
 
     # Reorder specs, priorities goes first
     $specs = [System.Collections.ArrayList]@()
-    $specs.AddRange(($unsortedSpecs | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
-    $specs.AddRange(($unsortedSpecs | Where-Object { $_.Priority -eq $defaultPriority }))
+    $specs.AddRange(@($unsortedSpecs | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
+    $specs.AddRange(@($unsortedSpecs | Where-Object { $_.Priority -eq $defaultPriority }))
 
     # Print results
     $specs | Select-Object -Property Tag, Include, Priority, Base | Format-Table
@@ -145,7 +153,7 @@ function Invoke-Build
         }
         else
         {
-            docker image build --isolation "hyperv" --tag $tag $spec.Path
+            docker image build --isolation "hyperv" --tag $tag $spec.Path 
         }
 
         $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }

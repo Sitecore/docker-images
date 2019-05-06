@@ -6,6 +6,11 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 ## Changelog
 
+- [Changes] Add PSE/JSS and SXA docker compose test files
+- [Changes] Add Variants build support
+- [Changes] Add Variants support; Sitecore Experience Accelerator (SXA)
+- [Changes] Add Variants support; Sitecore JavaScript Services (JSS)
+- [Changes] Add Variants support; sitecore powershell extensions (PSE)
 - [Changed] Sitecore 9.1.1 IIS app pools now runs as `LocalSystem` so they are allowed to write to volume mounts on Windows Server 2016/2019 hosts.
 - [Fixed] Sitecore Solr images on 1809 now runs as `ContainerAdministrator` again to fix access denied errors, see [#27](https://github.com/sitecoreops/sitecore-images/issues/27). Thanks [@joostmeijles](https://github.com/joostmeijles) :+1:
 - [**Breaking**] Sitecore 9.1.1 XM images renamed **back** to `xm1`, see [#28](https://github.com/sitecoreops/sitecore-images/issues/28). Thanks [@sergeyshushlyapin](https://github.com/sergeyshushlyapin) :+1:
@@ -210,9 +215,19 @@ Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 
 # Build and push
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\images") `
+    -Path (Join-Path $PSScriptRoot "\images") ` 
     -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
     -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
     -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1803", "sitecore-*:9.0.1*1803" to only build 9.0.x images on 1803.
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
+
+# Build and push variants
+SitecoreImageBuilder\Invoke-Build `
+    -Path (Join-Path $PSScriptRoot "\variants") ` 
+    -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
+    -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
+    -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1803", "sitecore-*:9.0.1*1803" to only build 9.0.x images on 1803.
+    -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
+
+
 ```
