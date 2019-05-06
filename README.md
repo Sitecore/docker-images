@@ -2,15 +2,14 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. There are some older versions too if your interested! See [Current images](#current-images) for an up-to-date list of which images available. You can use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry. Jump to the [How to use](#how-to-use) section for more details.
+Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. There are some older versions too if your interested! See [Current images](#current-images) for an up-to-date list of which base images available and [Current variants](#current-variants) for variants (base images with additional modules installed). You can use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry. Jump to the [How to use](#how-to-use) section for more details.
 
 ## Changelog
 
-- [Changes] Add PSE/JSS and SXA docker compose test files
-- [Changes] Add Variants build support
-- [Changes] Add Variants support; Sitecore Experience Accelerator (SXA)
-- [Changes] Add Variants support; Sitecore JavaScript Services (JSS)
-- [Changes] Add Variants support; sitecore powershell extensions (PSE)
+- [Added] New variant: Sitecore 9.1.1 with Sitecore Experience Accelerator (SXA). Thanks [@bplasmeijer](https://github.com/bplasmeijer) :+1:
+- [Added] New variant: Sitecore 9.1.1 with Sitecore JavaScript Services (JSS). Thanks [@bplasmeijer](https://github.com/bplasmeijer) :+1:
+- [Added] New variant: Sitecore 9.1.1 with PowerShell Extensions (PSE). Thanks [@bplasmeijer](https://github.com/bplasmeijer) :+1:
+- [Added] New variants build support. See [How to use](#how-to-use) and [Current variants](#current-variants).
 - [Changed] Sitecore 9.1.1 IIS app pools now runs as `LocalSystem` so they are allowed to write to volume mounts on Windows Server 2016/2019 hosts.
 - [Fixed] Sitecore Solr images on 1809 now runs as `ContainerAdministrator` again to fix access denied errors, see [#27](https://github.com/sitecoreops/sitecore-images/issues/27). Thanks [@joostmeijles](https://github.com/joostmeijles) :+1:
 - [**Breaking**] Sitecore 9.1.1 XM images renamed **back** to `xm1`, see [#28](https://github.com/sitecoreops/sitecore-images/issues/28). Thanks [@sergeyshushlyapin](https://github.com/sergeyshushlyapin) :+1:
@@ -172,6 +171,27 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 | 8 | sitecore-openjdk | nanoserver | 1709 | `sitecore-openjdk:8-nanoserver-1709` [Dockerfile](images/sitecore-openjdk/nanoserver-1709/Dockerfile) |
 | 7.5.150212 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
 | 7.5.150212 | sitecore | windowsservercore | 1803 | `sitecore:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore/Dockerfile) |
+
+## Current variants
+
+| Version | Repository | OS  | Build | Tag |
+| ------- | ---------- | --- | -----------| --- |
+| 9.1.1 | sitecore-xp-sxa-1.8.1-standalone | windowsservercore | ltsc2019 | `sitecore-xp-sxa-1.8.1-standalone:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xp-sxa-1.8.1-standalone/Dockerfile) |
+| 9.1.1 | sitecore-xp-sxa-1.8.1-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sxa-1.8.1-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xp-sxa-1.8.1-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xp-sxa-1.8.1-cd | windowsservercore | ltsc2019 | `sitecore-xp-sxa-1.8.1-cd:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xp-sxa.1.8.1-cd/Dockerfile) |
+| 9.1.1 | sitecore-xp-pse-5.0-standalone | windowsservercore | ltsc2019 | `sitecore-xp-pse-5.0-standalone:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xp-pse-5.0-standalone/Dockerfile) |
+| 9.1.1 | sitecore-xp-pse-5.0-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-pse-5.0-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xp-pse-5.0-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xp-jss-10.0.1-standalone | windowsservercore | ltsc2019 | `sitecore-xp-jss-10.0.1-standalone:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xp-jss-10.0.1-standalone/Dockerfile) |
+| 9.1.1 | sitecore-xp-jss-10.0.1-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-jss-10.0.1-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xp-jss-10.0.1-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xp-jss-10.0.1-cd | windowsservercore | ltsc2019 | `sitecore-xp-jss-10.0.1-cd:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xp-jss.10.0.1-cd/Dockerfile) |
+| 9.1.1 | sitecore-xm1-sxa-1.8.1-sqldev | windowsservercore | ltsc2019 | `sitecore-xm1-sxa-1.8.1-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xm1-sxa-1.8.1-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xm1-sxa-1.8.1-cm | windowsservercore | ltsc2019 | `sitecore-xm1-sxa-1.8.1-cm:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xm1-sxa-1.8.1-cm/Dockerfile) |
+| 9.1.1 | sitecore-xm1-sxa-1.8.1-cd | windowsservercore | ltsc2019 | `sitecore-xm1-sxa-1.8.1-cd:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xm1-sxa.1.8.1-cd/Dockerfile) |
+| 9.1.1 | sitecore-xm1-pse-5.0-sqldev | windowsservercore | ltsc2019 | `sitecore-xm1-pse-5.0-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xm1-pse-5.0-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xm1-pse-5.0-cm | windowsservercore | ltsc2019 | `sitecore-xm1-pse-5.0-cm:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xm1-pse-5.0-cm/Dockerfile) |
+| 9.1.1 | sitecore-xm1-jss-10.0.1-sqldev | windowsservercore | ltsc2019 | `sitecore-xm1-jss-10.0.1-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xm1-jss-10.0.1-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xm1-jss-10.0.1-cm | windowsservercore | ltsc2019 | `sitecore-xm1-jss-10.0.1-cm:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xm1-jss-10.0.1-cm/Dockerfile) |
+| 9.1.1 | sitecore-xm1-jss-10.0.1-cd | windowsservercore | ltsc2019 | `sitecore-xm1-jss-10.0.1-cd:9.1.1-windowsservercore-ltsc2019` [Dockerfile](variants/9.1.1/ltsc2019/sitecore-xm1-jss.10.0.1-cd/Dockerfile) |
 
 ### Tags and Windows versions
 
