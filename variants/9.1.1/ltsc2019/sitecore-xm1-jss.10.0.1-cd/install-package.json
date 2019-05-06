@@ -1,0 +1,56 @@
+{
+    "Parameters": {
+        "Package": {
+            "Type": "string",
+            "Description": "The path to the Sitecore package."
+        },
+        "SiteName": {
+            "Type": "string",
+            "Description": "The url of the content management site."
+        },
+        "SqlCoreUser": {
+            "Type": "string",
+            "Description": "The path to the content management site.",
+            "DefaultValue": "<none>"
+        },
+        "SqlMasterUser": {
+            "Type": "string",
+            "Description": "The path to the content management site.",
+            "DefaultValue": "<none>"
+        }
+    },
+    "Variables": {
+        "Site.PhysicalPath": "[joinpath(parameter('SitePath'),parameter('SiteName'))]",
+        "Site.Url": "[concat('https://',parameter('SiteName'))]"
+    },
+    "Tasks": {
+        "InstallSitecorePackage": {
+            "Type": "WebDeploy",
+            "Params": {
+                "Verb": "Sync",
+                "Arguments": {
+                    "Source": {
+                        "Package": "[resolvepath(parameter('Package'))]"
+                    },
+                    "Dest": "Auto",
+                    "SetParam": [
+                        {
+                            "Name": "Application Path",
+                            "Value": "[parameter('SiteName')]"
+                        }
+                    ],
+                    "EnableRule": "DoNotDelete",
+                    "UseChecksum": true,
+                    "Skip": [
+                        {
+                            "ObjectName": "dbFullSql"
+                        },
+                        {
+                            "ObjectName": "dbDacFx"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}
