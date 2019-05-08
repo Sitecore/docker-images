@@ -1,5 +1,5 @@
 # escape=`
-FROM sitecore-xp-pse-5.0-sqldev:9.1.1-windowsservercore-ltsc2019 as final
+FROM sitecore-xm1-pse-5.0-sqldev:9.1.1-windowsservercore-ltsc2019 as final
 
 COPY . ${INSTALL_PATH}
 
