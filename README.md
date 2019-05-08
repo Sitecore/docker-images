@@ -6,6 +6,8 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 ## Changelog
 
+- [Changed] Sitecore 9.1.1 XM and XP SQL images are now based on the new `mssql-developer:2017-windowsservercore-ltsc2019` image.
+- [Added] Microsoft SQL Server 2017 base image on ltsc2019 added.
 - [Added] New variant: Sitecore 9.1.1 with Sitecore Experience Accelerator (SXA). Thanks [@bplasmeijer](https://github.com/bplasmeijer) :+1:
 - [Added] New variant: Sitecore 9.1.1 with Sitecore JavaScript Services (JSS). Thanks [@bplasmeijer](https://github.com/bplasmeijer) :+1:
 - [Added] New variant: Sitecore 9.1.1 with PowerShell Extensions (PSE). Thanks [@bplasmeijer](https://github.com/bplasmeijer) :+1:
@@ -171,6 +173,7 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 | 8 | sitecore-openjdk | nanoserver | 1709 | `sitecore-openjdk:8-nanoserver-1709` [Dockerfile](images/sitecore-openjdk/nanoserver-1709/Dockerfile) |
 | 7.5.150212 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
 | 7.5.150212 | sitecore | windowsservercore | 1803 | `sitecore:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore/Dockerfile) |
+| 2017 | mssql-developer | windowsservercore | ltsc2019 | `mssql-developer:2017-windowsservercore-ltsc2019` [Dockerfile](images/mssql-developer-2017/windowsservercore-ltsc2019/Dockerfile) |
 
 ## Current variants
 
