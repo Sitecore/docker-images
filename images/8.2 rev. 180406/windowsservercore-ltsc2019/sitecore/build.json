@@ -3,7 +3,7 @@
     "sources": [
         {
             "name": "license.xml",
-            "uri": "file:///./license.xml"
+            "uri": ""
         },
         {
             "name": "Sitecore 8.2 rev. 180406.zip",
