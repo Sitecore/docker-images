@@ -63,7 +63,7 @@ function Invoke-Build
         $sources = @()
 
         $spec.Sources | ForEach-Object {
-            $sources += (Join-Path $InstallSourcePath $_)
+            $sources += (Join-Path $InstallSourcePath $_.Name)
         }
         
         $spec.Sources = $sources
@@ -201,7 +201,8 @@ function Find-BuildSpecifications
     )
 
     Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
-        $data = Get-Content -Path $_.FullName | ConvertFrom-Json
+        $buildFilePath = $_.FullName
+        $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
         $dockerFile = Get-Item -Path (Join-Path $_.Directory.FullName "\Dockerfile")
         
         # Find base images
@@ -226,13 +227,53 @@ function Find-BuildSpecifications
             throw ("Tag was null or empty in '{0}'." -f $_.FullName)
         }
 
-        $sources = @()
+        $dataSources = @()
 
         if ($null -ne $data.sources)
         {
-            $sources = $data.sources
+            $dataSources = $data.sources
         }
 
+        $sources = @()
+        $dataSources | ForEach-Object {
+            $source = $_
+            $name = $null
+            $uri = $null
+
+            # TODO: Remove handling of old format when switch is complete
+
+            if ($null -ne $source -and $source.GetType().Name -eq "PSCustomObject")
+            {
+                $name = $source.name;
+
+                if (![string]::IsNullOrEmpty($source.uri))
+                {
+                    if (![System.Uri]::TryCreate(($source.uri).ToString(), [System.UriKind]::Absolute, [ref]$uri))
+                    {
+                        throw ("Parse error in '{0}', string '{1}' is not a valid uri." -f $buildFilePath, $source.uri)
+                    }
+                }
+            } 
+            elseif ($null -ne $source -and $source.GetType().Name -eq "String")
+            {                
+                $name = $source;
+            }
+            else
+            {
+                throw ("Unsupported format in '{0}'." -f $buildFilePath)
+            }
+
+            if ([string]::IsNullOrEmpty($name))
+            {
+                throw ("Parse error in '{0}', name was null or empty." -f $buildFilePath)
+            }
+          
+            $sources += (New-Object PSObject -Property @{
+                    Name = $name;
+                    Uri  = $uri;
+                })
+        }
+        
         Write-Output (New-Object PSObject -Property @{
                 Tag            = $data.tag;
                 Base           = $baseImages;
