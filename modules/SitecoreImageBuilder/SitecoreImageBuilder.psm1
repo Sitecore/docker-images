@@ -237,30 +237,15 @@ function Find-BuildSpecifications
         $sources = @()
         $dataSources | ForEach-Object {
             $source = $_
-            $name = $null
             $uri = $null
+            $name = $source.name;
 
-            # TODO: Remove handling of old format when switch is complete
-
-            if ($null -ne $source -and $source.GetType().Name -eq "PSCustomObject")
+            if (![string]::IsNullOrEmpty($source.uri))
             {
-                $name = $source.name;
-
-                if (![string]::IsNullOrEmpty($source.uri))
+                if (![System.Uri]::TryCreate(($source.uri).ToString(), [System.UriKind]::Absolute, [ref]$uri))
                 {
-                    if (![System.Uri]::TryCreate(($source.uri).ToString(), [System.UriKind]::Absolute, [ref]$uri))
-                    {
-                        throw ("Parse error in '{0}', string '{1}' is not a valid uri." -f $buildFilePath, $source.uri)
-                    }
+                    throw ("Parse error in '{0}', string '{1}' is not a valid uri." -f $buildFilePath, $source.uri)
                 }
-            } 
-            elseif ($null -ne $source -and $source.GetType().Name -eq "String")
-            {                
-                $name = $source;
-            }
-            else
-            {
-                throw ("Unsupported format in '{0}'." -f $buildFilePath)
             }
 
             if ([string]::IsNullOrEmpty($name))
