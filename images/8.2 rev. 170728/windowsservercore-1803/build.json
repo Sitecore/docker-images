@@ -1,7 +1,13 @@
 {
     "tag": "sitecore:8.2.170728-windowsservercore-1803",
     "sources": [
-        "license.xml",
-        "Sitecore 8.2 rev. 170728.zip"
+       {
+            "name": "license.xml",
+            "uri": "file:///./license.xml"
+        },
+        {
+            "name": "Sitecore 8.2 rev. 170728.zip",
+            "uri": "https://dev.sitecore.net/~/media/8E5A8B0622F348FC97A368CB03C1785E.ashx"
+        }
     ]
 }

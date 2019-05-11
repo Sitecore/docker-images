@@ -1,6 +1,9 @@
 {
     "tag": "sitecore-sqldev:7.5.150212-windowsservercore-1803",
     "sources": [
-        "Sitecore 7.5 rev. 150212.zip"
+        {
+            "name": "Sitecore 7.5 rev. 150212.zip",
+            "uri": ""
+        }
     ]
 }

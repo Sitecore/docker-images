@@ -1,6 +1,9 @@
 {
     "tag": "sitecore-xm1-solr:9.1.0-nanoserver-1803",
     "sources": [
-        "Sitecore 9.1.0 rev. 001564 (WDP XM1 packages).zip"
+        {
+            "name": "Sitecore 9.1.0 rev. 001564 (WDP XM1 packages).zip",
+            "uri": "https://dev.sitecore.net/~/media/B6F43F5FC9C54ED9A7425B76F134E08C.ashx"
+        }
     ]
 }
