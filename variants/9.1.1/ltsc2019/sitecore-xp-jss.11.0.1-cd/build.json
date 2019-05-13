@@ -1,0 +1,9 @@
+{
+    "tag": "sitecore-xp-jss-11.0.1-cd:9.1.1-windowsservercore-ltsc2019",
+    "sources": [
+        {
+            "name": "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.0.1 rev. 190318 CD.scwdp.zip",
+            "uri": "https://dev.sitecore.net/~/media/67CC49285DFC4B578451AEA3FDDC85A0.ashx"
+        }
+    ]
+}

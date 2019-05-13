@@ -8,7 +8,7 @@ param(
     [string]$DataPath
 )
 
-$noDatabases = (Get-ChildItem -Path $DataPath -Filter "*.mdf") -eq $null
+$noDatabases = $null -eq (Get-ChildItem -Path $DataPath -Filter "*.mdf")
 
 if ($noDatabases)
 {
@@ -36,5 +36,4 @@ Get-ChildItem -Path $DataPath -Filter "*.mdf" | ForEach-Object {
 
 Write-Host "### Sitecore databases ready!"
 
-# Call Start.ps1 from the base image https://github.com/Microsoft/mssql-docker/blob/master/windows/mssql-server-windows-developer/dockerfile
 & C:\Start.ps1 -sa_password $env:sa_password -ACCEPT_EULA $env:ACCEPT_EULA -attach_dbs \"$env:attach_dbs\" -Verbose

@@ -27,18 +27,17 @@ function Invoke-Build
     # Specify priority for each tag, used to ensure base images are build first. This is the most simple approach I could come up with for handling dependencies between images. If needed in the future, look into something like https://en.wikipedia.org/wiki/Topological_sorting.
     $defaultPriority = 1000
     $priorities = New-Object System.Collections.Specialized.OrderedDictionary
-    $priorities.Add("^sitecore-base:(.*)$", 100)
-    $priorities.Add("^sitecore-xp-base:(.*)$", 110)
-    $priorities.Add("^sitecore-xp-xconnect:(.*)$", 120)
-    $priorities.Add("^sitecore-openjdk:(.*)$", 130)
-    $priorities.Add("^sitecore-xp-sqldev:(.*)$", 140)
-    $priorities.Add("^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 150)
-    $priorities.Add("^sitecore-xp-pse-(.*)-sqldev:(.*)$", 160)
-    $priorities.Add("^sitecore-xm-sqldev:(.*)$", 170)
-    $priorities.Add("^sitecore-xp-pse-(.*)-standalone:(.*)$", 180);
-    $priorities.Add("^sitecore-xm1-pse-(.*)-cm:(.*)$", 190);
-    
-    
+    $priorities.Add("^mssql-developer:(.*)$", 100)
+    $priorities.Add("^sitecore-openjdk:(.*)$", 110)
+    $priorities.Add("^sitecore-base:(.*)$", 120)
+    $priorities.Add("^sitecore-xm1-sqldev:(.*)$", 130)
+    $priorities.Add("^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 140)
+    $priorities.Add("^sitecore-xm1-pse-(.*)-cm:(.*)$", 150);
+    $priorities.Add("^sitecore-xp-sqldev:(.*)$", 160)
+    $priorities.Add("^sitecore-xp-base:(.*)$", 170)
+    $priorities.Add("^sitecore-xp-xconnect:(.*)$", 180)    
+    $priorities.Add("^sitecore-xp-pse-(.*)-sqldev:(.*)$", 190)
+    $priorities.Add("^sitecore-xp-pse-(.*)-standalone:(.*)$", 200);
     $priorities.Add("^(.*)$", $defaultPriority)
     
     # Find out what to build
@@ -64,7 +63,7 @@ function Invoke-Build
         $sources = @()
 
         $spec.Sources | ForEach-Object {
-            $sources += (Join-Path $InstallSourcePath $_)
+            $sources += (Join-Path $InstallSourcePath $_.Name)
         }
         
         $spec.Sources = $sources
@@ -95,7 +94,7 @@ function Invoke-Build
         $specs | Where-Object { $_.Include -eq $true } | ForEach-Object {
             $spec = $_
 
-            $spec.Base | Where-Object { $_.StartsWith("sitecore") -eq $false } | ForEach-Object {
+            $spec.Base | Where-Object { $_.Contains("/") -eq $true } | ForEach-Object {
                 $baseImages += $_
             }
         }
@@ -202,7 +201,8 @@ function Find-BuildSpecifications
     )
 
     Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
-        $data = Get-Content -Path $_.FullName | ConvertFrom-Json
+        $buildFilePath = $_.FullName
+        $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
         $dockerFile = Get-Item -Path (Join-Path $_.Directory.FullName "\Dockerfile")
         
         # Find base images
@@ -227,13 +227,38 @@ function Find-BuildSpecifications
             throw ("Tag was null or empty in '{0}'." -f $_.FullName)
         }
 
-        $sources = @()
+        $dataSources = @()
 
         if ($null -ne $data.sources)
         {
-            $sources = $data.sources
+            $dataSources = $data.sources
         }
 
+        $sources = @()
+        $dataSources | ForEach-Object {
+            $source = $_
+            $uri = $null
+            $name = $source.name;
+
+            if (![string]::IsNullOrEmpty($source.uri))
+            {
+                if (![System.Uri]::TryCreate(($source.uri).ToString(), [System.UriKind]::Absolute, [ref]$uri))
+                {
+                    throw ("Parse error in '{0}', string '{1}' is not a valid uri." -f $buildFilePath, $source.uri)
+                }
+            }
+
+            if ([string]::IsNullOrEmpty($name))
+            {
+                throw ("Parse error in '{0}', name was null or empty." -f $buildFilePath)
+            }
+          
+            $sources += (New-Object PSObject -Property @{
+                    Name = $name;
+                    Uri  = $uri;
+                })
+        }
+        
         Write-Output (New-Object PSObject -Property @{
                 Tag            = $data.tag;
                 Base           = $baseImages;

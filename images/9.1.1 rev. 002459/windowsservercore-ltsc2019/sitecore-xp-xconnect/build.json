@@ -1,7 +1,13 @@
 {
     "tag": "sitecore-xp-xconnect:9.1.1-windowsservercore-ltsc2019",
     "sources": [
-        "license.xml",
-        "Sitecore 9.1.1 rev. 002459 (WDP XP0 packages).zip"
+        {
+            "name": "license.xml",
+            "uri": ""
+        },
+        {
+            "name": "Sitecore 9.1.1 rev. 002459 (WDP XP0 packages).zip",
+            "uri": "https://dev.sitecore.net/~/media/B262F95B2AFA4C39BDE821590CE6F1A6.ashx"
+        }
     ]
 }

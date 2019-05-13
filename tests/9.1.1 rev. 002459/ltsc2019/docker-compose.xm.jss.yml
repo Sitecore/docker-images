@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: sitecore-xm1-jss-10.0.1-sqldev:9.1.1-windowsservercore-ltsc2019
+    image: sitecore-xm1-jss-11.0.1-sqldev:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
@@ -19,7 +19,7 @@ services:
       - "44011:8983"
 
   cd:
-    image: sitecore-xm1-jss-10.0.1-cd:9.1.1-windowsservercore-ltsc2019
+    image: sitecore-xm1-jss-11.0.1-cd:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cd:C:\inetpub\sc\App_Data\logs
     ports:
@@ -29,7 +29,7 @@ services:
       - solr
 
   cm:
-    image: sitecore-xm1-jss-10.0.1-cm:9.1.1-windowsservercore-ltsc2019
+    image: sitecore-xm1-jss-11.0.1-cm:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
     ports:

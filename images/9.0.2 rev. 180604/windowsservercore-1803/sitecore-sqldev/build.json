@@ -1,6 +1,9 @@
 {
     "tag": "sitecore-sqldev:9.0.180604-windowsservercore-1803",
     "sources": [
-        "Sitecore 9.0.2 rev. 180604 (WDP XP0 packages).zip"
+        {
+            "name": "Sitecore 9.0.2 rev. 180604 (WDP XP0 packages).zip",
+            "uri": "https://dev.sitecore.net/~/media/F53E9734518E47EF892AD40A333B9426.ashx"
+        }
     ]
 }

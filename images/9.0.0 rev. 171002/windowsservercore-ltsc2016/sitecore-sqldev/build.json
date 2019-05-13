@@ -1,6 +1,9 @@
 {
     "tag": "sitecore-sqldev:9.0.171002-windowsservercore-ltsc2016",
     "sources": [
-        "Sitecore 9.0.0 rev. 171002 (WDP XP0 packages).zip"
+        {
+            "name": "Sitecore 9.0.0 rev. 171002 (WDP XP0 packages).zip",
+            "uri": "https://dev.sitecore.net/~/media/CB45E46E57C34573B07F106D6991720A.ashx"
+        }
     ]
 }

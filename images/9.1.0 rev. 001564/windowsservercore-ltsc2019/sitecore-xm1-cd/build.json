@@ -1,7 +1,13 @@
 {
     "tag": "sitecore-xm1-cd:9.1.0-windowsservercore-ltsc2019",
     "sources": [
-        "license.xml",
-        "Sitecore 9.1.0 rev. 001564 (WDP XM1 packages).zip"
+        {
+            "name": "license.xml",
+            "uri": ""
+        },
+        {
+            "name": "Sitecore 9.1.0 rev. 001564 (WDP XM1 packages).zip",
+            "uri": "https://dev.sitecore.net/~/media/B6F43F5FC9C54ED9A7425B76F134E08C.ashx"
+        }
     ]
 }
