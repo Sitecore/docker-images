@@ -6,7 +6,9 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 There are some more background and details in this post: [https://invokecommand.net/posts/automatically-build-and-update-base-images](https://invokecommand.net/posts/automatically-build-and-update-base-images).
 
 ### Important Note about this repository:
-This repository was created to help consolidate efforts around Sitecore and Docker. Although some Sitecore employees may contribute to the efforts, the code and examples found in this repository are created and maintained by the Community, unsupported by Sitecore and to be used for example purposes only and without official support.
+This repository was created to help consolidate efforts around Sitecore and Docker. Although
+
+## The code and examples found in this repository are created and maintained by the Community, unsupported by Sitecore and to be used for example purposes only and without official support.
 
 This repository was created by combining efforts / assets from repos such as [sitecoreops](https://github.com/sitecoreops/sitecore-images) and [sitecore-nine-docker](https://github.com/pbering/sitecore-nine-docker) and [sitecore-docker](https://github.com/avivasolutionsnl/sitecore-docker) repos. Thanks everyone for the great start and please feel free to continue providing feedback by creating an issue, PR, etc.
 
@@ -60,7 +62,7 @@ Before using the "Sitecore.DockerImages.Management" module, it needs to be impor
 Import-Module Sitecore.DockerImages.Management -Force -Verbose
 
 # Loading the module directly from the repository's code
-Import-Module –Name 'C:\docker\Sitecore\docker-images\modules\Sitecore.DockerImages.Management' -Force -Verbose
+Import-Module â€“Name 'C:\docker\Sitecore\docker-images\modules\Sitecore.DockerImages.Management' -Force -Verbose
 ````
 
 
@@ -110,7 +112,7 @@ A Docker registry is a storage and content delivery system, holding named Docker
 
 A **private** Docker registry is a registry with security restrictions which are managed by the registry's owner. It is commonly used by companies to store and share private Docker images among employees and collaborators.
 
-It is not necessary to have a private Docker registry to build this repository’s images, although it will be necessary to use them in multiple machines without having to rebuild them in each machine.
+It is not necessary to have a private Docker registry to build this repositoryâ€™s images, although it will be necessary to use them in multiple machines without having to rebuild them in each machine.
 
 Please notice that, due to licensing constraints, Docker images with Sitecore files cannot be stored or distributed through any **public** registry.
 
