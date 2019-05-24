@@ -1,4 +1,6 @@
 {
-    "tag": "sitecore-xp-xconnect-indexworker:9.1.0-windowsservercore-ltsc2019",
-    "sources": []
+    "tag":  "sitecore-xp-xconnect-indexworker:9.1.0-windowsservercore-ltsc2019",
+    "sources":  [
+
+                ]
 }

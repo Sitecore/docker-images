@@ -3,6 +3,7 @@ license.xml
 *-Local.ps1
 
 internal/
+packages/
 
 tests/**/data/**/*
 !tests/**/data/*/

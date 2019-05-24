@@ -1,17 +1,23 @@
 function Invoke-Build
 {
-    [CmdletBinding(SupportsShouldProcess = $true)]
+    [CmdletBinding(SupportsShouldProcess = $true, DefaultParameterSetName = "__SourcePath")]
     param(        
         [Parameter(Mandatory = $true)]
         [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
         [string]$Path,
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $true, ParameterSetName = "__SourcePath")]
         [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
         [string]$InstallSourcePath,
+        [Parameter(Mandatory = $true, ParameterSetName = "__SourceResolver")]
+        [ValidateScript({ $null -ne $_ })]
+        [scriptblock]$InstallSourceResolver,
         [Parameter(Mandatory = $true)]
         [string]$Registry,
         [Parameter(Mandatory = $false)]
-        [array]$Tags = @("*"),
+        [Alias("Tags")]
+        [string[]]$Include = @("*"),
+        [Parameter(Mandatory = $false)]
+        [string[]]$Exclude = @(),
         [Parameter(Mandatory = $false)]
         [ValidateSet("WhenChanged", "Always", "Never")]
         [string]$PushMode = "WhenChanged",
@@ -19,6 +25,13 @@ function Invoke-Build
         [ValidateSet("Always", "Never")]
         [string]$PullMode = "Always"
     )
+
+    If ($PSCmdlet.ParameterSetName -eq "__SourcePath") {
+        $InstallSourceResolver = {
+            Param($Source)
+            Join-Path $InstallSourcePath -ChildPath $Source
+        }
+    }
     
     # Setup
     $ErrorActionPreference = "STOP"
@@ -46,7 +59,30 @@ function Invoke-Build
     # Update specs, include or not
     $unsortedSpecs | ForEach-Object {
         $spec = $_
-        $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+
+        # typical filtering (via $Tag)
+        $spec.Include = ($Include | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+        $spec.Include = $spec.Include -and -not (($Exclude | ForEach-Object { $spec.Tag -like $_ }) -contains $true)
+    }
+
+    # Update specs, re-include base layers
+    $unsortedSpecs | Where-Object { $_.Include -eq $true } | ForEach-Object {
+        $spec = $_
+
+        # recursively iterate bases, excluding external ones, and re-include them
+        $baseSpecs = $unsortedSpecs | Where-Object { $spec.Base -contains $_.Tag }
+        While ($null -ne $baseSpecs) {
+            $baseSpecs | ForEach-Object {
+                $baseSpec = $_
+
+                Write-Information "### $($spec.Tag) implicitly including $($baseSpec.Tag) due to dependency" -InformationAction Continue
+                If ($baseSpec.Include -ne $true) {
+                    # FUTURE: Make a flag to override [disable] this behavior?
+                    $baseSpec.Include = $true
+                }
+            }
+            $baseSpecs = $unsortedSpecs | Where-Object { $baseSpecs.Base -contains $_.Tag } | Select-Object -First 1
+        }
     }
 
     # Update specs, set priority according to rules
@@ -62,8 +98,13 @@ function Invoke-Build
         $spec = $_
         $sources = @()
 
-        $spec.Sources | ForEach-Object {
-            $sources += (Join-Path $InstallSourcePath $_.Name)
+        # Could be pulling remote resx now, so only grab for images
+        # we are intending to building
+        If ($spec.Include) {
+            
+            $spec.Sources | ForEach-Object {
+                $sources += $InstallSourceResolver.Invoke($_, $spec.Tag)
+            }
         }
         
         $spec.Sources = $sources
@@ -77,117 +118,116 @@ function Invoke-Build
     # Print results
     $specs | Select-Object -Property Tag, Include, Priority, Base | Format-Table
 
-    # Abort if -WhatIf was used
-    if ($WhatIfPreference)
-    {
-        return
-    }
-
     Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
     # Pull latest external images
-    if ($PullMode -eq "Always")
-    {
-        $baseImages = @()
-        
-        # Find external base images of included specifications
-        $specs | Where-Object { $_.Include -eq $true } | ForEach-Object {
-            $spec = $_
-
-            $spec.Base | Where-Object { $_.Contains("/") -eq $true } | ForEach-Object {
-                $baseImages += $_
-            }
-        }
-
-        # Pull images
-        $baseImages | Select-Object -Unique | ForEach-Object {
-            $tag = $_
-
-            docker pull $tag
-
-            $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
-
-            Write-Host ("### External image '{0}' is latest." -f $tag)
-        }
-
-        Write-Host "### External images is up to date..." -ForegroundColor Green
-    }
-    else
-    {
-        Write-Warning ("### Pulling external images skipped since PullMode was '{0}'." -f $PullMode)
-    }
-
-    # Start build...
-    $specs | Where-Object { $_.Include } | ForEach-Object {
-        $spec = $_
-        $tag = $spec.Tag
-
-        Write-Host ("### Processing '{0}'..." -f $tag)
-    
-        # Save the digest of previous builds for later comparison
-        $previousDigest = $null
-    
-        if ((docker image ls $tag --quiet))
+    If ($PSCmdlet.ShouldProcess("Pull latest images")) {
+        if ($PullMode -eq "Always")
         {
-            $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
-        }
+            $baseImages = @()
+            
+            # Find external base images of included specifications
+            $specs | Where-Object { $_.Include -eq $true } | ForEach-Object {
+                $spec = $_
 
-        # Copy license.xml and any missing source files into build context
-        $spec.Sources | ForEach-Object {
-            $sourcePath = $_
-            $sourceItem = Get-Item -Path $sourcePath
-            $targetPath = Join-Path $spec.Path $sourceItem.Name
-
-            if (!(Test-Path -Path $targetPath) -or ($sourceItem.Name -eq "license.xml"))
-            {
-                Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
+                $spec.Base | Where-Object { $_.Contains("/") -eq $true } | ForEach-Object {
+                    $baseImages += $_
+                }
             }
-        }
-    
-        # Build image
-        if ($tag -like "*sql*")
-        {
-            # Building SQL based images needs more memory than the default 2GB...
-            docker image build --isolation "hyperv" --memory 4GB --tag $tag $spec.Path
+
+            # Pull images
+            $baseImages | Select-Object -Unique | ForEach-Object {
+                $tag = $_
+
+                Write-Host "### Pulling ${tag}" -InformationAction Continue
+                docker pull $tag
+
+                $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
+
+                Write-Host ("### External image '{0}' is latest." -f $tag)
+            }
+
+            Write-Host "### External images is up to date..." -ForegroundColor Green
         }
         else
         {
-            docker image build --isolation "hyperv" --tag $tag $spec.Path 
+            Write-Warning ("### Pulling external images skipped since PullMode was '{0}'." -f $PullMode)
         }
+    }
 
-        $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
+    # Start build...
+    If ($PSCmdlet.ShouldProcess("Start image builds")) {
+        $specs | Where-Object { $_.Include } | ForEach-Object {
+            $spec = $_
+            $tag = $spec.Tag
 
-        # Tag image
-        $fulltag = "{0}/{1}" -f $Registry, $tag
+            Write-Host ("### Processing '{0}'..." -f $tag)
+        
+            # Save the digest of previous builds for later comparison
+            $previousDigest = $null
+        
+            if ((docker image ls $tag --quiet))
+            {
+                $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
+            }
 
-        docker image tag $tag $fulltag
+            # Copy license.xml and any missing source files into build context
+            $spec.Sources | ForEach-Object {
+                $sourcePath = $_
+                $sourceItem = Get-Item -Path $sourcePath
+                $targetPath = Join-Path $spec.Path $sourceItem.Name
 
-        $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
+                if (!(Test-Path -Path $targetPath) -or ($sourceItem.Name -eq "license.xml"))
+                {
+                    Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
+                }
+            }
+        
+            # Build image
+            if ($tag -like "*sql*")
+            {
+                # Building SQL based images needs more memory than the default 2GB...
+                docker image build --isolation "hyperv" --memory 4GB --tag $tag $spec.Path
+            }
+            else
+            {
+                docker image build --isolation "hyperv" --tag $tag $spec.Path 
+            }
 
-        # Check to see if we need to stop here...
-        if ($PushMode -eq "Never")
-        {
-            Write-Warning ("### Done with '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode)
+            $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
 
-            return
+            # Tag image
+            $fulltag = "{0}/{1}" -f $Registry, $tag
+
+            docker image tag $tag $fulltag
+
+            $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
+
+            # Check to see if we need to stop here...
+            if ($PushMode -eq "Never")
+            {
+                Write-Warning ("### Done with '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode)
+
+                return
+            }
+
+            # Determine if we need to push
+            $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
+
+            if (($PushMode -eq "WhenChanged") -and ($currentDigest -eq $previousDigest))
+            {
+                Write-Host ("### Done with '{0}', but not pushed since 'PushMode' is '{1}' and the image has not changed since last build." -f $tag, $PushMode) -ForegroundColor Green
+
+                return
+            }
+
+            # Push image
+            docker image push $fulltag
+
+            $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
+
+            Write-Host ("### Done with '{0}', image pushed." -f $fulltag) -ForegroundColor Green
         }
-
-        # Determine if we need to push
-        $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
-
-        if (($PushMode -eq "WhenChanged") -and ($currentDigest -eq $previousDigest))
-        {
-            Write-Host ("### Done with '{0}', but not pushed since 'PushMode' is '{1}' and the image has not changed since last build." -f $tag, $PushMode) -ForegroundColor Green
-
-            return
-        }
-
-        # Push image
-        docker image push $fulltag
-
-        $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
-
-        Write-Host ("### Done with '{0}', image pushed." -f $fulltag) -ForegroundColor Green
     }
 }
 
@@ -201,8 +241,7 @@ function Find-BuildSpecifications
     )
 
     Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
-        $buildFilePath = $_.FullName
-        $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
+        $data = Get-Content -Path $_.FullName | ConvertFrom-Json
         $dockerFile = Get-Item -Path (Join-Path $_.Directory.FullName "\Dockerfile")
         
         # Find base images
@@ -227,38 +266,13 @@ function Find-BuildSpecifications
             throw ("Tag was null or empty in '{0}'." -f $_.FullName)
         }
 
-        $dataSources = @()
+        $sources = @()
 
         if ($null -ne $data.sources)
         {
-            $dataSources = $data.sources
+            $sources = $data.sources
         }
 
-        $sources = @()
-        $dataSources | ForEach-Object {
-            $source = $_
-            $uri = $null
-            $name = $source.name;
-
-            if (![string]::IsNullOrEmpty($source.uri))
-            {
-                if (![System.Uri]::TryCreate(($source.uri).ToString(), [System.UriKind]::Absolute, [ref]$uri))
-                {
-                    throw ("Parse error in '{0}', string '{1}' is not a valid uri." -f $buildFilePath, $source.uri)
-                }
-            }
-
-            if ([string]::IsNullOrEmpty($name))
-            {
-                throw ("Parse error in '{0}', name was null or empty." -f $buildFilePath)
-            }
-          
-            $sources += (New-Object PSObject -Property @{
-                    Name = $name;
-                    Uri  = $uri;
-                })
-        }
-        
         Write-Output (New-Object PSObject -Property @{
                 Tag            = $data.tag;
                 Base           = $baseImages;
