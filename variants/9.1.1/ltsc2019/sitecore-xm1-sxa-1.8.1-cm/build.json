@@ -1,9 +1,6 @@
 {
     "tag": "sitecore-xm1-sxa-1.8.1-cm:9.1.1-windowsservercore-ltsc2019",
     "sources": [
-        {
-            "name": "Sitecore Experience Accelerator XM 1.8.1 rev. 190319 for 9.1.1.scwdp.zip",
-            "uri": "https://dev.sitecore.net/~/media/F8CFFFD23CD54178B5749B0ECACB5813.ashx"
-        }
+        "Sitecore Experience Accelerator XM 1.8.1 rev. 190319 for 9.1.1.scwdp.zip"
     ]
 }

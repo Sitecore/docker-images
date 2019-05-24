@@ -1,9 +1,6 @@
 {
     "tag": "sitecore-xm1-pse-5.0-cm:9.1.1-windowsservercore-ltsc2019",
     "sources": [
-        {
-            "name": "Sitecore PowerShell Extensions-5.0.scwdp.zip",
-            "uri": "https://dev.sitecore.net/~/media/2C02EB17879548139937A41E5DA0EFCF.ashx"
-        }
+        "Sitecore PowerShell Extensions-5.0.scwdp.zip"
     ]
 }
