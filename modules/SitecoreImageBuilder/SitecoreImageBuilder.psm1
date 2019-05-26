@@ -66,7 +66,7 @@ function Invoke-PackageRestore
 
         if ($null -eq $package)
         {
-            throw ("Required package '{0}' was not found in '{1}'." -f $fileName, $packagesFile.FullName)
+            throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package '{2}' manually." -f $fileName, $packagesFile.FullName, $filePath)
         }
 
         $fileUrl = $package.url
