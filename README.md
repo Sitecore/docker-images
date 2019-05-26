@@ -6,6 +6,7 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 ## Changelog
 
+- [Added] Ability to download required packages from dev.sitecore.net, see [How to use](#how-to-use) section for more details. Thanks [@Brad-Christie](https://github.com/Brad-Christie) :+1:
 - [Added] Added Sitecore 9.1.1 XM and XP on 1903. Thanks [@jballe](https://github.com/jballe) :+1:
 - [Added] Node support for JSS CM images, the integrated Mode require node on the instance for Server-Side Rendering (SSR). [@bplasmeijer](https://github.com/bplasmeijer)
 - [Changed] Fixed tags for JSS images, was tagged with 10.0.1 instead of 11.0.1 which is the version installed, see [#35](https://github.com/sitecoreops/sitecore-images/issues/35). Thanks [@mikkelvalentinsorensen](https://github.com/mikkelvalentinsorensen) :+1:
@@ -255,19 +256,45 @@ Example:
 # Load module
 Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 
+# Settings
+$installSourcePath = (Join-Path $PSScriptRoot "\packages") # PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML, can be on local machine or a file share.
+$registry = "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your own registry.
+$sitecoreUsername = "YOUR dev.sitecore.net USERNAME"
+$sitecorePassword = "YOUR dev.sitecore.net PASSWORD"
+
+$baseTags = "*" # optional (default "*"), set to for example "sitecore-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+
+# Restore packages needed for base images, only files missing in $installSourcePath will be downloaded
+SitecoreImageBuilder\Invoke-PackageRestore `
+    -Path (Join-Path $PSScriptRoot "\images") `
+    -Destination $installSourcePath `
+    -Tags $baseTags `
+    -SitecoreUsername $sitecoreUsername `
+    -SitecorePassword $sitecorePassword
+
 # Build and push base images
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\images") ` 
-    -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
-    -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
-    -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1809", "sitecore-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+    -Path (Join-Path $PSScriptRoot "\images") `
+    -InstallSourcePath $installSourcePath `
+    -Registry $registry `
+    -Tags $baseTags `
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
 
-# Build and push variants
+$variantTags = "*" # optional (default "*"), set to for example "sitecore-xm1-sxa-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+
+# Restore packages needed for variant images, only files missing in $installSourcePath will be downloaded
+SitecoreImageBuilder\Invoke-PackageRestore `
+    -Path (Join-Path $PSScriptRoot "\variants") `
+    -Destination $installSourcePath `
+    -Tags $variantTags `
+    -SitecoreUsername $sitecoreUsername `
+    -SitecorePassword $sitecorePassword
+
+# Build and push variant images
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\variants") ` 
-    -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
-    -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
-    -Tags "*" ` # optional (default "*"), set to for example "sitecore-xm1-sxa-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+    -Path (Join-Path $PSScriptRoot "\variants") `
+    -InstallSourcePath $installSourcePath `
+    -Registry $registry `
+    -Tags $variantTags `
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
 ```
