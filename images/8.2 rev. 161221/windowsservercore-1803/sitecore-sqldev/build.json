@@ -1,6 +1,7 @@
 {
-    "tag":  "sitecore-sqldev:8.2.161221-windowsservercore-1803",
-    "sources":  [
-                    "Sitecore 8.2 rev. 161221.zip"
-                ]
+    "tag": "sitecore-sqldev:8.2.161221-windowsservercore-1803",
+    "deprecated": true,
+    "sources": [
+        "Sitecore 8.2 rev. 161221.zip"
+    ]
 }
