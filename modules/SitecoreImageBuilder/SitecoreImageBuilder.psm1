@@ -1,119 +1,149 @@
+function Invoke-PackageRestore
+{
+    [CmdletBinding(SupportsShouldProcess = $true)]
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
+    param(
+        [Parameter(Mandatory = $true)]
+        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [string]$Path
+        ,
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()] 
+        [string]$Destination
+        ,
+        [Parameter(Mandatory = $false)]
+        [array]$Tags = @("*"),
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [string]$SitecoreUsername
+        ,
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [string]$SitecorePassword
+    )
+
+    # Setup
+    $ErrorActionPreference = "STOP"
+    $ProgressPreference = "SilentlyContinue"
+
+    $downloadUrl = "https://dev.sitecore.net"
+
+    # Load packages file
+    $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\sitecore-packages.json") 
+    $packages = $packagesFile | Get-Content | ConvertFrom-Json
+
+    # Ensure destination exists
+    if (!(Test-Path $Destination -PathType "Container"))
+    {
+        New-Item $Destination -ItemType Directory -WhatIf:$false | Out-Null
+    }
+
+    # Find out which files is needed
+    $downloadSession = $null
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include"
+    $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
+    
+    # Check or download needed files
+    $expected | ForEach-Object {
+        $filePath = $_
+
+        if (Test-Path $filePath -PathType Leaf) 
+        {
+            $requiredFile = Get-Item -Path $filePath
+
+            if ($requiredFile.Length -gt 0)
+            {
+                Write-Host ("Required package found: '{0}'" -f $filePath)
+
+                return
+            }
+
+            Remove-Item -Path $filePath -Force
+        }
+
+        $fileName = $filePath.Replace("$Destination\", "")
+        $package = $packages.$fileName
+
+        if ($null -eq $package)
+        {
+            throw ("Required package '{0}' was not found in '{1}'." -f $fileName, $packagesFile.FullName)
+        }
+
+        $fileUrl = $package.url
+
+        if ([string]::IsNullOrEmpty($fileUrl))
+        {
+            throw ("Required package '{0}' was found in '{1}' but the 'url' property was null or empty." -f $fileName, $packagesFile.FullName)
+        }
+
+        if ($PSCmdlet.ShouldProcess($fileName))
+        {
+            # Login to dev.sitecore.net and save session for re-use
+            if ($null -eq $downloadSession)
+            {
+                Write-Verbose ("Logging in to '{0}'..." -f $downloadUrl)
+
+                $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
+                    username   = $SitecoreUsername
+                    password   = $SitecorePassword
+                    rememberMe = $true
+                } -SessionVariable "downloadSession" -UseBasicParsing
+
+                if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
+                {
+                    throw ("Unable to login to '{0}' with the supplied credentials." -f $downloadUrl)
+                }
+
+                Write-Verbose ("Logged in to '{0}'." -f $downloadUrl)
+            }
+
+            # Download package using saved session
+            Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
+        
+            Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $downloadSession -UseBasicParsing
+        }
+    }
+
+    Write-Host "Restore completed."
+}
+
 function Invoke-Build
 {
-    [CmdletBinding(SupportsShouldProcess = $true, DefaultParameterSetName = "__SourcePath")]
-    param(        
+    [CmdletBinding(SupportsShouldProcess = $true)]
+    param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
-        [string]$Path,
-        [Parameter(Mandatory = $true, ParameterSetName = "__SourcePath")]
-        [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
-        [string]$InstallSourcePath,
-        [Parameter(Mandatory = $true, ParameterSetName = "__SourceResolver")]
-        [ValidateScript({ $null -ne $_ })]
-        [scriptblock]$InstallSourceResolver,
+        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [string]$Path
+        ,
         [Parameter(Mandatory = $true)]
-        [string]$Registry,
+        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [string]$InstallSourcePath
+        ,
+        [Parameter(Mandatory = $true)]
+        [string]$Registry
+        ,
         [Parameter(Mandatory = $false)]
-        [Alias("Tags")]
-        [string[]]$Include = @("*"),
+        [array]$Tags = @("*")
+        ,
         [Parameter(Mandatory = $false)]
-        [string[]]$Exclude = @(),
+        [ValidateSet("Include", "Skip")]
+        [string]$ImplicitTagsBehavior = "Include"
+        ,
         [Parameter(Mandatory = $false)]
         [ValidateSet("WhenChanged", "Always", "Never")]
-        [string]$PushMode = "WhenChanged",
+        [string]$PushMode = "WhenChanged"
+        ,
         [Parameter(Mandatory = $false)]
         [ValidateSet("Always", "Never")]
         [string]$PullMode = "Always"
     )
 
-    If ($PSCmdlet.ParameterSetName -eq "__SourcePath") {
-        $InstallSourceResolver = {
-            Param($Source)
-            Join-Path $InstallSourcePath -ChildPath $Source
-        }
-    }
-    
     # Setup
     $ErrorActionPreference = "STOP"
     $ProgressPreference = "SilentlyContinue"
 
-    # Specify priority for each tag, used to ensure base images are build first. This is the most simple approach I could come up with for handling dependencies between images. If needed in the future, look into something like https://en.wikipedia.org/wiki/Topological_sorting.
-    $defaultPriority = 1000
-    $priorities = New-Object System.Collections.Specialized.OrderedDictionary
-    $priorities.Add("^mssql-developer:(.*)$", 100)
-    $priorities.Add("^sitecore-openjdk:(.*)$", 110)
-    $priorities.Add("^sitecore-base:(.*)$", 120)
-    $priorities.Add("^sitecore-xm1-sqldev:(.*)$", 130)
-    $priorities.Add("^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 140)
-    $priorities.Add("^sitecore-xm1-pse-(.*)-cm:(.*)$", 150);
-    $priorities.Add("^sitecore-xp-sqldev:(.*)$", 160)
-    $priorities.Add("^sitecore-xp-base:(.*)$", 170)
-    $priorities.Add("^sitecore-xp-xconnect:(.*)$", 180)    
-    $priorities.Add("^sitecore-xp-pse-(.*)-sqldev:(.*)$", 190)
-    $priorities.Add("^sitecore-xp-pse-(.*)-standalone:(.*)$", 200);
-    $priorities.Add("^(.*)$", $defaultPriority)
-    
     # Find out what to build
-    $unsortedSpecs = Find-BuildSpecifications -Path $Path
-
-    # Update specs, include or not
-    $unsortedSpecs | ForEach-Object {
-        $spec = $_
-
-        # typical filtering (via $Tag)
-        $spec.Include = ($Include | ForEach-Object { $spec.Tag -like $_ }) -contains $true
-        $spec.Include = $spec.Include -and -not (($Exclude | ForEach-Object { $spec.Tag -like $_ }) -contains $true)
-    }
-
-    # Update specs, re-include base layers
-    $unsortedSpecs | Where-Object { $_.Include -eq $true } | ForEach-Object {
-        $spec = $_
-
-        # recursively iterate bases, excluding external ones, and re-include them
-        $baseSpecs = $unsortedSpecs | Where-Object { $spec.Base -contains $_.Tag }
-        While ($null -ne $baseSpecs) {
-            $baseSpecs | ForEach-Object {
-                $baseSpec = $_
-
-                Write-Information "### $($spec.Tag) implicitly including $($baseSpec.Tag) due to dependency" -InformationAction Continue
-                If ($baseSpec.Include -ne $true) {
-                    # FUTURE: Make a flag to override [disable] this behavior?
-                    $baseSpec.Include = $true
-                }
-            }
-            $baseSpecs = $unsortedSpecs | Where-Object { $baseSpecs.Base -contains $_.Tag } | Select-Object -First 1
-        }
-    }
-
-    # Update specs, set priority according to rules
-    $unsortedSpecs | ForEach-Object {
-        $spec = $_
-        $rule = $priorities.Keys | Where-Object { $spec.Tag -match $_ } | Select-Object -First 1
-    
-        $spec.Priority = $priorities[$rule]
-    }
-
-    # Update specs, resolve sources to full path
-    $unsortedSpecs | ForEach-Object {
-        $spec = $_
-        $sources = @()
-
-        # Could be pulling remote resx now, so only grab for images
-        # we are intending to building
-        If ($spec.Include) {
-            
-            $spec.Sources | ForEach-Object {
-                $sources += $InstallSourceResolver.Invoke($_, $spec.Tag)
-            }
-        }
-        
-        $spec.Sources = $sources
-    }
-
-    # Reorder specs, priorities goes first
-    $specs = [System.Collections.ArrayList]@()
-    $specs.AddRange(@($unsortedSpecs | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
-    $specs.AddRange(@($unsortedSpecs | Where-Object { $_.Priority -eq $defaultPriority }))
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior
 
     # Print results
     $specs | Select-Object -Property Tag, Include, Priority, Base | Format-Table
@@ -121,7 +151,8 @@ function Invoke-Build
     Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
     # Pull latest external images
-    If ($PSCmdlet.ShouldProcess("Pull latest images")) {
+    if ($PSCmdlet.ShouldProcess("Pull latest images"))
+    {
         if ($PullMode -eq "Always")
         {
             $baseImages = @()
@@ -139,8 +170,7 @@ function Invoke-Build
             $baseImages | Select-Object -Unique | ForEach-Object {
                 $tag = $_
 
-                Write-Host "### Pulling ${tag}" -InformationAction Continue
-                docker pull $tag
+                docker image pull $tag
 
                 $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
 
@@ -156,7 +186,8 @@ function Invoke-Build
     }
 
     # Start build...
-    If ($PSCmdlet.ShouldProcess("Start image builds")) {
+    if ($PSCmdlet.ShouldProcess("Start image builds"))
+    {
         $specs | Where-Object { $_.Include } | ForEach-Object {
             $spec = $_
             $tag = $spec.Tag
@@ -231,21 +262,48 @@ function Invoke-Build
     }
 }
 
-function Find-BuildSpecifications
+function Initialize-BuildSpecifications
 {
-    [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
-        [string]$Path
+        [ValidateNotNull()] 
+        [PSCustomObject]$Specifications
+        ,
+        [Parameter(Mandatory = $true)]
+        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [string]$InstallSourcePath
+        ,
+        [Parameter(Mandatory = $false)]
+        [array]$Tags = @("*")
+        ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$ImplicitTagsBehavior = "Include"
     )
 
-    Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
-        $data = Get-Content -Path $_.FullName | ConvertFrom-Json
-        $dockerFile = Get-Item -Path (Join-Path $_.Directory.FullName "\Dockerfile")
+    # Update specs, resolve sources to full path
+    $Specifications | ForEach-Object {
+        $spec = $_
+        $sources = @()
+
+        $spec.Sources | ForEach-Object {
+            $sources += (Join-Path $InstallSourcePath $_)
+        }
         
-        # Find base images
-        $baseImages = $dockerFile | Get-Content | Where-Object { $_.StartsWith("FROM ") } | ForEach-Object { Write-Output $_.Replace("FROM ", "").Trim() } | ForEach-Object {
+        $spec.Sources = $sources
+    }
+
+    # Update specs, include or not
+    $Specifications | ForEach-Object {
+        $spec = $_
+        $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+    }
+
+    # Find base images
+    $Specifications | ForEach-Object {
+        $spec = $_
+
+        $baseImages = Get-Content -Path $spec.DockerFilePath | Where-Object { $_.StartsWith("FROM ") } | ForEach-Object { Write-Output $_.Replace("FROM ", "").Trim() } | ForEach-Object {
             $image = $_
 
             if ($image -like "* as *")
@@ -261,6 +319,82 @@ function Find-BuildSpecifications
             Write-Output $image
         }
 
+        $spec.Base = @($baseImages)
+    }
+
+    # Update specs, re-include base images
+    if ($ImplicitTagsBehavior -eq "Include")
+    {
+        $Specifications | Where-Object { $_.Include -eq $true } | ForEach-Object {
+            $spec = $_
+
+            # Recursively iterate bases, excluding external ones, and re-include them
+            $baseSpecs = $Specifications | Where-Object { $spec.Base -contains $_.Tag }
+        
+            while ($null -ne $baseSpecs)
+            {
+                $baseSpecs | ForEach-Object {
+                    $baseSpec = $_
+
+                    if ($baseSpec.Include -ne $true)
+                    {
+                        $baseSpec.Include = $true
+
+                        Write-Verbose ("Tag '{0}' implicitly included '{1}' due to dependency." -f $spec.Tag, $baseSpec.Tag)
+                    }
+                }
+
+                $baseSpecs = $Specifications | Where-Object { $baseSpecs.Base -contains $_.Tag } | Select-Object -First 1
+            }
+        }
+    }
+    
+
+    # Specify priority for each tag, used to ensure base images are build first. This is the most simple approach I could come up with for handling dependencies between images. If needed in the future, look into something like https://en.wikipedia.org/wiki/Topological_sorting.
+    $defaultPriority = 1000
+    $priorities = New-Object System.Collections.Specialized.OrderedDictionary
+    $priorities.Add("^mssql-developer:(.*)$", 100)
+    $priorities.Add("^sitecore-openjdk:(.*)$", 110)
+    $priorities.Add("^sitecore-base:(.*)$", 120)
+    $priorities.Add("^sitecore-xm1-sqldev:(.*)$", 130)
+    $priorities.Add("^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 140)
+    $priorities.Add("^sitecore-xm1-pse-(.*)-cm:(.*)$", 150);
+    $priorities.Add("^sitecore-xp-sqldev:(.*)$", 160)
+    $priorities.Add("^sitecore-xp-base:(.*)$", 170)
+    $priorities.Add("^sitecore-xp-xconnect:(.*)$", 180)
+    $priorities.Add("^sitecore-xp-pse-(.*)-sqldev:(.*)$", 190)
+    $priorities.Add("^sitecore-xp-pse-(.*)-standalone:(.*)$", 200);
+    $priorities.Add("^(.*)$", $defaultPriority)
+
+    # Update specs, set priority according to rules
+    $Specifications | ForEach-Object {
+        $spec = $_
+        $rule = $priorities.Keys | Where-Object { $spec.Tag -match $_ } | Select-Object -First 1
+    
+        $spec.Priority = $priorities[$rule]
+    }
+
+    # Reorder specs, priorities goes first
+    $specs = [System.Collections.ArrayList]@()
+    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
+    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
+
+    return $specs
+}
+
+function Get-BuildSpecifications
+{
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [string]$Path
+    )
+
+    Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
+        $data = Get-Content -Path $_.FullName | ConvertFrom-Json
+        $dockerFile = Get-Item -Path (Join-Path $_.Directory.FullName "\Dockerfile")
+        
         if ([string]::IsNullOrEmpty($data.tag))
         {
             throw ("Tag was null or empty in '{0}'." -f $_.FullName)
@@ -275,7 +409,7 @@ function Find-BuildSpecifications
 
         Write-Output (New-Object PSObject -Property @{
                 Tag            = $data.tag;
-                Base           = $baseImages;
+                Base           = @();
                 Path           = $_.Directory.FullName;
                 DockerFilePath = $dockerFile.FullName;
                 Sources        = $sources;
@@ -290,13 +424,13 @@ function Get-CurrentImages
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
         [string]$Path
     )
     
     $tagParser = [regex]"(?<repository>.*):(?<version>.*)-(?<os>.*)-(?<build>.*)"
 
-    Find-BuildSpecifications -Path $Path | ForEach-Object {
+    Get-BuildSpecifications -Path $Path | ForEach-Object {
         $spec = $_
         $match = $tagParser.Match($spec.Tag)
 
@@ -324,7 +458,7 @@ function Get-CurrentImagesMarkdown
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
         [string]$Path
     )
     
