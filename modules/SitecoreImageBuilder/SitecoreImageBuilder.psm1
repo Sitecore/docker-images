@@ -297,16 +297,15 @@ function Initialize-BuildSpecifications
     $Specifications | ForEach-Object {
         $spec = $_
 
-        if ($spec.Deprecated -and $Tags -eq "*")
+        $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+
+        # Do not include deprecated if $Tags is "*" (default)
+        if ($spec.Deprecated -and $null -eq (Compare-Object -ReferenceObject $Tags -DifferenceObject @("*") -PassThru)) 
         {
             $spec.Include = $false
         }
-        else
-        {
-            $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
-        }
     }
-
+    
     # Find base images
     $Specifications | ForEach-Object {
         $spec = $_
@@ -429,7 +428,7 @@ function Get-BuildSpecifications
                 DockerFilePath = $dockerFile.FullName;
                 Sources        = $sources;
                 Priority       = $null;
-                Include        = $null;
+                Include        = $false;
                 Deprecated     = $deprecated;
             })
     }

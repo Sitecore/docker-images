@@ -249,6 +249,8 @@ Here is the convention used when tagging images:
 1. Trigger on build changes on `master` - to get new versions.
 1. Trigger once a week - to get base images updated when Microsoft releases patched images.
 
+> Please note: To build deprecated tags, for example Sitecore 7.5, you need to explicit add it to the `Tags` parameter like so: `-Tags "*:7.5*"`.
+
 Example:
 
 ```PowerShell
