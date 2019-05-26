@@ -146,7 +146,7 @@ function Invoke-Build
     $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior
 
     # Print results
-    $specs | Select-Object -Property Tag, Include, Priority, Base | Format-Table
+    $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
 
     Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
@@ -296,7 +296,15 @@ function Initialize-BuildSpecifications
     # Update specs, include or not
     $Specifications | ForEach-Object {
         $spec = $_
-        $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+
+        if ($spec.Deprecated -and $Tags -eq "*")
+        {
+            $spec.Include = $false
+        }
+        else
+        {
+            $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+        }
     }
 
     # Find base images
@@ -407,6 +415,13 @@ function Get-BuildSpecifications
             $sources = $data.sources
         }
 
+        $deprecated = $false
+
+        if ($null -ne $data.deprecated)
+        {
+            $deprecated = [bool]$data.deprecated
+        }
+
         Write-Output (New-Object PSObject -Property @{
                 Tag            = $data.tag;
                 Base           = @();
@@ -415,6 +430,7 @@ function Get-BuildSpecifications
                 Sources        = $sources;
                 Priority       = $null;
                 Include        = $null;
+                Deprecated     = $deprecated;
             })
     }
 }
@@ -446,6 +462,7 @@ function Get-CurrentImages
                     Version        = $version;
                     OS             = $os;
                     Build          = $build;
+                    Deprecated     = $spec.Deprecated;
                     Tag            = $spec.Tag;
                     DockerFilePath = $spec.DockerFilePath;
                 })
@@ -462,12 +479,19 @@ function Get-CurrentImagesMarkdown
         [string]$Path
     )
     
-    Write-Output "| Version | Repository | OS  | Build | Tag |"
+    Write-Output "| Version | Repository | OS  | Build      | Tag |"
     Write-Output "| ------- | ---------- | --- | -----------| --- |"
 
     Get-CurrentImages -Path $Path | Sort-Object -Property Version, Build, Repository -Descending | ForEach-Object {
         $dockerFileUrl = (Resolve-Path $_.DockerFilePath -Relative).Replace(".\", "").Replace("\", "/").Replace(" ", "%20")
 
-        Write-Output ("| {0} | {1} | {2} | {3 } | ``{4}`` [Dockerfile]({5}) |" -f $_.Version, $_.Repository, $_.OS, $_.Build, $_.Tag, $dockerFileUrl)
+        if ($_.Deprecated)
+        {
+            Write-Output ("| ~~{0}~~ | ~~{1}~~ | ~~{2}~~ | ~~{3}~~ | ~~``{4}`` [Dockerfile]({5})~~ |" -f $_.Version, $_.Repository, $_.OS, $_.Build, $_.Tag, $dockerFileUrl)
+        }
+        else
+        {
+            Write-Output ("| {0} | {1} | {2} | {3 } | ``{4}`` [Dockerfile]({5}) |" -f $_.Version, $_.Repository, $_.OS, $_.Build, $_.Tag, $dockerFileUrl)
+        }
     }
 }
