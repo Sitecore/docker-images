@@ -7,6 +7,7 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 ## Changelog
 
 - [Added] Ability to download required packages from dev.sitecore.net, see [How to use](#how-to-use) section for more details. Thanks [@Brad-Christie](https://github.com/Brad-Christie) :+1:
+- [Changed] Implicit tags are now automatically included by default when using the `-Tags` parameter so you don't have to explicit define all dependent tags. Thanks [@Brad-Christie](https://github.com/Brad-Christie) :+1:
 - [Added] Added Sitecore 9.1.1 XM and XP on 1903. Thanks [@jballe](https://github.com/jballe) :+1:
 - [Added] Node support for JSS CM images, the integrated Mode require node on the instance for Server-Side Rendering (SSR). [@bplasmeijer](https://github.com/bplasmeijer)
 - [Changed] Fixed tags for JSS images, was tagged with 10.0.1 instead of 11.0.1 which is the version installed, see [#35](https://github.com/sitecoreops/sitecore-images/issues/35). Thanks [@mikkelvalentinsorensen](https://github.com/mikkelvalentinsorensen) :+1:
@@ -244,7 +245,7 @@ Here is the convention used when tagging images:
 
 ### Configure your build server
 
-1. Trigger a build on changes to this git repository - to get new versions.
+1. Trigger on build changes on `master` - to get new versions.
 1. Trigger once a week - to get base images updated when Microsoft releases patched images.
 
 Example:
