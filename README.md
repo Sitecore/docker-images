@@ -7,6 +7,11 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 ## Changelog
 
 - [Added] Added CreativeExchange interchange folder to SXA docker-compose file 9.1.1 XM and XP SXA on ltc2019
+- [Deprecated] Sitecore 8.2 rev. 161221 is now marked as deprecated. You can still build it explicitly using `-Tags "*:8.2.161221*"`.
+- [Deprecated] Sitecore 7.5 is now marked as deprecated. You can still build it explicitly using `-Tags "*:7.5*"`.
+- [**Breaking**] Added build / restore support for deprecated images. Images that are deprecated is not build by default anymore, only when explicitly defined in the `Tags` parameter.
+- [Added] Ability to download required packages from dev.sitecore.net, see [How to use](#how-to-use) section for more details. Thanks [@Brad-Christie](https://github.com/Brad-Christie) :+1:
+- [Changed] Implicit tags are now automatically included by default when using the `-Tags` parameter so you don't have to explicit define all dependent tags. Thanks [@Brad-Christie](https://github.com/Brad-Christie) :+1:
 - [Added] Added Sitecore 9.1.1 XM and XP on 1903. Thanks [@jballe](https://github.com/jballe) :+1:
 - [Added] Node support for JSS CM images, the integrated Mode require node on the instance for Server-Side Rendering (SSR). [@bplasmeijer](https://github.com/bplasmeijer)
 - [Changed] Fixed tags for JSS images, was tagged with 10.0.1 instead of 11.0.1 which is the version installed, see [#35](https://github.com/sitecoreops/sitecore-images/issues/35). Thanks [@mikkelvalentinsorensen](https://github.com/mikkelvalentinsorensen) :+1:
@@ -63,7 +68,7 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 ## Current images
 
-| Version | Repository | OS  | Build | Tag |
+| Version | Repository | OS  | Build      | Tag |
 | ------- | ---------- | --- | -----------| --- |
 | 9.1.1 | sitecore-xp-xconnect-indexworker | windowsservercore | ltsc2019 | `sitecore-xp-xconnect-indexworker:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-xconnect-indexworker/Dockerfile) |
 | 9.1.1 | sitecore-xp-xconnect-automationengine | windowsservercore | ltsc2019 | `sitecore-xp-xconnect-automationengine:9.1.1-windowsservercore-ltsc2019` [Dockerfile](images/9.1.1%20rev.%20002459/windowsservercore-ltsc2019/sitecore-xp-xconnect-automationengine/Dockerfile) |
@@ -181,16 +186,16 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 | 8.2.170407 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:8.2.170407-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170407/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
 | 8.2.170407 | sitecore | windowsservercore | 1803 | `sitecore:8.2.170407-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20170407/windowsservercore-1803/Sitecore/Dockerfile) |
 | 8.2.170407 | sitecore | windowsservercore | 1709 | `sitecore:8.2.170407-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20170407/windowsservercore-1709/Dockerfile) |
-| 8.2.161221 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:8.2.161221-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
-| 8.2.161221 | sitecore | windowsservercore | 1803 | `sitecore:8.2.161221-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1803/sitecore/Dockerfile) |
-| 8.2.161221 | sitecore-sqldev | windowsservercore | 1709 | `sitecore-sqldev:8.2.161221-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1709/sitecore-sqldev/Dockerfile) |
-| 8.2.161221 | sitecore | windowsservercore | 1709 | `sitecore:8.2.161221-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1709/sitecore/Dockerfile) |
+| ~~8.2.161221~~ | ~~sitecore-sqldev~~ | ~~windowsservercore~~ | ~~1803~~ | ~~`sitecore-sqldev:8.2.161221-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1803/sitecore-sqldev/Dockerfile)~~ |
+| ~~8.2.161221~~ | ~~sitecore~~ | ~~windowsservercore~~ | ~~1803~~ | ~~`sitecore:8.2.161221-windowsservercore-1803` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1803/sitecore/Dockerfile)~~ |
+| ~~8.2.161221~~ | ~~sitecore-sqldev~~ | ~~windowsservercore~~ | ~~1709~~ | ~~`sitecore-sqldev:8.2.161221-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1709/sitecore-sqldev/Dockerfile)~~ |
+| ~~8.2.161221~~ | ~~sitecore~~ | ~~windowsservercore~~ | ~~1709~~ | ~~`sitecore:8.2.161221-windowsservercore-1709` [Dockerfile](images/8.2%20rev.%20161221/windowsservercore-1709/sitecore/Dockerfile)~~ |
 | 8 | sitecore-openjdk | nanoserver | 1903 | `sitecore-openjdk:8-nanoserver-1903` [Dockerfile](images/sitecore-openjdk/nanoserver-1903/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1809 | `sitecore-openjdk:8-nanoserver-1809` [Dockerfile](images/sitecore-openjdk/nanoserver-1809/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1803 | `sitecore-openjdk:8-nanoserver-1803` [Dockerfile](images/sitecore-openjdk/nanoserver-1803/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1709 | `sitecore-openjdk:8-nanoserver-1709` [Dockerfile](images/sitecore-openjdk/nanoserver-1709/Dockerfile) |
-| 7.5.150212 | sitecore-sqldev | windowsservercore | 1803 | `sitecore-sqldev:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore-sqldev/Dockerfile) |
-| 7.5.150212 | sitecore | windowsservercore | 1803 | `sitecore:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore/Dockerfile) |
+| ~~7.5.150212~~ | ~~sitecore-sqldev~~ | ~~windowsservercore~~ | ~~1803~~ | ~~`sitecore-sqldev:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore-sqldev/Dockerfile)~~ |
+| ~~7.5.150212~~ | ~~sitecore~~ | ~~windowsservercore~~ | ~~1803~~ | ~~`sitecore:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore/Dockerfile)~~ |
 | 2017 | mssql-developer | windowsservercore | ltsc2019 | `mssql-developer:2017-windowsservercore-ltsc2019` [Dockerfile](images/mssql-developer-2017/windowsservercore-ltsc2019/Dockerfile) |
 | 2017 | mssql-developer | windowsservercore | 1903 | `mssql-developer:2017-windowsservercore-1903` [Dockerfile](images/mssql-developer-2017/windowsservercore-1903/Dockerfile) |
 
@@ -244,8 +249,10 @@ Here is the convention used when tagging images:
 
 ### Configure your build server
 
-1. Trigger a build on changes to this git repository - to get new versions.
+1. Trigger on build changes on `master` - to get new versions.
 1. Trigger once a week - to get base images updated when Microsoft releases patched images.
+
+> Please note: To build deprecated tags, for example Sitecore 7.5, you need to explicit add it to the `Tags` parameter like so: `-Tags "*:7.5*"`.
 
 Example:
 
@@ -256,19 +263,45 @@ Example:
 # Load module
 Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 
+# Settings
+$installSourcePath = (Join-Path $PSScriptRoot "\packages") # PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML, can be on local machine or a file share.
+$registry = "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your own registry.
+$sitecoreUsername = "YOUR dev.sitecore.net USERNAME"
+$sitecorePassword = "YOUR dev.sitecore.net PASSWORD"
+
+$baseTags = "*" # optional (default "*"), set to for example "sitecore-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+
+# Restore packages needed for base images, only files missing in $installSourcePath will be downloaded
+SitecoreImageBuilder\Invoke-PackageRestore `
+    -Path (Join-Path $PSScriptRoot "\images") `
+    -Destination $installSourcePath `
+    -Tags $baseTags `
+    -SitecoreUsername $sitecoreUsername `
+    -SitecorePassword $sitecorePassword
+
 # Build and push base images
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\images") ` 
-    -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
-    -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
-    -Tags "*" ` # optional (default "*"), set to for example "sitecore-openjdk:*-1809", "sitecore-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+    -Path (Join-Path $PSScriptRoot "\images") `
+    -InstallSourcePath $installSourcePath `
+    -Registry $registry `
+    -Tags $baseTags `
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
 
-# Build and push variants
+$variantTags = "*" # optional (default "*"), set to for example "sitecore-xm1-sxa-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+
+# Restore packages needed for variant images, only files missing in $installSourcePath will be downloaded
+SitecoreImageBuilder\Invoke-PackageRestore `
+    -Path (Join-Path $PSScriptRoot "\variants") `
+    -Destination $installSourcePath `
+    -Tags $variantTags `
+    -SitecoreUsername $sitecoreUsername `
+    -SitecorePassword $sitecorePassword
+
+# Build and push variant images
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\variants") ` 
-    -InstallSourcePath "PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML" `
-    -Registry "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your private registry.
-    -Tags "*" ` # optional (default "*"), set to for example "sitecore-xm1-sxa-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+    -Path (Join-Path $PSScriptRoot "\variants") `
+    -InstallSourcePath $installSourcePath `
+    -Registry $registry `
+    -Tags $variantTags `
     -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
 ```

@@ -1,4 +1,6 @@
 {
-    "tag": "sitecore-openjdk:8-nanoserver-1803",
-    "sources": []
+    "tag":  "sitecore-openjdk:8-nanoserver-1803",
+    "sources":  [
+
+                ]
 }

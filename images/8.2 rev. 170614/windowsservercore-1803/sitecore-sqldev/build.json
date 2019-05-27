@@ -1,9 +1,6 @@
 {
-    "tag": "sitecore-sqldev:8.2.170614-windowsservercore-1803",
-    "sources": [
-        {
-            "name": "Sitecore 8.2 rev. 170614.zip",
-            "uri": "https://dev.sitecore.net/~/media/168DCCAD06C947F69BA015F3A0238F29.ashx"
-        }
-    ]
+    "tag":  "sitecore-sqldev:8.2.170614-windowsservercore-1803",
+    "sources":  [
+                    "Sitecore 8.2 rev. 170614.zip"
+                ]
 }

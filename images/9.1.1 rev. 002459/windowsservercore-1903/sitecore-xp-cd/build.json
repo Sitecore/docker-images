@@ -1,13 +1,7 @@
 {
     "tag": "sitecore-xp-cd:9.1.1-windowsservercore-1903",
     "sources": [
-        {
-            "name": "license.xml",
-            "uri": ""
-        },
-        {
-            "name": "Sitecore 9.1.1 rev. 002459 (WDP XP1 packages).zip",
-            "uri": "https://dev.sitecore.net/~/media/45664EE58F544C6885FF3F763515AE77.ashx"
-        }
+        "license.xml",
+        "Sitecore 9.1.1 rev. 002459 (WDP XP1 packages).zip"
     ]
 }
