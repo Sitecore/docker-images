@@ -60,6 +60,7 @@ services:
     image: sitecore-xp-sxa-1.8.1-standalone:9.1.1-windowsservercore-ltsc2019
     volumes:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
+      - .\data\creativeexchange:C:\inetpub\sc\App_Data\packages\CreativeExchange\FileStorage
     ports:
       - "44001:80"
     links:
