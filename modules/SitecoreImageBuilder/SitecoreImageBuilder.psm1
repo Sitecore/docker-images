@@ -297,12 +297,14 @@ function Initialize-BuildSpecifications
     $Specifications | ForEach-Object {
         $spec = $_
 
-        $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
-
-        # Do not include deprecated if $Tags is "*" (default)
-        if ($spec.Deprecated -and $null -eq (Compare-Object -ReferenceObject $Tags -DifferenceObject @("*") -PassThru)) 
+        if ($spec.Deprecated)
         {
-            $spec.Include = $false
+            # Only include deprecated specifications when it's explicitly matched
+            $spec.Include = ($Tags | Where-Object { $_ -ne "*" } | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+        }
+        else
+        {
+            $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
         }
     }
     
