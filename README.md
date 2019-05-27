@@ -6,6 +6,7 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 ## Changelog
 
+- [Added] Added CreativeExchange interchange folder to SXA docker-compose file 9.1.1 XM and XP SXA on ltc2019
 - [Added] Added Sitecore 9.1.1 XM and XP on 1903. Thanks [@jballe](https://github.com/jballe) :+1:
 - [Added] Node support for JSS CM images, the integrated Mode require node on the instance for Server-Side Rendering (SSR). [@bplasmeijer](https://github.com/bplasmeijer)
 - [Changed] Fixed tags for JSS images, was tagged with 10.0.1 instead of 11.0.1 which is the version installed, see [#35](https://github.com/sitecoreops/sitecore-images/issues/35). Thanks [@mikkelvalentinsorensen](https://github.com/mikkelvalentinsorensen) :+1:
