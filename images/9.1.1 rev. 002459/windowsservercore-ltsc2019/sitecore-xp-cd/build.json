@@ -1,7 +1,0 @@
-{
-    "tag":  "sitecore-xp-cd:9.1.1-windowsservercore-ltsc2019",
-    "sources":  [
-                    "license.xml",
-                    "Sitecore 9.1.1 rev. 002459 (WDP XP1 packages).zip"
-                ]
-}
