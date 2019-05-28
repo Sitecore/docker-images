@@ -1,0 +1,13 @@
+{
+    "tags": [
+        {
+            "tag": "sitecore-xp-pse-5.0-sqldev:9.1.1-windowsservercore-ltsc2019",
+            "build-options": [
+                "--build-arg BASE_IMAGE=sitecore-xp-sqldev:9.1.1-windowsservercore-ltsc2019"
+            ]
+        }
+    ],
+    "sources": [
+        "Sitecore PowerShell Extensions-5.0.scwdp.zip"
+    ]
+}
