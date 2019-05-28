@@ -420,7 +420,7 @@ function Get-BuildSpecifications
                 $options = @()
 
                 # TODO: Removed when all build.json files has been converted to new format
-                if($tag -like "*sql*") 
+                if($tag.tag -like "*sql*") 
                 {
                     $options += "--memory 4GB"
                 }
