@@ -1,7 +1,14 @@
 {
-    "tag": "sitecore-sqldev:7.5.150212-windowsservercore-1803",
-    "deprecated": true,
-    "sources": [
-        "Sitecore 7.5 rev. 150212.zip"
-    ]
+  "tags": [
+    {
+      "build-options": [
+        "--memory 4GB"
+      ],
+      "tag": "sitecore-sqldev:7.5.150212-windowsservercore-1803",
+      "deprecated": true
+    }
+  ],
+  "sources": [
+    "Sitecore 7.5 rev. 150212.zip"
+  ]
 }
