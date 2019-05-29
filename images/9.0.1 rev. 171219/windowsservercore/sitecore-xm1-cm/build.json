@@ -1,16 +1,16 @@
 {
   "tags": [
     {
+      "tag": "sitecore-xm1-cm:9.0.171219-windowsservercore-1803",
       "build-options": [
         "--build-arg BASE_IMAGE=sitecore-base:9.0.171219-windowsservercore-1803"
-      ],
-      "tag": "sitecore-xm1-cm:9.0.171219-windowsservercore-1803"
+      ]
     },
     {
+      "tag": "sitecore-xm1-cm:9.0.171219-windowsservercore-1709",
       "build-options": [
         "--build-arg BASE_IMAGE=sitecore-base:9.0.171219-windowsservercore-1709"
       ],
-      "tag": "sitecore-xm1-cm:9.0.171219-windowsservercore-1709",
       "deprecated": true
     }
   ],

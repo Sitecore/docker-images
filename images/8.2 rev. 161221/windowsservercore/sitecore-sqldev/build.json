@@ -9,11 +9,11 @@
     },
     {
       "tag": "sitecore-sqldev:8.2.161221-windowsservercore-1709",
-      "deprecated": true,
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:1709"
-      ]
+      ],
+      "deprecated": true
     }
   ],
   "sources": [
