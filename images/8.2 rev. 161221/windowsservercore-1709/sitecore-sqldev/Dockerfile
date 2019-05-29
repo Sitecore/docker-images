@@ -29,7 +29,6 @@ RUN Stop-Service MSSQLSERVER; `
 
 HEALTHCHECK CMD [ "sqlcmd", "-Q", "select 1" ]
 
-# ABOVE HERE SHOULD BE REMOVE WHEN A 1803 VERSION IS RELEASED
 ENV ACCEPT_EULA=Y
 ENV sa_password='HASH-epsom-sunset-cost7!'
 ENV DB_PREFIX='sc'

@@ -1,5 +1,7 @@
 # escape=`
-FROM sitecore-base:9.0.171002-windowsservercore-1709
+ARG BASE_IMAGE
+
+FROM $BASE_IMAGE
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
@@ -38,3 +40,4 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
     Start-WebAppPool -Name $env:SITENAME; `
     Start-Website -Name $env:SITENAME;
+
