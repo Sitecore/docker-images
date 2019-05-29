@@ -1,5 +1,7 @@
 # escape=`
-FROM mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1709
+ARG BASE_IMAGE
+
+FROM $BASE_IMAGE
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
@@ -21,3 +23,4 @@ RUN Import-Module WebAdministration; `
     Set-ItemProperty -Path 'IIS:\AppPools\DefaultAppPool' -Name 'enable32BitAppOnWin64' -Value 'True'; `
     Set-Itemproperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name ServerPriorityTimeLimit -Value 0 -Type DWord; `
     setx /M PATH $($env:PATH + ';C:\Sitecore\Scripts');
+
