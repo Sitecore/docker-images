@@ -36,27 +36,20 @@ COPY schema.xml 'c:/solr/server/solr/configsets/basic_configs/conf'
 RUN New-Item -Path 'c:/clean' -ItemType Directory | Out-Null; `
     Get-ChildItem -Path 'c:/solr/server/solr' | Foreach-Object { Copy-Item -Path $_.FullName -Destination 'c:/clean' -Recurse }
 
-# Runtime image
 FROM $BASE_IMAGE
+
+USER ContainerAdministrator
 
 COPY --from=builder /solr /solr
 COPY --from=builder /clean /clean
 COPY --from=builder /windows/system32/find.exe /windows/system32/
-COPY MapDrive.cmd MapDrive.cmd
 
-VOLUME c:/data
+RUN MKDIR c:\\data
 
-# Workaround for java issues with Windows container symlinks: https://github.com/moby/moby/issues/27537#issuecomment-271546031
-USER ContainerAdministrator
-RUN MapDrive.cmd G:
+ENV SOLR_HOME=c:/data
 
-# Set solr home dir to above mapped drive
-ENV SOLR_HOME=G:/
-
-# Expose default port
 EXPOSE 8983
 
-# Boot
 COPY Boot.cmd .
 
 CMD Boot.cmd c:\\solr 8983 c:\\clean c:\\data
