@@ -1,1 +1,0 @@
-Watch-Directory -Path "C:\inetpub\wwwroot" -Destination "C:\inetpub\sc"

@@ -1,5 +1,8 @@
 # escape=`
-FROM sitecore-base:9.0.180604-windowsservercore-1709 as builder
+ARG BUILD_IMAGE
+ARG BASE_IMAGE
+
+FROM $BUILD_IMAGE as builder
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
@@ -44,7 +47,7 @@ RUN New-Item -Path 'c:/clean' -ItemType Directory | Out-Null; `
     Get-ChildItem -Path 'c:/solr/server/solr' | Foreach-Object { Copy-Item -Path $_.FullName -Destination 'c:/clean' -Recurse }
 
 # Runtime image
-FROM sitecore-openjdk:8-nanoserver-1709 as final
+FROM $BASE_IMAGE
 
 COPY --from=builder /solr /solr
 COPY --from=builder /clean /clean

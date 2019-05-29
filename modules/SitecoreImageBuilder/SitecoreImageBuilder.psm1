@@ -428,9 +428,9 @@ function Get-BuildSpecifications
 
             $deprecated = $false
 
-            if ($null -ne $data.deprecated)
+            if ($null -ne $tag.deprecated)
             {
-                $deprecated = [bool]$data.deprecated
+                $deprecated = [bool]$tag.deprecated
             }
 
             # Find base images...

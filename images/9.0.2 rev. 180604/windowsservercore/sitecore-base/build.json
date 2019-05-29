@@ -1,0 +1,27 @@
+{
+  "tags": [
+    {
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-ltsc2019"
+      ],
+      "tag": "sitecore-base:9.0.180604-windowsservercore-ltsc2019"
+    },
+    {
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1803",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1803"
+      ],
+      "tag": "sitecore-base:9.0.180604-windowsservercore-1803"
+    },
+    {
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1709",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1709"
+      ],
+      "tag": "sitecore-base:9.0.180604-windowsservercore-1709",
+      "deprecated": true
+    }
+  ],
+  "sources": []
+}
