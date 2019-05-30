@@ -12,7 +12,12 @@ function Invoke-PackageRestore
         [string]$Destination
         ,
         [Parameter(Mandatory = $false)]
-        [array]$Tags = @("*"),
+        [array]$Tags = @("*")
+        ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$DeprecatedTagsBehavior = "Skip"
+        ,
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         [string]$SitecoreUsername
@@ -40,7 +45,7 @@ function Invoke-PackageRestore
 
     # Find out which files is needed
     $downloadSession = $null
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include"
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
     
     # Check or download needed files
@@ -130,6 +135,10 @@ function Invoke-Build
         [string]$ImplicitTagsBehavior = "Include"
         ,
         [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$DeprecatedTagsBehavior = "Skip"
+        ,
+        [Parameter(Mandatory = $false)]
         [ValidateSet("WhenChanged", "Always", "Never")]
         [string]$PushMode = "WhenChanged"
         ,
@@ -143,7 +152,7 @@ function Invoke-Build
     $ProgressPreference = "SilentlyContinue"
 
     # Find out what to build
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
 
     # Print results
     $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
@@ -280,6 +289,10 @@ function Initialize-BuildSpecifications
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
         [string]$ImplicitTagsBehavior = "Include"
+        ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$DeprecatedTagsBehavior = "Skip"
     )
 
     # Update specs, resolve sources to full path
@@ -298,14 +311,13 @@ function Initialize-BuildSpecifications
     $Specifications | ForEach-Object {
         $spec = $_
 
-        if ($spec.Deprecated)
+        $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+         
+        if ($spec.Include -eq $true -and $spec.Deprecated -eq $true -and $DeprecatedTagsBehavior -eq "Skip")
         {
-            # Only include deprecated specifications when it's explicitly matched
-            $spec.Include = ($Tags | Where-Object { $_ -ne "*" } | ForEach-Object { $spec.Tag -like $_ }) -contains $true
-        }
-        else
-        {
-            $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
+            $spec.Include = $false
+
+            Write-Verbose ("Tag '{0}' excluded as it is deprecated and the DeprecatedTagsBehavior parameter is '{1}'." -f $spec.Tag, $DeprecatedTagsBehavior)
         }
     }
 
@@ -420,7 +432,7 @@ function Get-BuildSpecifications
                 $options = @()
 
                 # TODO: Removed when all build.json files has been converted to new format
-                if($tag.tag -like "*sql*") 
+                if ($tag.tag -like "*sql*") 
                 {
                     $options += "--memory 4GB"
                 }
