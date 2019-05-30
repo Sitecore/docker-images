@@ -1,11 +1,13 @@
 # Repository of Sitecore Docker base images
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)
 
 Build your own Docker images out of every released Sitecore version since 8.2 rev. 170407 (Update 3) - the first version that officially supported Windows Server 2016. There are some older versions too if your interested! See [Current images](#current-images) for an up-to-date list of which base images available and [Current variants](#current-variants) for variants (base images with additional modules installed). You can use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry. Jump to the [How to use](#how-to-use) section for more details.
 
 ## Changelog
 
+- [Deprecated] All 1709 images is now deprecated as the [.NET framework is no longer supported on this build](https://github.com/Microsoft/dotnet-framework-docker/issues/259). You can still build them explicitly using `-Tags "*:*-1709"`.
+- [Removed] ltsc2016 images is now deleted completely as ltsc2019 is now the current ltsc version.
 - [Changed] The `build.json` format has changed to support the use of `build-arg` during `docker image build`. In this new format we can support multiple release channels (ie 1803, ltsc2019, 1903) within a single build folder using `ARG` while reducing maintenance time and disk space needed.
 - [Added] Added CreativeExchange interchange folder to SXA docker-compose file 9.1.1 XM and XP SXA on ltc2019
 - [Deprecated] Sitecore 8.2 rev. 161221 is now marked as deprecated. You can still build it explicitly using `-Tags "*:8.2.161221*"`.
