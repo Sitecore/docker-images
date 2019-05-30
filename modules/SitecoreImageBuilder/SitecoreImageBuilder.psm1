@@ -456,7 +456,7 @@ function Get-BuildSpecifications
             
                 if ($image -like "`$*")
                 {
-                    $argName = $image.Replace("`$", "")
+                    $argName = $image.Replace("`$", "").Replace("{", "").Replace("}", "")
                     $matchingOption = $options | Where-Object { $_.Contains($argName) } | Select-Object -First 1
 
                     if ($null -ne $matchingOption)

@@ -1,7 +1,7 @@
 # escape=`
 ARG BASE_IMAGE
 
-FROM $BASE_IMAGE as builder
+FROM ${BASE_IMAGE} as builder
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
