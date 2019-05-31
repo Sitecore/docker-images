@@ -1,7 +1,7 @@
 # escape=`
 ARG BASE_IMAGE
 
-FROM s${BASE_IMAGE} as final
+FROM $BASE_IMAGE as final
 
 COPY . ${INSTALL_PATH}
 

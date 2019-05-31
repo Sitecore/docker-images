@@ -2,7 +2,7 @@
 ARG BUILD_IMAGE
 ARG BASE_IMAGE
 
-FROM ${BUILD_IMAGE} as builder
+FROM $BUILD_IMAGE as builder
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
@@ -14,7 +14,7 @@ RUN $env:SIF_PACKAGE_SXA = 'Sitecore Experience Accelerator XM 1.8.1 rev. 190319
     Rename-Item -Path (Resolve-Path (Join-Path $env:INSTALL_TEMP $env:SIF_PACKAGE_SXA)).Path -NewName 'sxa.zip';
 
 # Runtime
-FROM ${BASE_IMAGE} as final
+FROM $BASE_IMAGE as final
 
 COPY --from=builder [ "/install/sxa.zip", "/install/install-package.json", "/install/" ]
 

@@ -2,7 +2,7 @@
 ARG BUILD_IMAGE
 ARG BASE_IMAGE
 
-FROM ${BUILD_IMAGE} as builder
+FROM $BUILD_IMAGE as builder
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
@@ -15,7 +15,7 @@ RUN $env:SIF_PACKAGE_PSE = 'Sitecore PowerShell Extensions-5.0.scwdp.zip'; `
      Rename-Item -Path (Resolve-Path (Join-Path $env:INSTALL_TEMP $env:SIF_PACKAGE_PSE)).Path -NewName 'spe.zip';
 
 # Runtime
-FROM ${BASE_IMAGE} as final
+FROM $BASE_IMAGE as final
 
 COPY --from=builder ["/install/install-package.json", "/install/spe.zip", "/install/" ]
 

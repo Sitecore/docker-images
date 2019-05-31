@@ -2,7 +2,7 @@
 ARG BUILD_IMAGE
 ARG BASE_IMAGE
 
-FROM ${BUILD_IMAGE} as builder
+FROM $BUILD_IMAGE as builder
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
@@ -46,7 +46,7 @@ RUN $env:SIF_PACKAGE_JSS = 'Sitecore JavaScript Services Server for Sitecore 9.1
     Rename-Item -Path (Resolve-Path (Join-Path $env:INSTALL_TEMP $env:SIF_PACKAGE_JSS)).Path -NewName 'jss.zip';
 
 # # Runtime
-FROM ${BASE_IMAGE} as final
+FROM $BASE_IMAGE as final
 
 COPY --from=builder [ "/install/jss.zip", "/install/install-package.json", "/install/" ]
 
