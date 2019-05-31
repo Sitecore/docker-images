@@ -6,6 +6,7 @@ Build your own Docker images for every released Sitecore version since 8.2 rev. 
 
 ## Changelog
 
+- [Changed] All SQL images are now based on the `mssql-developer:2017` image.
 - [**Breaking**] To build deprecated image tags, you now need set the `DeprecatedTagsBehavior` parameter to `Include`.
 - [Deprecated] All 1709 images is now deprecated as the [.NET framework is no longer supported on this build](https://github.com/Microsoft/dotnet-framework-docker/issues/259). You can still build them using `-DeprecatedTagsBehavior "Include"`.
 - [Removed] ltsc2016 images is now deleted completely as ltsc2019 is now the current ltsc version.
@@ -210,10 +211,12 @@ Build your own Docker images for every released Sitecore version since 8.2 rev. 
 | 8 | sitecore-openjdk | nanoserver | 1809 | `sitecore-openjdk:8-nanoserver-1809` [Dockerfile](images/sitecore-openjdk/nanoserver/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1803 | `sitecore-openjdk:8-nanoserver-1803` [Dockerfile](images/sitecore-openjdk/nanoserver/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1709 | `sitecore-openjdk:8-nanoserver-1709` [Dockerfile](images/sitecore-openjdk/nanoserver/Dockerfile) |
-| ~~7.5.150212~~ | ~~sitecore-sqldev~~ | ~~windowsservercore~~ | ~~1803~~ | ~~`sitecore-sqldev:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore-sqldev/Dockerfile)~~ |
-| ~~7.5.150212~~ | ~~sitecore~~ | ~~windowsservercore~~ | ~~1803~~ | ~~`sitecore:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore-1803/sitecore/Dockerfile)~~ |
+| ~~7.5.150212~~ | ~~sitecore-sqldev~~ | ~~windowsservercore~~ | ~~1803~~ | ~~`sitecore-sqldev:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore/sitecore-sqldev/Dockerfile)~~ |
+| ~~7.5.150212~~ | ~~sitecore~~ | ~~windowsservercore~~ | ~~1803~~ | ~~`sitecore:7.5.150212-windowsservercore-1803` [Dockerfile](images/7.5%20rev.%20150212/windowsservercore/sitecore/Dockerfile)~~ |
 | 2017 | mssql-developer | windowsservercore | ltsc2019 | `mssql-developer:2017-windowsservercore-ltsc2019` [Dockerfile](images/mssql-developer-2017/windowsservercore/Dockerfile) |
 | 2017 | mssql-developer | windowsservercore | 1903 | `mssql-developer:2017-windowsservercore-1903` [Dockerfile](images/mssql-developer-2017/windowsservercore/Dockerfile) |
+| 2017 | mssql-developer | windowsservercore | 1803 | `mssql-developer:2017-windowsservercore-1803` [Dockerfile](images/mssql-developer-2017/windowsservercore/Dockerfile) |
+| ~~2017~~ | ~~mssql-developer~~ | ~~windowsservercore~~ | ~~1709~~ | ~~`mssql-developer:2017-windowsservercore-1709` [Dockerfile](images/mssql-developer-2017/windowsservercore/Dockerfile)~~ |
 
 ## Current variants
 

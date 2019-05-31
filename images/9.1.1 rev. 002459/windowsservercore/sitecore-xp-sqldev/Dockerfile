@@ -5,9 +5,9 @@ FROM $BASE_IMAGE
 
 ENV ACCEPT_EULA='Y' `
     sa_password='HASH-epsom-sunset-cost7!' `
-    DB_PREFIX='sc'`
-    INSTALL_PATH='c:/install/'`
-    DATA_PATH='c:/data/'`
+    DB_PREFIX='sc' `
+    INSTALL_PATH='c:/install/' `
+    DATA_PATH='c:/data/' `
     SQL_HOSTNAME='sql'
 
 COPY . ${INSTALL_PATH}

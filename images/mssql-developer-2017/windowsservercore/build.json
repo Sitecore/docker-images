@@ -13,6 +13,21 @@
         "--memory 4GB",
         "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019"
       ]
+    },
+    {
+      "tag": "mssql-developer:2017-windowsservercore-1803",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:1803"
+      ]
+    },
+    {
+      "tag": "mssql-developer:2017-windowsservercore-1709",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:1709"
+      ],
+      "deprecated": true
     }
   ],
   "sources": []
