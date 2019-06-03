@@ -62,10 +62,10 @@ $repositoryCount = ( $specs | Foreach-Object { Write-Output (($_.Tag -split ":")
 $deprecatedCount = $specs | Where-Object { $_.Deprecated } | Select-Object -Property Tag -Unique | Measure-Object | Select-Object -ExpandProperty Count
 
 $stats = "[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT)"
-$stats += (" [![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg)](https://img.shields.io/badge/{0}-{1}-{2}.svg)" -f "Repositories", $repositoryCount, "blue")
-$stats += (" [![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg)](https://img.shields.io/badge/{0}-{1}-{2}.svg)" -f "Tags", $tagCount, "blue")
-$stats += (" [![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg)](https://img.shields.io/badge/{0}-{1}-{2}.svg)" -f "Deprecated", $deprecatedCount, "lightgrey")
-$stats += (" [![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg)](https://img.shields.io/badge/{0}-{1}-{2}.svg)`n" -f "Dockerfiles", $dockerFileCount, "blue")
+$stats += (" ![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg)" -f "Repositories", $repositoryCount, "blue")
+$stats += (" ![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg)" -f "Tags", $tagCount, "blue")
+$stats += (" ![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg)" -f "Deprecated", $deprecatedCount, "lightgrey")
+$stats += (" ![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg)`n" -f "Dockerfiles", $dockerFileCount, "blue")
 
 Update-Section `
     -Path (Join-Path $PSScriptRoot "\README.md") `
