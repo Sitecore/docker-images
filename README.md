@@ -11,7 +11,7 @@ Build your own Docker images for every released Sitecore version since 8.2 rev. 
 - [**Breaking**] To build deprecated image tags, you now need set the `DeprecatedTagsBehavior` parameter to `Include`.
 - [Deprecated] All 1709 images is now deprecated as the [.NET framework is no longer supported on this build](https://github.com/Microsoft/dotnet-framework-docker/issues/259). You can still build them using `-DeprecatedTagsBehavior "Include"`.
 - [Removed] ltsc2016 images is now deleted completely as ltsc2019 is now the current ltsc version.
-- [Fixed] Using `ARG` variables in Dockerfiles can now be with and without `{}`. 
+- [Fixed] Using `ARG` variables in Docker files can now be with and without `{}`. 
 - [Changed] The `build.json` format has changed to support the use of `build-arg` during `docker image build`. In this new format we can support multiple release channels (ie 1803, ltsc2019, 1903) within a single build folder using `ARG` while reducing maintenance time and disk space needed.
 - [Deprecated] Sitecore 8.2 rev. 161221 is now marked as deprecated. You can still build them using `-DeprecatedTagsBehavior "Include"`.
 - [Deprecated] Sitecore 7.5 is now marked as deprecated. You can still build them using `-DeprecatedTagsBehavior "Include"`.
