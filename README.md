@@ -6,8 +6,8 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 ## Changelog
 
-- [Changed] Added multiple release channels (ie ltsc2019, 1903)  on test docker-compose variants + environment file (.env) 
-- [Changed] Added multiple release channels ie ltsc2019, 1903) on variants 
+- [Changed] Added multiple release channels (ie ltsc2019, 1903) on test docker-compose variants + environment file (.env) 
+- [Changed] Added multiple release channels (ie ltsc2019, 1903) on variants 
 - [Changed] The `build.json` format has changed to support the use of `build-arg` during `docker image build`. In this new format we can support multiple release channels (ie 1803, ltsc2019, 1903) within a single build folder using `ARG` while reducing maintenance time and disk space needed.
 - [Added] Added CreativeExchange interchange folder to SXA docker-compose file 9.1.1 XM and XP SXA on ltc2019
 - [Deprecated] Sitecore 8.2 rev. 161221 is now marked as deprecated. You can still build it explicitly using `-Tags "*:8.2.161221*"`.
