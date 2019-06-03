@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: sitecore-xp-jss-11.0.1-sqldev:9.1.1-windowsservercore-${windows-version}
+    image: sitecore-xp-jss-11.0.1-sqldev:9.1.1-windowsservercore-${windows_version}
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
@@ -11,7 +11,7 @@ services:
       - "44010:1433"
 
   solr:
-    image: sitecore-xp-solr:9.1.1-nanoserver-${windows-version}
+    image: sitecore-xp-solr:9.1.1-nanoserver-${windows_version}
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1GB
@@ -19,7 +19,7 @@ services:
       - "44011:8983"
 
   xconnect:
-    image: sitecore-xp-xconnect:9.1.1-windowsservercore-${windows-version}
+    image: sitecore-xp-xconnect:9.1.1-windowsservercore-${windows_version}
     volumes:
       - .\data\xconnect:C:\inetpub\xconnect\App_Data\logs
     mem_limit: 1GB
@@ -28,7 +28,7 @@ services:
       - solr
 
   xconnect-automationengine:
-    image: sitecore-xp-xconnect-automationengine:9.1.1-windowsservercore-${windows-version}
+    image: sitecore-xp-xconnect-automationengine:9.1.1-windowsservercore-${windows_version}
     volumes:
       - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
     mem_limit: 500MB
@@ -37,7 +37,7 @@ services:
       - xconnect
 
   xconnect-indexworker:
-    image: sitecore-xp-xconnect-indexworker:9.1.1-windowsservercore-${windows-version}
+    image: sitecore-xp-xconnect-indexworker:9.1.1-windowsservercore-${windows_version}
     volumes:
       - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
     mem_limit: 500MB
@@ -46,7 +46,7 @@ services:
       - solr
 
   cd:
-    image: sitecore-xp-jss-11.0.1-cd:9.1.1-windowsservercore-${windows-version}
+    image: sitecore-xp-jss-11.0.1-cd:9.1.1-windowsservercore-${windows_version}
     volumes:
       - .\data\cd:C:\inetpub\sc\App_Data\logs
     ports:
@@ -57,7 +57,7 @@ services:
       - xconnect
 
   cm:
-    image: sitecore-xp-jss-11.0.1-standalone:9.1.1-windowsservercore-${windows-version}
+    image: sitecore-xp-jss-11.0.1-standalone:9.1.1-windowsservercore-${windows_version}
     volumes:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
     ports:
