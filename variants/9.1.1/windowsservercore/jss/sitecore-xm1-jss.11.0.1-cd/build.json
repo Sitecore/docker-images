@@ -1,0 +1,21 @@
+{
+    "tags": [
+        {
+            "tag": "sitecore-xm1-jss-11.0.1-cd:9.1.1-windowsservercore-ltsc2019",
+            "build-options": [
+                "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019",
+                "--build-arg BASE_IMAGE=sitecore-xm1-cd:9.1.1-windowsservercore-ltsc2019"
+            ]
+        },
+        {
+            "tag": "sitecore-xm1-jss-11.0.1-cd:9.1.1-windowsservercore-1903",
+            "build-options": [
+                "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1903",
+                "--build-arg BASE_IMAGE=sitecore-xm1-cd:9.1.1-windowsservercore-1903"
+            ]
+        }
+    ],
+    "sources": [
+        "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.0.1 rev. 190318 CD.scwdp.zip"
+    ]
+}
