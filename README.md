@@ -6,6 +6,7 @@ Build your own Docker images out of every released Sitecore version since 8.2 re
 
 ## Changelog
 
+- [Changed] Disabled temporary verifying node binaries
 - [Changed] Added multiple release channels (ie ltsc2019, 1903) on test docker-compose variants + environment file (.env) 
 - [Changed] Added multiple release channels (ie ltsc2019, 1903) on variants 
 - [Changed] The `build.json` format has changed to support the use of `build-arg` during `docker image build`. In this new format we can support multiple release channels (ie 1803, ltsc2019, 1903) within a single build folder using `ARG` while reducing maintenance time and disk space needed.
