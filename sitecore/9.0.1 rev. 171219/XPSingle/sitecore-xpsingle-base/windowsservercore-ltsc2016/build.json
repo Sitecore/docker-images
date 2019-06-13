@@ -1,0 +1,8 @@
+{
+    "repository": "sitecore-xpsingle-base",
+    "tags": [
+		"9.0.1.171219-windowsservercore-ltsc2016"
+	],
+	"memory": "8GB",
+    "assets": []
+}

@@ -1,0 +1,114 @@
+// -------------------------------------------------------------------------- //
+//         Sitecore Install Framework - XConnect Solr Configuration           //
+//                                                                            //
+//  Run this configuration on your Solr instance to configure the cores for   //
+//  an XConnect deployment. If the cores exist, they will be overwritten.     //
+//                                                                            //
+//  NOTE: Only single line comments are accepted in configurations.           //
+// -------------------------------------------------------------------------- //
+
+{
+    "Parameters": {
+        // Parameters are values that may be passed when Install-SitecoreConfiguration is called.
+        // Parameters must declare a Type and may declare a DefaultValue and Description.
+        // Parameters with no DefaultValue are required when Install-SitecoreConfiguration is called.
+
+        "SolrUrl": {
+            "Type": "string",
+            "DefaultValue": "https://localhost:8983/solr",
+            "Description": "The Solr instance url."
+        },
+        "SolrRoot": {
+            "Type": "string",
+            "DefaultValue": "c:\\solr",
+            "Description": "The file path to the Solr instance." 
+        },
+        "SolrService": {
+            "Type": "string",
+            "DefaultValue": "Solr-6.6.1",
+            "Description": "The name of the Solr service."
+        },
+        "BaseConfig": {
+            "Type": "string",
+            "DefaultValue": "basic_configs",
+            "Description": "The configset to copy as a base for each core."
+        },
+        "CorePrefix": {
+            "Type": "string",
+            "DefaultValue": "sitecore",
+            "Description": "The prefix for each of the created indexes."
+        }
+    },
+    "Variables": {
+        // Variables are values calculated in a configuration.
+        // They can reference Parameters, other Variables, and config functions.
+
+        // Resolves the full path to Solr on disk in case a relative path was passed.
+        "Solr.FullRoot":    "[resolvepath(parameter('SolrRoot'))]",
+
+        // Resolves the full solr folder path on disk.
+        "Solr.Server":      "[joinpath(variable('Solr.FullRoot'), 'server', 'solr')]",
+
+        // Resolves the full path for the base configset to use for each core.
+        "Solr.BaseConfigs": "[joinpath(variable('Solr.Server'), 'configsets', parameter('BaseConfig'))]",
+
+        // The name of the rebuild core to create.
+        "Xdb.Name":         "[concat(parameter('CorePrefix'), '_xdb')]",
+        "Xdb.Rebuild.Name": "[concat(variable('Xdb.Name'), '_rebuild')]",
+
+        // The destination paths of the cores to create.        
+        "Core.Root":        "[joinpath(variable('Solr.Server'), variable('Xdb.Name'))]",
+        "Rebuild.Root":     "[joinpath(variable('Solr.Server'), variable('Xdb.Rebuild.Name'))]"
+    },
+    "Tasks": {
+        // Tasks are separate units of work in a configuration.
+        // Each task is an action that will be completed when Install-SitecoreConfiguration is called.
+        // By default, tasks are applied in the order they are declared.
+        // Tasks may reference Parameters, Variables, and config functions. 
+
+        "StopSolr": {
+            // Stops the Solr service if it is running.
+            "Type": "ManageService",
+            "Params": {
+                "Name": "[parameter('SolrService')]",
+                "Status": "Stopped",
+                "PostDelay": 1000
+            }
+        },
+        "CleanCores": {
+            // Creates/clears core paths.
+            "Type": "EnsurePath",
+            "Params": {
+                "Clean": [
+                    "[variable('Core.Root')]",
+                    "[variable('Rebuild.Root')]"
+                ]
+            }
+        },
+        "PrepareCores": {
+            // Copies base configs into the core paths.
+            "Type": "Copy",
+            "Params": [
+                { "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]", "Destination": "[variable('Core.Root')]" },
+                { "Source": "[joinpath(variable('Solr.BaseConfigs'), '*')]", "Destination": "[variable('Rebuild.Root')]" }
+            ]
+        },
+        "StartSolr": {
+            // Starts the Solr service.
+            "Type": "ManageService",
+            "Params": {
+                "Name": "[parameter('SolrService')]",
+                "Status": "Running",
+                "PostDelay": 8000
+            }
+        },
+        "CreateCores":{
+            // Tells Solr to create the new cores.
+            "Type": "ManageSolrCore",
+            "Params": [
+                { "Action": "Create", "Address": "[parameter('SolrUrl')]", "Arguments": { "Name": "[variable('Xdb.Name')]" } },
+                { "Action": "Create", "Address": "[parameter('SolrUrl')]", "Arguments": { "Name": "[variable('Xdb.Rebuild.Name')]" } }
+            ]
+        }
+    }
+}

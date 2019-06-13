@@ -1,0 +1,10 @@
+{
+    "repository": "sitecore",
+    "tags": [
+		"8.2.170407-windowsservercore-1709"
+	],
+    "assets": [
+        "license.xml",
+        "Sitecore 8.2 rev. 170407.zip"
+    ]
+}
