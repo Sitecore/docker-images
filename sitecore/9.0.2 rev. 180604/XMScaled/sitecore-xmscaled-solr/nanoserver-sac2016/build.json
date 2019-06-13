@@ -1,9 +1,0 @@
-{
-    "repository": "sitecore-xmscaled-solr",
-    "tags": [
-		"9.0.2.180604-nanoserver-sac2016"
-	],
-    "assets": [
-        "Sitecore 9.0.2 rev. 180604 (WDP XM1 packages).zip"
-    ]
-}
