@@ -1,0 +1,17 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-processing:8.2.180406-windowsservercore-ltsc2019",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore:8.2.180406-windowsservercore-ltsc2019"
+      ]
+    },
+    {
+      "tag": "sitecore-processing:8.2.180406-windowsservercore-1803",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore:8.2.180406-windowsservercore-1803"
+      ]
+    }
+  ],
+  "sources": []
+}

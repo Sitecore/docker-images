@@ -1,0 +1,29 @@
+version: '2.4'
+
+services:
+
+  sql:
+    image: sitecore-sqldev:8.2.161221-windowsservercore-1803
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+
+  mongodb:
+    image: mongo:4.1.8-windowsservercore-1803
+    volumes:
+      - .\data\mongo:C:\data\db
+    mem_limit: 2GB
+    ports:
+      - "44012:27017"
+
+  cm:
+    image: sitecore:8.2.161221-windowsservercore-1803
+    volumes:
+      - .\data\cm:C:\Sitecore\Data\logs
+    ports:
+      - "44001:80"
+    links:
+      - sql
+      - mongodb

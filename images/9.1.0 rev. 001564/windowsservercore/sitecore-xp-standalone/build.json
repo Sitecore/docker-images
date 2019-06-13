@@ -1,0 +1,22 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-standalone:9.1.0-windowsservercore-ltsc2019",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019",
+        "--build-arg BASE_IMAGE=sitecore-xp-base:9.1.0-windowsservercore-ltsc2019"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-standalone:9.1.0-windowsservercore-1803",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1803",
+        "--build-arg BASE_IMAGE=sitecore-xp-base:9.1.0-windowsservercore-1803"
+      ]
+    }
+  ],
+  "sources": [
+    "license.xml",
+    "Sitecore 9.1.0 rev. 001564 (WDP XP0 packages).zip"
+  ]
+}

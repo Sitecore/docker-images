@@ -1,0 +1,21 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-sqldev:8.2.180406-windowsservercore-ltsc2019",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-ltsc2019"
+      ]
+    },
+    {
+      "tag": "sitecore-sqldev:8.2.180406-windowsservercore-1803",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-1803"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore 8.2 rev. 180406.zip"
+  ]
+}

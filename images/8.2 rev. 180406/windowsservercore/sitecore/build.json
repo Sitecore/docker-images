@@ -1,0 +1,27 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore:8.2.180406-windowsservercore-ltsc2019",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-ltsc2019"
+      ]
+    },
+    {
+      "tag": "sitecore:8.2.180406-windowsservercore-1803",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1803"
+      ]
+    },
+    {
+      "tag": "sitecore:8.2.180406-windowsservercore-1709",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1709"
+      ],
+      "deprecated": true
+    }
+  ],
+  "sources": [
+    "license.xml",
+    "Sitecore 8.2 rev. 180406.zip"
+  ]
+}

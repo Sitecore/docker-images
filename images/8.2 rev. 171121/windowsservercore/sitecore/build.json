@@ -1,0 +1,21 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore:8.2.171121-windowsservercore-1803",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1803"
+      ]
+    },
+    {
+      "tag": "sitecore:8.2.171121-windowsservercore-1709",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.7.2-windowsservercore-1709"
+      ],
+      "deprecated": true
+    }
+  ],
+  "sources": [
+    "license.xml",
+    "Sitecore 8.2 rev. 171121.zip"
+  ]
+}

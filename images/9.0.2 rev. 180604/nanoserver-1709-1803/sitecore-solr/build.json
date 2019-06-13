@@ -1,0 +1,22 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-solr:9.0.180604-nanoserver-1803",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=sitecore-base:9.0.180604-windowsservercore-1803",
+        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-1803"
+      ]
+    },
+    {
+      "tag": "sitecore-solr:9.0.180604-nanoserver-1709",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=sitecore-base:9.0.180604-windowsservercore-1709",
+        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-1709"
+      ],
+      "deprecated": true
+    }
+  ],
+  "sources": [
+    "Sitecore 9.0.2 rev. 180604 (WDP XM1 packages).zip"
+  ]
+}
