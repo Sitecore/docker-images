@@ -10,9 +10,8 @@ Build your own Docker images for every released Sitecore version since 8.2 rev. 
 
 ## IMPORTANT NOTES ABOUT THIS REPOSITORY
 
-This repository was created to help consolidate efforts around Sitecore and Docker.
-
->Although: The code and examples found in this repository are created and maintained by the Community, **unsupported by Sitecore** and to be used for example purposes only and **without official support.**
+- This repository was created to help consolidate efforts around Sitecore and Docker.
+- **The code and examples found in this repository are created and maintained by the Community, unsupported by Sitecore and to be used for example purposes only and without official support.**
 
 ## Changelog
 
