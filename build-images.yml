@@ -1,7 +1,7 @@
 stages:
-- stage: Start VM
+- stage: Start_VM
   jobs:
-  - jobs: Start VM
+  - job: Start_VM
     pool:
       name: DEVDEMO1US1
     steps:
@@ -11,37 +11,39 @@ stages:
         azureSubscription: $(azure.subscription)
         ResourceGroupName: docker
         VmName: $(docker.build.vm.name)
-- stage: Build Images
-dependsOn: Start VM
-pool:
-  name: Docker
-variables:
-  registry.password: $(sitecore.acr.password)
-  sitecore.username: $(sitecore.username)
+- stage: Build_Images
+  jobs:
+  - job: Build_Images
+    dependsOn: Start_VM
+    pool:
+      name: Docker
+    variables:
+      registry.password: $(sitecore.acr.password)
+      sitecore.username: $(sitecore.username)
 
-steps:
-- task: Docker@2
-  displayName: login
-  inputs:
-    containerRegistry: 'docker-registry'
-    command: login
+    steps:
+    - task: Docker@2
+      displayName: login
+      inputs:
+        containerRegistry: 'docker-registry'
+      command: login
 
-- powershell: |
-   "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.name) 
-   
-   $installSourcePath = $(install.source.path)
-   $registry = $(container.registry)
-   $image.Tags =  $(image.tags)
-   $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
-   
-   Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
-   
-   SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $installSourcePath -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-   
-   SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $installSourcePath -Registry $registry     -Tags $(image.tags) -PushMode "WhenChanged" 
-   # optional (default "WhenChanged"), can also be "Never" or "Always".
-  errorActionPreference: silentlyContinue
-  displayName: 'Build Base Images'
-  continueOnError: true
-  timeoutInMinutes: 240
+    - powershell: |
+      "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.name) 
+      
+      $installSourcePath = $(install.source.path)
+      $registry = $(container.registry)
+      $image.Tags =  $(image.tags)
+      $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+      
+      Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
+      
+      SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $installSourcePath -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+      
+      SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $installSourcePath -Registry $registry     -Tags $(image.tags) -PushMode "WhenChanged" 
+      # optional (default "WhenChanged"), can also be "Never" or "Always".
+      errorActionPreference: silentlyContinue
+      displayName: 'Build Base Images'
+      continueOnError: true
+      timeoutInMinutes: 240
 
