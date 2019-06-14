@@ -25,20 +25,15 @@ stages:
     - task: PowerShell@2
       inputs:
         targetType: inline
-        script:
-      "$(container.registry.password)" '|' docker login -u "$(container.registry.username)" --password-stdin $(container.registry.name) 
-      
-      $installSourcePath = $(install.source.path)
-      $registry = $(container.registry)
-      $image.Tags =  $(image.tags)
-      $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
-      
-      Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
-      
-      SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $installSourcePath -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-      
-      SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $installSourcePath -Registry $registry     -Tags $(image.tags) -PushMode "WhenChanged" 
-      
+        script: |
+      "$(container.registry.password)" '|' docker login -u "$(container.registry.username)" --password-stdin $(container.registry.name) |
+            $installSourcePath = $(install.source.path) |
+      $registry = $(container.registry) |
+      $image.Tags =  $(image.tags) |
+      $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules") |
+      Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force |
+      SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $installSourcePath -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) |
+      SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $installSourcePath -Registry $registry     -Tags $(image.tags) -PushMode "WhenChanged" |
       errorActionPreference: silentlyContinue
       displayName: 'Build Base Images'
       continueOnError: true
