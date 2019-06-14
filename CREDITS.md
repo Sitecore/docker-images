@@ -11,6 +11,8 @@ https://github.com/pbering/sitecore-nine-docker
 https://github.com/pbering/SockerVS2017
 https://github.com/pbering/solrwin
 
+**Bart Plasmeijer**: He is a major contributor the variant images (SXA, JSS etc) also active in the #Docker Slack channel.
+
 **Joost Meijles (Aviva Solutions)**: His contributions in GitHub have been a source of inspiration. He is also active in community discussions about using Docker with Sitecore.
 https://github.com/avivasolutionsnl/sitecore-commerce-docker
 https://github.com/joostmeijles/sitecore-commerce-docker
