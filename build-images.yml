@@ -19,9 +19,6 @@ stages:
     displayName: 'Build Base Images'
     pool:
       name: Docker
-    variables:
-      registry.password: $(sitecore.acr.password)
-      sitecore.username: $(sitecore.username)
     steps:
     - powershell: |
         $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
