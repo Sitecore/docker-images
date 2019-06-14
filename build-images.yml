@@ -3,7 +3,7 @@ stages:
   jobs:
   - job: Start_VM
     pool:
-      name: DEVDEMO1US1
+      name: $(pool.name)
     steps:
     - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
       displayName: 'Start Docker Build VM'
@@ -18,7 +18,7 @@ stages:
   - job: Build_Images
     displayName: 'Build Base Images'
     pool:
-      name: Docker
+      name: $(docker.pool.name)
     variables:
       registry.password: $(sitecore.acr.password)
       sitecore.username: $(sitecore.username)
