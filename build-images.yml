@@ -9,7 +9,7 @@ stages:
       displayName: 'Start Docker Build VM'
       inputs:
         Action: 'Start VM'
-        azureSubscription: $(azure.subscription)
+        azureSubscription: 'AzureSubscription'
         ResourceGroupName: $(docker.build.vm.resourceGroupName)
         VmName: $(docker.build.vm.name)
 - stage: Build_Images
