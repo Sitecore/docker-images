@@ -11,6 +11,11 @@ ENV JAVA_HOME C:\\ojdkbuild
 ENV JAVA_VERSION 8u161
 ENV JAVA_OJDKBUILD_VERSION 1.8.0.161-1
 ENV JAVA_OJDKBUILD_ZIP java-1.8.0-openjdk-1.8.0.161-1.b14.ojdkbuild.windows.x86_64.zip
+ENV SOLR_PREFIX='sc'
+
+ARG SOLR_VERSION=6.6.2
+ARG INSTALL_TEMP='c:\\install'
+ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-solr.json
 
 RUN setx /M PATH ('{0}\bin;{1}' -f $env:JAVA_HOME, $env:PATH); `
     [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `

@@ -6,6 +6,8 @@ FROM $BASE_IMAGE
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 ENV SITENAME='sc'
+ENV SITEPATH=C:\inetpub\${SITENAME}\Website
+ENV DATAPATH=C:\inetpub\${SITENAME}\Data
 ARG SQLADMIN_PASSWORD='HASH-epsom-sunset-cost7!'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cm.json
 ARG SIF_PACKAGE=${INSTALL_TEMP}\\'Sitecore*_cm.scwdp.zip'
@@ -21,7 +23,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     ConvertTo-Json $config -Depth 50 | Set-Content -Path $env:SIF_CONFIG; `
     Install-SitecoreConfiguration -Path $env:SIF_CONFIG `
     -Package $env:SIF_PACKAGE `
-    -LicenseFile (Join-Path $env:INSTALL_TEMP '\\license.xml') `
+    -LicenseFile (Join-Path $env:INSTALL_TEMP 'license.xml') `
     -Sitename $env:SITENAME `
     -SqlServer "sql" `
     -SqlDbPrefix $env:SITENAME `  
@@ -36,10 +38,10 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     -SqlFormsPassword $env:SQLADMIN_PASSWORD `
     -SolrUrl "http://solr:8983/solr" `
     -SolrCorePrefix $env:SITENAME `
+    -SitePhysicalPath $env:SITEPATH `
+    -SiteDataFolder $env:DATAPATH `
     -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "StartAppPool", "StartWebsite", "UpdateSolrSchema"; `
     Remove-Item -Path 'C:\\*.log'; `
-    Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
-    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
     $iisPath = ('IIS:\Sites\{0}' -f $env:SITENAME); `
     Clear-WebConfiguration -PSPath $iisPath -Filter '/system.webserver/rewrite/rules/rule'; `
     Set-WebConfiguration -PSPath $iisPath -Filter '/system.web/customErrors/@mode' -Value 'Off'; `

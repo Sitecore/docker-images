@@ -14,7 +14,7 @@ if ($noDatabases)
 {
     Write-Host "### Sitecore databases not found in '$DataPath', seeding clean databases..."
 
-    Get-ChildItem -Path $InstallPath | ForEach-Object {
+    Get-ChildItem -Path $InstallPath/* -Include *.mdf, *.ldf | ForEach-Object {
         Copy-Item -Path $_.FullName -Destination $DataPath
     }
 }
