@@ -14,6 +14,7 @@ stages:
 - stage: Build_Images
   jobs:
   - job: Build_Images
+    displayName: 'Build Base Images'
     dependsOn: Start_VM
     pool:
       name: Docker
@@ -22,20 +23,15 @@ stages:
       sitecore.username: $(sitecore.username)
 
     steps:
-    - task: PowerShell@2
-      inputs:
-        targetType: inline
-        script: |
-      "$(container.registry.password)" '|' docker login -u "$(container.registry.username)" --password-stdin $(container.registry.name) |
-            $installSourcePath = $(install.source.path) |
-      $registry = $(container.registry) |
-      $image.Tags =  $(image.tags) |
-      $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules") |
-      Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force |
-      SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $installSourcePath -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) |
-      SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $installSourcePath -Registry $registry     -Tags $(image.tags) -PushMode "WhenChanged" |
-      errorActionPreference: silentlyContinue
-      displayName: 'Build Base Images'
-      continueOnError: true
-      timeoutInMinutes: 240
-
+    - powershell: |
+      $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
+      $installSourcePath = "f:\assets"
+      $registry = "sitecoredemocontainers.azurecr.io"
+      $baseTags =  "*:9.1.1*ltsc2019"
+      $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+      Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
+      SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $installSourcePath -Tags $baseTags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+      SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $installSourcePath -Registry $registry     -Tags $baseTags -PushMode "WhenChanged"
+    errorActionPreference: silentlyContinue
+    continueOnError: true
+    timeoutInMinutes: 240
