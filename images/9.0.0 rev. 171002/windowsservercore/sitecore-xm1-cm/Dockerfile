@@ -6,7 +6,6 @@ FROM $BASE_IMAGE
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 ENV SITENAME='sc'
-ENV SITEPATH=C:\inetpub\${SITENAME}
 ARG SQLADMIN_PASSWORD='HASH-epsom-sunset-cost7!'
 ARG SIF_CONFIG=${INSTALL_TEMP}\\sitecore-XM1-cm.json
 ARG SIF_PACKAGE=${INSTALL_TEMP}\\'Sitecore*_cm.scwdp.zip'
@@ -18,7 +17,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*Configuration files*.zip') -DestinationPath $env:INSTALL_TEMP; `
     $config = Get-Content $env:SIF_CONFIG | Where-Object { $_ -notmatch '^\s*\/\/'} | Out-String | ConvertFrom-Json; `
     $config.Tasks.InstallWDP.Params.Arguments | Add-Member -Name 'Skip' -Value @(@{'ObjectName' = 'dbDacFx'}, @{'ObjectName' = 'dbFullSql'}) -MemberType NoteProperty; `
-    $config.Variables.'Site.PhysicalPath' = $env:SITEPATH; `
+    $config.Variables.'Site.PhysicalPath' = 'C:\inetpub\{0}' -f $env:SITENAME; `
     ConvertTo-Json $config -Depth 50 | Set-Content -Path $env:SIF_CONFIG; `
     Install-SitecoreConfiguration -Path $env:SIF_CONFIG `
     -Package $env:SIF_PACKAGE `
@@ -38,7 +37,7 @@ RUN Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath 
     -SolrCorePrefix $env:SITENAME `
     -Skip "RemoveDefaultBinding", "CreateBindingsWithThumprint", "CreateHostHeader", "CreateBindingsWithDevelopmentThumprint", "StartAppPool", "StartWebsite"; `
     Remove-Item -Path 'C:\\*.log'; `
-    Remove-Item -Path ('{0}\\App_Data\\logs' -f $env:SITEPATH) -Force -Recurse; `
+    Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\Sitecore') -Destination 'C:/' -Recurse -Force; `
     $iisPath = ('IIS:\Sites\{0}' -f $env:SITENAME); `
     Clear-WebConfiguration -PSPath $iisPath -Filter '/system.webserver/rewrite/rules/rule'; `
