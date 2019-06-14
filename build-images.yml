@@ -12,6 +12,7 @@ stages:
         ResourceGroupName: docker
         VmName: $(docker.build.vm.name)
 - stage: Build_Images
+  dependsOn: Start_VM
   jobs:
   - job: Docker_Login
     steps:
@@ -23,7 +24,6 @@ stages:
       enabled: "false"
   - job: Build_Images
     displayName: 'Build Base Images'
-    dependsOn: Start_VM
     pool:
       name: Docker
     variables:
