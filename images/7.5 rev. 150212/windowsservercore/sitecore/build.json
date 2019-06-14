@@ -1,0 +1,11 @@
+{
+  "tags": {
+    "tag": "sitecore:7.5.150212-windowsservercore-1803",
+    "build-options": [],
+    "deprecated": true
+  },
+  "sources": [
+    "license.xml",
+    "Sitecore 7.5 rev. 150212.zip"
+  ]
+}

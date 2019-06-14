@@ -1,0 +1,21 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm1-cd:9.0.171002-windowsservercore-1803",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-base:9.0.171002-windowsservercore-1803"
+      ]
+    },
+    {
+      "tag": "sitecore-xm1-cd:9.0.171002-windowsservercore-1709",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-base:9.0.171002-windowsservercore-1709"
+      ],
+      "deprecated": true
+    }
+  ],
+  "sources": [
+    "license.xml",
+    "Sitecore 9.0.0 rev. 171002 (WDP XM1 packages).zip"
+  ]
+}

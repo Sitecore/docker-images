@@ -1,0 +1,36 @@
+{
+    "Parameters": {
+        "CorePrefix": {
+            "Type": "string"
+        },
+        "SolrUrl": {
+            "Type": "string"
+        },
+        "ArgumentsFile": {
+            "Type": "string"
+        }
+    },
+    "Variables": {
+        "Xdb.Name": "[concat(parameter('CorePrefix'), '_xdb')]",
+        "Xdb.Rebuild.Name": "[concat(variable('Xdb.Name'), '_rebuild')]",
+        "Solr.Url.Xdb": "[concat(parameter('SolrUrl'), '/', variable('Xdb.Name'))]",
+        "Solr.Config.Path": "[parameter('ArgumentsFile')]"
+    },
+    "Tasks": {
+        "ConfigureSolrSchemas": {
+            "Type": "ManageSolrSchema",
+            "Params": [
+                {
+                    "Address": "[parameter('SolrUrl')]",
+                    "Core": "[variable('Xdb.Name')]",
+                    "ArgumentsFile": "[variable('Solr.Config.Path')]"
+                },
+                {
+                    "Address": "[parameter('SolrUrl')]",
+                    "Core": "[variable('Xdb.Rebuild.Name')]",
+                    "ArgumentsFile": "[variable('Solr.Config.Path')]"
+                }
+            ]
+        }
+    }
+}
