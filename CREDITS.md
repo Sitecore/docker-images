@@ -1,12 +1,12 @@
-**CREDITS**
+# CREDITS
 
 Below is a list of people which contributions in the community have be helpful for this repository to progress.
 
 **Per Bering**: One of the first promoters of Docker for Sitecore. He is a major contributor to this repository, and actively helps peers with Docker related matters on different channels.
 https://github.com/sitecore/docker-images
 https://github.com/Sitecore/docker-demo
-https://github.com/pbering/SitecoreContainers
 https://github.com/sitecoreops/sitecore-images
+https://github.com/pbering/SitecoreContainers
 https://github.com/pbering/sitecore-nine-docker
 https://github.com/pbering/SockerVS2017
 https://github.com/pbering/solrwin
@@ -16,7 +16,6 @@ https://github.com/avivasolutionsnl/sitecore-commerce-docker
 https://github.com/joostmeijles/sitecore-commerce-docker
 https://github.com/avivasolutionsnl/sitecore-docker
 https://github.com/sitecoreops/sitecore-images
-
 
 **Benjamin Moles Segovia (ClearPeople)**: He is a major contributor on the two official Sitecore's Docker related repositories on GitHub.
 https://github.com/Ben-m-s/Bendev.Assets.Management
@@ -30,7 +29,7 @@ https://github.com/avivasolutionsnl/sitecore-docker
 **Richard Brisley**: His repository was very useful to create the first XPSingle version.
 https://bitbucket.org/sagittarius_rbrisley/sitecore-commerce-docker-xp0.git
 
-**Mikkel Valentin Sørensen**: He contributed to the repository that was used as seed of the current Sitecore/docker-images repository.
+**Mikkel Valentin Sï¿½rensen**: He contributed to the repository that was used as seed of the current Sitecore/docker-images repository.
 https://github.com/sitecoreops/sitecore-images
 
 **Jeremy Davis**: His PowerShell script to install SOLR was used in the Sitecore Docker images.
@@ -44,5 +43,3 @@ https://github.com/RamblingCookieMonster/PSDepend/
 
 **Gabe Streza**: His PowerShell script to validate Sitecore pre-requisites was used during some developments.
 http://www.sitecoregabe.com/2018/04/sitecore-9-machine-prerequisites-check.html
-
-
