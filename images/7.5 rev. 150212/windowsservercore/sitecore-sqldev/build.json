@@ -1,0 +1,13 @@
+{
+  "tags": {
+    "tag": "sitecore-sqldev:7.5.150212-windowsservercore-1803",
+    "build-options": [
+      "--memory 4GB",
+      "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-1803"
+    ],
+    "deprecated": true
+  },
+  "sources": [
+    "Sitecore 7.5 rev. 150212.zip"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-sqldev:9.0.171219-windowsservercore-1803",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-1803"
+      ]
+    },
+    {
+      "tag": "sitecore-sqldev:9.0.171219-windowsservercore-1709",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-1709"
+      ],
+      "deprecated": true
+    }
+  ],
+  "sources": [
+    "Sitecore 9.0.1 rev. 171219 (WDP XP0 packages).zip"
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm1-sqldev:9.1.0-windowsservercore-ltsc2019",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-ltsc2019"
+      ]
+    },
+    {
+      "tag": "sitecore-xm1-sqldev:9.1.0-windowsservercore-1803",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-1803"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore 9.1.0 rev. 001564 (WDP XM1 packages).zip"
+  ]
+}

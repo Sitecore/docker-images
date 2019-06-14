@@ -1,0 +1,39 @@
+version: '2.4'
+
+services:
+
+  sql:
+    image: sitecore-xm1-sqldev:9.1.0-windowsservercore-1803
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+
+  solr:
+    image: sitecore-xm1-solr:9.1.0-nanoserver-1803
+    volumes:
+      - .\data\solr:C:\Data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+
+  cd:
+    image: sitecore-xm1-cd:9.1.0-windowsservercore-1803
+    volumes:
+      - .\data\cd:C:\inetpub\sc\App_Data\logs
+    ports:
+      - "44002:80"
+    links:
+      - sql
+      - solr
+
+  cm:
+    image: sitecore-xm1-cm:9.1.0-windowsservercore-1803
+    volumes:
+      - .\data\cm:C:\inetpub\sc\App_Data\logs
+    ports:
+      - "44001:80"
+    links:
+      - sql
+      - solr
