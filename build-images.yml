@@ -14,14 +14,6 @@ stages:
 - stage: Build_Images
   dependsOn: Start_VM
   jobs:
-  - job: Docker_Login
-    steps:
-    - task: Docker@2
-      displayName: login
-      inputs:
-        containerRegistry: 'docker-registry'
-        command: login
-      enabled: "false"
   - job: Build_Images
     displayName: 'Build Base Images'
     pool:
