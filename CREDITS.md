@@ -29,7 +29,7 @@ https://github.com/avivasolutionsnl/sitecore-docker
 **Richard Brisley**: His repository was very useful to create the first XPSingle version.
 https://bitbucket.org/sagittarius_rbrisley/sitecore-commerce-docker-xp0.git
 
-**Mikkel Valentin S�rensen**: He contributed to the repository that was used as seed of the current Sitecore/docker-images repository.
+**Mikkel Valentin Sørensen**: He contributed to the repository that was used as seed of the current Sitecore/docker-images repository.
 https://github.com/sitecoreops/sitecore-images
 
 **Jeremy Davis**: His PowerShell script to install SOLR was used in the Sitecore Docker images.
