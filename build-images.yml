@@ -13,6 +13,14 @@ stages:
         VmName: $(docker.build.vm.name)
 - stage: Build_Images
   jobs:
+  - job: Docker_Login
+    steps:
+    - task: Docker@2
+      displayName: login
+      inputs:
+        containerRegistry: 'docker-registry'
+        command: login
+      enabled: "false"
   - job: Build_Images
     displayName: 'Build Base Images'
     dependsOn: Start_VM
