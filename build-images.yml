@@ -21,17 +21,13 @@ stages:
     variables:
       registry.password: $(sitecore.acr.password)
       sitecore.username: $(sitecore.username)
-
     steps:
     - powershell: |
-      $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
-      $installSourcePath = "f:\assets"
-      $registry = "sitecoredemocontainers.azurecr.io"
-      $baseTags =  "*:9.1.1*ltsc2019"
-      $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
-      Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
-      SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $installSourcePath -Tags $baseTags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-      SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $installSourcePath -Registry $registry     -Tags $baseTags -PushMode "WhenChanged"
-    errorActionPreference: silentlyContinue
-    continueOnError: true
-    timeoutInMinutes: 240
+        $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
+        $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+        Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
+        SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+        SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name)     -Tags $(image.tags) -PushMode "WhenChanged"
+      errorActionPreference: silentlyContinue
+      continueOnError: "true"
+      timeoutInMinutes: 240
