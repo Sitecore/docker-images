@@ -8,9 +8,21 @@
 
 Build your own Docker images for every released Sitecore version since 8.2 rev. 170407 (Update 3). See [Current images](#current-images) for an up-to-date list of which base images available and [Current variants](#current-variants) for variants, base images with additional modules installed such as SXA and JSS. You can use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry. Jump to the [How to use](#how-to-use) section for more details.
 
+## IMPORTANT NOTES ABOUT THIS REPOSITORY
+
+This repository was created to help consolidate efforts around Sitecore and Docker.
+
+>Although: The code and examples found in this repository are created and maintained by the Community, **unsupported by Sitecore** and to be used for example purposes only and **without official support.**
+
 ## Changelog
 
+### June 2019
+
+- [**Breaking**] Consolidated [sitecoreops/sitecore-images](https://github.com/sitecoreops/sitecore-images) and this repository. All future work will happen right here from now on. If you need the old `master` branch you can use the `legacy` branch that is a copy from just before the consolidation.
 - [Changed] Added multiple release channels (ie ltsc2019, 1903) on variants.
+
+### May 2019 (and before)
+
 - [Changed] All SQL images are now based on the `mssql-developer:2017` image.
 - [**Breaking**] To build deprecated image tags, you now need set the `DeprecatedTagsBehavior` parameter to `Include`.
 - [Deprecated] All 1709 images is now deprecated as the [.NET framework is no longer supported on this build](https://github.com/Microsoft/dotnet-framework-docker/issues/259). You can still build them using `-DeprecatedTagsBehavior "Include"`.
