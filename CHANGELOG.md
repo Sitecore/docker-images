@@ -1,11 +1,11 @@
-## Changelog
+# Changelog
 
-### June 2019
+## June 2019
 
 - [**Breaking**] Consolidated [sitecoreops/sitecore-images](https://github.com/sitecoreops/sitecore-images) and this repository. All future work will happen right here from now on. If you need the old `master` branch you can use the `legacy` branch that is a copy from just before the consolidation.
 - [Changed] Added multiple release channels (ie ltsc2019, 1903) on variants.
 
-### May 2019 (and before)
+## May 2019 (and before)
 
 - [Changed] All SQL images are now based on the `mssql-developer:2017` image.
 - [**Breaking**] To build deprecated image tags, you now need set the `DeprecatedTagsBehavior` parameter to `Include`.
@@ -71,11 +71,13 @@
 - [Added] Specialized SQL Server images with all Sitecore databases embedded **and** volume support, for Sitecore 9.
 - [Changed] all Sitecore 9 images now default has connection strings matching the new specialized SQL Server images.
 - [Added] XM1 CM and CD role images for Sitecore 9.
-### August 2018
+
+## August 2018
+
 - [Changed] *Breaking Change* Replaced Build.ps1 by new module "Sitecore.DockerImages.Management"
 - [New] *Breaking Change* Dependency on external module "Bendev.Assets.Management"
 - [Changed] *Breaking Change* New folder naming
 - [New] XP Single base image
 - [New] XP Single image
-- [Changed] Containers' layers optimisation
-- [Changed] Performance optimisations
+- [Changed] Containers' layers optimization
+- [Changed] Performance optimizations
