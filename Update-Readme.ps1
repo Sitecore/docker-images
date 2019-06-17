@@ -51,7 +51,7 @@ $specs = @()
     $specs += SitecoreImageBuilder\Get-BuildSpecifications -Path $_.Fullname
 
     Update-Section `
-        -Path (Join-Path $PSScriptRoot "\README.md") `
+        -Path (Join-Path $PSScriptRoot "\IMAGES.md") `
         -Name ("current {0}" -f $_.BaseName) `
         -Content ((SitecoreImageBuilder\Get-CurrentImagesMarkdown -Path $_.Fullname) | Out-String)
 }
