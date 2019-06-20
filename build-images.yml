@@ -20,6 +20,11 @@ stages:
     pool:
       name: Docker
     steps:
+    - task: Docker@2
+      displayName: login
+      inputs:
+        containerRegistry: 'docker-registry'
+        command: login
     - powershell: |
         $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
         $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
