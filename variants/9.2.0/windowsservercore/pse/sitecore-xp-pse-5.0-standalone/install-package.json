@@ -7,21 +7,7 @@
         "SiteName": {
             "Type": "string",
             "Description": "The url of the content management site."
-        },
-        "SqlCoreUser": {
-            "Type": "string",
-            "Description": "The path to the content management site.",
-            "DefaultValue": "<none>"
-        },
-        "SqlMasterUser": {
-            "Type": "string",
-            "Description": "The path to the content management site.",
-            "DefaultValue": "<none>"
         }
-    },
-    "Variables": {
-        "Site.PhysicalPath": "[joinpath(parameter('SitePath'),parameter('SiteName'))]",
-        "Site.Url": "[concat('https://',parameter('SiteName'))]"
     },
     "Tasks": {
         "InstallSitecorePackage": {
@@ -40,19 +26,17 @@
                         },
                         {
                             "Name": "Core Admin Connection String",
-                            "Value": "[parameter('SqlCoreUser')]"
+                            "Value": "<none>"
                         },
                         {
                             "Name": "Master Admin Connection String",
-                            "Value": "[parameter('SqlMasterUser')]"
+                            "Value": "<none>"
                         }
                     ],
                     "EnableRule": "DoNotDelete",
+                    "DisableRule": "BackupRule",
                     "UseChecksum": true,
                     "Skip": [
-                        {
-                            "ObjectName": "dbFullSql"
-                        },
                         {
                             "ObjectName": "dbDacFx"
                         }
