@@ -69,13 +69,10 @@ RUN $env:SITENAME = 'sc'; `
     Copy-Item -Path 'C:\\Sitecore\\Config\\*.*' -Destination ('C:\\inetpub\\{0}\\App_Config\\Include' -f $env:SITENAME); `
     $iisPath = ('IIS:\Sites\{0}' -f $env:SITENAME); `
     Set-WebConfiguration -PSPath $iisPath -Filter '/system.web/customErrors/@mode' -Value 'Off'; `
-    Add-WebConfigurationProperty -PSPath $iisPath -Filter '/system.webServer/rewrite/outboundRules' -Name '.' -Value @{name = 'MakeLocationHeaderRelative' ; preCondition = 'IsSitecoreAbsoluteRedirect'; match = @{serverVariable = 'RESPONSE_LOCATION'; pattern = '(https?://[^:/]+):?([0-9]+)?(.*)'}; action = @{type = 'Rewrite'; value = '{R:3}'}}; `
-    Add-WebConfigurationProperty -PSPath $iisPath -Filter '/system.webServer/rewrite/outboundRules/preConditions' -Name '.' -Value @{name = 'IsSitecoreAbsoluteRedirect'}; `
-    Add-WebConfigurationProperty -PSPath $iisPath -Filter '/system.webServer/rewrite/outboundRules/preConditions/preCondition[@name=''IsSitecoreAbsoluteRedirect'']' -Name '.' -Value @{input = '{RESPONSE_LOCATION}'; pattern = '(https?://[^:/]+):?([0-9]+)?/sitecore/(.*)'}; `
-    Add-WebConfigurationProperty -PSPath $iisPath -Filter '/system.webServer/rewrite/outboundRules/preConditions/preCondition[@name=''IsSitecoreAbsoluteRedirect'']' -Name '.' -Value @{input = '{RESPONSE_STATUS}'; pattern = '3[0-9][0-9]'}; `
     Add-LocalGroupMember -Group 'Performance Monitor Users' -Member ('IIS AppPool\{0}' -f $env:SITENAME); `
     Set-ItemProperty ('IIS:\AppPools\{0}' -f $env:SITENAME) -Name 'processModel.identityType' -Value 'LocalSystem'; `
     Move-Item -Path ('C:\\inetpub\\{0}\\App_Config\\Include\\Examples\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config.example' -f $env:SITENAME) -Destination ('C:\\inetpub\\{0}\\App_Config\\Include\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config' -f $env:SITENAME); `
+    Move-Item -Path ('C:\\inetpub\\{0}\\App_Config\\Include\\Examples\\Sitecore.LoadBalancing.config.example' -f $env:SITENAME) -Destination ('C:\\inetpub\\{0}\\App_Config\\Include\\Sitecore.LoadBalancing.config' -f $env:SITENAME); `
     Remove-Item -Path 'C:\\*.log'; `
     Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
