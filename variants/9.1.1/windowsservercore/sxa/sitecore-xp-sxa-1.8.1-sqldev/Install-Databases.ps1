@@ -39,18 +39,15 @@ Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurs
     $dacpacPath = $_.FullName
     $databaseName = "$DatabasePrefix`_" + $TextInfo.ToTitleCase($_.BaseName)
 
-    # do
-    Write-Host "install module path: $InstallPath dacpac: $dacpacPath dbname: $databaseName"
-
     # Install
-    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q    
+    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q
 } 
 
 # detach DB
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
     $databaseName = $_.BaseName.Replace("_Primary", "")
 
-    Write-Host "### Detach: $databaseName"
+    Write-Host "### Detaching '$databaseName'..."
 
     Invoke-Sqlcmd -Query "EXEC MASTER.dbo.sp_detach_db @dbname = N'$databaseName', @keepfulltextindexfile = N'false'"
 }
