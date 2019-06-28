@@ -1,15 +1,17 @@
 {
     "tags": [
         {
-            "tag": "sitecore-xp-sxa-1.8.1-sqldev:9.1.1-windowsservercore-ltsc2019",
+            "tag": "sitecore-xp-sxa-1.8.1-sqldev:9.1.1-windowsservercore-1903",
             "build-options": [
-                "--build-arg BASE_IMAGE=sitecore-xp-pse-5.0-sqldev:9.1.1-windowsservercore-ltsc2019"
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=sitecore-xp-pse-5.0-sqldev:9.1.1-windowsservercore-1903"
             ]
         },
         {
-            "tag": "sitecore-xp-sxa-1.8.1-sqldev:9.1.1-windowsservercore-1903",
+            "tag": "sitecore-xp-sxa-1.8.1-sqldev:9.1.1-windowsservercore-ltsc2019",
             "build-options": [
-                "--build-arg BASE_IMAGE=sitecore-xp-pse-5.0-sqldev:9.1.1-windowsservercore-1903"
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=sitecore-xp-pse-5.0-sqldev:9.1.1-windowsservercore-ltsc2019"
             ]
         }
     ],
