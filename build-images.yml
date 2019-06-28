@@ -34,7 +34,7 @@ stages:
       continueOnError: "true"
       timeoutInMinutes: 240
   - job: Build_Variants
-    displayName: 'Build Varient Images'
+    displayName: 'Build Variant Images'
     pool:
       name: Docker
     steps:
