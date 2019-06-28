@@ -27,7 +27,8 @@ stages:
         command: login
     - powershell: |
         $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
-        Import-Module (Join-Path -Path "$(Build.SourcesDirectory)" -ChildPath "modules" -AdditionalChildPath "SitecoreImageBuilder") -Force
+        $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+        Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
         SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
         SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
       errorActionPreference: silentlyContinue
@@ -45,7 +46,8 @@ stages:
         command: login
     - powershell: |
         $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
-        Import-Module (Join-Path -Path "$(Build.SourcesDirectory)" -ChildPath "modules" -AdditionalChildPath "SitecoreImageBuilder") -Force
+        $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+        Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
         SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
         SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
       errorActionPreference: silentlyContinue
