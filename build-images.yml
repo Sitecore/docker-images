@@ -29,8 +29,27 @@ stages:
         $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
         $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
         Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
-        SitecoreImageBuilder\Invoke-PackageRestore  -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+        SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
         SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name)     -Tags $(image.tags) -PushMode "WhenChanged"
+      errorActionPreference: silentlyContinue
+      continueOnError: "true"
+      timeoutInMinutes: 240
+  - job: Build_Variants
+    displayName: 'Build Varient Images'
+    pool:
+      name: Docker
+    steps:
+    - task: Docker@2
+      displayName: login
+      inputs:
+        containerRegistry: 'docker-registry'
+        command: login
+    - powershell: |
+        $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
+        $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+        Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
+        SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+        SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name)     -Tags $(image.tags) -PushMode "WhenChanged"
       errorActionPreference: silentlyContinue
       continueOnError: "true"
       timeoutInMinutes: 240
