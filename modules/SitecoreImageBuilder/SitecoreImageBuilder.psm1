@@ -224,10 +224,16 @@ function Invoke-Build
             }
         
             # Build image
+            $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | % { $_.OSType })
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
-            $buildOptions.Add("--isolation 'hyperv'")
-            $buildOptions.Add("--tag '$tag'")
+
+            if ($osType -eq "windows")
+            {
+                $buildOptions.Add("--isolation 'hyperv'")
+            }
+
             $buildOptions.AddRange($spec.BuildOptions)
+            $buildOptions.Add("--tag '$tag'")
         
             $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
         
