@@ -16,7 +16,7 @@ stages:
     dependsOn: Start_VM
     jobs:
       - job: Build_Images
-        timeoutInMinutes: 240
+        timeoutInMinutes: 720
         displayName: "Build Base Images"
         pool:
           name: Docker
@@ -53,4 +53,4 @@ stages:
               SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
             errorActionPreference: silentlyContinue
             continueOnError: "true"
-            timeoutInMinutes: 240
+            timeoutInMinutes: 720
