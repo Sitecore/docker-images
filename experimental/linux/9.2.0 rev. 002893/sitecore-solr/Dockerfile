@@ -4,10 +4,9 @@ FROM $BASE_IMAGE as builder
 
 ARG CORE_NAMES
 
-COPY managed-schema /opt
-
 USER root
 
+COPY managed-schema /opt
 RUN set -e; \
     CORES_DIR='/opt/solr/server/solr'; \
     ORIG_IFS=${IFS}; \

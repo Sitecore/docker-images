@@ -520,7 +520,7 @@ function Get-CurrentImages
         [string]$Path
     )
     
-    $tagParser = [regex]"(?<repository>.*):(?<version>.*)-(?<os>.*)-(?<build>.*)"
+    $tagParser = [regex]"^(?<repository>[^:]*):(?<version>[^-]*)-(?<os>[^-]+)(?:-(?<build>.*))?$"
 
     Get-BuildSpecifications -Path $Path | ForEach-Object {
         $spec = $_

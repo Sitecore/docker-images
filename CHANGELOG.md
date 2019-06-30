@@ -1,5 +1,12 @@
 # Changelog
 
+## July 2019
+
+- [Added] New `experimental` folder with Sitecore 9.2.0 XM/XP/SXA Solr 7.5.0 on Linux.
+- [Added] Sitecore 9.2.0 XM/XP variants with Sitecore Experience Accelerator (SXA) on ltsc2019 and 1903.
+- [Added] Sitecore 9.2.0 XM/XP variants with Sitecore PowerShell Extensions (PSE) on ltsc2019 and 1903.
+- [Added] Sitecore 9.2.0 XM/XP base images on ltsc2019 and 1903.
+
 ## June 2019
 
 - [**Breaking**] Consolidated [sitecoreops/sitecore-images](https://github.com/sitecoreops/sitecore-images) and this repository. All future work will happen right here from now on. If you need the old `master` branch you can use the `legacy` branch that is a copy from just before the consolidation.
