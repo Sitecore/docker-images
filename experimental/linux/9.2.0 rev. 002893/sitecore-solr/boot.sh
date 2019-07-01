@@ -12,6 +12,9 @@ if [ -z "$(ls -A $dataDir)" ]; then
     echo "### Done seeding."
 else
     echo "### Done, existing data found in '$dataDir'..."
+
+    # cleanup old lock files
+    find $dataDir/. -name write.lock -print0 | xargs -0 rm -rf
 fi
 
 asyncRun() {
