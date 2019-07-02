@@ -211,18 +211,28 @@
         "description": "Sitecore Experience Platform 9.1 Update-1",
         "url": "https://dev.sitecore.net/~/media/45664EE58F544C6885FF3F763515AE77.ashx"
     },
-    "Sitecore 9.2.0 rev. 002893 (WDP XM1 packages).zip": {
-        "description": "Sitecore Experience Platform 9.2 Initial Release",
-        "url": "https://dev.sitecore.net/TODO"
+    
+    
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.1.0 rev. 190508.scwdp.zip": {
+        "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 11.1.0",
+        "url": "https://dev.sitecore.net/~/media/4DA13F85EC794280A1B65686488B2469.ashx"
     },
-    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.1.0 rev. 190508.zip": {
-        "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.1.0",
-        "url": "https://dev.sitecore.net/~/media/9E378FD1C44E4ED486B15606B9694F9D.ashx"
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.1.0 rev. 190508 CD.zip": {
+        "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 11.1.0",
+        "url": "https://dev.sitecore.net/~/media/4DA13F85EC794280A1B65686488B2469.ashx"
     },
     "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.1.0 rev. 190508.zip": {
-        "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.1.0",
-        "url": "https://dev.sitecore.net/~/media/FF0A7E2826804F448CC486C50C257858.ashx"
+        "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 11.1.0",
+        "url": "https://dev.sitecore.net/~/media/17A6875A25014961940D84FA9884EFF0.ashx"
     },
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.1.0 rev. 190508 CD.zip": {
+        "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 11.1.0",
+        "url": "https://dev.sitecore.net/~/media/FE0DEF53E1D14142B70FBCA7DA324D0B.ashx"
+    },
+    
+
+
+
     "Sitecore PowerShell Extensions-5.0.scwdp.zip": {
         "description": "Sitecore PowerShell Extensions 5.0",
         "url": "https://dev.sitecore.net/~/media/2C02EB17879548139937A41E5DA0EFCF.ashx"
@@ -242,6 +252,10 @@
     "Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.0 CD.scwdp.zip": {
         "description": "Sitecore Experience Accelerator 1.8.1",
         "url": "https://dev.sitecore.net/~/media/991BBF60AEB142F193B275CBB00503A2.ashx"
+    },
+    "Sitecore 9.2.0 rev. 002893 (WDP XM1 packages).zip": {
+        "description": "Sitecore Experience Platform 9.2 Initial Release",
+        "url": "https://dev.sitecore.net/TODO"
     },
     "Sitecore 9.2.0 rev. 002893 (WDP XP0 packages).zip": {
         "description": "Sitecore Experience Platform 9.2 Initial Release",

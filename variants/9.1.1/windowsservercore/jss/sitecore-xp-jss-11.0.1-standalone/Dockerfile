@@ -40,7 +40,7 @@ RUN Invoke-WebRequest $('https://nodejs.org/dist/v{0}/node-v{0}-win-x64.zip' -f 
 COPY . /install/
 
 # Expand zips, prepare SIF config and WDP package
-RUN $env:SIF_PACKAGE_JSS = 'Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.0.1 rev. 190318.scwdp.zip'; `
+RUN $env:SIF_PACKAGE_JSS = 'Sitecore JavaScript Services Server for Sitecore 9.1.1 XP *.scwdp.zip'; `
     $env:SITENAME = 'sc'; `
     $env:INSTALL_TEMP = 'C:\\install'; `
     Rename-Item -Path (Resolve-Path (Join-Path $env:INSTALL_TEMP $env:SIF_PACKAGE_JSS)).Path -NewName 'jss.zip';
