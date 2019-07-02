@@ -1,0 +1,38 @@
+stages:
+  - stage: Start_VM
+    jobs:
+      - job: Start_VM
+        pool:
+          name: DEVDEMO1US1
+        steps:
+          - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
+            displayName: "Start Docker Build VM"
+            inputs:
+              Action: "Start VM"
+              azureSubscription: "AzureSubscription"
+              ResourceGroupName: $(docker.build.vm.resourceGroupName)
+              VmName: $(docker.build.vm.name)
+
+  - stage: Build_Experimental_Images
+    dependsOn: Start_VM
+    jobs:
+      - job: Build_Experimental_Images
+        timeoutInMinutes: 720
+        displayName: "Build Experimental Images"
+        pool:
+          name: Docker
+        steps:
+          - task: Docker@2
+            displayName: login
+            inputs:
+              containerRegistry: "docker-registry"
+              command: login
+          - powershell: |
+              $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
+              $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+              Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
+              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "experimental") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "experimental") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
+            errorActionPreference: silentlyContinue
+            continueOnError: "true"
+        
