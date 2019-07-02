@@ -24,6 +24,7 @@ stages:
               Test-NetConnection -ComputerName dockerassets.file.core.windows.net -Port 445
               Invoke-Expression -Command "cmdkey /add:dockerassets.file.core.windows.net /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\dockerassets.file.core.windows.net\docker-assets"
+              Get-ChilItem z:\
       - job: Build_Base_Images
         dependsOn: Connect_Asset_Drive
         timeoutInMinutes: 720
