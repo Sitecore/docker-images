@@ -215,6 +215,14 @@
         "description": "Sitecore Experience Platform 9.2 Initial Release",
         "url": "https://dev.sitecore.net/TODO"
     },
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.1.0 rev. 190508.zip": {
+        "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.1.0",
+        "url": "https://dev.sitecore.net/~/media/9E378FD1C44E4ED486B15606B9694F9D.ashx"
+    },
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.1.0 rev. 190508.zip": {
+        "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.1.0",
+        "url": "https://dev.sitecore.net/~/media/FF0A7E2826804F448CC486C50C257858.ashx"
+    },
     "Sitecore PowerShell Extensions-5.0.scwdp.zip": {
         "description": "Sitecore PowerShell Extensions 5.0",
         "url": "https://dev.sitecore.net/~/media/2C02EB17879548139937A41E5DA0EFCF.ashx"
