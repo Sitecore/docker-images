@@ -4,18 +4,19 @@ FROM $BASE_IMAGE as builder
 
 ARG CORE_NAMES
 
+COPY managed-schema /opt
+
 USER root
 
-COPY managed-schema /opt
 RUN set -e; \
     CORES_DIR='/opt/solr/server/solr'; \
     ORIG_IFS=${IFS}; \
     IFS=', '; \
     for core in ${CORE_NAMES}; do \
-        echo "Creating '$CORES_DIR/$core'..."; \
-        cp -r /opt/solr/server/solr/configsets/_default/ $CORES_DIR/$core; \
-        cp /opt/managed-schema $CORES_DIR/$core/conf/managed-schema; \
-        touch "$CORES_DIR/$core/core.properties"; \
+    echo "Creating '$CORES_DIR/$core'..."; \
+    cp -r /opt/solr/server/solr/configsets/_default/ $CORES_DIR/$core; \
+    cp /opt/managed-schema $CORES_DIR/$core/conf/managed-schema; \
+    touch "$CORES_DIR/$core/core.properties"; \
     done; \
     IFS=${ORIG_IFS}; \
     exit 0
@@ -23,11 +24,11 @@ RUN set -e; \
 FROM $BASE_IMAGE
 
 COPY --from=builder ["/opt/solr/server/solr", "/clean"]
-COPY boot.sh /opt/solr/boot.sh
+COPY boot.sh /opt/boot.sh
 
 USER root
 
-RUN chmod +x /opt/solr/boot.sh && \
+RUN chmod +x /opt/boot.sh && \
     chown -R $SOLR_USER:$SOLR_USER /clean && \
     chmod -R 700 /clean && \
     mkdir -p /data && \
@@ -38,4 +39,4 @@ USER $SOLR_USER
 
 ENV SOLR_HOME=/data
 
-ENTRYPOINT ["/opt/solr/boot.sh", "/data"]
+ENTRYPOINT ["/opt/boot.sh", "/clean", "/data"]
