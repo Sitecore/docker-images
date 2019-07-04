@@ -15,7 +15,8 @@ RUN unzip -qq /opt/wdp/Sitecore*.zip -d /opt/wdp/ \
 
 ENV ACCEPT_EULA='Y' \ 
     SA_PASSWORD='HASH-epsom-sunset-cost7!' \ 
-    MSSQL_PID=Developer
+    MSSQL_PID=Developer \
+    DB_PREFIX='sc'
 
 COPY *.sh /opt/
 

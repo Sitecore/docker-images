@@ -11,15 +11,21 @@ RUN apt-get -y update \
 COPY *.zip /opt/wdp/
 
 RUN unzip -qq /opt/wdp/Sitecore*.zip -d /opt/wdp/ \
-    && unzip -qq /opt/wdp/Sitecore*_cm.scwdp.zip -d /opt/wdp/
+    && unzip -qq /opt/wdp/Sitecore*_single.scwdp.zip -d /opt/wdp/
 
 ENV ACCEPT_EULA='Y' \ 
     SA_PASSWORD='HASH-epsom-sunset-cost7!' \ 
-    MSSQL_PID=Developer
+    MSSQL_PID=Developer \
+    DB_PREFIX='sc'
 
+COPY *.bacpac /opt/shards/
 COPY *.sh /opt/
-
-RUN chmod +x /opt/install-databases.sh && ./opt/install-databases.sh /opt/wdp
+RUN chmod +x /opt/install-databases.sh \
+    && chmod +x /opt/install-shards.sh \
+    && ( /opt/mssql/bin/sqlservr & ) | grep -q "Service Broker manager has started" \
+    && ./opt/install-databases.sh /opt/wdp \
+    && ./opt/install-shards.sh /opt/shards \
+    && pkill sqlservr
 
 FROM $BASE_IMAGE
 
@@ -36,6 +42,8 @@ ENV ACCEPT_EULA='Y' \
     SA_PASSWORD='HASH-epsom-sunset-cost7!' \ 
     MSSQL_PID=Developer \ 
     MSSQL_DATA_DIR='/data' \ 
-    MSSQL_LOG_DIR='/data'
+    MSSQL_LOG_DIR='/data' \
+    DB_PREFIX='sc' \
+    SQL_HOSTNAME='sql'
 
 ENTRYPOINT ["/opt/boot.sh", "/clean", "/data"]

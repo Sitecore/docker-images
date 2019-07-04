@@ -14,11 +14,11 @@ for filename in $source/*.dacpac; do
     fi
 
     fileBaseName=$(basename $filename .dacpac)
-    databaseName="${fileBaseName/Sitecore./}"
+    databaseName="${DB_PREFIX}_${fileBaseName/Sitecore./}"
     
     echo "### Installing '$databaseName' from '$filename'..."
 
-    /opt/sqlpackage/sqlpackage /a:Publish /tsn:. /tdn:"sc_$databaseName" /tu:sa /tp:$SA_PASSWORD /sf:$filename
+    /opt/sqlpackage/sqlpackage /a:Publish /tsn:. /tdn:$databaseName /tu:sa /tp:$SA_PASSWORD /sf:$filename
 done
 
 pkill sqlservr 
