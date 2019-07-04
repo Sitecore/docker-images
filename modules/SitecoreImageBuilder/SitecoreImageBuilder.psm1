@@ -357,17 +357,24 @@ function Initialize-BuildSpecifications
     # Specify priority for each tag, used to ensure base images are build first. This is the most simple approach I could come up with for handling dependencies between images. If needed in the future, look into something like https://en.wikipedia.org/wiki/Topological_sorting.
     $defaultPriority = 1000
     $priorities = New-Object System.Collections.Specialized.OrderedDictionary
-    $priorities.Add("^mssql-developer:(.*)$", 100)
-    $priorities.Add("^sitecore-openjdk:(.*)$", 110)
-    $priorities.Add("^sitecore-base:(.*)$", 120)
-    $priorities.Add("^sitecore-xm1-sqldev:(.*)$", 130)
-    $priorities.Add("^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 140)
-    $priorities.Add("^sitecore-xm1-pse-(.*)-cm:(.*)$", 150);
-    $priorities.Add("^sitecore-xp-sqldev:(.*)$", 160)
-    $priorities.Add("^sitecore-xp-base:(.*)$", 170)
-    $priorities.Add("^sitecore-xp-xconnect:(.*)$", 180)
-    $priorities.Add("^sitecore-xp-pse-(.*)-sqldev:(.*)$", 190)
-    $priorities.Add("^sitecore-xp-pse-(.*)-standalone:(.*)$", 200);
+    $priority = 0
+    
+    "^mssql-developer:(.*)$", 
+    "^sitecore-openjdk:(.*)$", 
+    "^sitecore-base:(.*)$", 
+    "^sitecore-xm-sqldev:(.*)$", 
+    "^sitecore-xm1-sqldev:(.*)$", 
+    "^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 
+    "^sitecore-xm1-pse-(.*)-cm:(.*)$", 
+    "^sitecore-xp-sqldev:(.*)$", 
+    "^sitecore-xp-base:(.*)$", 
+    "^sitecore-xp-xconnect:(.*)$", 
+    "^sitecore-xp-pse-(.*)-sqldev:(.*)$", 
+    "^sitecore-xp-pse-(.*)-standalone:(.*)$" | ForEach-Object {
+        $priorities.Add($_, $priority)
+        $priority++
+    }
+    
     $priorities.Add("^(.*)$", $defaultPriority)
 
     # Update specs, set priority according to rules
