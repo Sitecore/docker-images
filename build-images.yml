@@ -15,7 +15,17 @@ stages:
   - stage: Build_Images
     dependsOn: Start_VM
     jobs:
-      - job: Build_Images
+      - job: Connect_Asset_Drive
+        displayName: "Connect to Azure File Connect to Azure File Share"
+        pool:
+          name: Docker
+        steps:
+          - powershell: |
+              Test-NetConnection -ComputerName dockerassets.file.core.windows.net -Port 445
+              Invoke-Expression -Command "cmdkey /add:dockerassets.file.core.windows.net /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
+              New-PSDrive -Name Z -PSProvider FileSystem -Root "\\dockerassets.file.core.windows.net\docker-assets" -Persist
+      - job: Build_Base_Images
+        dependsOn: Connect_Asset_Drive
         timeoutInMinutes: 720
         displayName: "Build Base Images"
         pool:
@@ -36,6 +46,7 @@ stages:
             continueOnError: "true"
           
       - job: Build_Variants
+        dependsOn: Build_Base_Images
         displayName: "Build Variant Images"
         pool:
           name: Docker
