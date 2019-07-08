@@ -4,7 +4,7 @@ FROM $BASE_IMAGE as builder
 
 ARG CORE_NAMES
 
-COPY managed-schema /opt
+COPY managed-schema /opt/
 
 USER root
 
@@ -12,15 +12,14 @@ RUN set -e; \
     CORES_DIR='/opt/solr/server/solr'; \
     ORIG_IFS=${IFS}; \
     IFS=', '; \
-    for core in ${CORE_NAMES}; do \
-    echo "Creating '$CORES_DIR/$core'..."; \
-    cp -r /opt/solr/server/solr/configsets/_default/ $CORES_DIR/$core; \
-    cp /opt/managed-schema $CORES_DIR/$core/conf/managed-schema; \
-    touch "$CORES_DIR/$core/core.properties"; \
+        for core in ${CORE_NAMES}; do \
+        echo "Creating '$CORES_DIR/$core'..."; \
+        cp -r /opt/solr/server/solr/configsets/_default/ $CORES_DIR/$core; \
+        cp /opt/managed-schema $CORES_DIR/$core/conf/managed-schema; \
+        touch "$CORES_DIR/$core/core.properties"; \
     done; \
-    IFS=${ORIG_IFS}; \
-    exit 0
-
+    IFS=${ORIG_IFS};
+    
 FROM $BASE_IMAGE
 
 COPY --from=builder ["/opt/solr/server/solr", "/clean"]

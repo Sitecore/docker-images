@@ -494,7 +494,7 @@
       <!-- for any non-arabic -->
       <filter class="solr.LowerCaseFilterFactory" />
       <filter class="solr.StopFilterFactory" ignoreCase="true" words="lang/stopwords_ar.txt" />
-      <!-- normalizes ﻯ to ﻱ, etc -->
+      <!-- normalizes � to �, etc -->
       <filter class="solr.ArabicNormalizationFilterFactory" />
       <filter class="solr.ArabicStemFilterFactory" />
     </analyzer>
@@ -756,7 +756,7 @@
         -->
       <tokenizer class="solr.JapaneseTokenizerFactory" mode="search" />
       <!--<tokenizer class="solr.JapaneseTokenizerFactory" mode="search" userDictionary="lang/userdict_ja.txt"/>-->
-      <!-- Reduces inflected verbs and adjectives to their base/dictionary forms (辞書形) -->
+      <!-- Reduces inflected verbs and adjectives to their base/dictionary forms (��b) -->
       <filter class="solr.JapaneseBaseFormFilterFactory" />
       <!-- Removes tokens with certain part-of-speech tags -->
       <filter class="solr.JapanesePartOfSpeechStopFilterFactory" tags="lang/stoptags_ja.txt" />
