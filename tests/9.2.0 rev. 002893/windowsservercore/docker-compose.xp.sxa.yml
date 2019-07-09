@@ -11,7 +11,7 @@ services:
       - "44010:1433"
 
   solr:
-    image: sitecore-xp-solr:9.2.0-nanoserver-${NANOSERVER_CHANNEL}
+    image: sitecore-xp-sxa-1.9.0-solr:9.2.0-nanoserver-${NANOSERVER_CHANNEL}
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1GB
