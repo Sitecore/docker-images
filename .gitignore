@@ -1,10 +1,15 @@
 ﻿*.zip
+*.update
 license.xml
-*-Local.ps1
 
-internal/
 packages/
+
+*-Local.ps1
 
 tests/**/data/**/*
 !tests/**/data/*/
 !tests/**/data/*/README.md
+
+experimental/tests/**/data/**/*
+!experimental/tests/**/data/*/
+!experimental/tests/**/data/*/README.md
