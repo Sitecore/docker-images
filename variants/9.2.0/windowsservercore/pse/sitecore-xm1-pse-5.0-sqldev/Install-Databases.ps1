@@ -18,7 +18,7 @@ $server.Properties["DefaultFile"].Value = $InstallPath
 $server.Properties["DefaultLog"].Value = $InstallPath
 $server.Alter()
 
-$sqlPackageExePath = Get-Item "C:\tools\*\lib\net46\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
+$sqlPackageExePath = Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
 
 # attach
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
@@ -40,7 +40,7 @@ Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurs
     $databaseName = "$DatabasePrefix`_" + $TextInfo.ToTitleCase($_.BaseName)
 
     # Install
-    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q    
+    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q
 } 
 
 # detach DB
