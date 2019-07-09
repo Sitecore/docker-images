@@ -21,8 +21,6 @@ COPY *.ps1 /install/
 COPY *.update /inetpub/sc/sitecore/admin/Packages/
 COPY *.xdt /install/
 
-# TODO: FIX env:local vs. env:production, some hardcoded hostnames in config
-
 RUN $env:SITENAME = 'sc'; `
     $env:INSTALL_TEMP = 'C:\\install'; `
     Install-SitecoreConfiguration -Path (Join-Path $env:INSTALL_TEMP '\\install-package.json') -Package (Join-Path $env:INSTALL_TEMP '\\wdp.zip') -Sitename $env:SITENAME;
