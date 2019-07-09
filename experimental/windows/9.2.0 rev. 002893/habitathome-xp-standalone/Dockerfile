@@ -43,5 +43,6 @@ RUN $env:SITENAME = 'sc'; `
     # /BUG
     $env:IIS_PATH = 'IIS:\Sites\{0}' -f $env:SITENAME; `
     Clear-WebConfiguration -PSPath $env:IIS_PATH -Filter '/system.webserver/rewrite/rules/rule'; `
-    Remove-Item -Path (Join-Path $env:SITE_PATH '\\bin\\HedgehogDevelopment.*') -Force; `
+    # Disables TDS auto sync
+    #Remove-Item -Path (Join-Path $env:SITE_PATH '\\bin\\HedgehogDevelopment.*') -Force; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
