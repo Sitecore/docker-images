@@ -9,6 +9,8 @@ services:
     mem_limit: 4GB
     ports:
       - "44010:1433"
+    networks: 
+      backend:
 
   solr:
     image: sitecore-xp-sxa-1.9.0-solr:9.2.0-nanoserver-${NANOSERVER_CHANNEL}
@@ -17,6 +19,8 @@ services:
     mem_limit: 1GB
     ports:
       - "44011:8983"
+    networks: 
+      backend:
 
   xconnect:
     image: habitathome-xp-xconnect:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
@@ -26,7 +30,9 @@ services:
     links:
       - sql
       - solr
-  
+    networks: 
+      backend:
+
   xconnect-indexworker:
     image: habitathome-xp-xconnect-indexworker:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
     volumes:
@@ -35,6 +41,8 @@ services:
     links:
       - sql
       - solr
+    networks: 
+      backend:
 
   xconnect-automationengine:
     image: sitecore-xp-xconnect-automationengine:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
@@ -44,18 +52,23 @@ services:
     links:
       - sql
       - xconnect
+    networks: 
+      backend:
 
-  # cd:
-  #   image: sitecore-xp-sxa-1.9.0-cd:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
-  #   volumes:
-  #     - .\data\cd:C:\inetpub\sc\App_Data\logs
-  #   ports:
-  #     - "44002:80"
-  #   links:
-  #     - sql
-  #     - solr
-  #     - xconnect
-
+  cd:
+    image: habitathome-xp-cd:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
+    volumes:
+      - .\data\cd:C:\inetpub\sc\App_Data\logs
+    mem_limit: 2GB
+    ports:
+      - "44002:80"
+    links:
+      - sql
+      - solr
+      - xconnect
+    networks: 
+      backend:
+  
   cm:
     image: habitathome-xp-standalone:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
     volumes:
@@ -68,3 +81,8 @@ services:
       - sql
       - solr
       - xconnect
+    networks: 
+      backend:
+
+networks: 
+  backend:

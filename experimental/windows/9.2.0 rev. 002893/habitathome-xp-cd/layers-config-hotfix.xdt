@@ -1,0 +1,11 @@
+<layers>
+    <layer name="Custom" includeFolder="/App_Config/Include/" xdt:Locator="Match(name)" xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+        <loadOrder xdt:Transform="Remove" />
+        <loadOrder xdt:Transform="InsertIfMissing">
+            <add path="Rainbow.config" type="File" />
+            <add path="Foundation" type="Folder" />
+            <add path="Feature" type="Folder" />
+            <add path="Project" type="Folder" />
+        </loadOrder>
+    </layer>
+</layers>
