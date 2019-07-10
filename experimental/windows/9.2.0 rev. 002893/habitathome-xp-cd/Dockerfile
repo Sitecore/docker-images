@@ -18,7 +18,6 @@ FROM $BASE_IMAGE as final
 COPY --from=builder [ "/install/", "/install/" ]
 COPY install-package.json /install/
 COPY *.ps1 /install/
-COPY *.xdt /install/
 
 RUN $env:SITENAME = 'sc'; `
     $env:INSTALL_TEMP = 'C:\\install'; `
@@ -34,10 +33,8 @@ RUN $env:SITENAME = 'sc'; `
     & (Join-Path $env:INSTALL_TEMP "\\Invoke-XdtTransform.ps1") -Path (Join-Path $env:SITE_PATH '\\Web.config') -XdtPath (Join-Path $env:INSTALL_TEMP '\\sccpl\\Xdts\\Web.config.xdt') -XdtDllPath $env:XDTDLL_PATH; `
     & (Join-Path $env:INSTALL_TEMP "\\Invoke-XdtTransform.ps1") -Path (Join-Path $env:SITE_PATH '\\App_Config\\Include\\Project\\Demo.Website.config') -XdtPath (Join-Path $env:INSTALL_TEMP '\\sccpl\\Xdts\\App_Config\\Include\\Project\\Demo.Website.config.xdt') -XdtDllPath $env:XDTDLL_PATH; `
     & (Join-Path $env:INSTALL_TEMP "\\Invoke-XdtTransform.ps1") -Path (Join-Path $env:SITE_PATH '\\App_Config\\Include\\Feature\\Feature.Accounts.config') -XdtPath (Join-Path $env:INSTALL_TEMP '\\sccpl\\Xdts\\App_Config\\Include\\Feature\\Feature.Accounts.config.xdt') -XdtDllPath $env:XDTDLL_PATH; `
-    # BUG: https://dev.azure.com/sitecoredst/Demo/_workitems/edit/2983/
-    #& (Join-Path $env:INSTALL_TEMP "\\Invoke-XdtTransform.ps1") -Path (Join-Path $env:SITE_PATH '\\App_Config\\Layers.config') -XdtPath (Join-Path $env:INSTALL_TEMP '\\sccpl\\Xdts\\App_Config\\Layers.config.xdt') -XdtDllPath $env:XDTDLL_PATH; 
-    & (Join-Path $env:INSTALL_TEMP "\\Invoke-XdtTransform.ps1") -Path (Join-Path $env:SITE_PATH '\\App_Config\\Layers.config') -XdtPath (Join-Path $env:INSTALL_TEMP '\\layers-config-hotfix.xdt') -XdtDllPath $env:XDTDLL_PATH; `
-    # /BUG
+    & (Join-Path $env:INSTALL_TEMP "\\Invoke-XdtTransform.ps1") -Path (Join-Path $env:SITE_PATH '\\App_Config\\Layers.config') -XdtPath (Join-Path $env:INSTALL_TEMP '\\sccpl\\Xdts\\App_Config\\Layers.config.xdt') -XdtDllPath $env:XDTDLL_PATH; `
     $env:IIS_PATH = 'IIS:\Sites\{0}' -f $env:SITENAME; `
     Clear-WebConfiguration -PSPath $env:IIS_PATH -Filter '/system.webserver/rewrite/rules/rule'; `
+    New-Item -Path ($env:SITE_PATH '\\upload') -ItemType 'Directory' | Out-Null; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
