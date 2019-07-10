@@ -27,7 +27,12 @@
                         }
                     ],
                     "EnableRule": "DoNotDelete",
-                    "UseChecksum": true
+                    "UseChecksum": true,
+                    "Skip": [
+                        {
+                            "ObjectName": "dirPath,absolutePath='temp'"
+                        }
+                    ]
                 }
             }
         }
