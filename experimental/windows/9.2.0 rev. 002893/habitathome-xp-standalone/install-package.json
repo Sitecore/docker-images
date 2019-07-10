@@ -22,15 +22,23 @@
                     "Dest": "Auto",
                     "SetParam": [
                         {
-                            "Name": "IIS Web Application name",
+                            "Name": "Application Path",
                             "Value": "[parameter('SiteName')]"
+                        },
+                        {
+                            "Name": "Core Admin Connection String",
+                            "Value": "<none>"
+                        },
+                        {
+                            "Name": "Master Admin Connection String",
+                            "Value": "<none>"
                         }
                     ],
                     "EnableRule": "DoNotDelete",
                     "UseChecksum": true,
                     "Skip": [
                         {
-                            "ObjectName": "dirPath,absolutePath='temp'"
+                            "ObjectName": "dbDacFx"
                         }
                     ]
                 }

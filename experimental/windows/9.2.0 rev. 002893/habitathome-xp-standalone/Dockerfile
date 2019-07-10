@@ -18,7 +18,6 @@ FROM $BASE_IMAGE as final
 COPY --from=builder [ "/install/", "/install/" ]
 COPY install-package.json /install/
 COPY *.ps1 /install/
-COPY *.update /inetpub/sc/sitecore/admin/Packages/
 
 RUN $env:SITENAME = 'sc'; `
     $env:INSTALL_TEMP = 'C:\\install'; `

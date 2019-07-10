@@ -22,17 +22,12 @@
                     "Dest": "Auto",
                     "SetParam": [
                         {
-                            "Name": "IIS Web Application name",
+                            "Name": "Application Path",
                             "Value": "[parameter('SiteName')]"
                         }
                     ],
                     "EnableRule": "DoNotDelete",
-                    "UseChecksum": true,
-                    "Skip": [
-                        {
-                            "ObjectName": "dirPath,absolutePath='temp'"
-                        }
-                    ]
+                    "UseChecksum": true
                 }
             }
         }
