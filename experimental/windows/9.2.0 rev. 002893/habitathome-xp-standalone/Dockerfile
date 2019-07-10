@@ -39,5 +39,5 @@ RUN $env:SITENAME = 'sc'; `
     Clear-WebConfiguration -PSPath $env:IIS_PATH -Filter '/system.webserver/rewrite/rules/rule'; `
     # Disables TDS auto sync
     Remove-Item -Path (Join-Path $env:SITE_PATH '\\bin\\HedgehogDevelopment.*') -Force; `
-    New-Item -Path ($env:SITE_PATH '\\upload') -ItemType 'Directory' | Out-Null; `
+    New-Item -Path (Join-Path $env:SITE_PATH '\\upload') -ItemType 'Directory' | Out-Null; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;

@@ -36,5 +36,5 @@ RUN $env:SITENAME = 'sc'; `
     & (Join-Path $env:INSTALL_TEMP "\\Invoke-XdtTransform.ps1") -Path (Join-Path $env:SITE_PATH '\\App_Config\\Layers.config') -XdtPath (Join-Path $env:INSTALL_TEMP '\\sccpl\\Xdts\\App_Config\\Layers.config.xdt') -XdtDllPath $env:XDTDLL_PATH; `
     $env:IIS_PATH = 'IIS:\Sites\{0}' -f $env:SITENAME; `
     Clear-WebConfiguration -PSPath $env:IIS_PATH -Filter '/system.webserver/rewrite/rules/rule'; `
-    New-Item -Path ($env:SITE_PATH '\\upload') -ItemType 'Directory' | Out-Null; `
+    New-Item -Path (Join-Path $env:SITE_PATH '\\upload') -ItemType 'Directory' | Out-Null; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
