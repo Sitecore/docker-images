@@ -41,6 +41,15 @@ Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurs
 
     # Install
     & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q
+
+    # HOTFIX: Replace invalid seperation of list field values
+    Write-Host "### HOTFIXING '$databaseName'..."
+
+    $sqlcmd = "UPDATE [$databaseName].[dbo].[SharedFields] SET [Value] = REPLACE( [Value], ('}' + CHAR(13) + CHAR(10) +'{'), '}|{') WHERE [Value] LIKE ('%}' + CHAR(13) + CHAR(10) +'{%')"
+    $sqlcmd += " UPDATE [$databaseName].[dbo].[UnversionedFields] SET [Value] = REPLACE( [Value], ('}' + CHAR(13) + CHAR(10) +'{'), '}|{') WHERE [Value] LIKE ('%}' + CHAR(13) + CHAR(10) +'{%')"
+    $sqlcmd += " UPDATE [$databaseName].[dbo].[VersionedFields] SET [Value] = REPLACE( [Value], ('}' + CHAR(13) + CHAR(10) +'{'), '}|{') WHERE [Value] LIKE ('%}' + CHAR(13) + CHAR(10) +'{%')"
+
+    Invoke-Sqlcmd -Query $sqlcmd
 } 
 
 # detach DB
