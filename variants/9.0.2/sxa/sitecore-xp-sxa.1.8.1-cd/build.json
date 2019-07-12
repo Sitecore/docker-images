@@ -4,7 +4,7 @@
             "tag": "sitecore-xp-sxa-1.8.1-cd:9.0.2-windowsservercore-ltsc2019",
             "build-options": [
                 "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019",
-                "--build-arg BASE_IMAGE=sitecore-xp-cd:9.0.2-windowsservercore-ltsc2019"
+                "--build-arg BASE_IMAGE=sitecore-xp-cd:9.0.180604-windowsservercore-ltsc2019"
             ]
         },
         {
