@@ -24,6 +24,7 @@ stages:
               Test-NetConnection -ComputerName dockerassets.file.core.windows.net -Port 445
               Invoke-Expression -Command "cmdkey /add:dockerassets.file.core.windows.net /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\dockerassets.file.core.windows.net\docker-assets" -Persist -ErrorAction SilentlyContinue
+
       - job: Build_Base_Images
         dependsOn: Connect_Asset_Drive
         timeoutInMinutes: 720
@@ -46,7 +47,7 @@ stages:
               SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
             errorActionPreference: silentlyContinue
             continueOnError: "true"
-          
+
       - job: Build_Variants
         dependsOn: Build_Base_Images
         displayName: "Build Variant Images"
