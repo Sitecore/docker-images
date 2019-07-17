@@ -4,8 +4,8 @@ cleanDir=$1
 dataDir=$2
 
 # prepare data
-if [ -z "$(ls -A $dataDir)" ]; then
-    echo "### No data found in '$dataDir', seeding..."
+if [ ! -f "$dataDir/solr.xml" ]; then
+    echo "### No solr.xml found in '$dataDir', seeding..."
    
     cp -R --verbose $cleanDir/. $dataDir/
 
