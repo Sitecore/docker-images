@@ -7,9 +7,22 @@
         "SiteName": {
             "Type": "string",
             "Description": "The url of the content management site."
+        },
+        "SqlCoreUser": {
+            "Type": "string",
+            "Description": "The path to the content management site.",
+            "DefaultValue": "<none>"
+        },
+        "SqlMasterUser": {
+            "Type": "string",
+            "Description": "The path to the content management site.",
+            "DefaultValue": "<none>"
         }
     },
-    "Variables": {},
+    "Variables": {
+        "Site.PhysicalPath": "[joinpath(parameter('SitePath'),parameter('SiteName'))]",
+        "Site.Url": "[concat('https://',parameter('SiteName'))]"
+    },
     "Tasks": {
         "InstallSitecorePackage": {
             "Type": "WebDeploy",
@@ -27,11 +40,11 @@
                         },
                         {
                             "Name": "Core Admin Connection String",
-                            "Value": "<none>"
+                            "Value": "[parameter('SqlCoreUser')]"
                         },
                         {
                             "Name": "Master Admin Connection String",
-                            "Value": "<none>"
+                            "Value": "[parameter('SqlMasterUser')]"
                         }
                     ],
                     "EnableRule": "DoNotDelete",

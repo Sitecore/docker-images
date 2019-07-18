@@ -1,6 +1,13 @@
 {
   "tags": [
     {
+      "tag": "sitecore-xp-base:9.0.180604-windowsservercore-1903",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1903",
+        "--build-arg BASE_IMAGE=sitecore-base:9.0.180604-windowsservercore-1903"
+      ]
+    },
+    {
       "tag": "sitecore-xp-base:9.0.180604-windowsservercore-ltsc2019",
       "build-options": [
         "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019",
