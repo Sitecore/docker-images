@@ -171,9 +171,13 @@
       "description": "Sitecore Experience Commerce 9.0 Update-3",
       "url": "https://dev.sitecore.net/~/media/A201561B13DE4FC59DE9969812D79322.ashx"
   },
-  "Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.0.zip": {
+    "Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.0.scwdp.zip": {
       "description": "Sitecore Experience Accelerator 1.8 Update-1",
-      "url":  "https://dev.sitecore.net/~/media/8BD9C5190DA04730A28EDB9FDC92EE06.ashx"
+        "url": "https://dev.sitecore.net/~/media/4427D574D1AA4DDFBEBEF66E4F36C782.ashx"
+    },
+    "Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.0 CD.scwdp.zip": {
+        "description": "Sitecore Experience Accelerator 1.8 Update-1",
+        "url": "https://dev.sitecore.net/~/media/991BBF60AEB142F193B275CBB00503A2.ashx"
   },
   "Sitecore 9.0.0 rev. 171002 (WDP XM1 packages).zip": {
       "description": "Sitecore Experience Platform 9.0 Initial Release",

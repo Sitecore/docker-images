@@ -2,6 +2,8 @@
 
 ## June 2019
 
+- [Added] Added 9.0.2 PSE,SXA 1.8.1 on variants.
+- [Fixed] SXA 1.8.1 on Sitecore 9.1.1 XM and XP is now correctly configured with all Web.config transforms, specificity the `sxaxm:define` appSetting and the SXA MediaRequestHandler.
 - [**Breaking**] Consolidated [sitecoreops/sitecore-images](https://github.com/sitecoreops/sitecore-images) and this repository. All future work will happen right here from now on. If you need the old `master` branch you can use the `legacy` branch that is a copy from just before the consolidation.
 - [Changed] Added multiple release channels (ie ltsc2019, 1903) on variants.
 
