@@ -4,7 +4,7 @@
 
 - [Base images](#current-images) (XM, XP, Solr, SQL etc.)
 - [Variant images](#current-variants) (SPE, SXA, JSS etc.)
-- [Experimental images](#current-experimental) (XP/CM/SXA Solr on Linux etc.)
+- [Linux images](#current-linux) (XP/CM/SXA Solr on Linux etc.)
 
 > Deprecated tags are marked with ~~strikethrough~~ and are not built by default.
 
@@ -283,8 +283,10 @@
 | Version | Repository | OS  | Build      | Tag |
 | ------- | ---------- | --- | -----------| --- |
 | 9.2.0 | sitecore-xp-sxa-solr | linux |  | `sitecore-xp-sxa-solr:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xp-solr/Dockerfile) |
+| 9.2.0 | sitecore-xp-sqldev | linux |  | `sitecore-xp-sqldev:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xp-sqldev/Dockerfile) |
 | 9.2.0 | sitecore-xp-solr | linux |  | `sitecore-xp-solr:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xp-solr/Dockerfile) |
 | 9.2.0 | sitecore-xm-sxa-solr | linux |  | `sitecore-xm-sxa-solr:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xm-solr/Dockerfile) |
+| 9.2.0 | sitecore-xm-sqldev | linux |  | `sitecore-xm-sqldev:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xm-sqldev/Dockerfile) |
 | 9.2.0 | sitecore-xm-solr | linux |  | `sitecore-xm-solr:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xm-solr/Dockerfile) |
 
 [//]: # "end: current linux"
