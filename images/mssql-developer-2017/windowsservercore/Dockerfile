@@ -10,22 +10,27 @@ ENV sa_password='_' `
     attach_dbs='[]' `
     ACCEPT_EULA='_'
 
-COPY . /
+WORKDIR /install
 
 RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `
-    Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?linkid=840945' -UseBasicParsing -OutFile 'C:\\SQL.exe'; `
-    Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?linkid=840944' -UseBasicParsing -OutFile 'C:\\SQL.box'; `    
+    Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?linkid=840945' -UseBasicParsing -OutFile 'SQL.exe'; `
+    Invoke-WebRequest -Uri 'https://go.microsoft.com/fwlink/?linkid=840944' -UseBasicParsing -OutFile 'SQL.box'; `
     Start-Process -Wait -FilePath .\SQL.exe -ArgumentList /qs, /x:setup; `
     .\setup\setup.exe /q /ACTION=Install /INSTANCENAME=MSSQLSERVER /FEATURES=SQLEngine /UPDATEENABLED=0 /SQLSVCACCOUNT='NT AUTHORITY\System' /SQLSYSADMINACCOUNTS='BUILTIN\ADMINISTRATORS' /TCPENABLED=1 /NPENABLED=0 /IACCEPTSQLSERVERLICENSETERMS; `
     Stop-Service MSSQLSERVER; `
     Set-ItemProperty -Path 'HKLM:\software\microsoft\microsoft sql server\mssql14.MSSQLSERVER\mssqlserver\supersocketnetlib\tcp\ipall' -Name tcpdynamicports -Value ''; `
     Set-ItemProperty -Path 'HKLM:\software\microsoft\microsoft sql server\mssql14.MSSQLSERVER\mssqlserver\supersocketnetlib\tcp\ipall' -Name tcpport -Value 1433; `
-    Set-ItemProperty -Path 'HKLM:\software\microsoft\microsoft sql server\mssql14.MSSQLSERVER\mssqlserver' -Name LoginMode -Value 2; `
-    Remove-Item -Recurse -Force SQL.exe, SQL.box, setup; `
-    Invoke-WebRequest -Uri 'https://dist.nuget.org/win-x86-commandline/v4.1.0/nuget.exe' -UseBasicParsing -OutFile 'C:\\nuget.exe'; `
-    New-Item -Path 'C:\\tools' -ItemType Directory | Out-Null; `
-    & 'C:\\nuget.exe' install Microsoft.Data.Tools.Msbuild -Version 10.0.61804.210 -OutputDirectory 'C:\\tools'; `
-    Remove-Item -Path 'C:\\nuget.exe';
+    Set-ItemProperty -Path 'HKLM:\software\microsoft\microsoft sql server\mssql14.MSSQLSERVER\mssqlserver' -Name LoginMode -Value 2;
+
+RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `
+    Invoke-WebRequest -Uri 'https://download.microsoft.com/download/9/2/2/9228AAC2-90D1-4F48-B423-AF345296C7DD/EN/x64/DacFramework.msi' -UseBasicParsing -OutFile 'DacFramework.msi'; `
+    Start-Process msiexec.exe -ArgumentList '/i', 'DacFramework.msi', '/quiet', '/norestart' -NoNewWindow -Wait;
+
+WORKDIR /
+
+RUN Remove-Item -Path 'C:\\install' -Recurse -Force;
+
+COPY Start.ps1 .
 
 HEALTHCHECK CMD [ "sqlcmd", "-Q", "select 1" ]
 

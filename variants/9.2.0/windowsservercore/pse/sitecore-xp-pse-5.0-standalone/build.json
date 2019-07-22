@@ -1,0 +1,21 @@
+{
+    "tags": [
+        {
+            "tag": "sitecore-xp-pse-5.0-standalone:9.2.0-windowsservercore-1903",
+            "build-options": [
+                "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1903",
+                "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.2.0-windowsservercore-1903"
+            ]
+        },
+        {
+            "tag": "sitecore-xp-pse-5.0-standalone:9.2.0-windowsservercore-ltsc2019",
+            "build-options": [
+                "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019",
+                "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.2.0-windowsservercore-ltsc2019"
+            ]
+        }
+    ],
+    "sources": [
+        "Sitecore PowerShell Extensions-5.0 for 9.2.scwdp.zip"
+    ]
+}
