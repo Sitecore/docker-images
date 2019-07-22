@@ -4,7 +4,7 @@
 
 - [Base images](#current-images) (XM, XP, Solr, SQL etc.)
 - [Variant images](#current-variants) (SPE, SXA, JSS etc.)
-- [Experimental images](#current-experimental) (XP/CM/SXA Solr on Linux etc.)
+- [Linux images](#current-linux) (XP/CM/SXA Solr on Linux etc.)
 
 > Deprecated tags are marked with ~~strikethrough~~ and are not built by default.
 
