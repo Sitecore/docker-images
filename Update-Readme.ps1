@@ -46,7 +46,7 @@ function Update-Section
 
 $specs = @()
 
-(Get-Item (Join-Path $PSScriptRoot "\images")), (Get-Item (Join-Path $PSScriptRoot "\variants")), (Get-Item (Join-Path $PSScriptRoot "\experimental")) | ForEach-Object {
+(Get-Item (Join-Path $PSScriptRoot "\images")), (Get-Item (Join-Path $PSScriptRoot "\variants")), (Get-Item (Join-Path $PSScriptRoot "\linux")) | ForEach-Object {
 
     $specs += SitecoreImageBuilder\Get-BuildSpecifications -Path $_.Fullname
 
