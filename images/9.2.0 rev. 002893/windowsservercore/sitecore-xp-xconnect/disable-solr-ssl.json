@@ -1,0 +1,50 @@
+{
+    "Parameters": {
+        "SiteName": {
+            "Type": "string",
+            "DefaultValue": "XConnect",
+            "Description": "The name of the site to be deployed."
+        }
+    },
+    "Variables": {
+        "Site.PhysicalPath": "[joinpath(environment('SystemDrive'), 'inetpub', parameter('SiteName'))]",
+        "Site.DataFolder": "[joinpath(variable('Site.PhysicalPath'), 'App_Data')]"
+    },
+    "Tasks": {
+        "DisableSolrSSL": {
+            "Type": "SetXml",
+            "Params": [
+                {
+                    "FilePath": "[joinpath(variable('Site.DataFolder'), 'Config', 'sitecore', 'SearchIndexer', 'sc.Xdb.Collection.IndexWriter.SOLR.xml')]",
+                    "Xpath": "//Solr.SolrReaderSettings//Options//RequireHttps",
+                    "Value": "false"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Site.DataFolder'), 'Config', 'sitecore', 'SearchIndexer', 'sc.Xdb.Collection.IndexWriter.SOLR.xml')]",
+                    "Xpath": "//Solr.SolrWriterSettings//Options//RequireHttps",
+                    "Value": "false"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Site.DataFolder'), 'Config', 'sitecore', 'CollectionSearch', 'sc.Xdb.Collection.IndexReader.SOLR.xml')]",
+                    "Xpath": "//Solr.SolrReaderSettings//Options//RequireHttps",
+                    "Value": "false"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Site.DataFolder'), 'jobs', 'continuous', 'IndexWorker', 'App_data', 'Config', 'Sitecore', 'SearchIndexer', 'sc.Xdb.Collection.IndexWriter.SOLR.xml')]",
+                    "Xpath": "//Solr.SolrReaderSettings//Options//RequireHttps",
+                    "Value": "false"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Site.DataFolder'), 'jobs', 'continuous', 'IndexWorker', 'App_data', 'Config', 'Sitecore', 'SearchIndexer', 'sc.Xdb.Collection.IndexWriter.SOLR.xml')]",
+                    "Xpath": "//Solr.SolrWriterSettings//Options//RequireHttps",
+                    "Value": "false"
+                },
+                {
+                    "FilePath": "[joinpath(variable('Site.DataFolder'), 'jobs', 'continuous', 'IndexWorker', 'App_data', 'Config', 'Sitecore', 'CollectionSearch', 'sc.Xdb.Collection.IndexReader.SOLR.xml')]",
+                    "Xpath": "//Solr.SolrReaderSettings//Options//RequireHttps",
+                    "Value": "false"
+                }
+            ]
+        }
+    }
+}

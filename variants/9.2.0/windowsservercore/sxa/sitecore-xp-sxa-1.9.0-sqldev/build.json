@@ -1,0 +1,21 @@
+{
+    "tags": [
+        {
+            "tag": "sitecore-xp-sxa-1.9.0-sqldev:9.2.0-windowsservercore-1903",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=sitecore-xp-pse-5.0-sqldev:9.2.0-windowsservercore-1903"
+            ]
+        },
+        {
+            "tag": "sitecore-xp-sxa-1.9.0-sqldev:9.2.0-windowsservercore-ltsc2019",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=sitecore-xp-pse-5.0-sqldev:9.2.0-windowsservercore-ltsc2019"
+            ]
+        }
+    ],
+    "sources": [
+        "Sitecore Experience Accelerator 1.9.0 rev. 190528 for 9.2.scwdp.zip"
+    ]
+}
