@@ -1,0 +1,48 @@
+{
+    "Parameters": {
+        "Package": {
+            "Type": "string",
+            "Description": "The path to the Sitecore package."
+        },
+        "SiteName": {
+            "Type": "string",
+            "Description": "The url of the content management site."
+        }
+    },
+    "Tasks": {
+        "InstallSitecorePackage": {
+            "Type": "WebDeploy",
+            "Params": {
+                "Verb": "Sync",
+                "Arguments": {
+                    "Source": {
+                        "Package": "[resolvepath(parameter('Package'))]"
+                    },
+                    "Dest": "Auto",
+                    "SetParam": [
+                        {
+                            "Name": "Application Path",
+                            "Value": "[parameter('SiteName')]"
+                        },
+                        {
+                            "Name": "Core Admin Connection String",
+                            "Value": "<none>"
+                        },
+                        {
+                            "Name": "Master Admin Connection String",
+                            "Value": "<none>"
+                        }
+                    ],
+                    "EnableRule": "DoNotDelete",
+                    "DisableRule": "BackupRule",
+                    "UseChecksum": true,
+                    "Skip": [
+                        {
+                            "ObjectName": "dbDacFx"
+                        }
+                    ]
+                }
+            }
+        }
+    }
+}

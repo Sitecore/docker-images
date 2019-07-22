@@ -1,0 +1,68 @@
+version: '2.4'
+
+services:
+
+  sql:
+    image: sitecore-xp-sqldev:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+
+  solr:
+    image: sitecore-xp-solr:9.2.0-nanoserver-${NANOSERVER_CHANNEL}
+    volumes:
+      - .\data\solr:C:\Data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+
+  xconnect:
+    image: sitecore-xp-xconnect:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
+    volumes:
+      - .\data\xconnect:C:\inetpub\xconnect\App_Data\logs
+    mem_limit: 1GB
+    links:
+      - sql
+      - solr
+
+  xconnect-automationengine:
+    image: sitecore-xp-xconnect-automationengine:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
+    volumes:
+      - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
+    mem_limit: 500MB
+    links:
+      - sql
+      - xconnect
+
+  xconnect-indexworker:
+    image: sitecore-xp-xconnect-indexworker:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
+    volumes:
+      - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
+    mem_limit: 500MB
+    links:
+      - sql
+      - solr
+
+  cd:
+    image: sitecore-xp-cd:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
+    volumes:
+      - .\data\cd:C:\inetpub\sc\App_Data\logs
+    ports:
+      - "44002:80"
+    links:
+      - sql
+      - solr
+      - xconnect
+
+  cm:
+    image: sitecore-xp-standalone:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
+    volumes:
+      - .\data\cm:C:\inetpub\sc\App_Data\logs
+    ports:
+      - "44001:80"
+    links:
+      - sql
+      - solr
+      - xconnect

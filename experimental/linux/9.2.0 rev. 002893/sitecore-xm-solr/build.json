@@ -1,0 +1,19 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm-solr:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=solr:7.5.0-slim",
+        "--build-arg CORE_NAMES='sc_core_index, sc_master_index, sc_web_index'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-sxa-solr:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=solr:7.5.0-slim",
+        "--build-arg CORE_NAMES='sc_core_index, sc_master_index, sc_web_index, sitecore_sxa_master_index, sitecore_sxa_web_index'"
+      ]
+    }
+  ],
+  "sources": []
+}
