@@ -8,5 +8,6 @@ packages/
 tests/**/data/**/*
 !tests/**/data/*/
 !tests/**/data/*/README.md
+!tests/**/data/*/.gitkeep
 /sources
 /build.ps1
