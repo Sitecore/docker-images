@@ -1,0 +1,20 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-cd:9.2.0-windowsservercore-1903",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-base:9.2.0-windowsservercore-1903"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-cd:9.2.0-windowsservercore-ltsc2019",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-base:9.2.0-windowsservercore-ltsc2019"
+      ]
+    }
+  ],
+  "sources": [
+    "license.xml",
+    "Sitecore 9.2.0 rev. 002893 (WDP XP1 packages).zip"
+  ]
+}
