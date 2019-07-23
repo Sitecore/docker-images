@@ -1,0 +1,78 @@
+trigger: none
+pr:
+  autoCancel: true
+  branches:
+    include:
+    - master
+stages:
+  - stage: Start_VM
+    jobs:
+      - job: Start_VM
+        pool:
+          name: DEVDEMO1US1
+        steps:
+          - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
+            displayName: "Start Docker Build VM"
+            inputs:
+              Action: "Start VM"
+              azureSubscription: "AzureSubscription"
+              ResourceGroupName: $(docker.build.vm.resourceGroupName)
+              VmName: $(docker.build.vm.name)
+  - stage: Build_Images
+    dependsOn: Start_VM
+    jobs:
+      - job: Connect_Asset_Drive
+        displayName: "Connect to Azure File Connect to Azure File Share"
+        pool:
+          name: Docker
+        steps:
+          - powershell: |
+              Test-NetConnection -ComputerName $(shared.folder.server) -Port 445
+              Invoke-Expression -Command "cmdkey /add:$(shared.folder.server) /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
+              New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
+
+      - job: Build_Base_Images
+        dependsOn: Connect_Asset_Drive
+        timeoutInMinutes: 720
+        displayName: "Build Base Images"
+        pool:
+          name: Docker
+        steps:
+          - task: Docker@2
+            displayName: login
+            inputs:
+              containerRegistry: "docker-registry"
+              command: login
+          - checkout: self
+            clean: all
+          - powershell: |
+              $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+              Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
+              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
+            errorActionPreference: silentlyContinue
+            continueOnError: "true"
+
+      - job: Build_Variants
+        dependsOn: Build_Base_Images
+        displayName: "Build Variant Images"
+        pool:
+          name: Docker
+        steps:
+          - task: Docker@2
+            displayName: login
+            inputs:
+              containerRegistry: "docker-registry"
+              command: login
+          - checkout: self
+            clean: all
+          - powershell: |
+              $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin sitecoredemocontainers.azurecr.io
+              $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
+              Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
+              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $(variant.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(variant.tags)
+            errorActionPreference: silentlyContinue
+            continueOnError: "true"
+            timeoutInMinutes: 720
