@@ -2,7 +2,7 @@ trigger: none
 pr:
   autoCancel: true
   branches:
-    include: master
+    include: "master"
 stages:
   - stage: Start_VM
     jobs:
