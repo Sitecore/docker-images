@@ -44,7 +44,7 @@ stages:
               Invoke-Expression -Command "cmdkey /add:$(shared.folder.server) /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
       - job: Build_Base_Images
-        dependsOn: Set_Image_Tags
+        dependsOn: Connect_Asset_Drive
         timeoutInMinutes: 720
         displayName: "Build Base Images"
         pool:
@@ -65,7 +65,6 @@ stages:
               SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
             errorActionPreference: silentlyContinue
             continueOnError: "true"
-
       - job: Build_Variants
         dependsOn: Build_Base_Images
         displayName: "Build Variant Images"
