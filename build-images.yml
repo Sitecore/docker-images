@@ -1,7 +1,8 @@
 trigger: none
 pr:
   autoCancel: true
-  include: master
+  branches:
+    include: master
 stages:
   - stage: Start_VM
     jobs:
