@@ -88,7 +88,7 @@ stages:
               }
                else
               {
-                $tags = $(image.tags)
+                $tags = $(variant.tags)
               }
               Write-Host "Setting image tags to $tags"
               Write-Host "##vso[task.setvariable variable=image.tags]$tags"
