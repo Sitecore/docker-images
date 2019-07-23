@@ -20,7 +20,6 @@ stages:
               VmName: $(docker.build.vm.name)
       - job: Set_Image_Tags
         displayName: 'Set Imagine Build Tags from Branch Name'
-        dependsOn: Connect_Asset_Drive
         steps:
           - powershell: |
               $sourceBranch = "$(System.PullRequest.SourceBranch)"
