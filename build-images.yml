@@ -1,3 +1,9 @@
+trigger: none
+pr:
+  autoCancel: true
+  branches:
+    include: 
+    - master
 stages:
   - stage: Start_VM
     jobs:
