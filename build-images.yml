@@ -71,8 +71,8 @@ stages:
               $(sitecore.democontainer.password) | docker login -u "sitecoredemocontainers" --password-stdin sitecoredemocontainers.azurecr.io 
               $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
               Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
-              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
+              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $(variant.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(variant.tags)
             errorActionPreference: silentlyContinue
             continueOnError: "true"
             timeoutInMinutes: 720
