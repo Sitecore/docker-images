@@ -58,12 +58,21 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
+              $sourceBranch = "$(System.PullRequest.SourceBranch)"
+              if ($sourceBranch.Contains("feature")) {
+                $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
+                $result = [regex]::match($sourceBranch,$pattern).Groups[1].Value
+                $tags = "*:$result*"
+              }
+              Write-Host "Setting image tags to $tags"
+              Write-Host "##vso[task.setvariable variable=image.tags]$tags"
+              Write-Host "##vso[task.setvariable variable=variant.tags]$tags"
               $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
               $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
               Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
               Write-Host "Building image tags $(image.tags)"
-              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $(image.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(image.tags)
+              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $tags
             errorActionPreference: silentlyContinue
             continueOnError: "true"
       - job: Build_Variants
@@ -80,12 +89,21 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
+              $sourceBranch = "$(System.PullRequest.SourceBranch)"
+              if ($sourceBranch.Contains("feature")) {
+                $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
+                $result = [regex]::match($sourceBranch,$pattern).Groups[1].Value
+                $tags = "*:$result*"
+              }
+              Write-Host "Setting image tags to $tags"
+              Write-Host "##vso[task.setvariable variable=image.tags]$tags"
+              Write-Host "##vso[task.setvariable variable=variant.tags]$tags"
               $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin sitecoredemocontainers.azurecr.io
               $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
               Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
               Write-Host "Building variant tags $(variant.tags)"
-              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $(variant.tags) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $(variant.tags)
+              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $tags
             errorActionPreference: silentlyContinue
             continueOnError: "true"
             timeoutInMinutes: 720
