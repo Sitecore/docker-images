@@ -30,7 +30,18 @@ stages:
               Test-NetConnection -ComputerName "$(shared.folder.server)" -Port 445
               Invoke-Expression -Command "cmdkey /add:$(shared.folder.server) /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
-
+      - job: Set_Image_Tags
+        displayName: 'Set Imagine Build Tags from Branch Name'
+        steps:
+          - powershell: |
+              $sourceBranch = "$(System.PullRequest.SourceBranch)"
+              if ($sourceBranch.Contains("feature")) {
+                $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
+                $result = [regex]::match($sourceBranch,$pattern).Groups[1].Value
+                $tags = "*:$result*"
+              }
+              Write-Host "##vso[task.setvariable variable=image.tags]$tags"
+              Write-Host "##vso[task.setvariable variable=variant.tags]$tags"
       - job: Build_Base_Images
         dependsOn: Connect_Asset_Drive
         timeoutInMinutes: 720
