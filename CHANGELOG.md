@@ -1,7 +1,17 @@
 # Changelog
 
+## July 2019
+
+- [Added] New Sitecore 9.2.0 XM/XP SQL Server on Linux.
+- [Added] New Sitecore 9.2.0 XM/XP/SXA Solr 7.5.0 on Linux.
+- [Added] Sitecore 9.2.0 XM/XP variants with Sitecore Experience Accelerator (SXA) on ltsc2019 and 1903.
+- [Added] Sitecore 9.2.0 XM/XP variants with Sitecore PowerShell Extensions (SPE) on ltsc2019 and 1903.
+- [Added] Sitecore 9.2.0 XM/XP base images on ltsc2019 and 1903.
+
 ## June 2019
 
+- [Added] Added 9.0.2 PSE,SXA 1.8.1 on variants.
+- [Fixed] SXA 1.8.1 on Sitecore 9.1.1 XM and XP is now correctly configured with all Web.config transforms, specificity the `sxaxm:define` appSetting and the SXA MediaRequestHandler.
 - [**Breaking**] Consolidated [sitecoreops/sitecore-images](https://github.com/sitecoreops/sitecore-images) and this repository. All future work will happen right here from now on. If you need the old `master` branch you can use the `legacy` branch that is a copy from just before the consolidation.
 - [Changed] Added multiple release channels (ie ltsc2019, 1903) on variants.
 
