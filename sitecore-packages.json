@@ -244,7 +244,7 @@
         "url": "https://dev.sitecore.net/~/media/B03752A8BE3C461896A786DBE8AD9AF6.ashx"
     },
     "Sitecore PowerShell Extensions-5.0 for 9.2.scwdp.zip": {
-        "description": "Sitecore PowerShell Extensions 5.0",
+        "description": "Sitecore PowerShell Extensions 5.0 for 9.2",
         "url": "https://dev.sitecore.net/~/media/7AB15C0432624E6CA9786DF00DD653AB.ashx"
     },
     "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.0.1 rev. 190318.scwdp.zip": {
@@ -262,5 +262,9 @@
     "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.0.1 rev. 190318 CD.scwdp.zip": {
         "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 CD",
         "url": "https://dev.sitecore.net/~/media/67CC49285DFC4B578451AEA3FDDC85A0.ashx"
+    },
+    "Sitecore PowerShell Extensions-5.0.scwdp.zip": {
+        "description": "Sitecore PowerShell Extensions 5.0",
+        "url": "https://dev.sitecore.net/~/media/2C02EB17879548139937A41E5DA0EFCF.ashx"
     }
 }
