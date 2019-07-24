@@ -48,7 +48,7 @@ services:
   cd:
     image: sitecore-xp-sxa-1.9.0-cd:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
     volumes:
-      - .\data\cd:C:\inetpub\sc\App_Data\logs
+      - .\data\cd\sc:C:\inetpub\sc
     ports:
       - "44002:80"
     links:
@@ -59,7 +59,7 @@ services:
   cm:
     image: sitecore-xp-sxa-1.9.0-standalone:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
     volumes:
-      - .\data\cm:C:\inetpub\sc\App_Data\logs
+      - .\data\cm\sc:C:\inetpub\sc
       - .\data\creativeexchange:C:\inetpub\sc\App_Data\packages\CreativeExchange\FileStorage
     ports:
       - "44001:80"
