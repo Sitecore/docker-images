@@ -22,6 +22,8 @@ RUN $env:SIF_CONFIG = 'sitecore-xp1-cd.json'; `
 
 FROM $BASE_IMAGE
 
+# BUG: Target path needs to exist when building with Docker Engine 19.03.1, see https://github.com/docker/for-win/issues/4349. Should be removed when fixed.
+RUN MKDIR C:\install
 COPY --from=builder ["/install/config.json", "/install/package.zip", "/install/license.xml", "/install/"]
 COPY --from=builder ["/install/Sitecore", "/Sitecore"]
 

@@ -13,9 +13,10 @@ RUN $env:SIF_PACKAGE_PSE = 'Sitecore PowerShell Extensions-5.0.scwdp.zip'; `
      $env:INSTALL_TEMP = 'C:\\install'; ` 
      Rename-Item -Path (Resolve-Path (Join-Path $env:INSTALL_TEMP $env:SIF_PACKAGE_PSE)).Path -NewName 'spe.zip';
 
-# Runtime
-FROM $BASE_IMAGE as final
+FROM $BASE_IMAGE
 
+# BUG: Target path needs to exist when building with Docker Engine 19.03.1, see https://github.com/docker/for-win/issues/4349. Should be removed when fixed.
+RUN MKDIR C:\install
 COPY --from=builder ["/install/install-package.json", "/install/spe.zip", "/install/" ]
 
 # Install Sitecore, apply tweaks and cleanup

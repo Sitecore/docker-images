@@ -14,9 +14,10 @@ RUN $env:SIF_PACKAGE_JSS = 'Sitecore JavaScript Services Server for Sitecore 9.1
     $env:INSTALL_TEMP = 'C:\\install'; `
     Rename-Item -Path (Resolve-Path (Join-Path $env:INSTALL_TEMP $env:SIF_PACKAGE_JSS)).Path -NewName 'jss.zip';
 
-# Runtime
-FROM $BASE_IMAGE as final
+FROM $BASE_IMAGE
 
+# BUG: Target path needs to exist when building with Docker Engine 19.03.1, see https://github.com/docker/for-win/issues/4349. Should be removed when fixed.
+RUN MKDIR C:\install
 COPY --from=builder [ "/install/jss.zip", "/install/install-package.json", "/install/" ]
 
 # Install Sitecore, apply tweaks and cleanup
