@@ -1,5 +1,9 @@
 # Changelog
 
+## August 2019
+
+- [Fixed] Multi-stage builds on Docker engine 19.03.1, see [https://github.com/docker/for-win/issues/4349](https://github.com/docker/for-win/issues/4349). Temporary workaround applied to affected Docker files.
+
 ## July 2019
 
 - [Fixed] Fixed Sitecore 9.0.2 XP variants PSE/SXA on Windows.
