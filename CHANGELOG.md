@@ -2,6 +2,7 @@
 
 ## August 2019
 
+- [Added] New Sitecore 9.2.0 XM/XP SXA 1.9.0 SQL Server on Linux variants.
 - [Added] New Sitecore 9.2.0 XM/XP SPE 5.0 SQL Server on Linux variants.
 - [Changed] Renamed Sitecore SQL Server on Linux images from `-sqldev` to `-sql` since you can switch SQL edition using the `MSSQL_PID` environment variable. Default value is `Developer` and possible values are `Enterprise`, `Standard`, `Web` and `Express`.
 - [Fixed] Multi-stage builds on Docker engine 19.03.1, see [https://github.com/docker/for-win/issues/4349](https://github.com/docker/for-win/issues/4349). Temporary workaround applied to affected Docker files.
