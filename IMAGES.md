@@ -285,8 +285,10 @@
 | 9.2.0 | sitecore-xp-sxa-solr | linux |  | `sitecore-xp-sxa-solr:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xp-solr/Dockerfile) |
 | 9.2.0 | sitecore-xp-sql | linux |  | `sitecore-xp-sql:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xp-sql/Dockerfile) |
 | 9.2.0 | sitecore-xp-solr | linux |  | `sitecore-xp-solr:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xp-solr/Dockerfile) |
+| 9.2.0 | sitecore-xp-pse-5.0-sql | linux |  | `sitecore-xp-pse-5.0-sql:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xp-pse-sql/Dockerfile) |
 | 9.2.0 | sitecore-xm-sxa-solr | linux |  | `sitecore-xm-sxa-solr:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xm-solr/Dockerfile) |
 | 9.2.0 | sitecore-xm-sql | linux |  | `sitecore-xm-sql:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xm-sql/Dockerfile) |
 | 9.2.0 | sitecore-xm-solr | linux |  | `sitecore-xm-solr:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xm-solr/Dockerfile) |
+| 9.2.0 | sitecore-xm-pse-5.0-sql | linux |  | `sitecore-xm-pse-5.0-sql:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xm-pse-sql/Dockerfile) |
 
 [//]: # "end: current linux"
