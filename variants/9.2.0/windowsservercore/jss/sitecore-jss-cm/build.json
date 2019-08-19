@@ -1,0 +1,36 @@
+{
+    "tags": [
+        {
+            "tag": "sitecore-xm1-jss-12.0.0-cm:9.2.0-windowsservercore-1903",
+            "build-options": [
+                "--build-arg BASE_IMAGE=sitecore-xm1-cm:9.2.0-windowsservercore-1903",
+                "--build-arg WDP_GLOB='*XM*.scwdp.zip'"
+            ]
+        },
+        {
+            "tag": "sitecore-xm1-jss-12.0.0-cm:9.2.0-windowsservercore-ltsc2019",
+            "build-options": [
+                "--build-arg BASE_IMAGE=sitecore-xm1-cm:9.2.0-windowsservercore-ltsc2019",
+                "--build-arg WDP_GLOB='*XM*.scwdp.zip'"
+            ]
+        },
+        {
+            "tag": "sitecore-xp-jss-12.0.0-standalone:9.2.0-windowsservercore-1903",
+            "build-options": [
+                "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.2.0-windowsservercore-1903",
+                "--build-arg WDP_GLOB='*XP*.scwdp.zip'"
+            ]
+        },
+        {
+            "tag": "sitecore-xp-jss-12.0.0-standalone:9.2.0-windowsservercore-ltsc2019",
+            "build-options": [
+                "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.2.0-windowsservercore-ltsc2019",
+                "--build-arg WDP_GLOB='*XP*.scwdp.zip'"
+            ]
+        }
+    ],
+    "sources": [
+        "Sitecore JavaScript Services Server for Sitecore 9.2 XM 12.0.0 rev. 190522.scwdp.zip",
+        "Sitecore JavaScript Services Server for Sitecore 9.2 XP 12.0.0 rev. 190522.scwdp.zip"
+    ]
+}
