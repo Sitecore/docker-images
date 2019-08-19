@@ -1,7 +1,17 @@
 # Changelog
 
+## August 2019
+
+- [Added] New Sitecore 9.2.0 XM/XP JSS 12.0.0 SQL Server on Linux images.
+- [Added] New Sitecore 9.2.0 XM/XP JSS 12.0.0 on Windows variants.
+- [Added] New Sitecore 9.2.0 XM/XP SXA 1.9.0 SQL Server on Linux images.
+- [Added] New Sitecore 9.2.0 XM/XP SPE 5.0 SQL Server on Linux images.
+- [Changed] Renamed Sitecore SQL Server on Linux images from `-sqldev` to `-sql` since you can switch SQL edition using the `MSSQL_PID` environment variable. Default value is `Developer` and possible values are `Enterprise`, `Standard`, `Web` and `Express`.
+- [Fixed] Multi-stage builds on Docker engine 19.03.1, see [https://github.com/docker/for-win/issues/4349](https://github.com/docker/for-win/issues/4349). Temporary workaround applied to affected Docker files.
+
 ## July 2019
 
+- [Fixed] Fixed Sitecore 9.0.2 XP variants PSE/SXA on Windows.
 - [Added] New Sitecore 9.2.0 XM/XP SQL Server on Linux.
 - [Added] New Sitecore 9.2.0 XM/XP/SXA Solr 7.5.0 on Linux.
 - [Added] Sitecore 9.2.0 XM/XP variants with Sitecore Experience Accelerator (SXA) on ltsc2019 and 1903.
@@ -10,7 +20,7 @@
 
 ## June 2019
 
-- [Added] Added 9.0.2 PSE,SXA 1.8.1 on variants.
+- [Added] Added 9.0.2 PSE, SXA 1.8.1 on variants.
 - [Fixed] SXA 1.8.1 on Sitecore 9.1.1 XM and XP is now correctly configured with all Web.config transforms, specificity the `sxaxm:define` appSetting and the SXA MediaRequestHandler.
 - [**Breaking**] Consolidated [sitecoreops/sitecore-images](https://github.com/sitecoreops/sitecore-images) and this repository. All future work will happen right here from now on. If you need the old `master` branch you can use the `legacy` branch that is a copy from just before the consolidation.
 - [Changed] Added multiple release channels (ie ltsc2019, 1903) on variants.

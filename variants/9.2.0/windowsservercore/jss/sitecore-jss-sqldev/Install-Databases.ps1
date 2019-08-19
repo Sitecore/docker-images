@@ -18,7 +18,7 @@ $server.Properties["DefaultFile"].Value = $InstallPath
 $server.Properties["DefaultLog"].Value = $InstallPath
 $server.Alter()
 
-$sqlPackageExePath = Get-Item "C:\tools\*\lib\net46\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
+$sqlPackageExePath =Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
 
 # attach
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
@@ -39,15 +39,18 @@ Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurs
     $dacpacPath = $_.FullName
     $databaseName = "$DatabasePrefix`_" + $TextInfo.ToTitleCase($_.BaseName)
 
+    # do
+    Write-Host "install module path: $InstallPath dacpac: $dacpacPath dbname: $databaseName"
+
     # Install
-    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q
+    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q    
 } 
 
 # detach DB
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
     $databaseName = $_.BaseName.Replace("_Primary", "")
 
-    Write-Host "### Detaching '$databaseName'..."
+    Write-Host "### Detach: $databaseName"
 
     Invoke-Sqlcmd -Query "EXEC MASTER.dbo.sp_detach_db @dbname = N'$databaseName', @keepfulltextindexfile = N'false'"
 }

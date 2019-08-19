@@ -15,9 +15,10 @@ RUN $env:SIF_CONFIG = 'xconnect-createcert.json'; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*Configuration files*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Rename-Item -Path (Resolve-Path (Join-Path $env:INSTALL_TEMP $env:SIF_CONFIG)).Path -NewName 'config.json';
 
-# Runtime
 FROM $BASE_IMAGE
 
+# BUG: Target path needs to exist when building with Docker Engine 19.03.1, see https://github.com/docker/for-win/issues/4349. Should be removed when fixed.
+RUN MKDIR C:\install
 COPY --from=builder ["/install/config.json", "/install/"]
 
 # Create and install certificates
