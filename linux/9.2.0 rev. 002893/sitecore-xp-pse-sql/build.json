@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-pse-5.0-sql:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-sql:9.2.0-linux"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore PowerShell Extensions-5.0 for 9.2.scwdp.zip"
+  ]
+}
