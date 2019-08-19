@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm-jss-12.0.0-sql:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-sql:9.2.0-linux"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore JavaScript Services Server for Sitecore 9.2 XM 12.0.0 rev. 190522.scwdp.zip"
+  ]
+}

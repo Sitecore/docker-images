@@ -2,7 +2,7 @@
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-61-blue.svg) ![Tags](https://img.shields.io/badge/Tags-272-blue.svg) ![Deprecated](https://img.shields.io/badge/Deprecated-27-lightgrey.svg) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-129-blue.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-63-blue.svg) ![Tags](https://img.shields.io/badge/Tags-274-blue.svg) ![Deprecated](https://img.shields.io/badge/Deprecated-27-lightgrey.svg) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-131-blue.svg)
 
 [//]: # "end: stats"
 
