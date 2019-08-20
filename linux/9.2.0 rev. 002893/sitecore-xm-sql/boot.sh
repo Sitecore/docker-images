@@ -5,13 +5,13 @@ dataDir=$2
 
 # prepare data
 if ls $dataDir/*.mdf 1> /dev/null 2>&1; then
+    echo "### Done, existing data found in '$dataDir'..."
+else
     echo "### No data found in '$dataDir', seeding..."
    
     cp -R --verbose $cleanDir/. $dataDir/
 
     echo "### Done seeding."
-else
-    echo "### Done, existing data found in '$dataDir'..."
 fi
 
 asyncRun() {
