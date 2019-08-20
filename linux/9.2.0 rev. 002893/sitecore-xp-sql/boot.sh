@@ -4,7 +4,7 @@ cleanDir=$1
 dataDir=$2
 
 # prepare data
-if [ -z "$(ls -A $dataDir)" ]; then
+if ls $dataDir/*.mdf 1> /dev/null 2>&1; then
     echo "### No data found in '$dataDir', seeding..."
    
     cp -R --verbose $cleanDir/. $dataDir/
