@@ -16,7 +16,7 @@ for filename in $dataDir/*.mdf; do
 
     echo "### Attaching '$databaseName' using '$mdfPath' and '$ldfPath'..."
 
-    /opt/mssql-tools/bin/sqlcmd -S . -U SA -P $SA_PASSWORD -t 300 -Q "CREATE DATABASE [$databaseName] ON (FILENAME = '$mdfPath'),(FILENAME = '$ldfPath') FOR ATTACH"
+    /opt/mssql-tools/bin/sqlcmd -S . -U SA -P $SA_PASSWORD -t 60 -l 300 -Q "CREATE DATABASE [$databaseName] ON (FILENAME = '$mdfPath'),(FILENAME = '$ldfPath') FOR ATTACH"
 done
 
 echo "### Databases ready."
