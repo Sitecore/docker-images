@@ -2,6 +2,7 @@
 
 ## August 2019
 
+- [Fixed] Added missing media handler in the 9.2.0/JSS 12.0.0 images.
 - [Added] New Sitecore 9.2.0 XM/XP JSS 12.0.0 SQL Server on Linux images.
 - [Added] New Sitecore 9.2.0 XM/XP JSS 12.0.0 on Windows variants.
 - [Added] New Sitecore 9.2.0 XM/XP SXA 1.9.0 SQL Server on Linux images.
