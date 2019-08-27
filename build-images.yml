@@ -6,7 +6,6 @@ pr:
     - master
 stages:
   - stage: Build_Images
-    dependsOn: Start_VM
     jobs:
       - job: Build_Linux_Images
         timeoutInMinutes: 720
