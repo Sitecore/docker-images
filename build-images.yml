@@ -83,14 +83,15 @@ stages:
             clean: all
           - powershell: |
               $sourceBranch = "$(System.PullRequest.SourceBranch)"
+                            $tags = "blank"
               if ($sourceBranch.Contains("feature")) {
                 $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
                 $result = [regex]::match($sourceBranch,$pattern).Groups[1].Value
                 $tags = "*:$result*"
               }
-               else
+              else
               {
-                $tags = $(variant.tags)
+                $tags = "$(variant.tags)"
               }
               Write-Host "Setting image tags to $tags"
               Write-Host "##vso[task.setvariable variable=image.tags]$tags"
