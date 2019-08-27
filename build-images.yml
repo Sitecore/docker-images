@@ -11,7 +11,7 @@ stages:
         timeoutInMinutes: 720
         displayName: "Build Base Images"
         pool:
-          name: 'ubuntu-16.04'
+          vmImage: 'ubuntu-16.04'
         steps:
           - task: Docker@2
             enabled: false
