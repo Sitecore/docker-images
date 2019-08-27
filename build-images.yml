@@ -54,7 +54,7 @@ stages:
               }
               else
               {
-                $tags = "$(image.tags)""
+                $tags = "$(image.tags)"
               }
               
               Write-Host "Setting image tags to $tags"
