@@ -45,7 +45,7 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
-              $sourceBranch = "$(System.PullRequest.SourceBranch)"
+              $sourceBranch = "$(Build.SourceBranch)"
               $tags = "blank"
               if ($sourceBranch.Contains("feature")) {
                 $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
@@ -82,7 +82,7 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
-              $sourceBranch = "$(System.PullRequest.SourceBranch)"
+              $sourceBranch = "$(Build.SourceBranch)"
                             $tags = "blank"
               if ($sourceBranch.Contains("feature")) {
                 $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
@@ -140,7 +140,7 @@ stages:
                 sudo mount -t cifs //$(shared.folder.server)/docker-assets /mnt/dockerassets -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
 
         - powershell: |
-            $sourceBranch = "$(System.PullRequest.SourceBranch)"
+            $sourceBranch = "$(Build.SourceBranch)"
             $tags = "blank"
             if ($sourceBranch.Contains("feature")) {
               $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
