@@ -161,5 +161,5 @@ stages:
             Write-Host "Building image tags $tags"
             SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "/mnt/dockerassets" -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
             SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "/mnt/dockerassets" -Registry $(container.registry.name) -Tags $tags
-          errorActionPreference: stop
+          errorActionPreference: silentlyContinue
           continueOnError: "true"
