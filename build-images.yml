@@ -145,9 +145,11 @@ stages:
           inputs:
               targetType: inline
               script: |
-                if [ ! -d "/mnt/dockerassets" ]; then
-                sudo mkdir /mnt/dockerassets
+                if [ -d "/mnt/dockerassets" ]; then
+                exit 0
                 fi
+                sudo mkdir /mnt/dockerassets
+                
                 if [ ! -d "/etc/smbcredentials" ]; then
                 sudo mkdir /etc/smbcredentials
                 fi
