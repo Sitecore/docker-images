@@ -368,7 +368,7 @@ function Initialize-BuildSpecifications
     "^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 
     "^sitecore-xm1-pse-(.*)-cm:(.*)$", 
     "^sitecore-xp-sql:(.*)$", 
-    "^sitecore-xp-pse-sql:(.*)$", 
+    "^sitecore-xp-pse-(.*)-sql:(.*)$", 
     "^sitecore-xp-base:(.*)$", 
     "^sitecore-xp-xconnect:(.*)$", 
     "^sitecore-xp-pse-(.*)-sqldev:(.*)$", 
