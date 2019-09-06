@@ -1,9 +1,22 @@
-trigger: none
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+    - integration/*
+schedules: 
+  - cron: "0 12 * * 0"
+    displayName: Weekly Sunday build
+    branches:
+      include:
+      - master
+    always: true
 pr:
   autoCancel: true
   branches:
     include:
     - master
+
 stages:
   - stage: Start_Windows_VM
     dependsOn: []
@@ -82,7 +95,7 @@ stages:
               Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
               Write-Host "Building image tags $tags"
               SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $tags
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $tags -PushMode $(PushMode)
             errorActionPreference: silentlyContinue
             continueOnError: "true"
       - job: Build_Variants
@@ -118,7 +131,7 @@ stages:
               Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
               Write-Host "Building variant tags $tags"
               SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $tags
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $tags -PushMode $(PushMode)
             errorActionPreference: silentlyContinue
             continueOnError: "true"
             timeoutInMinutes: 720
@@ -183,6 +196,6 @@ stages:
             Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
             Write-Host "Building image tags $tags"
             SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "/mnt/dockerassets" -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-            SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "/mnt/dockerassets" -Registry $(container.registry.name) -Tags $tags
+            SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "/mnt/dockerassets" -Registry $(container.registry.name) -Tags $tags -PushMode $(PushMode)
           errorActionPreference: silentlyContinue
           continueOnError: "true"

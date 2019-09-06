@@ -3,7 +3,7 @@ ARG BASE_IMAGE
 FROM $BASE_IMAGE as builder
 
 RUN apt-get -y update \
-    && apt-get -y install unzip \ 
+    && apt-get -y --allow-unauthenticated install unzip \ 
     && wget -progress=bar:force -q -O sqlpackage.zip https://go.microsoft.com/fwlink/?linkid=2087431 \
     && unzip -qq sqlpackage.zip -d /opt/sqlpackage \
     && chmod +x /opt/sqlpackage/sqlpackage
