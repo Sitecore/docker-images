@@ -1,9 +1,22 @@
-trigger: none
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+    - integration/*
+schedules: 
+  - cron: "0 12 * * 0"
+    displayName: Weekly Sunday build
+    branches:
+      include:
+      - master
+    always: true
 pr:
   autoCancel: true
   branches:
     include:
     - master
+
 stages:
   - stage: Start_Windows_VM
     dependsOn: []
