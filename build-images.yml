@@ -199,34 +199,3 @@ stages:
             SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "/mnt/dockerassets" -Registry $(container.registry.name) -Tags $tags -PushMode $(PushMode)
           errorActionPreference: silentlyContinue
           continueOnError: "true"
-  - stage: Trigger_Downstream_Builds
-    displayName: 'Trigger Demo Image Builds'
-    dependsOn: 
-    - Build_Windows_Images
-    - Build_Linux_Images
-    jobs:
-    - job: Trigger_Build
-      pool: DEVDEMO1US1
-      steps:
-        - task: TriggerBuild@3
-          displayName: 'Trigger Omni Build'
-          inputs:
-            definitionIsInCurrentTeamProject: true
-            buildDefinition: 'Sitecore.HabitatHome.Omni - Docker Images'
-            queueBuildForUserThatTriggeredBuild: true
-            ignoreSslCertificateErrors: false
-            useSameSourceVersion: false
-            useSameBranch: false
-            branchToUse: 'master'
-            waitForQueuedBuildsToFinish: false
-            storeInEnvironmentVariable: false
-            authenticationMethod: 'Personal Access Token'
-            password: '$(vsts.personal.access.token)'
-            enableBuildInQueueCondition: false
-            dependentOnSuccessfulBuildCondition: false
-            dependentOnFailedBuildCondition: false
-            checkbuildsoncurrentbranch: false
-            failTaskIfConditionsAreNotFulfilled: false
-
-    
-
