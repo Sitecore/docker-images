@@ -35,6 +35,7 @@ services:
       - .\data\creativeexchange:C:\inetpub\sc\App_Data\packages\CreativeExchange\FileStorage
     ports:
       - "44001:80"
+      - "44003:443"
     links:
       - sql
       - solr
