@@ -30,6 +30,7 @@ services:
 
   cm:
     image: sitecore-xm1-cm:9.2.0-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
+    entrypoint: powershell & "C:\\Sitecore\\Scripts\\Enable-Https.ps1 -DnsName localhost"; C:\\ServiceMonitor.exe w3svc sc
     volumes:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
     ports:

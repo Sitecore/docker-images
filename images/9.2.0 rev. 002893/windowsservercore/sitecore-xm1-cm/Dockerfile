@@ -67,12 +67,8 @@ RUN $env:SITENAME = 'sc'; `
     Remove-Item -Path ('C:\\inetpub\\{0}\\App_Data\\logs' -f $env:SITENAME) -Force -Recurse; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
 
-# Generate SSL cerififcate
-WORKDIR /inetpub/wwwroot
 EXPOSE 80 
 EXPOSE 443
-COPY certificate.ps1 .
-RUN powershell.exe ./certificate.ps1
 
 # ServiceMonitor needs to point to the Application Pool that Sitecore runs in instead of the default one, to support environment variables
 ENTRYPOINT ["C:\\ServiceMonitor.exe", "w3svc", "sc"]
