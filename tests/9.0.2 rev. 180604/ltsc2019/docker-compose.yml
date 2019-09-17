@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: sitecore-sqldev:9.0.180604-windowsservercore-ltsc2019
+    image: ${REGISTRY:-}sitecore-sqldev:9.0.180604-windowsservercore-ltsc2019
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2000MB
@@ -11,7 +11,7 @@ services:
       - "44003:1433"
 
   solr:
-    image: sitecore-solr:9.0.180604-nanoserver-1809
+    image: ${REGISTRY:-}sitecore-solr:9.0.180604-nanoserver-1809
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1000MB
@@ -19,7 +19,7 @@ services:
       - "44002:8983"
 
   cm:
-    image: sitecore-xm1-cm:9.0.180604-windowsservercore-ltsc2019
+    image: ${REGISTRY:-}sitecore-xm1-cm:9.0.180604-windowsservercore-ltsc2019
     volumes:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
     ports:
