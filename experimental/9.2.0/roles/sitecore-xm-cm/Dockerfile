@@ -7,16 +7,16 @@ ARG SC_USE_WDP
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-COPY license.xml C:\\install\\
 COPY *.zip C:\\install\\
 
 RUN Expand-Archive -Path 'C:\\install\\*.zip' -DestinationPath 'C:\\install'; `
     Expand-Archive -Path (Join-Path 'C:\\install\\' $env:SC_USE_WDP) -DestinationPath 'C:\\install'; `
-    Copy-Item -Path 'C:\\install\\license.xml' -Destination 'C:\\install\\Content\\Website\\App_Data'; `
     Copy-Item -Path 'C:\\install\\Content\\Website\\App_Config\\Include\\Examples\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config.example' -Destination 'C:\\install\\Content\\Website\\App_Config\\Include\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config'; `
     Copy-Item -Path 'C:\\install\\Content\\Website\\App_Config\\Include\\Examples\\Sitecore.LoadBalancing.config.example' -Destination 'C:\\install\\Content\\Website\\App_Config\\Include\\Sitecore.LoadBalancing.config'; `
     New-Item -Path 'C:\\install\\Content\\Website\\upload' -ItemType Directory | Out-Null; `
     Remove-Item -Path 'C:\\install\\Content\\Website\\App_Data\\logs' -Force -Recurse;
+
+COPY license.xml C:\\install\\Content\\Website\\App_Data
 
 COPY *.xdt C:\\install\\
 
