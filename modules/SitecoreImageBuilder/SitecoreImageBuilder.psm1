@@ -359,6 +359,8 @@ function Initialize-BuildSpecifications
     $priorities = New-Object System.Collections.Specialized.OrderedDictionary
     $priority = 0
     
+    "^sitecore-runtime:(.*)$", 
+    "^sitecore-aspnet:(.*)$", 
     "^mssql-developer:(.*)$", 
     "^sitecore-openjdk:(.*)$", 
     "^sitecore-base:(.*)$", 
