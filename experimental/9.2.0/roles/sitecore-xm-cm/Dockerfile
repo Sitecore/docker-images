@@ -7,8 +7,8 @@ ARG SC_USE_WDP
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-COPY license.xml /install/
-COPY *.zip /install/
+COPY license.xml C:\\install\\
+COPY *.zip C:\\install\\
 
 RUN Expand-Archive -Path 'C:\\install\\*.zip' -DestinationPath 'C:\\install'; `
     Expand-Archive -Path (Join-Path 'C:\\install\\' $env:SC_USE_WDP) -DestinationPath 'C:\\install'; `
@@ -18,7 +18,7 @@ RUN Expand-Archive -Path 'C:\\install\\*.zip' -DestinationPath 'C:\\install'; `
     New-Item -Path 'C:\\install\\Content\\Website\\upload' -ItemType Directory | Out-Null; `
     Remove-Item -Path 'C:\\install\\Content\\Website\\App_Data\\logs' -Force -Recurse;
 
-COPY *.xdt /install/
+COPY *.xdt C:\\install\\
 
 RUN & Invoke-XdtTransform.ps1 -Path 'C:\\install\\Content\\Website\\App_Config\\ConnectionStrings.config' -XdtPath 'C:\\install\\ConnectionStrings.config.xdt'; `
     & Invoke-XdtTransform.ps1 -Path 'C:\\install\\Content\\Website\\Web.config' -XdtPath 'C:\\install\\Web.config.xdt';
