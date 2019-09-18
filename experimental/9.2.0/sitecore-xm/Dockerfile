@@ -4,6 +4,7 @@ ARG BASE_IMAGE
 FROM $BASE_IMAGE as build
 
 ARG SC_USE_WDP
+ARG SC_ROLE_CONFIG_DIRECTORY
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
@@ -18,12 +19,16 @@ RUN Expand-Archive -Path 'C:\\install\\*.zip' -DestinationPath 'C:\\install'; `
 
 COPY license.xml C:\\install\\Content\\Website\\App_Data
 
-COPY *.xdt C:\\install\\
+COPY ${SC_ROLE_CONFIG_DIRECTORY} C:\\install\\Content\\Website\\
 
-RUN & Invoke-XdtTransform.ps1 -Path 'C:\\install\\Content\\Website\\App_Config\\ConnectionStrings.config' -XdtPath 'C:\\install\\ConnectionStrings.config.xdt'; `
-    & Invoke-XdtTransform.ps1 -Path 'C:\\install\\Content\\Website\\Web.config' -XdtPath 'C:\\install\\Web.config.xdt';
+# TODO: loop instead of explicit
 
-COPY *.config C:\\install\\Content\\Website\\App_Config\\Include\\
+RUN & Invoke-XdtTransform.ps1 -Path 'C:\\install\\Content\\Website\\App_Config\\ConnectionStrings.config' -XdtPath 'C:\\install\\Content\\Website\\App_Config\\ConnectionStrings.config.xdt'; `
+    & Invoke-XdtTransform.ps1 -Path 'C:\\install\\Content\\Website\\Web.config' -XdtPath 'C:\\install\\Content\\Website\\Web.config.xdt';
+
+# TODO: remove xdts
+
+COPY .\config\*.config C:\\install\\Content\\Website\\App_Config\\Include\\
 
 FROM $BASE_IMAGE
 
@@ -33,7 +38,6 @@ COPY --from=build ["/install/Content/Website/", "/inetpub/wwwroot/"]
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-# TODO: Use role to find which transforms/patches to apply?
 # TODO: Flatten: all wdps, downloads, tools could come from BUILD_IMAGE == then each final image can be directly from aspnet:4.8 and very explicit
 
 RUN $env:IIS_SITE_PATH = 'IIS:\Sites\Default Web Site'; `

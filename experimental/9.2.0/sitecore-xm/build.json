@@ -5,7 +5,17 @@
       "build-options": [
         "--build-arg BASE_IMAGE=sitecore-aspnet:9.2.0-windowsservercore-1903",
         "--build-arg SC_USE_WDP='*_cm.scwdp.zip'",
+        "--build-arg SC_ROLE_CONFIG_DIRECTORY=\\config\\cm",
         "--build-arg SC_ROLE_DEFINE='ContentManagement, Indexing'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-cd:9.2.0-windowsservercore-1903",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-aspnet:9.2.0-windowsservercore-1903",
+        "--build-arg SC_USE_WDP='*_cd.scwdp.zip'",
+        "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\cd",
+        "--build-arg SC_ROLE_DEFINE='ContentDelivery'"
       ]
     }
   ],
