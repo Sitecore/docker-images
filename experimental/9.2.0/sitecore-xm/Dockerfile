@@ -21,12 +21,9 @@ COPY license.xml C:\\install\\Content\\Website\\App_Data
 
 COPY ${SC_ROLE_CONFIG_DIRECTORY} C:\\install\\Content\\Website\\
 
-# TODO: loop instead of explicit
-
-RUN & Invoke-XdtTransform.ps1 -Path 'C:\\install\\Content\\Website\\App_Config\\ConnectionStrings.config' -XdtPath 'C:\\install\\Content\\Website\\App_Config\\ConnectionStrings.config.xdt'; `
-    & Invoke-XdtTransform.ps1 -Path 'C:\\install\\Content\\Website\\Web.config' -XdtPath 'C:\\install\\Content\\Website\\Web.config.xdt';
-
-# TODO: remove xdts
+RUN $xdts = (Get-ChildItem -Path 'C:\\install\\Content\\Website\\*.config.xdt'), (Get-ChildItem -Path 'C:\\install\\Content\\Website\\App_Config\\*.config.xdt' -Recurse); `
+    $xdts | ForEach-Object { & Invoke-XdtTransform.ps1 -Path $_.FullName.Replace('.xdt', '') -XdtPath $_.FullName; }; `
+    $xdts | ForEach-Object { Remove-Item -Path $_.FullName; };
 
 COPY .\config\*.config C:\\install\\Content\\Website\\App_Config\\Include\\
 
