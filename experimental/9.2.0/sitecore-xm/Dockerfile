@@ -40,8 +40,6 @@ COPY --from=build ["C:\\install\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 COPY --from=assets ["C:\\install\\tools\\", "C:\\tools\\"]
 COPY --from=assets ["C:\\install\\setup\\", "C:\\install\\setup\\"]
 
-# TODO: hmm 15 layers if we COPY --from once, but size is a bit bigger, or 17 layers (same) and size is smaller?
-
 RUN $env:INSTALL_TEMP = 'C:\\install'; `
     $env:TOOLS_PATH = 'C:\\tools'; `
     $env:IIS_SITE_PATH = 'IIS:\Sites\Default Web Site'; `
