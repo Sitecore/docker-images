@@ -4,8 +4,8 @@
       "tag": "sitecore-xm-cm:9.2.0-windowsservercore-1903",
       "build-options": [
         "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-1903",
-        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-windowsservercore-1903",
-        "--build-arg SC_USE_WDP='C:\\install\\packages\\Sitecore 9.2.0 rev. 002893 (WDP XM1 packages)\\Sitecore 9.2.0 rev. 002893 (XM) (OnPrem)_cm.scwdp.zip'",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0",
+        "--build-arg ASSETS_USE_WDP='C:\\install\\packages\\*XM1*\\*_cm.scwdp.zip'",
         "--build-arg SC_ROLE_CONFIG_DIRECTORY=\\config\\cm",
         "--build-arg SC_ROLE_DEFINE='ContentManagement, Indexing'"
       ]
@@ -14,8 +14,8 @@
       "tag": "sitecore-xm-cd:9.2.0-windowsservercore-1903",
       "build-options": [
         "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-1903",
-        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-windowsservercore-1903",
-        "--build-arg SC_USE_WDP='C:\\install\\packages\\Sitecore 9.2.0 rev. 002893 (WDP XM1 packages)\\Sitecore 9.2.0 rev. 002893 (XM) (OnPrem)_cd.scwdp.zip'",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0",
+        "--build-arg ASSETS_USE_WDP='C:\\install\\packages\\*XM1*\\*_cd.scwdp.zip'",
         "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\cd",
         "--build-arg SC_ROLE_DEFINE='ContentDelivery'"
       ]

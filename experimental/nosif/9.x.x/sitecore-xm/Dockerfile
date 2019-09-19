@@ -7,12 +7,12 @@ FROM $BASE_IMAGE as build
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-ARG SC_USE_WDP
+ARG ASSETS_USE_WDP
 ARG SC_ROLE_CONFIG_DIRECTORY
 
-COPY --from=assets ["${SC_USE_WDP}", "C:\\temp\\"]
+COPY --from=assets ["C:\\install\\packages\\", "C:\\install\\packages\\"]
 
-RUN Expand-Archive -Path 'C:\\temp\\*.scwdp.zip' -DestinationPath 'C:\\install'; `
+RUN Expand-Archive -Path $env:ASSETS_USE_WDP -DestinationPath 'C:\\install'; `
     New-Item -Path 'C:\\install\\inetpub\\wwwroot' -ItemType 'Directory' | Out-Null; `
     Move-Item -Path 'C:\\install\\Content\\Website\\*' -Destination 'C:\\install\\inetpub\\wwwroot' -Force; `
     Copy-Item -Path 'C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\Examples\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config.example' -Destination 'C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config'; `

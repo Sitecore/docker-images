@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "sitecore-assets:9.2.0-windowsservercore-1903",
+      "tag": "sitecore-assets:9.2.0",
       "build-options": [
         "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:1903"
       ]
