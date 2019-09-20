@@ -32,10 +32,10 @@ RUN Get-ChildItem -Path 'C:\\install\*.zip' | ForEach-Object { & 'C:\\temp\\7zip
 RUN $zips = Get-ChildItem -Path 'C:\\install\\*.zip'; `
     $zips | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath ('C:\\install\\packages\\{0}' -f ($_.BaseName)) -Force; }; `
     $zips | ForEach-Object { Remove-Item -Path $_.FullName -Force; };
-    
+
 # add license and scripts
 COPY license.xml C:\\install\\license\\
-COPY scripts\*.ps1 C:\\install\\tools\\scripts\\
+COPY tools C:\\install\\tools
 
 FROM $BASE_IMAGE
 
