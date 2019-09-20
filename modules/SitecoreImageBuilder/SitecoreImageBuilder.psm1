@@ -115,6 +115,7 @@ function Invoke-PackageRestore
 function Invoke-Build
 {
     [CmdletBinding(SupportsShouldProcess = $true)]
+    [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
     param(
         [Parameter(Mandatory = $true)]
         [ValidateScript( { Test-Path $_ -PathType "Container" })] 
@@ -145,6 +146,14 @@ function Invoke-Build
         [Parameter(Mandatory = $false)]
         [ValidateSet("Always", "Never")]
         [string]$PullMode = "Always"
+        , 
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [string]$SitecoreUsername
+        ,
+        [Parameter(Mandatory = $true)]
+        [ValidateNotNullOrEmpty()]
+        [string]$SitecorePassword
     )
 
     # Setup
@@ -232,7 +241,14 @@ function Invoke-Build
                 $buildOptions.Add("--isolation 'hyperv'")
             }
 
-            $buildOptions.AddRange($spec.BuildOptions)
+            $spec.BuildOptions | ForEach-Object {
+                $option = $_
+                $option = $option.Replace("`${SitecoreUsername}", $SitecoreUsername)
+                $option = $option.Replace("`${SitecorePassword}", $SitecorePassword)
+
+                $buildOptions.Add($option)
+            }
+
             $buildOptions.Add("--tag '$tag'")
         
             $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
