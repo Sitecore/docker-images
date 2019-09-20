@@ -1,0 +1,15 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-assets:9.1.1-windowsservercore-1903",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:1903",
+        "--build-arg DEV_SITECORE_NET_USERNAME=${SitecoreUsername}",
+        "--build-arg DEV_SITECORE_NET_PASSWORD=${SitecorePassword}"
+      ]
+    }
+  ],
+  "sources": [
+    "license.xml"
+  ]
+}
