@@ -5,6 +5,6 @@
     <add name="master" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=sc_Master" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
     <add name="web" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=sc_Web" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
     <add name="experienceforms" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=sc_ExperienceForms" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
-    <add name="solr.search" connectionString="http://solr:8993/solr" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="solr.search" connectionString="http://solr:8983/solr" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
     <add name="sitecoreidentity.secret" connectionString="R6mYfCbM4Ci0niMBuzKVHIKc" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
 </connectionStrings>
