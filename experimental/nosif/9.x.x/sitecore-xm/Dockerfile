@@ -10,9 +10,9 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 ARG ASSETS_USE_WDP
 ARG SC_ROLE_CONFIG_DIRECTORY
 
-COPY --from=assets ["C:\\install\\packages\\", "C:\\install\\packages\\"]
+COPY --from=assets ["${ASSETS_USE_WDP}", "C:\\install\\packages\\"]
 
-RUN Expand-Archive -Path $env:ASSETS_USE_WDP -DestinationPath 'C:\\install'; `
+RUN Expand-Archive -Path 'C:\\install\\packages\\*.zip' -DestinationPath 'C:\\install'; `
     New-Item -Path 'C:\\install\\inetpub\\wwwroot' -ItemType 'Directory' | Out-Null; `
     Move-Item -Path 'C:\\install\\Content\\Website\\*' -Destination 'C:\\install\\inetpub\\wwwroot' -Force; `
     Copy-Item -Path 'C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\Examples\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config.example' -Destination 'C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config'; `
