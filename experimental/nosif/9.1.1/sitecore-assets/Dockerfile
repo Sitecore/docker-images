@@ -29,8 +29,8 @@ RUN & 'C:\\install\\tools\\bin\\nuget.exe' install 'Microsoft.Web.Xdt' -Version 
 RUN Get-ChildItem -Path 'C:\\install\*.zip' | ForEach-Object { & 'C:\\temp\\7zip\\7z.exe' t $_.FullName -r }
 
 # extract packages
-RUN $zips = Get-ChildItem -Path 'C:\\install\\*.zip'; `
-    $zips | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath ('C:\\install\\packages\\{0}' -f ($_.BaseName)) -Force; }; `
+RUN $zips = Get-ChildItem -Path 'C:\\install\\*.zip' -Exclude '*.scwdp.zip'; `
+    $zips | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath 'C:\\install\\packages' -Force; }; `
     $zips | ForEach-Object { Remove-Item -Path $_.FullName -Force; };
 
 # add scripts
