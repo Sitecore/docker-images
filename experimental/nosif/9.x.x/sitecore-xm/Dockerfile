@@ -29,7 +29,6 @@ RUN $xdts = (Get-ChildItem -Path 'C:\\install\\inetpub\\wwwroot\\*.config.xdt'),
     $xdts | ForEach-Object { Remove-Item -Path $_.FullName; };
 
 COPY .\config\*.config C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\
-COPY --from=assets ["C:\\install\\license\\license.xml", "C:\\install\\inetpub\\wwwroot\\App_Data\\"]
 
 FROM $BASE_IMAGE
 

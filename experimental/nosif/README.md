@@ -10,3 +10,5 @@
 ## Ideas
 
 1. Windows channels could be "global" and not in each build.json to further reduce maintenance.
+1. Other downloads could also be define in json like Sitecore packages, so it was not need for Docker engine to download them only to validate cache.
+1. Solr downloads added to "sitecore-assets" images.

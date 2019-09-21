@@ -21,6 +21,7 @@ services:
   cd:
     image: ${REGISTRY}sitecore-xm-cd:${SC_VERSION}-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
     volumes:
+      - C:\license:C:\inetpub\wwwroot\App_Data\license
       - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44002:80"
@@ -31,6 +32,7 @@ services:
   cm:
     image: ${REGISTRY}sitecore-xm-cm:${SC_VERSION}-windowsservercore-${WINDOWSSERVERCORE_CHANNEL}
     volumes:
+      - C:\license:C:\inetpub\wwwroot\App_Data\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"
