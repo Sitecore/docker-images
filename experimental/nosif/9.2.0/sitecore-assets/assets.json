@@ -34,5 +34,17 @@
   },
   "Sitecore PowerShell Extensions-5.0 for 9.2.scwdp.zip": {
     "url": "https://dev.sitecore.net/~/media/7AB15C0432624E6CA9786DF00DD653AB.ashx"
+  },
+  "nuget.exe": {
+    "url": "https://dist.nuget.org/win-x86-commandline/v5.2.0/nuget.exe"
+  },
+  "urlrewrite.msi": {
+    "url": "https://download.microsoft.com/download/1/2/8/128E2E22-C1B9-44A4-BE2A-5859ED1D4592/rewrite_amd64_en-US.msi"
+  },
+  "vc_redist.exe": {
+    "url": "https://aka.ms/vs/15/release/VC_redist.x64.exe"
+  },
+  "7z-installer.exe": {
+    "url": "https://www.7-zip.org/a/7z1900-x64.exe"
   }
 }
