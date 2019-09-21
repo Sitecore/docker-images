@@ -18,6 +18,7 @@ RUN Expand-Archive -Path $env:ASSETS_USE_WDP -DestinationPath 'C:\\install'; `
     Copy-Item -Path 'C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\Examples\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config.example' -Destination 'C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config'; `
     Copy-Item -Path 'C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\Examples\\Sitecore.LoadBalancing.config.example' -Destination 'C:\\install\\inetpub\\wwwroot\\App_Config\\Include\\Sitecore.LoadBalancing.config'; `
     New-Item -Path 'C:\\install\\inetpub\\wwwroot\\upload' -ItemType Directory | Out-Null; `
+    New-Item -Path 'C:\\install\\inetpub\\wwwroot\\sitecore\\shell\\override' -ItemType Directory | Out-Null; `
     Remove-Item -Path 'C:\\install\\inetpub\\wwwroot\\App_Data\\logs' -Force -Recurse;
 
 COPY --from=assets ["C:\\install\\tools\\", "C:\\install\\tools\\"]
