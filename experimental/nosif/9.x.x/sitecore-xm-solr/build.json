@@ -1,28 +1,28 @@
 {
   "tags": [
     {
-      "tag": "sitecore-xm-solr:9.2.0-nanoserver-1903",
+      "tag": "sitecore-xm-solr:9.2.0-nanoserver-${windows_version}",
       "build-options": [
-        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1903",
-        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-1903",
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windows_version}",
+        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-${windows_version}",
         "--build-arg SOLR_VERSION=7.5.0",
         "--build-arg CORE_NAMES='sitecore_core_index, sitecore_master_index, sitecore_web_index'"
       ]
     },
     {
-      "tag": "sitecore-xm-sxa-solr:9.2.0-nanoserver-1903",
+      "tag": "sitecore-xm-sxa-solr:9.2.0-nanoserver-${windows_version}",
       "build-options": [
-        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1903",
-        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-1903",
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windows_version}",
+        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-${windows_version}",
         "--build-arg SOLR_VERSION=7.5.0",
         "--build-arg CORE_NAMES='sitecore_core_index, sitecore_master_index, sitecore_web_index, sitecore_sxa_master_index, sitecore_sxa_web_index'"
       ]
     },
     {
-      "tag": "sitecore-xm-solr:9.1.1-nanoserver-1903",
+      "tag": "sitecore-xm-solr:9.1.1-nanoserver-${windows_version}",
       "build-options": [
-        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:1903",
-        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-1903",
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windows_version}",
+        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-${windows_version}",
         "--build-arg SOLR_VERSION=7.2.1",
         "--build-arg CORE_NAMES='sitecore_core_index, sitecore_master_index, sitecore_web_index'"
       ]

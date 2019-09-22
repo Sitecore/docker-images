@@ -1,20 +1,20 @@
 {
   "tags": [
     {
-      "tag": "sitecore-xm-cm:9.1.1-windowsservercore-1903",
+      "tag": "sitecore-xm-cm:9.1.1-windowsservercore-${windows_version}",
       "build-options": [
-        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-1903",
-        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-1903",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-${windows_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${windows_version}",
         "--build-arg ASSETS_USE_WDP='C:\\install\\packages\\Sitecore 9.1.1 rev. 002459 (XM) (OnPrem)_cm.scwdp.zip'",
         "--build-arg SC_ROLE_CONFIG_DIRECTORY=\\config\\cm",
         "--build-arg SC_ROLE_DEFINE='ContentManagement'"
       ]
     },
     {
-      "tag": "sitecore-xm-cd:9.1.1-windowsservercore-1903",
+      "tag": "sitecore-xm-cd:9.1.1-windowsservercore-${windows_version}",
       "build-options": [
-        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-1903",
-        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-1903",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-${windows_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${windows_version}",
         "--build-arg ASSETS_USE_WDP='C:\\install\\packages\\Sitecore 9.1.1 rev. 002459 (XM) (OnPrem)_cd.scwdp.zip'",
         "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\cd",
         "--build-arg SC_ROLE_DEFINE='ContentDelivery'"

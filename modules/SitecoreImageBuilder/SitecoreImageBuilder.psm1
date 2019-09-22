@@ -15,6 +15,9 @@ function Invoke-PackageRestore
         [array]$Tags = @("*")
         ,
         [Parameter(Mandatory = $false)]
+        [array]$WindowsVersions = (Get-SupportedWindowsVersions)
+        ,
+        [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
         [string]$DeprecatedTagsBehavior = "Skip"
         ,
@@ -45,7 +48,7 @@ function Invoke-PackageRestore
 
     # Find out which files is needed
     $downloadSession = $null
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -WindowsVersions $WindowsVersions) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
     
     # Check or download needed files
@@ -132,6 +135,9 @@ function Invoke-Build
         [array]$Tags = @("*")
         ,
         [Parameter(Mandatory = $false)]
+        [array]$WindowsVersions = (Get-SupportedWindowsVersions)
+        ,
+        [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
         [string]$ImplicitTagsBehavior = "Include"
         ,
@@ -161,7 +167,7 @@ function Invoke-Build
     $ProgressPreference = "SilentlyContinue"
 
     # Find out what to build
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -WindowsVersions $WindowsVersions) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
 
     # Print results
     $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
@@ -419,6 +425,9 @@ function Get-BuildSpecifications
         [Parameter(Mandatory = $true)]
         [ValidateScript( { Test-Path $_ -PathType "Container" })] 
         [string]$Path
+        ,
+        [Parameter(Mandatory = $true)]
+        [array]$WindowsVersions
     )
 
     Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
@@ -451,10 +460,9 @@ function Get-BuildSpecifications
             }
         }
 
-        $dockerFileContent = $dockerFile | Get-Content
-        $dockerFileArgLines = $dockerFileContent | Select-String -SimpleMatch "ARG " -CaseSensitive | ForEach-Object { Write-Output $_.ToString().Replace("ARG ", "") }
-        $dockerFileFromLines = $dockerFileContent | Select-String -SimpleMatch "FROM " -CaseSensitive | ForEach-Object { Write-Output $_.ToString().Replace("FROM ", "") }
-        
+        $tags = @()
+
+        # expand tags for each Windows version
         $dataTags | ForEach-Object {
             $tag = $_
             $options = $tag.'build-options'
@@ -462,12 +470,40 @@ function Get-BuildSpecifications
             if ($null -eq $options)
             {
                 $options = @()
+            }
 
-                # TODO: Removed when all build.json files has been converted to new format
-                if ($tag.tag -like "*sql*") 
-                {
-                    $options += "--memory 4GB"
+            if ($tag.tag -like "*`${windows_version}*")
+            {
+                $WindowsVersions | ForEach-Object {
+                    $channel = $_
+                    $copy = $tag | Select-Object *
+                    $copy.tag = $copy.tag.Replace("`${windows_version}", $channel)
+                    $copy.'build-options' = @()
+
+                    $options | ForEach-Object {
+                        $copy.'build-options' += $_.Replace("`${windows_version}", $channel)
+                    }
+
+                    $tags += $copy
                 }
+            }
+            else
+            {
+                $tags += $tag
+            }
+        }
+        
+        $dockerFileContent = $dockerFile | Get-Content
+        $dockerFileArgLines = $dockerFileContent | Select-String -SimpleMatch "ARG " -CaseSensitive | ForEach-Object { Write-Output $_.ToString().Replace("ARG ", "") }
+        $dockerFileFromLines = $dockerFileContent | Select-String -SimpleMatch "FROM " -CaseSensitive | ForEach-Object { Write-Output $_.ToString().Replace("FROM ", "") }
+        
+        $tags | ForEach-Object {
+            $tag = $_
+            $options = $tag.'build-options'
+
+            if ($null -eq $options)
+            {
+                $options = @()
             }
 
             $deprecated = $false
@@ -596,4 +632,9 @@ function Get-CurrentImagesMarkdown
             Write-Output ("| {0} | {1} | {2} | {3 } | ``{4}`` [Dockerfile]({5}) |" -f $_.Version, $_.Repository, $_.OS, $_.Build, $_.Tag, $dockerFileUrl)
         }
     }
+}
+
+function Get-SupportedWindowsVersions
+{
+    Write-Output ("1903", "1809")
 }
