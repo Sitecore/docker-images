@@ -249,8 +249,8 @@ function Invoke-Build
 
             $spec.BuildOptions | ForEach-Object {
                 $option = $_
-                $option = $option.Replace("`${SitecoreUsername}", $SitecoreUsername)
-                $option = $option.Replace("`${SitecorePassword}", $SitecorePassword)
+                $option = $option.Replace("`${sitecore_username}", $SitecoreUsername)
+                $option = $option.Replace("`${sitecore_password}", $SitecorePassword)
 
                 $buildOptions.Add($option)
             }
