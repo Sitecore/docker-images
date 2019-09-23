@@ -40,7 +40,6 @@ COPY --from=assets ["C:\\install\\tools\\", "C:\\tools\\"]
 COPY --from=assets ["C:\\install\\setup\\", "C:\\install\\setup\\"]
 
 RUN $env:INSTALL_TEMP = 'C:\\install'; `
-    $env:TOOLS_PATH = 'C:\\tools'; `
     $env:IIS_SITE_PATH = 'IIS:\Sites\Default Web Site'; `
     $env:IIS_APPPOOL_PATH = 'IIS:\AppPools\DefaultAppPool'; `
     Start-Process msiexec.exe -ArgumentList '/i', (Join-Path $env:INSTALL_TEMP '\\setup\\urlrewrite.msi'), '/quiet', '/norestart' -NoNewWindow -Wait; `
