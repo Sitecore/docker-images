@@ -18,11 +18,11 @@ param(
     [string]$SitecorePassword
 )
 
-# setup
-$sitecoreDownloadUrl = "https://dev.sitecore.net"
-$sitecoreDownloadSession = $null
+# Setup
+$downloadUrl = "https://dev.sitecore.net"
+$downloadSession = $null
 
-# ensure destination exists
+# Ensure destination exists
 if (!(Test-Path $Destination -PathType "Container"))
 {
     New-Item $Destination -ItemType Directory -WhatIf:$false | Out-Null
@@ -36,27 +36,27 @@ Get-Content -Raw $Path | ConvertFrom-Json -PipelineVariable jo | Get-Member -Typ
     $fileUrl = ($jo.$($_.Name)).url
 
     # if needed, login to dev.sitecore.net and save session for re-use
-    if ($fileUrl.StartsWith($sitecoreDownloadUrl) -and $null -eq $sitecoreDownloadSession)
+    if ($null -eq $downloadSession)
     {
-        Write-Host ("Logging in to '{0}' using username '{1}'..." -f $sitecoreDownloadUrl, $SitecoreUsername)
+        Write-Host ("Logging in to '{0}' using username '{1}'..." -f $downloadUrl, $SitecoreUsername)
 
-        $loginResponse = Invoke-WebRequest ("{0}/api/authorization" -f $sitecoreDownloadUrl) -Method Post -Body @{
+        $loginResponse = Invoke-WebRequest ("{0}/api/authorization" -f $downloadUrl) -Method Post -Body @{
             username   = $SitecoreUsername
             password   = $SitecorePassword
             rememberMe = $true
-        } -SessionVariable "sitecoreDownloadSession" -UseBasicParsing
+        } -SessionVariable "downloadSession" -UseBasicParsing -TimeoutSec 120
 
         if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
         {
-            throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
+            throw ("Unable to login to '{0}' with the supplied credentials." -f $downloadUrl)
         }
 
-        Write-Host ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
+        Write-Host ("Logged in to '{0}'." -f $downloadUrl)
     }
     
     Write-Host ("Downloading '{0}' from '{1}'..." -f $fileName, $fileUrl)
 
-    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $sitecoreDownloadSession -UseBasicParsing
+    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $downloadSession -UseBasicParsing -TimeoutSec 1800
 }
 
 Write-Host "Downloads completed."
