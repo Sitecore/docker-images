@@ -48,7 +48,7 @@ function Invoke-PackageRestore
 
     # Find out which files is needed
     $downloadSession = $null
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -WindowsVersions $WindowsVersions) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
     
     # Check or download needed files
@@ -135,7 +135,7 @@ function Invoke-Build
         [array]$Tags = @("*")
         ,
         [Parameter(Mandatory = $false)]
-        [array]$WindowsVersions = (Get-SupportedWindowsVersions)
+        [array]$AutoGenerateWindowsVersionTags = (Get-SupportedWindowsVersions)
         ,
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
@@ -167,7 +167,7 @@ function Invoke-Build
     $ProgressPreference = "SilentlyContinue"
 
     # Find out what to build
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -WindowsVersions $WindowsVersions) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
 
     # Print results
     $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
@@ -427,7 +427,7 @@ function Get-BuildSpecifications
         [string]$Path
         ,
         [Parameter(Mandatory = $true)]
-        [array]$WindowsVersions
+        [array]$AutoGenerateWindowsVersionTags
     )
 
     Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
@@ -474,7 +474,7 @@ function Get-BuildSpecifications
 
             if ($tag.tag -like "*`${windows_version}*")
             {
-                $WindowsVersions | ForEach-Object {
+                $AutoGenerateWindowsVersionTags | ForEach-Object {
                     $channel = $_
                     $copy = $tag | Select-Object *
                     $copy.tag = $copy.tag.Replace("`${windows_version}", $channel)
