@@ -15,7 +15,7 @@ function Invoke-PackageRestore
         [array]$Tags = @("*")
         ,
         [Parameter(Mandatory = $false)]
-        [array]$WindowsVersions = (Get-SupportedWindowsVersions)
+        [array]$AutoGenerateWindowsVersionTags = (Get-SupportedWindowsVersions)
         ,
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
