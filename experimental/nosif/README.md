@@ -12,6 +12,7 @@
 ## Todo's
 
 1. Also copy+rename "sqldev" images from `xm1` to `xm` for consistency.
+1. Sql database don't need a prefix, should be removed? Solr is already using default core names without prefix.
 1. Solr version downloads added to "sitecore-assets" images.
 1. ...
 
