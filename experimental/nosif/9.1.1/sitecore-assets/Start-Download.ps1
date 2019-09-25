@@ -44,7 +44,7 @@ Get-Content -Raw $Path | ConvertFrom-Json -PipelineVariable jo | Get-Member -Typ
             username   = $SitecoreUsername
             password   = $SitecorePassword
             rememberMe = $true
-        } -SessionVariable "downloadSession" -UseBasicParsing -TimeoutSec 120
+        } -SessionVariable "downloadSession" -UseBasicParsing
 
         if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
         {
@@ -56,7 +56,7 @@ Get-Content -Raw $Path | ConvertFrom-Json -PipelineVariable jo | Get-Member -Typ
     
     Write-Host ("Downloading '{0}' from '{1}'..." -f $fileName, $fileUrl)
 
-    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $downloadSession -UseBasicParsing -TimeoutSec 1800
+    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $downloadSession -UseBasicParsing
 }
 
 Write-Host "Downloads completed."
