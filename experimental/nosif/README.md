@@ -28,3 +28,4 @@
 | `sitecore-xm-solr:9.2.0*1903`     |  663MB |  **658MB** | 12     | 12
 | `sitecore-xm-sqldev:9.2.0*1903`   | 10.5GB | **6.75GB** | 16     | **14**
 | `sitecore-xm-sxa-solr:9.2.0*1903` |  663MB |  **658MB** | 13     | **12**
+| `sitecore-xp-solr:9.2.0*1903`     |  663MB |  **660MB** | 13     | **12**
