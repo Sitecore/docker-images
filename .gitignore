@@ -2,6 +2,9 @@
 license.xml
 *-Local.ps1
 
+.vs/
+*.exe
+
 internal/
 packages/
 
