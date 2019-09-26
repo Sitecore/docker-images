@@ -11,8 +11,7 @@
 
 ## Todo's
 
-1. Solr version downloads added to "sitecore-assets" images.
-1. Consider to switch solr images to official openjdk images even when they are windowsservercore, just get latest java patches.
+1. Consider to switch solr images to official openjdk images even when they are only on windowsservercore, just get latest java patches.
 1. Run Sql scripts in WDP packages (create user, set admin password)?
 1. ...
 
