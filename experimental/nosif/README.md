@@ -11,9 +11,9 @@
 
 ## Todo's
 
-1. Also copy+rename `sqldev` images from `xm1` to `xm` for consistency.
-1. Sql database don't need a prefix, should be removed? Solr is already using default core names without prefix.
 1. Solr version downloads added to "sitecore-assets" images.
+1. Consider to switch solr images to official openjdk images even when they are windowsservercore, just get latest java patches.
+1. Run Sql scripts in WDP packages (create user, set admin password)?
 1. ...
 
 ## Other ideas
@@ -24,6 +24,7 @@
 
 | Tag                             | Size Before | Size After  | Layers Before | Layers After |
 | ------------------------------- | ----------: | ----------: | ------------: | -----------: |
-| `sitecore-xm-cm:9.2.0*1903` | 7.50GB | **7.26GB** | **17** | 16
-| `sitecore-xm-cd:9.2.0*1903` | 7.48GB | **7.26GB** | **17** | 16
-| `sitecore-xm-solr:9.2.0*1903` | 663MB | **658MB** | 12 | 12
+| `sitecore-xm-cm:9.2.0*1903`     | 7.50GB | **7.26GB** | 17     | **16**
+| `sitecore-xm-cd:9.2.0*1903`     | 7.48GB | **7.26GB** | 17     | **16**
+| `sitecore-xm-solr:9.2.0*1903`   |  663MB |  **658MB** | 12     | 12
+| `sitecore-xm-sqldev:9.2.0*1903` | 10.5GB | **6.75GB** | 16     | **14**
