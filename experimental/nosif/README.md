@@ -11,12 +11,12 @@
 
 ## Todo's
 
-1. Consider to switch solr images to official openjdk images even when they are only on windowsservercore, just get latest java patches.
-1. Run Sql scripts in WDP packages (create user, set admin password)?
 1. ...
 
 ## Other ideas
 
+1. Switch solr images to **official openjdk images** even when they are **only** on windowsservercore, to ensure we always have latest JAVA patches?
+1. Run Sql scripts in WDP packages (create user, set admin password)?
 1. ...
 
 ## Image comparisons, SIF vs. NO-SIF
