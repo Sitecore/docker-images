@@ -10,7 +10,6 @@ FROM $BASE_IMAGE as build
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 ARG ASSETS_USE_WDP
-ARG SC_ROLE_CONFIG_DIRECTORY
 
 COPY --from=assets ["${ASSETS_USE_WDP}", "C:\\temp\\packages\\"]
 
@@ -64,4 +63,4 @@ EXPOSE 443
 
 COPY Boot.ps1  .
 
-ENTRYPOINT C:\Boot.ps1
+ENTRYPOINT ["powershell", "C:\\Boot.ps1"]
