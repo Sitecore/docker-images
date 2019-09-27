@@ -8,7 +8,7 @@ param(
 Add-Type -Assembly "System.IO.Compression"
 Add-Type -Assembly "System.IO.Compression.FileSystem"
 
-Get-ChildItem -Path $Path -Filter "*_cm.scwdp.zip" | ForEach-Object {
+Get-ChildItem -Path $Path -Filter "*_single.scwdp.zip" | ForEach-Object {
     $zipPath = $_.FullName
 
     try

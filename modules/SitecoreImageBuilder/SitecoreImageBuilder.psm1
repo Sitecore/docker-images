@@ -382,6 +382,7 @@ function Initialize-BuildSpecifications
     $priority = 0
 
     "^sitecore-assets:(.*)$",
+    "^sitecore-certificates:(.*)$",
     "^mssql-developer:(.*)$",
     "^sitecore-openjdk:(.*)$",
     "^sitecore-base:(.*)$",

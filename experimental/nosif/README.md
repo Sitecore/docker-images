@@ -17,16 +17,18 @@
 
 1. Switch solr images to **official openjdk images** even when they are **only** on windowsservercore, to ensure we always have latest JAVA patches?
 1. Run Sql scripts in WDP packages (create user, set admin password)?
+1. Invoke-Build parameter with tags to *never* publish by default: `sitecore-assets:*`, `sitecore-certificates:*`.
 1. ...
 
 ## Image comparisons, SIF vs. NO-SIF
 
-| Tag                               | Size Before | Size After | Layers Before | Layers After |
-| --------------------------------- | ----------: | ---------: | ------------: | -----------: |
-| `sitecore-xm-cm:9.2.0*1903`       | 7.50GB | **7.26GB** | 17     | **16**
-| `sitecore-xm-cd:9.2.0*1903`       | 7.48GB | **7.26GB** | 17     | **16**
-| `sitecore-xm-solr:9.2.0*1903`     |  663MB |  **658MB** | 12     | 12
-| `sitecore-xm-sqldev:9.2.0*1903`   | 10.5GB | **6.75GB** | 16     | **14**
-| `sitecore-xm-sxa-solr:9.2.0*1903` |  663MB |  **658MB** | 13     | **12**
-| `sitecore-xp-solr:9.2.0*1903`     |  663MB |  **660MB** | 13     | **12**
-| `sitecore-xp-sqldev:9.2.0*1903`   | 10.8GB |  **7.2GB** | 16     | 16
+| Tag                                 | Size Before | Size After | Layers Before | Layers After |
+| ----------------------------------- | ----------: | ---------: | ------------: | -----------: |
+| `sitecore-xm-cm:9.2.0*1903`         | 7.50GB | **7.26GB** | 17 | **16**
+| `sitecore-xm-cd:9.2.0*1903`         | 7.48GB | **7.26GB** | 17 | **16**
+| `sitecore-xm-solr:9.2.0*1903`       |  663MB |  **658MB** | 12 | 12
+| `sitecore-xm-sqldev:9.2.0*1903`     | 10.5GB | **6.75GB** | 16 | **14**
+| `sitecore-xm-sxa-solr:9.2.0*1903`   |  663MB |  **658MB** | 13 | **12**
+| `sitecore-xp-solr:9.2.0*1903`       |  663MB |  **660MB** | 13 | **12**
+| `sitecore-xp-sqldev:9.2.0*1903`     | 10.8GB | **7.20GB** | 16 | 16
+| `sitecore-xp-standalone:9.2.0*1903` | 6.35GB | 7.33GB(WHY?) | 20 | **15**

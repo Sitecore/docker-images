@@ -8,7 +8,7 @@ param(
 $shardToolPath = Join-Path $InstallPath "\shardtool"
 
 # Extract shard tool, install shards and remove
-Expand-Archive -Path (Join-Path $InstallPath "\\*_*collection.scwdp.zip") -DestinationPath $shardToolPath
+Expand-Archive -Path (Join-Path $InstallPath "\\*_*xconnect.scwdp.zip") -DestinationPath $shardToolPath
 
 $dbShardMapManager = "Sitecore.Xdb.Collection.ShardMapManager";
 $dbShardNamePrefix = "Sitecore.Xdb.Collection.Shard";
