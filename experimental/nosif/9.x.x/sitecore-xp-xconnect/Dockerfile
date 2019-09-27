@@ -63,4 +63,4 @@ EXPOSE 443
 
 COPY Boot.ps1  .
 
-ENTRYPOINT ["powershell", "C:\\Boot.ps1"]
+ENTRYPOINT ["powershell", "C:\\Boot.ps1", "-LicenseFileTargetPath", "C:\\inetpub\\wwwroot\\App_Data\\license.xml"]

@@ -47,4 +47,4 @@ RUN $env:INSTALL_TEMP = 'C:\\AutomationEngine\\temp\\install'; `
 
 COPY Boot.ps1  .
 
-ENTRYPOINT ["powershell", "C:\\Boot.ps1"]
+ENTRYPOINT ["powershell", "C:\\Boot.ps1", "-LicenseFileTargetPath", "C:\\AutomationEngine\\App_Data\\license.xml"]

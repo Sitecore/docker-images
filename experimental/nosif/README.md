@@ -7,7 +7,7 @@
 1. Windows versions supported is now global configured so build.json files can reference `${windows_version}` and each tag is expanded for each supported version. Default supported Windows versions is as of today: 1903, 1809 (ltsc2019). We support all current releases since (including) latest LTSC release. Reduces maintenance.
 1. Multi-stage builds: The build stage does as much as possible (unzip, moves files around, run transforms etc.) and the final stage consumes the output from the build stage. This minimizes the number of layers and the size, in the final image.
 1. Sitecore version/role independent Docker files: Potentially only 1 dockerfile per topology+version that can build multiple roles within that topology. Reduces maintenance and duplicate Docker files.
-1. Sitecore license is removed from images and must be mounted in at runtime.
+1. Sitecore license is removed from images and must be mounted in at `C:\license`.
 
 ## Todo's
 
