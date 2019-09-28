@@ -18,7 +18,8 @@ RUN Expand-Archive -Path 'C:\\temp\\packages\\*.zip' -DestinationPath 'C:\\temp'
     Copy-Item -Path 'C:\\temp\\Content\\Website\\*' -Destination 'C:\\inetpub\\wwwroot' -Recurse -Force;
 
 # configure wwwroot
-RUN Remove-Item -Path 'C:\\inetpub\\wwwroot\\App_Data\\logs' -Force -Recurse;
+RUN Remove-Item -Path 'C:\\inetpub\\wwwroot\\App_Data\\jobs' -Force -Recurse; `
+    Remove-Item -Path 'C:\\inetpub\\wwwroot\\App_Data\\logs' -Force -Recurse;
 
 # copy tools, certificates and transforms
 COPY --from=assets ["C:\\install\\tools\\", "C:\\inetpub\\wwwroot\\temp\\install\\tools\\"]
@@ -52,9 +53,11 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Import-Module WebAdministration; `
     Set-ItemProperty -Path $env:IIS_APPPOOL_PATH -Name 'processModel.identityType' -Value 'LocalSystem'; `
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
-    Get-ChildItem -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\*.pfx') | Import-PfxCertificate -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
+    Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xconnect-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
+    Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xconnect.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
+    Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xconnect.pfx') -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
     New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '443' -Protocol "https" -HostHeader '*'; `
-    $xconnectCert = Get-ChildItem -Path 'cert:\localmachine\root' | Where-Object { $_.Subject -eq ('CN={0}' -f $env:XCONNECT_SSL_CERT_NAME) }; `
+    $xconnectCert = Get-ChildItem -Path 'cert:\localmachine\root' | Where-Object { $_.Subject -eq 'CN=xconnect' }; `
     $binding = Get-WebBinding -Name $env:IIS_SITE_NAME -Protocol "https"; `
     $binding.AddSslCertificate($xconnectCert.GetCertHashString(), 'root'); `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;

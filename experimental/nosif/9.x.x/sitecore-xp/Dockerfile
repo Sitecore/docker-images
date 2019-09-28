@@ -66,5 +66,6 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Set-ItemProperty -Path $env:IIS_APPPOOL_PATH -Name 'processModel.identityType' -Value 'LocalSystem'; `
     Set-WebConfigurationProperty -PSPath $env:IIS_SITE_PATH -Filter '/appSettings/add[@key=\"role:define\"]' -Name 'value' -Value $env:SC_ROLE_DEFINE; `
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
-    Get-ChildItem -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\*.pfx') | Import-PfxCertificate -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
+    Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xconnect-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
+    Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xconnect.pfx') -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;

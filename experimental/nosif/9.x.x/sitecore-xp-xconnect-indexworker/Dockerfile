@@ -15,29 +15,30 @@ COPY --from=assets ["${ASSETS_USE_WDP}", "C:\\temp\\packages\\"]
 
 # expand selected wdp into installation directory
 RUN Expand-Archive -Path 'C:\\temp\\packages\\*.zip' -DestinationPath 'C:\\temp'; `
-    New-Item -Path 'C:\\AutomationEngine' -ItemType Directory | Out-Null; `
-    Copy-Item -Path 'C:\\temp\\Content\\Website\\App_Data\\jobs\\continuous\\AutomationEngine\\*' -Destination 'C:\\AutomationEngine' -Recurse -Force;
+    New-Item -Path 'C:\\IndexWorker' -ItemType Directory | Out-Null; `
+    Copy-Item -Path 'C:\\temp\\Content\\Website\\App_Data\\jobs\\continuous\\IndexWorker\\*' -Destination 'C:\\IndexWorker' -Recurse -Force;
 
 # copy tools, certificates and transforms
-COPY --from=assets ["C:\\install\\tools\\", "C:\\AutomationEngine\\temp\\install\\tools\\"]
-COPY --from=certificates ["C:\\certificates\\", "C:\\AutomationEngine\\temp\\install\\certificates\\"]
-COPY .\\config\\ C:\\AutomationEngine\\
+COPY --from=assets ["C:\\install\\tools\\", "C:\\IndexWorker\\temp\\install\\tools\\"]
+COPY --from=certificates ["C:\\certificates\\", "C:\\IndexWorker\\temp\\install\\certificates\\"]
+COPY .\\config\\ C:\\IndexWorker\\
 
 # find transform files, replace variables and do transformation
-RUN $env:XCONNECT_CLIENT_CERT_THUMBPRINT = (Get-Content -Path 'C:\\AutomationEngine\\temp\\install\\certificates\\xconnect-client.thumbprint' | Out-String).Trim(); `
+RUN $env:XCONNECT_CLIENT_CERT_THUMBPRINT = (Get-Content -Path 'C:\\IndexWorker\\temp\\install\\certificates\\xconnect-client.thumbprint' | Out-String).Trim(); `
     $xdts = [System.Collections.ArrayList]@(); `
-    $xdts.AddRange(@(Get-ChildItem -Path 'C:\\AutomationEngine\\App_Config\\*.xdt' -Recurse)); `
+    $xdts.AddRange(@(Get-ChildItem -Path 'C:\\IndexWorker\\App_Config\\*.xdt' -Recurse)); `
+    $xdts.AddRange(@(Get-ChildItem -Path 'C:\\IndexWorker\\App_Data\\Config\\*.xdt' -Recurse)); `
     $xdts | ForEach-Object { (Get-Content -Path $_.FullName).Replace('${xconnect_client_certificate_thumbprint}', $env:XCONNECT_CLIENT_CERT_THUMBPRINT) | Out-File -FilePath $_.FullName -Encoding utf8; }; `
-    $xdts | ForEach-Object { & 'C:\\AutomationEngine\\temp\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path $_.FullName.Replace('.xdt', '') -XdtPath $_.FullName -XdtDllPath 'C:\\AutomationEngine\\temp\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; }; `
+    $xdts | ForEach-Object { & 'C:\\IndexWorker\\temp\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path $_.FullName.Replace('.xdt', '') -XdtPath $_.FullName -XdtDllPath 'C:\\IndexWorker\\temp\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; }; `
     $xdts | ForEach-Object { Remove-Item -Path $_.FullName; };
 
 FROM $BASE_IMAGE
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-COPY --from=build ["C:\\AutomationEngine\\", "C:\\AutomationEngine\\"]
+COPY --from=build ["C:\\IndexWorker\\", "C:\\IndexWorker\\"]
 
-RUN $env:INSTALL_TEMP = 'C:\\AutomationEngine\\temp\\install'; `
+RUN $env:INSTALL_TEMP = 'C:\\IndexWorker\\temp\\install'; `
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
@@ -48,4 +49,4 @@ RUN $env:INSTALL_TEMP = 'C:\\AutomationEngine\\temp\\install'; `
 
 COPY Boot.ps1  .
 
-ENTRYPOINT ["powershell", "C:\\Boot.ps1", "-LicenseFileTargetPath", "C:\\AutomationEngine\\App_Data\\license.xml"]
+ENTRYPOINT ["powershell", "C:\\Boot.ps1", "-LicenseFileTargetPath", "C:\\IndexWorker\\App_Data\\license.xml"]

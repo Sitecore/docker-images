@@ -1,0 +1,14 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-xconnect-indexworker:9.2.0-windowsservercore-${windows_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-${windows_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.2.0 rev. 002893 (OnPrem)_xp0xconnect.scwdp.zip'",
+        "--build-arg CERTIFICATES_IMAGE=sitecore-certificates:latest"
+      ]
+    }
+  ],
+  "sources": []
+}
