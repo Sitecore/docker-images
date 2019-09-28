@@ -60,14 +60,14 @@ services:
   #     - solr
   #     - xconnect
 
-  # cm:
-  #   image: ${REGISTRY}sitecore-xp-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-  #   volumes:
-  #     - C:\license:C:\license
-  #     - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
-  #   ports:
-  #     - "44001:80"
-  #   links:
-  #     - sql
-  #     - solr
-  #     - xconnect
+  cm:
+    image: ${REGISTRY}sitecore-xp-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - C:\license:C:\license
+      - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
+    ports:
+      - "44001:80"
+    links:
+      - sql
+      - solr
+      - xconnect
