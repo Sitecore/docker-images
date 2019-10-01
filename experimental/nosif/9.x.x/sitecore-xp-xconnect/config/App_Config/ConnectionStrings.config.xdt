@@ -6,6 +6,6 @@
     <add name="xdb.marketingautomation" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.MarketingAutomation" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
     <add name="xdb.processing.pools" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Processing.Pools" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
     <add name="xdb.referencedata" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.ReferenceData" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
-    <add name="collection" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Xdb.Collection.ShardMapManagerDb" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="collection" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Xdb.Collection.ShardMapManager" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
     <add name="solrCore" connectionString="http://solr:8983/solr/sitecore_xdb" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
 </connectionStrings>

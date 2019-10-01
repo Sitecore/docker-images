@@ -8,10 +8,11 @@
 1. Multi-stage builds: The build stage does as much as possible (unzip, moves files around, run transforms etc.) and the final stage consumes the output from the build stage. This minimizes the number of layers and the size, in the final image.
 1. Sitecore version/role independent Docker files: Potentially only 1 dockerfile per topology+version that can build multiple roles within that topology. Reduces maintenance and duplicate Docker files.
 1. Sitecore license is removed from images and must be mounted in at `C:\license`.
+1. Solr for XM and XP on Windows has the Sitecore schema embedded like the Linux images. No need to remember "Populate managed schema" anymore.
 
 ## Todo's
 
-1. Refactor `xp` Boot.ps1 scripts to also take the real entrypoint as parameter.
+1. Refactor Boot.ps1 scripts to also take the real entrypoint as parameter.
 1. ...
 
 ## Other ideas

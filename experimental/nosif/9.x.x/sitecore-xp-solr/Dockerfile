@@ -25,8 +25,8 @@ RUN New-Item -Path 'C:\\clean' -ItemType Directory | Out-Null; `
         New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
         New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
     }; `
-    Copy-Item -Path 'C:\\temp\\managed-schema.xdb' -Destination (Get-Item 'C:\\clean\\*_xdb\\conf').FullName; `
-    Copy-Item -Path 'C:\\temp\\managed-schema.xdb' -Destination (Get-Item 'C:\\clean\\*_xdb_rebuild\\conf').FullName; `
+    Copy-Item -Path 'C:\\temp\\managed-schema.xdb' -Destination (Join-Path (Get-Item 'C:\\clean\\*_xdb\\conf').FullName "\\managed-schema") -Force; `
+    Copy-Item -Path 'C:\\temp\\managed-schema.xdb' -Destination (Join-Path (Get-Item 'C:\\clean\\*_xdb_rebuild\\conf').FullName "\\managed-schema") -Force; `
     Remove-Item -Path 'C:\\clean\\README.txt'; `
     Remove-Item -Path 'C:\\clean\\configsets' -Recurse;
 
