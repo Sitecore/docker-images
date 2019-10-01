@@ -30,6 +30,11 @@
 | `sitecore-xm-solr:9.2.0*1903`       |  663MB |  **658MB** | 12 | 12
 | `sitecore-xm-sqldev:9.2.0*1903`     | 10.5GB | **6.75GB** | 16 | **14**
 | `sitecore-xm-sxa-solr:9.2.0*1903`   |  663MB |  **658MB** | 13 | **12**
-| `sitecore-xp-solr:9.2.0*1903`       |  663MB |  **660MB** | 13 | **12**
-| `sitecore-xp-sqldev:9.2.0*1903`     | 10.8GB | **7.20GB** | 16 | 16
-| `sitecore-xp-standalone:9.2.0*1903` | 6.35GB | **6.05GB** | 20 | **14**
+
+---> UP TO DATE:
+| `sitecore-xp-solr:9.2.0*1903`                      |  664MB |  **660MB** | 12 | **12**
+| `sitecore-xp-sqldev:9.2.0*1903`                    | 10.8GB | **7.22GB** | 16 | 16
+| `sitecore-xp-standalone:9.2.0*1903`                | 6.35GB | **6.05GB** | 20 | **14**
+| `sitecore-xp-xconnect:9.2.0*1903`                  | 5.81GB | **5.54GB** | 20 | **16**
+| `sitecore-xp-xconnect-automationengine:9.2.0*1903` | 5.64GB | **5.23GB** | 18 | **9**
+| `sitecore-xp-xconnect-indexworker:9.2.0*1903`      | 5.67GB | **5.25GB** | 18 | **9**
