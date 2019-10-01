@@ -14,19 +14,18 @@ RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tl
     Expand-Archive -Path 'C:\\solr.zip' -DestinationPath 'C:\\temp'; `
     Move-Item -Path 'C:\\temp\\solr-*' -Destination 'C:\\solr';
 
-COPY managed-schema* C:\\temp\\
+COPY managed-schema.* C:\\temp\\
 
 RUN New-Item -Path 'C:\\clean' -ItemType Directory | Out-Null; `
     Copy-Item -Path 'C:\\solr\\server\\solr\\*' -Destination 'C:\\clean' -Force -Recurse; `
     $env:CORE_NAMES -split ',' | ForEach-Object { `
         $name = $_.Trim(); `
+        $schema = @{$true='C:\\temp\\managed-schema.xdb';$false='C:\\temp\\managed-schema.default'}[$name -like '*xdb*']; `
         Copy-Item -Path 'C:\\clean\\configsets\\_default\\conf' -Destination ('C:\\clean\\{0}\\conf' -f $name) -Recurse -Force; `
-        Copy-Item -Path 'C:\\temp\\managed-schema' -Destination ('C:\\clean\\{0}\\conf' -f $name); `
+        Copy-Item -Path $schema -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
         New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
         New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
     }; `
-    Copy-Item -Path 'C:\\temp\\managed-schema.xdb' -Destination (Join-Path (Get-Item 'C:\\clean\\*_xdb\\conf').FullName "\\managed-schema") -Force; `
-    Copy-Item -Path 'C:\\temp\\managed-schema.xdb' -Destination (Join-Path (Get-Item 'C:\\clean\\*_xdb_rebuild\\conf').FullName "\\managed-schema") -Force; `
     Remove-Item -Path 'C:\\clean\\README.txt'; `
     Remove-Item -Path 'C:\\clean\\configsets' -Recurse;
 

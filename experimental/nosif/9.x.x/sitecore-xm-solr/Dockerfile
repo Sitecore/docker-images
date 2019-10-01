@@ -14,14 +14,14 @@ RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tl
     Expand-Archive -Path 'C:\\solr.zip' -DestinationPath 'C:\\temp'; `
     Move-Item -Path 'C:\\temp\\solr-*' -Destination 'C:\\solr';
 
-COPY managed-schema C:\\temp\\
+COPY managed-schema.* C:\\temp\\
 
 RUN New-Item -Path 'C:\\clean' -ItemType Directory | Out-Null; `
     Copy-Item -Path 'C:\\solr\\server\\solr\\*' -Destination 'C:\\clean' -Force -Recurse; `
     $env:CORE_NAMES -split ',' | ForEach-Object { `
         $name = $_.Trim(); `
         Copy-Item -Path 'C:\\clean\\configsets\\_default\\conf' -Destination ('C:\\clean\\{0}\\conf' -f $name) -Recurse -Force; `
-        Copy-Item -Path 'C:\\temp\\managed-schema' -Destination ('C:\\clean\\{0}\\conf' -f $name); `
+        Copy-Item -Path 'C:\\temp\\managed-schema.default' -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
         New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
         New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
     }; `
