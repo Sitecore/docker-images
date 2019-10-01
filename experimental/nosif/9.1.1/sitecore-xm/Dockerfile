@@ -23,16 +23,19 @@ RUN Copy-Item -Path 'C:\\inetpub\\wwwroot\\App_Config\\Include\\Examples\\Siteco
     Remove-Item -Path 'C:\\inetpub\\wwwroot\\App_Data\\logs' -Force -Recurse;
 
 # copy tools and transforms
-COPY --from=assets ["C:\\install\\tools\\", "C:\\install\\tools\\"]
+COPY --from=assets ["C:\\install\\tools\\", "C:\\inetpub\\wwwroot\\temp\\install\\tools\\"]
 COPY ${SC_ROLE_CONFIG_DIRECTORY} C:\\inetpub\\wwwroot\\
 
-# run transforms
+# find transform files and do transformation
 RUN $xdts = (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\*.config.xdt'), (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\App_Config\\*.config.xdt' -Recurse); `
-    $xdts | ForEach-Object { & 'C:\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path $_.FullName.Replace('.xdt', '') -XdtPath $_.FullName -XdtDllPath 'C:\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; }; `
+    $xdts | ForEach-Object { & 'C:\\inetpub\\wwwroot\\temp\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path $_.FullName.Replace('.xdt', '') -XdtPath $_.FullName -XdtDllPath 'C:\\inetpub\\wwwroot\\temp\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; }; `
     $xdts | ForEach-Object { Remove-Item -Path $_.FullName; };
 
 # add config patches
 COPY .\config\*.config C:\\inetpub\\wwwroot\\App_Config\\Include\\
+
+# add installers
+COPY --from=assets ["C:\\install\\setup\\", "C:\\inetpub\\wwwroot\\temp\\install\\setup\\"]
 
 FROM $BASE_IMAGE
 
@@ -41,15 +44,13 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 ARG SC_ROLE_DEFINE
 
 COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
-COPY --from=assets ["C:\\install", "C:\\install"]
 
-RUN $env:INSTALL_TEMP = 'C:\\install'; `
-    $env:TOOLS_PATH = 'C:\\tools'; `
+RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     $env:IIS_SITE_PATH = 'IIS:\Sites\Default Web Site'; `
     $env:IIS_APPPOOL_PATH = 'IIS:\AppPools\DefaultAppPool'; `
     Start-Process msiexec.exe -ArgumentList '/i', (Join-Path $env:INSTALL_TEMP '\\setup\\urlrewrite.msi'), '/quiet', '/norestart' -NoNewWindow -Wait; `
     Start-Process (Join-Path $env:INSTALL_TEMP '\\setup\\vc_redist.exe') -ArgumentList '/install', '/passive', '/norestart' -NoNewWindow -Wait; `
-    Copy-Item -Path 'C:\\install\\tools' -Destination $env:TOOLS_PATH -Force; `
+    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
     Add-LocalGroupMember -Group 'Performance Monitor Users' -Member 'IIS AppPool\DefaultAppPool'; `

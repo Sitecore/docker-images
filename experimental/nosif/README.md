@@ -25,13 +25,11 @@
 
 | Tag                                 | Size Before | Size After | Layers Before | Layers After |
 | ----------------------------------- | ----------: | ---------: | ------------: | -----------: |
-| `sitecore-xm-cm:9.2.0*1903`         | 7.50GB | **7.26GB** | 17 | **16**
-| `sitecore-xm-cd:9.2.0*1903`         | 7.48GB | **7.26GB** | 17 | **16**
+| `sitecore-xm-cm:9.2.0*1903`         | 6.20GB | **5.97GB** | 17 | **14**
+| `sitecore-xm-cd:9.2.0*1903`         | 6.20GB | **5.97GB** | 17 | **14**
 | `sitecore-xm-solr:9.2.0*1903`       |  663MB |  **658MB** | 12 | 12
-| `sitecore-xm-sqldev:9.2.0*1903`     | 10.5GB | **6.75GB** | 16 | **14**
+| `sitecore-xm-sqldev:9.2.0*1903`     | 10.5GB | **6.82GB** | 16 | **14**
 | `sitecore-xm-sxa-solr:9.2.0*1903`   |  663MB |  **658MB** | 13 | **12**
-
----> UP TO DATE:
 | `sitecore-xp-solr:9.2.0*1903`                      |  664MB |  **660MB** | 12 | **12**
 | `sitecore-xp-sqldev:9.2.0*1903`                    | 10.8GB | **7.22GB** | 16 | 16
 | `sitecore-xp-standalone:9.2.0*1903`                | 6.35GB | **6.05GB** | 20 | **14**
