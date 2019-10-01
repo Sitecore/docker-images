@@ -12,14 +12,13 @@
 
 ## Todo's
 
-1. Refactor Boot.ps1 scripts to also take the real entrypoint as parameter.
 1. ...
 
 ## Other ideas
 
-1. Switch solr images to **official openjdk images** even when they are **only** on windowsservercore, to ensure we always have latest JAVA patches?
-1. Run Sql scripts in WDP packages (create user, set admin password)?
-1. Invoke-Build parameter with tags to *never* publish by default: `sitecore-assets:*`, `sitecore-certificates:*`.
+1. Switch solr images to **official openjdk images** even when they are **only** maintained for windowsservercore, to ensure we always have latest JAVA patches.
+1. Run Sql scripts in WDP packages like create user, set admin password etc.
+1. Invoke-Build parameter with tags to *never* publish *by default*: `sitecore-assets:*`, `sitecore-certificates:*`.
 1. ...
 
 ## Image comparisons, SIF vs. NO-SIF
