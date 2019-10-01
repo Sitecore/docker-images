@@ -1,4 +1,4 @@
 <?xml version="1.0" encoding="utf-8"?>
 <appSettings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-    <add key="validateCertificateThumbprint" value="${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(key)" />
+    <add key="validateCertificateThumbprint" xdt:Transform="Remove" xdt:Locator="Match(key)" />
 </appSettings>
