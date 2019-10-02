@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   standalone:
-    image: sitecore:8.2.170407-windowsservercore-1803
+    image: ${REGISTRY:-}sitecore:8.2.170407-windowsservercore-1803
     volumes:
       - .\data\standalone:C:\Sitecore
     ports:
@@ -21,7 +21,7 @@ services:
       - "27117:27017"
       
   sql:
-    image: sitecore-sqldev:8.2.170407-windowsservercore-1803
+    image: ${REGISTRY:-}sitecore-sqldev:8.2.170407-windowsservercore-1803
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB

@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: sitecore-sqldev:8.2.161221-windowsservercore-1803
+    image: ${REGISTRY:-}sitecore-sqldev:8.2.161221-windowsservercore-1803
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
@@ -19,7 +19,7 @@ services:
       - "44012:27017"
 
   cm:
-    image: sitecore:8.2.161221-windowsservercore-1803
+    image: ${REGISTRY:-}sitecore:8.2.161221-windowsservercore-1803
     volumes:
       - .\data\cm:C:\Sitecore\Data\logs
     ports:
