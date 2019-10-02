@@ -5,10 +5,7 @@ param(
     [string]$InstallPath,
     [Parameter(Mandatory = $true)]
     [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
-    [string]$DataPath,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()] 
-    [string]$DatabasePrefix
+    [string]$DataPath
 )
 
 [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.SMO") | Out-Null
@@ -20,19 +17,17 @@ $server.Alter()
 
 $sqlPackageExePath =Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
 
-# do modules
-$TextInfo = (Get-Culture).TextInfo
-Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac", "Sitecore.Commerce.Engine.Global.DB.dacpac", "Sitecore.Commerce.Engine.Shared.DB.dacpac" -Recurse | ForEach-Object { 
+# detach DB
+Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
+    $databaseName = $_.BaseName.Replace("_Primary", "")
 
-    $dacpacPath = $_.FullName
-    $databaseName = "$DatabasePrefix`_" + $TextInfo.ToTitleCase($_.BaseName)
-
-    # do
-    Write-Host "install module path: $InstallPath dacpac: $dacpacPath dbname: $databaseName"
-
-    # Install
-    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q    
-} 
+	if($databaseName -eq 'sc_Core'){
+		Invoke-Sqlcmd -Query "ALTER DATABASE $databaseName SET SINGLE_USER WITH ROLLBACK AFTER 10 SECONDS"
+		Start-Sleep -s 10
+	}
+	Write-Host "### Detach: $databaseName"
+    Invoke-Sqlcmd -Query "EXEC MASTER.dbo.sp_detach_db @dbname = N'$databaseName', @keepfulltextindexfile = N'false'"
+}
 
 $server = New-Object Microsoft.SqlServer.Management.Smo.Server($env:COMPUTERNAME)
 $server.Properties["DefaultFile"].Value = $DataPath
