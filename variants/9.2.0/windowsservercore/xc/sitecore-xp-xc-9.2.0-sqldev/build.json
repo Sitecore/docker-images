@@ -1,0 +1,14 @@
+{
+    "tags": [
+        {
+            "tag": "sitecore-xp-xc-9.2.0-sqldev:9.2.0-windowsservercore-ltsc2019",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=sitecore-xp-jss-12.0.0-sqldev:9.2.0-windowsservercore-ltsc2019"
+            ]
+        }
+    ],
+    "sources": [
+        "Sitecore.Commerce.WDP.2019.07-4.0.165.zip"
+    ]
+}
