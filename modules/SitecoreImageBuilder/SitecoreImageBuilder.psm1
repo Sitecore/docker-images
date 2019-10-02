@@ -245,9 +245,10 @@ function Invoke-Build
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
 
             # Tag image
-            if ($null -eq $Registry)
+            if ([string]::IsNullOrEmpty($Registry))
             {
-                $fulltag = "{0}" -f $tag
+                $fulltag = $tag
+                $PushMode = "Never"
             }
             else 
             {
