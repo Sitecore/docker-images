@@ -36,16 +36,18 @@ function Invoke-PackageRestore
     # Load packages file
     $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\sitecore-packages.json") 
     $packages = $packagesFile | Get-Content | ConvertFrom-Json
-
+    
+    $destinationPath = $($Destination.Trim('\'))
+    
     # Ensure destination exists
-    if (!(Test-Path $Destination -PathType "Container"))
+    if (!(Test-Path $destinationPath -PathType "Container"))
     {
-        New-Item $Destination -ItemType Directory -WhatIf:$false | Out-Null
+        New-Item $destinationPath -ItemType Directory -WhatIf:$false | Out-Null
     }
 
     # Find out which files is needed
     $downloadSession = $null
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $destinationPath -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
     
     # Check or download needed files
@@ -66,7 +68,7 @@ function Invoke-PackageRestore
             Remove-Item -Path $filePath -Force
         }
 
-        $fileName = $filePath.Replace("$Destination\", "")
+        $fileName = $filePath.Replace($destinationPath, "")
         $package = $packages.$fileName
 
         if ($null -eq $package)
