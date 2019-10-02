@@ -126,7 +126,6 @@ function Invoke-Build
         [ValidateScript( { Test-Path $_ -PathType "Container" })] 
         [string]$InstallSourcePath
         ,
-        [Parameter(Mandatory = $true)]
         [string]$Registry
         ,
         [Parameter(Mandatory = $false)]
@@ -246,8 +245,15 @@ function Invoke-Build
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
 
             # Tag image
-            $fulltag = "{0}/{1}" -f $Registry, $tag
-
+            if ([string]::IsNullOrEmpty($Registry))
+            {
+                $fulltag = $tag
+                $PushMode = "Never"
+            }
+            else 
+            {
+                $fulltag = "{0}/{1}" -f $Registry, $tag
+            }
             docker image tag $tag $fulltag
 
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
