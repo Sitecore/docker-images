@@ -63,10 +63,6 @@
     "description": "Sitecore Experience Platform 8.2 Update-5",
     "url": "https://dev.sitecore.net/~/media/8E5A8B0622F348FC97A368CB03C1785E.ashx"
   },
-  "Sitecore 8.2 rev. 171121 (WDP XDB1 packages).zip": {
-    "description": "Sitecore Experience Platform 8.2 Update-6",
-    "url": "https://dev.sitecore.net/~/media/1BDCE8EC35CC4D7C849C42EB6A0837DC.ashx"
-  },
   "Sitecore 8.2 rev. 171121 (WDP XP0 package).zip": {
     "description": "Sitecore Experience Platform 8.2 Update-6",
     "url": "https://dev.sitecore.net/~/media/AFA4C05BA4414C239FA9945E52ABF7DC.ashx"
@@ -240,8 +236,8 @@
     "url": "https://dev.sitecore.net/~/media/67CC49285DFC4B578451AEA3FDDC85A0.ashx"
   },
   "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.0.1 rev. 190318.scwdp.zip": {
-    "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1 CD",
-    "url": "https://dev.sitecore.net/~/media/67CC49285DFC4B578451AEA3FDDC85A0.ashx"
+    "description": "Sitecore JavaScript Services Server for Sitecore 9.1.1",
+    "url": "https://dev.sitecore.net/~/media/127032434274439DB84F8C47FCC90936.ashx"
   },
   "Sitecore JavaScript Services Server for Sitecore 9.2 XM 12.0.0 rev. 190522 CD.scwdp.zip": {
     "description": "Sitecore JavaScript Services Server for Sitecore 9.2.0 CD",

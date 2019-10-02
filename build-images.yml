@@ -4,7 +4,7 @@ trigger:
     include:
     - master
     - integration/*
-schedules: 
+schedules:
   - cron: "0 12 * * 0"
     displayName: Weekly Sunday build
     branches:
@@ -162,7 +162,7 @@ stages:
                 exit 0
                 fi
                 sudo mkdir /mnt/dockerassets
-                
+
                 if [ ! -d "/etc/smbcredentials" ]; then
                 sudo mkdir /etc/smbcredentials
                 fi
