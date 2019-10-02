@@ -380,23 +380,26 @@ function Initialize-BuildSpecifications
     $defaultPriority = 1000
     $priorities = New-Object System.Collections.Specialized.OrderedDictionary
     $priority = 0
+    $patterns = @(
+        "^sitecore-assets:(.*)$",
+        "^sitecore-certificates:(.*)$",
+        "^mssql-developer:(.*)$",
+        "^sitecore-openjdk:(.*)$",
+        "^sitecore-base:(.*)$",
+        "^sitecore-xm-sql:(.*)$",
+        "^sitecore-xm-pse-(.*):(.*)$",
+        "^sitecore-xm1-sqldev:(.*)$",
+        "^sitecore-xm1-pse-(.*)-sqldev:(.*)$",
+        "^sitecore-xm1-pse-(.*)-cm:(.*)$",
+        "^sitecore-xp-sql:(.*)$",
+        "^sitecore-xp-pse-(.*)-sql:(.*)$",
+        "^sitecore-xp-base:(.*)$",
+        "^sitecore-xp-xconnect:(.*)$",
+        "^sitecore-xp-pse-(.*)-sqldev:(.*)$",
+        "^sitecore-xp-pse-(.*)-standalone:(.*)$"
+    )
 
-    "^sitecore-assets:(.*)$",
-    "^sitecore-certificates:(.*)$",
-    "^mssql-developer:(.*)$",
-    "^sitecore-openjdk:(.*)$",
-    "^sitecore-base:(.*)$",
-    "^sitecore-xm-sql:(.*)$",
-    "^sitecore-xm-pse-(.*):(.*)$",
-    "^sitecore-xm1-sqldev:(.*)$",
-    "^sitecore-xm1-pse-(.*)-sqldev:(.*)$",
-    "^sitecore-xm1-pse-(.*)-cm:(.*)$",
-    "^sitecore-xp-sql:(.*)$",
-    "^sitecore-xp-pse-(.*)-sql:(.*)$",
-    "^sitecore-xp-base:(.*)$",
-    "^sitecore-xp-xconnect:(.*)$",
-    "^sitecore-xp-pse-(.*)-sqldev:(.*)$",
-    "^sitecore-xp-pse-(.*)-standalone:(.*)$" | ForEach-Object {
+    $patterns | ForEach-Object {
         $priorities.Add($_, $priority)
         $priority++
     }
@@ -430,6 +433,8 @@ function Get-BuildSpecifications
         [Parameter(Mandatory = $false)]
         [array]$AutoGenerateWindowsVersionTags = (Get-SupportedWindowsVersions)
     )
+
+    $versionMap = Get-WindowsServerCoreToNanoServerVersionMap
 
     Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
         $buildContextPath = $_.Directory.FullName
@@ -473,16 +478,23 @@ function Get-BuildSpecifications
                 $options = @()
             }
 
-            if ($tag.tag -like "*`${windows_version}*")
+            if ($tag.tag -like "*`${*}*")
             {
                 $AutoGenerateWindowsVersionTags | ForEach-Object {
-                    $channel = $_
+                    $windowsServerCoreVersion = $_
+                    $nanoServerVersion = $versionMap[$windowsServerCoreVersion]
+
+                    if ([string]::IsNullOrEmpty($nanoServerVersion))
+                    {
+                        throw ("Could not find a 'nanoserver' version in the version map for '{0}'." -f $windowsServerCoreVersion)
+                    }
+
                     $copy = $tag | Select-Object *
-                    $copy.tag = $copy.tag.Replace("`${windows_version}", $channel)
+                    $copy.tag = $copy.tag.Replace("`${windowsservercore_version}", $windowsServerCoreVersion).Replace("`${nanoserver_version}", $nanoServerVersion)
                     $copy.'build-options' = @()
 
                     $options | ForEach-Object {
-                        $copy.'build-options' += $_.Replace("`${windows_version}", $channel)
+                        $copy.'build-options' += $_.Replace("`${windowsservercore_version}", $windowsServerCoreVersion).Replace("`${nanoserver_version}", $nanoServerVersion)
                     }
 
                     $tags += $copy
@@ -644,4 +656,15 @@ function Get-CurrentImagesMarkdown
 function Get-SupportedWindowsVersions
 {
     Write-Output ("1903", "1809")
+}
+
+function Get-WindowsServerCoreToNanoServerVersionMap
+{
+    Write-Output @{
+        "1903"     = "1903";
+        "ltsc2019" = "1809";
+        "1803"     = "1803";
+        "1709"     = "1709";
+        "ltsc2016" = "sac2016"
+    }
 }
