@@ -9,10 +9,13 @@
 1. Sitecore version/role independent Docker files: Potentially only 1 dockerfile per topology+version that can build multiple roles within that topology. Reduces maintenance and duplicate Docker files.
 1. Sitecore license is removed from images and must be mounted in at `C:\license`.
 1. Solr for XM and XP on Windows has the Sitecore schema embedded like the Linux images. No need to remember "Populate managed schema" anymore.
+1. Certificates needed for XP is generated in it's own image and consumed from other images in the build stage.
 
 ## Todo's
 
-1. Get rid of setting AppPool to `LocalSystem` and set the needed permissions on c:\inetpub\wwwroot and certs store.
+1. Get rid of setting AppPool to `LocalSystem` and set the needed permissions on c:\inetpub\wwwroot using Set-Acl.
+1. Set read permission on AppPoolIdentity on installed certificates using Set-Acl.
+1. Set ssl flags on "xconnect" IIS site, ie `SslNegotiateCert`.
 1. ...
 
 ## Other ideas
