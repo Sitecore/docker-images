@@ -12,6 +12,7 @@
 
 ## Todo's
 
+1. Get rid of setting AppPool to `LocalSystem` and set the needed permissions on c:\inetpub\wwwroot and certs store.
 1. ...
 
 ## Other ideas
