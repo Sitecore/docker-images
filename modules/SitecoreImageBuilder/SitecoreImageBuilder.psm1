@@ -655,7 +655,7 @@ function Get-CurrentImagesMarkdown
 
 function Get-SupportedWindowsVersions
 {
-    Write-Output ("1903", "1809")
+    Write-Output ("1903", "ltsc2019")
 }
 
 function Get-WindowsServerCoreToNanoServerVersionMap
