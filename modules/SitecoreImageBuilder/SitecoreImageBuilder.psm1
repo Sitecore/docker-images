@@ -152,14 +152,6 @@ function Invoke-Build
         [Parameter(Mandatory = $false)]
         [ValidateSet("Always", "Never")]
         [string]$PullMode = "Always"
-        ,
-        [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [string]$SitecoreUsername
-        ,
-        [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [string]$SitecorePassword
     )
 
     # Setup
@@ -249,8 +241,6 @@ function Invoke-Build
 
             $spec.BuildOptions | ForEach-Object {
                 $option = $_
-                $option = $option.Replace("`${sitecore_username}", $SitecoreUsername)
-                $option = $option.Replace("`${sitecore_password}", $SitecorePassword)
 
                 $buildOptions.Add($option)
             }

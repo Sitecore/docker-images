@@ -6,13 +6,13 @@ FROM $BUILD_IMAGE as build
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
-ARG DEV_SITECORE_NET_USERNAME
-ARG DEV_SITECORE_NET_PASSWORD
+ADD https://dist.nuget.org/win-x86-commandline/v5.2.0/nuget.exe C:\\downloads\\nuget.exe
+ADD https://download.microsoft.com/download/1/2/8/128E2E22-C1B9-44A4-BE2A-5859ED1D4592/rewrite_amd64_en-US.msi C:\\downloads\\urlrewrite.msi
+ADD https://aka.ms/vs/15/release/VC_redist.x64.exe C:\\downloads\\vc_redist.exe
+ADD https://www.7-zip.org/a/7z1900-x64.exe C:\\downloads\\7z-installer.exe
 
-# download assets
-COPY Start-Download.ps1 .
-COPY assets.json .
-RUN & 'C:\\Start-Download.ps1' -Path 'C:\\assets.json' -Destination 'C:\\downloads' -SitecoreUsername $env:DEV_SITECORE_NET_USERNAME -SitecorePassword $env:DEV_SITECORE_NET_PASSWORD;
+# copy local assets
+COPY *.zip C:\\downloads\\
 
 # install 7zip
 RUN New-Item -Path 'C:\\install\\tools\\bin\\7zip' -ItemType 'Directory' -Force | Out-Null; `
