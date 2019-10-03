@@ -36,5 +36,6 @@ RUN	$env:SITENAME = 'sc'; `
 	& (Join-Path $env:INSTALL_TEMP "\\Invoke-XdtTransform.ps1") -Path $env:WEBCONFIG_PATH -XdtPath (Join-Path $env:SITE_PATH '\\MergeFiles\\Sitecore.Commerce.Engine.Connectors.Merge.Config') -XdtDllPath $env:XDTDLL_PATH; `
 	& (Join-Path $env:INSTALL_TEMP "\\Update-Commerce-Connection-Details.ps1") -EngineConnectIncludeDir $env:COMMERCE_INCLUDE_PATH -CommerceServicesHost $env:COMMERCE_HOST -CommerceServicesEnvironment $env:COMMERCE_ENVIRONMENT -CommerceServicesShopName $env:COMMERCE_SHOP_NAME -CommerceServicesShopCurrency $env:COMMERCE_SHOP_CURRENCY -CommerceServicesCertificateThumbprint $env:COMMERCE_CERTIFICATE_THUMBPRINT; `
 	& (Join-Path $env:INSTALL_TEMP "\\Enable-Config-Files.ps1") -ConfigDir $env:COMMERCE_INCLUDE_PATH -ConfigFileList $env:COMMERCE_ENABLE_CONFIGS;
+	Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse; `
 	
 #	CMD tail -f /dev/nullcd 
