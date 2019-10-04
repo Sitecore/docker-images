@@ -58,11 +58,13 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
     # configure Windows to disable DNS caching
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
-    # configure app pool permissions
+    # configure app pool group memberships
     Add-LocalGroupMember -Group 'Performance Monitor Users' -Member $env:IIS_APPPOOL_IDENTITY; `
+    # configure app pool filesystem permissions
+    $rule = New-Object System.Security.AccessControl.FileSystemAccessRule($env:IIS_APPPOOL_IDENTITY, 'FullControl', @('ContainerInherit', 'ObjectInherit'), 'None', 'Allow'); `
     $acl = Get-Acl -Path $env:IIS_SITE_HOMEDIR_PATH; `
-    $acl.SetAccessRule((New-Object System.Security.AccessControl.FileSystemAccessRule($env:IIS_APPPOOL_IDENTITY, 'FullControl', @('ContainerInherit', 'ObjectInherit'), 'None', 'Allow'))); `
-    Set-Acl -Path $env:IIS_SITE_HOMEDIR_PATH -AclObject $acl; `
+    $acl.SetAccessRule($rule); `
+    $acl | Set-Acl -Path $env:IIS_SITE_HOMEDIR_PATH; `
     # configure role
     Import-Module WebAdministration; `
     Set-WebConfigurationProperty -PSPath $env:IIS_SITE_PATH -Filter '/appSettings/add[@key=\"role:define\"]' -Name 'value' -Value $env:SC_ROLE_DEFINE; `
