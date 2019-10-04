@@ -43,23 +43,44 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 
 RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
+    $env:IIS_SITE_PATH = 'IIS:\Sites\Default Web Site'; `
     $env:IIS_SITE_NAME = 'Default Web Site'; `
-    $env:IIS_APPPOOL_PATH = 'IIS:\AppPools\DefaultAppPool'; `
-    $env:XCONNECT_SSL_CERT_NAME = 'xconnect'; `
+    $env:IIS_SITE_HOMEDIR_PATH = 'C:\\inetpub\\wwwroot'; `
+    $env:IIS_APPPOOL_IDENTITY = 'IIS AppPool\DefaultAppPool'; `
+    # install tools
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
-    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
-    Add-LocalGroupMember -Group 'Performance Monitor Users' -Member 'IIS AppPool\DefaultAppPool'; `
-    Import-Module WebAdministration; `
-    Set-ItemProperty -Path $env:IIS_APPPOOL_PATH -Name 'processModel.identityType' -Value 'LocalSystem'; `
+    # install certificates
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\sitecore-root.pfx') -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\sitecore-root.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xconnect-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
+    # configure Windows to disable DNS caching
+    Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
+    # configure app pool group memberships
+    Add-LocalGroupMember -Group 'Performance Monitor Users' -Member $env:IIS_APPPOOL_IDENTITY; `
+    # configure app pool filesystem permissions
+    $rule = New-Object System.Security.AccessControl.FileSystemAccessRule($env:IIS_APPPOOL_IDENTITY, 'FullControl', @('ContainerInherit', 'ObjectInherit'), 'None', 'Allow'); `
+    $acl = Get-Acl -Path $env:IIS_SITE_HOMEDIR_PATH; `
+    $acl.SetAccessRule($rule); `
+    $acl | Set-Acl -Path $env:IIS_SITE_HOMEDIR_PATH; `
+    # configure app pool certificate permissions
+    $rule = New-Object System.Security.AccessControl.FileSystemAccessRule($env:IIS_APPPOOL_IDENTITY, 'Read', 'None', 'None', 'Allow'); `
+    Get-ChildItem -Path 'cert:\localmachine' -Recurse | Where-Object { $_.Issuer -eq 'CN=sitecore-root' -and $_.HasPrivateKey } | ForEach-Object { `
+    $path = [IO.Path]::Combine($env:ProgramData, 'Microsoft\Crypto\RSA\MachineKeys', $_.PrivateKey.CspKeyContainerInfo.UniqueKeyContainerName); `
+        $acl = Get-Acl -Path $path; `
+        $acl.SetAccessRule($rule); `
+        $acl | Set-Acl -Path $path; `
+    }; `
+    # configure SSL binding
+    Import-Module WebAdministration; `
     $xconnectCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xconnect.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
     New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '443' -Protocol "https" -HostHeader '*'; `
     $binding = Get-WebBinding -Name $env:IIS_SITE_NAME -Protocol "https"; `
     $binding.AddSslCertificate($xconnectCert.GetCertHashString(), 'my'); `
+    # configure SSL flags
+    Set-WebConfigurationProperty -PSPath 'machine/webroot/apphost' -Filter 'system.webServer/security/access' -Name 'sslFlags' -Value 'SslNegotiateCert'; `
+    # delete temporary files
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
 
 EXPOSE 443

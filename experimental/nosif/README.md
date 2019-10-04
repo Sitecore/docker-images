@@ -13,9 +13,6 @@
 
 ## Todo's
 
-1. Get rid of setting AppPool to `LocalSystem` and set the needed permissions on c:\inetpub\wwwroot using Set-Acl.
-1. Set read permission on AppPoolIdentity on installed certificates using Set-Acl.
-1. Set ssl flags on "xconnect" IIS site, ie `SslNegotiateCert`.
 1. ...
 
 ## Other ideas

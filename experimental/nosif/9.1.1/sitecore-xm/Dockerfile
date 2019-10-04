@@ -47,14 +47,23 @@ COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 
 RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     $env:IIS_SITE_PATH = 'IIS:\Sites\Default Web Site'; `
-    $env:IIS_APPPOOL_PATH = 'IIS:\AppPools\DefaultAppPool'; `
+    $env:IIS_SITE_HOMEDIR_PATH = 'C:\\inetpub\\wwwroot'; `
+    $env:IIS_APPPOOL_IDENTITY = 'IIS AppPool\DefaultAppPool'; `
+    # install dependencies
     Start-Process msiexec.exe -ArgumentList '/i', (Join-Path $env:INSTALL_TEMP '\\setup\\urlrewrite.msi'), '/quiet', '/norestart' -NoNewWindow -Wait; `
     Start-Process (Join-Path $env:INSTALL_TEMP '\\setup\\vc_redist.exe') -ArgumentList '/install', '/passive', '/norestart' -NoNewWindow -Wait; `
+    # install tools
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
+    # configure Windows to disable DNS caching
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
-    Add-LocalGroupMember -Group 'Performance Monitor Users' -Member 'IIS AppPool\DefaultAppPool'; `
+    # configure app pool permissions
+    Add-LocalGroupMember -Group 'Performance Monitor Users' -Member $env:IIS_APPPOOL_IDENTITY; `
+    $acl = Get-Acl -Path $env:IIS_SITE_HOMEDIR_PATH; `
+    $acl.SetAccessRule((New-Object System.Security.AccessControl.FileSystemAccessRule($env:IIS_APPPOOL_IDENTITY, 'FullControl', @('ContainerInherit', 'ObjectInherit'), 'None', 'Allow'))); `
+    Set-Acl -Path $env:IIS_SITE_HOMEDIR_PATH -AclObject $acl; `
+    # configure role
     Import-Module WebAdministration; `
-    Set-ItemProperty -Path $env:IIS_APPPOOL_PATH -Name 'processModel.identityType' -Value 'LocalSystem'; `
     Set-WebConfigurationProperty -PSPath $env:IIS_SITE_PATH -Filter '/appSettings/add[@key=\"role:define\"]' -Name 'value' -Value $env:SC_ROLE_DEFINE; `
+    # delete temporary files
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
