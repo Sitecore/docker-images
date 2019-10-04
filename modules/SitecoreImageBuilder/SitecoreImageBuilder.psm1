@@ -40,10 +40,12 @@ function Invoke-PackageRestore
     $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\sitecore-packages.json")
     $packages = $packagesFile | Get-Content | ConvertFrom-Json
 
+    $destinationPath = $($Destination.Trim('\'))
+
     # Ensure destination exists
-    if (!(Test-Path $Destination -PathType "Container"))
+    if (!(Test-Path $destinationPath -PathType "Container"))
     {
-        New-Item $Destination -ItemType Directory -WhatIf:$false | Out-Null
+        New-Item $destinationPath -ItemType Directory -WhatIf:$false | Out-Null
     }
 
     # Find out which files is needed
@@ -69,7 +71,7 @@ function Invoke-PackageRestore
             Remove-Item -Path $filePath -Force
         }
 
-        $fileName = $filePath.Replace("$Destination\", "")
+        $fileName = $filePath.Replace($destinationPath, "")
         $package = $packages.$fileName
 
         if ($null -eq $package)
@@ -128,7 +130,6 @@ function Invoke-Build
         [ValidateScript( { Test-Path $_ -PathType "Container" })]
         [string]$InstallSourcePath
         ,
-        [Parameter(Mandatory = $true)]
         [string]$Registry
         ,
         [Parameter(Mandatory = $false)]
@@ -256,8 +257,15 @@ function Invoke-Build
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
 
             # Tag image
-            $fulltag = "{0}/{1}" -f $Registry, $tag
-
+            if ([string]::IsNullOrEmpty($Registry))
+            {
+                $fulltag = $tag
+                $PushMode = "Never"
+            }
+            else
+            {
+                $fulltag = "{0}/{1}" -f $Registry, $tag
+            }
             docker image tag $tag $fulltag
 
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
