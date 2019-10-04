@@ -15,10 +15,12 @@ RUN $env:INSTALL_TEMP = 'C:\\install'; `
 	$env:MODELS_FOLDER = (Join-Path $env:MODELS_FOLDER $env:SITENAME); `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
     Expand-Archive -Path (Join-Path $env:INSTALL_TEMP 'Sitecore Commerce Connect Core*.scwdp.zip') -DestinationPath $env:INSTALL_TEMP; `
+	Expand-Archive -Path (Join-Path $env:INSTALL_TEMP 'Sitecore Commerce Marketing Automation for AutomationEngine*.zip') -DestinationPath (Join-Path $env:INSTALL_TEMP 'CommerceMAForAutomationEngine'); `
 	New-Item -ItemType Container -Path (Join-Path $env:MODELS_FOLDER '\\App_Data\\Models') -Force; `
 	New-Item -ItemType Container -Path (Join-Path $env:MODELS_FOLDER '\\App_Data\\jobs\\continuous\\IndexWorker\\App_data\\Models\\') -Force; `
 	Copy-Item -Path (Join-Path $env:INSTALL_TEMP "\\Content\\Website\\XConnectModels\\*") -Destination (Join-Path $env:MODELS_FOLDER '\\App_Data\\Models\\') -Force; `
-	Copy-Item -Path (Join-Path $env:INSTALL_TEMP "\\Content\\Website\\XConnectModels\\*") -Destination (Join-Path $env:MODELS_FOLDER '\\App_Data\\jobs\\continuous\\IndexWorker\\App_data\\Models\\') -Force;
+	Copy-Item -Path (Join-Path $env:INSTALL_TEMP "\\Content\\Website\\XConnectModels\\*") -Destination (Join-Path $env:MODELS_FOLDER '\\App_Data\\jobs\\continuous\\IndexWorker\\App_data\\Models\\') -Force; `
+	Copy-Item -Path (Join-Path $env:INSTALL_TEMP "\\CommerceMAForAutomationEngine\\*") -Destination $env:MODELS_FOLDER -Recurse -Force;
 
 FROM $BASE_IMAGE
 
