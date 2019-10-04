@@ -1,0 +1,30 @@
+# escape=`
+ARG BASE_IMAGE
+ARG BUILD_IMAGE
+
+FROM $BUILD_IMAGE as builder
+
+SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
+
+COPY . /install/
+
+# Expand zips, prepare SIF config and WDP package
+RUN $env:INSTALL_TEMP = 'C:\\install'; `
+	$env:SITENAME = 'xconnect'; `
+	$env:MODELS_FOLDER = (Join-Path $env:INSTALL_TEMP 'Models'); `
+	$env:MODELS_FOLDER = (Join-Path $env:MODELS_FOLDER $env:SITENAME); `
+    Expand-Archive -Path (Join-Path $env:INSTALL_TEMP '*.zip') -DestinationPath $env:INSTALL_TEMP; `
+    Expand-Archive -Path (Join-Path $env:INSTALL_TEMP 'Sitecore Commerce Connect Core*.scwdp.zip') -DestinationPath $env:INSTALL_TEMP; `
+	New-Item -ItemType Container -Path (Join-Path $env:MODELS_FOLDER '\\App_Data\\Models') -Force; `
+	New-Item -ItemType Container -Path (Join-Path $env:MODELS_FOLDER '\\App_Data\\jobs\\continuous\\IndexWorker\\App_data\\Models\\') -Force; `
+	Copy-Item -Path (Join-Path $env:INSTALL_TEMP "\\Content\\Website\\XConnectModels\\*") -Destination (Join-Path $env:MODELS_FOLDER '\\App_Data\\Models\\') -Force; `
+	Copy-Item -Path (Join-Path $env:INSTALL_TEMP "\\Content\\Website\\XConnectModels\\*") -Destination (Join-Path $env:MODELS_FOLDER '\\App_Data\\jobs\\continuous\\IndexWorker\\App_data\\Models\\') -Force;
+
+FROM $BASE_IMAGE
+
+# BUG: Target path needs to exist when building with Docker Engine 19.03.1, see https://github.com/docker/for-win/issues/4349. Should be removed when fixed.
+RUN	MKDIR C:\install;
+	
+COPY --from=builder install/Models/ C:\\inetpub\\
+
+EXPOSE 443
