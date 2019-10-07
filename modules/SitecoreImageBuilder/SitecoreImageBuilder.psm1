@@ -37,7 +37,7 @@ function Invoke-PackageRestore
     $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\sitecore-packages.json")
     $packages = $packagesFile | Get-Content | ConvertFrom-Json
 
-    $destinationPath = $($Destination.Trim('\'))
+    $destinationPath = $Destination.TrimEnd('\')
 
     # Ensure destination exists
     if (!(Test-Path $destinationPath -PathType "Container"))
@@ -68,12 +68,12 @@ function Invoke-PackageRestore
             Remove-Item -Path $filePath -Force
         }
 
-        $fileName = $filePath.Replace($destinationPath, "")
+        $fileName = $filePath.Replace(("{0}\" -f $destinationPath), "")
         $package = $packages.$fileName
 
         if ($null -eq $package)
         {
-            throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package '{2}' manually." -f $fileName, $packagesFile.FullName, $filePath)
+            throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package ' { 2 }' manually." -f $fileName, $packagesFile.FullName, $filePath)
         }
 
         $fileUrl = $package.url
@@ -387,22 +387,22 @@ function Initialize-BuildSpecifications
         $priority++
     }
 
-    $priorities.Add("^(.*)$", $defaultPriority)
+$priorities.Add("^(.*)$", $defaultPriority)
 
-    # Update specs, set priority according to rules
-    $Specifications | ForEach-Object {
-        $spec = $_
-        $rule = $priorities.Keys | Where-Object { $spec.Tag -match $_ } | Select-Object -First 1
+# Update specs, set priority according to rules
+$Specifications | ForEach-Object {
+    $spec = $_
+    $rule = $priorities.Keys | Where-Object { $spec.Tag -match $_ } | Select-Object -First 1
 
-        $spec.Priority = $priorities[$rule]
-    }
+    $spec.Priority = $priorities[$rule]
+}
 
-    # Reorder specs, priorities goes first
-    $specs = [System.Collections.ArrayList]@()
-    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
-    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
+# Reorder specs, priorities goes first
+$specs = [System.Collections.ArrayList]@()
+$specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
+$specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
 
-    return $specs
+return $specs
 }
 
 function Get-BuildSpecifications
