@@ -40,7 +40,7 @@ function Invoke-PackageRestore
     $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\sitecore-packages.json")
     $packages = $packagesFile | Get-Content | ConvertFrom-Json
 
-    $destinationPath = $($Destination.Trim('\'))
+    $destinationPath = $Destination.TrimEnd('\')
 
     # Ensure destination exists
     if (!(Test-Path $destinationPath -PathType "Container"))
@@ -71,12 +71,12 @@ function Invoke-PackageRestore
             Remove-Item -Path $filePath -Force
         }
 
-        $fileName = $filePath.Replace($destinationPath, "")
+        $fileName = $filePath.Replace(("{0}\" -f $destinationPath), "")
         $package = $packages.$fileName
 
         if ($null -eq $package)
         {
-            throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package '{2}' manually." -f $fileName, $packagesFile.FullName, $filePath)
+            throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package ' { 2 }' manually." -f $fileName, $packagesFile.FullName, $filePath)
         }
 
         $fileUrl = $package.url
@@ -165,6 +165,9 @@ function Invoke-Build
     # Print results
     $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
 
+    # Determine OS
+    $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
+
     Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
     # Pull latest external images
@@ -232,7 +235,6 @@ function Invoke-Build
             }
 
             # Build image
-            $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
 
             if ($osType -eq "windows")
@@ -412,12 +414,12 @@ function Initialize-BuildSpecifications
         $spec.Priority = $priorities[$rule]
     }
 
-    # Reorder specs, priorities goes first
-    $specs = [System.Collections.ArrayList]@()
-    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
-    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
+# Reorder specs, priorities goes first
+$specs = [System.Collections.ArrayList]@()
+$specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
+$specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
 
-    return $specs
+return $specs
 }
 
 function Get-BuildSpecifications
