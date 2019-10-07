@@ -4,7 +4,7 @@
             "tag": "sitecore-xp-xc-9.2.0-sqldev:9.2.0-windowsservercore-ltsc2019",
             "build-options": [
                 "--memory 4GB",
-                "--build-arg BASE_IMAGE=sitecore-xp-jss-12.0.0-sqldev:9.2.0-windowsservercore-ltsc2019"
+                "--build-arg BASE_IMAGE=sitecore-xp-sqldev:9.2.0-windowsservercore-ltsc2019"
             ]
         }
     ],
