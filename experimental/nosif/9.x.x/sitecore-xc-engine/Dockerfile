@@ -48,8 +48,6 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     # install additional required tools
     Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')); `
     choco install -y --params="Quiet" --version 2.2.5 dotnetcore-windowshosting; `
-    choco install -y --params="Quiet" vim; `
-    Add-Content $PROFILE "New-Alias -Name vim -Value 'C:\Program Files (x86)\vim\vim80\vim.exe'"; `
     # install certificates
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\sitecore-root.pfx') -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
