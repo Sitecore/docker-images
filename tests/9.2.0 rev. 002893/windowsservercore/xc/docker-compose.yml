@@ -1,0 +1,130 @@
+version: '2.4'
+
+services:
+
+  sql:
+    image: sitecore-xp-xc-9.2.0-sqldev:9.2.0-windowsservercore-ltsc2019
+    networks:
+        sitecore:
+            ipv4_address: 172.28.0.2
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+
+  solr:
+    image: sitecore-xp-xc-9.2.0-solr:9.2.0-nanoserver-1903
+    networks:
+        sitecore:
+            ipv4_address: 172.28.0.3
+    volumes:
+      - .\data\solr:C:\Data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+
+  xconnect:
+    image: sitecore-xp-xc-9.2.0-xconnect:9.2.0-windowsservercore-ltsc2019
+    networks:
+        sitecore:
+            ipv4_address: 172.28.0.4
+    volumes:
+      - .\data\xconnect:C:\inetpub\xconnect\App_Data\logs
+      - .\startup\:C:\startup
+    mem_limit: 1GB
+    links:
+      - sql
+      - solr
+    entrypoint: cmd /c "powershell C:/startup/webtransformandwatch.ps1 C:\inetpub\wwwroot C:\inetpub\logs -InstanceName 'xconnect-xconnect'"
+
+  xconnect-automationengine:
+    image: sitecore-xp-xc-9.2.0-xconnect-automationengine:9.2.0-windowsservercore-ltsc2019
+    networks:
+        sitecore:
+            ipv4_address: 172.28.0.5
+    volumes:
+      - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
+      - .\startup\:C:\startup
+    mem_limit: 500MB
+    links:
+      - sql
+      - xconnect
+    extra_hosts:
+      - "xconnect:172.28.0.4"
+    entrypoint: cmd /c "powershell C:/startup/webtransformandwatch.ps1 C:\inetpub\wwwroot C:\inetpub\logs -InstanceName 'xconnect-automationengine'"
+
+  xconnect-indexworker:
+    image: sitecore-xp-xc-9.2.0-xconnect-indexworker:9.2.0-windowsservercore-ltsc2019
+    networks:
+        sitecore:
+            ipv4_address: 172.28.0.6
+    volumes:
+      - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
+      - .\startup\:C:\startup
+    mem_limit: 500MB
+    links:
+      - sql
+      - solr
+    entrypoint: cmd /c "powershell C:/startup/webtransformandwatch.ps1 C:\inetpub\wwwroot C:\inetpub\logs -InstanceName 'xconnect-indexworker'"
+
+#  cd:
+#    image: sitecore-xp-jss-12.0.0-cd:9.2.0-windowsservercore-ltsc2019
+#    networks:
+#        sitecore:
+#            ipv4_address: 172.28.0.7
+#    volumes:
+#      - .\data\cd:C:\inetpub\sc\App_Data\logs
+#      - .\..\build:C:\build
+#      - .\startup\:C:\startup
+#    ports:
+#      - "44002:80"
+#    links:
+#      - sql
+#      - solr
+#      - xconnect
+#    extra_hosts:
+#      - "xconnect:172.28.0.4"
+#    entrypoint: cmd /c "powershell C:/startup/webtransformandwatch.ps1 C:/build C:\inetpub\sc -ExcludeFiles @('Web.config', 'ConnectionStrings.config')  -InstanceName 'cd'"
+
+  cm:
+    image: sitecore-xp-xc-9.2.0-standalone:9.2.0-windowsservercore-ltsc2019
+    networks:
+        sitecore:
+            ipv4_address: 172.28.0.8
+    volumes:
+      - .\data\cm:C:\inetpub\sc\App_Data\logs
+      - .\..\build:C:\build
+      - .\startup\:C:\startup
+      - .\..\unicorn\:C:\unicorn
+    ports:
+      - "44001:80"
+    links:
+      - sql
+      - solr
+      - xconnect
+    extra_hosts:
+      - "xconnect:172.28.0.4"
+    entrypoint: cmd /c "powershell C:/startup/webtransformandwatch.ps1 C:/build C:\inetpub\sc -ExcludeFiles @('Web.config', 'ConnectionStrings.config') -InstanceName 'cm'"
+    
+  commerce-authoring:
+    image: sitecore-xp-xc-9.2.0-commerce-authoring:9.2.0-windowsservercore-ltsc2019
+    networks:
+        sitecore:
+            ipv4_address: 172.28.0.9
+    volumes:
+      - .\data\commerce-authoring:C:\inetpub\wwwroot\Authoring\wwwroot\logs
+      - .\startup\:C:\startup
+    ports:
+      - "5000:5000"
+    links:
+      - sql
+      - cm
+    entrypoint: cmd /c "powershell C:/startup/webtransformandwatch.ps1 C:\inetpub\logs C:\inetpub\wwwroot -InstanceName 'commerce-authoring'"
+
+networks:
+    sitecore:
+        ipam:
+            driver: default
+            config:
+                - subnet: 172.28.0.0/16

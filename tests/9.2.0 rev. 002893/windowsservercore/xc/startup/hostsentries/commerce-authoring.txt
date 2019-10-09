@@ -1,0 +1,6 @@
+172.28.0.1	sclocalidentityserver.dev.local
+172.28.0.8	sitecore.sc
+172.28.0.9	authoring.commerce.sc
+172.28.0.10	shops.commerce.sc
+172.28.0.11	minions.commerce.sc
+172.28.0.12	ops.commerce.sc

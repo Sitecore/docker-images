@@ -1,0 +1,2 @@
+172.28.0.4	xconnect
+172.28.0.9	authoring.commerce.sc

@@ -1,0 +1,39 @@
+{
+	"@jdt.replace": [
+		{
+			"@jdt.path": "$.Policies.$values[1].EnvironmentList.$values",
+			"@jdt.value": [
+				"HabitatAuthoring",
+				"HabitatShops"
+			]
+		},
+		{
+			"@jdt.path": "$.Policies.$values[2].Server",
+			"@jdt.value": "172.28.0.2"
+		},
+		{
+			"@jdt.path": "$.Policies.$values[2].TrustedConnection",
+			"@jdt.value": "false"
+		},
+		{
+			"@jdt.path": "$.Policies.$values[2].UserName",
+			"@jdt.value": "sa"
+		},
+		{
+			"@jdt.path": "$.Policies.$values[6].Host",
+			"@jdt.value": "sitecore.sc"
+		},
+		{
+			"@jdt.path": "$.Policies.$values[6].AuthRequestUrl",
+			"@jdt.value": "sitecore/api/ssc/aggregate/authenticate/HttpAuthentication/Login"
+		}
+	],
+	"@jdt.merge": [
+		{
+			"@jdt.path": "$.Policies.$values[6]",
+			"@jdt.value": {
+				"Protocol": "http"
+			}
+		}
+	]
+}

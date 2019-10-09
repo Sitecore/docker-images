@@ -1,0 +1,12 @@
+{
+	"@jdt.replace": [
+		{
+			"@jdt.path": "$.AppSettings.SitecoreIdentityServerUrl",
+			"@jdt.value": "https://sclocalidentityserver.dev.local"
+		},
+		{
+			"@jdt.path": "$.AppSettings.AntiForgeryEnabled",
+			"@jdt.value": "false"
+		}
+	]
+}
