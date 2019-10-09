@@ -1,10 +1,10 @@
 {
   "tags": [
     {
-      "tag": "sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+      "tag": "sitecore-assets:9.2.0-nanoserver-1903",
       "build-options": [
-        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
-        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}"
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:1903"
       ]
     }
   ],
@@ -12,6 +12,7 @@
     "Sitecore 9.2.0 rev. 002893 (WDP XM1 packages).zip",
     "Sitecore 9.2.0 rev. 002893 (WDP XP0 packages).zip",
     "Sitecore 9.2.0 rev. 002893 (WDP XP1 packages).zip",
+    "Sitecore.Commerce.WDP.2019.07-4.0.165.zip",
     "Sitecore Experience Accelerator 1.9.0 rev. 190528 for 9.2 CD.scwdp.zip",
     "Sitecore Experience Accelerator 1.9.0 rev. 190528 for 9.2.scwdp.zip",
     "Sitecore Experience Accelerator XM 1.9.0 rev. 190528 for 9.2 CD.scwdp.zip",
