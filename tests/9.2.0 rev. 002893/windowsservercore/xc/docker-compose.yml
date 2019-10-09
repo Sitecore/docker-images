@@ -96,7 +96,6 @@ services:
       - .\data\cm:C:\inetpub\sc\App_Data\logs
       - .\..\build:C:\build
       - .\startup\:C:\startup
-      - .\..\unicorn\:C:\unicorn
     ports:
       - "44001:80"
     links:
