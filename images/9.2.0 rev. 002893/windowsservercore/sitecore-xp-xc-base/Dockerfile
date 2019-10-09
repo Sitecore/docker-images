@@ -34,7 +34,7 @@ RUN $env:INSTALL_TEMP = 'C:\\install'; `
 	-CertStoreLocation $env:CLIENT_CERT_STORE `
 	-Name $env:SIGNED_CERT_NAME `
 	-FriendlyName $env:SIGNED_CERT_NAME `
-	-DnsName ('*.{0}' -f $env:COMMERCE_SERVICES_HOST_POSTFIX) `
+	-DnsName ('*.commerce.{0}' -f $env:COMMERCE_SERVICES_HOST_POSTFIX) `
 	-Path $env:CERT_PATH `
 	-IncludePrivateKeyString $env:INCLUDE_PRIVATE_KEY; `
 	& (Join-Path $env:INSTALL_TEMP "\\New-Commerce-Signed-Certificate.ps1") `
