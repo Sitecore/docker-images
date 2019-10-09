@@ -73,8 +73,3 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     }; `
     # delete temporary files
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
-
-
-# ######## TODO ##########
-# # RUN net user /add commerceuser 'Pa$$w0rd'; `
-# #     Set-LocalUser -Name 'commerceuser' -PasswordNeverExpires:$true
