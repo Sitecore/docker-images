@@ -1,5 +1,9 @@
 # Changelog
 
+## October 2019
+
+- [Changed] Made the $Registry parameter optional. Not specifying the $Registry will build the images locally only.
+
 ## September 2019
 
 - [Fixed] Invalid download url in `sitecore-packages.json` was fixed for JSS 11.0.1 XP CM. **IMPORTANT**: Remove the file `Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.0.1 rev. 190318.scwdp.zip` from where you store the packages and **ALSO** also inside `.\variants\9.1.1\windowsservercore\jss\sitecore-xp-jss-11.0.1-standalone\` so the package will be re-downloaded.
