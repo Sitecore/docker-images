@@ -82,4 +82,3 @@
 | 9.2.0 | sitecore-xm-jss-12.0.0-sql | linux |  | `sitecore-xm-jss-12.0.0-sql:9.2.0-linux` [Dockerfile](linux/9.2.0%20rev.%20002893/sitecore-xm-jss-sql/Dockerfile) |
 
 [//]: # "end: current linux"
-
