@@ -9,18 +9,18 @@ function Update-Section
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType "Leaf" })] 
+        [ValidateScript( { Test-Path $_ -PathType "Leaf" })]
         [string]$Path
         ,
         [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()] 
+        [ValidateNotNullOrEmpty()]
         [string]$Name
         ,
         [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()] 
+        [ValidateNotNullOrEmpty()]
         [string]$Content
     )
-    
+
     $targetContent = Get-Content -Path $Path
     $sectionStart = "[//]: # `"start: {0}`"" -f $Name
     $sectionEnd = "[//]: # `"end: {0}`"" -f $Name
@@ -46,7 +46,7 @@ function Update-Section
 
 $specs = @()
 
-(Get-Item (Join-Path $PSScriptRoot "\images")), (Get-Item (Join-Path $PSScriptRoot "\variants")), (Get-Item (Join-Path $PSScriptRoot "\linux")) | ForEach-Object {
+(Get-Item (Join-Path $PSScriptRoot "\windows")), (Get-Item (Join-Path $PSScriptRoot "\linux")) | ForEach-Object {
 
     $specs += SitecoreImageBuilder\Get-BuildSpecifications -Path $_.Fullname
 

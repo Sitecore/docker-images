@@ -414,12 +414,12 @@ function Initialize-BuildSpecifications
         $spec.Priority = $priorities[$rule]
     }
 
-# Reorder specs, priorities goes first
-$specs = [System.Collections.ArrayList]@()
-$specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
-$specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
+    # Reorder specs, priorities goes first
+    $specs = [System.Collections.ArrayList]@()
+    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
+    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
 
-return $specs
+    return $specs
 }
 
 function Get-BuildSpecifications
@@ -655,6 +655,7 @@ function Get-CurrentImagesMarkdown
 
 function Get-SupportedWindowsVersions
 {
+    # NOTE: Order is important, newest first
     Write-Output ("1903", "ltsc2019")
 }
 
@@ -667,4 +668,33 @@ function Get-WindowsServerCoreToNanoServerVersionMap
         "1709"     = "1709";
         "ltsc2016" = "sac2016"
     }
+}
+
+function Get-LatestSupportedVersion
+{
+    # load Windows image specifications
+    $specs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot "\..\..\windows")
+
+    # find all Sitecore versions
+    $versions = $specs | Where-Object { $_.Tag -like "sitecore-*:*windowsservercore-*" } | Select-Object -ExpandProperty Tag
+    $versions = $versions | ForEach-Object {
+        $_.Substring($_.IndexOf(':') + 1)
+    }
+
+    $versions = $versions | ForEach-Object {
+        $_.Substring(0, $_.IndexOf('-'))
+    }
+
+    $versions = $versions | Sort-Object -Unique -Descending
+
+    # pick latest Sitecore version
+    $sitecore = $versions | Select-Object -First 1
+
+    # pick latest Windows LTSC version
+    $windows = (Get-SupportedWindowsVersions | Where-Object { $_ -like "ltsc*" } | Select-Object -First 1)
+
+    Write-Output (New-Object PSObject -Property @{
+            Sitecore = $sitecore;
+            Windows  = $windows;
+        })
 }
