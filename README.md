@@ -2,106 +2,125 @@
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-27-blue.svg) ![Tags](https://img.shields.io/badge/Tags-58-blue.svg) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-25-blue.svg)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-27-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-58-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-25-blue.svg?style=flat-square)
 
 [//]: # "end: stats"
 
-Build your own Docker images for every released Sitecore version since 8.2 rev. 170407 (Update 3). See [current images](IMAGES.md) for an up-to-date list of which base images available and [Current variants](IMAGES.md#current-variants) for variants, base images with additional modules installed such as SXA and JSS. You can use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry. Jump to the [How to use](#how-to-use) section for more details.
+Build your own Docker images for the most recent versions of Sitecore. See [IMAGES.md](IMAGES.md) for all images currently available. You can also use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry.
+
+Jump to the [how to use](#how-to-use) section to get started.
 
 ## IMPORTANT NOTES ABOUT THIS REPOSITORY
 
 - This repository was created to help consolidate efforts around Sitecore and Docker.
-- **The code and examples found in this repository are created and maintained by the Community, unsupported by Sitecore and to be used for example purposes only and without official support.**
+- **The code and examples found in this repository are created and maintained by the Community,  unsupported by Sitecore.**
+- Official statement from Sitecore on *running* in containers, see [https://kb.sitecore.net/articles/161310](https://kb.sitecore.net/articles/161310).
 
 ### Change Log
 
-Please see [Change Log](CHANGELOG.md)
+Please see [CHANGELOG.md](CHANGELOG.md).
 
-### Complete Image List
+### List of all images
 
-Please see [Images](IMAGES.md)
+Please see [IMAGES.md](IMAGES.md).
 
-### Tags and Windows versions
+### Tagging and Windows versions
 
-This repository now supports multiple Windows versions and support channels ie. "ltsc2016", "1709" and "1803". Read more about [Windows Container Version Compatibility](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility).
+This repository can build multiple Windows versions. Read more about [Windows Container Version Compatibility](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-Here is the convention used when tagging images:
+Here is the convention used for Sitecore image tags:
 
 ```text
- registry.example.com/sitecore-xm1-cm:9.0.171219-windowsservercore-1709
- \__________________/ \_____________/ \________/ \____________________/
-           |                 |             |               |
-   registry/org/user    repository    sc version       os version
+ [REGISTRY/]sitecore-<TOPOLOGY>[-VARIANT]-<ROLE>:<SITECORE_VERSION>-<OS_VERSION>
 ```
 
->Please note that the `sc version` part of the tags matches the corresponding NuGet package version for a given Sitecore version and **not** the "marketing version" ie 9.0.1, 9.0.2 etc. This is to make it clear in the implementing projects which NuGet package versions goes with which tags.  
+Example:
+
+```text
+ registry.example.com/sitecore-xm-cm:9.2.0-windowsservercore-1903
+ \__________________/ \____________/ \___/ \____________________/
+           |                 |         |             |
+   registry/org/user    repository  sc version   os version
+```
 
 ## How to use
 
+### Quick start
+
+```PowerShell
+.\Build.ps1 -SitecoreUsername "YOUR dev.sitecore.net USERNAME" -SitecorePassword "YOUR dev.sitecore.net PASSWORD"
+```
+
+This will:
+
+1. Download any missing packages into `.\packages`, if you have another location with files already present you can call `Build.ps1` with the parameter `-InstallSourcePath`.
+2. Build all images of latest Sitecore version on latest LTSC (Long Term Support Channel) Windows version.
+
+When completed, you can run it with `docker-compose --file .\windows\tests\9.x.x\docker-compose.xm.yml up`.
+
+### Setting up automated builds
+
 ### Prerequisites
 
-- *Now Optional* - A **private** Docker repository. Any will do, but the easiest is to use a [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/) or to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), you need at least the "Small" plan at $12/mo.
-- A file share that your build agents can reach, where you have placed zip files downloaded from [https://dev.sitecore.net/](https://dev.sitecore.net/) **and** your license.xml.
-- Some kind of build server for example TeamCity, with agents that runs:
-  - Windows 10 or Windows Server 2016 that is up to date and on latest build.
-  - Hyper-V and Containers Windows features installed.
-  - Latest stable Docker engine and cli.
+- A **private** Docker repository. Any will do, but the easiest is to use a [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/).
+- A file location that your build agents can reach to store downloads from [https://dev.sitecore.net/](https://dev.sitecore.net/).
+
+#### Windows
+
+1. Latest Windows 10 or Windows Server 2019 with Hyper-V and Containers features installed.
+1. Latest stable Docker engine and cli.
+
+#### Linux (optional)
+
+1. [PowerShell Core](https://github.com/powershell/powershell) so you can use the PowerShell module.
+1. Latest stable Docker engine and cli.
 
 ### Configure your build server
 
-1. Trigger on build changes on `master` - to get new versions.
+1. Trigger a build on changes to `master` - to get new versions.
 1. Trigger once a week - to get base images updated when Microsoft releases patched images.
-
-> Please note: To build deprecated tags, for example Sitecore 7.5, you need to explicit add it to the `Tags` parameter like so: `-Tags "*:7.5*"`.
 
 Example:
 
 ```PowerShell
-# Login
-"YOUR DOCKER REPOSITORY PASSWORD" | docker login --username "YOUR DOCKER REPOSITORY USERNAME" --password-stdin
 
-# Load module
-Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
+# required, change if you need to build images in other folders such as ".\linux" or ".\legacy"
+$imagesPath = (Join-Path $PSScriptRoot "\windows")
 
-# Settings
-$installSourcePath = (Join-Path $PSScriptRoot "\packages") # PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML, can be on local machine or a file share.
-$registry = "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your own registry. Note that this parameter is now optional.
+# optional, default value is ".\packages". Can be on local machine or a file share.
+$installSourcePath = (Join-Path $PSScriptRoot "\packages")
+
+# optional, on Docker Hub it's your username or organization, else it's the hostname of your
+# own registry. This parameter is optional but you will not be able to push images to a
+# remote registry without.
+$registry = "YOUR REGISTRY NAME" `
+
+# optional, default value is the latest Sitecore version on latest LTSC version
+# of Windows. Set to for example "*" for build everything or "*:9.1.1*1903", "*:9.2.0*1903" to
+# only build 9.1.1 and 9.2.0 on Windows 1903.
+$tags = "*"
+
+# required
 $sitecoreUsername = "YOUR dev.sitecore.net USERNAME"
+
+# required
 $sitecorePassword = "YOUR dev.sitecore.net PASSWORD"
 
-$baseTags = "*" # optional (default "*"), set to for example "sitecore-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
+# import builder module
+Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 
-# Restore packages needed for base images, only files missing in $installSourcePath will be downloaded
+# restore packages needed for the build, only files missing in $installSourcePath will be downloaded
 SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path (Join-Path $PSScriptRoot "\images") `
+    -Path $imagesPath `
     -Destination $installSourcePath `
-    -Tags $baseTags `
+    -Tags $tags `
     -SitecoreUsername $sitecoreUsername `
     -SitecorePassword $sitecorePassword
 
-# Build and push base images
+# build and push images
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\images") `
+    -Path $imagesPath `
     -InstallSourcePath $installSourcePath `
     -Registry $registry `
-    -Tags $baseTags `
-    -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
-
-$variantTags = "*" # optional (default "*"), set to for example "sitecore-xm1-sxa-*:9.1.1*ltsc2019" to only build 9.1.1 images on ltsc2019/1809.
-
-# Restore packages needed for variant images, only files missing in $installSourcePath will be downloaded
-SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path (Join-Path $PSScriptRoot "\variants") `
-    -Destination $installSourcePath `
-    -Tags $variantTags `
-    -SitecoreUsername $sitecoreUsername `
-    -SitecorePassword $sitecorePassword
-
-# Build and push variant images
-SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\variants") `
-    -InstallSourcePath $installSourcePath `
-    -Registry $registry `
-    -Tags $variantTags `
-    -PushMode "WhenChanged" # optional (default "WhenChanged"), can also be "Never" or "Always".
+    -Tags $tags
 ```
