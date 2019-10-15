@@ -56,7 +56,11 @@ This will:
 1. Download any missing packages into `.\packages`, if you have another location with files already present you can call `Build.ps1` with the parameter `-InstallSourcePath`.
 2. Build all images of latest Sitecore version on latest LTSC (Long Term Support Channel) Windows version.
 
-When completed, you can run it with `docker-compose --file .\windows\tests\9.x.x\docker-compose.xm.yml up`.
+When completed, you can run it with:
+
+```shell
+docker-compose --file .\windows\tests\9.x.x\docker-compose.xm.yml up
+```
 
 ### Setting up automated builds
 
