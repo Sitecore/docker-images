@@ -32,5 +32,4 @@ SitecoreImageBuilder\Invoke-PackageRestore `
 SitecoreImageBuilder\Invoke-Build `
     -Path (Join-Path $PSScriptRoot "\windows") `
     -InstallSourcePath $InstallSourcePath `
-    -PushMode "Never" `
     -WhatIf:$WhatIfPreference
