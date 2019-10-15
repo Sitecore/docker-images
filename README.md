@@ -8,7 +8,7 @@
 
 Build your own Docker images for the most recent versions of Sitecore. See [IMAGES.md](IMAGES.md) for all images currently available. You can also use this repository (preferably from a fork) from you own build server and have it build and push images to your own private Docker registry.
 
-Jump to the [how to use](#how-to-use) section to get started.
+Jump to the [How to use](#how-to-use) section to get started.
 
 ## IMPORTANT NOTES ABOUT THIS REPOSITORY
 
@@ -54,7 +54,9 @@ Example:
 This will:
 
 1. Download any missing packages into `.\packages`, if you have another location with files already present you can call `Build.ps1` with the parameter `-InstallSourcePath`.
-2. Build all images of latest Sitecore version on latest LTSC (Long Term Support Channel) Windows version.
+1. Build all images of latest Sitecore version on latest LTSC (Long Term Support Channel) Windows version.
+
+> Images will always be saved locally but not pushed to any remote registries by default. See [Setting up automated builds](#setting-up-automated-builds) for details on how to do this.
 
 When completed, you can run it with:
 
@@ -97,6 +99,9 @@ $installSourcePath = (Join-Path $PSScriptRoot "\packages")
 # optional, on Docker Hub it's your username or organization, else it's the hostname of your
 # own registry. This parameter is optional but you will not be able to push images to a
 # remote registry without.
+#
+# PLEASE NOTE: DO NOT SPECIFY A PUBLIC REGISTRY!
+#
 $registry = "YOUR REGISTRY NAME" `
 
 # optional, default value is the latest Sitecore version on latest LTSC version
