@@ -163,7 +163,13 @@ function Invoke-Build
     $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
 
     # Print results
-    $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
+    Write-Host "Included specifications:"
+
+    $specs | Where-Object { $_.Include } | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
+
+    Write-Host "Excluded specifications:"
+
+    $specs | Where-Object { !$_.Include } | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
 
     # Determine OS
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
@@ -258,16 +264,24 @@ function Invoke-Build
 
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
 
+            # Check to see if we need to stop here...
+            if ([string]::IsNullOrEmpty($Registry))
+            {
+                Write-Host ("### Done with '{0}', but not pushed since 'Registry' was empty." -f $tag) -ForegroundColor Green
+
+                return
+            }
+
             # Tag image
             if ([string]::IsNullOrEmpty($Registry))
             {
                 $fulltag = $tag
-                $PushMode = "Never"
             }
             else
             {
                 $fulltag = "{0}/{1}" -f $Registry, $tag
             }
+
             docker image tag $tag $fulltag
 
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
@@ -275,7 +289,7 @@ function Invoke-Build
             # Check to see if we need to stop here...
             if ($PushMode -eq "Never")
             {
-                Write-Warning ("### Done with '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode)
+                Write-Host ("### Done with '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode) -ForegroundColor Green
 
                 return
             }
@@ -690,11 +704,15 @@ function Get-LatestSupportedVersion
     # pick latest Sitecore version
     $sitecore = $versions | Select-Object -First 1
 
-    # pick latest Windows LTSC version
-    $windows = (Get-SupportedWindowsVersions | Where-Object { $_ -like "ltsc*" } | Select-Object -First 1)
+    # pick latest 'windowsservercore' LTSC version
+    $windowsServerCore = (Get-SupportedWindowsVersions | Where-Object { $_ -like "ltsc*" } | Select-Object -First 1)
+
+    # pick latest 'nanoserver' version matching latest 'windowsservercore' LTSC version
+    $nanoserver = (Get-WindowsServerCoreToNanoServerVersionMap)[$windowsServerCore]
 
     Write-Output (New-Object PSObject -Property @{
-            Sitecore = $sitecore;
-            Windows  = $windows;
+            Sitecore          = $sitecore;
+            WindowsServerCore = $windowsServerCore;
+            NanoServer        = $nanoserver;
         })
 }
