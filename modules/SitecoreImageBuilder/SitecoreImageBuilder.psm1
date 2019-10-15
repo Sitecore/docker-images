@@ -12,7 +12,7 @@ function Invoke-PackageRestore
         [string]$Destination
         ,
         [Parameter(Mandatory = $false)]
-        [array]$Tags = @("*")
+        [array]$Tags = (Get-LatestSupportedVersionTags)
         ,
         [Parameter(Mandatory = $false)]
         [array]$AutoGenerateWindowsVersionTags = (Get-SupportedWindowsVersions)
@@ -133,7 +133,7 @@ function Invoke-Build
         [string]$Registry
         ,
         [Parameter(Mandatory = $false)]
-        [array]$Tags = @("*")
+        [array]$Tags = (Get-LatestSupportedVersionTags)
         ,
         [Parameter(Mandatory = $false)]
         [array]$AutoGenerateWindowsVersionTags = (Get-SupportedWindowsVersions)
@@ -163,13 +163,7 @@ function Invoke-Build
     $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
 
     # Print results
-    Write-Host "Included specifications:"
-
-    $specs | Where-Object { $_.Include } | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
-
-    Write-Host "Excluded specifications:"
-
-    $specs | Where-Object { !$_.Include } | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
+    $specs | Sort-Object -Property Include, Priority, Tag | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
 
     # Determine OS
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
@@ -326,7 +320,7 @@ function Initialize-BuildSpecifications
         [string]$InstallSourcePath
         ,
         [Parameter(Mandatory = $false)]
-        [array]$Tags = @("*")
+        [array]$Tags = (Get-LatestSupportedVersionTags)
         ,
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
@@ -715,4 +709,12 @@ function Get-LatestSupportedVersion
             WindowsServerCore = $windowsServerCore;
             NanoServer        = $nanoserver;
         })
+}
+
+function Get-LatestSupportedVersionTags
+{
+    $latest = Get-LatestSupportedVersion
+
+    Write-Output ("*:{0}*{1}" -f $latest.Sitecore, $latest.WindowsServerCore)
+    Write-Output ("*:{0}*{1}" -f $latest.Sitecore, $latest.NanoServer)
 }
