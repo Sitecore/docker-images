@@ -2,7 +2,7 @@
 
 ## October 2019
 
-- [**Breaking**] When building and restoring packages, then default value used on the `-Tags` parameter will now *only* build images of the latest Sitecore version (including variants such as SXA/SPE) on the latest LTSC (Long Term Support Channel) Windows version instead of *everything*. As of today that would be Sitecore 9.2.0 on `windowsservercore-ltsc2019`. See [README.md](/README.md#setting-up-automated-builds) for more details.
+- [**Breaking**] When building, then default value used for the `-Tags` parameter will now *only* build images of the latest Sitecore version (including variants such as SXA/SPE) on the latest LTSC (Long Term Support Channel) Windows version instead of *everything*. As of today that would be Sitecore 9.2.0 on `windowsservercore-ltsc2019`. See [README.md](/README.md#setting-up-automated-builds) for more details.
 - [**Breaking**] Switched from using SIF to manual installing contents from the Sitecore WDP's.
   - Official `mcr.microsoft.com/dotnet/framework/aspnet` images are now used at runtime:
     - Sitecore in now install into `C:\inetpub\wwwroot` instead of `C:\inetpub\sc`.
@@ -14,7 +14,7 @@
 - [**Breaking**] Windows base and variant images merged into `.\windows`:
   - When calling `Invoke-PackageRestore` and `Invoke-Build` you need to point to `.\windows` going forward.
   - The previous `.\images`, `.\variants` and `.\tests` is moved into `.\legacy` so you can still build them if needed.
-    - **IMPORTANT**: Do not build **BOTH** `.\windows` **and** `.\legacy` images as they will **overwrite each other** as most tags are the same.
+    - **IMPORTANT**: Do not build **BOTH** `.\windows` and `.\legacy` images as they will **overwrite each other** as *most* tags are the same.
   - New docker-compose files added for testing into `.\windows\tests`, you can override the default values in the `.env` file using system environment variables to test other Sitecore versions and/or Windows versions.
 - [**Breaking**] Sitecore XM images has been renamed from `sitecore-xm1-*` to `sitecore-xm-*`.
 - [**Breaking**] Sitecore license file `license.xml` is no longer embedded into the images and you are now **required** to mount a folder that has the license into `C:\license` inside the containers.
