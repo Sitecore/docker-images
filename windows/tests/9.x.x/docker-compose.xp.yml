@@ -21,7 +21,7 @@ services:
   xconnect:
     image: ${REGISTRY}sitecore-xp-xconnect:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect:C:\inetpub\wwwroot\App_Data\logs
     mem_limit: 1GB
     links:
@@ -31,7 +31,7 @@ services:
   xconnect-automationengine:
     image: ${REGISTRY}sitecore-xp-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
     mem_limit: 500MB
     links:
@@ -41,7 +41,7 @@ services:
   xconnect-indexworker:
     image: ${REGISTRY}sitecore-xp-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
     mem_limit: 500MB
     links:
@@ -51,7 +51,7 @@ services:
   cd:
     image: ${REGISTRY}sitecore-xp-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44002:80"
@@ -63,7 +63,7 @@ services:
   cm:
     image: ${REGISTRY}sitecore-xp-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"

@@ -60,7 +60,7 @@ This will:
 
 When completed:
 
-1. Place your Sitecore license file at `C:\license\license.xml`
+1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
 1. Then run any of the docker-compose files, for example an XM with: `docker-compose --file .\windows\tests\9.x.x\docker-compose.xm.yml up`
 
 ### Setting up automated builds
