@@ -5,7 +5,7 @@
 - [**Breaking**] When building, then default value used for the `-Tags` parameter will now *only* build images of the latest Sitecore version (including variants such as SXA/SPE) on the latest LTSC (Long Term Support Channel) Windows version instead of *everything*. As of today that would be Sitecore 9.2.0 on `windowsservercore-ltsc2019`. See [README.md](/README.md#setting-up-automated-builds) for more details.
 - [**Breaking**] Switched from using SIF to manual installing contents from the Sitecore WDP's.
   - Official `mcr.microsoft.com/dotnet/framework/aspnet` images are now used at runtime:
-    - Sitecore in now install into `C:\inetpub\wwwroot` instead of `C:\inetpub\sc`.
+    - Sitecore in now installed into `C:\inetpub\wwwroot` instead of `C:\inetpub\sc`.
     - IIS site `Default Web Site` and application pool `DefaultAppPool` is now used instead of `sc`.
   - The `WatchDirectory.ps1` helper script has been moved from `C:\Sitecore\Scripts`:
     - It's now in `C:\tools\scripts` and this path is also in the system PATH.
