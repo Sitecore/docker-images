@@ -58,11 +58,10 @@ This will:
 
 > Images will always be saved locally but not pushed to any remote registries by default. See [Setting up automated builds](#setting-up-automated-builds) for details on how to do this.
 
-When completed, you can run it with:
+When completed:
 
-```shell
-docker-compose --file .\windows\tests\9.x.x\docker-compose.xm.yml up
-```
+1. Place your Sitecore license file at `C:\license\license.xml`
+1. Then run any of the docker-compose files, for example an XM with: `docker-compose --file .\windows\tests\9.x.x\docker-compose.xm.yml up`
 
 ### Setting up automated builds
 

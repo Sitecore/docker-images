@@ -2,7 +2,25 @@
 
 ## October 2019
 
-- [Changed] Made the $Registry parameter optional. Not specifying the $Registry will build the images locally only.
+- [**Breaking**] When building and restoring packages, then default value used on the `-Tags` parameter will now *only* build images of the latest Sitecore version (including variants such as SXA/SPE) on the latest LTSC (Long Term Support Channel) Windows version instead of *everything*. As of today that would be Sitecore 9.2.0 on `windowsservercore-ltsc2019`. See [README.md](/README.md#setting-up-automated-builds) for more details.
+- [**Breaking**] Switched from using SIF to manual installing contents from the Sitecore WDP's.
+  - Official `mcr.microsoft.com/dotnet/framework/aspnet` images are now used at runtime:
+    - Sitecore in now install into `C:\inetpub\wwwroot` instead of `C:\inetpub\sc`.
+    - IIS site `Default Web Site` and application pool `DefaultAppPool` is now used instead of `sc`.
+  - The `WatchDirectory.ps1` helper script has been moved from `C:\Sitecore\Scripts`:
+    - It's now in `C:\tools\scripts` and this path is also in the system PATH.
+    - New script `Invoke-XdtTransform.ps1` added.
+  - Docker files has been rewritten (also with comments) and images are now smaller and has fewer layers.
+- [**Breaking**] Windows base and variant images merged into `.\windows`:
+  - When calling `Invoke-PackageRestore` and `Invoke-Build` you need to point to `.\windows` going forward.
+  - The previous `.\images`, `.\variants` and `.\tests` is moved into `.\legacy` so you can still build them if needed.
+    - **IMPORTANT**: Do not build **BOTH** `.\windows` **and** `.\legacy` images as they will **overwrite each other** as most tags are the same.
+  - New docker-compose files added for testing into `.\windows\tests`, you can override the default values in the `.env` file using system environment variables to test other Sitecore versions and/or Windows versions.
+- [**Breaking**] Sitecore XM images has been renamed from `sitecore-xm1-*` to `sitecore-xm-*`.
+- [**Breaking**] Sitecore license file `license.xml` is no longer embedded into the images and you are now **required** to mount a folder that has the license into `C:\license` inside the containers.
+- [Added] Quick start `.\Build.ps1` script added for simpler on-boarding when you just want to try out Sitecore on Docker. See [README.md](/README.md#quick-start) for more details.
+- [Changed] XM and XP Solr images on Windows now has the Sitecore schema embedded like the Linux images. No need to remember to run "Populate managed schema" anymore.
+- [Changed] Made the `-Registry` parameter optional. Not specifying the `-Registry` will build the images locally only.
 
 ## September 2019
 
@@ -40,7 +58,7 @@
 - [**Breaking**] To build deprecated image tags, you now need set the `DeprecatedTagsBehavior` parameter to `Include`.
 - [Deprecated] All 1709 images is now deprecated as the [.NET framework is no longer supported on this build](https://github.com/Microsoft/dotnet-framework-docker/issues/259). You can still build them using `-DeprecatedTagsBehavior "Include"`.
 - [Removed] ltsc2016 images is now deleted completely as ltsc2019 is now the current ltsc version.
-- [Fixed] Using `ARG` variables in Docker files can now be with and without `{}`. 
+- [Fixed] Using `ARG` variables in Docker files can now be with and without `{}`.
 - [Changed] The `build.json` format has changed to support the use of `build-arg` during `docker image build`. In this new format we can support multiple release channels (ie 1803, ltsc2019, 1903) within a single build folder using `ARG` while reducing maintenance time and disk space needed.
 - [Deprecated] Sitecore 8.2 rev. 161221 is now marked as deprecated. You can still build them using `-DeprecatedTagsBehavior "Include"`.
 - [Deprecated] Sitecore 7.5 is now marked as deprecated. You can still build them using `-DeprecatedTagsBehavior "Include"`.
