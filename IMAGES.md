@@ -5,7 +5,7 @@
 - [Windows images](#current-images)
 - [Linux images](#current-linux)
 
-> Deprecated tags are marked with ~~strikethrough~~ and are not built by default.
+> Deprecated tags are marked with ~~strike through~~ and they are not built by default.
 
 ## Current Windows images
 
