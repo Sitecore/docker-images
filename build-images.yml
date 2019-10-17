@@ -66,6 +66,8 @@ stages:
         displayName: "Build Base Images"
         pool:
           name: Docker
+          demands:
+            - Agent.OS -equals Windows_NT
         steps:
           - task: Docker@2
             displayName: login
@@ -103,6 +105,8 @@ stages:
         displayName: "Build Variant Images"
         pool:
           name: Docker
+          demands:
+            - Agent.OS -equals Windows_NT
         steps:
           - task: Docker@2
             displayName: login
