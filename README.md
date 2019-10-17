@@ -40,7 +40,7 @@ Here is the convention used when tagging images:
 
 ### Prerequisites
 
-- A **private** Docker repository. Any will do, but the easiest is to use a [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/) or to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), you need at least the "Small" plan at $12/mo.
+- *Now Optional* - A **private** Docker repository. Any will do, but the easiest is to use a [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/) or to sign-up for a private plan on [https://hub.docker.com](https://hub.docker.com), you need at least the "Small" plan at $12/mo.
 - A file share that your build agents can reach, where you have placed zip files downloaded from [https://dev.sitecore.net/](https://dev.sitecore.net/) **and** your license.xml.
 - Some kind of build server for example TeamCity, with agents that runs:
   - Windows 10 or Windows Server 2016 that is up to date and on latest build.
@@ -65,7 +65,7 @@ Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 
 # Settings
 $installSourcePath = (Join-Path $PSScriptRoot "\packages") # PATH TO WHERE YOU KEEP ALL SITECORE ZIP FILES AND LICENSE.XML, can be on local machine or a file share.
-$registry = "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your own registry.
+$registry = "YOUR REGISTRY NAME" ` # On Docker Hub it's your username or organization, else it's the hostname of your own registry. Note that this parameter is now optional.
 $sitecoreUsername = "YOUR dev.sitecore.net USERNAME"
 $sitecorePassword = "YOUR dev.sitecore.net PASSWORD"
 

@@ -4,11 +4,11 @@ function Invoke-PackageRestore
     [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })]
         [string]$Path
         ,
         [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()] 
+        [ValidateNotNullOrEmpty()]
         [string]$Destination
         ,
         [Parameter(Mandatory = $false)]
@@ -34,11 +34,11 @@ function Invoke-PackageRestore
     $downloadUrl = "https://dev.sitecore.net"
 
     # Load packages file
-    $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\sitecore-packages.json") 
+    $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\sitecore-packages.json")
     $packages = $packagesFile | Get-Content | ConvertFrom-Json
-    
-    $destinationPath = $($Destination.Trim('\'))
-    
+
+    $destinationPath = $Destination.TrimEnd('\')
+
     # Ensure destination exists
     if (!(Test-Path $destinationPath -PathType "Container"))
     {
@@ -49,12 +49,12 @@ function Invoke-PackageRestore
     $downloadSession = $null
     $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path) -InstallSourcePath $destinationPath -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
-    
+
     # Check or download needed files
     $expected | ForEach-Object {
         $filePath = $_
 
-        if (Test-Path $filePath -PathType Leaf) 
+        if (Test-Path $filePath -PathType Leaf)
         {
             $requiredFile = Get-Item -Path $filePath
 
@@ -68,12 +68,12 @@ function Invoke-PackageRestore
             Remove-Item -Path $filePath -Force
         }
 
-        $fileName = $filePath.Replace($destinationPath, "")
+        $fileName = $filePath.Replace(("{0}\" -f $destinationPath), "")
         $package = $packages.$fileName
 
         if ($null -eq $package)
         {
-            throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package '{2}' manually." -f $fileName, $packagesFile.FullName, $filePath)
+            throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package ' { 2 }' manually." -f $fileName, $packagesFile.FullName, $filePath)
         }
 
         $fileUrl = $package.url
@@ -106,7 +106,7 @@ function Invoke-PackageRestore
 
             # Download package using saved session
             Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
-        
+
             Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $downloadSession -UseBasicParsing
         }
     }
@@ -119,14 +119,13 @@ function Invoke-Build
     [CmdletBinding(SupportsShouldProcess = $true)]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })]
         [string]$Path
         ,
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })]
         [string]$InstallSourcePath
         ,
-        [Parameter(Mandatory = $true)]
         [string]$Registry
         ,
         [Parameter(Mandatory = $false)]
@@ -159,6 +158,9 @@ function Invoke-Build
     # Print results
     $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
 
+    # Determine OS
+    $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
+
     Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
     # Pull latest external images
@@ -167,7 +169,7 @@ function Invoke-Build
         if ($PullMode -eq "Always")
         {
             $baseImages = @()
-            
+
             # Find external base images of included specifications
             $specs | Where-Object { $_.Include -eq $true } | ForEach-Object {
                 $spec = $_
@@ -204,10 +206,10 @@ function Invoke-Build
             $tag = $spec.Tag
 
             Write-Host ("### Processing '{0}'..." -f $tag)
-        
+
             # Save the digest of previous builds for later comparison
             $previousDigest = $null
-        
+
             if ((docker image ls $tag --quiet))
             {
                 $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
@@ -224,9 +226,8 @@ function Invoke-Build
                     Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
                 }
             }
-        
+
             # Build image
-            $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | % { $_.OSType })
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
 
             if ($osType -eq "windows")
@@ -236,18 +237,25 @@ function Invoke-Build
 
             $buildOptions.AddRange($spec.BuildOptions)
             $buildOptions.Add("--tag '$tag'")
-        
+
             $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
-        
+
             Write-Verbose ("Invoking: {0} " -f $buildCommand) -Verbose:$VerbosePreference
 
             & ([scriptblock]::create($buildCommand))
-        
+
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
 
             # Tag image
-            $fulltag = "{0}/{1}" -f $Registry, $tag
-
+            if ([string]::IsNullOrEmpty($Registry))
+            {
+                $fulltag = $tag
+                $PushMode = "Never"
+            }
+            else
+            {
+                $fulltag = "{0}/{1}" -f $Registry, $tag
+            }
             docker image tag $tag $fulltag
 
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
@@ -284,11 +292,11 @@ function Initialize-BuildSpecifications
 {
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateNotNull()] 
+        [ValidateNotNull()]
         [PSCustomObject]$Specifications
         ,
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })]
         [string]$InstallSourcePath
         ,
         [Parameter(Mandatory = $false)]
@@ -311,7 +319,7 @@ function Initialize-BuildSpecifications
         $spec.Sources | ForEach-Object {
             $sources += (Join-Path $InstallSourcePath $_)
         }
-        
+
         $spec.Sources = $sources
     }
 
@@ -320,7 +328,7 @@ function Initialize-BuildSpecifications
         $spec = $_
 
         $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
-         
+
         if ($spec.Include -eq $true -and $spec.Deprecated -eq $true -and $DeprecatedTagsBehavior -eq "Skip")
         {
             $spec.Include = $false
@@ -337,7 +345,7 @@ function Initialize-BuildSpecifications
 
             # Recursively iterate bases, excluding external ones, and re-include them
             $baseSpecs = $Specifications | Where-Object { $spec.Base -contains $_.Tag }
-        
+
             while ($null -ne $baseSpecs)
             {
                 $baseSpecs | ForEach-Object {
@@ -360,41 +368,41 @@ function Initialize-BuildSpecifications
     $defaultPriority = 1000
     $priorities = New-Object System.Collections.Specialized.OrderedDictionary
     $priority = 0
-    
-    "^mssql-developer:(.*)$", 
-    "^sitecore-openjdk:(.*)$", 
-    "^sitecore-base:(.*)$", 
-    "^sitecore-xm-sql:(.*)$", 
-    "^sitecore-xm-pse-(.*):(.*)$", 
-    "^sitecore-xm1-sqldev:(.*)$", 
-    "^sitecore-xm1-pse-(.*)-sqldev:(.*)$", 
-    "^sitecore-xm1-pse-(.*)-cm:(.*)$", 
-    "^sitecore-xp-sql:(.*)$", 
-    "^sitecore-xp-pse-(.*)-sql:(.*)$", 
-    "^sitecore-xp-base:(.*)$", 
-    "^sitecore-xp-xconnect:(.*)$", 
-    "^sitecore-xp-pse-(.*)-sqldev:(.*)$", 
+
+    "^mssql-developer:(.*)$",
+    "^sitecore-openjdk:(.*)$",
+    "^sitecore-base:(.*)$",
+    "^sitecore-xm-sql:(.*)$",
+    "^sitecore-xm-pse-(.*):(.*)$",
+    "^sitecore-xm1-sqldev:(.*)$",
+    "^sitecore-xm1-pse-(.*)-sqldev:(.*)$",
+    "^sitecore-xm1-pse-(.*)-cm:(.*)$",
+    "^sitecore-xp-sql:(.*)$",
+    "^sitecore-xp-pse-(.*)-sql:(.*)$",
+    "^sitecore-xp-base:(.*)$",
+    "^sitecore-xp-xconnect:(.*)$",
+    "^sitecore-xp-pse-(.*)-sqldev:(.*)$",
     "^sitecore-xp-pse-(.*)-standalone:(.*)$" | ForEach-Object {
         $priorities.Add($_, $priority)
         $priority++
     }
-    
-    $priorities.Add("^(.*)$", $defaultPriority)
 
-    # Update specs, set priority according to rules
-    $Specifications | ForEach-Object {
-        $spec = $_
-        $rule = $priorities.Keys | Where-Object { $spec.Tag -match $_ } | Select-Object -First 1
-    
-        $spec.Priority = $priorities[$rule]
-    }
+$priorities.Add("^(.*)$", $defaultPriority)
 
-    # Reorder specs, priorities goes first
-    $specs = [System.Collections.ArrayList]@()
-    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
-    $specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
+# Update specs, set priority according to rules
+$Specifications | ForEach-Object {
+    $spec = $_
+    $rule = $priorities.Keys | Where-Object { $spec.Tag -match $_ } | Select-Object -First 1
 
-    return $specs
+    $spec.Priority = $priorities[$rule]
+}
+
+# Reorder specs, priorities goes first
+$specs = [System.Collections.ArrayList]@()
+$specs.AddRange(@($Specifications | Where-Object { $_.Priority -lt $defaultPriority } | Sort-Object -Property Priority))
+$specs.AddRange(@($Specifications | Where-Object { $_.Priority -eq $defaultPriority }))
+
+return $specs
 }
 
 function Get-BuildSpecifications
@@ -402,7 +410,7 @@ function Get-BuildSpecifications
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })]
         [string]$Path
     )
 
@@ -411,7 +419,7 @@ function Get-BuildSpecifications
         $buildFilePath = $_.FullName
         $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
         $dockerFile = Get-Item -Path (Join-Path $buildContextPath "\Dockerfile")
-        
+
         $sources = @()
 
         if ($null -ne $data.sources)
@@ -420,7 +428,7 @@ function Get-BuildSpecifications
         }
 
         $dataTags = $data.tags
-        
+
         if ($null -eq $dataTags)
         {
             $dataTags = @()
@@ -439,7 +447,7 @@ function Get-BuildSpecifications
         $dockerFileContent = $dockerFile | Get-Content
         $dockerFileArgLines = $dockerFileContent | Select-String -SimpleMatch "ARG " -CaseSensitive | ForEach-Object { Write-Output $_.ToString().Replace("ARG ", "") }
         $dockerFileFromLines = $dockerFileContent | Select-String -SimpleMatch "FROM " -CaseSensitive | ForEach-Object { Write-Output $_.ToString().Replace("FROM ", "") }
-        
+
         $dataTags | ForEach-Object {
             $tag = $_
             $options = $tag.'build-options'
@@ -449,7 +457,7 @@ function Get-BuildSpecifications
                 $options = @()
 
                 # TODO: Removed when all build.json files has been converted to new format
-                if ($tag.tag -like "*sql*") 
+                if ($tag.tag -like "*sql*")
                 {
                     $options += "--memory 4GB"
                 }
@@ -470,7 +478,7 @@ function Get-BuildSpecifications
                 {
                     $image = $image.Substring(0, $image.IndexOf(" as "))
                 }
-            
+
                 if ($image -like "`$*")
                 {
                     $argName = $image.Replace("`$", "").Replace("{", "").Replace("}", "")
@@ -498,7 +506,7 @@ function Get-BuildSpecifications
                         }
                     }
                 }
-                
+
                 Write-Output $image
             }
 
@@ -506,7 +514,7 @@ function Get-BuildSpecifications
             {
                 throw ("Parse error, no base images was found in Dockerfile '{0}'." -f $dockerFile.FullName)
             }
-            
+
             Write-Output (New-Object PSObject -Property @{
                     Tag            = $tag.tag;
                     BuildOptions   = @($options);
@@ -527,10 +535,10 @@ function Get-CurrentImages
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })]
         [string]$Path
     )
-    
+
     $tagParser = [regex]"^(?<repository>[^:]*):(?<version>[^-]*)-(?<os>[^-]+)(?:-(?<build>.*))?$"
 
     Get-BuildSpecifications -Path $Path | ForEach-Object {
@@ -562,10 +570,10 @@ function Get-CurrentImagesMarkdown
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [ValidateScript( { Test-Path $_ -PathType "Container" })] 
+        [ValidateScript( { Test-Path $_ -PathType "Container" })]
         [string]$Path
     )
-    
+
     Write-Output "| Version | Repository | OS  | Build      | Tag |"
     Write-Output "| ------- | ---------- | --- | -----------| --- |"
 
