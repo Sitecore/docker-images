@@ -1,5 +1,7 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
 [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
+[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "RegistryPassword")]
+
 param(
     [Parameter(Mandatory = $false)]
     [ValidateNotNullOrEmpty()]
@@ -12,6 +14,16 @@ param(
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string]$SitecorePassword
+    ,
+    [Parameter(Mandatory = $false)]
+    [string]$Registry = ""
+    ,
+    [Parameter(Mandatory = $false)]
+    [string]$RegistryUserName = ""
+    ,
+    [Parameter(Mandatory = $false)]
+    [string]$RegistryPassword = ""
+
 )
 
 $ErrorActionPreference = "STOP"
@@ -32,4 +44,5 @@ SitecoreImageBuilder\Invoke-PackageRestore `
 SitecoreImageBuilder\Invoke-Build `
     -Path (Join-Path $PSScriptRoot "\windows") `
     -InstallSourcePath $InstallSourcePath `
+    -Registry $Registry `
     -WhatIf:$WhatIfPreference
