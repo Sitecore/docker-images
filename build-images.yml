@@ -60,10 +60,10 @@ stages:
               Test-NetConnection -ComputerName "$(shared.folder.server)" -Port 445
               Invoke-Expression -Command "cmdkey /add:$(shared.folder.server) /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
-      - job: Build_Base_Images
+      - job: Build_Images
         dependsOn: Connect_Asset_Drive
         timeoutInMinutes: 720
-        displayName: "Build Base Images"
+        displayName: "Build Images"
         pool:
           name: Docker
         steps:
