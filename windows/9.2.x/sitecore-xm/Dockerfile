@@ -11,15 +11,16 @@ ARG ASSETS_USE_WDP
 ARG SC_ROLE_CONFIG_DIRECTORY
 
 COPY --from=assets ["${ASSETS_USE_WDP}", "C:\\temp\\packages\\"]
-COPY --from=assets ["c:\\patches\\", "c:\\patches\\"]
-
 
 # expand selected wdp and copy to install into the webroot
 RUN Expand-Archive -Path 'C:\\temp\\packages\\*.zip' -DestinationPath 'C:\\temp'; `
     Copy-Item -Path 'C:\\temp\\Content\\Website\\*' -Destination 'C:\\inetpub\\wwwroot' -Recurse -Force;
 
-# apply any patches that were collected
-RUN Copy-Item -Path 'C:\\patches\\bin\\*.dll' -Destination 'C:\\inetpub\\wwwroot\\bin' -Force;
+# copy patches
+COPY --from=assets ["c:\\patches\\", "c:\\patches\\"]
+
+# apply patches
+RUN Get-ChildItem -Path 'C:\\patches' -Exclude ".gitkeep" | Copy-Item -Destination 'C:\\inetpub\\wwwroot' -Recurse -Force;
 
 # configure wwwroot
 RUN Copy-Item -Path 'C:\\inetpub\\wwwroot\\App_Config\\Include\\Examples\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config.example' -Destination 'C:\\inetpub\\wwwroot\\App_Config\\Include\\Sitecore.Owin.Authentication.IdentityServer.Disabler.config'; `
