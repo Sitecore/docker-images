@@ -389,22 +389,32 @@ function Initialize-BuildSpecifications
     $priorities = New-Object System.Collections.Specialized.OrderedDictionary
     $priority = 0
     $patterns = @(
-        "^sitecore-assets:(.*)$",
-        "^sitecore-certificates:(.*)$",
-        "^mssql-developer:(.*)$",
-        "^sitecore-openjdk:(.*)$",
-        "^sitecore-base:(.*)$",
-        "^sitecore-xm-sql:(.*)$",
-        "^sitecore-xm-pse-(.*):(.*)$",
-        "^sitecore-xm1-sqldev:(.*)$",
-        "^sitecore-xm1-pse-(.*)-sqldev:(.*)$",
-        "^sitecore-xm1-pse-(.*)-cm:(.*)$",
-        "^sitecore-xp-sql:(.*)$",
-        "^sitecore-xp-pse-(.*)-sql:(.*)$",
-        "^sitecore-xp-base:(.*)$",
-        "^sitecore-xp-xconnect:(.*)$",
-        "^sitecore-xp-pse-(.*)-sqldev:(.*)$",
-        "^sitecore-xp-pse-(.*)-standalone:(.*)$"
+        "^sitecore-assets:(.*)$", # dependency
+        "^sitecore-certificates:(.*)$", # dependency
+        "^sitecore-openjdk:(.*)$", # dependency
+        "^mssql-developer:(.*)$", # dependency
+
+        "^sitecore-base:(.*)$", # legacy\images
+        "^sitecore-xp-base:(.*)$", # legacy\images
+        "^sitecore-xp-xconnect:(.*)$", # legacy\images
+        "^sitecore-xm1-(sql|sqldev):(.*)$", # legacy\images
+        "^sitecore-xm1-(standalone|cm|cd):(.*)$" # legacy\images
+
+        "^sitecore-(xm1|xp)-pse-(.*)-sqldev:(.*)$" # legacy\variants
+        "^sitecore-(xm1|xp)-pse-(.*)-(standalone|cm|cd):(.*)$" # legacy\variants
+        "^sitecore-(xm1|xp)-sxa-(.*)-sqldev:(.*)$" # legacy\variants
+        "^sitecore-(xm1|xp)-sxa-(.*)-(standalone|cm|cd):(.*)$" # legacy\variants
+
+        "^sitecore-(xm|xp)-(sql|sqldev):(.*)$", # windows/linux platform
+        "^sitecore-(xm|xp)-(standalone|cm|cd):(.*)$" # windows platform
+
+        "^sitecore-(xm|xp)-(spe|pse)-sqldev:(.*)$" # SPE windows variants
+        "^sitecore-(xm|xp)-(spe|pse)-(.*)-sql:(.*)$" # SPE linux variants (TODO: remove when linux tags are aligned with windows)
+        "^sitecore-(xm|xp)-(spe|pse)-(standalone|cm|cd):(.*)$" # SPE windows variants
+
+        "^sitecore-(xm|xp)-sxa-sqldev:(.*)$" # SXA windows variants
+        "^sitecore-(xm|xp)-sxa-(.*)-sql:(.*)$" # SXA linux variants (TODO: remove when linux tags are aligned with windows)
+        "^sitecore-(xm|xp)-sxa-(standalone|cm|cd):(.*)$" # SXA  windows variants
     )
 
     $patterns | ForEach-Object {
