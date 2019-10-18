@@ -18,5 +18,4 @@ COPY . ${INSTALL_MODULE_PATH}
 RUN & (Join-Path $env:INSTALL_MODULE_PATH "\\Extract-Databases.ps1") -Path $env:INSTALL_MODULE_PATH; `
     & (Join-Path $env:INSTALL_MODULE_PATH "\\Install-Databases.ps1") -InstallPath $env:INSTALL_PATH -DataPath $env:DATA_PATH -ModulePath $env:INSTALL_MODULE_PATH -DatabasePrefix Sitecore; `
     Get-ChildItem -Path $env:INSTALL_PATH -Exclude "*.mdf", "*.ldf" | Remove-Item -Force; `
-    Get-ChildItem -Path $env:INSTALL_MODULE_PATH | Remove-Item -Force;  
-
+    Get-ChildItem -Path $env:INSTALL_MODULE_PATH | Remove-Item -Force;
