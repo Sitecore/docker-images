@@ -1,9 +1,22 @@
-trigger: none
+trigger:
+  batch: true
+  branches:
+    include:
+    - master
+    - integration/*
+schedules: 
+  - cron: "0 12 * * 0"
+    displayName: Weekly Sunday build
+    branches:
+      include:
+      - master
+    always: true
 pr:
   autoCancel: true
   branches:
     include:
     - master
+
 stages:
   - stage: Start_Windows_VM
     dependsOn: []
@@ -47,10 +60,10 @@ stages:
               Test-NetConnection -ComputerName "$(shared.folder.server)" -Port 445
               Invoke-Expression -Command "cmdkey /add:$(shared.folder.server) /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
-      - job: Build_Base_Images
+      - job: Build_Images
         dependsOn: Connect_Asset_Drive
         timeoutInMinutes: 720
-        displayName: "Build Base Images"
+        displayName: "Build Images"
         pool:
           name: Docker
         steps:
@@ -62,66 +75,12 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
-              $sourceBranch = "$(Build.SourceBranch)"
-              $tags = "blank"
-              if ($sourceBranch.Contains("feature")) {
-                $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
-                $result = [regex]::match($sourceBranch,$pattern).Groups[1].Value
-                $tags = "*:$result*-$(windows.image.releasechannel)"
-              }
-              else
-              {
-                $tags = "$(image.tags)-$(windows.image.releasechannel)"
-              }
-
-              Write-Host "Setting image tags to $tags"
-              Write-Host "##vso[task.setvariable variable=image.tags]$tags"
-              Write-Host "##vso[task.setvariable variable=variant.tags]$tags"
               $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-              $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
-              Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
-              Write-Host "Building image tags $tags"
-              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "images") -Destination $(install.source.path) -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "images") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $tags
+              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(install.source.path) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -PushMode $(PushMode)
             errorActionPreference: silentlyContinue
             continueOnError: "true"
-      - job: Build_Variants
-        dependsOn: Build_Base_Images
-        displayName: "Build Variant Images"
-        pool:
-          name: Docker
-        steps:
-          - task: Docker@2
-            displayName: login
-            inputs:
-              containerRegistry: "docker-registry"
-              command: login
-          - checkout: self
-            clean: all
-          - powershell: |
-              $sourceBranch = "$(Build.SourceBranch)"
-                            $tags = "blank"
-              if ($sourceBranch.Contains("feature")) {
-                $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
-                $result = [regex]::match($sourceBranch,$pattern).Groups[1].Value
-                $tags = "*:$result*-$(windows.image.releasechannel)"
-              }
-              else
-              {
-                $tags = "$(variant.tags)-$(windows.image.releasechannel)"
-              }
-              Write-Host "Setting image tags to $tags"
-              Write-Host "##vso[task.setvariable variable=image.tags]$tags"
-              Write-Host "##vso[task.setvariable variable=variant.tags]$tags"
-              $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin sitecoredemocontainers.azurecr.io
-              $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
-              Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
-              Write-Host "Building variant tags $tags"
-              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -Destination $(install.source.path) -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "variants") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -Tags $tags
-            errorActionPreference: silentlyContinue
-            continueOnError: "true"
-            timeoutInMinutes: 720
   - stage: Build_Linux_Images
     dependsOn: Start_Linux_VM
     jobs:
@@ -163,26 +122,10 @@ stages:
                 sudo mount -t cifs //$(shared.folder.server)/docker-assets /mnt/dockerassets -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
 
         - powershell: |
-            $sourceBranch = "$(Build.SourceBranch)"
-            $tags = "blank"
-            if ($sourceBranch.Contains("feature")) {
-              $pattern = "^.*/feature/([0-9]\.[0-9]\.[0-9])"
-              $result = [regex]::match($sourceBranch,$pattern).Groups[1].Value
-              $tags = "*:$result*"
-            }
-            else
-            {
-              $tags = "$(image.tags)"
-            }
+              $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "/mnt/dockerassets" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "/mnt/dockerassets" -Registry $(container.registry.name) -PushMode $(PushMode)
 
-            Write-Host "Setting image tags to $tags"
-            Write-Host "##vso[task.setvariable variable=image.tags]$tags"
-            Write-Host "##vso[task.setvariable variable=variant.tags]$tags"
-            $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-            $modulePath = (Join-Path "$(Build.SourcesDirectory)" "modules")
-            Import-Module (Join-Path $modulePath "SitecoreImageBuilder") -Force
-            Write-Host "Building image tags $tags"
-            SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "/mnt/dockerassets" -Tags $tags -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-            SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "/mnt/dockerassets" -Registry $(container.registry.name) -Tags $tags
           errorActionPreference: silentlyContinue
           continueOnError: "true"

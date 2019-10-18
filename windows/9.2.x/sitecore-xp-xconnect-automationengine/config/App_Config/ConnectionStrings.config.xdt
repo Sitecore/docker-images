@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <add name="xconnect.collection" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xconnect.collection.certificate" connectionString="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.marketingautomation" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.MarketingAutomation" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.referencedata" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.ReferenceData" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="messaging" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Messaging" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+</connectionStrings>

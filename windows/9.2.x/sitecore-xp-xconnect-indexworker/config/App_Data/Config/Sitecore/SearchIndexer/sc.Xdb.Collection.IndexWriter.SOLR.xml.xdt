@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <Sitecore>
+        <XConnect>
+            <SearchIndexer>
+                <Services>
+                    <Solr.SolrReaderSettings>
+                        <Options>
+                            <RequireHttps xdt:Transform="Replace">false</RequireHttps>
+                        </Options>
+                    </Solr.SolrReaderSettings>
+                    <Solr.SolrWriterSettings>
+                        <Options>
+                            <RequireHttps xdt:Transform="Replace">false</RequireHttps>
+                        </Options>
+                    </Solr.SolrWriterSettings>
+                </Services>
+            </SearchIndexer>
+        </XConnect>
+    </Sitecore>
+</Settings>
