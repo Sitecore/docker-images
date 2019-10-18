@@ -1,0 +1,3 @@
+az aks create -g aks -n sc920 --node-count 3 --enable-addons monitoring --kubernetes-version 1.15.3 --generate-ssh-keys --windows-admin-password Pass@word123! --windows-admin-username azureuser --vm-set-type VirtualMachineScaleSets --network-plugin azure --nodepool-name linux --node-vm-size Standard_B2ms
+az aks nodepool add -g aks -n sc920 --cluster-name win --os-type Windows --node-count 3 --node-vm-size Standard_B2ms
+az aks update -n sc920 -g aks --attach-acr prftsc

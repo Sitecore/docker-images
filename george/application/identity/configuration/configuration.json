@@ -1,0 +1,50 @@
+{
+  "configuration": [
+    {
+      "path": "Config/production/Sitecore.IdentityServer.Host.xml",
+      "mappings": [
+        {
+          "xpath": "Settings/Sitecore/IdentityServer/CertificateThumbprint",
+          "property": "#text",
+          "value": "$env:SI_CERT_THUMBPRINT"
+        },
+        {
+          "xpath": "Settings/Sitecore/IdentityServer/CertificateStoreLocation",
+          "property": "#text",
+          "value": "$env:SI_CERT_STORE_LOCATION"
+        },
+        {
+          "xpath": "Settings/Sitecore/IdentityServer/CertificateStoreName",
+          "property": "#text",
+          "value": "$env:SI_CERT_STORE_NAME"
+        },
+        {
+          "xpath": "Settings/Sitecore/IdentityServer/SitecoreMembershipOptions/ConnectionString",
+          "property": "#text",
+          "value": "$env:SC_MEMBERSHIP_CONN_STRING"
+        },
+        {
+          "xpath": "Settings/Sitecore/IdentityServer/AccountOptions/PasswordRecoveryUrl",
+          "property": "#text",
+          "value": "$($env:SC_CM_URL)/sitecore/login?rc=1"
+        },
+        {
+          "xpath": "Settings/Sitecore/IdentityServer/Clients/DefaultClient/AllowedCorsOrigins/AllowedCorsOriginsGroup1",
+          "property": "#text",
+          "value": "$env:SC_CM_URL"
+        },
+        {
+          "xpath": "Settings/Sitecore/IdentityServer/Clients/PasswordClient/ClientSecrets/ClientSecret1",
+          "property": "#text",
+          "value": "$env:SI_CLIENT_SECRET"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "path": "/configuration/cert.pfx",
+      "secret": "secret"
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "configuration": [
+    {
+      "path": "App_Config/ConnectionStrings.config",
+      "mappings": [
+        {
+          "xpath": "connectionStrings/add[@name='collection']",
+          "property": "connectionString",
+          "value": "$env:SC_SHARDMAPMANAGER_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='solrCore']",
+          "property": "connectionString",
+          "value": "$env:SOLR_XDB_CORE_URL"
+        }
+      ]
+    },
+    {
+      "path": "App_Data/config/sitecore/CollectionSearch/sc.Xdb.Collection.IndexReader.SOLR.xml",
+      "mappings": [
+        {
+          "xpath": "Settings/Sitecore/XConnect/CollectionSearch/Services/Solr.SolrReaderSettings/Options/RequireHttps",
+          "property": "#text",
+          "value": "false"
+        }
+      ]
+    },
+    {
+      "path": "App_Data/config/sitecore/SearchIndexer/sc.Xdb.Collection.IndexWriter.SOLR.xml",
+      "mappings": [
+        {
+          "xpath": "Settings/Sitecore/XConnect/SearchIndexer/Services/Solr.SolrReaderSettings/Options/RequireHttps",
+          "property": "#text",
+          "value": "false"
+        },
+        {
+          "xpath": "Settings/Sitecore/XConnect/SearchIndexer/Services/Solr.SolrWriterSettings/Options/RequireHttps",
+          "property": "#text",
+          "value": "false"
+        }
+      ]
+    }
+  ]
+}

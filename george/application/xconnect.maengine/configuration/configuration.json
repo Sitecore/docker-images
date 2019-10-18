@@ -1,0 +1,58 @@
+{
+  "configuration": [
+    {
+      "path": "App_Config/ConnectionStrings.config",
+      "mappings": [
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.collection']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.collection.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.marketingautomation']",
+          "property": "connectionString",
+          "value": "$env:SC_MARKETINGAUTOMATION_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.referencedata']",
+          "property": "connectionString",
+          "value": "$env:SC_REFERENCEDATA_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='messaging']",
+          "property": "connectionString",
+          "value": "$env:SC_MESSAGING_CONN_STRING"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/AppSettings.config",
+      "mappings": [
+        {
+          "xpath": "appSettings/add[@key='AllowInvalidClientCertificates']",
+          "property": "value",
+          "value": "true"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "path": "/certificates/cert.pfx",
+      "secret": "secret",
+      "store": "cert:/localmachine/root",
+      "user": "Administrator"
+    },
+    {
+      "path": "/certificates/cert.pfx",
+      "secret": "secret",
+      "store": "cert:/localmachine/my",
+      "user": "Administrator"
+    }
+  ]
+}

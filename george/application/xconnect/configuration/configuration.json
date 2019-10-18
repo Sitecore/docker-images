@@ -1,0 +1,103 @@
+{
+  "configuration": [
+    {
+      "path": "App_Config/ConnectionStrings.config",
+      "mappings": [
+        {
+          "xpath": "connectionStrings/add[@name='messaging']",
+          "property": "connectionString",
+          "value": "$env:SC_MESSAGING_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='processing.engine.storage']",
+          "property": "connectionString",
+          "value": "$env:SC_PROC_STORAGE_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='reporting']",
+          "property": "connectionString",
+          "value": "$env:SC_REPORTING_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.marketingautomation']",
+          "property": "connectionString",
+          "value": "$env:SC_MARKETINGAUTOMATION_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.processing.pools']",
+          "property": "connectionString",
+          "value": "$env:SC_PROC_POOLS_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.referencedata']",
+          "property": "connectionString",
+          "value": "$env:SC_REFERENCEDATA_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='collection']",
+          "property": "connectionString",
+          "value": "$env:SC_SHARDMAPMANAGER_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='solrCore']",
+          "property": "connectionString",
+          "value": "$env:SOLR_XDB_CORE_URL"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/AppSettings.config",
+      "mappings": [
+        {
+          "xpath": "appSettings/add[@key='AllowInvalidClientCertificates']",
+          "property": "value",
+          "value": "true"
+        },
+        {
+          "xpath": "appSettings/add[@key='validateCertificateThumbprint']",
+          "property": "value",
+          "value": "$env:XC_CERT_THUMBPRINT"
+        }
+      ]
+    },
+    {
+      "path": "App_Data/Config/Sitecore/CollectionSearch/sc.Xdb.Collection.IndexReader.SOLR.xml",
+      "mappings": [
+        {
+          "xpath": "Settings/Sitecore/XConnect/CollectionSearch/Services/Solr.SolrReaderSettings/Options/RequireHttps",
+          "property": "#text",
+          "value": "$env:SOLR_REQUIRE_HTTPS"
+        }
+      ]
+    },
+    {
+      "path": "App_Data/Config/Sitecore/SearchIndexer/sc.Xdb.Collection.IndexWriter.SOLR.xml",
+      "mappings": [
+        {
+          "xpath": "Settings/Sitecore/XConnect/SearchIndexer/Services/Solr.SolrReaderSettings/Options/RequireHttps",
+          "property": "#text",
+          "value": "$env:SOLR_REQUIRE_HTTPS"
+        },
+        {
+          "xpath": "Settings/Sitecore/XConnect/SearchIndexer/Services/Solr.SolrWriterSettings/Options/RequireHttps",
+          "property": "#text",
+          "value": "$env:SOLR_REQUIRE_HTTPS"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "path": "/certificates/cert.pfx",
+      "secret": "secret",
+      "store": "cert:/localmachine/my",
+      "user": "IIS APPPOOL\\DefaultAppPool"
+    },
+    {
+      "path": "/certificates/cert.pfx",
+      "secret": "secret",
+      "store": "cert:/localmachine/root",
+      "user": "IIS APPPOOL\\DefaultAppPool"
+    }
+  ]
+}

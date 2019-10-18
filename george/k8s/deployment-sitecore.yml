@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: sitecore
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: sitecore
+  template:
+    metadata:
+      labels:
+        app: sitecore
+    spec:
+      containers:
+        - name: sitecore
+          image: george.azurecr.io/sitecore:1809-9.2
+          envFrom:
+            - configMapRef:
+                name: sitecore
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: 500m
+          ports:
+            - containerPort: 80
+      nodeSelector:
+        kubernetes.io/os: windows
