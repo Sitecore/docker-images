@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <add name="core" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Core" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="security" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Core" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="master" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Master" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="web" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Web" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="experienceforms" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.ExperienceForms" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="solr.search" connectionString="http://solr:8983/solr" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="sitecoreidentity.secret" connectionString="R6mYfCbM4Ci0niMBuzKVHIKc" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+</connectionStrings>
