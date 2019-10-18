@@ -1,0 +1,12 @@
+{
+  "tags": [
+    {
+      "tag": "mssql-developer:2017-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}"
+      ]
+    }
+  ],
+  "sources": []
+}

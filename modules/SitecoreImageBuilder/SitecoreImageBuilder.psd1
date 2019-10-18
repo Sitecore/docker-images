@@ -58,7 +58,7 @@
     NestedModules          = @()
 
     # Functions to export from this module
-    FunctionsToExport      = @("Invoke-PackageRestore", "Invoke-Build", "Get-CurrentImagesMarkdown", "Get-BuildSpecifications")
+    FunctionsToExport      = @("Invoke-PackageRestore", "Invoke-Build", "Get-CurrentImagesMarkdown", "Get-BuildSpecifications", "Get-LatestSupportedVersion")
 
     # Cmdlets to export from this module
     CmdletsToExport        = '*'
