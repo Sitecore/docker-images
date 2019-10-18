@@ -14,7 +14,7 @@
 - [**Breaking**] Windows base and variant images merged into `.\windows`:
   - When calling `Invoke-PackageRestore` and `Invoke-Build` you need to point to `.\windows` going forward.
   - The previous `.\images`, `.\variants` and `.\tests` is moved into `.\legacy` so you can still build them if needed.
-    - **IMPORTANT**: Do not build **BOTH** `.\windows` and `.\legacy` images as they will **overwrite each other** as *most* tags are the same.
+    - **IMPORTANT**: Do not build both `.\windows` **and** `.\legacy\images` (or `.\legacy\variants`) as they will **overwrite each other** as *many* tags are the same.
   - New docker-compose files added for testing into `.\windows\tests`, you can override the default values in the `.env` file using system environment variables to test other Sitecore versions and/or Windows versions.
 - [**Breaking**] Sitecore XM images has been renamed from `sitecore-xm1-*` to `sitecore-xm-*`.
 - [**Breaking**] Sitecore license file `license.xml` is no longer embedded into the images and you are now **required** to mount a folder that has the license into `C:\license` inside the containers.
