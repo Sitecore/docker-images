@@ -2,7 +2,7 @@
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-27-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-58-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-25-blue.svg?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-27-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-70-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-28-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-9.2.0%20on%20ltsc2019/1809-blue?style=flat-square)
 
 [//]: # "end: stats"
 
@@ -58,11 +58,10 @@ This will:
 
 > Images will always be saved locally but not pushed to any remote registries by default. See [Setting up automated builds](#setting-up-automated-builds) for details on how to do this.
 
-When completed, you can run it with:
+When completed:
 
-```shell
-docker-compose --file .\windows\tests\9.x.x\docker-compose.xm.yml up
-```
+1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
+1. Then run any of the docker-compose files, for example an XM with: `docker-compose --file .\windows\tests\9.x.x\docker-compose.xm.yml up`
 
 ### Setting up automated builds
 

@@ -33,7 +33,10 @@ RUN & 'C:\\install\\tools\\bin\\nuget.exe' install 'Microsoft.Web.Xdt' -Version 
 
 # extract assets, skip wdps, move already extracted wdps
 RUN $zips = Get-ChildItem -Path 'C:\\downloads\\*.zip' -Exclude '*.scwdp.zip'; `
-    $zips | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath 'C:\\packages' -Force; }; `
+    $zips | ForEach-Object { `
+        $topology = $_.FullName.Substring($_.FullName.IndexOf('(WDP X')).Replace('(WDP ', '').Replace(' packages).zip', '').Substring(0, 2); `
+        Expand-Archive -Path $_.FullName -DestinationPath ('C:\\packages\\{0}' -f $topology) -Force; `
+    }; `
     $zips | ForEach-Object { Remove-Item -Path $_.FullName -Force; }; `
     $zips = Get-ChildItem -Path 'C:\\downloads\\*.zip' -Exclude '*Configuration files*.zip'; `
     $zips | ForEach-Object { Move-Item -Path $_.FullName -Destination 'C:\\packages'; };

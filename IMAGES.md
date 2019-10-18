@@ -5,7 +5,7 @@
 - [Windows images](#current-images)
 - [Linux images](#current-linux)
 
-> Deprecated tags are marked with ~~strikethrough~~ and are not built by default.
+> Deprecated tags are marked with ~~strike through~~ and they are not built by default.
 
 ## Current Windows images
 
@@ -43,9 +43,11 @@
 | 9.2.0 | sitecore-xm-sxa-solr | nanoserver | 1809 | `sitecore-xm-sxa-solr:9.2.0-nanoserver-1809` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
 | 9.2.0 | sitecore-xm-solr | nanoserver | 1809 | `sitecore-xm-solr:9.2.0-nanoserver-1809` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
 | 9.2.0 | sitecore-assets | nanoserver | 1809 | `sitecore-assets:9.2.0-nanoserver-1809` [Dockerfile](windows/9.2.0/sitecore-assets/Dockerfile) |
+| 9.1.1 | sitecore-xp-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-xp-sqldev/Dockerfile) |
 | 9.1.1 | sitecore-xm-sqldev | windowsservercore | ltsc2019 | `sitecore-xm-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
 | 9.1.1 | sitecore-xm-cm | windowsservercore | ltsc2019 | `sitecore-xm-cm:9.1.1-windowsservercore-ltsc2019` [Dockerfile](windows/9.1.1/sitecore-xm/Dockerfile) |
 | 9.1.1 | sitecore-xm-cd | windowsservercore | ltsc2019 | `sitecore-xm-cd:9.1.1-windowsservercore-ltsc2019` [Dockerfile](windows/9.1.1/sitecore-xm/Dockerfile) |
+| 9.1.1 | sitecore-xp-sqldev | windowsservercore | 1903 | `sitecore-xp-sqldev:9.1.1-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-xp-sqldev/Dockerfile) |
 | 9.1.1 | sitecore-xp-solr | nanoserver | 1903 | `sitecore-xp-solr:9.1.1-nanoserver-1903` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
 | 9.1.1 | sitecore-xm-sqldev | windowsservercore | 1903 | `sitecore-xm-sqldev:9.1.1-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
 | 9.1.1 | sitecore-xm-solr | nanoserver | 1903 | `sitecore-xm-solr:9.1.1-nanoserver-1903` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
@@ -55,6 +57,16 @@
 | 9.1.1 | sitecore-xp-solr | nanoserver | 1809 | `sitecore-xp-solr:9.1.1-nanoserver-1809` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
 | 9.1.1 | sitecore-xm-solr | nanoserver | 1809 | `sitecore-xm-solr:9.1.1-nanoserver-1809` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
 | 9.1.1 | sitecore-assets | nanoserver | 1809 | `sitecore-assets:9.1.1-nanoserver-1809` [Dockerfile](windows/9.1.1/sitecore-assets/Dockerfile) |
+| 9.0.2 | sitecore-xm-sqldev | windowsservercore | ltsc2019 | `sitecore-xm-sqldev:9.0.2-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
+| 9.0.2 | sitecore-xm-cm | windowsservercore | ltsc2019 | `sitecore-xm-cm:9.0.2-windowsservercore-ltsc2019` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
+| 9.0.2 | sitecore-xm-cd | windowsservercore | ltsc2019 | `sitecore-xm-cd:9.0.2-windowsservercore-ltsc2019` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
+| 9.0.2 | sitecore-xm-sqldev | windowsservercore | 1903 | `sitecore-xm-sqldev:9.0.2-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
+| 9.0.2 | sitecore-xm-solr | nanoserver | 1903 | `sitecore-xm-solr:9.0.2-nanoserver-1903` [Dockerfile](windows/9.0.x/sitecore-xm-solr/Dockerfile) |
+| 9.0.2 | sitecore-xm-cm | windowsservercore | 1903 | `sitecore-xm-cm:9.0.2-windowsservercore-1903` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
+| 9.0.2 | sitecore-xm-cd | windowsservercore | 1903 | `sitecore-xm-cd:9.0.2-windowsservercore-1903` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
+| 9.0.2 | sitecore-assets | nanoserver | 1903 | `sitecore-assets:9.0.2-nanoserver-1903` [Dockerfile](windows/9.0.2/sitecore-assets/Dockerfile) |
+| 9.0.2 | sitecore-xm-solr | nanoserver | 1809 | `sitecore-xm-solr:9.0.2-nanoserver-1809` [Dockerfile](windows/9.0.x/sitecore-xm-solr/Dockerfile) |
+| 9.0.2 | sitecore-assets | nanoserver | 1809 | `sitecore-assets:9.0.2-nanoserver-1809` [Dockerfile](windows/9.0.2/sitecore-assets/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1903 | `sitecore-openjdk:8-nanoserver-1903` [Dockerfile](windows/dependencies/sitecore-openjdk/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1809 | `sitecore-openjdk:8-nanoserver-1809` [Dockerfile](windows/dependencies/sitecore-openjdk/Dockerfile) |
 | 2017 | mssql-developer | windowsservercore | ltsc2019 | `mssql-developer:2017-windowsservercore-ltsc2019` [Dockerfile](windows/dependencies/mssql-developer-2017/Dockerfile) |
