@@ -1,0 +1,16 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-assets:9.0.2-nanoserver-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore 9.0.2 rev. 180604 (WDP XM1 packages).zip",
+    "Sitecore 9.0.2 rev. 180604 (WDP XP0 packages).zip",
+    "Sitecore 9.0.2 rev. 180604 (WDP XP1 packages).zip"
+  ]
+}
