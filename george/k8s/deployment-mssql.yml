@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: mssql
+spec:
+  replicas: 1
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: mssql
+  template:
+    metadata:
+      labels:
+        app: mssql
+    spec:
+      containers:
+        - name: mssql
+          image: mcr.microsoft.com/mssql/server:2017-latest-ubuntu
+          env:
+            - name: ACCEPT_EULA
+              value: "Y"
+            - name: MSSQL_SA_PASSWORD
+              value: Prftadmin123!
+          volumeMounts:
+            - mountPath: "/var/opt/mssql"
+              name: mssql
+          resources:
+            limits:
+              memory: 2048Mi
+              cpu: 500m
+          ports:
+            - containerPort: 1433
+      volumes:
+        - name: mssql
+          persistentVolumeClaim:
+            claimName: mssql
+      nodeSelector:
+        kubernetes.io/os: linux

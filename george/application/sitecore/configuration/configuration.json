@@ -1,0 +1,296 @@
+{
+  "configuration": [
+    {
+      "path": "App_Config/ConnectionStrings.config",
+      "mappings": [
+        {
+          "xpath": "connectionStrings/add[@name='core']",
+          "property": "connectionString",
+          "value": "$env:SC_CORE_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='security']",
+          "property": "connectionString",
+          "value": "$env:SC_SECURITY_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='master']",
+          "property": "connectionString",
+          "value": "$env:SC_MASTER_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='web']",
+          "property": "connectionString",
+          "value": "$env:SC_WEB_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='messaging']",
+          "property": "connectionString",
+          "value": "$env:SC_MESSAGING_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.marketingautomation']",
+          "property": "connectionString",
+          "value": "$env:SC_MARKETINGAUTOMATION_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.processing.pools']",
+          "property": "connectionString",
+          "value": "$env:SC_PROC_POOLS_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.referencedata']",
+          "property": "connectionString",
+          "value": "$env:SC_REFERENCEDATA_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.processing.tasks']",
+          "property": "connectionString",
+          "value": "$env:SC_PROC_TASKS_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='experienceforms']",
+          "property": "connectionString",
+          "value": "$env:SC_FORMS_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='exm.master']",
+          "property": "connectionString",
+          "value": "$env:EXM_MASTER_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='reporting']",
+          "property": "connectionString",
+          "value": "$env:SC_REPORTING_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='sitecore.reporting.client']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='sitecore.reporting.client.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='solr.search']",
+          "property": "connectionString",
+          "value": "$env:SOLR_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='sitecoreidentity.secret']",
+          "property": "connectionString",
+          "value": "$env:SI_CLIENT_SECRET"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.collection']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.collection.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.marketingautomation.operations.client']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.marketingautomation.operations.client.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.marketingautomation.reporting.client']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.marketingautomation.reporting.client.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.referencedata.client']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xdb.referencedata.client.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='PackageManagementServiceUrl']",
+          "property": "connectionString",
+          "value": "$env:SC_PKG_MGMT_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='EXM.CryptographicKey']",
+          "property": "connectionString",
+          "value": "$env:SC_EXM_CRYPTO_KEY"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='EXM.AuthenticationKey']",
+          "property": "connectionString",
+          "value": "$env:SC_EXM_AUTH_KEY"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore.config",
+      "mappings": [
+        {
+          "xpath": "sitecore/sc.variable[@name='dataFolder']",
+          "property": "value",
+          "value": "$env:SC_DATA_FOLDER"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/ContentSearch/Sitecore.ContentSearch.Solr.Index.Core.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_core_index"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/ContentSearch/Sitecore.ContentSearch.Solr.Index.Master.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_master_index"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/ContentSearch/Sitecore.ContentSearch.Solr.Index.Web.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_web_index"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/ContentTesting/Sitecore.ContentTesting.Solr.IndexConfiguration.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index[@id='sitecore_testing_index']/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_testing_index"
+        },
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index[@id='sitecore_suggested_test_index']/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_suggested_test_index"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/FederatedExperienceManager/Sitecore.FXM.Solr.DomainsSearch.Index.Master.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_fxm_master_index"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/FederatedExperienceManager/Sitecore.FXM.Solr.DomainsSearch.Index.Web.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_fxm_web_index"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/Marketing.Assets/Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Solr.Index.Master.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_marketing_asset_index_master"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/Marketing.Assets/Sitecore.Marketing.Definitions.MarketingAssets.Repositories.Solr.Index.Web.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_marketing_asset_index_web"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/Marketing.Operations.xMgmt/Sitecore.Marketing.Solr.Index.Master.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_marketingdefinitions_master"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/Marketing.Operations.xMgmt/Sitecore.Marketing.Solr.Index.Web.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/contentSearch/configuration/indexes/index/param[@desc='core']",
+          "property": "#text",
+          "value": "$($env:SC_SOLR_PREFIX)_marketingdefinitions_web"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/Sitecore/Owin.Authentication.IdentityServer/Sitecore.Owin.Authentication.IdentityServer.config",
+      "mappings": [
+        {
+          "xpath": "configuration/sitecore/sc.variable[@name='identityServerAuthority']",
+          "property": "value",
+          "value": "$env:SI_URL"
+        }
+      ]
+    },
+    {
+      "path": "Web.config",
+      "mappings": [
+        {
+          "xpath": "configuration/system.web/compilation",
+          "property": "debug",
+          "value": "$env:SC_DEBUG"
+        },
+        {
+          "xpath": "configuration/system.web/customErrors",
+          "property": "mode",
+          "value": "$env:SC_CUSTOM_ERRORS"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "path": "/certificates/root.cer",
+      "store": "cert:/localmachine/root"
+    },
+    {
+      "path": "/certificates/cert.pfx",
+      "secret": "secret",
+      "store": "cert:/localmachine/my",
+      "user": "IIS APPPOOL\\DefaultAppPool"
+    }
+  ]
+}

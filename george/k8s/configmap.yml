@@ -1,0 +1,38 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: sitecore
+data:
+  SC_CM_URL: http://sitecore.default.svc.cluster.local
+  SI_URL: http://identity.default.svc.cluster.local
+  XC_URL: http://xconnect.default.svc.cluster.local
+  XC_CERT_CONN_STRING: StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=0b96c41523e5bb10c1efc8f361e7a2922a35b1b6
+  XC_CERT_THUMBPRINT: $$DELETE$$
+  SI_CERT_THUMBPRINT: 77465C50C4439971B9B703F660724D6A7D7528EA
+  SI_CERT_STORE_LOCATION: LocalMachine
+  SI_CERT_STORE_NAME: Root
+  SI_CLIENT_SECRET: 9JxASisq2myfGJjeaeqqxFMii2T0rFBFueRsTDEoLzSwGj1aj7VyE5tyk94X9xMt3adTdVBrilyfWHK90klOIRJYoMqelEjzmH3k
+  SC_CORE_CONN_STRING: Data Source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Core;User ID=coreuser;Password=pass@word1
+  SC_SECURITY_CONN_STRING: Data Source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Core;User ID=securityuser;Password=pass@word1
+  SC_MASTER_CONN_STRING: Data Source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Master;User ID=masteruser;Password=pass@word1
+  SC_WEB_CONN_STRING: Data Source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Web;User ID=webuser;Password=pass@word1
+  SC_FORMS_CONN_STRING: Data Source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_ExperienceForms;User ID=formsuser;Password=pass@word1
+  SC_PROC_STORAGE_CONN_STRING: user id=processingengineuser;password=pass@word1;data source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_ProcessingEngineStorage
+  SC_PROC_TASKS_CONN_STRING: user id=processingengineuser;password=pass@word1;data source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_ProcessingEngineTasks
+  SC_PROC_POOLS_CONN_STRING: user id=poolsuser;password=pass@word1;data source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Processing.Pools
+  SC_MARKETINGAUTOMATION_CONN_STRING: user id=marketingautomationuser;password=pass@word1;data source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_MarketingAutomation
+  SC_REFERENCEDATA_CONN_STRING: user id=referencedatauser;password=pass@word1;data source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_ReferenceData
+  SC_MESSAGING_CONN_STRING: user id=messaginguser;password=pass@word1;data source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Messaging
+  SC_REPORTING_CONN_STRING: user id=reportinguser;password=pass@word1;data source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Reporting
+  SC_MEMBERSHIP_CONN_STRING: Data Source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Core;User ID=securityuser;Password=pass@word1
+  SC_SHARDMAPMANAGER_CONN_STRING: user id=collectionuser;password=pass@word1;data source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_Xdb.Collection.ShardMapManager
+  SC_PKG_MGMT_URL: https://updatecenter.cloud.sitecore.net/
+  SOLR_URL: http://solr.default.svc.cluster.local:8983/solr
+  SOLR_XDB_CORE_URL: http://solr.default.svc.cluster.local:8983/solr/sc_xdb
+  EXM_MASTER_CONN_STRING: Data Source=mssql.default.svc.cluster.local,11433;Initial Catalog=sc_EXM.Master;User ID=exmmasteruser;Password=pass@word1
+  EXM_CRYPTO_KEY: "0x5261887825011546818020579509523452224699798417987348996904047425"
+  EXM_AUTH_KEY: "0x5869149414410618721959656029001465941712970791751697548657020633"
+  SC_DATA_FOLDER: /App_Data
+  SC_SOLR_PREFIX: sc
+  SC_DEBUG: "true"
+  SC_CUSTOM_ERRORS: "Off"

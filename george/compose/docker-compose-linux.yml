@@ -1,0 +1,19 @@
+version: "3.7"
+services:
+  solr:
+    image: solr:7
+    ports:
+      - "18983:8983"
+      - "19983:9983"
+    command: solr -f
+    volumes:
+      - C:\docker\solr:/opt/solr/server/solr/mycores
+  sql-server:
+    image: mcr.microsoft.com/mssql/server:2017-CU11-ubuntu
+    ports:
+      - "11433:1433"
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=pass@word1
+    volumes:
+      - C:\docker\sql:/var/opt/mssql

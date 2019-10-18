@@ -1,0 +1,28 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solr
+  template:
+    metadata:
+      labels:
+        app: solr
+    spec:
+      containers:
+        - name: solr
+          image: solr:7
+          env:
+            - name: ZK_HOST
+              value: "zookeeper.default.svc.cluster.local:2181"
+          resources:
+            limits:
+              memory: 512Mi
+              cpu: 200m
+          ports:
+            - containerPort: 8983
+      nodeSelector:
+        kubernetes.io/os: linux

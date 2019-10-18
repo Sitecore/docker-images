@@ -1,0 +1,93 @@
+{
+  "configuration": [
+    {
+      "path": "App_Config/ConnectionStrings.config",
+      "mappings": [
+        {
+          "xpath": "connectionStrings/add[@name='processing.engine.storage']",
+          "property": "connectionString",
+          "value": "$env:SC_PROCENG_STORAGE_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='processing.engine.tasks']",
+          "property": "connectionString",
+          "value": "$env:SC_PROCENG_TASKS_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='processing.webapi.blob']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='processing.webapi.table']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.collection']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.collection.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.configuration']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.configuration.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.search']",
+          "property": "connectionString",
+          "value": "$env:XC_URL"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='xconnect.search.certificate']",
+          "property": "connectionString",
+          "value": "$env:XC_CERT_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='messaging']",
+          "property": "connectionString",
+          "value": "$env:SC_MESSAGING_CONN_STRING"
+        },
+        {
+          "xpath": "connectionStrings/add[@name='reporting']",
+          "property": "connectionString",
+          "value": "$env:SC_REPORTING_CONN_STRING"
+        }
+      ]
+    },
+    {
+      "path": "App_Config/AppSettings.config",
+      "mappings": [
+        {
+          "xpath": "appSettings/add[@key='AllowInvalidClientCertificates']",
+          "property": "value",
+          "value": "true"
+        }
+      ]
+    }
+  ],
+  "certificates": [
+    {
+      "path": "/certificates/cert.pfx",
+      "secret": "secret",
+      "store": "cert:/localmachine/root",
+      "user": "Administrator"
+    },
+    {
+      "path": "/certificates/cert.pfx",
+      "secret": "secret",
+      "store": "cert:/localmachine/my",
+      "user": "Administrator"
+    }
+  ]
+}
