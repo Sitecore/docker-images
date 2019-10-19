@@ -2,6 +2,8 @@
 
 ## October 2019
 
+- [**Breaking**] Windows and Linux "Sitecore PowerShell Extensions" images is now correctly tagged with `spe` instead of `pse`.
+- [**Breaking**] Linux variant tags aligned with Windows variant tags, variant version is not part of tag anymore, latest compatible version is always used. Old images moved to `./legacy/linux`.
 - [**Breaking**] When building, then default value used for the `-Tags` parameter will now *only* build images of the latest Sitecore version (including variants such as SXA/SPE) on the latest LTSC (Long Term Support Channel) Windows version instead of *everything*. As of today that would be Sitecore 9.2.0 on `windowsservercore-ltsc2019`. To build everything you could use `-Tag "*"`, see [README.md](/README.md#setting-up-automated-builds) for more details.
 - [**Breaking**] Switched from using SIF to manual installing contents from the Sitecore WDP's.
   - Official `mcr.microsoft.com/dotnet/framework/aspnet` images are now used at runtime:
