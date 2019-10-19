@@ -15,7 +15,8 @@ RUN New-Item -Path 'C:\\downloads' -ItemType 'Directory' -Force | Out-Null; `
 
 # copy local assets
 COPY *.zip C:\\downloads\\
-COPY patches c:\\patches
+COPY patches\\ c:\\patches\\
+
 # install 7zip
 RUN New-Item -Path 'C:\\install\\tools\\bin\\7zip' -ItemType 'Directory' -Force | Out-Null; `
     & 'C:\\downloads\\7z-installer.exe' /S /D='C:\\install\\tools\\bin\\7zip\\';
