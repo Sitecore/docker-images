@@ -77,7 +77,7 @@ stages:
           - powershell: |
               $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
               # TEMPORARY
-              Copy-Item -Path "f:\assets\patches\*" -Destinatino (Join-Path $(Build.SourcesDirectory)" "windows\9.2.0\sitecore-assets\patches\") -Recurse -Verbose
+              Copy-Item -Path "f:\assets\patches\*" -Destination (Join-Path $(Build.SourcesDirectory)" "windows\9.2.0\sitecore-assets\patches\") -Recurse -Verbose
               # END TEMPORARY
               Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
               SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(install.source.path) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
