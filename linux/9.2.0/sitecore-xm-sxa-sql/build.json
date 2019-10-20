@@ -3,7 +3,7 @@
     {
       "tag": "sitecore-xm-sxa-sql:9.2.0-linux",
       "build-options": [
-        "--build-arg BASE_IMAGE=sitecore-xm-pse-sql:9.2.0-linux"
+        "--build-arg BASE_IMAGE=sitecore-xm-spe-sql:9.2.0-linux"
       ]
     }
   ],
