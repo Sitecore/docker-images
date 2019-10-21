@@ -408,12 +408,10 @@ function Initialize-BuildSpecifications
         "^sitecore-(xm|xp)-(sql|sqldev):(.*)$", # windows/linux platform
         "^sitecore-(xm|xp)-(standalone|cm|cd):(.*)$" # windows platform
 
-        "^sitecore-(xm|xp)-(spe|pse)-sqldev:(.*)$" # SPE windows variants
-        "^sitecore-(xm|xp)-(spe|pse)-(.*)-sql:(.*)$" # SPE linux variants (TODO: remove when linux tags are aligned with windows)
+        "^sitecore-(xm|xp)-(spe|pse)-(sql|sqldev):(.*)$" # SPE windows/linux variants
         "^sitecore-(xm|xp)-(spe|pse)-(standalone|cm|cd):(.*)$" # SPE windows variants
 
-        "^sitecore-(xm|xp)-sxa-sqldev:(.*)$" # SXA windows variants
-        "^sitecore-(xm|xp)-sxa-(.*)-sql:(.*)$" # SXA linux variants (TODO: remove when linux tags are aligned with windows)
+        "^sitecore-(xm|xp)-sxa-(sql|sqldev):(.*)$" # SXA windows/linux variants
         "^sitecore-(xm|xp)-sxa-(standalone|cm|cd):(.*)$" # SXA  windows variants
     )
 
