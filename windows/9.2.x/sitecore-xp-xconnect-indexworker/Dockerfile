@@ -40,7 +40,7 @@ COPY --from=build ["C:\\IndexWorker\\", "C:\\IndexWorker\\"]
 
 RUN $env:INSTALL_TEMP = 'C:\\IndexWorker\\temp\\install'; `
     # install tools
-    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
+    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Recurse -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
     # install certificates
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
