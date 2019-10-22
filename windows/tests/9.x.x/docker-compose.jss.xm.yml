@@ -19,7 +19,7 @@ services:
       - "44011:8983"
 
   # cd:
-  #   image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+  #   image: ${REGISTRY}sitecore-xm-jss-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
   #   volumes:
   #     - C:\license:C:\license
   #     - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
