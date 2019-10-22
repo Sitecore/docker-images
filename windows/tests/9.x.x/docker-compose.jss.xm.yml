@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: ${REGISTRY}sitecore-xm-spe-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xm-jss-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
@@ -30,7 +30,7 @@ services:
   #     - solr
 
   cm:
-    image: ${REGISTRY}sitecore-xm-spe-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xm-jss-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - C:\license:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
