@@ -51,7 +51,7 @@ services:
   cd:
     image: ${REGISTRY}sitecore-xp-sxa-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44002:80"
@@ -63,7 +63,7 @@ services:
   cm:
     image: ${REGISTRY}sitecore-xp-sxa-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"
