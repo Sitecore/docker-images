@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: ${REGISTRY}sitecore-xm-sxa-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xm-jss-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
@@ -11,7 +11,7 @@ services:
       - "44010:1433"
 
   solr:
-    image: ${REGISTRY}sitecore-xm-sxa-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
+    image: ${REGISTRY}sitecore-xm-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1GB
@@ -19,7 +19,7 @@ services:
       - "44011:8983"
 
   cd:
-    image: ${REGISTRY}sitecore-xm-sxa-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xm-jss-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${LICENSE_PATH}:C:\license
       - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
@@ -30,11 +30,10 @@ services:
       - solr
 
   cm:
-    image: ${REGISTRY}sitecore-xm-sxa-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xm-jss-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${LICENSE_PATH}:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
-      - .\data\src:C:\src
     ports:
       - "44001:80"
     links:

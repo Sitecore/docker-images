@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: ${REGISTRY}sitecore-spe-xm-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xm-spe-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
@@ -18,21 +18,21 @@ services:
     ports:
       - "44011:8983"
 
-  # cd:
-  #   image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-  #   volumes:
-  #     - C:\license:C:\license
-  #     - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
-  #   ports:
-  #     - "44002:80"
-  #   links:
-  #     - sql
-  #     - solr
+  cd:
+    image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
+    ports:
+      - "44002:80"
+    links:
+      - sql
+      - solr
 
   cm:
-    image: ${REGISTRY}sitecore-spe-xm-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xm-spe-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"
