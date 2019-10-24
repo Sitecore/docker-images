@@ -6,7 +6,7 @@
       <CertificateStoreLocation>LocalMachine</CertificateStoreLocation>
       <CertificateStoreName>My</CertificateStoreName>
       <SitecoreMembershipOptions>
-        <ConnectionString>Data Source=sql;Initial Catalog=Sitecore_Core;User ID=sa;Password=HASH-epsom-sunset-cost7!</ConnectionString>
+        <ConnectionString>Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=HASH-epsom-sunset-cost7!</ConnectionString>
       </SitecoreMembershipOptions>
       <AccountOptions>
         <PasswordRecoveryUrl>http://identity/sitecore/login?rc=1</PasswordRecoveryUrl>
