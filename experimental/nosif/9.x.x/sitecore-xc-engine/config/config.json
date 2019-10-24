@@ -10,7 +10,8 @@
     "EncryptionKeyStorageLocation": "c:\\Encryption-Keys\\",
     "SitecoreIdentityServerUrl": "http://identity",
     "AllowedOrigins": [
-      "http://sitecore"
+      "http://sitecore",
+      "http://bizfx"
     ],
     "AntiForgeryEnabled": false,
     "CommerceServicesHostPostfix": "",
