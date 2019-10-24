@@ -56,10 +56,11 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 
 COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 
-# configure SSL binding because Commerce Engine requires HTTPS (see Sitecore ticket #542018)
 RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     $env:IIS_SITE_NAME = 'Default Web Site'; `
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
+    Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\commerce-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
+    # configure SSL binding because Commerce Engine requires HTTPS (see Sitecore ticket #542018)
     Import-Module WebAdministration; `
     $xcCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xc.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
     New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '443' -Protocol "https" -HostHeader '*'; `
