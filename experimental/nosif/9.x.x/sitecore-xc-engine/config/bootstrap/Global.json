@@ -66,7 +66,7 @@
       },
       {
         "$type": "Sitecore.Commerce.Plugin.Management.SitecoreConnectionPolicy, Sitecore.Commerce.Plugin.Management",
-        "Host": "sitecore",
+        "Host": "cm",
         "SitecoreDatabase": "master",
         "UserName": "admin",
         "Domain": "sitecore",
