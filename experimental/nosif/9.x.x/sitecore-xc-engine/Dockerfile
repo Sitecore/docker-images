@@ -20,11 +20,11 @@ RUN Expand-Archive -Path 'C:\\temp\\packages\\*.zip' -DestinationPath 'C:\\temp'
 # copy tools, certificates and transforms
 COPY --from=assets ["C:\\install\\tools\\", "C:\\inetpub\\wwwroot\\temp\\install\\tools\\"]
 COPY --from=certificates ["C:\\certificates\\", "C:\\inetpub\\wwwroot\\temp\\install\\certificates\\"]
-COPY .\\config C:\\inetpub\\wwwroot\\
+COPY .\\config C:\\inetpub\\wwwroot\\wwwroot\\
 
 # # replace variables and do transformation
 RUN $env:COMMERCE_CLIENT_CERT_THUMBPRINT = (Get-Content -Path 'C:\\inetpub\\wwwroot\\temp\\install\\certificates\\commerce-client.thumbprint' | Out-String).Trim(); `
-    Get-Content 'C:\\inetpub\\wwwroot\\config.json' | C:/inetpub/wwwroot/temp/install/tools/bin/jq.exe '. | .Certificates.Certificates[].Thumbprint = env.COMMERCE_CLIENT_CERT_THUMBPRINT' | Set-Content 'C:\\inetpub\\wwwroot\\config.json'
+    Get-Content 'C:\\inetpub\\wwwroot\\wwwroot\\config.json' | C:/inetpub/wwwroot/temp/install/tools/bin/jq.exe '. | .Certificates.Certificates[].Thumbprint = env.COMMERCE_CLIENT_CERT_THUMBPRINT' | Set-Content 'C:\\inetpub\\wwwroot\\config.json'
 
 # add installers
 COPY --from=assets ["C:\\install\\setup\\", "C:\\inetpub\\wwwroot\\temp\\install\\setup\\"]
