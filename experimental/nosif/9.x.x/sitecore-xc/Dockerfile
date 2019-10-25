@@ -16,7 +16,7 @@ ARG ASSETS_USE_WDP_XPROFILES
 ARG ASSETS_USE_WDP_XANALYTICS
 
 ARG SC_ROLE_CONFIG_DIRECTORY
-#TODO:
+
 COPY --from=assets ["${ASSETS_USE_WDP_CONNECT_CORE}", "C:\\temp\\packages\\"]
 COPY --from=assets ["${ASSETS_USE_WDP_ENGINE_CONNECT}", "C:\\temp\\packages\\"]
 COPY --from=assets ["${ASSETS_USE_WDP_MA}", "C:\\temp\\packages\\"]
