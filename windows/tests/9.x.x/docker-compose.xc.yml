@@ -20,7 +20,7 @@ services:
   xconnect:
     image: ${REGISTRY}sitecore-xc-xconnect:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - .\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect:C:\inetpub\wwwroot\App_Data\logs
     mem_limit: 1GB
     links:
@@ -30,7 +30,7 @@ services:
   xconnect-automationengine:
     image: ${REGISTRY}sitecore-xc-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - .\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
     mem_limit: 500MB
     links:
@@ -40,13 +40,14 @@ services:
   xconnect-indexworker:
     image: ${REGISTRY}sitecore-xc-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - .\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
     mem_limit: 500MB
     links:
       - sql
       - solr
 
+  # TODO: once commerce-ops, commerce-shops are available
   # cd:
   #   image: ${REGISTRY}sitecore-xc-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
   #   volumes:
@@ -64,7 +65,7 @@ services:
   cm:
     image: ${REGISTRY}sitecore-xc-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - .\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"
@@ -98,7 +99,7 @@ services:
   identity:
     image: ${REGISTRY}sitecore-xc-identity:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - .\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\identity:C:\inetpub\wwwroot\logs
     ports:
       - "44005:80"

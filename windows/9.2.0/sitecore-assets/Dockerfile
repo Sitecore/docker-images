@@ -11,7 +11,8 @@ RUN New-Item -Path 'C:\\downloads' -ItemType 'Directory' -Force | Out-Null; `
     & curl.exe -sS -L -o c:\\downloads\\nuget.exe https://dist.nuget.org/win-x86-commandline/v5.2.0/nuget.exe; `
     & curl.exe -sS -L -o C:\\downloads\\urlrewrite.msi https://download.microsoft.com/download/1/2/8/128E2E22-C1B9-44A4-BE2A-5859ED1D4592/rewrite_amd64_en-US.msi; `
     & curl.exe -sS -L -o C:\\downloads\\vc_redist.exe https://aka.ms/vs/15/release/VC_redist.x64.exe; `
-    & curl.exe -sS -L -o C:\\downloads\\7z-installer.exe https://www.7-zip.org/a/7z1900-x64.exe;
+    & curl.exe -sS -L -o C:\\downloads\\7z-installer.exe https://www.7-zip.org/a/7z1900-x64.exe; `
+    & curl.exe -sS -L -o C:\\install\\tools\\bin\\jq.exe https://github.com/stedolan/jq/releases/download/jq-1.6/jq-win64.exe
 
 # copy local assets
 COPY *.zip C:\\downloads\\
