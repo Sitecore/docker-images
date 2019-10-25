@@ -2,6 +2,7 @@
 
 ## October 2019
 
+- [Changed] The `c:\tools\scripts\Watch-Directory.ps1` no longer deletes destination directories, only files. See [#89](https://github.com/Sitecore/docker-images/issues/89). Thanks [@sshushliapin](https://github.com/sshushliapin) :+1:
 - [Fixed] The `c:\tools` folder was empty.
 - [**Breaking**] Windows and Linux "Sitecore PowerShell Extensions" images is now correctly tagged with `spe` instead of `pse`.
 - [**Breaking**] Linux variant tags aligned with Windows variant tags, variant version is not part of tag anymore, latest compatible version is always used. Old images moved to `./legacy/linux`.
