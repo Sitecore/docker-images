@@ -11,8 +11,7 @@
         "--build-arg ASSETS_USE_WDP_XPROFILES='C:\\packages\\Sitecore Commerce ExperienceProfile Core OnPrem 13.0.16.scwdp.zip'",
         "--build-arg ASSETS_USE_WDP_XANALYTICS='C:\\packages\\Sitecore Commerce ExperienceAnalytics Core OnPrem 13.0.16.scwdp.zip'",
         "--build-arg CERTIFICATES_IMAGE=sitecore-certificates:latest-nanoserver-${nanoserver_version}",
-        "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\standalone",
-        "--build-arg SC_ROLE_DEFINE='Standalone'"
+        "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\standalone"
       ]
     },
     {
@@ -26,8 +25,7 @@
         "--build-arg ASSETS_USE_WDP_XPROFILES='C:\\packages\\Sitecore Commerce ExperienceProfile Core OnPrem 13.0.16.scwdp.zip'",
         "--build-arg ASSETS_USE_WDP_XANALYTICS='C:\\packages\\Sitecore Commerce ExperienceAnalytics Core OnPrem 13.0.16.scwdp.zip'",
         "--build-arg CERTIFICATES_IMAGE=sitecore-certificates:latest-nanoserver-${nanoserver_version}",
-        "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\cd",
-        "--build-arg SC_ROLE_DEFINE='ContentDelivery'"
+        "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\cd"
       ]
     }
   ],
