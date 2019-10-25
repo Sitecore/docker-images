@@ -3,15 +3,16 @@
     "SiteTitle": "Sitecore Commerce Engine",
     "BootStrapFile": "Global",
     "DeploymentId": "Deployment01",
-    "EnvironmentName": "commerceAuthoring",
+    "EnvironmentName": "HabitatAuthoring",
     "EncryptionProtectionType": "Machine",
     "EncryptionCertificateHash": "Enter a valid certificate thumbprint for a PXF file. X-509 not supported yet",
     "EncryptionSID": "Enter a valid SID for a domain registered user",
     "EncryptionKeyStorageLocation": "c:\\Encryption-Keys\\",
     "SitecoreIdentityServerUrl": "http://identity",
     "AllowedOrigins": [
-      "http://sitecore",
-      "http://bizfx"
+      "http://bizfx",
+      "http://cd",
+      "http://cm"
     ],
     "AntiForgeryEnabled": false,
     "CommerceServicesHostPostfix": "",
@@ -57,7 +58,7 @@
   "Certificates": {
     "Certificates": [
       {
-        "Thumbprint": "ThumbprintPlaceholder",
+        "Thumbprint": "paard",
         "DefaultRoles": [
           "sitecore\\QA",
           "sitecore\\Commerce Business User"
