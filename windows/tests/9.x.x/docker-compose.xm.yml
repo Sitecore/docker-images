@@ -33,7 +33,10 @@ services:
     image: ${REGISTRY}sitecore-xm-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
+    environment:
+      - "FILEBEAT_IIS_ACCESS_LOG_ENABLED=false"
+      - "FILEBEAT_IIS_ERROR_LOG_ENABLED=true"
+      - "FILEBEAT_SITECORE_UDP_LOG_ENABLED=true"
     ports:
       - "44001:80"
     links:
