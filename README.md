@@ -155,4 +155,4 @@ Using these `ENTRYPOINT` scripts enables you to observe Sitecore log entries in 
 - Starts the Visual Studio Remote Debugger `msvsmon.exe` in the background **if** the Visual Studio Remote Debugger directory is mounted into `C:\remote_debugger`.
 - Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
 
-See the `cm` and `cd` service in [windows/tests/docker-compose.xm.yml](windows/tests/docker-compose.xm.yml) for configuration examples.
+See the `cm` and `cd` service in [windows/tests/9.x.x/docker-compose.xm.yml](windows/tests/docker-compose.xm.yml) for configuration examples.
