@@ -41,9 +41,6 @@ RUN $xdts = (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\*.config.xdt'), (Get-Chi
 # add config patches
 COPY .\config\*.config C:\\inetpub\\wwwroot\\App_Config\\Include\\
 
-# add boot directory
-COPY .\boot\ C:\\inetpub\\wwwroot\\temp\\install\\tools\\boot\\
-
 # add installers
 COPY --from=assets ["C:\\install\\setup\\", "C:\\inetpub\\wwwroot\\temp\\install\\setup\\"]
 
@@ -79,5 +76,3 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Set-WebConfigurationProperty -PSPath $env:IIS_SITE_PATH -Filter '/appSettings/add[@key=\"role:define\"]' -Name 'value' -Value $env:SC_ROLE_DEFINE; `
     # delete temporary files
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
-
-ENTRYPOINT ["powershell", "C:\\tools\\boot\\Boot.ps1"]

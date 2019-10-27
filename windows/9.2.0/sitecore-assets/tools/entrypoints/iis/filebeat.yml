@@ -1,15 +1,15 @@
 filebeat.modules:
 - module: iis
   access:
-    enabled: ${FILEBEAT_IIS_ACCESS_LOG_ENABLED:false}
+    enabled: ${ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED:false}
     var.paths: ["C:/inetpub/logs/LogFiles/*/*.log"]
   error:
-    enabled: ${FILEBEAT_IIS_ERROR_LOG_ENABLED:true}
+    enabled: ${ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED:false}
     var.paths: ["C:/Windows/System32/LogFiles/HTTPERR/*.log"]
 
 filebeat.inputs:
 - type: udp
-  enabled: ${FILEBEAT_SITECORE_UDP_LOG_ENABLED:true}
+  enabled: ${ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED:true}
   max_message_size: 100KiB
   host: "127.0.0.1:7777"
 

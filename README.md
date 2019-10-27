@@ -132,3 +132,27 @@ SitecoreImageBuilder\Invoke-Build `
     -Registry $registry `
     -Tags $tags
 ```
+
+### Optional ENTRYPOINT scripts
+
+For IIS based images (such as the roles `cm`, `standalone` and `cd`) we now have a few scripts that can be used as `ENTRYPOINT` for development and production use.
+
+Using these `ENTRYPOINT` scripts enables you to observe Sitecore log entries in the `STDOUT` of containers in the foreground or by using commands such as `docker container logs` or `docker container attach`.
+
+`C:\tools\entrypoints\iis\Production.ps1` features:
+
+- Switches all log4net appenders from file to UDP.
+- Starts `ServiceMonitor.exe` in the background.
+- Starts `filebeat.exe` in the foreground and outputting to `STDOUT`.
+- FileBeat inputs configured:
+  - IIS access logs, **disabled** by default, can be enable with environment variable: `ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=true`
+  - IIS error logs, **disabled** by default, enable with environment variable: `ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=true`
+  - Sitecore logs, **enabled** by default, enable with environment variable: `ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED=true`
+
+`C:\tools\entrypoints\iis\Development.ps1` features:
+
+- Same as `Production.ps1`.
+- Starts the Visual Studio Remote Debugger `msvsmon.exe` in the background **if** the Visual Studio Remote Debugger directory is mounted into `C:\remote_debugger`.
+- Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
+
+See the `cm` and `cd` service in [windows/tests/docker-compose.xm.yml](/windows/tests/docker-compose.xm.yml) for configuration examples.

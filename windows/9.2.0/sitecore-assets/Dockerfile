@@ -50,7 +50,7 @@ RUN New-Item -Path 'C:\\install\\setup' -ItemType 'Directory' -Force | Out-Null;
     Get-ChildItem 'C:\\downloads\\*.*' -Include '*.exe', '*.msi' | Move-Item -Destination 'C:\\install\\setup';
 
 # add tools folder
-COPY tools C:\\install\\tools
+COPY tools\\ C:\\install\\tools\\
 
 FROM $BASE_IMAGE
 
