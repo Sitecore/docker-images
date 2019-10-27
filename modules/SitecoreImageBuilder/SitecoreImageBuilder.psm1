@@ -34,7 +34,7 @@ function Invoke-PackageRestore
     $ErrorActionPreference = "STOP"
     $ProgressPreference = "SilentlyContinue"
 
-    $downloadUrl = "https://dev.sitecore.net"
+    $sitecoreDownloadUrl = "https://dev.sitecore.net"
 
     # Load packages file
     $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\sitecore-packages.json")
@@ -49,7 +49,7 @@ function Invoke-PackageRestore
     }
 
     # Find out which files is needed
-    $downloadSession = $null
+    $sitecoreDownloadSession = $null
     $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
 
@@ -88,29 +88,37 @@ function Invoke-PackageRestore
 
         if ($PSCmdlet.ShouldProcess($fileName))
         {
-            # Login to dev.sitecore.net and save session for re-use
-            if ($null -eq $downloadSession)
-            {
-                Write-Verbose ("Logging in to '{0}'..." -f $downloadUrl)
-
-                $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
-                    username   = $SitecoreUsername
-                    password   = $SitecorePassword
-                    rememberMe = $true
-                } -SessionVariable "downloadSession" -UseBasicParsing
-
-                if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
-                {
-                    throw ("Unable to login to '{0}' with the supplied credentials." -f $downloadUrl)
-                }
-
-                Write-Verbose ("Logged in to '{0}'." -f $downloadUrl)
-            }
-
-            # Download package using saved session
             Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
 
-            Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $downloadSession -UseBasicParsing
+            if ($fileUrl.StartsWith($sitecoreDownloadUrl))
+            {
+                # Login to dev.sitecore.net and save session for re-use
+                if ($null -eq $sitecoreDownloadSession)
+                {
+                    Write-Verbose ("Logging in to '{0}'..." -f $sitecoreDownloadUrl)
+
+                    $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
+                        username   = $SitecoreUsername
+                        password   = $SitecorePassword
+                        rememberMe = $true
+                    } -SessionVariable "downloadSession" -UseBasicParsing
+
+                    if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
+                    {
+                        throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
+                    }
+
+                    Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
+                }
+
+                # Download package using saved session
+                Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $sitecoreDownloadSession -UseBasicParsing
+            }
+            else
+            {
+                # Download package
+                Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -UseBasicParsing
+            }
         }
     }
 
