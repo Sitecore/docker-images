@@ -141,7 +141,7 @@ Using these `ENTRYPOINT` scripts enables you to observe Sitecore log entries in 
 
 `C:\tools\entrypoints\iis\Production.ps1` features:
 
-- Switches all log4net appenders from file to UDP.
+- Adds an UDP appender to all default log4net loggers.
 - Starts `ServiceMonitor.exe` in the background.
 - Starts `filebeat.exe` in the foreground and outputting to `STDOUT`.
 - FileBeat inputs configured:
