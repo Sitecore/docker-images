@@ -78,11 +78,11 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     # configure SSL binding because Identity Server requires HTTPS (see Sitecore ticket #543325)
     $env:IIS_SITE_NAME = 'Default Web Site'; `
     Import-Module WebAdministration; `
-    $identityCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\identity-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
+    $identityCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\identity.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
     New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '443' -Protocol "https" -HostHeader '*'; `
     $binding = Get-WebBinding -Name $env:IIS_SITE_NAME -Protocol "https"; `
     $binding.AddSslCertificate($identityCert.GetCertHashString(), 'my'); `
     # configure SSL flags
     Set-WebConfigurationProperty -PSPath 'machine/webroot/apphost' -Filter 'system.webServer/security/access' -Name 'sslFlags' -Value 'SslNegotiateCert'; `
     # delete temporary files
-    # Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
+    Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
