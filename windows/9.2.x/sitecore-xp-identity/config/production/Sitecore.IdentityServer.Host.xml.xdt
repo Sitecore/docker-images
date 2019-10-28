@@ -9,7 +9,7 @@
         <ConnectionString>Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=HASH-epsom-sunset-cost7!</ConnectionString>
       </SitecoreMembershipOptions>
       <AccountOptions>
-        <PasswordRecoveryUrl>http://identity/sitecore/login?rc=1</PasswordRecoveryUrl>
+        <PasswordRecoveryUrl>https://identity/sitecore/login?rc=1</PasswordRecoveryUrl>
       </AccountOptions>
       <Clients>
         <DefaultClient>

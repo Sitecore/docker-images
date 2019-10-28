@@ -1,7 +1,7 @@
 {
     "EnvironmentName": "HabitatAuthoring",
     "EngineUri": "http://commerce-authoring",
-    "IdentityServerUri": "http://identity",
+    "IdentityServerUri": "https://identity",
     "BizFxUri": "http://bizfx",
     "Language": "en",
     "Currency": "USD",
