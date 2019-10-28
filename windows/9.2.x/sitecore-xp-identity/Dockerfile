@@ -49,12 +49,10 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     # install dependencies
     Start-Process msiexec.exe -ArgumentList '/i', (Join-Path $env:INSTALL_TEMP '\\setup\\urlrewrite.msi'), '/quiet', '/norestart' -NoNewWindow -Wait; `
     Start-Process (Join-Path $env:INSTALL_TEMP '\\setup\\vc_redist.exe') -ArgumentList '/install', '/passive', '/norestart' -NoNewWindow -Wait; `
+    Start-Process (Join-Path $env:INSTALL_TEMP '\\setup\\dotnet-hosting.exe') -ArgumentList '/install', '/quiet' -NoNewWindow -Wait; `
     # install tools
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
-    # install additional required tools
-    Set-ExecutionPolicy Bypass -Scope Process -Force; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1')); `
-    choco install -y --params="Quiet" --version 2.2.5 dotnetcore-windowshosting; `
     # install certificates
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\sitecore-root.pfx') -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
@@ -77,5 +75,14 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
         $acl.SetAccessRule($rule); `
         $acl | Set-Acl -Path $path; `
     }; `
+    # configure SSL binding because Identity Server requires HTTPS (see Sitecore ticket #543325)
+    $env:IIS_SITE_NAME = 'Default Web Site'; `
+    Import-Module WebAdministration; `
+    $identityCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\identity-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
+    New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '443' -Protocol "https" -HostHeader '*'; `
+    $binding = Get-WebBinding -Name $env:IIS_SITE_NAME -Protocol "https"; `
+    $binding.AddSslCertificate($identityCert.GetCertHashString(), 'my'); `
+    # configure SSL flags
+    Set-WebConfigurationProperty -PSPath 'machine/webroot/apphost' -Filter 'system.webServer/security/access' -Name 'sslFlags' -Value 'SslNegotiateCert'; `
     # delete temporary files
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
