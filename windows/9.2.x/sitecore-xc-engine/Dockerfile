@@ -21,13 +21,13 @@ RUN Expand-Archive -Path 'C:\\temp\\packages\\*.zip' -DestinationPath 'C:\\temp'
 # copy tools, certificates and transforms
 COPY --from=assets ["C:\\install\\tools\\", "C:\\inetpub\\wwwroot\\temp\\install\\tools\\"]
 COPY --from=certificates ["C:\\certificates\\", "C:\\inetpub\\wwwroot\\temp\\install\\certificates\\"]
-COPY ${SC_ROLE_CONFIG_DIRECTORY} C:\\inetpub\\wwwroot\\
 COPY .\\config\\shared C:\\inetpub\\wwwroot\\wwwroot\\
+COPY ${SC_ROLE_CONFIG_DIRECTORY} C:\\inetpub\\wwwroot\\wwwroot\\
 
 # replace variables and do transformation
 RUN $env:COMMERCE_CLIENT_CERT_THUMBPRINT = (Get-Content -Path 'C:\\inetpub\\wwwroot\\temp\\install\\certificates\\commerce-client.thumbprint' | Out-String).Trim(); `
     $json = (Get-Content 'C:\\inetpub\\wwwroot\\wwwroot\\config.json') -replace '^\s*//.*' | Out-String | ConvertFrom-Json; `
-    $json.Certificates.Certificates[0].Thumbprint = $COMMERCE_CLIENT_CERT_THUMBPRINT; `
+    $json.Certificates.Certificates[0].Thumbprint = "$env:COMMERCE_CLIENT_CERT_THUMBPRINT"; `
     $json = ConvertTo-Json $json -Depth 100; `
     Set-Content 'C:\\inetpub\\wwwroot\\wwwroot\\config.json' -Value $json -Encoding UTF8;
 
@@ -50,7 +50,7 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Start-Process (Join-Path $env:INSTALL_TEMP '\\setup\\dotnet-hosting.exe') -ArgumentList '/install', '/quiet' -NoNewWindow -Wait; `
     # install tools
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
-    setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
+    setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin;C:\Program Files\dotnet') | Out-Null; `
     # install certificates
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\sitecore-root.pfx') -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
