@@ -1,11 +1,55 @@
+# setup
 $ErrorActionPreference = "STOP"
 
 Import-Module WebAdministration
 
-$iisWebsiteName = "Default Web Site"
-$iisApplicationPoolName = "DefaultAppPool"
+function Wait-WebItemState
+{
+    param(
+        [ValidateNotNullOrEmpty()]
+        [string]$IISPath
+        ,
+        [ValidateSet("Started", "Stopped")]
+        [string]$State
+    )
 
-# print welcome message
+    while ($true)
+    {
+        Write-Host "### Waiting on item '$IISPath' state to be '$State'..."
+
+        try
+        {
+            $item = Get-Item -Path $IISPath
+
+            if ($null -ne $item -and $item.State -ne $State)
+            {
+                if ($State -eq "Started")
+                {
+                    $item = Start-WebItem -PSPath $IISPath -Passthru -ErrorAction "SilentlyContinue"
+                }
+                elseif ($State -eq "Stopped")
+                {
+                    $item = Stop-WebItem -PSPath $IISPath -Passthru -ErrorAction "SilentlyContinue"
+                }
+            }
+        }
+        catch
+        {
+            $item = $null
+        }
+
+        if ($null -ne $item -and $item.State -eq $State)
+        {
+            Write-Host "### Waiting on item '$IISPath' completed."
+
+            break
+        }
+
+        Start-Sleep -Milliseconds 500
+    }
+}
+
+# print start message
 Write-Host ("### Sitecore Development ENTRYPOINT, starting...")
 
 # wait for w3wp to stop
@@ -15,69 +59,26 @@ while ($true)
 
     Write-Host "### Waiting for process '$processName' to stop..."
 
-    Stop-Process -Name $processName -Force -ErrorAction "SilentlyContinue"
+    $running = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue").Length -gt 0
 
-    $processes = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue")
-
-    if ($processes.Length -eq 0)
+    if ($running)
+    {
+        Stop-Process -Name $processName -Force -ErrorAction "SilentlyContinue"
+    }
+    else
     {
         Write-Host "### Process '$processName' stopped..."
 
         break;
     }
 
-    Start-Sleep -Seconds 1
-}
-
-# wait for site to stop
-while ($true)
-{
-    $requiredState = "Stopped"
-
-    Write-Host "### Waiting on site '$iisWebsiteName' state to be '$requiredState'..."
-
-    $item = Get-ItemProperty "IIS:\Sites\$iisWebsiteName"
-
-    if ($null -ne $item -and $item.State -ne $requiredState)
-    {
-        $item = Stop-WebSite -Name $iisWebsiteName -Passthru -ErrorAction "SilentlyContinue"
-    }
-
-    if ($null -ne $item -and $item.State -eq $requiredState)
-    {
-        Write-Host "### Site '$iisWebsiteName' state is now '$requiredState'..."
-
-        break
-    }
-
-    Start-Sleep -Seconds 1
+    Start-Sleep -Milliseconds 500
 }
 
 # wait for application pool to stop
-while ($true)
-{
-    $requiredState = "Stopped"
+Wait-WebItemState -IISPath "IIS:\AppPools\DefaultAppPool" -State "Stopped"
 
-    Write-Host "### Waiting on application pool '$iisApplicationPoolName' state to be '$requiredState'..."
-
-    $item = Get-ItemProperty "IIS:\AppPools\$iisApplicationPoolName"
-
-    if ($null -ne $item -and $item.State -ne $requiredState)
-    {
-        $item = Stop-WebAppPool -Name $iisApplicationPoolName -Passthru -ErrorAction "SilentlyContinue"
-    }
-
-    if ($null -ne $item -and $item.State -eq $requiredState)
-    {
-        Write-Host "### Application pool '$iisApplicationPoolName' state is now '$requiredState'."
-
-        break
-    }
-
-    Start-Sleep -Seconds 1
-}
-
-# check to see if we should start the VS remote debugger
+# check to see if we should start the msvsmon.exe
 $useVsDebugger = (Test-Path -Path "C:\remote_debugger\x64\msvsmon.exe" -PathType "Leaf") -eq $true
 
 if ($useVsDebugger)
@@ -92,7 +93,7 @@ else
     Write-Host ("### Skipping start of 'msvsmon.exe', to enable you should mount the Visual Studio Remote Debugger directory into 'C:\remote_debugger'.")
 }
 
-# check to see if we should start the Watch-Directory script
+# check to see if we should start the Watch-Directory.ps1 script
 $useWatchDirectory = (Test-Path -Path "C:\src" -PathType "Container") -eq $true
 
 if ($useWatchDirectory)
@@ -121,7 +122,7 @@ else
 # inject Sitecore config files
 Copy-Item -Path (Join-Path $PSScriptRoot "\*.config") -Destination "C:\inetpub\wwwroot\App_Config\Include"
 
-# start servicemonitor.exe in background, kill foreground process if it fails
+# start ServiceMonitor.exe in background, kill foreground process if it fails
 Start-Job -Name "ServiceMonitor.exe" {
     try
     {
@@ -131,64 +132,29 @@ Start-Job -Name "ServiceMonitor.exe" {
     {
         Get-Process -Name "filebeat" | Stop-Process -Force
     }
-}
+} | Out-Null
 
-# wait for ServiceMonitor to start
+# wait for the ServiceMonitor.exe process is running
 while ($true)
 {
     $processName = "ServiceMonitor"
 
     Write-Host "### Waiting for process '$processName' to start..."
 
-    $processes = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue")
+    $running = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue").Length -eq 1
 
-    if ($processes.Length -eq 1)
+    if ($running)
     {
         Write-Host "### Process '$processName' started..."
 
         break;
     }
 
-    Start-Sleep -Seconds 1
+    Start-Sleep -Milliseconds 500
 }
 
 # wait for application pool to start
-while ($true)
-{
-    $requiredState = "Started"
-
-    Write-Host "### Waiting on application pool '$iisApplicationPoolName' state to be '$requiredState'..."
-
-    $item = Start-WebAppPool -Name $iisApplicationPoolName -Passthru -ErrorAction "SilentlyContinue"
-
-    if ($null -ne $item -and $item.State -eq $requiredState)
-    {
-        Write-Host "### Application pool '$iisApplicationPoolName' state is now '$requiredState'."
-
-        break
-    }
-
-    Start-Sleep -Seconds 1
-}
-
-# wait for site to start
-while ($true)
-{
-    $requiredState = "Started"
-
-    Write-Host "### Waiting on site '$iisWebsiteName' state to be '$requiredState'..."
-
-    $item = Start-WebSite -Name $iisWebsiteName -Passthru -ErrorAction "SilentlyContinue"
-
-    if ($null -ne $item -and $item.State -eq $requiredState)
-    {
-        Write-Host "### Site '$iisWebsiteName' state is now '$requiredState'."
-
-        break
-    }
-
-    Start-Sleep -Seconds 1
-}
+Wait-WebItemState -IISPath "IIS:\AppPools\DefaultAppPool" -State "Started"
 
 # print ready message
 Write-Host ("### Sitecore ready!")

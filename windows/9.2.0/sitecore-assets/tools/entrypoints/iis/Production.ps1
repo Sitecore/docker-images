@@ -1,12 +1,87 @@
+# setup
 $ErrorActionPreference = "STOP"
 
-# print welcome message
+Import-Module WebAdministration
+
+function Wait-WebItemState
+{
+    param(
+        [ValidateNotNullOrEmpty()]
+        [string]$IISPath
+        ,
+        [ValidateSet("Started", "Stopped")]
+        [string]$State
+    )
+
+    while ($true)
+    {
+        Write-Host "### Waiting on item '$IISPath' state to be '$State'..."
+
+        try
+        {
+            $item = Get-Item -Path $IISPath
+
+            if ($null -ne $item -and $item.State -ne $State)
+            {
+                if ($State -eq "Started")
+                {
+                    $item = Start-WebItem -PSPath $IISPath -Passthru -ErrorAction "SilentlyContinue"
+                }
+                elseif ($State -eq "Stopped")
+                {
+                    $item = Stop-WebItem -PSPath $IISPath -Passthru -ErrorAction "SilentlyContinue"
+                }
+            }
+        }
+        catch
+        {
+            $item = $null
+        }
+
+        if ($null -ne $item -and $item.State -eq $State)
+        {
+            Write-Host "### Waiting on item '$IISPath' completed."
+
+            break
+        }
+
+        Start-Sleep -Milliseconds 500
+    }
+}
+
+# print start message
 Write-Host ("### Sitecore Production ENTRYPOINT, starting...")
+
+# wait for w3wp to stop
+while ($true)
+{
+    $processName = "w3wp"
+
+    Write-Host "### Waiting for process '$processName' to stop..."
+
+    $running = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue").Length -gt 0
+
+    if ($running)
+    {
+        Stop-Process -Name $processName -Force -ErrorAction "SilentlyContinue"
+    }
+    else
+    {
+        Write-Host "### Process '$processName' stopped..."
+
+        break;
+    }
+
+    Start-Sleep -Milliseconds 500
+}
+
+# wait for application pool to stop
+Wait-WebItemState -IISPath "IIS:\AppPools\DefaultAppPool" -State "Stopped"
 
 # inject Sitecore config files
 Copy-Item -Path (Join-Path $PSScriptRoot "\*.config") -Destination "C:\inetpub\wwwroot\App_Config\Include"
 
-# start servicemonitor.exe in background, kill foreground process if it fails
+# start ServiceMonitor.exe in background, kill foreground process if it fails
 Start-Job -Name "ServiceMonitor.exe" {
     try
     {
@@ -16,9 +91,29 @@ Start-Job -Name "ServiceMonitor.exe" {
     {
         Get-Process -Name "filebeat" | Stop-Process -Force
     }
-} | ForEach-Object {
-    Write-Host ("### Started '$($_.Name)'.")
+} | Out-Null
+
+# wait for the ServiceMonitor.exe process is running
+while ($true)
+{
+    $processName = "ServiceMonitor"
+
+    Write-Host "### Waiting for process '$processName' to start..."
+
+    $running = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue").Length -eq 1
+
+    if ($running)
+    {
+        Write-Host "### Process '$processName' started..."
+
+        break;
+    }
+
+    Start-Sleep -Milliseconds 500
 }
+
+# wait for application pool to start
+Wait-WebItemState -IISPath "IIS:\AppPools\DefaultAppPool" -State "Started"
 
 # print ready message
 Write-Host ("### Sitecore ready!")

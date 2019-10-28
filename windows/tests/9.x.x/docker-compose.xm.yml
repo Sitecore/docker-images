@@ -20,7 +20,7 @@ services:
 
   cd:
     image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    entrypoint: powershell.exe -NoLogo -File C:\\tools\\entrypoints\\iis\\Development.ps1
+    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
     environment:
       - "ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=true"
       - "ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=true"
@@ -35,7 +35,7 @@ services:
 
   cm:
     image: ${REGISTRY}sitecore-xm-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    entrypoint: powershell.exe -NoLogo -File C:\\tools\\entrypoints\\iis\\Development.ps1
+    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
     environment:
       - "ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=false"
       - "ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=false"
