@@ -8,7 +8,7 @@
     "EncryptionCertificateHash": "Enter a valid certificate thumbprint for a PXF file. X-509 not supported yet",
     "EncryptionSID": "Enter a valid SID for a domain registered user",
     "EncryptionKeyStorageLocation": "c:\\Encryption-Keys\\",
-    "SitecoreIdentityServerUrl": "http://identity",
+    "SitecoreIdentityServerUrl": "https://identity",
     "AllowedOrigins": [
       "http://bizfx",
       "http://cd",
@@ -58,7 +58,7 @@
   "Certificates": {
     "Certificates": [
       {
-        "Thumbprint": "paard",
+        "Thumbprint": "MyThumbprint",
         "DefaultRoles": [
           "sitecore\\QA",
           "sitecore\\Commerce Business User"
