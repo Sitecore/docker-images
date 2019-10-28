@@ -1,5 +1,81 @@
+$ErrorActionPreference = "STOP"
+
+Import-Module WebAdministration
+
+$iisWebsiteName = "Default Web Site"
+$iisApplicationPoolName = "DefaultAppPool"
+
 # print welcome message
 Write-Host ("### Sitecore Development ENTRYPOINT, starting...")
+
+# wait for w3wp to stop
+while ($true)
+{
+    $processName = "w3wp"
+
+    Write-Host "### Waiting for process '$processName' to stop..."
+
+    Stop-Process -Name $processName -Force -ErrorAction "SilentlyContinue"
+
+    $processes = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue")
+
+    if ($processes.Length -eq 0)
+    {
+        Write-Host "### Process '$processName' stopped..."
+
+        break;
+    }
+
+    Start-Sleep -Seconds 1
+}
+
+# wait for site to stop
+while ($true)
+{
+    $requiredState = "Stopped"
+
+    Write-Host "### Waiting on site '$iisWebsiteName' state to be '$requiredState'..."
+
+    $item = Get-ItemProperty "IIS:\Sites\$iisWebsiteName"
+
+    if ($null -ne $item -and $item.State -ne $requiredState)
+    {
+        $item = Stop-WebSite -Name $iisWebsiteName -Passthru -ErrorAction "SilentlyContinue"
+    }
+
+    if ($null -ne $item -and $item.State -eq $requiredState)
+    {
+        Write-Host "### Site '$iisWebsiteName' state is now '$requiredState'..."
+
+        break
+    }
+
+    Start-Sleep -Seconds 1
+}
+
+# wait for application pool to stop
+while ($true)
+{
+    $requiredState = "Stopped"
+
+    Write-Host "### Waiting on application pool '$iisApplicationPoolName' state to be '$requiredState'..."
+
+    $item = Get-ItemProperty "IIS:\AppPools\$iisApplicationPoolName"
+
+    if ($null -ne $item -and $item.State -ne $requiredState)
+    {
+        $item = Stop-WebAppPool -Name $iisApplicationPoolName -Passthru -ErrorAction "SilentlyContinue"
+    }
+
+    if ($null -ne $item -and $item.State -eq $requiredState)
+    {
+        Write-Host "### Application pool '$iisApplicationPoolName' state is now '$requiredState'."
+
+        break
+    }
+
+    Start-Sleep -Seconds 1
+}
 
 # check to see if we should start the VS remote debugger
 $useVsDebugger = (Test-Path -Path "C:\remote_debugger\x64\msvsmon.exe" -PathType "Leaf") -eq $true
@@ -55,8 +131,63 @@ Start-Job -Name "ServiceMonitor.exe" {
     {
         Get-Process -Name "filebeat" | Stop-Process -Force
     }
-} | ForEach-Object {
-    Write-Host ("### Started '$($_.Name)'.")
+}
+
+# wait for ServiceMonitor to start
+while ($true)
+{
+    $processName = "ServiceMonitor"
+
+    Write-Host "### Waiting for process '$processName' to start..."
+
+    $processes = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue")
+
+    if ($processes.Length -eq 1)
+    {
+        Write-Host "### Process '$processName' started..."
+
+        break;
+    }
+
+    Start-Sleep -Seconds 1
+}
+
+# wait for application pool to start
+while ($true)
+{
+    $requiredState = "Started"
+
+    Write-Host "### Waiting on application pool '$iisApplicationPoolName' state to be '$requiredState'..."
+
+    $item = Start-WebAppPool -Name $iisApplicationPoolName -Passthru -ErrorAction "SilentlyContinue"
+
+    if ($null -ne $item -and $item.State -eq $requiredState)
+    {
+        Write-Host "### Application pool '$iisApplicationPoolName' state is now '$requiredState'."
+
+        break
+    }
+
+    Start-Sleep -Seconds 1
+}
+
+# wait for site to start
+while ($true)
+{
+    $requiredState = "Started"
+
+    Write-Host "### Waiting on site '$iisWebsiteName' state to be '$requiredState'..."
+
+    $item = Start-WebSite -Name $iisWebsiteName -Passthru -ErrorAction "SilentlyContinue"
+
+    if ($null -ne $item -and $item.State -eq $requiredState)
+    {
+        Write-Host "### Site '$iisWebsiteName' state is now '$requiredState'."
+
+        break
+    }
+
+    Start-Sleep -Seconds 1
 }
 
 # print ready message

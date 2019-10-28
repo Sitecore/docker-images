@@ -1,3 +1,5 @@
+$ErrorActionPreference = "STOP"
+
 # print welcome message
 Write-Host ("### Sitecore Production ENTRYPOINT, starting...")
 
