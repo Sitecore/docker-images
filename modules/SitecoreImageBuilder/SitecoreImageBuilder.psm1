@@ -101,18 +101,13 @@ function Invoke-PackageRestore
                         username   = $SitecoreUsername
                         password   = $SitecorePassword
                         rememberMe = $true
-                    } -SessionVariable "downloadSession" -UseBasicParsing
+                    } -SessionVariable "sitecoreDownloadSession" -UseBasicParsing
 
                     if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
                     {
                         throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
                     }
-                    else
-                    {
-                        # Assign the downloadSession variable back to sitecoreDownloadSession to use in package download - Line 120
-                        $sitecoreDownloadSession = $downloadSession 
-                    }
-
+                    
                     Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
                 }
 
