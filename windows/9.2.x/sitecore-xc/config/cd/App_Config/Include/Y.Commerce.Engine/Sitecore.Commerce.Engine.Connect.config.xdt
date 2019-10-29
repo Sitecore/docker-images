@@ -6,7 +6,7 @@
             <enforceSsl xdt:Transform="Replace">false</enforceSsl>
             <defaultEnvironment xdt:Transform="Replace">HabitatShops</defaultEnvironment>
             <defaultShopName xdt:Transform="Replace">CommerceEngineDefaultStorefront</defaultShopName>
-            <certificateThumbprint>${commerce_client_certificate_thumbprint}</certificateThumbprint>
+            <certificateThumbprint xdt:Transform="Replace">${commerce_client_certificate_thumbprint}</certificateThumbprint>
         </commerceEngineConfiguration>
     </sitecore>
 </configuration>
