@@ -107,6 +107,11 @@ function Invoke-PackageRestore
                     {
                         throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
                     }
+                    else
+                    {
+                        # Assign the downloadSession variable back to sitecoreDownloadSession to use in package download - Line 120
+                        $sitecoreDownloadSession = $downloadSession 
+                    }
 
                     Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
                 }
