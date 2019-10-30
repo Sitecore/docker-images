@@ -117,7 +117,7 @@ services:
   bizfx:
     image: ${REGISTRY}sitecore-xc-bizfx:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     ports:
-      - "44007:80"
+      - "4200:80"
     links:
       - commerce-authoring
       - identity
