@@ -14,8 +14,8 @@ Once all containers are running, perform the following Sitecore Commerce post-in
         - `SitecoreIdServerHost` at https://identity
         - `OpsApiHost` at http://localhost:44005
     2. Obtain Identity token
-    3. Perform bootstrap
-    4. Initialize environment
+    3. Perform bootstrap ([docs](https://doc.sitecore.com/developers/92/sitecore-experience-commerce/en/bootstrap-the-commerce-engine.html))
+    4. Initialize environment ([docs](https://doc.sitecore.com/developers/92/sitecore-experience-commerce/en/clean-and-initialize-the-environment.html))
 
 > Obtain the Postman collections and environment from the Sitecore Commerce SDK.
 
