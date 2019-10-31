@@ -147,7 +147,7 @@ Using these `ENTRYPOINT` scripts enables you to observe Sitecore log entries in 
 - FileBeat inputs configured:
   - IIS access logs, **disabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=true`
   - IIS error logs, **disabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=true`
-  - Sitecore logs, **enabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED=true`
+  - Sitecore logs, **enabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED=false`
 
 `C:\tools\entrypoints\iis\Development.ps1` features:
 
