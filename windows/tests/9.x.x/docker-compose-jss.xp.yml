@@ -3,7 +3,7 @@ version: '2.4'
 services:
 
   sql:
-    image: ${REGISTRY}sitecore-xp-sxa-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xp-jss-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - .\data\sql:C:\Data
     mem_limit: 2GB
@@ -11,7 +11,7 @@ services:
       - "44010:1433"
 
   solr:
-    image: ${REGISTRY}sitecore-xp-sxa-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
+    image: ${REGISTRY}sitecore-xp-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1GB
@@ -21,7 +21,7 @@ services:
   xconnect:
     image: ${REGISTRY}sitecore-xp-xconnect:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect:C:\inetpub\wwwroot\App_Data\logs
     mem_limit: 1GB
     links:
@@ -31,7 +31,7 @@ services:
   xconnect-automationengine:
     image: ${REGISTRY}sitecore-xp-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
     mem_limit: 500MB
     links:
@@ -41,7 +41,7 @@ services:
   xconnect-indexworker:
     image: ${REGISTRY}sitecore-xp-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
     mem_limit: 500MB
     links:
@@ -49,7 +49,7 @@ services:
       - solr
 
   cd:
-    image: ${REGISTRY}sitecore-xp-sxa-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xp-jss-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${LICENSE_PATH}:C:\license
       - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
@@ -61,7 +61,7 @@ services:
       - xconnect
 
   cm:
-    image: ${REGISTRY}sitecore-xp-sxa-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xp-jss-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${LICENSE_PATH}:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
