@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <add name="processing.engine.storage" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Processing.Engine.Storage" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="processing.engine.tasks" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Processing.Engine.Tasks" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+	<add name="processing.webapi.blob" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+	<add name="processing.webapi.table" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+	
+	<add name="xconnect.collection" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xconnect.collection.certificate" connectionString="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+
+    <add name="xconnect.configuration" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xconnect.configuration.certificate" connectionString="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+
+    <add name="xconnect.search" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xconnect.search.certificate" connectionString="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+
+	<add name="messaging" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Messaging" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+	<add name="reporting" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Reporting" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+</connectionStrings>

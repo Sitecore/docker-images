@@ -12,6 +12,7 @@
     "Sitecore 9.2.0 rev. 002893 (WDP XM1 packages).zip",
     "Sitecore 9.2.0 rev. 002893 (WDP XP0 packages).zip",
     "Sitecore 9.2.0 rev. 002893 (WDP XP1 packages).zip",
+    "Sitecore.Commerce.WDP.2019.07-4.0.165.zip",
     "Sitecore Experience Accelerator 1.9.0 rev. 190528 for 9.2 CD.scwdp.zip",
     "Sitecore Experience Accelerator 1.9.0 rev. 190528 for 9.2.scwdp.zip",
     "Sitecore Experience Accelerator XM 1.9.0 rev. 190528 for 9.2 CD.scwdp.zip",
@@ -20,6 +21,6 @@
     "Sitecore JavaScript Services Server for Sitecore 9.2 XM 12.0.0 rev. 190522.scwdp.zip",
     "Sitecore JavaScript Services Server for Sitecore 9.2 XP 12.0.0 rev. 190522 CD.scwdp.zip",
     "Sitecore JavaScript Services Server for Sitecore 9.2 XP 12.0.0 rev. 190522.scwdp.zip",
-    "Sitecore PowerShell Extensions-5.0 for 9.2.scwdp.zip"
+    "Sitecore.PowerShell.Extensions-6.0.scwdp.zip"
   ]
 }

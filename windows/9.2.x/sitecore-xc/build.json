@@ -1,0 +1,33 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xc-standalone:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP_CONNECT_CORE='C:\\packages\\Sitecore Commerce Connect Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_ENGINE_CONNECT='C:\\packages\\Sitecore Commerce Engine Connect OnPrem 4.0.55.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_MA='C:\\packages\\Sitecore Commerce Marketing Automation Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XPROFILES='C:\\packages\\Sitecore Commerce ExperienceProfile Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XANALYTICS='C:\\packages\\Sitecore Commerce ExperienceAnalytics Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg CERTIFICATES_IMAGE=sitecore-certificates:latest-nanoserver-${nanoserver_version}",
+        "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\standalone"
+      ]
+    },
+    {
+      "tag": "sitecore-xc-cd:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-cd:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP_CONNECT_CORE='C:\\packages\\Sitecore Commerce Connect Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_ENGINE_CONNECT='C:\\packages\\Sitecore Commerce Engine Connect OnPrem 4.0.55.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_MA='C:\\packages\\Sitecore Commerce Marketing Automation Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XPROFILES='C:\\packages\\Sitecore Commerce ExperienceProfile Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XANALYTICS='C:\\packages\\Sitecore Commerce ExperienceAnalytics Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg CERTIFICATES_IMAGE=sitecore-certificates:latest-nanoserver-${nanoserver_version}",
+        "--build-arg SC_ROLE_CONFIG_DIRECTORY=.\\config\\cd"
+      ]
+    }
+  ],
+  "sources": []
+}

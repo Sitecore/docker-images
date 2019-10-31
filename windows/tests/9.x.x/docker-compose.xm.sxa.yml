@@ -34,7 +34,6 @@ services:
     volumes:
       - ${LICENSE_PATH}:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
-      - .\data\src:C:\src
     ports:
       - "44001:80"
     links:
