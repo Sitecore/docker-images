@@ -47,6 +47,17 @@ services:
       - sql
       - solr
 
+  xconnect-processingengine:
+    image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\xconnect-processingengine:C:\ProcessingEngine\App_Data\logs
+    mem_limit: 500MB
+    restart: unless-stopped
+    links:
+      - sql
+      - xconnect
+
   cd:
     image: ${REGISTRY}sitecore-xc-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
