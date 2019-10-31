@@ -48,6 +48,17 @@ services:
       - sql
       - solr
 
+  xconnect-processingengine:
+    image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\xconnect-processingengine:C:\ProcessingEngine\App_Data\logs
+    mem_limit: 500MB
+    restart: unless-stopped
+    links:
+      - sql
+      - xconnect
+
   cd:
     image: ${REGISTRY}sitecore-xp-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
@@ -71,3 +82,13 @@ services:
       - sql
       - solr
       - xconnect
+
+  identity:
+    image: ${REGISTRY}sitecore-xp-identity:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\identity:C:\inetpub\wwwroot\wwwroot\logs
+    ports:
+      - "44005:80"
+    links:
+      - sql
