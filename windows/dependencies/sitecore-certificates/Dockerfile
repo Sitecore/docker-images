@@ -9,6 +9,10 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 RUN $env:ROOT_CERT_NAME = 'sitecore-root'; `
     $env:XCONNECT_SSL_CERT_NAME = 'xconnect'; `
     $env:XCONNECT_CLIENT_CERT_NAME = 'xconnect-client'; `
+    $env:COMMERCE_CLIENT_CERT_NAME = 'commerce-client'; `
+    $env:IDENTITY_CLIENT_CERT_NAME = 'identity-client'; `
+    $env:IDENTITY_SSL_CERT_NAME = 'identity'; `
+    $env:XC_SSL_CERT_NAME = 'xc'; `
     $env:CERT_STORE = 'Cert:\LocalMachine\My'; `
     $env:CERT_PASSWORD = 'Twelve4-4Cranial-Rag-kayo4-Ragweed-This8-grunge9-0Foss-7finalist-hubby'; `
     New-Item -Path 'C:\\certificates' -ItemType 'Directory' | Out-Null; `
@@ -17,10 +21,18 @@ RUN $env:ROOT_CERT_NAME = 'sitecore-root'; `
     $rootCert | Export-PfxCertificate -FilePath ('C:\\certificates\\{1}.pfx' -f $env:CERT_PATH, $env:ROOT_CERT_NAME) -Password $password | Out-Null; `
     New-SelfSignedCertificate -CertStoreLocation $env:CERT_STORE -DnsName $env:XCONNECT_SSL_CERT_NAME, '127.0.0.1', 'localhost' -Signer $rootCert -KeyExportPolicy 'Exportable' -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider' | Export-PfxCertificate -FilePath ('C:\\certificates\\{1}.pfx' -f $env:CERT_PATH, $env:XCONNECT_SSL_CERT_NAME) -Password $password | Out-Null; `
     New-SelfSignedCertificate -CertStoreLocation $env:CERT_STORE -DnsName $env:XCONNECT_CLIENT_CERT_NAME -Signer $rootCert -KeyExportPolicy 'Exportable' -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider' | Export-PfxCertificate -FilePath ('C:\\certificates\\{1}.pfx' -f $env:CERT_PATH, $env:XCONNECT_CLIENT_CERT_NAME) -Password $password | Out-Null; `
+    New-SelfSignedCertificate -CertStoreLocation $env:CERT_STORE -DnsName $env:COMMERCE_CLIENT_CERT_NAME -Signer $rootCert -KeyExportPolicy 'Exportable' -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider' | Export-PfxCertificate -FilePath ('C:\\certificates\\{1}.pfx' -f $env:CERT_PATH, $env:COMMERCE_CLIENT_CERT_NAME) -Password $password | Out-Null; `
+    New-SelfSignedCertificate -CertStoreLocation $env:CERT_STORE -DnsName $env:IDENTITY_CLIENT_CERT_NAME -Signer $rootCert -KeyExportPolicy 'Exportable' -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider' | Export-PfxCertificate -FilePath ('C:\\certificates\\{1}.pfx' -f $env:CERT_PATH, $env:IDENTITY_CLIENT_CERT_NAME) -Password $password | Out-Null; `
+    New-SelfSignedCertificate -CertStoreLocation $env:CERT_STORE -DnsName $env:IDENTITY_SSL_CERT_NAME, '127.0.0.1', 'localhost' -Signer $rootCert -KeyExportPolicy 'Exportable' -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider' | Export-PfxCertificate -FilePath ('C:\\certificates\\{1}.pfx' -f $env:CERT_PATH, $env:IDENTITY_SSL_CERT_NAME) -Password $password | Out-Null; `
+    New-SelfSignedCertificate -CertStoreLocation $env:CERT_STORE -DnsName $env:XC_SSL_CERT_NAME, '127.0.0.1', 'localhost' -Signer $rootCert -KeyExportPolicy 'Exportable' -Provider 'Microsoft Enhanced RSA and AES Cryptographic Provider' | Export-PfxCertificate -FilePath ('C:\\certificates\\{1}.pfx' -f $env:CERT_PATH, $env:XC_SSL_CERT_NAME) -Password $password | Out-Null; `
     Import-PfxCertificate -FilePath ('C:\\certificates\\sitecore-root.pfx') -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
     (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:ROOT_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:ROOT_CERT_NAME) -NoNewline -Encoding utf8; `
     (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:XCONNECT_SSL_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:XCONNECT_SSL_CERT_NAME) -NoNewline -Encoding utf8; `
     (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:XCONNECT_CLIENT_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:XCONNECT_CLIENT_CERT_NAME) -NoNewline -Encoding utf8; `
+    (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:COMMERCE_CLIENT_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:COMMERCE_CLIENT_CERT_NAME) -NoNewline -Encoding utf8; `
+    (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:IDENTITY_CLIENT_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:IDENTITY_CLIENT_CERT_NAME) -NoNewline -Encoding utf8; `
+    (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:IDENTITY_SSL_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:IDENTITY_SSL_CERT_NAME) -NoNewline -Encoding utf8; `
+    (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:XC_SSL_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:XC_SSL_CERT_NAME) -NoNewline -Encoding utf8; `
     $env:CERT_PASSWORD | Out-File -FilePath 'C:\\certificates\\password' -NoNewline -Encoding utf8;
 
 FROM $BASE_IMAGE

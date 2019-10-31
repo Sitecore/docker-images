@@ -416,6 +416,9 @@ function Initialize-BuildSpecifications
         "^sitecore-(xm|xp)-(sql|sqldev):(.*)$", # windows/linux platform
         "^sitecore-(xm|xp)-(standalone|cm|cd):(.*)$" # windows platform
 
+        "^sitecore-xp-(.*):(.*)$", # build XP before XC
+        "^sitecore-xc-(.*):(.*)$",
+
         "^sitecore-(xm|xp)-(spe|pse)-(sql|sqldev):(.*)$" # SPE windows/linux variants
         "^sitecore-(xm|xp)-(spe|pse)-(standalone|cm|cd):(.*)$" # SPE windows variants
 
