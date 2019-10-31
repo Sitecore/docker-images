@@ -18,23 +18,22 @@ services:
     ports:
       - "44011:8983"
 
-  # cd:
-  #   image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-  #   volumes:
-  #     - C:\license:C:\license
-  #     - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
-  #   ports:
-  #     - "44002:80"
-  #   links:
-  #     - sql
-  #     - solr
+  cd:
+    image: ${REGISTRY}sitecore-xm-sxa-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
+    ports:
+      - "44002:80"
+    links:
+      - sql
+      - solr
 
   cm:
     image: ${REGISTRY}sitecore-xm-sxa-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - C:\license:C:\license
+      - ${LICENSE_PATH}:C:\license
       - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
-      - .\data\src:C:\src
     ports:
       - "44001:80"
     links:
