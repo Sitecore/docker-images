@@ -7,7 +7,7 @@
     .DESCRIPTION
         The script reads hostname,ports and loopback addresses from a csv file.
 
-        netshell is then used to add a port proxy between locahost:port and loopback IP:80
+        netshell is then used to add a port proxy between localhost:port and loopback IP:80
 
         Loopback IP -> Hostname entries are then written to the hosts file
 

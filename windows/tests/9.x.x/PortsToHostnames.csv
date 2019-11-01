@@ -1,8 +1,8 @@
 HostName,ListenPort,ConnectPort,LoopBackIp
 cm.solution.local,80,44001,127.0.1.100
 cm.solution.local,443,44101,127.0.1.100
-id.solution.local,80,44005,127.0.1.100
-id.solution.local,443,44105,127.0.1.100
+id.solution.local,80,44005,127.0.1.200
+id.solution.local,443,44105,127.0.1.200
 solution.local,80,44002,127.0.1.110
 subsite1.solution.local,80,44002,127.0.1.110
 subsite2.solution.local,80,44002,127.0.1.110
