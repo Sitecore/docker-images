@@ -26,12 +26,13 @@
         Example .\PortsToHostnames.csv
 
 >> bof
-Port,HostName,LoopBack
-44001,cm.solution.local,127.0.1.100
-44002,solution.local,127.0.1.110
-44002,subsite1.solution.local,127.0.1.110
-44002,subsite2.solution.local,127.0.1.110
-44011,solr.solution.local,127.0.1.120
+ContainerPort,HostName,LoopBackIp,ListenPort
+44001,cm.solution.local,127.0.1.100,80
+44001,cm.solution.local,127.0.1.100,443
+44002,solution.local,127.0.1.110,80
+44002,subsite1.solution.local,127.0.1.110,80
+44002,subsite2.solution.local,127.0.1.110,80
+44011,solr.solution.local,127.0.1.120,80
 << eof
 
 Note; Loopback IP has to be unused and within the local address segment, 127.0.0.0/8 
@@ -74,19 +75,20 @@ if (-not (Test-Path $CsvFile)) {
 Function Invoke-NetshellPortProxy {
     param (
         [Parameter(Mandatory = $true)]
-        [string]$LoopBack,
+        [string]$LoopBackIp,
         [Parameter(Mandatory = $true)]
-        [string]$Port,
+        [string]$ConnectPort,
+        [Parameter(Mandatory = $false)]
+        [string]$ListenPort = 80,
         [Parameter(Mandatory = $false)]
         [bool]$Remove = $false
     )
     if ($Remove -eq $true) {
-        $Expression = ("netsh interface portproxy delete v4tov4 listenport=80 listenaddress={0}" -f $_.LoopBack)
-
+        $Expression = ("netsh interface portproxy delete v4tov4 listenport={0} listenaddress={1}" -f $ListenPort, $_.LoopBack)
     }
     else {
-        $Expression = ("netsh interface portproxy add v4tov4 listenport=80 listenaddress={0} connectport={1} connectaddress=127.0.0.1" `
-                -f $_.LoopBack, $_.Port)
+        $Expression = ("netsh interface portproxy add v4tov4 listenport={0} listenaddress={1} connectport={2} connectaddress=127.0.0.1" `
+                -f $ListenPort, $_.LoopBackIp, $_.ConnectPort)
     }
     Write-Verbose $Expression
     Invoke-Expression $Expression
@@ -94,9 +96,9 @@ Function Invoke-NetshellPortProxy {
 
 Function Update-HostsFile {
     param (
-        [Parameter(Mandatory = $true)]
-        [string]$IpAddress,
-        [Parameter(Mandatory = $true)]
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
+        [string]$IpAddress, 
+        [Parameter(Mandatory = $true, ValueFromPipeline = $true, ValueFromPipelineByPropertyName = $true)]
         [string]$HostName,
         [Parameter(Mandatory = $false)]
         [bool]$Remove = $false,
@@ -132,7 +134,7 @@ Function Update-HostsFile {
 
 Import-CSV $CsvFile | ForEach-Object {
     $_ | Format-Table | Out-String
-    Invoke-NetshellPortProxy -LoopBack $_.LoopBack -Port $_.Port -Remove $Remove
-    Update-HostsFile -IpAddress $_.LoopBack -HostName $_.HostName -Remove $Remove
+    Invoke-NetshellPortProxy -LoopBackIp $_.LoopBackIp -ConnectPort $_.ConnectPort -ListenPort $_.ListenPort -Remove $Remove
+    Update-HostsFile -HostName $_.HostName -IpAddress $_.LoopBackIp -Remove $Remove
 }
 Write-Host "Done.." -ForegroundColor Green
