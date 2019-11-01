@@ -5,7 +5,7 @@
         Use this script to proxy hostnames directly to your local Docker containers. No DNS required.
 
     .DESCRIPTION
-        The script reads port, hostname and loopback addresses from a csv file.
+        The script reads hostname,ports and loopback addresses from a csv file.
 
         netshell is then used to add a port proxy between locahost:port and loopback IP:80
 
@@ -21,21 +21,24 @@
 
             $ .\Set-LocalPortsToHostsProxies.ps1 -CsvFile .\SomeFile.csv -Remove
 
-        CSV file format example; 
+        CSV file format; 
+        HostName: Hostname to proxy
+        ListenPort: proxy this port on the loopback IP
+        ConnectPort: Port to connect on locahost (Port mapped to container)
+        LoopBackIp: IP address within the local address segment, 127.0.0.0/8 to use as loopback address
 
         Example .\PortsToHostnames.csv
-
 >> bof
-ContainerPort,HostName,LoopBackIp,ListenPort
-44001,cm.solution.local,127.0.1.100,80
-44001,cm.solution.local,127.0.1.100,443
-44002,solution.local,127.0.1.110,80
-44002,subsite1.solution.local,127.0.1.110,80
-44002,subsite2.solution.local,127.0.1.110,80
-44011,solr.solution.local,127.0.1.120,80
+HostName,ListenPort,ConnectPort,LoopBackIp
+cm.solution.local,80,44001,127.0.1.100
+cm.solution.local,443,44101,127.0.1.100
+id.solution.local,80,44005,127.0.1.200
+id.solution.local,443,44105,127.0.1.200
+solution.local,80,44002,127.0.1.110
+subsite1.solution.local,80,44002,127.0.1.110
+subsite2.solution.local,80,44002,127.0.1.110
+solr.solution.local,443,44011,127.0.1.120
 << eof
-
-Note; Loopback IP has to be unused and within the local address segment, 127.0.0.0/8 
 
         _Troubleshooting:_
             Hostnames not responding
@@ -50,7 +53,7 @@ Note; Loopback IP has to be unused and within the local address segment, 127.0.0
                 - Try to run:
                     $ netsh Interface ipv4 install
 
-                .. restart and test again ..
+                    .. restart and test again ..
 
             _Still not working?_ 
                 Checkout the netsh docs:
