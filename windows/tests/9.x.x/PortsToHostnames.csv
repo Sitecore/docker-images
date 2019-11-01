@@ -1,0 +1,6 @@
+Port,HostName,LoopBack
+44001,cm.solution.local,127.0.1.100
+44002,solution.local,127.0.1.110
+44002,subsite1.solution.local,127.0.1.110
+44002,subsite2.solution.local,127.0.1.110
+44011,solr.solution.local,127.0.1.120
