@@ -107,7 +107,7 @@ function Invoke-PackageRestore
                     {
                         throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
                     }
-                    
+
                     Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
                 }
 
@@ -414,16 +414,16 @@ function Initialize-BuildSpecifications
         "^sitecore-(xm1|xp)-sxa-(.*)-(standalone|cm|cd):(.*)$" # legacy\variants
 
         "^sitecore-(xm|xp)-(sql|sqldev):(.*)$", # windows/linux platform
-        "^sitecore-(xm|xp)-(standalone|cm|cd):(.*)$" # windows platform
-
-        "^sitecore-xp-(.*):(.*)$", # build XP before XC
-        "^sitecore-xc-(.*):(.*)$",
+        "^sitecore-(xm|xp)-(standalone|cm|cd|identity):(.*)$" # windows platform
+        "^sitecore-xp-xconnect(.*):(.*)$" # windows platform
 
         "^sitecore-(xm|xp)-(spe|pse)-(sql|sqldev):(.*)$" # SPE windows/linux variants
         "^sitecore-(xm|xp)-(spe|pse)-(standalone|cm|cd):(.*)$" # SPE windows variants
 
         "^sitecore-(xm|xp)-sxa-(sql|sqldev):(.*)$" # SXA windows/linux variants
         "^sitecore-(xm|xp)-sxa-(standalone|cm|cd):(.*)$" # SXA  windows variants
+
+        "^sitecore-xc-(.*):(.*)$" # XC windows variants
     )
 
     $patterns | ForEach-Object {
