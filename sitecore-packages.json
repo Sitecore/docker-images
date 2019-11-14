@@ -283,11 +283,32 @@
     "description": "Sitecore Experience Commerce 9.1 Initial Release",
     "url": "https://dev.sitecore.net/~/media/EF8EE376257142B4BDFAFF7EB1E1CA3E.ashx"
   },
-  "Sitecore.Commerce.WDP.2019.07-4.0.165.zip" : {
+  "Sitecore.Commerce.WDP.2019.07-4.0.165.zip": {
     "description": "Sitecore Experience Commerce 9.2 Initial Release",
     "url": "https://dev.sitecore.net/~/media/07F9ABE455944146B37E9D71CA781A27.ashx"
   },
   "Sitecore.PowerShell.Extensions-6.0.scwdp.zip": {
     "url": "https://github.com/SitecorePowerShell/Console/releases/download/6.0/Sitecore.PowerShell.Extensions-6.0.scwdp.zip"
+  },
+  "Sitecore 9.3.0 rev. 003498 (WDP XM1 packages).zip": {
+    "url": "TODO"
+  },
+  "Sitecore 9.3.0 rev. 003498 (WDP XP0 packages).zip": {
+    "url": "TODO"
+  },
+  "Sitecore 9.3.0 rev. 003498 (WDP XP1 packages).zip": {
+    "url": "TODO"
+  },
+  "Sitecore Experience Accelerator 9.3.0.2587.scwdp.zip": {
+    "url": "TODO"
+  },
+  "Sitecore Experience Accelerator 9.3.0.2587 CD.scwdp.zip": {
+    "url": "TODO"
+  },
+  "Sitecore Experience Accelerator XM 9.3.0.2587.scwdp.zip": {
+    "url": "TODO"
+  },
+  "Sitecore Experience Accelerator XM 9.3.0.2587 CD.scwdp.zip": {
+    "url": "TODO"
   }
 }
