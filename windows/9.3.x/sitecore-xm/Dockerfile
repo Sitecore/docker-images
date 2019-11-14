@@ -57,5 +57,6 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Add-LocalGroupMember -Group 'Performance Monitor Users' -Member 'IIS AppPool\DefaultAppPool'; `
     Import-Module WebAdministration; `
     Set-ItemProperty -Path $env:IIS_APPPOOL_PATH -Name 'processModel.identityType' -Value 'LocalSystem'; `
+    '<configSchema><sectionSchema name=\"appSettings\"><attribute name=\"configBuilders\" type=\"string\" /></sectionSchema></configSchema>' | Out-File -FilePath 'C:\\windows\\System32\\inetsrv\\config\\schema\\FX_schema.patch.xml' -Encoding 'utf8'; `
     Set-WebConfigurationProperty -PSPath $env:IIS_SITE_PATH -Filter '/appSettings/add[@key=\"role:define\"]' -Name 'value' -Value $env:SC_ROLE_DEFINE; `
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
