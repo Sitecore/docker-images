@@ -11,8 +11,10 @@ ARG ASSETS_USE_WDP
 
 COPY --from=assets ["${ASSETS_USE_WDP}", "C:\\temp\\packages\\"]
 
-# expand selected wdp into installation directory
+# expand selected wdp, inlcuding .xdt transformation files from the SCCPL package (`Expand-Archive` command needs it to be renamed to .zip file), into installation directory
 RUN Expand-Archive -Path 'C:\\temp\\packages\\*.zip' -DestinationPath 'C:\\temp'; `
+    Rename-Item -Path 'C:\\temp\\Content\\Website\\App_Data\\Transforms\\JSSSCCPL.sccpl' -NewName 'JSSSCCPL.sccpl.zip';`
+    Expand-Archive -Path 'C:\\temp\\Content\\Website\\App_Data\\Transforms\\JSSSCCPL.sccpl.zip' -DestinationPath 'C:\\temp\\Content\\Website\\App_Data\\JssXdt';`
     Copy-Item -Path 'C:\\temp\\Content\\Website\\*' -Destination 'C:\\inetpub\\wwwroot' -Recurse -Force;
 
 # copy tools and transforms
