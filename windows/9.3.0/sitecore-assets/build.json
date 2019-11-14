@@ -9,8 +9,13 @@
     }
   ],
   "sources": [
-    "Sitecore 9.3.0 (WDP XM1 packages).zip",
-    "Sitecore 9.3.0 (WDP XP0 packages).zip",
-    "Sitecore 9.3.0 (WDP XP1 packages).zip"
+    "Sitecore 9.3.0 rev. 003498 (WDP XM1 packages).zip",
+    "Sitecore 9.3.0 rev. 003498 (WDP XP0 packages).zip",
+    "Sitecore 9.3.0 rev. 003498 (WDP XP1 packages).zip",
+    "Sitecore Experience Accelerator 9.3.0.2587.scwdp.zip",
+    "Sitecore Experience Accelerator 9.3.0.2587 CD.scwdp.zip",
+    "Sitecore Experience Accelerator XM 9.3.0.2587.scwdp.zip",
+    "Sitecore Experience Accelerator XM 9.3.0.2587 CD.scwdp.zip",
+    "Sitecore.PowerShell.Extensions-6.0.scwdp.zip"
   ]
 }
