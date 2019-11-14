@@ -2,12 +2,13 @@
 
 ## November 2019
 
+- [Added] New **optional** `ENTRYPOINT` scripts (log streaming, auto start watch and auto start remote debugger) for IIS based images. See [README.md](/README.md#optional-entrypoint-scripts) on how to use.
 - [Added] Windows 1909 is now also supported. You can override which platforms you want by setting the parameter `AutoGenerateWindowsVersionTags` when calling `Invoke-Build`, default value is: `"1909", "1903", "ltsc2019"`.
 
 ## October 2019
 
 - [Added] Sitecore 9.2.0 XC images.
-- [Added] New 9.2.0 `xp-xconnect-processingengine` images. See [#84](https://github.com/Sitecore/docker-images/issues/43). Thanks [@adoprog](https://github.com/adoprog) :+1:
+- [Added] New 9.2.0 `xp-xconnect-processingengine` images. See [#43](https://github.com/Sitecore/docker-images/issues/43). Thanks [@adoprog](https://github.com/adoprog) :+1:
 - [Changed] Windows and Linux `spe` "Sitecore PowerShell Extensions" images updated to **v6.0**, indirectly *also* updating all `sxa` images. See [#84](https://github.com/Sitecore/docker-images/issues/84). Thanks [@michaellwest](https://github.com/michaellwest) :+1:
 - [Changed] The `c:\tools\scripts\Watch-Directory.ps1` no longer deletes destination directories, only files. See [#89](https://github.com/Sitecore/docker-images/issues/89). Thanks [@sshushliapin](https://github.com/sshushliapin) :+1:
 - [Fixed] The `c:\tools` folder was empty.
