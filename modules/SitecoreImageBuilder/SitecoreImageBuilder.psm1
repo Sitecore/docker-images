@@ -683,12 +683,13 @@ function Get-CurrentImagesMarkdown
 function Get-SupportedWindowsVersions
 {
     # NOTE: Order is important, newest first
-    Write-Output ("1903", "ltsc2019")
+    Write-Output ("1909", "1903", "ltsc2019")
 }
 
 function Get-WindowsServerCoreToNanoServerVersionMap
 {
     Write-Output @{
+        "1909"     = "1909";
         "1903"     = "1903";
         "ltsc2019" = "1809";
         "1803"     = "1803";
