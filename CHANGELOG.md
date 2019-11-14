@@ -1,5 +1,9 @@
 # Changelog
 
+## November 2019
+
+- [Added] Windows 1909 is now also supported. You can override which platforms you want by setting the parameter `AutoGenerateWindowsVersionTags` when calling `Invoke-Build`, default value is: `"1909", "1903", "ltsc2019"`.
+
 ## October 2019
 
 - [Added] Sitecore 9.2.0 XC images.
