@@ -8,6 +8,15 @@
         <add key="Telerik.Web.UI.DialogParametersEncryptionKey" xdt:Transform="RemoveAll" xdt:Locator="Match(key)" />
         <add key="Telerik.Web.UI.DialogParametersEncryptionKey" value="E67vGAporNBSF3G5Q03z7x0VdLYen1Fl5XRWNaFw9SFu6pECbA2CapczEEKIkbcamOvcCsvQzNCPI5bw7UG06yRGBAYGj8sH7NvKMwH8dpRZcRgv0X904ziHqRLWSokAFus1rjXfsAJKvzh9G9kOfqGF9DitWfWvRDZ2eP7lLlaxjxTLti0MijfrYZrw0L8343pdQdobNvmtGHItQmOmdoiFRJByheBtvU7Gm7Cq5D9ek9soaURf2mreiCnsMEJp" xdt:Transform="Insert" />
     </appSettings>
+    <location path="sitecore">
+        <system.webServer>
+            <httpProtocol>
+                <customHeaders>
+                    <add name="Content-Security-Policy" xdt:Locator="Match(name)" xdt:Transform="Remove" />
+                </customHeaders>
+            </httpProtocol>
+        </system.webServer>
+    </location>
     <system.web>
         <customErrors mode="Off" xdt:Transform="SetAttributes" />
     </system.web>
