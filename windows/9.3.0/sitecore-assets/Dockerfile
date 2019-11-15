@@ -35,7 +35,7 @@ RUN $zips = Get-ChildItem -Path 'C:\\downloads\\*.zip' -Exclude '*.scwdp.zip'; `
     $zips | ForEach-Object { Remove-Item -Path $_.FullName -Force; }; `
     $zips = Get-ChildItem -Path 'C:\\downloads\\*.zip' -Exclude '*Configuration files*.zip'; `
     $zips | ForEach-Object { Move-Item -Path $_.FullName -Destination 'C:\\packages'; }; `
-		$zips = Get-ChildItem -Path 'C:\\packages\\*.scwdp.zip' | Rename-Item -NewName {$_.Name -replace '.rev\..(\d*)'};
+    $zips = Get-ChildItem -Path 'C:\\packages\\*.scwdp.zip' | Rename-Item -NewName {$_.Name -replace '.rev\..(\d*)'};
 
 # move installers
 RUN New-Item -Path 'C:\\install\\setup' -ItemType 'Directory' -Force | Out-Null; `
