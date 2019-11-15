@@ -27,5 +27,15 @@ FROM $BASE_IMAGE
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
+ARG SC_ROLE_DEFINE
+
 COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 
+# copy Node.JS installer
+COPY --from=assets ["C:\\install\\setup\\node.msi", "C:\\inetpub\\wwwroot\\temp\\install\\setup\\node.msi"]
+
+RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
+    # setup Node.JS for Experience Editor
+    if (($env:SC_ROLE_DEFINE -like '*ContentManagement*') -or ($env:SC_ROLE_DEFINE -like '*Standalone*')) `
+    { Start-Process msiexec.exe -ArgumentList '/i', (Join-Path $env:INSTALL_TEMP '\\setup\\node.msi'), '/quiet', '/norestart' -NoNewWindow -Wait; } ` 
+    Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
