@@ -48,22 +48,24 @@ COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 RUN Import-Module WebAdministration; `
     $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     $env:IIS_SITE_PATH = 'IIS:\Sites\Default Web Site'; `
-    $env:IIS_APPPOOL_PATH = 'IIS:\AppPools\DefaultAppPool'; `
-    # install IIS URL Rewrite
+    $env:IIS_SITE_HOMEDIR_PATH = 'C:\\inetpub\\wwwroot'; `
+    $env:IIS_APPPOOL_IDENTITY = 'IIS AppPool\DefaultAppPool'; `
+    # install dependencies
     Start-Process msiexec.exe -ArgumentList '/i', (Join-Path $env:INSTALL_TEMP '\\setup\\urlrewrite.msi'), '/quiet', '/norestart' -NoNewWindow -Wait; `
-    # install Visual Studio C++ Redistributable
     Start-Process (Join-Path $env:INSTALL_TEMP '\\setup\\vc_redist.exe') -ArgumentList '/install', '/passive', '/norestart' -NoNewWindow -Wait; `
-    # install the tools folder
-    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
-    # add tools folders to system PATH
+    # install tools
+    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Recurse -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
-    # disable DNS caching
+    # configure Windows to disable DNS caching
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
-    # add Application Pool to Performance Monitor Users group
-    Add-LocalGroupMember -Group 'Performance Monitor Users' -Member 'IIS AppPool\DefaultAppPool'; `
-    # fix IIS config schema so it understands ASP.NET Configuration Builders and the "WebAdministration" module works as expected
-    '<configSchema><sectionSchema name=\"appSettings\"><attribute name=\"configBuilders\" type=\"string\" /></sectionSchema></configSchema>' | Out-File -FilePath 'C:\\windows\\System32\\inetsrv\\config\\schema\\FX_schema.patch.xml' -Encoding 'utf8'; `
-    # switch Application Pool to SYSTEM so Sitecore can write files to mounted volumes on Windows Server without manually assigning NTFS persmissions to a known built-in group
-    Set-ItemProperty -Path $env:IIS_APPPOOL_PATH -Name 'processModel.identityType' -Value 'LocalSystem'; `
-    # cleanup
+    # configure app pool group memberships
+    Add-LocalGroupMember -Group 'Performance Monitor Users' -Member $env:IIS_APPPOOL_IDENTITY; `
+    # configure app pool filesystem permissions
+    $rule = New-Object System.Security.AccessControl.FileSystemAccessRule($env:IIS_APPPOOL_IDENTITY, 'FullControl', @('ContainerInherit', 'ObjectInherit'), 'None', 'Allow'); `
+    $acl = Get-Acl -Path $env:IIS_SITE_HOMEDIR_PATH; `
+    $acl.SetAccessRule($rule); `
+    $acl | Set-Acl -Path $env:IIS_SITE_HOMEDIR_PATH; `
+    # fix IIS config schema so it understands ASP.NET Configuration Builders correctly, else "WebAdministration" module will break
+    '<configSchema><sectionSchema name=\"appSettings\"><attribute name=\"configBuilders\" type=\"string\" /></sectionSchema></configSchema>' | Out-File -FilePath 'C:\\Windows\\System32\\inetsrv\\config\\schema\\FX_schema.patch.xml' -Encoding 'utf8'; `
+    # delete temporary files
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;

@@ -20,13 +20,13 @@ services:
     ports:
       - "44011:8983"
     environment:
-      SOLR_LOG_LEVEL: WARN
+      SOLR_LOG_LEVEL: INFO
 
   cd:
     image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44002:80"
     environment:
@@ -36,15 +36,18 @@ services:
       SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS: Data Source=sql;Initial Catalog=Sitecore.ExperienceForms;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_SOLR.SEARCH: http://solr:8983/solr
       SITECORE_LICENSE_LOCATION: C:\license\license.xml
+      ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED: 'true'
+      ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED: 'true'
+      ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED: 'true'
     depends_on:
       - sql
       - solr
 
   cm:
     image: ${REGISTRY}sitecore-xm-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"
     environment:
@@ -59,6 +62,9 @@ services:
       SITECORE_APPSETTINGS_TELERIK.UPLOAD.CONFIGURATIONHASHKEY: ${TELERIK_ENCRYPTION_KEY}
       SITECORE_APPSETTINGS_TELERIK.WEB.UI.DIALOGPARAMETERSENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
       SITECORE_LICENSE_LOCATION: C:\license\license.xml
+      ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED: 'false'
+      ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED: 'false'
+      ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED: 'true'
     depends_on:
       - sql
       - solr
