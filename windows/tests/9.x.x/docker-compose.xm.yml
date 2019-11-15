@@ -20,9 +20,13 @@ services:
 
   cd:
     image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
+    environment:
+      - "ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=true"
+      - "ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=true"
+      - "ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED=true"
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44002:80"
     links:
@@ -31,9 +35,13 @@ services:
 
   cm:
     image: ${REGISTRY}sitecore-xm-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
+    environment:
+      - "ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=false"
+      - "ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=false"
+      - "ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED=true"
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"
     links:
