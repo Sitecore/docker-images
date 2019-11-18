@@ -18,55 +18,46 @@ pr:
     - master
 
 stages:
-  - stage: Start_Windows_VM
-    dependsOn: []
+  - stage: "Start VMs"
     jobs:
-      - job: Start_Windows_VM
+      - job: "Start Windows VM"
         pool:
-          name: DEVDEMO1US1
+          vmImage: Windows-2019 # Use Microsoft hosted image to start VMs
         steps:
           - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
             displayName: "Start Docker Build VM"
             inputs:
               Action: "Start VM"
-              azureSubscription: "AzureSubscription"
-              ResourceGroupName: $(docker.build.vm.resourceGroupName)
-              VmName: $(docker.build.vm.name)
-  - stage: Start_Linux_VM
-    dependsOn: []
-    jobs:
-    - job: Start_Linux_VM
-      pool:
-        name: DEVDEMO1US1
-      steps:
-        - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-          displayName: "Start Docker Build VM"
-          inputs:
-            Action: "Start VM"
-            azureSubscription: "AzureSubscription"
-            ResourceGroupName: $(docker.build.vm.resourceGroupName)
-            VmName: 'docker-ubuntu16'
-  - stage: Build_Windows_Images
-    dependsOn: Start_Windows_VM
-    jobs:
-      - job: Connect_Asset_Drive
-        displayName: "Connect to Azure File Connect to Azure File Share"
+              azureSubscription: $(azureSubscription)
+              ResourceGroupName: $(vm.resourceGroupName)
+              VmName: $(vm.windows.name)
+      - job: "Start Linux VM"
+        condition: eq(variables['buildLinuxImages'], 'true')
         pool:
-          name: Docker
-          demands:
-            - Agent.OS -equals Windows_NT
+          vmImage: Windows-2019
+        steps:
+          - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
+            displayName: "Start Docker Build VM"
+            inputs:
+              Action: "Start VM"
+              azureSubscription: $(azureSubscription)
+              ResourceGroupName: $(vm.resourceGroupName)
+              VmName: $(vm.linux.name)
+
+  - stage: "Build Images"
+    dependsOn: "Start VMs"
+    jobs:
+      - job: "Build Windows Images"
+        timeoutInMinutes: 720
+        displayName: "Build Windows Images"
+        pool:
+          name: $(agentPoolName)
         steps:
           - powershell: |
               Test-NetConnection -ComputerName "$(shared.folder.server)" -Port 445
               Invoke-Expression -Command "cmdkey /add:$(shared.folder.server) /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
-      - job: Build_Images
-        dependsOn: Connect_Asset_Drive
-        timeoutInMinutes: 720
-        displayName: "Build Images"
-        pool:
-          name: Docker
-        steps:
+            condition: eq(variables['useAssetsDrive'], 'true')
           - task: Docker@2
             displayName: login
             inputs:
@@ -77,55 +68,55 @@ stages:
           - powershell: |
               $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
               Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(install.source.path) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(install.source.path) -Registry $(container.registry.name) -PushMode $(PushMode)
-            errorActionPreference: silentlyContinue
-            continueOnError: "true"
-  - stage: Build_Linux_Images
-    dependsOn: Start_Linux_VM
-    jobs:
-    - job: Build_Linux_Images
-      timeoutInMinutes: 720
-      displayName: "Build Linux Images"
-      pool:
-        name: Docker
-        demands:
-          - Agent.OS -equals Linux
-      steps:
-        - task: Docker@2
-          enabled: true
-          displayName: login
-          inputs:
-              containerRegistry: "docker-registry"
-              command: login
-        - checkout: self
-          clean: all
-        - task: Bash@3
-          inputs:
-              targetType: inline
-              script: |
-                if [ -d "/mnt/dockerassets" ]; then
-                exit 0
-                fi
-                sudo mkdir /mnt/dockerassets
-                
-                if [ ! -d "/etc/smbcredentials" ]; then
-                sudo mkdir /etc/smbcredentials
-                fi
-                if [ ! -f "/etc/smbcredentials/dockerassets.cred" ]; then
-                    sudo bash -c 'echo "username=dockerassets" >> /etc/smbcredentials/dockerassets.cred'
-                    sudo bash -c 'echo "password=$(azure.fileshare.password)" >> /etc/smbcredentials/dockerassets.cred'
-                fi
-                sudo chmod 600 /etc/smbcredentials/dockerassets.cred
+              SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(install.windows.source.path) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-Build -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(install.windows.source.path) -Registry $(container.registry.name) -PushMode $(PushMode)
+          - powershell: |
+                docker image prune --force
+              condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
 
-                sudo bash -c 'echo "//$(shared.folder.server)/docker-assets /mnt/dockerassets cifs nofail,vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
-                sudo mount -t cifs //$(shared.folder.server)/docker-assets /mnt/dockerassets -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
+      - job: Build_Linux_Images
+        timeoutInMinutes: 720
+        displayName: "Build Linux Images"
+        condition: eq(variables['buildLinuxImages'], 'true')
+        pool:
+          name: $(agentPoolName)
+          demands:
+            - Agent.OS -equals Linux
+        steps:
+          - task: Bash@3
+            condition: eq(variables['useAssetsDrive'], 'true')
+            inputs:
+                targetType: inline
+                script: |
+                  if [ -d "$(install.linux.source.path)" ]; then
+                  exit 0
+                  fi
+                  sudo mkdir $(install.linux.source.path)
+                  
+                  if [ ! -d "/etc/smbcredentials" ]; then
+                  sudo mkdir /etc/smbcredentials
+                  fi
+                  if [ ! -f "/etc/smbcredentials/dockerassets.cred" ]; then
+                      sudo bash -c 'echo "username=dockerassets" >> /etc/smbcredentials/dockerassets.cred'
+                      sudo bash -c 'echo "password=$(azure.fileshare.password)" >> /etc/smbcredentials/dockerassets.cred'
+                  fi
+                  sudo chmod 600 /etc/smbcredentials/dockerassets.cred
 
-        - powershell: |
-              $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-              SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "/mnt/dockerassets" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
-              SitecoreImageBuilder\Invoke-Build -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "/mnt/dockerassets" -Registry $(container.registry.name) -PushMode $(PushMode)
-
-          errorActionPreference: silentlyContinue
-          continueOnError: "true"
+                  sudo bash -c 'echo "//$(shared.folder.server)/docker-assets $(install.linux.source.path) cifs nofail,vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
+                  sudo mount -t cifs //$(shared.folder.server)/docker-assets $(install.linux.source.path) -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
+          - task: Docker@2
+            enabled: true
+            displayName: login
+            inputs:
+                containerRegistry: "docker-registry"
+                command: login
+          - checkout: self
+            clean: all
+          - powershell: |
+                $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+                Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+                SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(install.linux.source.path)" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+                SitecoreImageBuilder\Invoke-Build -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.linux.source.path)" -Registry $(container.registry.name) -PushMode $(PushMode)
+          - powershell: |
+                docker image prune --force
+              condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
