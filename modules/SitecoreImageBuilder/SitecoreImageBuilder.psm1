@@ -704,7 +704,7 @@ function Get-LatestSupportedVersion
     $specs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot "\..\..\windows")
 
     # get the latest version number for Sitecore
-    $sitecore = Get-LatestVersionNumberForTag -specs $specs -tag "sitecore-*:*windowsservercore-*"
+    $sitecore = Get-LatestVersionNumberForTag -Specs $specs -Tag "sitecore-*:*windowsservercore-*"
 
     # pick latest 'windowsservercore' LTSC version
     $windowsServerCore = (Get-SupportedWindowsVersions | Where-Object { $_ -like "ltsc*" } | Select-Object -First 1)
@@ -713,7 +713,7 @@ function Get-LatestSupportedVersion
     $nanoserver = (Get-WindowsServerCoreToNanoServerVersionMap)[$windowsServerCore]
 
     # get the latest version for redis
-    $redis = Get-LatestVersionNumberForTag -specs $specs -tag "sitecore-redis*:*windowsservercore-*"
+    $redis = Get-LatestVersionNumberForTag -Specs $specs -Tag "sitecore-redis*:*windowsservercore-*"
 
     Write-Output (New-Object PSObject -Property @{
             Sitecore          = $sitecore;
@@ -728,14 +728,14 @@ function Get-LatestVersionNumberForTag
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
-        [array]$specs
+        [array]$Specs
         ,
         [Parameter(Mandatory = $true)]
-        [string]$tag
+        [string]$Tag
     )
 
         # find all versions for the tag
-        $versions = $specs | Where-Object { $_.Tag -like $tag } | Select-Object -ExpandProperty Tag
+        $versions = $Specs | Where-Object { $_.Tag -like $Tag } | Select-Object -ExpandProperty Tag
 
         $versions = $versions | ForEach-Object {
             $_.Substring($_.IndexOf(':') + 1)
