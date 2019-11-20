@@ -67,8 +67,8 @@ services:
     mem_limit: 500MB
     environment:
       SITECORE_LICENSE_LOCATION: C:\license
-      Sitecore_ConnectionStrings_Collection: Data Source=sql;Initial Catalog=Sitecore.Xdb.Collection.ShardMapManager;User ID=sa;Password=${SQL_SA_PASSWORD}
-      Sitecore_ConnectionStrings_SolrCore: http://solr:8983/solr/sitecore_xdb
+      SITECORE_CONNECTIONSTRINGS_COLLECTION: Data Source=sql;Initial Catalog=Sitecore.Xdb.Collection.ShardMapManager;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLRCORE: http://solr:8983/solr/sitecore_xdb
       SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRREADERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
       SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRWRITERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
     depends_on:
