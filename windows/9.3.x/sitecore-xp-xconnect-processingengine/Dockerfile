@@ -13,18 +13,18 @@ COPY --from=assets ["${ASSETS_USE_WDP}", "C:\\temp\\packages\\"]
 
 # expand selected wdp into installation directory
 RUN Expand-Archive -Path 'C:\\temp\\packages\\*.zip' -DestinationPath 'C:\\temp'; `
-    New-Item -Path 'C:\\IndexWorker' -ItemType Directory | Out-Null; `
-    Copy-Item -Path 'C:\\temp\\Content\\Website\\App_Data\\jobs\\continuous\\IndexWorker\\*' -Destination 'C:\\IndexWorker' -Recurse -Force;
+    New-Item -Path 'C:\\ProcessingEngine' -ItemType Directory | Out-Null; `
+    Copy-Item -Path 'C:\\temp\\Content\\Website\\App_Data\\jobs\\continuous\\ProcessingEngine\\*' -Destination 'C:\\ProcessingEngine' -Recurse -Force;
 
 # copy tools and transforms
-COPY --from=assets ["C:\\install\\tools\\", "C:\\IndexWorker\\temp\\install\\tools\\"]
-COPY .\\config\\ C:\\IndexWorker\\
+COPY --from=assets ["C:\\install\\tools\\", "C:\\ProcessingEngine\\temp\\install\\tools\\"]
+COPY .\\config\\ C:\\ProcessingEngine\\
 
 # find transform files and do transformation
 RUN $xdts = [System.Collections.ArrayList]@(); `
-    $xdts.AddRange(@(Get-ChildItem -Path 'C:\\IndexWorker\\App_Config\\*.xdt' -Recurse)); `
-    $xdts.AddRange(@(Get-ChildItem -Path 'C:\\IndexWorker\\App_Data\\Config\\*.xdt' -Recurse)); `
-    $xdts | ForEach-Object { & 'C:\\IndexWorker\\temp\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path $_.FullName.Replace('.xdt', '') -XdtPath $_.FullName -XdtDllPath 'C:\\IndexWorker\\temp\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; }; `
+    $xdts.AddRange(@(Get-ChildItem -Path 'C:\\ProcessingEngine\\App_Config\\*.xdt' -Recurse)); `
+    $xdts.AddRange(@(Get-ChildItem -Path 'C:\\ProcessingEngine\\App_Data\\Config\\*.xdt' -Recurse)); `
+    $xdts | ForEach-Object { & 'C:\\ProcessingEngine\\temp\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path $_.FullName.Replace('.xdt', '') -XdtPath $_.FullName -XdtDllPath 'C:\\ProcessingEngine\\temp\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; }; `
     $xdts | ForEach-Object { Remove-Item -Path $_.FullName; };
 
 FROM $BASE_IMAGE
@@ -32,9 +32,9 @@ FROM $BASE_IMAGE
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
 
 # copy from build stage
-COPY --from=build ["C:\\IndexWorker\\", "C:\\IndexWorker\\"]
+COPY --from=build ["C:\\ProcessingEngine\\", "C:\\ProcessingEngine\\"]
 
-RUN $env:INSTALL_TEMP = 'C:\\IndexWorker\\temp\\install'; `
+RUN $env:INSTALL_TEMP = 'C:\\ProcessingEngine\\temp\\install'; `
     # install tools
     Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Recurse -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
@@ -43,4 +43,4 @@ RUN $env:INSTALL_TEMP = 'C:\\IndexWorker\\temp\\install'; `
     # delete temporary files
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
 
-ENTRYPOINT ["C:\\IndexWorker\\Sitecore.XConnectSearchIndexer.exe"]
+ENTRYPOINT ["C:\\ProcessingEngine\\Sitecore.ProcessingEngine.exe"]
