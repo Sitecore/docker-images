@@ -98,16 +98,6 @@ services:
       - sql
       - xconnect
 
-  # identity:
-  #   image: ${REGISTRY}sitecore-xp-identity:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-  #   volumes:
-  #     - ${LICENSE_PATH}:C:\license
-  #     - .\data\identity:C:\inetpub\wwwroot\wwwroot\logs
-  #   ports:
-  #     - "44005:80"
-  #   depends_on:
-  #     - sql
-
   cd:
     image: ${REGISTRY}sitecore-xp-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
