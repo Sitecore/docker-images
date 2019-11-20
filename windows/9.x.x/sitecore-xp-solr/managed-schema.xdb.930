@@ -2,6 +2,7 @@
 <!-- Solr managed schema - automatically generated - DO NOT EDIT -->
 <schema name="default-config" version="1.6">
   <uniqueKey>id</uniqueKey>
+  <fieldType name="_nest_path_" class="solr.NestPathField" omitTermFreqAndPositions="true" omitNorms="true" maxCharsForDocValues="-1" stored="false" />
   <fieldType name="ancestor_path" class="solr.TextField">
     <analyzer type="index">
       <tokenizer class="solr.KeywordTokenizerFactory" />
@@ -39,6 +40,7 @@
       <tokenizer class="solr.KeywordTokenizerFactory" />
     </analyzer>
   </fieldType>
+  <fieldType name="ignored" class="solr.StrField" indexed="false" stored="false" multiValued="true" />
   <fieldType name="location" class="solr.LatLonPointSpatialField" docValues="true" />
   <fieldType name="location_rpt" class="solr.SpatialRecursivePrefixTreeFieldType" geo="true" maxDistErr="0.001" distErrPct="0.025" distanceUnits="kilometers" />
   <fieldType name="lowercase" class="solr.TextField" positionIncrementGap="100">
@@ -436,17 +438,20 @@
       <tokenizer class="solr.WhitespaceTokenizerFactory" />
     </analyzer>
   </fieldType>
+  <field name="_nest_path_" type="_nest_path_" />
   <field name="_root_" type="string" docValues="false" indexed="true" stored="false" />
   <field name="_text_" type="text_general" multiValued="true" indexed="true" stored="false" />
   <field name="_version_" type="plong" indexed="false" stored="false" />
   <field name="contactid_s" type="string" indexed="true" stored="true" />
   <field name="id" type="string" multiValued="false" indexed="true" required="true" stored="true" />
+  <field name="xdbiscc_b" type="boolean" indexed="false" stored="true" />
   <field name="xdbtokenbytes_s" type="string" indexed="false" stored="true" />
   <dynamicField name="*_txt_en_split_tight" type="text_en_splitting_tight" indexed="true" stored="true" />
   <dynamicField name="*_descendent_path" type="descendent_path" indexed="true" stored="true" />
   <dynamicField name="*_ancestor_path" type="ancestor_path" indexed="true" stored="true" />
   <dynamicField name="*_txt_en_split" type="text_en_splitting" indexed="true" stored="true" />
   <dynamicField name="*_txt_sort" type="text_gen_sort" indexed="true" stored="true" />
+  <dynamicField name="ignored_*" type="ignored" />
   <dynamicField name="*_txt_rev" type="text_general_rev" indexed="true" stored="true" />
   <dynamicField name="*_phon_en" type="phonetic_en" indexed="true" stored="true" />
   <dynamicField name="*_s_lower" type="lowercase" indexed="true" stored="true" />

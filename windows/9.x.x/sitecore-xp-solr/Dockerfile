@@ -26,7 +26,7 @@ RUN New-Item -Path 'C:\\clean' -ItemType Directory | Out-Null; `
         $schema = @{$true=('C:\\temp\\{0}' -f $env:MANAGED_SCHEMA_XDB_NAME);$false=('C:\\temp\\{0}' -f $env:MANAGED_SCHEMA_DEFAULT_NAME)}[$name -like '*xdb*']; `
         Copy-Item -Path 'C:\\clean\\configsets\\_default\\conf' -Destination ('C:\\clean\\{0}\\conf' -f $name) -Recurse -Force; `
         Copy-Item -Path $schema -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
-        New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
+        Set-Content -Path ('C:\\clean\\{0}\\core.properties' -f $name) -Value ('name={0}{1}config=solrconfig.xml{1}update.autoCreateFields=false{1}dataDir=data' -f $name, [Environment]::NewLine); `
         New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
     }; `
     Remove-Item -Path 'C:\\clean\\README.txt'; `
