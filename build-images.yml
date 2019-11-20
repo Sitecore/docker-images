@@ -63,7 +63,7 @@ stages:
             displayName: "Start Docker Build VM"
             inputs:
               Action: "Start VM"
-              azure.subscription: $(azure.subscription)
+              azureSubscription: $(azure.subscription)
               ResourceGroupName: $(azure.vm.resourceGroupName)
               VmName: $(azure.vm.windows.name)
       - job: Start_Linux_VM
@@ -75,7 +75,7 @@ stages:
             displayName: "Start Docker Build VM"
             inputs:
               Action: "Start VM"
-              azure.subscription: $(azure.subscription)
+              azureSubscription: $(azure.subscription)
               ResourceGroupName: $(azure.vm.resourceGroupName)
               VmName: $(azure.vm.linux.name)
 
