@@ -4,7 +4,7 @@
 # - azure.subscription
 # - azure.agentPoolName
 # - azure.vm.resourceGroupName
-# - azure.vm.linux.name
+# - (optional) azure.vm.linux.name
 # - azure.vm.windows.name
 #
 # Image build options
@@ -107,7 +107,7 @@ stages:
               SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(windows.install.source.path) -Registry $(container.registry.name) -PushMode $(build.pushMode)
           - powershell: |
                 docker image prune --force
-              condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
+            condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
 
       - job: Build_Linux_Images
         timeoutInMinutes: 720
@@ -154,4 +154,4 @@ stages:
                 SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(linux.install.source.path)" -Registry $(container.registry.name) -PushMode $(build.pushMode)
           - powershell: |
                 docker image prune --force
-              condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
+            condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
