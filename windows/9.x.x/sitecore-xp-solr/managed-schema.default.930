@@ -463,6 +463,7 @@
   <field name="_name" type="text_general" indexed="true" stored="true" />
   <field name="_parent" type="string" indexed="true" stored="true" />
   <field name="_path" type="string" multiValued="true" indexed="true" stored="false" />
+  <field name="_readaccess" type="lowercase" docValues="false" multiValued="true" indexed="true" stored="false" />
   <field name="_tags" type="string" multiValued="true" indexed="true" stored="true" />
   <field name="_template" type="lowercase" indexed="true" stored="true" />
   <field name="_templatename" type="string" indexed="true" stored="true" />
@@ -475,12 +476,13 @@
   <field name="lock" type="boolean" indexed="true" stored="false" />
   <field name="text" type="text_general" multiValued="true" indexed="true" stored="false" />
   <field name="text_rev" type="text_general_rev" multiValued="true" indexed="true" stored="false" />
+  <dynamicField name="*_ignored" type="ignored" indexed="true" stored="true" />
   <dynamicField name="*_random" type="random" indexed="true" stored="true" />
   <dynamicField name="*_t_en" type="text_general" indexed="true" stored="true" />
   <dynamicField name="*_t_ar" type="text_ar" indexed="true" stored="true" />
   <dynamicField name="*_t_bg" type="text_bg" indexed="true" stored="true" />
   <dynamicField name="*_t_ca" type="text_ca" indexed="true" stored="true" />
-  <dynamicField name="*_t_cz" type="text_cz" indexed="true" stored="true" />
+  <dynamicField name="*_t_cs" type="text_cz" indexed="true" stored="true" />
   <dynamicField name="*_t_da" type="text_da" indexed="true" stored="true" />
   <dynamicField name="*_t_de" type="text_de" indexed="true" stored="true" />
   <dynamicField name="*_t_el" type="text_el" indexed="true" stored="true" />
@@ -499,7 +501,7 @@
   <dynamicField name="*_t_ja" type="text_ja" indexed="true" stored="true" />
   <dynamicField name="*_t_lv" type="text_lv" indexed="true" stored="true" />
   <dynamicField name="*_t_nl" type="text_nl" indexed="true" stored="true" />
-  <dynamicField name="*_t_no" type="text_no" indexed="true" stored="true" />
+  <dynamicField name="*_t_nb" type="text_no" indexed="true" stored="true" />
   <dynamicField name="*_t_pt" type="text_pt" indexed="true" stored="true" />
   <dynamicField name="*_t_ro" type="text_ro" indexed="true" stored="true" />
   <dynamicField name="*_t_ru" type="text_ru" indexed="true" stored="true" />

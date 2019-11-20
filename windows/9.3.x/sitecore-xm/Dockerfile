@@ -47,7 +47,6 @@ COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 
 RUN Import-Module WebAdministration; `
     $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
-    $env:IIS_SITE_PATH = 'IIS:\Sites\Default Web Site'; `
     $env:IIS_SITE_HOMEDIR_PATH = 'C:\\inetpub\\wwwroot'; `
     $env:IIS_APPPOOL_IDENTITY = 'IIS AppPool\DefaultAppPool'; `
     # install dependencies

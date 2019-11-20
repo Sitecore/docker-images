@@ -9,6 +9,9 @@ services:
     mem_limit: 2GB
     ports:
       - "44010:1433"
+    environment:
+      SA_PASSWORD: ${SQL_SA_PASSWORD}
+      ACCEPT_EULA: "Y"
 
   solr:
     image: ${REGISTRY}sitecore-xp-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
@@ -24,71 +27,120 @@ services:
       - ${LICENSE_PATH}:C:\license
       - .\data\xconnect:C:\inetpub\wwwroot\App_Data\logs
     mem_limit: 1GB
-    links:
+    environment:
+      SITECORE_LICENSE_LOCATION: C:\license
+      SITECORE_SITECORE:XCONNECT:COLLECTIONSEARCH:SERVICES:SOLR.SOLRREADERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
+      SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRWRITERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
+      SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;user id=sa;password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_PROCESSING.ENGINE.STORAGE: Data Source=sql;Database=Sitecore.ProcessingEngineStorage;user id=sa;password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_REPORTING: Data Source=sql;Database=Sitecore.Reporting;user id=sa;password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION: Data Source=sql;Database=Sitecore.MarketingAutomation;user id=sa;password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.PROCESSING.POOLS: Data Source=sql;Database=Sitecore.Processing.Pools;user id=sa;password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;user id=sa;password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_COLLECTION: Data Source=sql;Database=Sitecore.Xdb.Collection.ShardMapManager;user id=sa;password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLRCORE: http://solr:8983/solr/sitecore_xdb
+    depends_on:
       - sql
       - solr
 
-  xconnect-automationengine:
-    image: ${REGISTRY}sitecore-xp-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    volumes:
-      - ${LICENSE_PATH}:C:\license
-      - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
-    mem_limit: 500MB
-    links:
-      - sql
-      - xconnect
+  # xconnect-automationengine:
+  #   image: ${REGISTRY}sitecore-xp-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+  #   volumes:
+  #     - ${LICENSE_PATH}:C:\license
+  #     - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
+  #   mem_limit: 500MB
+  #   depends_on:
+  #     - sql
+  #     - xconnect
 
-  xconnect-indexworker:
-    image: ${REGISTRY}sitecore-xp-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    volumes:
-      - ${LICENSE_PATH}:C:\license
-      - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
-    mem_limit: 500MB
-    links:
-      - sql
-      - solr
+  # xconnect-indexworker:
+  #   image: ${REGISTRY}sitecore-xp-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+  #   volumes:
+  #     - ${LICENSE_PATH}:C:\license
+  #     - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
+  #   mem_limit: 500MB
+  #   depends_on:
+  #     - sql
+  #     - solr
 
-  xconnect-processingengine:
-    image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    volumes:
-      - ${LICENSE_PATH}:C:\license
-      - .\data\xconnect-processingengine:C:\ProcessingEngine\App_Data\logs
-    mem_limit: 500MB
-    restart: unless-stopped
-    links:
-      - sql
-      - xconnect
+  # xconnect-processingengine:
+  #   image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+  #   volumes:
+  #     - ${LICENSE_PATH}:C:\license
+  #     - .\data\xconnect-processingengine:C:\ProcessingEngine\App_Data\logs
+  #   mem_limit: 500MB
+  #   restart: unless-stopped
+  #   depends_on:
+  #     - sql
+  #     - xconnect
+
+  # identity:
+  #   image: ${REGISTRY}sitecore-xp-identity:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+  #   volumes:
+  #     - ${LICENSE_PATH}:C:\license
+  #     - .\data\identity:C:\inetpub\wwwroot\wwwroot\logs
+  #   ports:
+  #     - "44005:80"
+  #   depends_on:
+  #     - sql
 
   cd:
     image: ${REGISTRY}sitecore-xp-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44002:80"
-    links:
+    environment:
+      SITECORE_LICENSE_LOCATION: C:\license\license.xml
+      SITECORE_APPSETTINGS_ROLE:DEFINE: ContentDelivery
+      SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS: Data Source=sql;Initial Catalog=Sitecore.ExperienceForms;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLR.SEARCH: http://solr:8983/solr
+      SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXM.MASTER: Data Source=sql;Database=Sitecore.EXM.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XCONNECT.COLLECTION: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION.OPERATIONS.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_SITECORE.REPORTING.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA.CLIENT: http://xconnect
+    depends_on:
       - sql
       - solr
       - xconnect
 
   cm:
     image: ${REGISTRY}sitecore-xp-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"
-    links:
+    environment:
+      SITECORE_LICENSE_LOCATION: C:\license\license.xml
+      SITECORE_APPSETTINGS_ROLE:DEFINE: Standalone
+      SITECORE_CONNECTIONSTRINGS_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_MASTER: Data Source=sql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS: Data Source=sql;Initial Catalog=Sitecore.ExperienceForms;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLR.SEARCH: http://solr:8983/solr
+      SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION: Data Source=sql;Database=Sitecore.MarketingAutomation;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.PROCESSING.POOLS: Data Source=sql;Database=Sitecore.Processing.Pools;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_XDB.PROCESSING.TASKS: Data Source=sql;Database=Sitecore.Processing.Tasks;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXM.MASTER: Data Source=sql;Database=Sitecore.EXM.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_REPORTING: Data Source=sql;Database=Sitecore.Reporting;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SITECORE.REPORTING.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XCONNECT.COLLECTION: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION.OPERATIONS.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION.REPORTING.CLIENT: http://xconnect
+      SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA.CLIENT: http://xconnect
+      SITECORE_APPSETTINGS_TELERIK.ASYNCUPLOAD.CONFIGURATIONENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_APPSETTINGS_TELERIK.UPLOAD.CONFIGURATIONHASHKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_APPSETTINGS_TELERIK.WEB.UI.DIALOGPARAMETERSENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
+    depends_on:
       - sql
       - solr
       - xconnect
-
-  identity:
-    image: ${REGISTRY}sitecore-xp-identity:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    volumes:
-      - ${LICENSE_PATH}:C:\license
-      - .\data\identity:C:\inetpub\wwwroot\wwwroot\logs
-    ports:
-      - "44005:80"
-    links:
-      - sql
