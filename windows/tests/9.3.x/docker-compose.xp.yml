@@ -24,11 +24,10 @@ services:
   xconnect:
     image: ${REGISTRY}sitecore-xp-xconnect:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect:C:\inetpub\wwwroot\App_Data\logs
     mem_limit: 1GB
     environment:
-      SITECORE_LICENSE_LOCATION: C:\license
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
       SITECORE_SITECORE:XCONNECT:COLLECTIONSEARCH:SERVICES:SOLR.SOLRREADERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
       SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRWRITERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
       SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
@@ -46,11 +45,10 @@ services:
   xconnect-automationengine:
     image: ${REGISTRY}sitecore-xp-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-automationengine:C:\worker\App_Data\logs
     mem_limit: 500MB
     environment:
-      SITECORE_LICENSE_LOCATION: C:\license
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
       SITECORE_CONNECTIONSTRINGS_XCONNECT.COLLECTION: http://xconnect
       SITECORE_CONNECTIONSTRINGS_XDB.MARKETINGAUTOMATION: Data Source=sql;Database=Sitecore.MarketingAutomation;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;User ID=sa;Password=${SQL_SA_PASSWORD}
@@ -62,11 +60,10 @@ services:
   xconnect-indexworker:
     image: ${REGISTRY}sitecore-xp-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-indexworker:C:\worker\App_Data\logs
     mem_limit: 500MB
     environment:
-      SITECORE_LICENSE_LOCATION: C:\license
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
       SITECORE_CONNECTIONSTRINGS_COLLECTION: Data Source=sql;Initial Catalog=Sitecore.Xdb.Collection.ShardMapManager;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_SOLRCORE: http://solr:8983/solr/sitecore_xdb
       SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRREADERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
@@ -78,12 +75,11 @@ services:
   xconnect-processingengine:
     image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
-      - ${LICENSE_PATH}:C:\license
       - .\data\xconnect-processingengine:C:\worker\App_Data\logs
     mem_limit: 500MB
     restart: unless-stopped
     environment:
-      SITECORE_LICENSE_LOCATION: C:\license
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
       SITECORE_CONNECTIONSTRINGS_PROCESSING.ENGINE.STORAGE: Data Source=sql;Database=Sitecore.Processing.Engine.Storage;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_PROCESSING.ENGINE.TASKS: Data Source=sql;Database=Sitecore.Processing.Engine.Tasks;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_PROCESSING.WEBAPI.BLOB: http://xconnect
@@ -101,12 +97,10 @@ services:
   cd:
     image: ${REGISTRY}sitecore-xp-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
-    volumes:
-      - ${LICENSE_PATH}:C:\license
     ports:
       - "44002:80"
     environment:
-      SITECORE_LICENSE_LOCATION: C:\license\license.xml
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
       SITECORE_APPSETTINGS_ROLE:DEFINE: ContentDelivery
       SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
@@ -126,12 +120,10 @@ services:
   cm:
     image: ${REGISTRY}sitecore-xp-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
-    volumes:
-      - ${LICENSE_PATH}:C:\license
     ports:
       - "44001:80"
     environment:
-      SITECORE_LICENSE_LOCATION: C:\license\license.xml
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
       SITECORE_APPSETTINGS_ROLE:DEFINE: Standalone
       SITECORE_CONNECTIONSTRINGS_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
