@@ -10,8 +10,7 @@ ENV sa_password='_' `
     attach_dbs='[]' `
     ACCEPT_EULA='_'
 
-RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `
-    New-Item -Path 'C:\\install' -ItemType 'Directory' | Out-Null; `
+RUN New-Item -Path 'C:\\install' -ItemType 'Directory' | Out-Null; `
     curl.exe -sS -L -o C:\\install\\SQL.exe 'https://go.microsoft.com/fwlink/?linkid=840945'; `
     curl.exe -sS -L -o C:\\install\\SQL.box 'https://go.microsoft.com/fwlink/?linkid=840944'; `
     Start-Process -FilePath 'C:\\install\\SQL.exe' -ArgumentList '/qs', '/x:C:\install\setup' -NoNewWindow -Wait; `
