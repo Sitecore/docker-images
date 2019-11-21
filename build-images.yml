@@ -94,16 +94,16 @@ stages:
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(assets.shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
             condition: eq(variables['assets.useDrive'], 'true')
           - task: Docker@2
-            displayName: login
+            displayName: "Docker registry login"
             inputs:
               containerRegistry: "docker-registry"
               command: login
           - checkout: self
             clean: all
           - powershell: |
-              $(container.registry.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
               Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-              SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(windows.install.source.path) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+              SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(windows.install.source.path) -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
               SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(windows.install.source.path) -Registry $(container.registry.name) -PushMode $(build.pushMode)
           - powershell: |
                 docker image prune --force
@@ -141,16 +141,16 @@ stages:
                   sudo mount -t cifs //$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
           - task: Docker@2
             enabled: true
-            displayName: login
+            displayName: "Docker registry login"
             inputs:
                 containerRegistry: "docker-registry"
                 command: login
           - checkout: self
             clean: all
           - powershell: |
-                $(container.registry.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+                "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
                 Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-                SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(linux.install.source.path)" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
+                SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(linux.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
                 SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(linux.install.source.path)" -Registry $(container.registry.name) -PushMode $(build.pushMode)
           - powershell: |
                 docker image prune --force
