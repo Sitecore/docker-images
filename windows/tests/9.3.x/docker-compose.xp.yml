@@ -47,7 +47,7 @@ services:
     image: ${REGISTRY}sitecore-xp-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
+      - .\data\xconnect-automationengine:C:\worker\App_Data\logs
     mem_limit: 500MB
     environment:
       SITECORE_LICENSE_LOCATION: C:\license
@@ -63,7 +63,7 @@ services:
     image: ${REGISTRY}sitecore-xp-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
+      - .\data\xconnect-indexworker:C:\worker\App_Data\logs
     mem_limit: 500MB
     environment:
       SITECORE_LICENSE_LOCATION: C:\license
@@ -79,7 +79,7 @@ services:
     image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
       - ${LICENSE_PATH}:C:\license
-      - .\data\xconnect-processingengine:C:\ProcessingEngine\App_Data\logs
+      - .\data\xconnect-processingengine:C:\worker\App_Data\logs
     mem_limit: 500MB
     restart: unless-stopped
     environment:
