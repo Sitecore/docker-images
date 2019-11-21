@@ -12,7 +12,7 @@ RUN $env:ROOT_CERT_NAME = 'sitecore-root'; `
     $env:COMMERCE_CLIENT_CERT_NAME = 'commerce-client'; `
     $env:IDENTITY_CLIENT_CERT_NAME = 'identity-client'; `
     $env:IDENTITY_SSL_CERT_NAME = 'identity'; `
-    $env:XC_SSL_CERT_NAME = 'xc'; `
+    $env:XC_SSL_CERT_NAME = 'cm'; `
     $env:CERT_STORE = 'Cert:\LocalMachine\My'; `
     $env:CERT_PASSWORD = 'Twelve4-4Cranial-Rag-kayo4-Ragweed-This8-grunge9-0Foss-7finalist-hubby'; `
     New-Item -Path 'C:\\certificates' -ItemType 'Directory' | Out-Null; `
