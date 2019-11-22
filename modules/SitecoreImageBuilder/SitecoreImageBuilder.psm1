@@ -176,7 +176,7 @@ function Invoke-Build
     # Determine OS
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
 
-    Write-Host "### Build specifications loaded..." -ForegroundColor Green
+    # Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
     # Pull latest external images
     if ($PSCmdlet.ShouldProcess("Pull latest images"))
@@ -422,6 +422,10 @@ function Initialize-BuildSpecifications
 
         "^sitecore-(xm|xp)-sxa-(sql|sqldev):(.*)$" # SXA windows/linux variants
         "^sitecore-(xm|xp)-sxa-(standalone|cm|cd):(.*)$" # SXA  windows variants
+
+        "^sitecore-xc-spe-(.*):(.*)$" # XC windows variants
+
+        "^sitecore-xc-sxa-(.*):(.*)$" # XC windows variants
 
         "^sitecore-xc-(.*):(.*)$" # XC windows variants
     )
