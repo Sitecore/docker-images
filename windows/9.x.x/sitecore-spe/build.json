@@ -1,0 +1,37 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm-spe-cm:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-cm:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore.PowerShell.Extensions-6.0.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-spe-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore.PowerShell.Extensions-6.0.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-spe-cm:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-cm:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore.PowerShell.Extensions-6.0.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-spe-standalone:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore.PowerShell.Extensions-6.0.scwdp.zip'"
+      ]
+    }
+  ],
+  "sources": []
+}
