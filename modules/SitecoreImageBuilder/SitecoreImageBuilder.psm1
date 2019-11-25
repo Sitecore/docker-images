@@ -176,7 +176,7 @@ function Invoke-Build
     # Determine OS
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
 
-    # Write-Host "### Build specifications loaded..." -ForegroundColor Green
+    Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
     # Pull latest external images
     if ($PSCmdlet.ShouldProcess("Pull latest images"))
