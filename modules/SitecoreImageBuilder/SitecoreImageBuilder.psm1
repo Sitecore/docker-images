@@ -423,7 +423,12 @@ function Initialize-BuildSpecifications
         "^sitecore-(xm|xp)-sxa-(sql|sqldev):(.*)$" # SXA windows/linux variants
         "^sitecore-(xm|xp)-sxa-(standalone|cm|cd):(.*)$" # SXA  windows variants
 
+        "^sitecore-xc-(cd|sqldev|standalone)(.*):(.*)$" # XC windows variants
+        "^sitecore-xc-spe-(.*):(.*)$" # XC windows variants
+        "^sitecore-xc-sxa-(cd|sqldev|standalone|solr)(.*):(.*)$" # XC windows variants
+        "^sitecore-xc-sxa-storefront(.*):(.*)$" # XC windows variants
         "^sitecore-xc-(.*):(.*)$" # XC windows variants
+
     )
 
     $patterns | ForEach-Object {

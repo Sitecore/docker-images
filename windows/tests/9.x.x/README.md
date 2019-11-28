@@ -1,12 +1,31 @@
 # Tests
 
-# XC
-Start XC using:
+# Running XC
+There are a series of different XC images, to get started you can use the following commands:
+
+### XC
+
 ```
 PS> docker-compose -f docker-compose.xc.yml up
 ```
 
-> You need to add the `identity` and `bizfx` DNS names your `hosts` file. To automatically do this use [whales-names](https://github.com/gregolsky/whales-names)).
+### XC with SPE
+```
+PS> docker-compose -f docker-compose.xc.spe.yml up
+```
+
+### XC with SPE & SXA
+```
+PS> docker-compose -f docker-compose.xc.sxa.yml up
+```
+
+### XC with SPE & SXA & SXA Storefront
+```
+PS> docker-compose -f docker-compose.xc.sxa.storefront.yml up
+```
+
+# Initializing Data
+> You need to add the `identity` and `bizfx` DNS names your `hosts` file - note it needs to refernce the internal Container IP, not localhost. To automatically do this use [whales-names](https://github.com/gregolsky/whales-names)).
 
 Once all containers are running, perform the following Sitecore Commerce post-install steps using Postman:
 
@@ -25,3 +44,14 @@ To verify that everything is working okay browse to:
     2. [CM](http://localhost:44001/sitecore) and verify that Habitat catalog is present under `/sitecore/Commerce/Catalog Management/Catalogs`
 
 > The Business Tools run at HTTP and *not* HTTPS. When browsing to the Business Tools from the Control Panel remove the *S* from the address.
+
+# Storefront Configuration
+To setup a storefront, after initializing the engine you need to create a new Tenant & Site, then perform a full publish and index rebuild. 
+
+You can follow the standard setup instructions for how to do this:
+
+    https://doc.sitecore.com/users/91/sitecore-experience-commerce/en/set-up-a-storefront-site.html
+
+After this you can access the storefront at:
+     
+    https://cd/
