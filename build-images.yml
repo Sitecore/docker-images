@@ -62,6 +62,7 @@ stages:
               Invoke-Expression -Command "cmdkey /add:$(shared.folder.server) /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
             condition: eq(variables['useAssetsDrive'], 'true')
+            displayName: 'Connect to Asset Drive'
           - task: Docker@2
             displayName: login
             inputs:
@@ -70,13 +71,15 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
-              $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
               Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
               SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(install.windows.source.path) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
               SitecoreImageBuilder\Invoke-Build -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(install.windows.source.path) -Registry $(container.registry.name) -PushMode $(PushMode)
+            displayName: 'Build Images'
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
+            displayName: 'Prune'
 
       - job: Build_Linux_Images
         timeoutInMinutes: 720
@@ -117,7 +120,7 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
-                $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+                "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
                 Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
                 SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(install.linux.source.path)" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
                 SitecoreImageBuilder\Invoke-Build -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.linux.source.path)" -Registry $(container.registry.name) -PushMode $(PushMode)
