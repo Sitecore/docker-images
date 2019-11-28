@@ -10,9 +10,9 @@ ARG SOLR_VERSION
 ARG CORE_NAMES
 ARG MANAGED_SCHEMA_DEFAULT_NAME
 
-RUN [Net.ServicePointManager]::SecurityProtocol = [Net.SecurityProtocolType]::Tls12; `
-    Invoke-WebRequest -Uri ('https://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SOLR_VERSION) -OutFile 'C:\\solr.zip'; `
-    Expand-Archive -Path 'C:\\solr.zip' -DestinationPath 'C:\\temp'; `
+RUN New-Item -Path 'C:\\downloads' -ItemType 'Directory' -Force | Out-Null; `
+    curl.exe -sS -L -o C:\\downloads\\solr.zip $('https://archive.apache.org/dist/lucene/solr/{0}/solr-{0}.zip' -f $env:SOLR_VERSION); `
+    Expand-Archive -Path 'C:\\downloads\\solr.zip' -DestinationPath 'C:\\temp'; `
     Move-Item -Path 'C:\\temp\\solr-*' -Destination 'C:\\solr';
 
 COPY ${MANAGED_SCHEMA_DEFAULT_NAME} C:\\temp\\

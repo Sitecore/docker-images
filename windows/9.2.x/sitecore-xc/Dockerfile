@@ -62,10 +62,10 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\commerce-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
     # configure SSL binding because Commerce Engine requires HTTPS (see Sitecore ticket #542018)
     Import-Module WebAdministration; `
-    $xcCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xc.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
+    $cmCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\cm.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
     New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '443' -Protocol "https" -HostHeader '*'; `
     $binding = Get-WebBinding -Name $env:IIS_SITE_NAME -Protocol "https"; `
-    $binding.AddSslCertificate($xcCert.GetCertHashString(), 'my'); `
+    $binding.AddSslCertificate($cmCert.GetCertHashString(), 'my'); `
     # configure SSL flags
     Set-WebConfigurationProperty -PSPath 'machine/webroot/apphost' -Filter 'system.webServer/security/access' -Name 'sslFlags' -Value 'SslNegotiateCert'; `
     # delete temporary files
