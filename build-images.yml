@@ -72,7 +72,7 @@ stages:
               SitecoreImageBuilder\Invoke-Build -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(install.windows.source.path) -Registry $(container.registry.name) -PushMode $(PushMode)
           - powershell: |
                 docker image prune --force
-              condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
+            condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
 
       - job: Build_Linux_Images
         timeoutInMinutes: 720
@@ -92,7 +92,7 @@ stages:
                   exit 0
                   fi
                   sudo mkdir $(install.linux.source.path)
-                  
+
                   if [ ! -d "/etc/smbcredentials" ]; then
                   sudo mkdir /etc/smbcredentials
                   fi
@@ -119,4 +119,4 @@ stages:
                 SitecoreImageBuilder\Invoke-Build -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.linux.source.path)" -Registry $(container.registry.name) -PushMode $(PushMode)
           - powershell: |
                 docker image prune --force
-              condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
+            condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
