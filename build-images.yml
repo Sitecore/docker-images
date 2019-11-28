@@ -4,8 +4,8 @@ trigger:
     include:
     - master
     - integration/*
-schedules: 
-  - cron: "0 12 * * 0"
+schedules:
+  - cron: '0 12 * * 0'
     displayName: Weekly Sunday build
     branches:
       include:
@@ -18,38 +18,42 @@ pr:
     - master
 
 stages:
-  - stage: "Start VMs"
+  - stage: Start_VMs
+    displayName: 'Start VMs'
     jobs:
-      - job: "Start Windows VM"
+      - job: Start_Windows_VM
+        displayName: 'Start Windows VM'
         pool:
           vmImage: Windows-2019 # Use Microsoft hosted image to start VMs
         steps:
           - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-            displayName: "Start Docker Build VM"
+            displayName: 'Start Docker Build VM'
             inputs:
-              Action: "Start VM"
+              Action: 'Start VM'
               azureSubscription: $(azureSubscription)
               ResourceGroupName: $(vm.resourceGroupName)
               VmName: $(vm.windows.name)
-      - job: "Start Linux VM"
+      - job: Start_Linux_VM
+        displayName: 'Start Linux VM'
         condition: eq(variables['buildLinuxImages'], 'true')
         pool:
           vmImage: Windows-2019
         steps:
           - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-            displayName: "Start Docker Build VM"
+            displayName: 'Start Docker Build VM'
             inputs:
-              Action: "Start VM"
+              Action: 'Start VM'
               azureSubscription: $(azureSubscription)
               ResourceGroupName: $(vm.resourceGroupName)
               VmName: $(vm.linux.name)
 
-  - stage: "Build Images"
-    dependsOn: "Start VMs"
+  - stage: Build_Images
+    displayName: 'Build Images'
+    dependsOn: Start_VMs
     jobs:
-      - job: "Build Windows Images"
+      - job: Build_Windows_Images
         timeoutInMinutes: 720
-        displayName: "Build Windows Images"
+        displayName: 'Build Windows Images'
         pool:
           name: $(agentPoolName)
         steps:
@@ -58,6 +62,7 @@ stages:
               Invoke-Expression -Command "cmdkey /add:$(shared.folder.server) /user:Azure\dockerassets /pass:$(azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
             condition: eq(variables['useAssetsDrive'], 'true')
+            displayName: 'Connect to Asset Drive'
           - task: Docker@2
             displayName: login
             inputs:
@@ -66,17 +71,19 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
-              $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
               Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
               SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(install.windows.source.path) -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
               SitecoreImageBuilder\Invoke-Build -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(install.windows.source.path) -Registry $(container.registry.name) -PushMode $(PushMode)
+            displayName: 'Build Images'
           - powershell: |
                 docker image prune --force
-              condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
+            condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
+            displayName: 'Prune'
 
       - job: Build_Linux_Images
         timeoutInMinutes: 720
-        displayName: "Build Linux Images"
+        displayName: 'Build Linux Images'
         condition: eq(variables['buildLinuxImages'], 'true')
         pool:
           name: $(agentPoolName)
@@ -92,7 +99,7 @@ stages:
                   exit 0
                   fi
                   sudo mkdir $(install.linux.source.path)
-                  
+
                   if [ ! -d "/etc/smbcredentials" ]; then
                   sudo mkdir /etc/smbcredentials
                   fi
@@ -113,10 +120,10 @@ stages:
           - checkout: self
             clean: all
           - powershell: |
-                $(sitecore.democontainer.password) | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+                "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
                 Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
                 SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(install.linux.source.path)" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password)
                 SitecoreImageBuilder\Invoke-Build -Tags "$(tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.linux.source.path)" -Registry $(container.registry.name) -PushMode $(PushMode)
           - powershell: |
                 docker image prune --force
-              condition: and(succeeded(), eq(variables['pruneImages'], 'true'))
+            condition: and(succeeded(), eq(variables['pruneImages'], 'true'))

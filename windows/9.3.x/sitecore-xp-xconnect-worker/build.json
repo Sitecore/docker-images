@@ -1,0 +1,35 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-xconnect-indexworker:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.3.0 (OnPrem)_xp0xconnect.scwdp.zip'",
+        "--build-arg SC_ROLE_NAME=IndexWorker",
+        "--build-arg SC_ROLE_EXE=Sitecore.XConnectSearchIndexer.exe"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-xconnect-processingengine:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.3.0 (OnPrem)_xp0xconnect.scwdp.zip'",
+        "--build-arg SC_ROLE_NAME=ProcessingEngine",
+        "--build-arg SC_ROLE_EXE=Sitecore.ProcessingEngine.exe"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-xconnect-automationengine:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/runtime:4.8-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.3.0 (OnPrem)_xp0xconnect.scwdp.zip'",
+        "--build-arg SC_ROLE_NAME=AutomationEngine",
+        "--build-arg SC_ROLE_EXE=Sitecore.MAEngine.exe"
+      ]
+    }
+  ],
+  "sources": []
+}
