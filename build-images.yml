@@ -5,7 +5,7 @@ trigger:
     - master
     - integration/*
 schedules: 
-  - cron: "0 12 * * 0"
+  - cron: '0 12 * * 0'
     displayName: Weekly Sunday build
     branches:
       include:
@@ -18,38 +18,38 @@ pr:
     - master
 
 stages:
-  - stage: "Start VMs"
+  - stage: 'Start VMs'
     jobs:
-      - job: "Start Windows VM"
+      - job: 'Start Windows VM'
         pool:
           vmImage: Windows-2019 # Use Microsoft hosted image to start VMs
         steps:
           - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-            displayName: "Start Docker Build VM"
+            displayName: 'Start Docker Build VM'
             inputs:
-              Action: "Start VM"
+              Action: 'Start VM'
               azureSubscription: $(azureSubscription)
               ResourceGroupName: $(vm.resourceGroupName)
               VmName: $(vm.windows.name)
-      - job: "Start Linux VM"
+      - job: 'Start Linux VM'
         condition: eq(variables['buildLinuxImages'], 'true')
         pool:
           vmImage: Windows-2019
         steps:
           - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-            displayName: "Start Docker Build VM"
+            displayName: 'Start Docker Build VM'
             inputs:
-              Action: "Start VM"
+              Action: 'Start VM'
               azureSubscription: $(azureSubscription)
               ResourceGroupName: $(vm.resourceGroupName)
               VmName: $(vm.linux.name)
 
-  - stage: "Build Images"
-    dependsOn: "Start VMs"
+  - stage: 'Build Images'
+    dependsOn: 'Start VMs'
     jobs:
-      - job: "Build Windows Images"
+      - job: 'Build Windows Images'
         timeoutInMinutes: 720
-        displayName: "Build Windows Images"
+        displayName: 'Build Windows Images'
         pool:
           name: $(agentPoolName)
         steps:
@@ -76,7 +76,7 @@ stages:
 
       - job: Build_Linux_Images
         timeoutInMinutes: 720
-        displayName: "Build Linux Images"
+        displayName: 'Build Linux Images'
         condition: eq(variables['buildLinuxImages'], 'true')
         pool:
           name: $(agentPoolName)
