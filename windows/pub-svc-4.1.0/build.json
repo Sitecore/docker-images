@@ -1,0 +1,14 @@
+{
+  "tags": [
+    {
+      "tag": "pubsvc:4.1.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-${windowsservercore_version}"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore Publishing Service 4.1.0-x64.zip"
+  ]
+}
+

@@ -1,0 +1,7 @@
+version: '2.4'
+services:
+  web:
+    image: pubsvc:4.1.0-windowsservercore-${windowsservercore_version}
+    container_name: publishingservice
+    entrypoint: powershell.exe -NoLogo -NoProfile -File c:\\install\\entrypoints\\Boot.ps1
+    command: ${conn_string_core} ${conn_string_master} ${conn_string_web}

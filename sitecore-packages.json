@@ -310,5 +310,9 @@
   },
   "Sitecore Experience Accelerator XM 9.3.0.2589 CD.scwdp.zip": {
     "url": "https://dev.sitecore.net/~/media/66D1C7AE0D884BA38D16E9A01C2C38E2.ashx"
+  },
+  "Sitecore Publishing Service 4.1.0-x64.zip" : {
+    "description": "Sitecore Publishing Service 4.1.0",
+    "url": "https://dev.sitecore.net/~/media/51A8BC4DDAC647F18DF67A8EC1B37AE0.ashx"
   }
 }
