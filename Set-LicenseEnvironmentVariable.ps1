@@ -7,25 +7,38 @@ param(
     [Switch]$PersistForCurrentUser
 )
 
-$licenseRaw = Get-Content -Path $Path -Raw
 $licenseString = $null
 
 try
 {
     # gzip content
     $memory = New-Object System.IO.MemoryStream
-    $writer = New-Object System.IO.StreamWriter(New-Object System.IO.Compression.GZipStream($memory, [System.IO.Compression.CompressionMode]::Compress))
-    $writer.Write($licenseRaw)
-    $writer.Flush()
+    $gzip = New-Object System.IO.Compression.GZipStream($memory, [System.IO.Compression.CompressionMode]::Compress)
+    $licenseFile = [System.IO.File]::OpenRead($Path)
+    $licenseFile.CopyTo($gzip)
+    $licenseFile.Close()
+    $gzip.Close()
 
     # base64 encode the gzipped content
     $licenseString = [System.Convert]::ToBase64String($memory.ToArray())
 }
-catch
+finally
 {
+    # cleanup
+    if ($null -ne $gzip)
+    {
+        $gzip.Dispose()
+        $gzip = $null
+    }
+
+    if ($null -ne $licenseFile)
+    {
+        $licenseFile.Dispose()
+        $licenseFile = $null
+    }
+
     if ($null -ne $memory)
     {
-        # cleanup
         $memory.Dispose()
         $memory = $null
     }
