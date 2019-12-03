@@ -10,7 +10,7 @@ services:
       - "44010:1433"
 
   solr:
-    image: ${REGISTRY}sitecore-xc-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
+    image: ${REGISTRY}sitecore-xc-sxa-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
     volumes:
       - .\data\solr:C:\Data
     mem_limit: 1GB
