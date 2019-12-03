@@ -119,9 +119,10 @@ else
     Write-Host ("### Skipping start of 'WatchDirectory.ps1', to enable you should mount a directory into 'C:\src'.")
 }
 
-# inject Sitecore config files
-Copy-Item -Path (Join-Path $PSScriptRoot "\*.config") -Destination "C:\inetpub\wwwroot\App_Config\Include"
-
+if (Test-Path -Path "C:\inetput\wwwroot\App_Config\Include") {
+    # inject Sitecore config files
+    Copy-Item -Path (Join-Path $PSScriptRoot "\*.config") -Destination "C:\inetpub\wwwroot\App_Config\Include"
+}
 # start ServiceMonitor.exe in background, kill foreground process if it fails
 Start-Job -Name "ServiceMonitor.exe" {
     try
