@@ -49,7 +49,7 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Start-Process (Join-Path $env:INSTALL_TEMP '\\setup\\vc_redist.exe') -ArgumentList '/install', '/passive', '/norestart' -NoNewWindow -Wait; `
     Start-Process (Join-Path $env:INSTALL_TEMP '\\setup\\dotnet-hosting.exe') -ArgumentList '/install', '/quiet' -NoNewWindow -Wait; `
     # install tools
-    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Force; `
+    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Recurse -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin;C:\Program Files\dotnet') | Out-Null; `
     # install certificates
     $password = ConvertTo-SecureString -String (Get-Content -Path (Join-Path $env:INSTALL_TEMP '\\certificates\\password')) -Force -AsPlainText; `
