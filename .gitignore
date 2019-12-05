@@ -14,3 +14,4 @@ windows/tests/**/data/**/*
 !windows/tests/**/data/*/.gitkeep
 
 /.vscode/
+/tools/
