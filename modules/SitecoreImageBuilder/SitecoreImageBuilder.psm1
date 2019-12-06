@@ -83,41 +83,44 @@ function Invoke-PackageRestore
 
         if ([string]::IsNullOrEmpty($fileUrl))
         {
-            throw ("Required package '{0}' was found in '{1}' but the 'url' property was null or empty." -f $fileName, $packagesFile.FullName)
+            Write-Host ("Required package: '{0}' not available from Sitecore download site because of a DUMMY entry in sitecore-packages.json.`nRequired ACTION: Copy manual '{0}' into '{1}'" -f $fileName, $Destination)
         }
-
-        if ($PSCmdlet.ShouldProcess($fileName))
+        else
         {
-            Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
 
-            if ($fileUrl.StartsWith($sitecoreDownloadUrl))
+            if ($PSCmdlet.ShouldProcess($fileName))
             {
-                # Login to dev.sitecore.net and save session for re-use
-                if ($null -eq $sitecoreDownloadSession)
+                Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
+
+                if ($fileUrl.StartsWith($sitecoreDownloadUrl))
                 {
-                    Write-Verbose ("Logging in to '{0}'..." -f $sitecoreDownloadUrl)
-
-                    $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
-                        username   = $SitecoreUsername
-                        password   = $SitecorePassword
-                        rememberMe = $true
-                    } -SessionVariable "sitecoreDownloadSession" -UseBasicParsing
-
-                    if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
+                    # Login to dev.sitecore.net and save session for re-use
+                    if ($null -eq $sitecoreDownloadSession)
                     {
-                        throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
+                        Write-Verbose ("Logging in to '{0}'..." -f $sitecoreDownloadUrl)
+
+                        $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
+                            username   = $SitecoreUsername
+                            password   = $SitecorePassword
+                            rememberMe = $true
+                        } -SessionVariable "sitecoreDownloadSession" -UseBasicParsing
+
+                        if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
+                        {
+                            throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
+                        }
+
+                        Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
                     }
 
-                    Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
+                    # Download package using saved session
+                    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $sitecoreDownloadSession -UseBasicParsing
                 }
-
-                # Download package using saved session
-                Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $sitecoreDownloadSession -UseBasicParsing
-            }
-            else
-            {
-                # Download package
-                Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -UseBasicParsing
+                else
+                {
+                    # Download package
+                    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -UseBasicParsing
+                }
             }
         }
     }
@@ -233,6 +236,14 @@ function Invoke-Build
             # Copy license.xml and any missing source files into build context
             $spec.Sources | ForEach-Object {
                 $sourcePath = $_
+
+                # continue if source file doesn't exist
+                if (!(Test-Path $sourcePath))
+                {
+                    Write-Warning "Source file '$sourcePath' is missing."
+                    continue;
+                }
+
                 $sourceItem = Get-Item -Path $sourcePath
                 $targetPath = Join-Path $spec.Path $sourceItem.Name
 
@@ -354,7 +365,7 @@ function Initialize-BuildSpecifications
     # Update specs, include or not
     $Specifications | ForEach-Object {
         $spec = $_
-     
+
         $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
 
         if ($spec.Include -eq $true -and $spec.Deprecated -eq $true -and $DeprecatedTagsBehavior -eq "Skip")
@@ -369,7 +380,7 @@ function Initialize-BuildSpecifications
     if ($ImplicitTagsBehavior -eq "Include")
     {
         $Specifications | Where-Object { $_.Include -eq $true } | ForEach-Object {
-            $spec = $_       
+            $spec = $_
 
             # Recursively iterate bases, excluding external ones, and re-include them
             $baseSpecs = $Specifications | Where-Object { $spec.Base -contains $_.Tag }
@@ -724,7 +735,7 @@ function Get-LatestSupportedVersion
             Sitecore          = $sitecore;
             WindowsServerCore = $windowsServerCore;
             NanoServer        = $nanoserver;
-            Redis            = $redis;
+            Redis             = $redis;
         })
 }
 
@@ -739,21 +750,21 @@ function Get-LatestVersionNumberForTag
         [string]$Tag
     )
 
-        # find all versions for the tag
-        $versions = $Specs | Where-Object { $_.Tag -like $Tag } | Select-Object -ExpandProperty Tag
+    # find all versions for the tag
+    $versions = $Specs | Where-Object { $_.Tag -like $Tag } | Select-Object -ExpandProperty Tag
 
-        $versions = $versions | ForEach-Object {
-            $_.Substring($_.IndexOf(':') + 1)
-        }
-    
-        $versions = $versions | ForEach-Object {
-            $_.Substring(0, $_.IndexOf('-'))
-        }
-    
-        $versions = $versions | Sort-Object -Unique -Descending
-    
-        # pick latest version for the tag
-        Write-Output ($versions | Select-Object -First 1)
+    $versions = $versions | ForEach-Object {
+        $_.Substring($_.IndexOf(':') + 1)
+    }
+
+    $versions = $versions | ForEach-Object {
+        $_.Substring(0, $_.IndexOf('-'))
+    }
+
+    $versions = $versions | Sort-Object -Unique -Descending
+
+    # pick latest version for the tag
+    Write-Output ($versions | Select-Object -First 1)
 }
 
 function Get-LatestSupportedVersionTags
