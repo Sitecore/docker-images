@@ -169,6 +169,8 @@ Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/s
 
 ```PowerShell
 
+# required powershell 5.0
+
 # required
 $sitecoreUsername = "YOUR dev.sitecore.net USERNAME"
 
