@@ -163,7 +163,7 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 
 ### NOTE publishing service, not automatically build because of missing prerequisites from Sitecore 
 
-The 'Download-PS-Prerequisites.ps1' script will download the regular Sitecore Publishing Module package, and convert to package to the proper WDP package by using Sitecore Sitecore Azure Toolkit. 
+The 'Download-PS-Prerequisites.ps1' script will download the regular Sitecore Publishing Module package, and convert the asset into the proper WDP package by using Sitecore Sitecore Azure Toolkit. 
 
 Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/sat/20/sitecore-azure-toolkit/en/getting-started-with-the-sitecore-azure-toolkit.html) 
 
