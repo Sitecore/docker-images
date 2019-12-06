@@ -1,4 +1,5 @@
-function Invoke-PackageRestore {
+function Invoke-PackageRestore
+{
     [CmdletBinding(SupportsShouldProcess = $true)]
     [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
     param(
@@ -42,7 +43,8 @@ function Invoke-PackageRestore {
     $destinationPath = $Destination.TrimEnd('\')
 
     # Ensure destination exists
-    if (!(Test-Path $destinationPath -PathType "Container")) {
+    if (!(Test-Path $destinationPath -PathType "Container"))
+    {
         New-Item $destinationPath -ItemType Directory -WhatIf:$false | Out-Null
     }
 
@@ -55,10 +57,12 @@ function Invoke-PackageRestore {
     $expected | ForEach-Object {
         $filePath = $_
 
-        if (Test-Path $filePath -PathType Leaf) {
+        if (Test-Path $filePath -PathType Leaf)
+        {
             $requiredFile = Get-Item -Path $filePath
 
-            if ($requiredFile.Length -gt 0) {
+            if ($requiredFile.Length -gt 0)
+            {
                 Write-Host ("Required package found: '{0}'" -f $filePath)
 
                 return
@@ -70,23 +74,29 @@ function Invoke-PackageRestore {
         $fileName = $filePath.Replace(("{0}\" -f $destinationPath), "")
         $package = $packages.$fileName
 
-        if ($null -eq $package) {
+        if ($null -eq $package)
+        {
             throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package ' { 2 }' manually." -f $fileName, $packagesFile.FullName, $filePath)
         }
 
         $fileUrl = $package.url
 
-        if ([string]::IsNullOrEmpty($fileUrl)) {
+        if ([string]::IsNullOrEmpty($fileUrl))
+        {
             Write-Host ("Required package: '{0}' not available from Sitecore download site because of a DUMMY entry in sitecore-packages.json.`nRequired ACTION: Copy manual '{0}' into '{1}'" -f $fileName, $Destination)
         }
-        else {
+        else
+        {
 
-            if ($PSCmdlet.ShouldProcess($fileName)) {
+            if ($PSCmdlet.ShouldProcess($fileName))
+            {
                 Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
 
-                if ($fileUrl.StartsWith($sitecoreDownloadUrl)) {
+                if ($fileUrl.StartsWith($sitecoreDownloadUrl))
+                {
                     # Login to dev.sitecore.net and save session for re-use
-                    if ($null -eq $sitecoreDownloadSession) {
+                    if ($null -eq $sitecoreDownloadSession)
+                    {
                         Write-Verbose ("Logging in to '{0}'..." -f $sitecoreDownloadUrl)
 
                         $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
@@ -95,7 +105,8 @@ function Invoke-PackageRestore {
                             rememberMe = $true
                         } -SessionVariable "sitecoreDownloadSession" -UseBasicParsing
 
-                        if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false") {
+                        if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
+                        {
                             throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
                         }
 
@@ -105,7 +116,8 @@ function Invoke-PackageRestore {
                     # Download package using saved session
                     Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $sitecoreDownloadSession -UseBasicParsing
                 }
-                else {
+                else
+                {
                     # Download package
                     Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -UseBasicParsing
                 }
@@ -116,7 +128,8 @@ function Invoke-PackageRestore {
     Write-Host "Restore completed."
 }
 
-function Invoke-Build {
+function Invoke-Build
+{
     [CmdletBinding(SupportsShouldProcess = $true)]
     [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
     param(
@@ -169,8 +182,10 @@ function Invoke-Build {
     Write-Host "### Build specifications loaded..." -ForegroundColor Green
 
     # Pull latest external images
-    if ($PSCmdlet.ShouldProcess("Pull latest images")) {
-        if ($PullMode -eq "Always") {
+    if ($PSCmdlet.ShouldProcess("Pull latest images"))
+    {
+        if ($PullMode -eq "Always")
+        {
             $baseImages = @()
 
             # Find external base images of included specifications
@@ -195,13 +210,15 @@ function Invoke-Build {
 
             Write-Host "### External images is up to date..." -ForegroundColor Green
         }
-        else {
+        else
+        {
             Write-Warning ("### Pulling external images skipped since PullMode was '{0}'." -f $PullMode)
         }
     }
 
     # Start build...
-    if ($PSCmdlet.ShouldProcess("Start image builds")) {
+    if ($PSCmdlet.ShouldProcess("Start image builds"))
+    {
         $specs | Where-Object { $_.Include } | ForEach-Object {
             $spec = $_
             $tag = $spec.Tag
@@ -211,23 +228,26 @@ function Invoke-Build {
             # Save the digest of previous builds for later comparison
             $previousDigest = $null
 
-            if ((docker image ls $tag --quiet)) {
+            if ((docker image ls $tag --quiet))
+            {
                 $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
             }
 
             # Copy license.xml and any missing source files into build context
             $spec.Sources | ForEach-Object {
                 $sourcePath = $_
-                
+
                 # continue if source file doesn't exist
-                if (!(Test-Path $sourcePath))  {
+                if (!(Test-Path $sourcePath))
+                {
                     continue;
                 }
-        
+
                 $sourceItem = Get-Item -Path $sourcePath
                 $targetPath = Join-Path $spec.Path $sourceItem.Name
 
-                if (!(Test-Path -Path $targetPath) -or ($sourceItem.Name -eq "license.xml")) {
+                if (!(Test-Path -Path $targetPath) -or ($sourceItem.Name -eq "license.xml"))
+                {
                     Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
                 }
             }
@@ -235,7 +255,8 @@ function Invoke-Build {
             # Build image
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
 
-            if ($osType -eq "windows") {
+            if ($osType -eq "windows")
+            {
                 $buildOptions.Add("--isolation 'hyperv'")
             }
 
@@ -256,17 +277,20 @@ function Invoke-Build {
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
 
             # Check to see if we need to stop here...
-            if ([string]::IsNullOrEmpty($Registry)) {
+            if ([string]::IsNullOrEmpty($Registry))
+            {
                 Write-Host ("### Done with '{0}', but not pushed since 'Registry' was empty." -f $tag) -ForegroundColor Green
 
                 return
             }
 
             # Tag image
-            if ([string]::IsNullOrEmpty($Registry)) {
+            if ([string]::IsNullOrEmpty($Registry))
+            {
                 $fulltag = $tag
             }
-            else {
+            else
+            {
                 $fulltag = "{0}/{1}" -f $Registry, $tag
             }
 
@@ -275,7 +299,8 @@ function Invoke-Build {
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
 
             # Check to see if we need to stop here...
-            if ($PushMode -eq "Never") {
+            if ($PushMode -eq "Never")
+            {
                 Write-Host ("### Done with '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode) -ForegroundColor Green
 
                 return
@@ -284,7 +309,8 @@ function Invoke-Build {
             # Determine if we need to push
             $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
 
-            if (($PushMode -eq "WhenChanged") -and ($currentDigest -eq $previousDigest)) {
+            if (($PushMode -eq "WhenChanged") -and ($currentDigest -eq $previousDigest))
+            {
                 Write-Host ("### Done with '{0}', but not pushed since 'PushMode' is '{1}' and the image has not changed since last build." -f $tag, $PushMode) -ForegroundColor Green
 
                 return
@@ -300,7 +326,8 @@ function Invoke-Build {
     }
 }
 
-function Initialize-BuildSpecifications {
+function Initialize-BuildSpecifications
+{
     param(
         [Parameter(Mandatory = $true)]
         [ValidateNotNull()]
@@ -337,10 +364,11 @@ function Initialize-BuildSpecifications {
     # Update specs, include or not
     $Specifications | ForEach-Object {
         $spec = $_
-     
+
         $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
 
-        if ($spec.Include -eq $true -and $spec.Deprecated -eq $true -and $DeprecatedTagsBehavior -eq "Skip") {
+        if ($spec.Include -eq $true -and $spec.Deprecated -eq $true -and $DeprecatedTagsBehavior -eq "Skip")
+        {
             $spec.Include = $false
 
             Write-Verbose ("Tag '{0}' excluded as it is deprecated and the DeprecatedTagsBehavior parameter is '{1}'." -f $spec.Tag, $DeprecatedTagsBehavior)
@@ -348,18 +376,21 @@ function Initialize-BuildSpecifications {
     }
 
     # Update specs, re-include base images
-    if ($ImplicitTagsBehavior -eq "Include") {
+    if ($ImplicitTagsBehavior -eq "Include")
+    {
         $Specifications | Where-Object { $_.Include -eq $true } | ForEach-Object {
-            $spec = $_       
+            $spec = $_
 
             # Recursively iterate bases, excluding external ones, and re-include them
             $baseSpecs = $Specifications | Where-Object { $spec.Base -contains $_.Tag }
 
-            while ($null -ne $baseSpecs) {
+            while ($null -ne $baseSpecs)
+            {
                 $baseSpecs | ForEach-Object {
                     $baseSpec = $_
 
-                    if ($baseSpec.Include -ne $true) {
+                    if ($baseSpec.Include -ne $true)
+                    {
                         $baseSpec.Include = $true
 
                         Write-Verbose ("Tag '{0}' implicitly included '{1}' due to dependency." -f $spec.Tag, $baseSpec.Tag)
@@ -433,7 +464,8 @@ function Initialize-BuildSpecifications {
     return $specs
 }
 
-function Get-BuildSpecifications {
+function Get-BuildSpecifications
+{
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -454,20 +486,24 @@ function Get-BuildSpecifications {
 
         $sources = @()
 
-        if ($null -ne $data.sources) {
+        if ($null -ne $data.sources)
+        {
             $sources = $data.sources
         }
 
         $dataTags = $data.tags
 
-        if ($null -eq $dataTags) {
+        if ($null -eq $dataTags)
+        {
             $dataTags = @()
 
             # TODO: Removed when all build.json files has been converted to new format
-            if ($null -ne $data.deprecated) {
+            if ($null -ne $data.deprecated)
+            {
                 $dataTags += @{ "tag" = $data.tag; "deprecated" = $data.deprecated; }
             }
-            else {
+            else
+            {
                 $dataTags += @{ "tag" = $data.tag; }
             }
         }
@@ -479,16 +515,19 @@ function Get-BuildSpecifications {
             $tag = $_
             $options = $tag.'build-options'
 
-            if ($null -eq $options) {
+            if ($null -eq $options)
+            {
                 $options = @()
             }
 
-            if ($tag.tag -like "*`${*}*") {
+            if ($tag.tag -like "*`${*}*")
+            {
                 $AutoGenerateWindowsVersionTags | ForEach-Object {
                     $windowsServerCoreVersion = $_
                     $nanoServerVersion = $versionMap[$windowsServerCoreVersion]
 
-                    if ([string]::IsNullOrEmpty($nanoServerVersion)) {
+                    if ([string]::IsNullOrEmpty($nanoServerVersion))
+                    {
                         throw ("Could not find a 'nanoserver' version in the version map for '{0}'." -f $windowsServerCoreVersion)
                     }
 
@@ -503,7 +542,8 @@ function Get-BuildSpecifications {
                     $tags += $copy
                 }
             }
-            else {
+            else
+            {
                 $tags += $tag
             }
         }
@@ -516,13 +556,15 @@ function Get-BuildSpecifications {
             $tag = $_
             $options = $tag.'build-options'
 
-            if ($null -eq $options) {
+            if ($null -eq $options)
+            {
                 $options = @()
             }
 
             $deprecated = $false
 
-            if ($null -ne $tag.deprecated) {
+            if ($null -ne $tag.deprecated)
+            {
                 $deprecated = [bool]$tag.deprecated
             }
 
@@ -530,28 +572,34 @@ function Get-BuildSpecifications {
             $baseImages = $dockerFileFromLines | ForEach-Object {
                 $image = $_
 
-                if ($image -like "* as *") {
+                if ($image -like "* as *")
+                {
                     $image = $image.Substring(0, $image.IndexOf(" as "))
                 }
 
-                if ($image -like "`$*") {
+                if ($image -like "`$*")
+                {
                     $argName = $image.Replace("`$", "").Replace("{", "").Replace("}", "")
                     $matchingOption = $options | Where-Object { $_.Contains($argName) } | Select-Object -First 1
 
-                    if ($null -ne $matchingOption) {
+                    if ($null -ne $matchingOption)
+                    {
                         # Resolved base image from ARG passed as build-args defined in build-options
                         $image = $matchingOption.Substring($matchingOption.IndexOf($argName) + $argName.Length).Replace("=", "")
                     }
-                    else {
+                    else
+                    {
                         $argDefaultValue = $dockerFileArgLines | Where-Object { $_ -match $argName } | ForEach-Object {
                             Write-Output $_.Replace($argName, "").Replace("=", "")
                         }
 
-                        if ([string]::IsNullOrEmpty($argDefaultValue) -eq $false) {
+                        if ([string]::IsNullOrEmpty($argDefaultValue) -eq $false)
+                        {
                             # Resolved base image from ARG default value
                             $image = $argDefaultValue
                         }
-                        else {
+                        else
+                        {
                             throw ("Parse error in '{0}', Dockerfile is expecting ARG '{1}' but it has no default value and is not found in any 'build-options'." -f $buildFilePath, $argName)
                         }
                     }
@@ -560,7 +608,8 @@ function Get-BuildSpecifications {
                 Write-Output $image
             }
 
-            if ($null -eq $baseImages -or $baseImages.Length -eq 0) {
+            if ($null -eq $baseImages -or $baseImages.Length -eq 0)
+            {
                 throw ("Parse error, no base images was found in Dockerfile '{0}'." -f $dockerFile.FullName)
             }
 
@@ -579,7 +628,8 @@ function Get-BuildSpecifications {
     }
 }
 
-function Get-CurrentImages {
+function Get-CurrentImages
+{
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -596,7 +646,8 @@ function Get-CurrentImages {
         $spec = $_
         $match = $tagParser.Match($spec.Tag)
 
-        if ($match.Success) {
+        if ($match.Success)
+        {
             $repository = $match.Groups["repository"].Value
             $version = $match.Groups["version"].Value
             $os = $match.Groups["os"].Value
@@ -615,7 +666,8 @@ function Get-CurrentImages {
     }
 }
 
-function Get-CurrentImagesMarkdown {
+function Get-CurrentImagesMarkdown
+{
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -632,21 +684,25 @@ function Get-CurrentImagesMarkdown {
     Get-CurrentImages -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags | Sort-Object -Property Version, Build, Repository -Descending | ForEach-Object {
         $dockerFileUrl = (Resolve-Path $_.DockerFilePath -Relative).Replace(".\", "").Replace("\", "/").Replace(" ", "%20")
 
-        if ($_.Deprecated) {
+        if ($_.Deprecated)
+        {
             Write-Output ("| ~~{0}~~ | ~~{1}~~ | ~~{2}~~ | ~~{3}~~ | ~~``{4}`` [Dockerfile]({5})~~ |" -f $_.Version, $_.Repository, $_.OS, $_.Build, $_.Tag, $dockerFileUrl)
         }
-        else {
+        else
+        {
             Write-Output ("| {0} | {1} | {2} | {3 } | ``{4}`` [Dockerfile]({5}) |" -f $_.Version, $_.Repository, $_.OS, $_.Build, $_.Tag, $dockerFileUrl)
         }
     }
 }
 
-function Get-SupportedWindowsVersions {
+function Get-SupportedWindowsVersions
+{
     # NOTE: Order is important, newest first
     Write-Output ("1909", "1903", "ltsc2019")
 }
 
-function Get-WindowsServerCoreToNanoServerVersionMap {
+function Get-WindowsServerCoreToNanoServerVersionMap
+{
     Write-Output @{
         "1909"     = "1909";
         "1903"     = "1903";
@@ -657,7 +713,8 @@ function Get-WindowsServerCoreToNanoServerVersionMap {
     }
 }
 
-function Get-LatestSupportedVersion {
+function Get-LatestSupportedVersion
+{
     # load Windows image specifications
     $specs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot "\..\..\windows")
 
@@ -681,7 +738,8 @@ function Get-LatestSupportedVersion {
         })
 }
 
-function Get-LatestVersionNumberForTag {
+function Get-LatestVersionNumberForTag
+{
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -697,18 +755,19 @@ function Get-LatestVersionNumberForTag {
     $versions = $versions | ForEach-Object {
         $_.Substring($_.IndexOf(':') + 1)
     }
-    
+
     $versions = $versions | ForEach-Object {
         $_.Substring(0, $_.IndexOf('-'))
     }
-    
+
     $versions = $versions | Sort-Object -Unique -Descending
-    
+
     # pick latest version for the tag
     Write-Output ($versions | Select-Object -First 1)
 }
 
-function Get-LatestSupportedVersionTags {
+function Get-LatestSupportedVersionTags
+{
     $latest = Get-LatestSupportedVersion
 
     Write-Output ("*:{0}*{1}" -f $latest.Sitecore, $latest.WindowsServerCore)

@@ -1,8 +1,8 @@
 # Changelog
 
-## November 2019
+## December 2019
 
-- [Added] Sitecore 9.3.0 XP/SXA/PS (publising service) variant.
+- [Added] Sitecore 9.3.0 XM/XP-SXA/PS (publising service) variant.
 
 ## November 2019
 
