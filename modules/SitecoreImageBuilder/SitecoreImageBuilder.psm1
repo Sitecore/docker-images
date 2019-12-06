@@ -240,6 +240,7 @@ function Invoke-Build
                 # continue if source file doesn't exist
                 if (!(Test-Path $sourcePath))
                 {
+                    Write-Warning "Source file '$sourcePath' is missing."
                     continue;
                 }
 
