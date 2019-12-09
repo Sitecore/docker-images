@@ -269,7 +269,7 @@ function Invoke-Build
 
             $buildOptions.Add("--tag '$tag'")
 
-            $buildCommand = "docker image build --no-cache {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
+            $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
 
             Write-Verbose ("Invoking: {0} " -f $buildCommand) -Verbose:$VerbosePreference
 
