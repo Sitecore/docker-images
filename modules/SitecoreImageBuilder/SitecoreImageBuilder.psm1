@@ -241,7 +241,8 @@ function Invoke-Build
                 if (!(Test-Path $sourcePath))
                 {
                     Write-Warning "Source file '$sourcePath' is missing."
-                    continue;
+
+                    return
                 }
 
                 $sourceItem = Get-Item -Path $sourcePath
