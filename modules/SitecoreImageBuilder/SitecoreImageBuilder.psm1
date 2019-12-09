@@ -21,6 +21,10 @@ function Invoke-PackageRestore
         [ValidateSet("Include", "Skip")]
         [string]$DeprecatedTagsBehavior = "Skip"
         ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$ExperimentalTagBehavior = "Skip"
+        ,
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         [string]$SitecoreUsername
@@ -50,7 +54,7 @@ function Invoke-PackageRestore
 
     # Find out which files is needed
     $sitecoreDownloadSession = $null
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
 
     # Check or download needed files
@@ -158,6 +162,10 @@ function Invoke-Build
         [string]$DeprecatedTagsBehavior = "Skip"
         ,
         [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$ExperimentalTagBehavior = "Skip"
+        ,
+        [Parameter(Mandatory = $false)]
         [ValidateSet("WhenChanged", "Always", "Never")]
         [string]$PushMode = "WhenChanged"
         ,
@@ -171,7 +179,7 @@ function Invoke-Build
     $ProgressPreference = "SilentlyContinue"
 
     # Find out what to build
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
 
     # Print results
     $specs | Sort-Object -Property Include, Priority, Tag | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
@@ -236,15 +244,6 @@ function Invoke-Build
             # Copy license.xml and any missing source files into build context
             $spec.Sources | ForEach-Object {
                 $sourcePath = $_
-
-                # continue if source file doesn't exist
-                if (!(Test-Path $sourcePath))
-                {
-                    Write-Warning "Source file '$sourcePath' is missing."
-
-                    return
-                }
-
                 $sourceItem = Get-Item -Path $sourcePath
                 $targetPath = Join-Path $spec.Path $sourceItem.Name
 
@@ -270,7 +269,7 @@ function Invoke-Build
 
             $buildOptions.Add("--tag '$tag'")
 
-            $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
+            $buildCommand = "docker image build --no-cache {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
 
             Write-Verbose ("Invoking: {0} " -f $buildCommand) -Verbose:$VerbosePreference
 
@@ -349,6 +348,11 @@ function Initialize-BuildSpecifications
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
         [string]$DeprecatedTagsBehavior = "Skip"
+        ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$ExperimentalTagBehavior = "Skip"
+
     )
 
     # Update specs, resolve sources to full path
@@ -374,6 +378,13 @@ function Initialize-BuildSpecifications
             $spec.Include = $false
 
             Write-Verbose ("Tag '{0}' excluded as it is deprecated and the DeprecatedTagsBehavior parameter is '{1}'." -f $spec.Tag, $DeprecatedTagsBehavior)
+        }
+
+        if ($spec.Include -eq $true -and $spec.Experimental-eq $true -and $ExperimentalTagBehavior -eq "Skip")
+        {
+            $spec.Include = $false
+
+            Write-Verbose ("Tag '{0}' excluded as it is experimental and the ExperimentalTagBehavior parameter is '{1}'." -f $spec.Tag, $ExperimentalTagBehavior)
         }
     }
 
@@ -570,6 +581,13 @@ function Get-BuildSpecifications
                 $deprecated = [bool]$tag.deprecated
             }
 
+            $experimental = $false
+
+            if ($null -ne $tag.experimental)
+            {
+                $experimental = [bool]$tag.experimental
+            }
+
             # Find base images...
             $baseImages = $dockerFileFromLines | ForEach-Object {
                 $image = $_
@@ -625,6 +643,7 @@ function Get-BuildSpecifications
                     Priority       = $null;
                     Include        = $false;
                     Deprecated     = $deprecated;
+                    Experimental   = $experimental;
                 })
         }
     }

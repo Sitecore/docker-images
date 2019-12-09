@@ -161,11 +161,13 @@ Using these `ENTRYPOINT` scripts enables you to observe Sitecore log entries in 
 
 See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](windows/tests/9.3.x/docker-compose.xm.yml) for configuration examples.
 
-### NOTE publishing service, not automatically build because of missing prerequisites from Sitecore 
+### NOTE publishing service, not automatically build because of missing prerequisites from Sitecore
 
-The 'Download-PS-Prerequisites.ps1' script will download the regular Sitecore Publishing Module package, and convert the asset into the proper WDP package by using Sitecore Sitecore Azure Toolkit. 
+The 'Download-PS-Prerequisites.ps1' script will download the regular Sitecore Publishing Module package, and convert the asset into the proper WDP package by using Sitecore Sitecore Azure Toolkit.
 
-Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/sat/20/sitecore-azure-toolkit/en/getting-started-with-the-sitecore-azure-toolkit.html) 
+Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/sat/20/sitecore-azure-toolkit/en/getting-started-with-the-sitecore-azure-toolkit.html)
+
+Add  -ExperimentalTagBehavior Include `
 
 ```PowerShell
 
@@ -181,5 +183,25 @@ $sitecorePassword = "YOUR dev.sitecore.net PASSWORD"
 Download-PS-Prerequisites.ps1 `
     -SitecoreUsername $sitecoreUsername `
     -SitecorePassword $sitecorePassword
+
+
+# required, build with ExperimentalTagBehavior parameter
+
+# restore packages needed for the build
+SitecoreImageBuilder\Invoke-PackageRestore `
+    -Path $imagesPath `
+    -Destination $installSourcePath `
+    -Tags $tags `
+    -ExperimentalTagBehavior Include `
+    -SitecoreUsername $sitecoreUsername `
+    -SitecorePassword $sitecorePassword
+
+# build and push images
+SitecoreImageBuilder\Invoke-Build `
+    -Path $imagesPath `
+    -InstallSourcePath $installSourcePath `
+    -Registry $registry `
+    -Tags $tags, `
+    -ExperimentalTagBehavior Include
 
 ```
