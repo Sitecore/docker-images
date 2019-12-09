@@ -13,7 +13,7 @@ param(
     [int]$SleepMilliseconds = 200,
     # Default files to skip during sync
     [Parameter(Mandatory = $false)]
-    [array]$DefaultExcludedFiles = @("*.user", "*.cs", "*.csproj", "packages.config", "*ncrunch*", ".gitignore", ".dockerignore", "*.example", "*.disabled"),
+    [array]$DefaultExcludedFiles = @("*.user", "*.cs", "*.csproj", "packages.config", "*ncrunch*", ".gitignore", ".dockerignore", "*.example", "*.disabled", "*.xdt"),
     # Additional files to skip during sync
     [Parameter(Mandatory = $false)]
     [array]$ExcludeFiles = @(),
@@ -22,7 +22,10 @@ param(
     [array]$DefaultExcludedDirectories = @("obj", "Properties", "node_modules"),
     # Additional directories to skip during sync
     [Parameter(Mandatory = $false)]
-    [array]$ExcludeDirectories = @()
+    [array]$ExcludeDirectories = @(),
+    # Additional directories to skip during sync
+    [Parameter(Mandatory = $false)]
+    [string]$XdtTransformPs1FilePath = $(Join-Path (Split-Path $PSCommandPath) "Invoke-XdtTransform.ps1")
 )
 
 function Sync
@@ -82,6 +85,28 @@ function Sync
     }
 }
 
+function Transform {
+    param (
+        [Parameter(Mandatory = $true)]
+        $Path,
+        [Parameter(Mandatory = $true)]
+        $Destination
+    )
+
+    $webConfigXdtPath = Join-Path $Path "web.config.xdt";
+    if(Test-Path $webConfigXdtPath -PathType "Leaf")
+    {
+        $webConfigPath = Join-Path $Destination "web.config"
+        Invoke-Expression "$XdtTransformPs1FilePath -Path $webConfigPath -XdtPath $webConfigXdtPath"
+        try
+        {
+             Remove-Item $webConfigXdtPath
+             Write-Host "Deleted: $webConfigXdtPath"
+        }
+        catch{}
+    }
+}
+
 # Setup exclude rules
 $fileRules = ($DefaultExcludedFiles + $ExcludeFiles) | Select-Object -Unique
 $directoryRules = ($DefaultExcludedDirectories + $ExcludeDirectories) | Select-Object -Unique
@@ -125,6 +150,8 @@ try
     while ($true)
     {
         Sync -Path $Path -Destination $Destination -ExcludeFiles $fileRules -ExcludeDirectories $directoryRules
+
+        Transform -Path $Path -Destination $Destination
 
         Start-Sleep -Milliseconds $SleepMilliseconds
     }
