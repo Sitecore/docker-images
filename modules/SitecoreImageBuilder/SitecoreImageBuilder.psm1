@@ -244,6 +244,15 @@ function Invoke-Build
             # Copy license.xml and any missing source files into build context
             $spec.Sources | ForEach-Object {
                 $sourcePath = $_
+
+                # continue if source file doesn't exist
+                if (!(Test-Path $sourcePath))
+                {
+                    Write-Warning "Source file '$sourcePath' is missing..."
+
+                    return
+                }
+
                 $sourceItem = Get-Item -Path $sourcePath
                 $targetPath = Join-Path $spec.Path $sourceItem.Name
 
