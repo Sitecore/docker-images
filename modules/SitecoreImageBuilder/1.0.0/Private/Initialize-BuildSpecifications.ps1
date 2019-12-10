@@ -113,6 +113,10 @@ function Initialize-BuildSpecifications
         $spec.Priority = $priorities[$spec.Tag]
     }
 
+    # Copy specs sorted by priority into new array
+    $specs = [System.Collections.ArrayList]@()
+    $specs.AddRange(@($Specifications | Sort-Object -Property Priority))
+
     # Done
-    return $Specifications
+    return $specs
 }
