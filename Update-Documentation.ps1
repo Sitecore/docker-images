@@ -41,7 +41,7 @@ function Update-Section
     $body = "`r`n{0}" -f $Content
     $after = $targetContent | Select-Object -Skip ($end - 1)
 
-    $before, $body, $after | Out-File -FilePath $Path -Force
+    $before, $body, $after | Out-File -FilePath $Path -Force -Encoding utf8
 }
 
 $specs = @()

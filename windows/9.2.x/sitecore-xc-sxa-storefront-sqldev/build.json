@@ -1,0 +1,17 @@
+{
+    "tags": [{
+        "tag": "sitecore-xc-sxa-storefront-sqldev:9.2.0-windowsservercore-${windowsservercore_version}",
+        "build-options": [
+            "--memory 4GB",
+            "--build-arg BASE_IMAGE=sitecore-xc-sxa-sqldev:9.2.0-windowsservercore-${windowsservercore_version}",
+            "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+            "--build-arg ASSETS_USE_WDP_ADVENTUREWORKS_IMAGES='C:\\packages\\Adventure Works Images.OnPrem.scwdp.zip'",
+            "--build-arg ASSETS_USE_WDP_HABITAT_IMAGES='C:\\packages\\Sitecore.Commerce.Habitat.Images.OnPrem.scwdp.zip'",
+            "--build-arg ASSETS_USE_WDP_SXA_STOREFRONT='C:\\packages\\Sitecore Commerce Experience Accelerator 3.0.108.scwdp.zip'",
+            "--build-arg ASSETS_USE_WDP_SXA_STOREFRONT_REFERENCE='C:\\packages\\Sitecore Commerce Experience Accelerator Storefront 3.0.108.scwdp.zip'",
+            "--build-arg ASSETS_USE_WDP_SXA_STOREFRONT_THEME='C:\\packages\\Sitecore Commerce Experience Accelerator Storefront Themes 3.0.108.scwdp.zip'",
+            "--build-arg ASSETS_USE_WDP_SXA_STOREFRONT_CATALOG='C:\\packages\\Sitecore Commerce Experience Accelerator Habitat Catalog 3.0.108.scwdp.zip'"
+        ]
+    }],
+    "sources": []
+}

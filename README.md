@@ -1,8 +1,8 @@
-# Repository of Sitecore Docker images
+﻿# Repository of Sitecore Docker images
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-58-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-198-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-52-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-9.2.0%20on%20ltsc2019/1809-blue?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-74-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-321-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-63-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-9.3.0%20on%20ltsc2019/1809-blue?style=flat-square)
 
 [//]: # "end: stats"
 
@@ -60,8 +60,12 @@ This will:
 
 When completed:
 
-1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
-1. Switch directory to `.\windows\tests\9.x.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
+1. For Sitecore 9.3.x
+    1. Run `Set-LicenseEnvironmentVariable.ps1 -Path C:\license\license.xml` (use the `PersistForCurrentUser` switch to persist the license for future sessions). This will gzip and base64 encode the license file content and save it in `$env:SITECORE_LICENSE`.
+    1. Switch directory to `.\windows\tests\9.3.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
+1. For Sitecore 9.2.x
+    1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
+    1. Switch directory to `.\windows\tests\9.x.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
 
 ### Setting up automated builds
 
@@ -155,4 +159,49 @@ Using these `ENTRYPOINT` scripts enables you to observe Sitecore log entries in 
 - Starts the Visual Studio Remote Debugger `msvsmon.exe` in the background **if** the Visual Studio Remote Debugger directory is mounted into `C:\remote_debugger`.
 - Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
 
-See the `cm` and `cd` service in [windows/tests/9.x.x/docker-compose.xm.yml](windows/tests/9.x.x/docker-compose.xm.yml) for configuration examples.
+See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](windows/tests/9.3.x/docker-compose.xm.yml) for configuration examples.
+
+### NOTE publishing service, not automatically build because of missing prerequisites from Sitecore
+
+The 'Download-PS-Prerequisites.ps1' script will download the regular Sitecore Publishing Module package, and convert the asset into the proper WDP package by using Sitecore Sitecore Azure Toolkit.
+
+Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/sat/20/sitecore-azure-toolkit/en/getting-started-with-the-sitecore-azure-toolkit.html)
+
+Add  -ExperimentalTagBehavior Include `
+
+```PowerShell
+
+# required powershell 5.0
+
+# required
+$sitecoreUsername = "YOUR dev.sitecore.net USERNAME"
+
+# required
+$sitecorePassword = "YOUR dev.sitecore.net PASSWORD"
+
+# restore packages needed for the build, only files missing in $installSourcePath will be downloaded
+Download-PS-Prerequisites.ps1 `
+    -SitecoreUsername $sitecoreUsername `
+    -SitecorePassword $sitecorePassword
+
+
+# required, build with ExperimentalTagBehavior parameter
+
+# restore packages needed for the build
+SitecoreImageBuilder\Invoke-PackageRestore `
+    -Path $imagesPath `
+    -Destination $installSourcePath `
+    -Tags $tags `
+    -ExperimentalTagBehavior Include `
+    -SitecoreUsername $sitecoreUsername `
+    -SitecorePassword $sitecorePassword
+
+# build and push images
+SitecoreImageBuilder\Invoke-Build `
+    -Path $imagesPath `
+    -InstallSourcePath $installSourcePath `
+    -Registry $registry `
+    -Tags $tags, `
+    -ExperimentalTagBehavior Include
+
+```

@@ -21,6 +21,10 @@ function Invoke-PackageRestore
         [ValidateSet("Include", "Skip")]
         [string]$DeprecatedTagsBehavior = "Skip"
         ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$ExperimentalTagBehavior = "Skip"
+        ,
         [Parameter(Mandatory = $true)]
         [ValidateNotNullOrEmpty()]
         [string]$SitecoreUsername
@@ -50,7 +54,7 @@ function Invoke-PackageRestore
 
     # Find out which files is needed
     $sitecoreDownloadSession = $null
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
 
     # Check or download needed files
@@ -83,41 +87,44 @@ function Invoke-PackageRestore
 
         if ([string]::IsNullOrEmpty($fileUrl))
         {
-            throw ("Required package '{0}' was found in '{1}' but the 'url' property was null or empty." -f $fileName, $packagesFile.FullName)
+            Write-Host ("Required package: '{0}' not available from Sitecore download site because of a DUMMY entry in sitecore-packages.json.`nRequired ACTION: Copy manual '{0}' into '{1}'" -f $fileName, $Destination)
         }
-
-        if ($PSCmdlet.ShouldProcess($fileName))
+        else
         {
-            Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
 
-            if ($fileUrl.StartsWith($sitecoreDownloadUrl))
+            if ($PSCmdlet.ShouldProcess($fileName))
             {
-                # Login to dev.sitecore.net and save session for re-use
-                if ($null -eq $sitecoreDownloadSession)
+                Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
+
+                if ($fileUrl.StartsWith($sitecoreDownloadUrl))
                 {
-                    Write-Verbose ("Logging in to '{0}'..." -f $sitecoreDownloadUrl)
-
-                    $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
-                        username   = $SitecoreUsername
-                        password   = $SitecorePassword
-                        rememberMe = $true
-                    } -SessionVariable "sitecoreDownloadSession" -UseBasicParsing
-
-                    if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
+                    # Login to dev.sitecore.net and save session for re-use
+                    if ($null -eq $sitecoreDownloadSession)
                     {
-                        throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
+                        Write-Verbose ("Logging in to '{0}'..." -f $sitecoreDownloadUrl)
+
+                        $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
+                            username   = $SitecoreUsername
+                            password   = $SitecorePassword
+                            rememberMe = $true
+                        } -SessionVariable "sitecoreDownloadSession" -UseBasicParsing
+
+                        if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
+                        {
+                            throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
+                        }
+
+                        Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
                     }
 
-                    Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
+                    # Download package using saved session
+                    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $sitecoreDownloadSession -UseBasicParsing
                 }
-
-                # Download package using saved session
-                Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $sitecoreDownloadSession -UseBasicParsing
-            }
-            else
-            {
-                # Download package
-                Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -UseBasicParsing
+                else
+                {
+                    # Download package
+                    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -UseBasicParsing
+                }
             }
         }
     }
@@ -155,6 +162,10 @@ function Invoke-Build
         [string]$DeprecatedTagsBehavior = "Skip"
         ,
         [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$ExperimentalTagBehavior = "Skip"
+        ,
+        [Parameter(Mandatory = $false)]
         [ValidateSet("WhenChanged", "Always", "Never")]
         [string]$PushMode = "WhenChanged"
         ,
@@ -168,7 +179,7 @@ function Invoke-Build
     $ProgressPreference = "SilentlyContinue"
 
     # Find out what to build
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior
+    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
 
     # Print results
     $specs | Sort-Object -Property Include, Priority, Tag | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
@@ -233,6 +244,15 @@ function Invoke-Build
             # Copy license.xml and any missing source files into build context
             $spec.Sources | ForEach-Object {
                 $sourcePath = $_
+
+                # continue if source file doesn't exist
+                if (!(Test-Path $sourcePath))
+                {
+                    Write-Warning "Source file '$sourcePath' is missing..."
+
+                    return
+                }
+
                 $sourceItem = Get-Item -Path $sourcePath
                 $targetPath = Join-Path $spec.Path $sourceItem.Name
 
@@ -337,6 +357,11 @@ function Initialize-BuildSpecifications
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
         [string]$DeprecatedTagsBehavior = "Skip"
+        ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("Include", "Skip")]
+        [string]$ExperimentalTagBehavior = "Skip"
+
     )
 
     # Update specs, resolve sources to full path
@@ -354,7 +379,7 @@ function Initialize-BuildSpecifications
     # Update specs, include or not
     $Specifications | ForEach-Object {
         $spec = $_
-     
+
         $spec.Include = ($Tags | ForEach-Object { $spec.Tag -like $_ }) -contains $true
 
         if ($spec.Include -eq $true -and $spec.Deprecated -eq $true -and $DeprecatedTagsBehavior -eq "Skip")
@@ -363,13 +388,20 @@ function Initialize-BuildSpecifications
 
             Write-Verbose ("Tag '{0}' excluded as it is deprecated and the DeprecatedTagsBehavior parameter is '{1}'." -f $spec.Tag, $DeprecatedTagsBehavior)
         }
+
+        if ($spec.Include -eq $true -and $spec.Experimental-eq $true -and $ExperimentalTagBehavior -eq "Skip")
+        {
+            $spec.Include = $false
+
+            Write-Verbose ("Tag '{0}' excluded as it is experimental and the ExperimentalTagBehavior parameter is '{1}'." -f $spec.Tag, $ExperimentalTagBehavior)
+        }
     }
 
     # Update specs, re-include base images
     if ($ImplicitTagsBehavior -eq "Include")
     {
         $Specifications | Where-Object { $_.Include -eq $true } | ForEach-Object {
-            $spec = $_       
+            $spec = $_
 
             # Recursively iterate bases, excluding external ones, and re-include them
             $baseSpecs = $Specifications | Where-Object { $spec.Base -contains $_.Tag }
@@ -423,7 +455,12 @@ function Initialize-BuildSpecifications
         "^sitecore-(xm|xp)-sxa-(sql|sqldev):(.*)$" # SXA windows/linux variants
         "^sitecore-(xm|xp)-sxa-(standalone|cm|cd):(.*)$" # SXA  windows variants
 
+        "^sitecore-xc-(cd|sqldev|standalone)(.*):(.*)$" # XC windows variants
+        "^sitecore-xc-spe-(.*):(.*)$" # XC windows variants
+        "^sitecore-xc-sxa-(cd|sqldev|standalone|solr)(.*):(.*)$" # XC windows variants
+        "^sitecore-xc-sxa-storefront(.*):(.*)$" # XC windows variants
         "^sitecore-xc-(.*):(.*)$" # XC windows variants
+
     )
 
     $patterns | ForEach-Object {
@@ -553,6 +590,13 @@ function Get-BuildSpecifications
                 $deprecated = [bool]$tag.deprecated
             }
 
+            $experimental = $false
+
+            if ($null -ne $tag.experimental)
+            {
+                $experimental = [bool]$tag.experimental
+            }
+
             # Find base images...
             $baseImages = $dockerFileFromLines | ForEach-Object {
                 $image = $_
@@ -608,6 +652,7 @@ function Get-BuildSpecifications
                     Priority       = $null;
                     Include        = $false;
                     Deprecated     = $deprecated;
+                    Experimental   = $experimental;
                 })
         }
     }
@@ -719,7 +764,7 @@ function Get-LatestSupportedVersion
             Sitecore          = $sitecore;
             WindowsServerCore = $windowsServerCore;
             NanoServer        = $nanoserver;
-            Redis            = $redis;
+            Redis             = $redis;
         })
 }
 
@@ -734,21 +779,21 @@ function Get-LatestVersionNumberForTag
         [string]$Tag
     )
 
-        # find all versions for the tag
-        $versions = $Specs | Where-Object { $_.Tag -like $Tag } | Select-Object -ExpandProperty Tag
+    # find all versions for the tag
+    $versions = $Specs | Where-Object { $_.Tag -like $Tag } | Select-Object -ExpandProperty Tag
 
-        $versions = $versions | ForEach-Object {
-            $_.Substring($_.IndexOf(':') + 1)
-        }
-    
-        $versions = $versions | ForEach-Object {
-            $_.Substring(0, $_.IndexOf('-'))
-        }
-    
-        $versions = $versions | Sort-Object -Unique -Descending
-    
-        # pick latest version for the tag
-        Write-Output ($versions | Select-Object -First 1)
+    $versions = $versions | ForEach-Object {
+        $_.Substring($_.IndexOf(':') + 1)
+    }
+
+    $versions = $versions | ForEach-Object {
+        $_.Substring(0, $_.IndexOf('-'))
+    }
+
+    $versions = $versions | Sort-Object -Unique -Descending
+
+    # pick latest version for the tag
+    Write-Output ($versions | Select-Object -First 1)
 }
 
 function Get-LatestSupportedVersionTags

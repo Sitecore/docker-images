@@ -39,8 +39,8 @@ trigger:
     include:
     - master
     - integration/*
-schedules: 
-  - cron: "0 12 * * 0"
+schedules:
+  - cron: '0 12 * * 0'
     displayName: Weekly Sunday build
     branches:
       include:
@@ -56,11 +56,12 @@ stages:
   - stage: Start_VMs
     jobs:
       - job: Start_Windows_VM
+        displayName: 'Start Windows VM'
         pool:
           vmImage: Windows-2019 # Use Microsoft hosted image to start VMs
         steps:
           - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-            displayName: "Start Docker Build VM"
+            displayName: 'Start Docker Build VM'
             inputs:
               Action: "Start VM"
               azureSubscription: $(azure.subscription)
@@ -72,7 +73,7 @@ stages:
           vmImage: Windows-2019
         steps:
           - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-            displayName: "Start Docker Build VM"
+            displayName: 'Start Docker Build VM'
             inputs:
               Action: "Start VM"
               azureSubscription: $(azure.subscription)
@@ -80,11 +81,12 @@ stages:
               VmName: $(azure.vm.linux.name)
 
   - stage: Build_Images
+    displayName: 'Build Images'
     dependsOn: Start_VMs
     jobs:
       - job: Build_Windows_Images
         timeoutInMinutes: 720
-        displayName: "Build Windows Images"
+        displayName: 'Build Windows Images'
         pool:
           name: $(azure.agentPoolName)
         steps:
@@ -93,6 +95,7 @@ stages:
               Invoke-Expression -Command "cmdkey /add:$(assets.shared.folder.server) /user:Azure\dockerassets /pass:$(assets.azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(assets.shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
             condition: eq(variables['assets.useDrive'], 'true')
+            displayName: 'Connect to Asset Drive'
           - task: Docker@2
             displayName: "Docker registry login"
             inputs:
@@ -127,7 +130,6 @@ stages:
                   exit 0
                   fi
                   sudo mkdir $(linux.install.source.path)
-                  
                   if [ ! -d "/etc/smbcredentials" ]; then
                   sudo mkdir /etc/smbcredentials
                   fi

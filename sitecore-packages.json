@@ -283,11 +283,38 @@
     "description": "Sitecore Experience Commerce 9.1 Initial Release",
     "url": "https://dev.sitecore.net/~/media/EF8EE376257142B4BDFAFF7EB1E1CA3E.ashx"
   },
-  "Sitecore.Commerce.WDP.2019.07-4.0.165.zip" : {
+  "Sitecore.Commerce.WDP.2019.07-4.0.165.zip": {
     "description": "Sitecore Experience Commerce 9.2 Initial Release",
     "url": "https://dev.sitecore.net/~/media/07F9ABE455944146B37E9D71CA781A27.ashx"
   },
   "Sitecore.PowerShell.Extensions-6.0.scwdp.zip": {
     "url": "https://github.com/SitecorePowerShell/Console/releases/download/6.0/Sitecore.PowerShell.Extensions-6.0.scwdp.zip"
+  },
+  "Sitecore 9.3.0 rev. 003498 (WDP XM1 packages).zip": {
+    "url": "https://dev.sitecore.net/~/media/D1F694E4238C438B8464FC1ABFF06C87.ashx"
+  },
+  "Sitecore 9.3.0 rev. 003498 (WDP XP0 packages).zip": {
+    "url": "https://dev.sitecore.net/~/media/88666D3532F24973939C1CC140E12A27.ashx"
+  },
+  "Sitecore 9.3.0 rev. 003498 (WDP XP1 packages).zip": {
+    "url": "https://dev.sitecore.net/~/media/64425E6F6DD84443824DCCF38CB7541A.ashx"
+  },
+  "Sitecore Experience Accelerator 9.3.0.2589.scwdp.zip": {
+    "url": "https://dev.sitecore.net/~/media/BDB1DF40FC3A4FB3A64C0B8378BA9288.ashx"
+  },
+  "Sitecore Experience Accelerator 9.3.0.2589 CD.scwdp.zip": {
+    "url": "https://dev.sitecore.net/~/media/B3CF75331A4E4B7E89DEDA151A0D5964.ashx"
+  },
+  "Sitecore Experience Accelerator XM 9.3.0.2589.scwdp.zip": {
+    "url": "https://dev.sitecore.net/~/media/7704669A3B06418CAF00F08053D2A2F0.ashx"
+  },
+  "Sitecore Experience Accelerator XM 9.3.0.2589 CD.scwdp.zip": {
+    "url": "https://dev.sitecore.net/~/media/66D1C7AE0D884BA38D16E9A01C2C38E2.ashx"
+  },
+  "Sitecore Publishing Service 4.2.0-win-x64.zip": {
+    "url": "https://dev.sitecore.net/~/media/1AD1BA4204634EB5B4B18179E23FA285.ashx"
+  },
+  "Sitecore Publishing Module 9.3.0.0 rev. r00546.2197.scwdp.zip": {
+    "url": ""
   }
 }
