@@ -23,14 +23,13 @@ param(
     ,
     [Parameter(Mandatory = $false)]
     [string]$RegistryPassword = ""
-
 )
 
 $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
 
 # load module
-Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
+Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
 
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `

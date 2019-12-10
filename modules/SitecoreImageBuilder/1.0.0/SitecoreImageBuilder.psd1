@@ -4,7 +4,7 @@
     RootModule             = 'SitecoreImageBuilder.psm1'
 
     # Version number of this module.
-    ModuleVersion          = '1.0'
+    ModuleVersion          = '1.0.0'
 
     # ID used to uniquely identify this module
     GUID                   = 'd18f28e0-08ff-4151-ba98-34681acf0735'
