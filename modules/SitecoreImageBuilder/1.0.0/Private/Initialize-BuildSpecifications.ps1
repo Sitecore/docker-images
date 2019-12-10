@@ -97,7 +97,7 @@ function Initialize-BuildSpecifications
 
     # Sort the graph so dependencies of images is always before the image that has the dependency (using topological sorting / dependency resolution)
     $sorted = Get-TopologicalSort -InputObject $graph
-$sorted|ForEach-Object { write-host $_}
+
     # Assign sortable number to each image tag
     $priorities = [System.Collections.Specialized.OrderedDictionary]::new()
 
