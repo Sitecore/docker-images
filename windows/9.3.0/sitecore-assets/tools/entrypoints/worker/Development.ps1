@@ -11,16 +11,11 @@ if ($useWatchDirectory)
 {
     # start Watch-Directory.ps1 in background, kill foreground process if it fails
     Start-Job -Name "WatchDirectory.ps1" {
-        try
-        {
-            # TODO: Handle additional Watch-Directory params, use param splattering?
 
-            & "C:\tools\scripts\Watch-Directory.ps1" -Path "C:\src" -Destination "C:\worker" -ExcludeFiles "Web.config"
-        }
-        finally
-        {
-            Get-Process -Name "filebeat" | Stop-Process -Force
-        }
+    # TODO: Handle additional Watch-Directory params, use param splattering?
+
+    & "C:\tools\scripts\Watch-Directory.ps1" -Path "C:\src" -Destination "C:\worker" -ExcludeFiles "Web.config"
+
     } | ForEach-Object {
         Write-Host ("### Started '$($_.Name)'.")
     }
