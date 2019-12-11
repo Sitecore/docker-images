@@ -3,7 +3,7 @@
 ## December 2019
 
 - [Changed] Development `ENTRYPOINT` scripts now supports parsing in parameters to `Watch-Directory.ps1` using parameter splattering. See [README.md](/README.md#optional-entrypoint-scripts) on how to use.
-- [Added] Development `ENTRYPOINT` scripts for XConnect worker roles (auto start watch directory). See [README.md](/README.md#optional-entrypoint-scripts) on how to use.
+- [Added] Development `ENTRYPOINT` scripts for XConnect worker roles (auto start watch directory). See [README.md](/README.md#optional-entrypoint-scripts) on how to use. Thanks [@jeanfrancoislarente](https://github.com/jeanfrancoislarente) :+1:
 - [Added] Sitecore 9.3.0 XM/XP-SXA/PS (publishing service) variant.
 
 ## November 2019
