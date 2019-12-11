@@ -164,6 +164,8 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 
 #### For XConnect workers (automation engine, processing engine, index worker)
 
+> Please note that this is enabled *from* Sitecore v9.3.0.
+
 `C:\tools\entrypoints\worker\Development.ps1` features:
 
 - Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.

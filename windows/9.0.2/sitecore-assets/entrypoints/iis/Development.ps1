@@ -1,3 +1,9 @@
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $false)]
+    [hashtable]$WatchDirectoryParameters
+)
+
 # setup
 $ErrorActionPreference = "STOP"
 
@@ -94,36 +100,62 @@ else
 }
 
 # check to see if we should start the Watch-Directory.ps1 script
+$watchDirectoryJobName = "Watch-Directory.ps1"
 $useWatchDirectory = (Test-Path -Path "C:\src" -PathType "Container") -eq $true
 
 if ($useWatchDirectory)
 {
+    # setup default parameters if none is supplied
+    if ($null -eq $WatchDirectoryParameters)
+    {
+        $WatchDirectoryParameters = @{ Path = "C:\src"; Destination = "C:\inetpub\wwwroot"; }
+    }
+
     # start Watch-Directory.ps1 in background, kill foreground process if it fails
-    Start-Job -Name "WatchDirectory.ps1" {
+    Start-Job -Name $watchDirectoryJobName -ArgumentList $WatchDirectoryParameters -ScriptBlock {
+        param([hashtable]$params)
+
         try
         {
-            # TODO: Handle additional Watch-Directory params, use param splattering?
-
-            & "C:\tools\scripts\Watch-Directory.ps1" -Path "C:\src" -Destination "C:\inetpub\wwwroot" -ExcludeFiles "Web.config"
+            & "C:\tools\scripts\Watch-Directory.ps1" @params
         }
         finally
         {
             Get-Process -Name "filebeat" | Stop-Process -Force
         }
-    } | ForEach-Object {
-        Write-Host ("### Started '$($_.Name)'.")
+    } | Out-Null
+
+    # wait to see if job have failed (it will if for example parsing in invalid parameters)...
+    Start-Sleep -Milliseconds 1000
+
+    Get-Job -Name $watchDirectoryJobName | ForEach-Object {
+        $job = $_
+
+        if ($job.State -ne "Running")
+        {
+            # writes output stream
+            Receive-Job $job
+
+            # exit
+            exit 1
+        }
+
+        Write-Host "### Job '$($job.Name)' started..."
     }
 }
 else
 {
-    Write-Host ("### Skipping start of 'WatchDirectory.ps1', to enable you should mount a directory into 'C:\src'.")
+    Write-Host ("### Skipping start of '$watchDirectoryJobName', to enable you should mount a directory into 'C:\src'.")
 }
 
 # inject Sitecore config files
-Copy-Item -Path (Join-Path $PSScriptRoot "\*.config") -Destination "C:\inetpub\wwwroot\App_Config\Include"
+if (Test-Path -Path "C:\inetpub\wwwroot\App_Config\Include" -PathType "Container")
+{
+    Copy-Item -Path (Join-Path $PSScriptRoot "\*.config") -Destination "C:\inetpub\wwwroot\App_Config\Include"
+}
 
 # start ServiceMonitor.exe in background, kill foreground process if it fails
-Start-Job -Name "ServiceMonitor.exe" {
+Start-Job -Name "ServiceMonitor.exe" -ScriptBlock {
     try
     {
         & "C:\ServiceMonitor.exe" "w3svc"
