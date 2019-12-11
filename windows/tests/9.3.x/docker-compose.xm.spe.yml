@@ -24,7 +24,7 @@ services:
 
   cd:
     image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     ports:
       - "44002:80"
     environment:
@@ -43,7 +43,7 @@ services:
 
   cm:
     image: ${REGISTRY}sitecore-xm-spe-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     ports:
       - "44001:80"
     environment:

@@ -20,6 +20,7 @@ services:
     mem_limit: 1GB
     ports:
       - "44011:8983"
+
   ps:
     image: ${REGISTRY}sitecore-ps:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     environment:
@@ -31,8 +32,9 @@ services:
     depends_on:
       sql:
         condition: service_healthy
-    ports: 
-      - "44015:80"    
+    ports:
+      - "44015:80"
+
   xconnect:
     image: ${REGISTRY}sitecore-xp-xconnect:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     volumes:
@@ -56,6 +58,7 @@ services:
 
   xconnect-automationengine:
     image: ${REGISTRY}sitecore-xp-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1"
     volumes:
       - .\data\xconnect-automationengine:C:\worker\App_Data\logs
     mem_limit: 500MB
@@ -71,6 +74,7 @@ services:
 
   xconnect-indexworker:
     image: ${REGISTRY}sitecore-xp-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1"
     volumes:
       - .\data\xconnect-indexworker:C:\worker\App_Data\logs
     mem_limit: 500MB
@@ -86,6 +90,7 @@ services:
 
   xconnect-processingengine:
     image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1"
     volumes:
       - .\data\xconnect-processingengine:C:\worker\App_Data\logs
     mem_limit: 500MB
@@ -108,7 +113,7 @@ services:
 
   cd:
     image: ${REGISTRY}sitecore-xp-sxa-ps-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     ports:
       - "44002:80"
     environment:
@@ -133,7 +138,7 @@ services:
 
   cm:
     image: ${REGISTRY}sitecore-xp-sxa-ps-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
-    entrypoint: powershell.exe -NoLogo -NoProfile -File C:\\tools\\entrypoints\\iis\\Development.ps1
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     ports:
       - "44001:80"
     environment:
