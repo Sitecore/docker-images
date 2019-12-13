@@ -49,7 +49,7 @@ function Invoke-Build
     $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
 
     # Print results
-    $specs | Sort-Object -Property Include | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
+    $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
 
     # Determine OS
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
