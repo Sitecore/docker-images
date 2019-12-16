@@ -139,9 +139,9 @@ SitecoreImageBuilder\Invoke-Build `
 
 ### Optional ENTRYPOINT scripts
 
-For IIS based images (such as the roles `cm`, `standalone` and `cd`) we now have a few scripts that can be used as `ENTRYPOINT` for development and production use.
+We now have a few scripts that can be used as `ENTRYPOINT` for development and production use. Using the `ENTRYPOINT` scripts that supports log steaming enables you to observe Sitecore log entries in the `STDOUT` of containers in the foreground or by using commands such as `docker container logs` or `docker container attach`.
 
-Using these `ENTRYPOINT` scripts enables you to observe Sitecore log entries in the `STDOUT` of containers in the foreground or by using commands such as `docker container logs` or `docker container attach`.
+#### For CM/CD
 
 `C:\tools\entrypoints\iis\Production.ps1` features:
 
@@ -158,8 +158,18 @@ Using these `ENTRYPOINT` scripts enables you to observe Sitecore log entries in 
 - Same as `Production.ps1`.
 - Starts the Visual Studio Remote Debugger `msvsmon.exe` in the background **if** the Visual Studio Remote Debugger directory is mounted into `C:\remote_debugger`.
 - Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
+  - To customize parameters you can use `WatchDirectoryParameters` and give it a hashtable, example: `entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"`
 
 See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](windows/tests/9.3.x/docker-compose.xm.yml) for configuration examples.
+
+#### For XConnect workers (automation engine, processing engine, index worker)
+
+> Please note that this is enabled *from* Sitecore v9.3.0.
+
+`C:\tools\entrypoints\worker\Development.ps1` features:
+
+- Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
+  - To customize parameters you can use `WatchDirectoryParameters` and give it a hashtable, example: `entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\worker'; }"`
 
 ### NOTE publishing service, not automatically build because of missing prerequisites from Sitecore
 
