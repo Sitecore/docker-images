@@ -2,12 +2,14 @@
 
 ## December 2019
 
-- [Added] Sitecore 9.3.0 XM/XP-SXA/PS (publising service) variant.
+- [Changed] Development `ENTRYPOINT` scripts now supports parsing in parameters to `Watch-Directory.ps1` using parameter splattering. See [README.md](/README.md#optional-entrypoint-scripts) on how to use.
+- [Added] Development `ENTRYPOINT` scripts for XConnect worker roles (auto start watch directory). See [README.md](/README.md#optional-entrypoint-scripts) on how to use. Thanks [@jeanfrancoislarente](https://github.com/jeanfrancoislarente) :+1:
+- [Added] Sitecore 9.3.0 XM/XP-SXA/PS (publishing service) variant.
 
 ## November 2019
 
 - [Added] Sitecore 9.3.0 XM/XP/SXA.
-- [Added] New **optional** `ENTRYPOINT` scripts (log streaming, auto start watch and auto start remote debugger) for IIS based images. See [README.md](/README.md#optional-entrypoint-scripts) on how to use.
+- [Added] New **optional** `ENTRYPOINT` scripts (log streaming, auto start watch directory and auto start remote debugger) for IIS based images. See [README.md](/README.md#optional-entrypoint-scripts) on how to use.
 - [Added] Windows 1909 is now also supported. You can override which platforms you want by setting the parameter `AutoGenerateWindowsVersionTags` when calling `Invoke-Build`, default value is: `"1909", "1903", "ltsc2019"`.
 - [Added] Build images updated to now include XC - PSE, XC - SXA, XC - SXA Storefront
 
