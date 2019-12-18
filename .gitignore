@@ -2,6 +2,7 @@
 license.xml
 *-Local.ps1
 packages/
+*.code-workspace
 
 legacy/tests/**/data/**/*
 !legacy/tests/**/data/*/

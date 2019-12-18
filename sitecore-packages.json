@@ -315,6 +315,20 @@
     "url": "https://dev.sitecore.net/~/media/1AD1BA4204634EB5B4B18179E23FA285.ashx"
   },
   "Sitecore Publishing Module 9.3.0.0 rev. r00546.2197.scwdp.zip": {
+    "packageName" : "Sitecore Publishing Module 9.3.0.0 rev. r00546.2197.zip",
+    "packageUrl": "https://dev.sitecore.net/~/media/417C43AC4F334C4085D18925367FE79A.ashx",
+    "url": ""
+  },
+  "Data Exchange Framework 3.0.0 rev. 01393.scwdp.zip": {
+    "description": "DEF 3.0.0 Converted locally from sitecore package",
+    "packageName" : "Data Exchange Framework 3.0.0 rev. 01393.zip",
+    "packageUrl" : "https://dev.sitecore.net/~/media/833DC3BC5EC14383AF658F372E073E2D.ashx",
+    "url": ""
+  },
+  "Data Exchange Framework CD Server 3.0.0 rev. 01393.scwdp.zip": {
+    "description": "DEF CD 3.0.0 Converted locally from sitecore package",
+    "packageName" : "Data Exchange Framework CD Server 3.0.0 rev. 01393.zip",
+    "packageUrl":"https://dev.sitecore.net/~/media/81010542864F4C349863705F02D1A843.ashx",
     "url": ""
   }
 }

@@ -22,8 +22,16 @@ param(
 
 $sitecoreDownloadUrl = "https://dev.sitecore.net"
 
-$packages = @{"Sitecore Azure Toolkit 2.4.0-r02514.1001.zip"  = "https://dev.sitecore.net/~/media/B627BFA7070B40AD854A0FF08719381D.ashx"
-    "Sitecore Publishing Module 9.3.0.0 rev. r00546.2197.zip" = "https://dev.sitecore.net/~/media/417C43AC4F334C4085D18925367FE79A.ashx"
+$packages = @{
+    "Sitecore Azure Toolkit 2.4.0-r02514.1001.zip" = "https://dev.sitecore.net/~/media/B627BFA7070B40AD854A0FF08719381D.ashx"
+}
+
+$packagesFile = Get-Item -Path (Join-Path $PSScriptRoot ".\sitecore-packages.json")
+(
+    $packagesFile | Get-Content | ConvertFrom-Json).psobject.properties | Foreach {
+    if (($null -ne $_.Value.packageUrl) -and ($null -ne $_.Value.packageName)) {
+        $packages[$_.Value.packageName] = $_.Value.packageUrl
+    }
 }
 
 # download packages from Sitecore download
@@ -69,8 +77,6 @@ $packages.GetEnumerator() | ForEach-Object {
 
 }
 
-$Destination = Join-Path $PSScriptRoot "packages"
-
 # Install Azure toolkit
 Write-Host "Prepare Azure toolkit"
 
@@ -85,18 +91,17 @@ if (!(Test-Path $sat -PathType "Container")) {
 }
 
 # extract Sitecore Azure Toolkit
-Get-ChildItem -Path $Destination -Filter "*Azure Toolkit*" -Recurse | Select-Object -First 1 | Expand-Archive -DestinationPath $sat -Force
+Get-ChildItem -Path $InstallSourcePath -Filter "*Azure Toolkit*" -Recurse | Select-Object -First 1 | Expand-Archive -DestinationPath $sat -Force
 
 # import Azure toolkit
 Write-Host "Import Sitecore Azure Toolkit"
 Import-Module (Join-Path $sat "tools\Sitecore.Cloud.Cmdlets.dll")  -Force
 
-# Find publishing ,odule
-$zips = Get-ChildItem -Recurse -Path $Destination -Include "Sitecore Publishing Module*" -Exclude "*scwdp*"
-
-$zips | ForEach-Object {
-    Write-Host "Convert to WDP $_"
-    ConvertTo-SCModuleWebDeployPackage -Path $_ -Destination $Destination -Force
+# Find modules to transform
+$packages.Keys | Where-Object { $_ -notlike "*Azure Toolkit*" } | ForEach-Object {
+    $zip = Get-Item (Join-Path "C:\Sitecore\Repository\" "$_")
+    Write-Host "Convert to WDP $zip"
+    ConvertTo-SCModuleWebDeployPackage -Path $zip -Destination $InstallSourcePath -Force
 }
 
 Write-Host "DONE"
