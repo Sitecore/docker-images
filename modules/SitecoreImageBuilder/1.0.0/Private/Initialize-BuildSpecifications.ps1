@@ -65,10 +65,10 @@ function Initialize-BuildSpecifications
         $Specifications | Where-Object { $_.Include -eq $true } | ForEach-Object {
             $spec = $_
 
-            # Recursively iterate bases, excluding external ones, and re-include them
+            # Recursively iterate base images and re-include them if needed
             $baseSpecs = $Specifications | Where-Object { $spec.Base -contains $_.Tag }
 
-            while ($null -ne $baseSpecs)
+            while ($null -ne $baseSpecs -and $baseSpecs.Length -gt 0)
             {
                 $baseSpecs | ForEach-Object {
                     $baseSpec = $_
@@ -81,7 +81,7 @@ function Initialize-BuildSpecifications
                     }
                 }
 
-                $baseSpecs = $Specifications | Where-Object { $baseSpecs.Base -contains $_.Tag } | Select-Object -First 1
+                $baseSpecs = $Specifications | Where-Object { $baseSpecs.Base -contains $_.Tag }
             }
         }
     }
