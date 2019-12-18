@@ -13,7 +13,7 @@ param(
     [int]$SleepMilliseconds = 200,
     # Default files to skip during sync
     [Parameter(Mandatory = $false)]
-    [array]$DefaultExcludedFiles = @("*.user", "*.cs", "*.csproj", "packages.config", "*ncrunch*", ".gitignore", ".dockerignore", "*.example", "*.disabled"),
+    [array]$DefaultExcludedFiles = @("*.user", "*.cs", "*.csproj", "packages.config", "*ncrunch*", ".gitignore", ".gitkeep", ".dockerignore", "*.example", "*.disabled"),
     # Additional files to skip during sync
     [Parameter(Mandatory = $false)]
     [array]$ExcludeFiles = @(),
