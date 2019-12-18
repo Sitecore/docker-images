@@ -58,14 +58,19 @@ This will:
 
 > Images will always be saved locally but not pushed to any remote registries by default. See [Setting up automated builds](#setting-up-automated-builds) for details on how to do this.
 
-When completed:
+When completed then...
 
-1. For Sitecore 9.3.x
-    1. Run `Set-LicenseEnvironmentVariable.ps1 -Path C:\license\license.xml` (use the `PersistForCurrentUser` switch to persist the license for future sessions). This will gzip and base64 encode the license file content and save it in `$env:SITECORE_LICENSE`.
-    1. Switch directory to `.\windows\tests\9.3.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
-1. For Sitecore 9.2.x
-    1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
-    1. Switch directory to `.\windows\tests\9.x.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
+**For Sitecore 9.3.x:**
+
+1. Run `Set-LicenseEnvironmentVariable.ps1 -Path C:\license\license.xml` (use the `PersistForCurrentUser` switch to persist the license for future sessions). This will gzip and base64 encode the license file content and save it in `$env:SITECORE_LICENSE`.
+1. Switch directory to `.\windows\tests\9.3.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
+
+**For Sitecore 9.2.x:**
+
+1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
+1. Switch directory to `.\windows\tests\9.x.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
+
+>IMPORTANT: When switching between versions or topologies you need to clear the data folders, you can use the `.\Clear-Data.ps1` script to do so.
 
 ### Setting up automated builds
 
