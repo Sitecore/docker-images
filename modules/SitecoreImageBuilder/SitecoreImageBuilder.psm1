@@ -404,7 +404,7 @@ function Initialize-BuildSpecifications
             $spec = $_
 
             # Recursively iterate base images and re-include them if needed
-            $baseSpecs = $Specifications | Where-Object { $spec.Base -contains $_.Tag }
+            $baseSpecs = @($Specifications | Where-Object { $spec.Base -contains $_.Tag })
 
             while ($null -ne $baseSpecs -and $baseSpecs.Length -gt 0)
             {
