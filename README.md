@@ -68,9 +68,9 @@ When completed then...
 **For Sitecore 9.2.x:**
 
 1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
-1. Switch directory to `.\windows\tests\9.x.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
+1. Switch directory to `.\windows\tests\9.2.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
 
->IMPORTANT: When switching between versions or topologies you need to clear the data folders, you can use the `.\Clear-Data.ps1` script to do so.
+> IMPORTANT: When switching between versions, variants or topologies you need to clear the data folders, you can use the `.\windows\tests\*.*.*\Clean-Data.ps1` script to do so.
 
 ### Setting up automated builds
 
