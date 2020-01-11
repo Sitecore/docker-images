@@ -178,7 +178,7 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 
 #### For Commerce Engine (authoring, minions, ops, shops)
 
-`C:\tools\entrypoints\iis\Production.ps1` features:
+`C:\tools\entrypoints\sitecore-xc-engine\Production.ps1` features:
 
 - Adds a UDP log appender
 - Starts `ServiceMonitor.exe` in the background.
@@ -188,7 +188,7 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
   - IIS error logs, **disabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=true`
   - Commerce Engine logs, **enabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_ENGINE_LOG_ENABLED=false`
 
-`C:\tools\entrypoints\iis\Development.ps1` features:
+`C:\tools\entrypoints\sitecore-xc-engine\Development.ps1` features:
 
 - Same as `Production.ps1`.
 - Starts the Visual Studio Remote Debugger `msvsmon.exe` in the background **if** the Visual Studio Remote Debugger directory is mounted into `C:\remote_debugger`.
