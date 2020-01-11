@@ -197,7 +197,7 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 
 See the `commerce-authoring` service in [windows/tests/9.2.x/docker-compose.xc.yml](windows/tests/9.2.x/docker-compose.xc.yml) for configuration examples.
 
-### NOTE publishing service, not automatically build because of missing prerequisites from Sitecore
+### Experimental Publishing Service (not automatically build because of missing prerequisites from Sitecore)
 
 The 'Download-PS-Prerequisites.ps1' script will download the regular Sitecore Publishing Module package, and convert the asset into the proper WDP package by using Sitecore Sitecore Azure Toolkit.
 
@@ -241,3 +241,15 @@ SitecoreImageBuilder\Invoke-Build `
     -ExperimentalTagBehavior Include
 
 ```
+
+## Cleanup
+
+Its recommended to clean up you Docker engine hosts (developer workstations, build agents etc.) regularly.
+
+To remove **unused** images (dangling images created during build):
+
+```text
+docker image prune --force
+```
+
+>TIP: If you need to clean up **everything** you can add the option `--all` to above prune command or run `docker system prune --all --force`. Beware that both will remove **all** images.
