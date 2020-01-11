@@ -34,6 +34,9 @@ RUN $env:COMMERCE_CLIENT_CERT_THUMBPRINT = (Get-Content -Path 'C:\\inetpub\\wwwr
 # add installers
 COPY --from=assets ["C:\\install\\setup\\", "C:\\inetpub\\wwwroot\\temp\\install\\setup\\"]
 
+# copy assemblies
+COPY --from=assets ["C:\\install\\bin\\serilog\\", "C:\\inetpub\\wwwroot\\"]
+
 FROM $BASE_IMAGE
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
