@@ -31,8 +31,8 @@ param(
     [switch]$IncludeSxa,
     [Parameter()]
     [switch]$IncludeJss,
-    [Parameter()]
-    [switch]$RebuildExisting
+    [Parameter(HelpMessage="If the docker image is already built it should be skipped.")]
+    [switch]$SkipExistingImage
 )
 
 $ErrorActionPreference = "STOP"
@@ -174,7 +174,7 @@ foreach ($wv in $WindowsVersion)
     }
 }
 
-if (!$RebuildExisting.IsPresent)
+if ($SkipExistingImage.IsPresent)
 {
     Write-Host "Existing images will be excluded from the build."
     $existingImages = docker images --format '{{.Repository}}:{{.Tag}}' --filter 'dangling=false'
