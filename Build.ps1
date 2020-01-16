@@ -56,9 +56,17 @@ $windowsVersionMapping = @{
 foreach ($wv in $WindowsVersion)
 {
     $tags.Add("mssql-developer:2017-windowsservercore-$($wv)") > $null
-    $tags.Add("sitecore-certificates:latest-nanoserver-$($windowsVersionMapping[$wv])") > $null
     $tags.Add("sitecore-openjdk:8-nanoserver-$($windowsVersionMapping[$wv])") > $null
-    $tags.Add("sitecore-redis:3.0.504-windowsservercore-$($wv)") > $null
+
+    if ($Topology -contains "xp" -or $Topology -contains "xc")
+    {
+        $tags.Add("sitecore-certificates:latest-nanoserver-$($windowsVersionMapping[$wv])") > $null
+    }
+
+    if ($Topology -contains "xc")
+    {
+        $tags.Add("sitecore-redis:3.0.504-windowsservercore-$($wv)") > $null
+    }
 
     foreach ($scv in $SitecoreVersion)
     {
