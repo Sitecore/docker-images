@@ -4,19 +4,19 @@ param(
     [string]$Path
     ,
     [Parameter(Mandatory = $false)]
-    [Switch]$PersistForCurrentUser
+    [switch]$PersistForCurrentUser
 )
 
+$licenseFileBytes = [System.IO.File]::ReadAllBytes($Path)
 $licenseString = $null
 
 try
 {
-    # gzip content
-    $memory = New-Object System.IO.MemoryStream
-    $gzip = New-Object System.IO.Compression.GZipStream($memory, [System.IO.Compression.CompressionMode]::Compress)
-    $licenseFile = [System.IO.File]::OpenRead($Path)
-    $licenseFile.CopyTo($gzip)
-    $licenseFile.Close()
+    $memory = [System.IO.MemoryStream]::new()
+
+    # gzip license file content
+    $gzip = [System.IO.Compression.GZipStream]::new($memory, [System.IO.Compression.CompressionLevel]::Optimal, $true)
+    $gzip.Write($licenseFileBytes, 0, $licenseFileBytes.Length);
     $gzip.Close()
 
     # base64 encode the gzipped content
@@ -31,17 +31,19 @@ finally
         $gzip = $null
     }
 
-    if ($null -ne $licenseFile)
-    {
-        $licenseFile.Dispose()
-        $licenseFile = $null
-    }
-
     if ($null -ne $memory)
     {
         $memory.Dispose()
         $memory = $null
     }
+
+    $licenseFileBytes = $null
+}
+
+# sanity check
+if ($licenseString.Length -le 100)
+{
+    throw "Unknown error, the gzipped and base64 encoded string '$licenseString' is too short."
 }
 
 # persist in current session

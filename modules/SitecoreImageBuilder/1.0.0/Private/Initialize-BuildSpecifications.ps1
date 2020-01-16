@@ -23,7 +23,6 @@ function Initialize-BuildSpecifications
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
         [string]$ExperimentalTagBehavior = "Skip"
-
     )
 
     # Update specs, resolve sources to full path
@@ -66,22 +65,18 @@ function Initialize-BuildSpecifications
             $spec = $_
 
             # Recursively iterate base images and re-include them if needed
-            $baseSpecs = $Specifications | Where-Object { $spec.Base -contains $_.Tag }
+            $baseSpecs = @($Specifications | Where-Object { $_.Include -eq $false -and $spec.Base -contains $_.Tag })
 
             while ($null -ne $baseSpecs -and $baseSpecs.Length -gt 0)
             {
                 $baseSpecs | ForEach-Object {
                     $baseSpec = $_
+                    $baseSpec.Include = $true
 
-                    if ($baseSpec.Include -ne $true)
-                    {
-                        $baseSpec.Include = $true
-
-                        Write-Verbose ("Tag '{0}' implicitly included '{1}' due to dependency." -f $spec.Tag, $baseSpec.Tag)
-                    }
+                    Write-Verbose ("Tag '{0}' implicitly included '{1}' due to dependency." -f $spec.Tag, $baseSpec.Tag)
                 }
 
-                $baseSpecs = $Specifications | Where-Object { $baseSpecs.Base -contains $_.Tag }
+                $baseSpecs = @($Specifications | Where-Object { $_.Include -eq $false -and $baseSpecs.Base -contains $_.Tag })
             }
         }
     }

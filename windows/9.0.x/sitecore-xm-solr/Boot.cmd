@@ -10,12 +10,10 @@ ECHO SOLR_PORT=%SOLR_PORT%
 ECHO INSTALL_PATH=%INSTALL_PATH%
 ECHO DATA_PATH=%DATA_PATH%
 
-IF EXIST "%DATA_PATH%\sc_*" (
-    IF EXIST "%DATA_PATH%\solr.xml" (
-        ECHO "### Existing Sitecore solr cores found in '%DATA_PATH%'..."
+IF EXIST "%DATA_PATH%\solr.xml" (
+    ECHO "### Existing Sitecore solr cores found in '%DATA_PATH%'..."
 
-        SET HAS_DATA="true"
-    )
+    SET HAS_DATA="true"
 )
 
 IF %HAS_DATA%=="false" (

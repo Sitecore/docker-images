@@ -7,8 +7,10 @@ param(
 # setup
 $ErrorActionPreference = "STOP"
 
+$timeFormat = "HH:mm:ss:fff"
+
 # print start message
-Write-Host ("### Sitecore Development ENTRYPOINT, starting...")
+Write-Host ("$(Get-Date -Format $timeFormat): Sitecore Development ENTRYPOINT, starting...")
 
 # check to see if we should start the Watch-Directory.ps1 script
 $watchDirectoryJobName = "Watch-Directory.ps1"
@@ -45,12 +47,12 @@ if ($useWatchDirectory)
             exit 1
         }
 
-        Write-Host "### Job '$($job.Name)' started..."
+        Write-Host "$(Get-Date -Format $timeFormat): Job '$($job.Name)' started..."
     }
 }
 else
 {
-    Write-Host ("### Skipping start of '$watchDirectoryJobName', to enable you should mount a directory into 'C:\src'.")
+    Write-Host ("$(Get-Date -Format $timeFormat): Skipping start of '$watchDirectoryJobName', to enable you should mount a directory into 'C:\src'.")
 }
 
 & "C:\\worker\\$($env:SC_ROLE_EXE)"
