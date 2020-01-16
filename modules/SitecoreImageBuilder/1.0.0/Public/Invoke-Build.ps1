@@ -15,7 +15,7 @@ function Invoke-Build
         [string]$Registry
         ,
         [Parameter(Mandatory = $false)]
-        [array]$Tags = (Get-LatestSupportedVersionTags)
+        [array]$Tags
         ,
         [Parameter(Mandatory = $false)]
         [array]$AutoGenerateWindowsVersionTags = (Get-SupportedWindowsVersions)
@@ -51,8 +51,13 @@ function Invoke-Build
     # Load packages
     $packages = Get-Packages
 
+    $allSpecs = Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags
+    if ($Tags -eq $null)
+    {
+        $Tags = Get-LatestSupportedVersionTags -Specs $allSpecs
+    }
     # Find out what to build
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
+    $specs = Initialize-BuildSpecifications -Specifications $allSpecs -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
 
     # Print results
     $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table

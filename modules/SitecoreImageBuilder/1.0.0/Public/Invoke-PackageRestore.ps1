@@ -12,7 +12,7 @@ function Invoke-PackageRestore
         [string]$Destination
         ,
         [Parameter(Mandatory = $false)]
-        [array]$Tags = (Get-LatestSupportedVersionTags)
+        [array]$Tags
         ,
         [Parameter(Mandatory = $false)]
         [array]$AutoGenerateWindowsVersionTags = (Get-SupportedWindowsVersions)
@@ -50,9 +50,15 @@ function Invoke-PackageRestore
         New-Item $destinationPath -ItemType Directory -WhatIf:$false | Out-Null
     }
 
-    # Find out which files is needed
     $sitecoreDownloadSession = $null
-    $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
+
+    # Find out which files is needed
+    $allSpecs = Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags
+    if ($Tags -eq $null)
+    {
+        $Tags = Get-LatestSupportedVersionTags -Specs $allSpecs
+    }
+    $specs = Initialize-BuildSpecifications -Specifications $allSpecs -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
 
     # Check or download needed files

@@ -10,7 +10,7 @@ function Initialize-BuildSpecifications
         [string]$InstallSourcePath
         ,
         [Parameter(Mandatory = $false)]
-        [array]$Tags = (Get-LatestSupportedVersionTags)
+        [array]$Tags
         ,
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
@@ -24,6 +24,11 @@ function Initialize-BuildSpecifications
         [ValidateSet("Include", "Skip")]
         [string]$ExperimentalTagBehavior = "Skip"
     )
+
+    if ($Tags -eq $null)
+    {
+        $Tags = Get-LatestSupportedVersionTags -Specs $Specifications
+    }
 
     # Update specs, resolve sources to full path
     $Specifications | ForEach-Object {

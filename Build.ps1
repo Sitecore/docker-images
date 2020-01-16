@@ -5,7 +5,7 @@
 param(
     [Parameter()]
     [ValidateNotNullOrEmpty()]
-    [string]$InstallSourcePath = (Join-Path $PSScriptRoot "\packages"),
+    [string]$InstallSourcePath,
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string]$SitecoreUsername,
@@ -35,6 +35,11 @@ param(
     [switch]$SkipExistingImage
 )
 
+if ([string]::IsNullOrEmpty($InstallSourcePath))
+{
+    $InstallSourcePath = (Join-Path -Path $PSScriptRoot -ChildPath "\packages")
+}
+
 $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
 
@@ -42,11 +47,11 @@ $ProgressPreference = "SilentlyContinue"
 Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
 
 $tags = [System.Collections.ArrayList]@()
+
 $windowsVersionMapping = @{
     "1909"     = "1909"
     "1903"     = "1903"
     "ltsc2019" = "1809"
-    "1803"     = "1803"
 }
 foreach ($wv in $WindowsVersion)
 {
