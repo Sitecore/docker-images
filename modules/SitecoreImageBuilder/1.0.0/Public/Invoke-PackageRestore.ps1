@@ -42,7 +42,7 @@ function Invoke-PackageRestore
     $destinationPath = $Destination.TrimEnd('\')
 
     # Load packages
-    $packages = $packages = Get-Packages
+    $packages = Get-Packages
 
     # Ensure destination exists
     if (!(Test-Path $destinationPath -PathType "Container"))

@@ -49,7 +49,7 @@ function Invoke-Build
     $ProgressPreference = "SilentlyContinue"
 
     # Load packages
-    $packages = $packages = Get-Packages
+    $packages = Get-Packages
 
     # Find out what to build
     $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
