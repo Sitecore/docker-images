@@ -30,11 +30,6 @@ RUN Expand-Archive -Path 'C:\\downloads\\filebeat.zip' -DestinationPath 'C:\\ins
     Rename-Item -Path (Get-Item -Path 'C:\\install\\tools\\bin\\filebeat*windows*').FullName -NewName "filebeat"; `
     Remove-Item -Path 'C:\\downloads\\filebeat.zip' -Force;
 
-# extract filebeat
-RUN Expand-Archive -Path 'C:\\downloads\\filebeat.zip' -DestinationPath 'C:\\install\\tools\\bin' -Force; `
-    Rename-Item -Path (Get-Item -Path 'C:\\install\\tools\\bin\\filebeat*windows*').FullName -NewName "filebeat"; `
-    Remove-Item -Path 'C:\\downloads\\filebeat.zip' -Force;
-
 # extract assets, skip wdps, move already extracted wdps
 RUN $zips = Get-ChildItem -Path 'C:\\downloads\\*.zip' -Exclude '*.scwdp.zip'; `
     $zips | ForEach-Object { `
