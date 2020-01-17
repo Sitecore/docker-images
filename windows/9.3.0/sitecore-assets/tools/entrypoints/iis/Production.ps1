@@ -80,7 +80,7 @@ while ($true)
 # wait for application pool to stop
 Wait-WebItemState -IISPath "IIS:\AppPools\DefaultAppPool" -State "Stopped"
 
-if (Test-Path -Path "C:\inetput\wwwroot\App_Config\Include")
+if (Test-Path -Path "C:\inetpub\wwwroot\App_Config\Include")
 {
     # inject Sitecore config files
     Copy-Item -Path (Join-Path $PSScriptRoot "\*.config") -Destination "C:\inetpub\wwwroot\App_Config\Include"
