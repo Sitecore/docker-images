@@ -39,7 +39,7 @@ $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
 
 # load module
-Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
+Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
 
 $tags = [System.Collections.ArrayList]@()
 $windowsVersionMapping = @{
