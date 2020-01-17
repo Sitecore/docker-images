@@ -142,13 +142,13 @@ function Invoke-Build
 
                     if ($null -ne $package -and ![string]::IsNullOrEmpty($package.hash))
                     {
-                        $exceptedTargetFileHash = $package.hash
+                        $expectedTargetFileHash = $package.hash
 
                         # Calculate hash of target file
                         $currentTargetFileHash = Get-FileHash -Path $targetPath -Algorithm "SHA256" | Select-Object -ExpandProperty "Hash"
 
                         # Compare hashes and fail if not the same
-                        if ($currentTargetFileHash -eq $exceptedTargetFileHash)
+                        if ($currentTargetFileHash -eq $expectedTargetFileHash)
                         {
                             Write-Host ("### Hash of '{0}' is valid." -f $sourceItem.Name)
                         }
@@ -156,7 +156,7 @@ function Invoke-Build
                         {
                             Remove-Item -Path $targetPath -Force -Verbose:$VerbosePreference
 
-                            throw ("Hash of '{0}' is invalid:`n Expected: {1}`n Current : {2}`nThe target file '{3}' was deleted, please also check the source file '{4}' and see if it is corrupted, if so delete it and try again." -f $sourceItem.Name, $exceptedTargetFileHash, $currentTargetFileHash, $targetPath, $sourceItem.FullName)
+                            throw ("Hash of '{0}' is invalid:`n Expected: {1}`n Current : {2}`nThe target file '{3}' was deleted, please also check the source file '{4}' and see if it is corrupted, if so delete it and try again." -f $sourceItem.Name, $expectedTargetFileHash, $currentTargetFileHash, $targetPath, $sourceItem.FullName)
                         }
                     }
                     else
