@@ -31,7 +31,7 @@ param(
     [switch]$IncludeSxa,
     [Parameter()]
     [switch]$IncludeJss,
-    [Parameter(HelpMessage="If the docker image is already built it should be skipped.")]
+    [Parameter(HelpMessage = "If the docker image is already built it should be skipped.")]
     [switch]$SkipExistingImage,
     [Parameter()]
     [switch]$IncludeExperimental
@@ -56,12 +56,28 @@ $windowsVersionMapping = @{
     "ltsc2019" = "1809"
 }
 
-filter WindowsFilter { param([string]$Version) if($_ -like "*-windowsservercore-$($Version)" -or $_ -like "*-nanoserver-$($windowsVersionMapping[$Version])") { $_ } }
-filter SitecoreFilter { param([string]$Version) if($_ -like "*:$($Version)-windowsservercore-*" -or $_ -like "*:$($Version)-nanoserver-*") { $_ } }
+filter WindowsFilter
+{
+    param([string]$Version)
+    if ($_ -like "*-windowsservercore-$($Version)" -or $_ -like "*-nanoserver-$($windowsVersionMapping[$Version])")
+    {
+        $_
+    }
+}
+
+filter SitecoreFilter
+{
+    param([string]$Version)
+    if ($_ -like "*:$($Version)-windowsservercore-*" -or $_ -like "*:$($Version)-nanoserver-*")
+    {
+        $_
+    }
+}
 
 $availableSpecs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot "\windows")
 
-if(!$IncludeExperimental) {
+if (!$IncludeExperimental)
+{
     Write-Host "Excluding experimental images."
     $availableSpecs = $availableSpecs | Where-Object { !$_.Experimental }
 }
@@ -110,65 +126,65 @@ foreach ($wv in $WindowsVersion)
         $assetTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
         $catchAllTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
 
-        if($Topology -contains "xm")
+        if ($Topology -contains "xm")
         {
             $xmTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
         }
 
-        if($Topology -contains "xp")
+        if ($Topology -contains "xp")
         {
             $xpTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
         }
 
-        if($Topology -contains "xc")
+        if ($Topology -contains "xc")
         {
             $xcTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
         }
 
-        if($IncludeSpe)
+        if ($IncludeSpe)
         {
-            if($Topology -contains "xm")
+            if ($Topology -contains "xm")
             {
                 $xmSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
-            if($Topology -contains "xp")
+            if ($Topology -contains "xp")
             {
                 $xpSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
-            if($Topology -contains "xc")
+            if ($Topology -contains "xc")
             {
                 $xcSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
         }
 
-        if($IncludeSxa)
+        if ($IncludeSxa)
         {
-            if($Topology -contains "xm")
+            if ($Topology -contains "xm")
             {
                 $xmSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
-            if($Topology -contains "xp")
+            if ($Topology -contains "xp")
             {
                 $xpSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
-            if($Topology -contains "xc")
+            if ($Topology -contains "xc")
             {
                 $xcSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
         }
 
-        if($IncludeJss)
+        if ($IncludeJss)
         {
-            if($Topology -contains "xm")
+            if ($Topology -contains "xm")
             {
                 $xmJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
-            if($Topology -contains "xp")
+            if ($Topology -contains "xp")
             {
                 $xpJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
@@ -209,7 +225,7 @@ SitecoreImageBuilder\Invoke-PackageRestore `
     -SitecoreUsername $SitecoreUsername `
     -SitecorePassword $SitecorePassword `
     -Tags $tags `
-    -ExperimentalTagBehavior:(@{$true="Include";$false="Skip"}[$IncludeExperimental -eq $true]) `
+    -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 
 # start the build
@@ -218,5 +234,5 @@ SitecoreImageBuilder\Invoke-Build `
     -InstallSourcePath $InstallSourcePath `
     -Registry $Registry `
     -Tags $tags `
-    -ExperimentalTagBehavior:(@{$true="Include";$false="Skip"}[$IncludeExperimental -eq $true]) `
+    -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference

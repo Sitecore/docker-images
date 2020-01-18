@@ -52,10 +52,12 @@ function Invoke-Build
     $packages = Get-Packages
 
     $allSpecs = Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags
+
     if ($Tags -eq $null)
     {
         $Tags = Get-LatestSupportedVersionTags -Specs $allSpecs
     }
+
     # Find out what to build
     $specs = Initialize-BuildSpecifications -Specifications $allSpecs -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
 

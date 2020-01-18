@@ -54,10 +54,12 @@ function Invoke-PackageRestore
 
     # Find out which files is needed
     $allSpecs = Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags
+
     if ($Tags -eq $null)
     {
         $Tags = Get-LatestSupportedVersionTags -Specs $allSpecs
     }
+
     $specs = Initialize-BuildSpecifications -Specifications $allSpecs -InstallSourcePath $Destination -Tags $Tags -ImplicitTagsBehavior "Include" -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
     $expected = $specs | Where-Object { $_.Include -and $_.Sources.Length -gt 0 } | Select-Object -ExpandProperty Sources -Unique
 
