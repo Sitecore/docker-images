@@ -22,7 +22,7 @@ param(
     [ValidateSet("9.3.0", "9.2.0", "9.1.1", "9.0.2")]
     [string[]]$SitecoreVersion = @("9.3.0"),
     [ValidateSet("xm", "xp", "xc")]
-    [string[]]$Topology = @("xm", "xp", "xc"),
+    [string[]]$Topology = @("xm", "xp"),
     [ValidateSet("1909", "1903", "ltsc2019")]
     [string[]]$WindowsVersion = @("ltsc2019"),
     [Parameter()]
@@ -68,7 +68,8 @@ if(!$IncludeExperimental) {
 
 $availableTags = $availableSpecs | Select-Object -ExpandProperty Tag
 $defaultTags = $availableTags | Where-Object { $_ -like "mssql-developer:*" -or $_ -like "sitecore-openjdk:*" }
-$miscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" -or $_ -like "sitecore-redis:*" }
+$xpMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" }
+$xcMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" -or $_ -like "sitecore-redis:*" }
 
 $assetTags = $availableTags | Where-Object { $_ -like "sitecore-assets:*" }
 $xmTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(?!sxa|spe|jss).*:.*" }
@@ -86,23 +87,28 @@ $xpJssTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(jss).*:.*" 
 $xcSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(spe).*:.*" }
 $xcSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(sxa).*:.*" }
 
-$knownTags = $defaultTags + $miscTags + $assetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xpJssTags
+$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xpJssTags
 # These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
 $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
-$catchAllTags | ForEach-Object { $tags.Add($_) > $null }
 
-foreach ($wv in $WindowsVersion) 
+foreach ($wv in $WindowsVersion)
 {
     $defaultTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
 
-    if ($Topology -contains "xp" -or $Topology -contains "xc")
+    if ($Topology -contains "xp")
     {
-        $miscTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+        $xpMiscTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+    }
+
+    if ($Topology -contains "xc")
+    {
+        $xcMiscTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
     }
 
     foreach ($scv in $SitecoreVersion)
     {
         $assetTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+        $catchAllTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
 
         if($Topology -contains "xm")
         {
@@ -125,12 +131,12 @@ foreach ($wv in $WindowsVersion)
             {
                 $xmSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
-    
+
             if($Topology -contains "xp")
             {
                 $xpSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
-    
+
             if($Topology -contains "xc")
             {
                 $xcSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
@@ -143,12 +149,12 @@ foreach ($wv in $WindowsVersion)
             {
                 $xmSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
-    
+
             if($Topology -contains "xp")
             {
                 $xpSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
-    
+
             if($Topology -contains "xc")
             {
                 $xcSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
@@ -161,7 +167,7 @@ foreach ($wv in $WindowsVersion)
             {
                 $xmJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
-    
+
             if($Topology -contains "xp")
             {
                 $xpJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
@@ -169,6 +175,8 @@ foreach ($wv in $WindowsVersion)
         }
     }
 }
+
+$tags = $tags | Select-Object -Unique
 
 if ($SkipExistingImage)
 {
