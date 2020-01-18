@@ -176,7 +176,7 @@ foreach ($wv in $WindowsVersion)
     }
 }
 
-$tags = $tags | Select-Object -Unique
+$tags = [System.Collections.ArrayList]@($tags | Select-Object -Unique)
 
 if ($SkipExistingImage)
 {
