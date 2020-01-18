@@ -39,12 +39,10 @@ function Invoke-PackageRestore
     $ProgressPreference = "SilentlyContinue"
 
     $sitecoreDownloadUrl = "https://dev.sitecore.net"
-
-    # Load packages file
-    $packagesFile = Get-Item -Path (Join-Path $PSScriptRoot "..\..\..\..\sitecore-packages.json")
-    $packages = $packagesFile | Get-Content | ConvertFrom-Json
-
     $destinationPath = $Destination.TrimEnd('\')
+
+    # Load packages
+    $packages = Get-Packages
 
     # Ensure destination exists
     if (!(Test-Path $destinationPath -PathType "Container"))
@@ -80,14 +78,14 @@ function Invoke-PackageRestore
 
         if ($null -eq $package)
         {
-            throw ("Required package '{0}' was not defined in '{1}' so it can't be downloaded, please add the package '{2}' manually." -f $fileName, $packagesFile.FullName, $filePath)
+            throw ("Required package '{0}' was not defined in 'sitecore-packages.json' so it can't be downloaded, please add the package ' {1}' manually." -f $fileName, $filePath)
         }
 
         $fileUrl = $package.url
 
         if ([string]::IsNullOrEmpty($fileUrl))
         {
-            Write-Warning ("Required package '{0}' not available from for download because the url property is empty, please copy '{0}' into '{1}' manually." -f $fileName, $Destination)
+            Write-Warning ("Required package '{0}' not available for download because the url property is empty, please copy '{0}' into '{1}' manually." -f $fileName, $Destination)
         }
         else
         {

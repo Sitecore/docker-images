@@ -39,11 +39,17 @@ function Invoke-Build
         [Parameter(Mandatory = $false)]
         [ValidateSet("Always", "Never")]
         [string]$PullMode = "Always"
+        ,
+        [Parameter(Mandatory = $false)]
+        [switch]$SkipHashValidation
     )
 
     # Setup
     $ErrorActionPreference = "STOP"
     $ProgressPreference = "SilentlyContinue"
+
+    # Load packages
+    $packages = Get-Packages
 
     # Find out what to build
     $specs = Initialize-BuildSpecifications -Specifications (Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags) -InstallSourcePath $InstallSourcePath -Tags $Tags -ImplicitTagsBehavior $ImplicitTagsBehavior -DeprecatedTagsBehavior $DeprecatedTagsBehavior -ExperimentalTagBehavior $ExperimentalTagBehavior
@@ -108,14 +114,14 @@ function Invoke-Build
                 $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
             }
 
-            # Copy license.xml and any missing source files into build context
+            # Copy any missing source files into build context
             $spec.Sources | ForEach-Object {
                 $sourcePath = $_
 
-                # continue if source file doesn't exist
+                # Continue if source file doesn't exist
                 if (!(Test-Path $sourcePath))
                 {
-                    Write-Warning "Source file '$sourcePath' is missing..."
+                    Write-Warning "Optional source file '$sourcePath' is missing..."
 
                     return
                 }
@@ -123,9 +129,40 @@ function Invoke-Build
                 $sourceItem = Get-Item -Path $sourcePath
                 $targetPath = Join-Path $spec.Path $sourceItem.Name
 
+                # Copy if target doesn't exist. Legacy support: Always copy if the source is license.xml.
                 if (!(Test-Path -Path $targetPath) -or ($sourceItem.Name -eq "license.xml"))
                 {
                     Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
+                }
+
+                # Check to see if we can lookup the hash of the source filename in sitecore-packages.json
+                if (!$SkipHashValidation.IsPresent)
+                {
+                    $package = $packages."$($sourceItem.Name)"
+
+                    if ($null -ne $package -and ![string]::IsNullOrEmpty($package.hash))
+                    {
+                        $expectedTargetFileHash = $package.hash
+
+                        # Calculate hash of target file
+                        $currentTargetFileHash = Get-FileHash -Path $targetPath -Algorithm "SHA256" | Select-Object -ExpandProperty "Hash"
+
+                        # Compare hashes and fail if not the same
+                        if ($currentTargetFileHash -eq $expectedTargetFileHash)
+                        {
+                            Write-Host ("### Hash of '{0}' is valid." -f $sourceItem.Name)
+                        }
+                        else
+                        {
+                            Remove-Item -Path $targetPath -Force -Verbose:$VerbosePreference
+
+                            throw ("Hash of '{0}' is invalid:`n Expected: {1}`n Current : {2}`nThe target file '{3}' was deleted, please also check the source file '{4}' and see if it is corrupted, if so delete it and try again." -f $sourceItem.Name, $expectedTargetFileHash, $currentTargetFileHash, $targetPath, $sourceItem.FullName)
+                        }
+                    }
+                    else
+                    {
+                        Write-Verbose ("Skipping hash validation on '{0}', package was not found or no hash was defined." -f $sourceItem.Name)
+                    }
                 }
             }
 
