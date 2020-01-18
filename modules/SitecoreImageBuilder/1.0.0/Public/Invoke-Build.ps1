@@ -1,3 +1,17 @@
+class ReportRecord
+{
+    [string]$Name
+    [string]$Time
+    [int]$Index
+
+    ReportRecord([string]$Name, [string]$Time, [int]$Index)
+    {
+        $this.Name = $Name
+        $this.Time = $Time
+        $this.Index = $Index
+    }
+}
+
 function Invoke-Build
 {
     [CmdletBinding(SupportsShouldProcess = $true)]
@@ -48,6 +62,9 @@ function Invoke-Build
     $ErrorActionPreference = "STOP"
     $ProgressPreference = "SilentlyContinue"
 
+    $watch = [System.Diagnostics.StopWatch]::StartNew()
+    $reportRecords = [System.Collections.Generic.List[ReportRecord]]@()
+
     # Load packages
     $packages = Get-Packages
 
@@ -67,7 +84,7 @@ function Invoke-Build
     # Determine OS
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
 
-    Write-Host "### Build specifications loaded..." -ForegroundColor Green
+    Write-Message "Build specifications loaded..." -Level Info
 
     # Pull latest external images
     if ($PSCmdlet.ShouldProcess("Pull latest images"))
@@ -93,25 +110,29 @@ function Invoke-Build
 
                 $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
 
-                Write-Host ("### External image '{0}' is latest." -f $tag)
+                Write-Message ("External image '{0}' is latest." -f $tag) -Level Debug
             }
 
-            Write-Host "### External images is up to date..." -ForegroundColor Green
+            Write-Message "External images are up to date..." -Level Debug
         }
         else
         {
-            Write-Warning ("### Pulling external images skipped since PullMode was '{0}'." -f $PullMode)
+            Write-Message ("Pulling external images skipped since PullMode was '{0}'." -f $PullMode) -Level Warning
         }
     }
 
     # Start build...
     if ($PSCmdlet.ShouldProcess("Start image builds"))
     {
+        $currentCount = 0
+        $totalCount = $specs | Where-Object { $_.Include } | Measure-Object | Select-Object -ExpandProperty Count
         $specs | Where-Object { $_.Include } | ForEach-Object {
             $spec = $_
             $tag = $spec.Tag
+            $currentCount++
+            Write-Message "Processing $($currentCount) of $($totalCount) '$($tag)'..."
 
-            Write-Host ("### Processing '{0}'..." -f $tag)
+            $currentWatch = [System.Diagnostics.StopWatch]::StartNew()
 
             # Save the digest of previous builds for later comparison
             $previousDigest = $null
@@ -128,7 +149,7 @@ function Invoke-Build
                 # Continue if source file doesn't exist
                 if (!(Test-Path $sourcePath))
                 {
-                    Write-Warning "Optional source file '$sourcePath' is missing..."
+                    Write-Message "Optional source file '$sourcePath' is missing..." -Level Warning
 
                     return
                 }
@@ -143,7 +164,7 @@ function Invoke-Build
                 }
 
                 # Check to see if we can lookup the hash of the source filename in sitecore-packages.json
-                if (!$SkipHashValidation.IsPresent)
+                if (!$SkipHashValidation)
                 {
                     $package = $packages."$($sourceItem.Name)"
 
@@ -157,7 +178,7 @@ function Invoke-Build
                         # Compare hashes and fail if not the same
                         if ($currentTargetFileHash -eq $expectedTargetFileHash)
                         {
-                            Write-Host ("### Hash of '{0}' is valid." -f $sourceItem.Name)
+                            Write-Message ("Hash of '{0}' is valid." -f $sourceItem.Name) -Level Debug
                         }
                         else
                         {
@@ -168,7 +189,7 @@ function Invoke-Build
                     }
                     else
                     {
-                        Write-Verbose ("Skipping hash validation on '{0}', package was not found or no hash was defined." -f $sourceItem.Name)
+                        Write-Message ("Skipping hash validation on '{0}', package was not found or no hash was defined." -f $sourceItem.Name) -Level Verbose
                     }
                 }
             }
@@ -191,16 +212,20 @@ function Invoke-Build
 
             $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
 
-            Write-Verbose ("Invoking: {0} " -f $buildCommand) -Verbose:$VerbosePreference
+            Write-Message ("Invoking: {0} " -f $buildCommand) -Level Verbose -Verbose:$VerbosePreference
 
             & ([scriptblock]::create($buildCommand))
 
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
 
+            $currentWatch.Stop()
+            Write-Message "Build completed for $($tag). Time: $($currentWatch.Elapsed.ToString("hh\:mm\:ss\.fff"))." -Level Debug
+            $reportRecords.Add(([ReportRecord]::new($tag, $currentWatch.Elapsed.ToString("hh\:mm\:ss\.fff"), $currentCount))) > $null
+
             # Check to see if we need to stop here...
             if ([string]::IsNullOrEmpty($Registry))
             {
-                Write-Host ("### Done with '{0}', but not pushed since 'Registry' was empty." -f $tag) -ForegroundColor Green
+                Write-Message ("Done with '{0}', but not pushed since 'Registry' was empty." -f $tag) -Level Debug
 
                 return
             }
@@ -222,7 +247,7 @@ function Invoke-Build
             # Check to see if we need to stop here...
             if ($PushMode -eq "Never")
             {
-                Write-Host ("### Done with '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode) -ForegroundColor Green
+                Write-Message ("Processing complete for '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode)
 
                 return
             }
@@ -232,7 +257,7 @@ function Invoke-Build
 
             if (($PushMode -eq "WhenChanged") -and ($currentDigest -eq $previousDigest))
             {
-                Write-Host ("### Done with '{0}', but not pushed since 'PushMode' is '{1}' and the image has not changed since last build." -f $tag, $PushMode) -ForegroundColor Green
+                Write-Message ("Processing complete for '{0}', but not pushed since 'PushMode' is '{1}' and the image has not changed since last build." -f $tag, $PushMode)
 
                 return
             }
@@ -242,7 +267,12 @@ function Invoke-Build
 
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
 
-            Write-Host ("### Done with '{0}', image pushed." -f $fulltag) -ForegroundColor Green
+            Write-Message ("Processing complete for '{0}', image pushed." -f $fulltag)
         }
     }
+
+    $watch.Stop()
+    Write-Message "Builds completed. Time: $($watch.Elapsed.ToString("hh\:mm\:ss\.fff"))."
+
+    Write-Output $reportRecords | Format-Table -Property Index, Time, Name
 }

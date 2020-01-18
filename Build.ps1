@@ -37,6 +37,17 @@ param(
     [switch]$IncludeExperimental
 )
 
+function Write-Message
+{
+    param(
+        [string]$Message
+    )
+
+    $timeFormat = "HH:mm:ss:fff"
+
+    Write-Host "$(Get-Date -Format $timeFormat): $($Message)"
+}
+
 if ([string]::IsNullOrEmpty($InstallSourcePath))
 {
     $InstallSourcePath = (Join-Path -Path $PSScriptRoot -ChildPath "\packages")
@@ -78,7 +89,7 @@ $availableSpecs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot "\windo
 
 if (!$IncludeExperimental)
 {
-    Write-Host "Excluding experimental images."
+    Write-Message "Excluding experimental images."
     $availableSpecs = $availableSpecs | Where-Object { !$_.Experimental }
 }
 
@@ -196,7 +207,7 @@ $tags = [System.Collections.ArrayList]@($tags | Select-Object -Unique)
 
 if ($SkipExistingImage)
 {
-    Write-Host "Existing images will be excluded from the build."
+    Write-Message "Existing images will be excluded from the build."
     $existingImages = docker images --format '{{.Repository}}:{{.Tag}}' --filter 'dangling=false'
     foreach ($existingImage in $existingImages)
     {
@@ -209,12 +220,12 @@ if ($SkipExistingImage)
 
 if ($tags)
 {
-    Write-Host "The following images will be built:"
+    Write-Message "The following images will be built:"
     $tags
 }
 else
 {
-    Write-Host "No images need to be built."
+    Write-Message "No images need to be built."
     exit
 }
 
