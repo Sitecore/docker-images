@@ -1,6 +1,12 @@
 function Get-LatestSupportedVersionTags
 {
-    $latest = Get-LatestSupportedVersion
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [array]$Specs
+    )
+
+    $latest = Get-LatestSupportedVersion -Specs $Specs
 
     Write-Output ("*:{0}*{1}" -f $latest.Sitecore, $latest.WindowsServerCore)
     Write-Output ("*:{0}*{1}" -f $latest.Sitecore, $latest.NanoServer)

@@ -1,7 +1,10 @@
 function Get-LatestSupportedVersion
 {
-    # load Windows image specifications
-    $specs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot "\..\..\..\..\windows")
+    [CmdletBinding()]
+    param(
+        [Parameter(Mandatory = $true)]
+        [array]$Specs
+    )
 
     # get the latest version number for Sitecore
     $sitecore = Get-LatestVersionNumberForTag -Specs $specs -Tag "sitecore-*:*windowsservercore-*"

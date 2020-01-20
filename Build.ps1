@@ -5,7 +5,7 @@
 param(
     [Parameter()]
     [ValidateNotNullOrEmpty()]
-    [string]$InstallSourcePath = (Join-Path $PSScriptRoot "\packages"),
+    [string]$InstallSourcePath,
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
     [string]$SitecoreUsername,
@@ -22,7 +22,7 @@ param(
     [ValidateSet("9.3.0", "9.2.0", "9.1.1", "9.0.2")]
     [string[]]$SitecoreVersion = @("9.3.0"),
     [ValidateSet("xm", "xp", "xc")]
-    [string[]]$Topology = @("xm", "xp", "xc"),
+    [string[]]$Topology = @("xm", "xp"),
     [ValidateSet("1909", "1903", "ltsc2019")]
     [string[]]$WindowsVersion = @("ltsc2019"),
     [Parameter()]
@@ -31,9 +31,16 @@ param(
     [switch]$IncludeSxa,
     [Parameter()]
     [switch]$IncludeJss,
-    [Parameter(HelpMessage="If the docker image is already built it should be skipped.")]
-    [switch]$SkipExistingImage
+    [Parameter(HelpMessage = "If the docker image is already built it should be skipped.")]
+    [switch]$SkipExistingImage,
+    [Parameter()]
+    [switch]$IncludeExperimental
 )
+
+if ([string]::IsNullOrEmpty($InstallSourcePath))
+{
+    $InstallSourcePath = (Join-Path -Path $PSScriptRoot -ChildPath "\packages")
+}
 
 $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
@@ -42,139 +49,152 @@ $ProgressPreference = "SilentlyContinue"
 Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
 
 $tags = [System.Collections.ArrayList]@()
+
 $windowsVersionMapping = @{
     "1909"     = "1909"
     "1903"     = "1903"
     "ltsc2019" = "1809"
-    "1803"     = "1803"
 }
+
+filter WindowsFilter
+{
+    param([string]$Version)
+    if ($_ -like "*-windowsservercore-$($Version)" -or $_ -like "*-nanoserver-$($windowsVersionMapping[$Version])")
+    {
+        $_
+    }
+}
+
+filter SitecoreFilter
+{
+    param([string]$Version)
+    if ($_ -like "*:$($Version)-windowsservercore-*" -or $_ -like "*:$($Version)-nanoserver-*")
+    {
+        $_
+    }
+}
+
+$availableSpecs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot "\windows")
+
+if (!$IncludeExperimental)
+{
+    Write-Host "Excluding experimental images."
+    $availableSpecs = $availableSpecs | Where-Object { !$_.Experimental }
+}
+
+$availableTags = $availableSpecs | Select-Object -ExpandProperty Tag
+$defaultTags = $availableTags | Where-Object { $_ -like "mssql-developer:*" -or $_ -like "sitecore-openjdk:*" }
+$xpMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" }
+$xcMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" -or $_ -like "sitecore-redis:*" }
+
+$assetTags = $availableTags | Where-Object { $_ -like "sitecore-assets:*" }
+$xmTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(?!sxa|spe|jss).*:.*" }
+$xpTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(?!sxa|spe|jss).*:.*" }
+$xcTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(?!sxa|spe|jss).*:.*" }
+
+$xmSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(spe).*:.*" }
+$xmSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(sxa).*:.*" }
+$xmJssTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(jss).*:.*" }
+
+$xpSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(spe).*:.*" }
+$xpSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(sxa).*:.*" }
+$xpJssTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(jss).*:.*" }
+
+$xcSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(spe).*:.*" }
+$xcSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(sxa).*:.*" }
+
+$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xpJssTags
+# These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
+$catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
+
 foreach ($wv in $WindowsVersion)
 {
-    $tags.Add("mssql-developer:2017-windowsservercore-$($wv)") > $null
-    $tags.Add("sitecore-certificates:latest-nanoserver-$($windowsVersionMapping[$wv])") > $null
-    $tags.Add("sitecore-openjdk:8-nanoserver-$($windowsVersionMapping[$wv])") > $null
-    $tags.Add("sitecore-redis:3.0.504-windowsservercore-$($wv)") > $null
+    $defaultTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+
+    if ($Topology -contains "xp")
+    {
+        $xpMiscTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+    }
+
+    if ($Topology -contains "xc")
+    {
+        $xcMiscTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+    }
 
     foreach ($scv in $SitecoreVersion)
     {
-        $tags.Add("sitecore-assets:$($scv)-nanoserver-$($windowsVersionMapping[$wv])") > $null
-        if ([Version]$scv -ge [Version]"9.3.0" -and [int]$windowsVersionMapping[$wv] -gt 1809)
-        {
-            $tags.Add("sitecore-ps:$($scv)-nanoserver-$($windowsVersionMapping[$wv])") > $null
-        }
+        $assetTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+        $catchAllTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
 
         if ($Topology -contains "xm")
         {
-            $tags.Add("sitecore-xm-cd:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xm-cm:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xm-solr:$($scv)-nanoserver-$($windowsVersionMapping[$wv])") > $null
-            $tags.Add("sitecore-xm-sqldev:$($scv)-windowsservercore-$($wv)") > $null
+            $xmTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
         }
 
         if ($Topology -contains "xp")
         {
-            $tags.Add("sitecore-xp-cd:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xp-identity:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xp-solr:$($scv)-nanoserver-$($windowsVersionMapping[$wv])") > $null
-            $tags.Add("sitecore-xp-standalone:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xp-sqldev:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xp-xconnect:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xp-xconnect-automationengine:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xp-xconnect-indexworker:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xp-xconnect-processingengine:$($scv)-windowsservercore-$($wv)") > $null
+            $xpTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
         }
 
         if ($Topology -contains "xc")
         {
-            $tags.Add("sitecore-xc-bizfx:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-cd:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-engine-authoring:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-engine-minions:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-engine-ops:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-engine-shops:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-identity:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-solr:$($scv)-nanoserver-$($windowsVersionMapping[$wv])") > $null
-            $tags.Add("sitecore-xc-standalone:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-sqldev:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-xconnect-automationengine:$($scv)-windowsservercore-$($wv)") > $null
-            $tags.Add("sitecore-xc-xconnect-indexworker:$($scv)-windowsservercore-$($wv)") > $null
+            $xcTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
         }
 
-        if ($IncludeSpe.IsPresent)
+        if ($IncludeSpe)
         {
             if ($Topology -contains "xm")
             {
-                $tags.Add("sitecore-xm-spe-cm:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xm-spe-sqldev:$($scv)-windowsservercore-$($wv)") > $null
+                $xmSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
             if ($Topology -contains "xp")
             {
-                $tags.Add("sitecore-xp-spe-sqldev:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-spe-standalone:$($scv)-windowsservercore-$($wv)") > $null
+                $xpSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
             if ($Topology -contains "xc")
             {
-                $tags.Add("sitecore-xc-spe-cd:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xc-spe-sqldev:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xc-spe-standalone:$($scv)-windowsservercore-$($wv)") > $null
+                $xcSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
         }
 
-        if ($IncludeSxa.IsPresent)
+        if ($IncludeSxa)
         {
             if ($Topology -contains "xm")
             {
-                $tags.Add("sitecore-xm-sxa-cd:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xm-sxa-cm:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xm-sxa-solr:$($scv)-nanoserver-$($windowsVersionMapping[$wv])") > $null
-                $tags.Add("sitecore-xm-sxa-sqldev:$($scv)-windowsservercore-$($wv)") > $null
+                $xmSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
             if ($Topology -contains "xp")
             {
-                $tags.Add("sitecore-xp-sxa-cd:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-sxa-ps-cd:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-sxa-ps-cm:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-sxa-ps-standalone:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-sxa-ps-sqldev:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-sxa-solr:$($scv)-nanoserver-$($windowsVersionMapping[$wv])") > $null
-                $tags.Add("sitecore-xp-sxa-sqldev:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-sxa-standalone:$($scv)-windowsservercore-$($wv)") > $null
+                $xpSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
             if ($Topology -contains "xc")
             {
-                $tags.Add("sitecore-xc-sxa-cd:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xc-sxa-solr:$($scv)-nanoserver-$($windowsVersionMapping[$wv])") > $null
-                $tags.Add("sitecore-xc-sxa-storefront-cd:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xc-sxa-storefront-sqldev:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xc-sxa-storefront-standalone:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xc-sxa-sqldev:$($scv)-windowsservercore-$($wv)") > $null
+                $xcSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
         }
 
-        if ($IncludeJss.IsPresent)
+        if ($IncludeJss)
         {
             if ($Topology -contains "xm")
             {
-                $tags.Add("sitecore-xm-jss-cd:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xm-jss-cm:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xm-jss-sqldev:$($scv)-windowsservercore-$($wv)") > $null
+                $xmJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
 
             if ($Topology -contains "xp")
             {
-                $tags.Add("sitecore-xp-jss-cd:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-jss-sqldev:$($scv)-windowsservercore-$($wv)") > $null
-                $tags.Add("sitecore-xp-jss-standalone:$($scv)-windowsservercore-$($wv)") > $null
+                $xpJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
         }
     }
 }
 
-if ($SkipExistingImage.IsPresent)
+$tags = [System.Collections.ArrayList]@($tags | Select-Object -Unique)
+
+if ($SkipExistingImage)
 {
     Write-Host "Existing images will be excluded from the build."
     $existingImages = docker images --format '{{.Repository}}:{{.Tag}}' --filter 'dangling=false'
@@ -205,6 +225,7 @@ SitecoreImageBuilder\Invoke-PackageRestore `
     -SitecoreUsername $SitecoreUsername `
     -SitecorePassword $SitecorePassword `
     -Tags $tags `
+    -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 
 # start the build
@@ -213,4 +234,5 @@ SitecoreImageBuilder\Invoke-Build `
     -InstallSourcePath $InstallSourcePath `
     -Registry $Registry `
     -Tags $tags `
+    -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
