@@ -35,7 +35,8 @@
     "Using": [
       "Serilog.Sinks.Literate",
       "Serilog.Sinks.File",
-      "Serilog.Sinks.ApplicationInsights"
+      "Serilog.Sinks.ApplicationInsights",
+      "Serilog.Sinks.Udp"
     ],
     "MinimumLevel": {
       "Default": "Warning",
@@ -50,6 +51,14 @@
         "Args": {
           "restrictedToMinimumLevel": "Warning",
           "telemetryConverter": "Serilog.Sinks.ApplicationInsights.Sinks.ApplicationInsights.TelemetryConverters.TraceTelemetryConverter, Serilog.Sinks.ApplicationInsights"
+        }
+      },
+      {
+        "Name": "Udp",
+        "Args": {
+          "remoteAddress": "localhost",
+          "remotePort": 7777,
+          "family": "InterNetwork"
         }
       }
     ],

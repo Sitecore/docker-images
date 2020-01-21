@@ -87,6 +87,11 @@ services:
 
   commerce-authoring:
     image: ${REGISTRY}sitecore-xc-engine-authoring:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\sitecore-xc-engine\\Development.ps1"
+    environment:
+    - "ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=true"
+    - "ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=true"
+    - "ENTRYPOINT_STDOUT_ENGINE_LOG_ENABLED=true"
     volumes:
       - .\data\commerce-authoring:C:\inetpub\wwwroot\wwwroot\logs
     ports:

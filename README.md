@@ -176,6 +176,27 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 - Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
   - To customize parameters you can use `WatchDirectoryParameters` and give it a hashtable, example: `entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\worker\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\worker'; }"`
 
+#### For Commerce Engine (authoring, minions, ops, shops)
+
+`C:\tools\entrypoints\sitecore-xc-engine\Production.ps1` features:
+
+- Adds a UDP log appender
+- Starts `ServiceMonitor.exe` in the background.
+- Starts `filebeat.exe` in the foreground and outputting to `STDOUT`.
+- FileBeat inputs configured:
+  - IIS access logs, **disabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED=true`
+  - IIS error logs, **disabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED=true`
+  - Commerce Engine logs, **enabled** by default, can be switched using environment variable: `ENTRYPOINT_STDOUT_ENGINE_LOG_ENABLED=false`
+
+`C:\tools\entrypoints\sitecore-xc-engine\Development.ps1` features:
+
+- Same as `Production.ps1`.
+- Starts the Visual Studio Remote Debugger `msvsmon.exe` in the background **if** the Visual Studio Remote Debugger directory is mounted into `C:\remote_debugger`.
+- Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
+  - To customize parameters you can use `WatchDirectoryParameters` and give it a hashtable, example: `entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"`
+
+See the `commerce-authoring` service in [windows/tests/9.2.x/docker-compose.xc.yml](windows/tests/9.2.x/docker-compose.xc.yml) for configuration examples.
+
 ### Experimental Publishing Service (not automatically build because of missing prerequisites from Sitecore)
 
 The 'Download-PS-Prerequisites.ps1' script will download the regular Sitecore Publishing Module package, and convert the asset into the proper WDP package by using Sitecore Sitecore Azure Toolkit.
