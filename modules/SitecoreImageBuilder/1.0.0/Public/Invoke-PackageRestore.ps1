@@ -38,6 +38,8 @@ function Invoke-PackageRestore
     $ErrorActionPreference = "STOP"
     $ProgressPreference = "SilentlyContinue"
 
+    $watch = [System.Diagnostics.StopWatch]::StartNew()
+
     $sitecoreDownloadUrl = "https://dev.sitecore.net"
     $destinationPath = $Destination.TrimEnd('\')
 
@@ -73,7 +75,7 @@ function Invoke-PackageRestore
 
             if ($requiredFile.Length -gt 0)
             {
-                Write-Host ("Required package found: '{0}'" -f $filePath)
+                Write-Message ("Required package found: '{0}'" -f $filePath) -Level Debug
 
                 return
             }
@@ -93,21 +95,20 @@ function Invoke-PackageRestore
 
         if ([string]::IsNullOrEmpty($fileUrl))
         {
-            Write-Warning ("Required package '{0}' not available for download because the url property is empty, please copy '{0}' into '{1}' manually." -f $fileName, $Destination)
+            Write-Message ("Required package '{0}' not available for download because the url property is empty, please copy '{0}' into '{1}' manually." -f $fileName, $Destination) -Level Warning
         }
         else
         {
-
             if ($PSCmdlet.ShouldProcess($fileName))
             {
-                Write-Host ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
+                Write-Message ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
 
                 if ($fileUrl.StartsWith($sitecoreDownloadUrl))
                 {
                     # Login to dev.sitecore.net and save session for re-use
                     if ($null -eq $sitecoreDownloadSession)
                     {
-                        Write-Verbose ("Logging in to '{0}'..." -f $sitecoreDownloadUrl)
+                        Write-Message ("Logging in to '{0}'..." -f $sitecoreDownloadUrl) -Level Verbose
 
                         $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
                             username   = $SitecoreUsername
@@ -120,7 +121,7 @@ function Invoke-PackageRestore
                             throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
                         }
 
-                        Write-Verbose ("Logged in to '{0}'." -f $sitecoreDownloadUrl)
+                        Write-Message ("Logged in to '{0}'." -f $sitecoreDownloadUrl) -Level Verbose
                     }
 
                     # Download package using saved session
@@ -135,5 +136,6 @@ function Invoke-PackageRestore
         }
     }
 
-    Write-Host "Restore completed."
+    $watch.Stop()
+    Write-Message "Restore completed. Time: $($watch.Elapsed.ToString("hh\:mm\:ss\.fff"))."
 }

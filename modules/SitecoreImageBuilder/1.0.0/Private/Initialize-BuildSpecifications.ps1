@@ -52,14 +52,14 @@ function Initialize-BuildSpecifications
         {
             $spec.Include = $false
 
-            Write-Verbose ("Tag '{0}' excluded as it is deprecated and the DeprecatedTagsBehavior parameter is '{1}'." -f $spec.Tag, $DeprecatedTagsBehavior)
+            Write-Message ("Tag '{0}' excluded as it is deprecated and the DeprecatedTagsBehavior parameter is '{1}'." -f $spec.Tag, $DeprecatedTagsBehavior) -Level Verbose
         }
 
         if ($spec.Include -eq $true -and $spec.Experimental -eq $true -and $ExperimentalTagBehavior -eq "Skip")
         {
             $spec.Include = $false
 
-            Write-Verbose ("Tag '{0}' excluded as it is experimental and the ExperimentalTagBehavior parameter is '{1}'." -f $spec.Tag, $ExperimentalTagBehavior)
+            Write-Message ("Tag '{0}' excluded as it is experimental and the ExperimentalTagBehavior parameter is '{1}'." -f $spec.Tag, $ExperimentalTagBehavior) -Level Verbose
         }
     }
 
@@ -78,7 +78,7 @@ function Initialize-BuildSpecifications
                     $baseSpec = $_
                     $baseSpec.Include = $true
 
-                    Write-Verbose ("Tag '{0}' implicitly included '{1}' due to dependency." -f $spec.Tag, $baseSpec.Tag)
+                    Write-Message ("Tag '{0}' implicitly included '{1}' due to dependency." -f $spec.Tag, $baseSpec.Tag) -Level Verbose
                 }
 
                 $baseSpecs = @($Specifications | Where-Object { $_.Include -eq $false -and $baseSpecs.Base -contains $_.Tag })
