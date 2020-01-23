@@ -25,6 +25,9 @@
 | 9.3.0 | sitecore-xp-sxa-ps-standalone | windowsservercore | ltsc2019 | `sitecore-xp-sxa-ps-standalone:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-ps-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sxa-ps-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-ps-cd | windowsservercore | ltsc2019 | `sitecore-xp-sxa-ps-cd:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-standalone | windowsservercore | ltsc2019 | `sitecore-xp-sxa-jss-standalone:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sxa-jss-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-cd | windowsservercore | ltsc2019 | `sitecore-xp-sxa-jss-cd:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-cd | windowsservercore | ltsc2019 | `sitecore-xp-sxa-cd:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xp-standalone | windowsservercore | ltsc2019 | `sitecore-xp-standalone:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xp/Dockerfile) |
 | 9.3.0 | sitecore-xp-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xp-sqldev/Dockerfile) |
@@ -39,6 +42,9 @@
 | 9.3.0 | sitecore-xm-sxa-ps-sqldev | windowsservercore | ltsc2019 | `sitecore-xm-sxa-ps-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-ps-cm | windowsservercore | ltsc2019 | `sitecore-xm-sxa-ps-cm:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-ps-cd | windowsservercore | ltsc2019 | `sitecore-xm-sxa-ps-cd:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-sqldev | windowsservercore | ltsc2019 | `sitecore-xm-sxa-jss-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-cm | windowsservercore | ltsc2019 | `sitecore-xm-sxa-jss-cm:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-cd | windowsservercore | ltsc2019 | `sitecore-xm-sxa-jss-cd:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-cm | windowsservercore | ltsc2019 | `sitecore-xm-sxa-cm:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-cd | windowsservercore | ltsc2019 | `sitecore-xm-sxa-cd:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xm-sqldev | windowsservercore | ltsc2019 | `sitecore-xm-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
@@ -81,6 +87,9 @@
 | 9.3.0 | sitecore-xp-sxa-ps-standalone | windowsservercore | 1909 | `sitecore-xp-sxa-ps-standalone:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-ps-sqldev | windowsservercore | 1909 | `sitecore-xp-sxa-ps-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-ps-cd | windowsservercore | 1909 | `sitecore-xp-sxa-ps-cd:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-standalone | windowsservercore | 1909 | `sitecore-xp-sxa-jss-standalone:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-sqldev | windowsservercore | 1909 | `sitecore-xp-sxa-jss-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-cd | windowsservercore | 1909 | `sitecore-xp-sxa-jss-cd:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-cd | windowsservercore | 1909 | `sitecore-xp-sxa-cd:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xp-standalone | windowsservercore | 1909 | `sitecore-xp-standalone:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.3.x/sitecore-xp/Dockerfile) |
 | 9.3.0 | sitecore-xp-sqldev | windowsservercore | 1909 | `sitecore-xp-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.3.x/sitecore-xp-sqldev/Dockerfile) |
@@ -97,6 +106,9 @@
 | 9.3.0 | sitecore-xm-sxa-ps-sqldev | windowsservercore | 1909 | `sitecore-xm-sxa-ps-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-ps-cm | windowsservercore | 1909 | `sitecore-xm-sxa-ps-cm:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-ps-cd | windowsservercore | 1909 | `sitecore-xm-sxa-ps-cd:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-sqldev | windowsservercore | 1909 | `sitecore-xm-sxa-jss-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-cm | windowsservercore | 1909 | `sitecore-xm-sxa-jss-cm:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-cd | windowsservercore | 1909 | `sitecore-xm-sxa-jss-cd:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-cm | windowsservercore | 1909 | `sitecore-xm-sxa-cm:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-cd | windowsservercore | 1909 | `sitecore-xm-sxa-cd:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xm-sqldev | windowsservercore | 1909 | `sitecore-xm-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
@@ -142,6 +154,9 @@
 | 9.3.0 | sitecore-xp-sxa-ps-standalone | windowsservercore | 1903 | `sitecore-xp-sxa-ps-standalone:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-ps-sqldev | windowsservercore | 1903 | `sitecore-xp-sxa-ps-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-ps-cd | windowsservercore | 1903 | `sitecore-xp-sxa-ps-cd:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-standalone | windowsservercore | 1903 | `sitecore-xp-sxa-jss-standalone:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-sqldev | windowsservercore | 1903 | `sitecore-xp-sxa-jss-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-cd | windowsservercore | 1903 | `sitecore-xp-sxa-jss-cd:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-cd | windowsservercore | 1903 | `sitecore-xp-sxa-cd:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xp-standalone | windowsservercore | 1903 | `sitecore-xp-standalone:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.3.x/sitecore-xp/Dockerfile) |
 | 9.3.0 | sitecore-xp-sqldev | windowsservercore | 1903 | `sitecore-xp-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.3.x/sitecore-xp-sqldev/Dockerfile) |
@@ -158,6 +173,9 @@
 | 9.3.0 | sitecore-xm-sxa-ps-sqldev | windowsservercore | 1903 | `sitecore-xm-sxa-ps-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-ps-cm | windowsservercore | 1903 | `sitecore-xm-sxa-ps-cm:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-ps-cd | windowsservercore | 1903 | `sitecore-xm-sxa-ps-cd:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-sqldev | windowsservercore | 1903 | `sitecore-xm-sxa-jss-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-cm | windowsservercore | 1903 | `sitecore-xm-sxa-jss-cm:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-cd | windowsservercore | 1903 | `sitecore-xm-sxa-jss-cd:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-cm | windowsservercore | 1903 | `sitecore-xm-sxa-cm:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xm-sxa-cd | windowsservercore | 1903 | `sitecore-xm-sxa-cd:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xm-sqldev | windowsservercore | 1903 | `sitecore-xm-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
