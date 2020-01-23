@@ -60,7 +60,7 @@ $dockerFileCount = $specs | Select-Object -Property DockerFilePath -Unique | Mea
 $tagCount = $specs | Select-Object -Property Tag -Unique | Measure-Object | Select-Object -ExpandProperty Count
 $repositoryCount = ( $specs | Foreach-Object { Write-Output (($_.Tag -split ":") | Select-Object -First 1) } | Select-Object -Unique).Count
 $deprecatedCount = $specs | Where-Object { $_.Deprecated } | Select-Object -Property Tag -Unique | Measure-Object | Select-Object -ExpandProperty Count
-$defaultVersion = (SitecoreImageBuilder\Get-LatestSupportedVersion)
+$defaultVersion = (SitecoreImageBuilder\Get-LatestSupportedVersion -Specs $specs)
 
 $style = "flat-square"
 $stats = ("[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style={0})](https://opensource.org/licenses/MIT)" -f $style)
