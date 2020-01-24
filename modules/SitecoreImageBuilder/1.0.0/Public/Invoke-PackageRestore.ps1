@@ -125,12 +125,13 @@ function Invoke-PackageRestore
                     }
 
                     # Download package using saved session
-                    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -WebSession $sitecoreDownloadSession -UseBasicParsing
+                    Invoke-FileDownload -Url $fileUrl -Path $filePath -Cookies $sitecoreDownloadSession.Cookies
+
                 }
                 else
                 {
                     # Download package
-                    Invoke-WebRequest -Uri $fileUrl -OutFile $filePath -UseBasicParsing
+                    Invoke-FileDownload -Url $fileUrl -Path $filePath
                 }
             }
         }
