@@ -10,7 +10,7 @@
     "EncryptionKeyStorageLocation": "c:\\Encryption-Keys\\",
     "SitecoreIdentityServerUrl": "https://identity",
     "AllowedOrigins": [
-      "http://bizfx",
+      "https://bizfx",
       "http://cd",
       "http://cm"
     ],

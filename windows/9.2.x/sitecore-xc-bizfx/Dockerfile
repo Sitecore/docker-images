@@ -62,5 +62,14 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
         $acl.SetAccessRule($rule); `
         $acl | Set-Acl -Path $path; `
     }; `
+    # configure SSL binding because Identity insists on sending the user back to bizfx using https
+    $env:IIS_SITE_NAME = 'Default Web Site'; `
+    Import-Module WebAdministration; `
+    $bizfxCert = Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\bizfx.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password; `
+    New-WebBinding -Name $env:IIS_SITE_NAME -IPAddress '*' -Port '443' -Protocol "https" -HostHeader '*'; `
+    $binding = Get-WebBinding -Name $env:IIS_SITE_NAME -Protocol "https"; `
+    $binding.AddSslCertificate($bizfxCert.GetCertHashString(), 'my'); `
+    # configure SSL flags
+    Set-WebConfigurationProperty -PSPath 'machine/webroot/apphost' -Filter 'system.webServer/security/access' -Name 'sslFlags' -Value 'SslNegotiateCert'; `
     # delete temporary files
     Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;

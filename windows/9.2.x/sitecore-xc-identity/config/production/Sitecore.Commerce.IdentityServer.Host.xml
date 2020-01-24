@@ -24,7 +24,7 @@
             <PostLogoutRedirectUri1>{AllowedCorsOrigin}</PostLogoutRedirectUri1>
           </PostLogoutRedirectUris>
           <AllowedCorsOrigins>
-            <AllowedCorsOriginsGroup1>http://commerce-authoring|http://bizfx</AllowedCorsOriginsGroup1>
+            <AllowedCorsOriginsGroup1>http://commerce-authoring|https://bizfx</AllowedCorsOriginsGroup1>
           </AllowedCorsOrigins>
           <AllowedScopes>
             <AllowedScope1>openid</AllowedScope1>

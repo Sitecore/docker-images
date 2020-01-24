@@ -40,7 +40,7 @@ Once all containers are running, perform the following Sitecore Commerce post-in
 
 To verify that everything is working okay browse to:
 
-    1. [BizFx](http://localhost:4200) and verify that Habitat catalog is present
+    1. [BizFx](https://localhost:4200) and verify that Habitat catalog is present
     2. [CM](http://localhost:44001/sitecore) and verify that Habitat catalog is present under `/sitecore/Commerce/Catalog Management/Catalogs`
 
 > The Business Tools run at HTTP and *not* HTTPS. When browsing to the Business Tools from the Control Panel remove the *S* from the address.
