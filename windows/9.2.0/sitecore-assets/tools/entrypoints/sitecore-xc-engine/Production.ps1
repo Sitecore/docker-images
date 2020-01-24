@@ -3,6 +3,8 @@ $ErrorActionPreference = "STOP"
 
 Import-Module WebAdministration
 
+$timeFormat = "HH:mm:ss:fff"
+
 function Wait-WebItemState
 {
     param(
@@ -15,7 +17,7 @@ function Wait-WebItemState
 
     while ($true)
     {
-        Write-Host "### Waiting on item '$IISPath' state to be '$State'..."
+        Write-Host "$(Get-Date -Format $timeFormat): Waiting on item '$IISPath' state to be '$State'..."
 
         try
         {
@@ -40,7 +42,7 @@ function Wait-WebItemState
 
         if ($null -ne $item -and $item.State -eq $State)
         {
-            Write-Host "### Waiting on item '$IISPath' completed."
+            Write-Host "$(Get-Date -Format $timeFormat): Waiting on item '$IISPath' completed."
 
             break
         }
@@ -50,14 +52,14 @@ function Wait-WebItemState
 }
 
 # print start message
-Write-Host ("### Commerce Engine Production ENTRYPOINT, starting...")
+Write-Host "$(Get-Date -Format $timeFormat): Commerce Engine Production ENTRYPOINT, starting..."
 
 # wait for w3wp to stop
 while ($true)
 {
     $processName = "w3wp"
 
-    Write-Host "### Waiting for process '$processName' to stop..."
+    Write-Host "$(Get-Date -Format $timeFormat): Waiting for process '$processName' to stop..."
 
     $running = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue").Length -gt 0
 
@@ -67,7 +69,7 @@ while ($true)
     }
     else
     {
-        Write-Host "### Process '$processName' stopped..."
+        Write-Host "$(Get-Date -Format $timeFormat): Process '$processName' stopped..."
 
         break;
     }
@@ -78,7 +80,6 @@ while ($true)
 # wait for application pool to stop
 Wait-WebItemState -IISPath "IIS:\AppPools\DefaultAppPool" -State "Stopped"
 
-# Set connection string details
 c:/tools/scripts/Set-CommerceEngineConnectionString.ps1 -userName $env:SQL_USER -password $env:SQL_PASSWORD -server $env:SQL_HOST -globalDatabaseName $env:SQL_COMMERCE_GLOBAL_DB_NAME -sharedEnvironmentDatabaseName $env:SQL_COMMERCE_SHAREDENVIRONMENT_DB_NAME
 
 # start ServiceMonitor.exe in background, kill foreground process if it fails
@@ -98,13 +99,13 @@ while ($true)
 {
     $processName = "ServiceMonitor"
 
-    Write-Host "### Waiting for process '$processName' to start..."
+    Write-Host "$(Get-Date -Format $timeFormat): Waiting for process '$processName' to start..."
 
     $running = [array](Get-Process -Name $processName -ErrorAction "SilentlyContinue").Length -eq 1
 
     if ($running)
     {
-        Write-Host "### Process '$processName' started..."
+        Write-Host "$(Get-Date -Format $timeFormat): Process '$processName' started..."
 
         break;
     }
@@ -116,7 +117,7 @@ while ($true)
 Wait-WebItemState -IISPath "IIS:\AppPools\DefaultAppPool" -State "Started"
 
 # print ready message
-Write-Host ("### Commerce Engine ready!")
+Write-Host "$(Get-Date -Format $timeFormat): Commerce Engine ready!"
 
 # start filebeat.exe in foreground
 & "C:\tools\bin\filebeat\filebeat.exe" -c (Join-Path $PSScriptRoot "\filebeat.yml")
