@@ -54,14 +54,16 @@
         "$type": "Sitecore.Commerce.Core.ControllerMethodRolesPolicy, Sitecore.Commerce.Core",
         "ControllerMethodRegularExpression": "/commerceops/",
         "AuthorizedRoles": [
-          "sitecore\\Commerce Business User"
+          "sitecore\\Commerce Business User",
+          "commerce\\runtime"
         ]
       },
       {
         "$type": "Sitecore.Commerce.Core.ControllerMethodRolesPolicy, Sitecore.Commerce.Core",
         "ControllerMethodRegularExpression": "/api/",
         "AuthorizedRoles": [
-          "sitecore\\Commerce Business User"
+          "sitecore\\Commerce Business User",
+          "commerce\\runtime"
         ]
       },
       {

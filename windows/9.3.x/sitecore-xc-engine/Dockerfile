@@ -24,13 +24,6 @@ COPY --from=certificates ["C:\\certificates\\", "C:\\inetpub\\wwwroot\\temp\\ins
 COPY .\\config\\shared C:\\inetpub\\wwwroot\\wwwroot\\
 COPY ${SC_ROLE_CONFIG_DIRECTORY} C:\\inetpub\\wwwroot\\wwwroot\\
 
-# replace variables and do transformation
-RUN $env:COMMERCE_CLIENT_CERT_THUMBPRINT = (Get-Content -Path 'C:\\inetpub\\wwwroot\\temp\\install\\certificates\\commerce-client.thumbprint' | Out-String).Trim(); `
-    $json = (Get-Content 'C:\\inetpub\\wwwroot\\wwwroot\\config.json') -replace '^\s*//.*' | Out-String | ConvertFrom-Json; `
-    $json.Certificates.Certificates[0].Thumbprint = "$env:COMMERCE_CLIENT_CERT_THUMBPRINT"; `
-    $json = ConvertTo-Json $json -Depth 100; `
-    Set-Content 'C:\\inetpub\\wwwroot\\wwwroot\\config.json' -Value $json -Encoding UTF8;
-
 # add installers
 COPY --from=assets ["C:\\install\\setup\\", "C:\\inetpub\\wwwroot\\temp\\install\\setup\\"]
 
@@ -59,7 +52,6 @@ RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\sitecore-root.pfx') -CertStoreLocation 'cert:\localmachine\root' -Password $password | Out-Null; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\sitecore-root.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
     Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\xconnect-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
-    Import-PfxCertificate -FilePath (Join-Path $env:INSTALL_TEMP '\\certificates\\commerce-client.pfx') -CertStoreLocation 'cert:\localmachine\my' -Password $password | Out-Null; `
     # configure Windows to disable DNS caching
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
     # configure app pool group memberships

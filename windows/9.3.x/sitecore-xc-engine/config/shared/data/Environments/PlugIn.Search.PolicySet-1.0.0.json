@@ -23,11 +23,37 @@
         "ViewName": "MerchandisingDashboard"
       },
       {
+        "$type": "Sitecore.Commerce.Plugin.Search.SearchViewPolicy, Sitecore.Commerce.Plugin.Search",
+        "SearchScopeName": "sitecorePromotions",
+        "ViewName": "PromotionsDashboard"
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.SearchViewPolicy, Sitecore.Commerce.Plugin.Search",
+        "SearchScopeName": "sitecoreCatalogItems",
+        "ViewName": "Master",
+        "EntityType": "Sitecore.Commerce.Plugin.Inventory.InventorySet, Sitecore.Commerce.Plugin.Inventory"
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.SearchViewPolicy, Sitecore.Commerce.Plugin.Search",
+        "SearchScopeName": "sitecorePriceCards",
+        "ViewName": "PricingDashboard"
+      },
+      {
         "$type": "Sitecore.Commerce.Plugin.Search.SearchScopePolicy, Sitecore.Commerce.Plugin.Search",
         "Name": "sitecoreCatalogItems",
+        "CurrentIndexName": "sitecoreCatalogItems",
+        "SwitchOnRebuild": true,
+        "SwitchOnRebuildReset": false,
+        "SwitchOnRebuildClearPreviousIndex": true,
+        "SwitchOnRebuildPrimaryIndexName": "sitecoreCatalogItems",
+        "SwitchOnRebuildSecondaryIndexName": "sitecoreCatalogItems-Rebuild",
         "IncrementalListName": "CatalogItemsIndex",
-        "FullListName": "CatalogItems",
         "DeletedListName": "DeletedCatalogItemsIndex",
+        "FullListNames": [
+          "Catalogs",
+          "Categories",
+          "SellableItems"
+        ],
         "EntityTypeNames": {
           "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
           "$values": [
@@ -49,9 +75,17 @@
       {
         "$type": "Sitecore.Commerce.Plugin.Search.SearchScopePolicy, Sitecore.Commerce.Plugin.Search",
         "Name": "sitecoreCustomers",
+        "CurrentIndexName": "sitecoreCustomers",
+        "SwitchOnRebuild": true,
+        "SwitchOnRebuildReset": false,
+        "SwitchOnRebuildClearPreviousIndex": true,
+        "SwitchOnRebuildPrimaryIndexName": "sitecoreCustomers",
+        "SwitchOnRebuildSecondaryIndexName": "sitecoreCustomers-Rebuild",
         "IncrementalListName": "CustomersIndex",
-        "FullListName": "Customers",
         "DeletedListName": "DeletedCustomersIndex",
+        "FullListNames": [
+          "Customers"
+        ],
         "EntityTypeNames": {
           "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
           "$values": [
@@ -71,9 +105,17 @@
       {
         "$type": "Sitecore.Commerce.Plugin.Search.SearchScopePolicy, Sitecore.Commerce.Plugin.Search",
         "Name": "sitecoreOrders",
+        "CurrentIndexName": "sitecoreOrders",
+        "SwitchOnRebuild": true,
+        "SwitchOnRebuildReset": false,
+        "SwitchOnRebuildClearPreviousIndex": true,
+        "SwitchOnRebuildPrimaryIndexName": "sitecoreOrders",
+        "SwitchOnRebuildSecondaryIndexName": "sitecoreOrders-Rebuild",
         "IncrementalListName": "OrdersIndex",
-        "FullListName": "Orders",
         "DeletedListName": "DeletedOrdersIndex",
+        "FullListNames": [
+          "Orders"
+        ],
         "EntityTypeNames": {
           "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
           "$values": [
@@ -86,6 +128,88 @@
             {
               "$type": "Sitecore.Commerce.Core.Tag, Sitecore.Commerce.Core",
               "Name": "OrdersList"
+            }
+          ]
+        }
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.SearchScopePolicy, Sitecore.Commerce.Plugin.Search",
+        "Name": "sitecorePromotions",
+        "CurrentIndexName": "sitecorePromotions",
+        "SwitchOnRebuild": true,
+        "SwitchOnRebuildReset": false,
+        "SwitchOnRebuildClearPreviousIndex": true,
+        "SwitchOnRebuildPrimaryIndexName": "sitecorePromotions",
+        "SwitchOnRebuildSecondaryIndexName": "sitecorePromotions-Rebuild",
+        "IncrementalListName": "PromotionsIndex",
+        "FullListNames": [
+          "PromotionBooks",
+          "Promotions"
+        ],
+        "EntityTypeNames": {
+          "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+          "$values": [
+            "Sitecore.Commerce.Plugin.Promotions.Promotion",
+            "Sitecore.Commerce.Plugin.Promotions.PromotionBook"
+          ]
+        },
+        "ResultDetailsTags": {
+          "$type": "System.Collections.Generic.List`1[[Sitecore.Commerce.Core.Tag, Sitecore.Commerce.Core]], mscorlib",
+          "$values": [
+            {
+              "$type": "Sitecore.Commerce.Core.Tag, Sitecore.Commerce.Core",
+              "Name": "PromotionsList"
+            }
+          ]
+        }
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.SitecoreItemSearchScopePolicy, Sitecore.Commerce.Plugin.Search",
+        "Name": "sitecore_sxa_master_index",
+        "InternalIndexName": "sitecore_master_index",
+        "IncrementalListName": "CatalogItemsIncrementalIndexMaster",
+        "DeletedListName": "CatalogItemsDeletedIndexMaster",
+        "FullListNames": [
+          "SitecoreItemIndexingMaster"
+        ]
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.SitecoreItemSearchScopePolicy, Sitecore.Commerce.Plugin.Search",
+        "Name": "sitecore_sxa_web_index",
+        "InternalIndexName": "sitecore_web_index",
+        "IncrementalListName": "CatalogItemsIncrementalIndexWeb",
+        "DeletedListName": "CatalogItemsDeletedIndexWeb",
+        "FullListNames": [
+          "SitecoreItemIndexingWeb"
+        ]
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.SearchScopePolicy, Sitecore.Commerce.Plugin.Search",
+        "Name": "sitecorePriceCards",
+        "CurrentIndexName": "sitecorePriceCards",
+        "SwitchOnRebuild": true,
+        "SwitchOnRebuildReset": false,
+        "SwitchOnRebuildClearPreviousIndex": true,
+        "SwitchOnRebuildPrimaryIndexName": "sitecorePriceCards",
+        "SwitchOnRebuildSecondaryIndexName": "sitecorePriceCards-Rebuild",
+        "IncrementalListName": "PriceItemsIndex",
+        "FullListNames": [
+          "PriceBooks",
+          "PriceCards"
+        ],
+        "EntityTypeNames": {
+          "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+          "$values": [
+            "Sitecore.Commerce.Plugin.Pricing.PriceCard",
+            "Sitecore.Commerce.Plugin.Pricing.PriceBook"
+          ]
+        },
+        "ResultDetailsTags": {
+          "$type": "System.Collections.Generic.List`1[[Sitecore.Commerce.Core.Tag, Sitecore.Commerce.Core]], mscorlib",
+          "$values": [
+            {
+              "$type": "Sitecore.Commerce.Core.Tag, Sitecore.Commerce.Core",
+              "Name": "PriceCardsList"
             }
           ]
         }
@@ -194,6 +318,15 @@
             "IsRetrievable": true
           },
           "VariantDisplayName": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "InventorySetIds": {
             "TypeName": "System.String",
             "IsKey": false,
             "IsSearchable": true,
@@ -382,6 +515,234 @@
             "IsSearchable": false,
             "IsFilterable": true,
             "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "ArtifactStoreId": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": false
+          }
+        }
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.IndexablePolicy, Sitecore.Commerce.Plugin.Search",
+        "SearchScopeName": "sitecorePriceCards",
+        "Properties": {
+          "SnapshotId": {
+            "TypeName": "System.String",
+            "IsKey": true,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "PriceItemType": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": true,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "EntityUniqueId": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "EntityId": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "Name": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "DisplayName": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "Description": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "Tags": {
+            "TypeName": "Collection(System.String)",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": true,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "Currencies": {
+            "TypeName": "Collection(System.String)",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": true,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "IsApproved": {
+            "TypeName": "System.Boolean",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "BeginDate": {
+            "TypeName": "System.DateTimeOffset",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "DateCreated": {
+            "TypeName": "System.DateTimeOffset",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "DateUpdated": {
+            "TypeName": "System.DateTimeOffset",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "ArtifactStoreId": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": false
+          }
+        }
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.IndexablePolicy, Sitecore.Commerce.Plugin.Search",
+        "SearchScopeName": "sitecorePromotions",
+        "Properties": {
+          "EntityUniqueId": {
+            "TypeName": "System.String",
+            "IsKey": true,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "EntityId": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "Name": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "DisplayName": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "PromotionEntityType": {
+            "TypeName": "System.String",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "ValidFrom": {
+            "TypeName": "System.DateTimeOffset",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "ValidTo": {
+            "TypeName": "System.DateTimeOffset",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "IsApproved": {
+            "TypeName": "System.Boolean",
+            "IsKey": false,
+            "IsSearchable": false,
+            "IsFilterable": true,
+            "IsSortable": true,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          },
+          "AssociatedCatalogs": {
+            "TypeName": "Collection(System.String)",
+            "IsKey": false,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
             "IsFacetable": false,
             "IsRetrievable": true
           },

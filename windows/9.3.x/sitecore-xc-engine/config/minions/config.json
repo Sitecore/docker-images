@@ -64,18 +64,6 @@
     ],
     "FileSizeLimitBytes": 100000000
   },
-  "Certificates": {
-    "Certificates": [
-      {
-        "Thumbprint": "MyThumbprint",
-        "DefaultRoles": [
-          "sitecore\\QA",
-          "sitecore\\Commerce Business User"
-        ]
-      }
-    ],
-    "CertificateHeaderName": "X-CommerceEngineCert"
-  },
   "Caching": {
     "Memory": {
       "Enabled": false,
@@ -109,5 +97,8 @@
     "GzipCompressionProviderOptions": {
       "Level": "Fastest"
     }
+  },
+  "CommerceConnector": {
+    "ClientId":"CommerceEngineConnect"
   }
 }
