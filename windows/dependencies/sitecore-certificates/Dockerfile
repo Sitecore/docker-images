@@ -33,7 +33,7 @@ RUN $env:ROOT_CERT_NAME = 'sitecore-root'; `
     (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:IDENTITY_CLIENT_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:IDENTITY_CLIENT_CERT_NAME) -NoNewline -Encoding utf8; `
     (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:IDENTITY_SSL_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:IDENTITY_SSL_CERT_NAME) -NoNewline -Encoding utf8; `
     (Get-ChildItem -Path $env:CERT_STORE | Where-Object { $_.Subject -eq ('CN={0}' -f $env:CM_SSL_CERT_NAME ) }).Thumbprint | Out-File -FilePath ('C:\\certificates\\{0}.thumbprint' -f $env:CM_SSL_CERT_NAME) -NoNewline -Encoding utf8; `
-    $env:CERT_PASSWORD | Out-File -FilePath 'C:\\certificates\\password' -NoNewline -Encoding utf8;
+    $env:CERT_PASSWORD | Out-File -FilePath 'C:\\certificates\\password' -NoNewline -Encoding Ascii;
 
 FROM $BASE_IMAGE
 
