@@ -193,7 +193,7 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 - Same as `Production.ps1`.
 - Starts the Visual Studio Remote Debugger `msvsmon.exe` in the background **if** the Visual Studio Remote Debugger directory is mounted into `C:\remote_debugger`.
 - Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
-  - To customize parameters you can use `WatchDirectoryParameters` and give it a hashtable, example: `entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"`
+  - To customize parameters you can use `WatchDirectoryParameters` and give it a hashtable, example: `entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\sitecore-xc-engine\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"`
 
 See the `commerce-authoring` service in [windows/tests/9.2.x/docker-compose.xc.yml](windows/tests/9.2.x/docker-compose.xc.yml) for configuration examples.
 
