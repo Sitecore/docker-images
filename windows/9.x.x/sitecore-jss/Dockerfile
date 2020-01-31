@@ -21,7 +21,7 @@ RUN Expand-Archive -Path 'C:\\temp\\packages\\*.zip' -DestinationPath 'C:\\temp'
 COPY --from=assets ["C:\\install\\tools\\", "C:\\install\\tools\\"]
 
 # find transform files and do transformation
-RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\*.xdt' -Recurse ) | ForEach-Object { & 'C:\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\inetpub\\wwwroot\\web.config' -XdtPath $_.FullName -XdtDllPath 'C:\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; }; 
+RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\*.xdt' -Recurse ) | ForEach-Object { & 'C:\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\inetpub\\wwwroot\\web.config' -XdtPath $_.FullName -XdtDllPath 'C:\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; };
 
 FROM $BASE_IMAGE
 
@@ -35,7 +35,6 @@ COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 COPY --from=assets ["C:\\install\\setup\\node.msi", "C:\\inetpub\\wwwroot\\temp\\install\\setup\\node.msi"]
 
 RUN $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
-    # setup Node.JS for Experience Editor
-    if (($env:SC_ROLE_DEFINE -like '*ContentManagement*') -or ($env:SC_ROLE_DEFINE -like '*Standalone*')) `
-    { Start-Process msiexec.exe -ArgumentList '/i', (Join-Path $env:INSTALL_TEMP '\\setup\\node.msi'), '/quiet', '/norestart' -NoNewWindow -Wait; } ` 
-    Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
+# setup Node.JS for Experience Editor on CM and for Integrated Mode on CD
+Start-Process msiexec.exe -ArgumentList '/i', (Join-Path $env:INSTALL_TEMP '\\setup\\node.msi'), '/quiet', '/norestart' -NoNewWindow -Wait;`
+Remove-Item -Path $env:INSTALL_TEMP -Force -Recurse;
