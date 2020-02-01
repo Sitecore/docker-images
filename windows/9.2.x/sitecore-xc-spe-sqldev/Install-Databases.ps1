@@ -14,6 +14,8 @@ param(
     [string]$DatabasePrefix
 )
 
+$timeFormat = "HH:mm:ss:fff"
+
 [System.Reflection.Assembly]::LoadWithPartialName("Microsoft.SqlServer.SMO") | Out-Null
 
 $server = New-Object Microsoft.SqlServer.Management.Smo.Server($env:COMPUTERNAME)
@@ -30,7 +32,7 @@ Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
     $ldfPath = $mdfPath.Replace(".mdf", ".ldf")
     $sqlcmd = "IF EXISTS (SELECT 1 FROM SYS.DATABASES WHERE NAME = '$databaseName') BEGIN EXEC sp_detach_db [$databaseName] END;CREATE DATABASE [$databaseName] ON (FILENAME = N'$mdfPath'), (FILENAME = N'$ldfPath') FOR ATTACH;"
 
-    Write-Host "### Attaching '$databaseName'..."
+    Write-Host "$(Get-Date -Format $timeFormat): Attaching '$databaseName'..."
 
     Invoke-Sqlcmd -Query $sqlcmd
 }
@@ -50,7 +52,7 @@ Get-ChildItem -Path $ModulePath -Include "core.dacpac", "master.dacpac" -Recurse
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
     $databaseName = $_.BaseName.Replace("_Primary", "")
 
-    Write-Host "### Detach: $databaseName"
+    Write-Host "$(Get-Date -Format $timeFormat): Detach: $databaseName"
 
     Invoke-Sqlcmd -Query "EXEC MASTER.dbo.sp_detach_db @dbname = N'$databaseName', @keepfulltextindexfile = N'false'"
 }

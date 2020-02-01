@@ -1,9 +1,10 @@
+$timeFormat = "HH:mm:ss:fff"
 
 # detach DB
 Get-ChildItem -Path $Env:INSTALL_PATH -Filter "*.mdf" | ForEach-Object {
     $databaseName = $_.BaseName.Replace("_Primary", "")
 
-    Write-Host "### Detaching '$databaseName'..."
+    Write-Host "$(Get-Date -Format $timeFormat): Detaching '$databaseName'..."
 
     Invoke-Sqlcmd -Query "DECLARE @processid INT 
         SELECT  @processid = MIN(spid)
