@@ -80,8 +80,6 @@ while ($true)
 # wait for application pool to stop
 Wait-WebItemState -IISPath "IIS:\AppPools\DefaultAppPool" -State "Stopped"
 
-c:/tools/scripts/Set-CommerceEngineConnectionString.ps1 -userName $env:SQL_USER -password $env:SQL_PASSWORD -server $env:SQL_HOST -globalDatabaseName $env:SQL_COMMERCE_GLOBAL_DB_NAME -sharedEnvironmentDatabaseName $env:SQL_COMMERCE_SHAREDENVIRONMENT_DB_NAME
-
 # start ServiceMonitor.exe in background, kill foreground process if it fails
 Start-Job -Name "ServiceMonitor.exe" {
     try
