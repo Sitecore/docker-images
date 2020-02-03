@@ -3,6 +3,8 @@
 # Running XC
 There are a series of different XC images, to get started you can use the following commands:
 
+> XC uses the 'old' 9.2 license mechanismm, so set the `LICENSE_PATH` environment variable.
+
 ### XC
 
 ```
