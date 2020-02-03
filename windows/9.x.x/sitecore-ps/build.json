@@ -1,0 +1,41 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm-ps-cm:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-cm:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Publishing Module 9.3.0.0.scwdp.zip'"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "sitecore-xm-ps-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Publishing Module 9.3.0.0.scwdp.zip'"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "sitecore-xp-ps-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Publishing Module 9.3.0.0.scwdp.zip'"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "sitecore-xp-ps-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Publishing Module 9.3.0.0.scwdp.zip'"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": []
+}
