@@ -3,7 +3,7 @@
 # Running XC
 There are a series of different XC images, to get started you can use the following commands:
 
-> XC uses the 'old' 9.2 license mechanismm, so set the `LICENSE_PATH` environment variable.
+> XC uses the old 9.2 *AND* new 9.3 license mechanismm, so set the `LICENSE_PATH` *AND* `SITECORE_LICENSE` environment variables.
 
 > XC requires DNS names to be configured on your host. To automatically do this use [whales-names](https://github.com/gregolsky/whales-names)). You need to add the `identity` and `bizfx` DNS names your `hosts` file - note it needs to reference the internal Container IP, not localhost.
 
