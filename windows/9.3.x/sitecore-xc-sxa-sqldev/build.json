@@ -1,0 +1,12 @@
+{
+    "tags": [{
+        "tag": "sitecore-xc-sxa-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+        "build-options": [
+            "--memory 4GB",
+            "--build-arg BASE_IMAGE=sitecore-xc-spe-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+            "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+            "--build-arg ASSETS_USE_WDP_SXA='C:\\packages\\Sitecore Experience Accelerator 9.3.0.2589.scwdp.zip'"
+        ]
+    }],
+    "sources": []
+}

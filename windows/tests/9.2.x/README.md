@@ -3,6 +3,8 @@
 # Running XC
 There are a series of different XC images, to get started you can use the following commands:
 
+> XC requires DNS names to be configured on your host. To automatically do this use [whales-names](https://github.com/gregolsky/whales-names)). You need to add the `identity` and `bizfx` DNS names your `hosts` file - note it needs to reference the internal Container IP, not localhost.
+
 ### XC
 
 ```
@@ -25,8 +27,6 @@ PS> docker-compose -f docker-compose.xc.sxa.storefront.yml up
 ```
 
 # Initializing Data
-> You need to add the `identity` and `bizfx` DNS names your `hosts` file - note it needs to refernce the internal Container IP, not localhost. To automatically do this use [whales-names](https://github.com/gregolsky/whales-names)).
-
 Once all containers are running, perform the following Sitecore Commerce post-install steps using Postman:
 
     1. Configure your Postman environment to use:
@@ -46,12 +46,12 @@ To verify that everything is working okay browse to:
 > The Business Tools run at HTTP and *not* HTTPS. When browsing to the Business Tools from the Control Panel remove the *S* from the address.
 
 # Storefront Configuration
-To setup a storefront, after initializing the engine you need to create a new Tenant & Site, then perform a full publish and index rebuild. 
+To setup a storefront, after initializing the engine you need to create a new Tenant & Site, then perform a full publish and index rebuild.
 
 You can follow the standard setup instructions for how to do this:
 
     https://doc.sitecore.com/users/91/sitecore-experience-commerce/en/set-up-a-storefront-site.html
 
 After this you can access the storefront at:
-     
+
     https://cd/

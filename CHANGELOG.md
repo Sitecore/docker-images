@@ -2,6 +2,7 @@
 
 ## January 2020
 
+- [Added] Sitecore 9.3.0 XC/SXA.
 - [Added] Hash values of Sitecore downloads are now validated before being used. If a file hash does not match the expected value, the build will fail with a message explaining what happened and how to resolve. See [#148](https://github.com/Sitecore/docker-images/issues/148). Thanks [@michaellwest](https://github.com/michaellwest) :+1:
 - [Changed] 7-zip is removed from the `sitecore-assets` images since it was only used for validating Sitecore downloads which is now done by validating file hashes instead.
 

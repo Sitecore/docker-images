@@ -1,0 +1,81 @@
+﻿{
+  "$type": "Sitecore.Commerce.Core.CommerceEnvironment, Sitecore.Commerce.Core",
+  "Id": "GlobalEnvironment",
+  "ArtifactStoreId": "{6be385f1-93dc-4299-9dd4-934f6ba42eaa}",
+  "IsPersisted": false,
+  "Name": "GlobalEnvironment",
+  "Policies": {
+    "$type": "System.Collections.ObjectModel.ReadOnlyCollection`1[[Sitecore.Commerce.Core.Policy, Sitecore.Commerce.Core]], mscorlib",
+    "$values": [
+      {
+        "$type": "Sitecore.Commerce.Plugin.Management.ManagementCachePolicy, Sitecore.Commerce.Plugin.Management",
+        "CurrencySetsCacheName": "CurrencySets",
+        "FulfillmentCacheName": "Fulfillment",
+        "PaymentsCacheName": "Payments",
+        "CountriesCacheName": "Countries",
+        "ItemsCollectionCacheName": "ItemsCollection",
+        "ItemsCacheName": "Items",
+        "Expiration": 86400000,
+        "AllowCaching": true
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.BusinessUsers.EnvironmentBusinessToolsPolicy,Sitecore.Commerce.Plugin.BusinessUsers",
+        "EnvironmentList": {
+          "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+          "$values": [
+            "AdventureWorksShops",
+            "AdventureWorksAuthoring",
+            "HabitatAuthoring",
+            "HabitatShops"
+          ]
+        }
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.SQL.EntityStoreSqlPolicy, Sitecore.Commerce.Plugin.SQL",
+        "PolicyId": "Global",
+        "AllowAdmin": true,
+        "Database": "SitecoreCommerce9_Global",
+        "EffectiveDate": "0001-01-01T00:00:00",
+        "IsVisible": false,
+        "Password": "8Tombs-Given-Clock#-arming-Alva-debut-Spine-monica-Normal-Ted-About1-chard-Easily-granddad-5Context!",
+        "Server": "sql",
+        "TrustedConnection": false,
+        "UserName": "sa",
+        "View": "EntityStoreSqlPolicy",
+        "Version": "9.3.0"
+      },
+      {
+        "$type": "Sitecore.Commerce.Core.DeploymentPolicy, Sitecore.Commerce.Core",
+        "DeploymentId": "Deployment01",
+        "DeploymentVersion": "1.0.0",
+        "ParentNodeId": "Hub01"
+      },
+      {
+        "$type": "Sitecore.Commerce.Core.ControllerMethodRolesPolicy, Sitecore.Commerce.Core",
+        "ControllerMethodRegularExpression": "/commerceops/",
+        "AuthorizedRoles": [
+          "sitecore\\Commerce Business User",
+          "commerce\\runtime"
+        ]
+      },
+      {
+        "$type": "Sitecore.Commerce.Core.ControllerMethodRolesPolicy, Sitecore.Commerce.Core",
+        "ControllerMethodRegularExpression": "/api/",
+        "AuthorizedRoles": [
+          "sitecore\\Commerce Business User",
+          "commerce\\runtime"
+        ]
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Management.SitecoreConnectionPolicy, Sitecore.Commerce.Plugin.Management",
+        "Host": "cm",
+        "SitecoreDatabase": "master",
+        "UserName": "admin",
+        "Domain": "sitecore",
+        "Password": "b",
+        "ConnectionLeaseTimeout": 60000,
+        "AuthRequestUrl": "sitecore/api/ssc/auth/login"
+      }
+    ]
+  }
+}

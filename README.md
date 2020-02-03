@@ -2,7 +2,7 @@
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-74-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-321-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-63-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-9.3.0%20on%20ltsc2019/1809-blue?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-74-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-390-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-77-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-9.3.0%20on%20ltsc2019/1809-blue?style=flat-square)
 
 [//]: # "end: stats"
 
@@ -193,9 +193,9 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 - Same as `Production.ps1`.
 - Starts the Visual Studio Remote Debugger `msvsmon.exe` in the background **if** the Visual Studio Remote Debugger directory is mounted into `C:\remote_debugger`.
 - Starts the `Watch-Directory.ps1` script in the background **if** a directory is mounted into `C:\src`.
-  - To customize parameters you can use `WatchDirectoryParameters` and give it a hashtable, example: `entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"`
+  - To customize parameters you can use `WatchDirectoryParameters` and give it a hashtable, example: `entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\sitecore-xc-engine\\Development.ps1 -WatchDirectoryParameters @{ Path = 'C:\\src'; Destination = 'C:\\inetpub\\wwwroot'; ExcludeFiles = @('Web.config'); }"`
 
-See the `commerce-authoring` service in [windows/tests/9.2.x/docker-compose.xc.yml](windows/tests/9.2.x/docker-compose.xc.yml) for configuration examples.
+See the `commerce-authoring` service in [windows/tests/9.3.x/docker-compose.xc.yml](windows/tests/9.3.x/docker-compose.xc.yml) for configuration examples.
 
 ### Experimental Publishing Service (not automatically build because of missing prerequisites from Sitecore)
 

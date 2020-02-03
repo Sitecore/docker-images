@@ -10,6 +10,8 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 
 ARG SOLR_VERSION
 ARG CORE_NAMES
+ARG MANAGED_SCHEMA_DEFAULT_NAME
+ARG MANAGED_SCHEMA_XDB_NAME
 ARG ASSETS_USE_WDP
 
 COPY --from=assets ["${ASSETS_USE_WDP}", "C:\\temp\\packages\\"]
@@ -22,17 +24,17 @@ RUN New-Item -Path 'C:\\downloads' -ItemType 'Directory' -Force | Out-Null; `
     Expand-Archive -Path 'C:\\downloads\\solr.zip' -DestinationPath 'C:\\temp'; `
     Move-Item -Path 'C:\\temp\\solr-*' -Destination 'C:\\solr';
 
-
-COPY managed-schema.* C:\\temp\\
+COPY ${MANAGED_SCHEMA_DEFAULT_NAME} C:\\temp\\
+COPY ${MANAGED_SCHEMA_XDB_NAME} C:\\temp\\
 
 RUN New-Item -Path 'C:\\clean' -ItemType Directory | Out-Null; `
     Copy-Item -Path 'C:\\solr\\server\\solr\\*' -Destination 'C:\\clean' -Force -Recurse; `
     $env:CORE_NAMES -split ',' | ForEach-Object { `
         $name = $_.Trim(); `
-        $schema = @{$true='C:\\temp\\managed-schema.xdb';$false='C:\\temp\\managed-schema.default'}[$name -like '*xdb*']; `
+        $schema = @{$true=('C:\\temp\\{0}' -f $env:MANAGED_SCHEMA_XDB_NAME);$false=('C:\\temp\\{0}' -f $env:MANAGED_SCHEMA_DEFAULT_NAME)}[$name -like '*xdb*']; `
         Copy-Item -Path 'C:\\clean\\configsets\\_default\\conf' -Destination ('C:\\clean\\{0}\\conf' -f $name) -Recurse -Force; `
         Copy-Item -Path $schema -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
-        New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
+        Set-Content -Path ('C:\\clean\\{0}\\core.properties' -f $name) -Value ('name={0}{1}config=solrconfig.xml{1}update.autoCreateFields=false{1}dataDir=data' -f $name, [Environment]::NewLine); `
         New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
     }; `
     # CatalogItems
@@ -42,6 +44,7 @@ RUN New-Item -Path 'C:\\clean' -ItemType Directory | Out-Null; `
     Copy-Item -Path $schema -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
     New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
     New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
+    Copy-Item -Path ('C:\\clean\\{0}' -f $name) -Destination ('C:\\clean\\{0}-Rebuild' -f $name) -Recurse -Force; `
     # Customers
     $name = 'sitecoreCustomers'; `
     $schema = 'C:\\temp\\SolrSchemas\\Customers\\managed-schema'; `
@@ -49,6 +52,7 @@ RUN New-Item -Path 'C:\\clean' -ItemType Directory | Out-Null; `
     Copy-Item -Path $schema -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
     New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
     New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
+    Copy-Item -Path ('C:\\clean\\{0}' -f $name) -Destination ('C:\\clean\\{0}-Rebuild' -f $name) -Recurse -Force; `
     # Orders
     $name = 'sitecoreOrders'; `
     $schema = 'C:\\temp\\SolrSchemas\\Orders\\managed-schema'; `
@@ -56,6 +60,23 @@ RUN New-Item -Path 'C:\\clean' -ItemType Directory | Out-Null; `
     Copy-Item -Path $schema -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
     New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
     New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
+    Copy-Item -Path ('C:\\clean\\{0}' -f $name) -Destination ('C:\\clean\\{0}-Rebuild' -f $name) -Recurse -Force; `
+    # PriceCards
+    $name = 'sitecorePriceCards'; `
+    $schema = 'C:\\temp\\SolrSchemas\\PriceCards\\managed-schema'; `
+    Copy-Item -Path 'C:\\clean\\configsets\\_default\\conf' -Destination ('C:\\clean\\{0}\\conf' -f $name) -Recurse -Force; `
+    Copy-Item -Path $schema -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
+    New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
+    New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
+    Copy-Item -Path ('C:\\clean\\{0}' -f $name) -Destination ('C:\\clean\\{0}-Rebuild' -f $name) -Recurse -Force; `
+    # Promotions
+    $name = 'sitecorePromotions'; `
+    $schema = 'C:\\temp\\SolrSchemas\\Promotions\\managed-schema'; `
+    Copy-Item -Path 'C:\\clean\\configsets\\_default\\conf' -Destination ('C:\\clean\\{0}\\conf' -f $name) -Recurse -Force; `
+    Copy-Item -Path $schema -Destination ('C:\\clean\\{0}\\conf\\managed-schema' -f $name); `
+    New-Item -Path ('C:\\clean\\{0}\\core.properties' -f $name) -ItemType File | Out-Null; `
+    New-Item -Path ('C:\\clean\\{0}\\data' -f $name) -ItemType Directory | Out-Null; `
+    Copy-Item -Path ('C:\\clean\\{0}' -f $name) -Destination ('C:\\clean\\{0}-Rebuild' -f $name) -Recurse -Force; `
     # Clean up
     Remove-Item -Path 'C:\\clean\\README.txt'; `
     Remove-Item -Path 'C:\\clean\\configsets' -Recurse;

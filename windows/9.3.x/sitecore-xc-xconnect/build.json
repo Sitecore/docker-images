@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xc-xconnect:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-xconnect:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Commerce Connect Core OnPrem 14.0.27.scwdp.zip'"
+      ]
+    }
+  ],
+  "sources": []
+}

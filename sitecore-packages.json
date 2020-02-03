@@ -203,6 +203,10 @@
     "url": "https://dev.sitecore.net/~/media/07F9ABE455944146B37E9D71CA781A27.ashx",
     "hash": "C9CA7ABA49FBCE70AABFEA6E8C04780D051845FFEEF83ACCADFEE52DED8E8574"
   },
+  "Sitecore.Commerce.WDP.2020.01-5.0.145.zip": {
+    "url": "https://dev.sitecore.net/~/media/B915EEE9B5C0429AB557C357E2B23EEA.ashx",
+    "hash": "DF45AB376D49F2EB71F1DC5DE95792B5A04FDBF709C1FD830D1DB8ECB703B287"
+  },
   "Sitecore.PowerShell.Extensions-6.0.scwdp.zip": {
     "url": "https://github.com/SitecorePowerShell/Console/releases/download/6.0/Sitecore.PowerShell.Extensions-6.0.scwdp.zip",
     "hash": "982FFAFCE17EB62D626FFB9ABE0FBE8E85A1EC4BA034C9DE18C5FCBA945BBBAC"
