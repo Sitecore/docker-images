@@ -151,6 +151,8 @@ SitecoreImageBuilder\Invoke-Build `
 
 We now have a few scripts that can be used as `ENTRYPOINT` for development and production use. Using the `ENTRYPOINT` scripts that supports log steaming enables you to observe Sitecore log entries in the `STDOUT` of containers in the foreground or by using commands such as `docker container logs` or `docker container attach`.
 
+**Note** These entrypoints are only available inside the Windows Server Core based images. Identity Server is based on Nano Server images, and runs ASP.NET Core which means logging to `stdout` comes out of the box.
+
 #### For CM/CD
 
 `C:\tools\entrypoints\iis\Production.ps1` features:
@@ -246,6 +248,41 @@ SitecoreImageBuilder\Invoke-Build `
     -ExperimentalTagBehavior Include
 
 ```
+
+## Identity Server
+
+Sitecore Identity Server is based on the newer [Sitecore Host](https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/sitecore-host.html), which is built on top of ASP.NET Core 2.1. Configuration through environment variables of both the hosting facilities and the application itself is first-class in ASP.NET Core, and in Sitecore Host as well [link](https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/configuration.html).
+
+Kestrel is the built-in web server provided by ASP.NET Core, and can be configured according to the [ASP.NET Core Kestrel Endpoint Configuration](https://docs.microsoft.com/en-us/aspnet/core/fundamentals/servers/kestrel?view=aspnetcore-2.1#endpoint-configuration-2) docs. Use `SITECORE_` and variable name prefix instead of `ASPNETCORE_` which is the default from Microsoft.
+
+ASP.NET Core is very suitable for being hosted inside a container, specifically because of the above, and the fact that it ships with Kestrel.
+This its utilized in [windows/9.3.x/sitecore-xp-identity/Dockerfile](windows/9.3.x/sitecore-xp-identity/Dockerfile) which is based on Nano Server.
+
+### Configuration
+
+Consider the example XML structure from `Sitecore.IdentityServer.Host.xml` below:
+
+```xml
+<?xml version="1.0" encoding="utf-8" ?>
+<Settings>
+  <Sitecore>
+    <IdentityServer>
+      <SitecoreMembershipOptions>
+        <ConnectionString></ConnectionString>
+      </SitecoreMembershipOptions>
+    </IdentityServer>
+  </Sitecore>
+</Settings>
+```
+
+Configuring the inner-most `<ConnectionString/>` through environment variables is achived by setting `SITECORE_Sitecore__IdentityServer__SitecoreMembershipOptions__ConnectionString`.
+At first, this may seem odd, but remember that `SITECORE_` is the application-wide prefix which is considered for _all_ environment variables picked up by Sitecore Host.
+
+Following `SITECORE_` comes the XML tree structure _except_ from the root element. Notice how each level is separated using double underscores.
+
+### License
+
+The license is read from files [docs](https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/licensing.html) and the from `SITECORE_LICENSE` environment variable.
 
 ## Cleanup
 
