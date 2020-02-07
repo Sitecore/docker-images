@@ -75,7 +75,7 @@ function Write-InlineProgress
     catch
     {
         $consoleAvailable = $false
-        if ($Error[0].Exception.Message -eq 'Exception setting "CursorVisible": "The handle is invalid."')
+        if ($Error -and $Error.Count -gt 0 -and $Error[0].Exception.Message -eq 'Exception setting "CursorVisible": "The handle is invalid."')
         {
             $Global:Error.Remove($Global:Error[0])
         }
@@ -167,7 +167,7 @@ function Write-InlineProgress
             # calculate the bar character percentage and how much of the bar is filled and how much is not filled
             $barCharacterInPercent = ($progressBarWidth - 2) / 100
             $barProgressed = [math]::Ceiling($PercentComplete * $barCharacterInPercent)
-            $barNotProgressed = ($progressBarWidth - 2) - $barProgressed
+            $barNotProgressed = [math]::Min(($progressBarWidth - 2) - $barProgressed, 0)
 
             # add the progress bar to progress string
             if ($barProgressed -gt 0)
@@ -223,7 +223,7 @@ function Out-TruncatedString
 
     $outString = $String
 
-    if ($Length -gt 0)
+    if ($Length -gt 3)
     {
         if ($String.Length -gt $Length)
         {

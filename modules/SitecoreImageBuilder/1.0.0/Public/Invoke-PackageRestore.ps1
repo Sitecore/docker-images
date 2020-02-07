@@ -126,7 +126,6 @@ function Invoke-PackageRestore
 
                     # Download package using saved session
                     Invoke-FileDownload -Url $fileUrl -Path $filePath -Cookies $sitecoreDownloadSession.Cookies
-
                 }
                 else
                 {
