@@ -1,9 +1,9 @@
 {
   "tags": [
     {
-      "tag": "sitecore-xc-identity:9.3.0-windowsservercore-${windowsservercore_version}",
+      "tag": "sitecore-xc-identity:9.3.0-nanoserver-${nanoserver_version}",
       "build-options": [
-        "--build-arg BASE_IMAGE=sitecore-xp-identity:9.3.0-windowsservercore-${windowsservercore_version}"
+        "--build-arg BASE_IMAGE=sitecore-xp-identity:9.3.0-nanoserver-${nanoserver_version}"
       ]
     }
   ],
