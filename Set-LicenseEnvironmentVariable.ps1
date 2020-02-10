@@ -7,17 +7,16 @@ param(
     [switch]$PersistForCurrentUser
 )
 
-$licenseFileBytes = [System.IO.File]::ReadAllBytes($Path)
+$licenseFileStream = [System.IO.File]::OpenRead($Path);
 $licenseString = $null
 
 try
 {
     $memory = [System.IO.MemoryStream]::new()
 
-    # gzip license file content
-    $gzip = [System.IO.Compression.GZipStream]::new($memory, [System.IO.Compression.CompressionLevel]::Optimal, $true)
-    $gzip.Write($licenseFileBytes, 0, $licenseFileBytes.Length);
-    $gzip.Close()
+    $gzip = [System.IO.Compression.GZipStream]::new($memory, [System.IO.Compression.CompressionLevel]::Optimal, $false);
+    $licenseFileStream.CopyTo($gzip);
+    $gzip.Close();
 
     # base64 encode the gzipped content
     $licenseString = [System.Convert]::ToBase64String($memory.ToArray())
@@ -37,7 +36,7 @@ finally
         $memory = $null
     }
 
-    $licenseFileBytes = $null
+    $licenseFileStream = $null
 }
 
 # sanity check
