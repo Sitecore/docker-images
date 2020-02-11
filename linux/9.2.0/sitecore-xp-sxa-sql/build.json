@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-sxa-sql:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-spe-sql:9.2.0-linux"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore Experience Accelerator 1.9.0 rev. 190528 for 9.2.scwdp.zip"
+  ]
+}

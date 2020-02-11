@@ -1,5 +1,54 @@
 # Changelog
 
+## January 2020
+
+- [Added] Sitecore 9.3.0 XC/SXA.
+- [Added] Hash values of Sitecore downloads are now validated before being used. If a file hash does not match the expected value, the build will fail with a message explaining what happened and how to resolve. See [#148](https://github.com/Sitecore/docker-images/issues/148). Thanks [@michaellwest](https://github.com/michaellwest) :+1:
+- [Changed] 7-zip is removed from the `sitecore-assets` images since it was only used for validating Sitecore downloads which is now done by validating file hashes instead.
+
+## December 2019
+
+- [Changed] Added `.gitkeep` to `$DefaultExcludedFiles` parameter in `Watch-Directory.ps1`.
+- [Changed] Development `ENTRYPOINT` scripts now supports parsing in parameters to `Watch-Directory.ps1` using parameter splattering. See [README.md](/README.md#optional-entrypoint-scripts) on how to use.
+- [Added] Development `ENTRYPOINT` scripts for XConnect worker roles (auto start watch directory). See [README.md](/README.md#optional-entrypoint-scripts) on how to use. Thanks [@jeanfrancoislarente](https://github.com/jeanfrancoislarente) :+1:
+- [Added] Sitecore 9.3.0 XM/XP-SXA/PS (publishing service) variant.
+
+## November 2019
+
+- [Added] Sitecore 9.3.0 XM/XP/SXA.
+- [Added] New **optional** `ENTRYPOINT` scripts (log streaming, auto start watch directory and auto start remote debugger) for IIS based images. See [README.md](/README.md#optional-entrypoint-scripts) on how to use.
+- [Added] Windows 1909 is now also supported. You can override which platforms you want by setting the parameter `AutoGenerateWindowsVersionTags` when calling `Invoke-Build`, default value is: `"1909", "1903", "ltsc2019"`.
+- [Added] Build images updated to now include XC - PSE, XC - SXA, XC - SXA Storefront
+
+## October 2019
+
+- [Added] Sitecore 9.2.0 XC images.
+- [Added] New 9.2.0 `xp-xconnect-processingengine` images. See [#43](https://github.com/Sitecore/docker-images/issues/43). Thanks [@adoprog](https://github.com/adoprog) :+1:
+- [Changed] Windows and Linux `spe` "Sitecore PowerShell Extensions" images updated to **v6.0**, indirectly *also* updating all `sxa` images. See [#84](https://github.com/Sitecore/docker-images/issues/84). Thanks [@michaellwest](https://github.com/michaellwest) :+1:
+- [Changed] The `c:\tools\scripts\Watch-Directory.ps1` no longer deletes destination directories, only files. See [#89](https://github.com/Sitecore/docker-images/issues/89). Thanks [@sshushliapin](https://github.com/sshushliapin) :+1:
+- [Fixed] The `c:\tools` folder was empty.
+- [**Breaking**] Windows and Linux "Sitecore PowerShell Extensions" images is now correctly tagged with `spe` instead of `pse`.
+- [**Breaking**] Linux variant tags aligned with Windows variant tags, variant version is not part of tag anymore, latest compatible version is always used. Old images moved to `./legacy/linux`.
+- [**Breaking**] When building, then default value used for the `-Tags` parameter will now *only* build images of the latest Sitecore version (including variants such as SXA/SPE) on the latest LTSC (Long Term Support Channel) Windows version instead of *everything*. As of today that would be Sitecore 9.2.0 on `windowsservercore-ltsc2019`. To build everything you could use `-Tag "*"`, see [README.md](/README.md#setting-up-automated-builds) for more details.
+- [**Breaking**] Switched from using SIF to manual installing contents from the Sitecore WDP's.
+  - Official `mcr.microsoft.com/dotnet/framework/aspnet` images are now used at runtime:
+    - Sitecore in now installed into `C:\inetpub\wwwroot` instead of `C:\inetpub\sc`.
+    - IIS site `Default Web Site` and application pool `DefaultAppPool` is now used instead of `sc`.
+  - The `WatchDirectory.ps1` helper script has been moved from `C:\Sitecore\Scripts`:
+    - It's now in `C:\tools\scripts` and this path is also in the system PATH.
+    - New script `Invoke-XdtTransform.ps1` added.
+  - Docker files has been rewritten (also with comments) and images are now smaller and has fewer layers.
+- [**Breaking**] Windows base and variant images merged into `.\windows`:
+  - When calling `Invoke-PackageRestore` and `Invoke-Build` you need to point to `.\windows` going forward.
+  - The previous `.\images`, `.\variants` and `.\tests` is moved into `.\legacy` so you can still build them if needed.
+    - **IMPORTANT**: Do not build both `.\windows` **and** `.\legacy\images` (or `.\legacy\variants`) as they will **overwrite each other** as *many* tags are the same.
+  - New docker-compose files added for testing into `.\windows\tests`, you can override the default values in the `.env` file using system environment variables to test other Sitecore versions and/or Windows versions.
+- [**Breaking**] Sitecore XM images has been renamed from `sitecore-xm1-*` to `sitecore-xm-*`.
+- [**Breaking**] Sitecore license file `license.xml` is no longer embedded into the images and you are now **required** to mount a folder that has the license into `C:\license` inside the containers.
+- [Added] Quick start `.\Build.ps1` script added for simpler on-boarding when you just want to try out Sitecore on Docker. See [README.md](/README.md#quick-start) for more details.
+- [Changed] XM and XP Solr images on Windows now has the Sitecore schema embedded like the Linux images. No need to remember to run "Populate managed schema" anymore.
+- [Changed] Made the `-Registry` parameter optional. Not specifying the `-Registry` will build the images locally only.
+
 ## September 2019
 
 - [Fixed] Invalid download url in `sitecore-packages.json` was fixed for JSS 11.0.1 XP CM. **IMPORTANT**: Remove the file `Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.0.1 rev. 190318.scwdp.zip` from where you store the packages and **ALSO** also inside `.\variants\9.1.1\windowsservercore\jss\sitecore-xp-jss-11.0.1-standalone\` so the package will be re-downloaded.
@@ -36,7 +85,7 @@
 - [**Breaking**] To build deprecated image tags, you now need set the `DeprecatedTagsBehavior` parameter to `Include`.
 - [Deprecated] All 1709 images is now deprecated as the [.NET framework is no longer supported on this build](https://github.com/Microsoft/dotnet-framework-docker/issues/259). You can still build them using `-DeprecatedTagsBehavior "Include"`.
 - [Removed] ltsc2016 images is now deleted completely as ltsc2019 is now the current ltsc version.
-- [Fixed] Using `ARG` variables in Docker files can now be with and without `{}`. 
+- [Fixed] Using `ARG` variables in Docker files can now be with and without `{}`.
 - [Changed] The `build.json` format has changed to support the use of `build-arg` during `docker image build`. In this new format we can support multiple release channels (ie 1803, ltsc2019, 1903) within a single build folder using `ARG` while reducing maintenance time and disk space needed.
 - [Deprecated] Sitecore 8.2 rev. 161221 is now marked as deprecated. You can still build them using `-DeprecatedTagsBehavior "Include"`.
 - [Deprecated] Sitecore 7.5 is now marked as deprecated. You can still build them using `-DeprecatedTagsBehavior "Include"`.

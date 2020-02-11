@@ -1,0 +1,19 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-solr:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=solr:7.5.0-slim",
+        "--build-arg CORE_NAMES='sc_core_index, sc_master_index, sc_web_index, sc_marketingdefinitions_master, sc_marketingdefinitions_web, sc_marketing_asset_index_master, sc_marketing_asset_index_web, sc_testing_index, sc_suggested_test_index, sc_fxm_master_index, sc_fxm_web_index, sc_xdb, sc_xdb_rebuild'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-sxa-solr:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=solr:7.5.0-slim",
+        "--build-arg CORE_NAMES='sc_core_index, sc_master_index, sc_web_index, sc_marketingdefinitions_master, sc_marketingdefinitions_web, sc_marketing_asset_index_master, sc_marketing_asset_index_web, sc_testing_index, sc_suggested_test_index, sc_fxm_master_index, sc_fxm_web_index, sc_xdb, sc_xdb_rebuild, sitecore_sxa_master_index, sitecore_sxa_web_index'"
+      ]
+    }
+  ],
+  "sources": []
+}

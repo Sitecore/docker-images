@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <add name="security" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Core" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="web" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Web" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="experienceforms" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.ExperienceForms" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="solr.search" connectionString="http://solr:8983/solr" xdt:Transform="SetAttributes" xdt:Locator="Match(name)"/>
+    <add name="messaging" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Messaging" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="exm.master" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.EXM.Master" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xconnect.collection" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xconnect.collection.certificate" connectionString="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.marketingautomation.operations.client" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.marketingautomation.operations.client.certificate" connectionString="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.marketingautomation.reporting.client" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.marketingautomation.reporting.client.certificate" connectionString="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.referencedata.client" connectionString="https://xconnect" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.referencedata.client.certificate" connectionString="StoreName=My;StoreLocation=LocalMachine;FindType=FindByThumbprint;FindValue=${xconnect_client_certificate_thumbprint}" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="EXM.CryptographicKey" connectionString="0x2044091720666726553400888827089132972821702547043303933357599718" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="EXM.AuthenticationKey" connectionString="0x4718837114608801094478352867788532716003712170721896589237753892" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+</connectionStrings>

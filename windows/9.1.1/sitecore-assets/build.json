@@ -1,0 +1,26 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore 9.1.1 rev. 002459 (WDP XM1 packages).zip",
+    "Sitecore 9.1.1 rev. 002459 (WDP XP0 packages).zip",
+    "Sitecore 9.1.1 rev. 002459 (WDP XP1 packages).zip",
+    "Sitecore.Commerce.WDP.2019.07-4.0.165.zip",
+    "Sitecore Experience Accelerator XM 1.8.1 rev. 190319 for 9.1.1.scwdp.zip",
+    "Sitecore Experience Accelerator XM 1.8.1 rev. 190319 for 9.1.1 CD.scwdp.zip",
+    "Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.1.1.scwdp.zip",
+    "Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.1.1 CD.scwdp.zip",
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.0.1 rev. 190318 CD.scwdp.zip",
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.0.1 rev. 190318.scwdp.zip",
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.0.1 rev. 190318 CD.scwdp.zip",
+    "Sitecore JavaScript Services Server for Sitecore 9.1.1 XP 11.0.1 rev. 190318.scwdp.zip",
+    "Sitecore PowerShell Extensions-5.0.scwdp.zip"
+  ]
+}

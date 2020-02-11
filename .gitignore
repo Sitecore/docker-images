@@ -8,9 +8,15 @@ license.xml
 internal/
 packages/
 
-tests/**/data/**/*
-!tests/**/data/*/
-!tests/**/data/*/README.md
-!tests/**/data/*/.gitkeep
-/sources
-/build.ps1
+legacy/tests/**/data/**/*
+!legacy/tests/**/data/*/
+!legacy/tests/**/data/*/README.md
+!legacy/tests/**/data/*/.gitkeep
+
+windows/**/*.dll
+windows/tests/**/data/**/*
+!windows/tests/**/data/*/
+!windows/tests/**/data/*/.gitkeep
+
+/.vscode/
+/tools/

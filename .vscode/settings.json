@@ -1,0 +1,8 @@
+{
+    "editor.insertSpaces": true,
+    "editor.tabSize": 4,
+    "files.trimTrailingWhitespace": true,
+    "powershell.codeFormatting.openBraceOnSameLine": false,
+    "powershell.codeFormatting.ignoreOneLineBlock": false,
+    "powershell.integratedConsole.focusConsoleOnExecute": false
+}

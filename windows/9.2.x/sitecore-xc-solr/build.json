@@ -1,0 +1,31 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xc-solr:9.2.0-nanoserver-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\SIF.Sitecore.Commerce.3.0.28.zip'",
+        "--build-arg SOLR_VERSION=7.5.0",
+        "--build-arg CORE_NAMES='sitecore_core_index, sitecore_master_index, sitecore_web_index, sitecore_marketingdefinitions_master, sitecore_marketingdefinitions_web, sitecore_marketing_asset_index_master, sitecore_marketing_asset_index_web, sitecore_testing_index, sitecore_suggested_test_index, sitecore_fxm_master_index, sitecore_fxm_web_index, sitecore_xdb, sitecore_xdb_rebuild'",
+        "--build-arg MANAGED_SCHEMA_DEFAULT_NAME='managed-schema.default.920'",
+        "--build-arg MANAGED_SCHEMA_XDB_NAME='managed-schema.xdb.920'"
+      ]
+    },
+    {
+      "tag": "sitecore-xc-sxa-solr:9.2.0-nanoserver-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg BASE_IMAGE=sitecore-openjdk:8-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\SIF.Sitecore.Commerce.3.0.28.zip'",
+        "--build-arg SOLR_VERSION=7.5.0",
+        "--build-arg CORE_NAMES='sitecore_core_index, sitecore_master_index, sitecore_web_index, sitecore_marketingdefinitions_master, sitecore_marketingdefinitions_web, sitecore_marketing_asset_index_master, sitecore_marketing_asset_index_web, sitecore_testing_index, sitecore_suggested_test_index, sitecore_fxm_master_index, sitecore_fxm_web_index, sitecore_xdb, sitecore_xdb_rebuild, sitecore_sxa_master_index, sitecore_sxa_web_index'",
+        "--build-arg MANAGED_SCHEMA_DEFAULT_NAME='managed-schema.default.920'",
+        "--build-arg MANAGED_SCHEMA_XDB_NAME='managed-schema.xdb.920'"
+      ]
+    }
+  ],
+  "sources": []
+}

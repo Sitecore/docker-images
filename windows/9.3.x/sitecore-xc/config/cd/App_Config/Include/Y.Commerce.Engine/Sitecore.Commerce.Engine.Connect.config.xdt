@@ -1,0 +1,23 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:role="http://www.sitecore.net/xmlconfig/role/" xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <sitecore role:require="Standalone or ContentDelivery or ContentManagement">
+        <commerceEngineConfiguration type="Sitecore.Commerce.Engine.Connect.CommerceEngineConfiguration, Sitecore.Commerce.Engine.Connect">
+            <shopsServiceUrl xdt:Transform="Replace">http://commerce-shops/api/</shopsServiceUrl>
+            <commerceOpsServiceUrl xdt:Transform="Replace">http://commerce-ops/commerceops/</commerceOpsServiceUrl>
+            <commerceMinionsServiceUrl xdt:Transform="Replace">http://commerce-minions/commerceops/</commerceMinionsServiceUrl>
+            <sitecoreIdentityServerUrl xdt:Transform="Replace">https://identity/</sitecoreIdentityServerUrl>
+            <enforceSsl xdt:Transform="Replace">false</enforceSsl>
+            <defaultEnvironment xdt:Transform="Replace">HabitatShops</defaultEnvironment>
+            <defaultShopName xdt:Transform="Replace">CommerceEngineDefaultStorefront</defaultShopName>
+        </commerceEngineConfiguration>
+
+        <commerceCachingConfiguration type="Sitecore.Commerce.Engine.Connect.CommerceCachingConfiguration,Sitecore.Commerce.Engine.Connect.Caching">
+            <cachingSettings type="Sitecore.Commerce.Engine.Connect.CachingSettings, Sitecore.Commerce.Engine.Connect.Caching">
+                <redis type="Sitecore.Commerce.Engine.Connect.RedisCacheSettings, Sitecore.Commerce.Engine.Connect.Caching">
+                    <options type="Microsoft.Extensions.Caching.Redis.RedisCacheOptions, Microsoft.Extensions.Caching.Redis">
+                        <configuration xdt:Transform="Replace">redis,defaultDatabase=1,allowAdmin=true,syncTimeout=3600000</configuration>
+                    </options>
+                </redis>
+            </cachingSettings>
+        </commerceCachingConfiguration>
+    </sitecore>
+</configuration>

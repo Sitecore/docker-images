@@ -1,0 +1,12 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-certificates:latest-nanoserver-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}"
+      ]
+    }
+  ],
+  "sources": []
+}

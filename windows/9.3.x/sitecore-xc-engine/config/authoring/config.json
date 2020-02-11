@@ -1,0 +1,104 @@
+{
+  "AppSettings": {
+    "SiteTitle": "Sitecore Commerce Engine",
+    "BootStrapFile": "Global",
+    "DeploymentId": "Deployment01",
+    "EnvironmentName": "HabitatAuthoring",
+    "EncryptionProtectionType": "Machine",
+    "EncryptionCertificateHash": "Enter a valid certificate thumbprint for a PXF file. X-509 not supported yet",
+    "EncryptionSID": "Enter a valid SID for a domain registered user",
+    "EncryptionKeyStorageLocation": "c:\\Encryption-Keys\\",
+    "SitecoreIdentityServerUrl": "https://identity",
+    "AllowedOrigins": [
+      "http://bizfx",
+      "http://cd",
+      "http://cm"
+    ],
+    "AntiForgeryEnabled": false,
+    "CommerceServicesHostPostfix": "",
+    "UseHttpsInKestrel": false
+  },
+  "ApplicationInsights": {
+    "InstrumentationKey": ""
+  },
+  "Logging": {
+    "IncludeScopes": false,
+    "LogLevel": {
+      "Default": "Warning",
+      "System": "Warning",
+      "Microsoft": "Warning"
+    },
+    "PipelineTraceLoggingEnabled": false,
+    "SerilogLoggingEnabled": true
+  },
+  "Serilog": {
+    "Using": [
+      "Serilog.Sinks.Literate",
+      "Serilog.Sinks.File",
+      "Serilog.Sinks.ApplicationInsights",
+      "Serilog.Sinks.Udp"
+    ],
+    "MinimumLevel": {
+      "Default": "Warning",
+      "Override": {
+        "Microsoft": "Warning",
+        "System": "Warning"
+      }
+    },
+    "WriteTo": [
+      {
+        "Name": "ApplicationInsights",
+        "Args": {
+          "restrictedToMinimumLevel": "Warning",
+          "telemetryConverter": "Serilog.Sinks.ApplicationInsights.Sinks.ApplicationInsights.TelemetryConverters.TraceTelemetryConverter, Serilog.Sinks.ApplicationInsights"
+        }
+      },
+      {
+        "Name": "Udp",
+        "Args": {
+          "remoteAddress": "localhost",
+          "remotePort": 7777,
+          "family": "InterNetwork"
+        }
+      }
+    ],
+    "FileSizeLimitBytes": 100000000
+  },
+  "Caching": {
+    "Memory": {
+      "Enabled": false,
+      "CacheStoreName": "Commerce-Memory-Store"
+    },
+    "Redis": {
+      "Enabled": true,
+      "CacheStoreName": "Commerce-Redis-Store",
+      "Options": {
+        "Configuration": "redis",
+        "InstanceName": "Redis"
+      }
+    }
+  },
+  "Compression": {
+    "Enabled": true,
+    "ResponseCompressionOptions": {
+      "EnableForHttps": true,
+      "MimeTypes": [
+        "text/plain",
+        "text/css",
+        "application/javascript",
+        "text/html",
+        "application/xml",
+        "text/xml",
+        "application/json",
+        "text/json",
+        "application/wasm"
+      ]
+    },
+    "GzipCompressionProviderOptions": {
+      "Level": "Fastest"
+    }
+  },
+  "CommerceConnector": {
+    "ClientId":"CommerceEngineConnect"
+  }
+}

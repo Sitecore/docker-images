@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <appSettings>
+        <add key="Telerik.AsyncUpload.ConfigurationEncryptionKey" xdt:Transform="RemoveAll" xdt:Locator="Match(key)" />
+        <add key="Telerik.AsyncUpload.ConfigurationEncryptionKey" value="E67vGAporNBSF3G5Q03z7x0VdLYen1Fl5XRWNaFw9SFu6pECbA2CapczEEKIkbcamOvcCsvQzNCPI5bw7UG06yRGBAYGj8sH7NvKMwH8dpRZcRgv0X904ziHqRLWSokAFus1rjXfsAJKvzh9G9kOfqGF9DitWfWvRDZ2eP7lLlaxjxTLti0MijfrYZrw0L8343pdQdobNvmtGHItQmOmdoiFRJByheBtvU7Gm7Cq5D9ek9soaURf2mreiCnsMEJp" xdt:Transform="Insert" />
+        <add key="Telerik.Upload.ConfigurationHashKey" xdt:Transform="RemoveAll" xdt:Locator="Match(key)" />
+        <add key="Telerik.Upload.ConfigurationHashKey" value="E67vGAporNBSF3G5Q03z7x0VdLYen1Fl5XRWNaFw9SFu6pECbA2CapczEEKIkbcamOvcCsvQzNCPI5bw7UG06yRGBAYGj8sH7NvKMwH8dpRZcRgv0X904ziHqRLWSokAFus1rjXfsAJKvzh9G9kOfqGF9DitWfWvRDZ2eP7lLlaxjxTLti0MijfrYZrw0L8343pdQdobNvmtGHItQmOmdoiFRJByheBtvU7Gm7Cq5D9ek9soaURf2mreiCnsMEJp" xdt:Transform="Insert" />
+        <add key="Telerik.Web.UI.DialogParametersEncryptionKey" xdt:Transform="RemoveAll" xdt:Locator="Match(key)" />
+        <add key="Telerik.Web.UI.DialogParametersEncryptionKey" value="E67vGAporNBSF3G5Q03z7x0VdLYen1Fl5XRWNaFw9SFu6pECbA2CapczEEKIkbcamOvcCsvQzNCPI5bw7UG06yRGBAYGj8sH7NvKMwH8dpRZcRgv0X904ziHqRLWSokAFus1rjXfsAJKvzh9G9kOfqGF9DitWfWvRDZ2eP7lLlaxjxTLti0MijfrYZrw0L8343pdQdobNvmtGHItQmOmdoiFRJByheBtvU7Gm7Cq5D9ek9soaURf2mreiCnsMEJp" xdt:Transform="Insert" />
+    </appSettings>
+    <system.web>
+        <customErrors mode="Off" xdt:Transform="SetAttributes" />
+    </system.web>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <rule xdt:Transform="RemoveAll" />
+            </rules>
+            <outboundRules xdt:Transform="Insert">
+                <rule name="MakeLocationHeaderRelative" preCondition="IsSitecoreAbsoluteRedirect">
+                    <match serverVariable="RESPONSE_LOCATION" pattern="(https?://[^:/]+):?([0-9]+)?(.*)" />
+                    <action type="Rewrite" value="{R:3}" />
+                </rule>
+                <preConditions>
+                    <preCondition name="IsSitecoreAbsoluteRedirect">
+                        <add input="{RESPONSE_LOCATION}" pattern="(https?://[^:/]+):?([0-9]+)?/sitecore/(.*)" />
+                        <add input="{RESPONSE_STATUS}" pattern="3[0-9][0-9]" />
+                    </preCondition>
+                </preConditions>
+            </outboundRules>
+        </rewrite>
+    </system.webServer>
+</configuration>

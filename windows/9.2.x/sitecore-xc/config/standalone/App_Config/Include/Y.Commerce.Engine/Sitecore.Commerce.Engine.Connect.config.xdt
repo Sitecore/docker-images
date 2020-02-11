@@ -1,0 +1,12 @@
+<configuration xmlns:patch="http://www.sitecore.net/xmlconfig/" xmlns:role="http://www.sitecore.net/xmlconfig/role/" xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <sitecore role:require="Standalone or ContentDelivery or ContentManagement">
+        <commerceEngineConfiguration type="Sitecore.Commerce.Engine.Connect.CommerceEngineConfiguration, Sitecore.Commerce.Engine.Connect">
+            <shopsServiceUrl xdt:Transform="Replace">http://commerce-authoring/api/</shopsServiceUrl>
+            <commerceOpsServiceUrl xdt:Transform="Replace">http://commerce-authoring/commerceops/</commerceOpsServiceUrl>
+            <enforceSsl xdt:Transform="Replace">false</enforceSsl>
+            <defaultEnvironment xdt:Transform="Replace">HabitatShops</defaultEnvironment>
+            <defaultShopName xdt:Transform="Replace">CommerceEngineDefaultStorefront</defaultShopName>
+            <certificateThumbprint xdt:Transform="Replace">${commerce_client_certificate_thumbprint}</certificateThumbprint>
+        </commerceEngineConfiguration>
+    </sitecore>
+</configuration>

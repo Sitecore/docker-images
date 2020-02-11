@@ -1,0 +1,620 @@
+{
+  "$type": "Sitecore.Commerce.Core.PolicySet, Sitecore.Commerce.Core",
+  "Id": "Entity-PolicySet-SolrSearchPolicySet",
+  "Version": 1,
+  "IsPersisted": false,
+  "Name": "SolrSearchPolicySet",
+  "Policies": {
+    "$type": "System.Collections.Generic.List`1[[Sitecore.Commerce.Core.Policy, Sitecore.Commerce.Core]], mscorlib",
+    "$values": [
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrSearchPolicy, Sitecore.Commerce.Plugin.Search.Solr",
+        "SolrUrl": "http://solr:8983/solr",
+        "ConnectionTimeout": -1,
+        "SolrDateTimeFormatString": "yyyy-MM-dd'T'HH:mm:ss.FFF'Z'",
+        "IsSolrCloud": false,
+        "UseSolrAuthentication": false,
+        "SolrUserName": "",
+        "SolrPassword": ""
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.IndexablePolicy, Sitecore.Commerce.Plugin.Search",
+        "SearchScopeName": "sitecore_sxa_master_index",
+        "Properties": {
+          "catalogentityid_t": {
+            "TypeName": "System.String",
+            "IsKey": true,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          }
+        }
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.IndexablePolicy, Sitecore.Commerce.Plugin.Search",
+        "SearchScopeName": "sitecore_sxa_web_index",
+        "Properties": {
+          "catalogentityid_t": {
+            "TypeName": "System.String",
+            "IsKey": true,
+            "IsSearchable": true,
+            "IsFilterable": false,
+            "IsSortable": false,
+            "IsFacetable": false,
+            "IsRetrievable": true
+          }
+        }
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.ItemIndexablePolicy, Sitecore.Commerce.Plugin.Search",
+        "IndexName": "sitecore_web_index",
+        "FieldTypeMappers": [
+          {
+            "TypeName": "stringCollection",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "NameFormat": "{0}_sm",
+            "MultiValued": true
+          },
+          {
+            "TypeName": "textCollection",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "NameFormat": "{0}_txm",
+            "MultiValued": true
+          },
+          {
+            "TypeName": "guidCollection",
+            "Type": "System.Collections.Generic.List`1[System.Guid]",
+            "NameFormat": "{0}_sm",
+            "MultiValued": true
+          },
+          {
+            "TypeName": "text",
+            "Type": "System.String",
+            "NameFormat": "{0}_t",
+            "CultureFormat": "_{1}"
+          },
+          {
+            "TypeName": "string",
+            "Type": "System.String",
+            "NameFormat": "{0}_s",
+            "CultureFormat": "_{1}"
+          },
+          {
+            "TypeName": "bool",
+            "Type": "System.Boolean",
+            "NameFormat": "{0}_b"
+          },
+          {
+            "TypeName": "guid",
+            "Type": "System.Guid",
+            "NameFormat": "{0}_s"
+          },
+          {
+            "TypeName": "pint",
+            "Type": "System.Int64",
+            "NameFormat": "{0}_i"
+          },
+          {
+            "TypeName": "pdouble",
+            "Type": "System.Decimal",
+            "NameFormat": "{0}_td"
+          },
+          {
+            "TypeName": "pdate",
+            "Type": "System.DateTimeOffset",
+            "NameFormat": "{0}_dt"
+          }
+        ],
+        "Fields": [
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "sxacontent",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "TypeHint": "textCollection",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.SxaContentFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Template",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.TemplateFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_TemplateName",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.TemplateNameFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ProductId",
+            "Type": "System.String",
+            "Localizable": true
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "Brand",
+            "Type": "System.String",
+            "TypeHint": "string"
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "Manufacturer",
+            "Type": "System.String",
+            "TypeHint": "string"
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "TypeOfGood",
+            "Type": "System.String",
+            "TypeHint": "string"
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ExcludeFromWebsiteSearchResults",
+            "Type": "System.Boolean",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ExcludeFromSearchResultsFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Group",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ItemIdFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_UniqueId",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.UniqueIdFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Parent",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ParentFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_DataSource",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.DataSourceFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_IndexName",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.IndexNameFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_LatestVersion",
+            "Type": "System.Boolean",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.LatestVersionFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Language",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.LanguageFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_FullPath",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.FullPathFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Path",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.PathFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Name",
+            "Type": "System.String",
+            "ValueSource": {
+              "PropertyName": "FriendlyId",
+              "PropertyPath": ""
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "Name",
+            "Type": "System.String",
+            "ValueSource": {
+              "PropertyName": "FriendlyId",
+              "PropertyPath": ""
+            },
+            "Localizable": true
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_DisplayName",
+            "Type": "System.String",
+            "ValueSource": {
+              "PropertyName": "DisplayName",
+              "PropertyPath": ""
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "DisplayName",
+            "Type": "System.String",
+            "TypeHint": "string"
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "CommerceSearchItemType",
+            "Type": "System.String",
+            "Localizable": true,
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.ItemTypeFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "CatalogEntityId",
+            "Type": "System.String",
+            "ValueSource": {
+              "PropertyName": "Id",
+              "PropertyPath": ""
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "HasChildren",
+            "Type": "System.Boolean",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.HasChildrenFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "Searchable",
+            "Type": "System.Boolean",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.SearchableFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ChildrenCategoryList",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ChildrenCategoryListHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ParentCatalogList",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ParentCatalogListFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ArtifactStoreId",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.ArtifactStoreIdFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          }
+        ]
+      },
+      {
+        "$type": "Sitecore.Commerce.Plugin.Search.ItemIndexablePolicy, Sitecore.Commerce.Plugin.Search",
+        "IndexName": "sitecore_master_index",
+        "FieldTypeMappers": [
+          {
+            "TypeName": "stringCollection",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "NameFormat": "{0}_sm",
+            "MultiValued": true
+          },
+          {
+            "TypeName": "textCollection",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "NameFormat": "{0}_txm",
+            "MultiValued": true
+          },
+          {
+            "TypeName": "guidCollection",
+            "Type": "System.Collections.Generic.List`1[System.Guid]",
+            "NameFormat": "{0}_sm",
+            "MultiValued": true
+          },
+          {
+            "TypeName": "text",
+            "Type": "System.String",
+            "NameFormat": "{0}_t",
+            "CultureFormat": "_{1}"
+          },
+          {
+            "TypeName": "string",
+            "Type": "System.String",
+            "NameFormat": "{0}_s",
+            "CultureFormat": "_{1}"
+          },
+          {
+            "TypeName": "bool",
+            "Type": "System.Boolean",
+            "NameFormat": "{0}_b"
+          },
+          {
+            "TypeName": "guid",
+            "Type": "System.Guid",
+            "NameFormat": "{0}_s"
+          },
+          {
+            "TypeName": "pint",
+            "Type": "System.Int64",
+            "NameFormat": "{0}_i"
+          },
+          {
+            "TypeName": "pdouble",
+            "Type": "System.Decimal",
+            "NameFormat": "{0}_td"
+          },
+          {
+            "TypeName": "pdate",
+            "Type": "System.DateTimeOffset",
+            "NameFormat": "{0}_dt"
+          }
+        ],
+        "Fields": [
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "sxacontent",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "TypeHint": "textCollection",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.SxaContentFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Template",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.TemplateFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_TemplateName",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.TemplateNameFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ProductId",
+            "Type": "System.String",
+            "Localizable": true
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "Brand",
+            "Type": "System.String",
+            "TypeHint": "string"
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "Manufacturer",
+            "Type": "System.String",
+            "TypeHint": "string"
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "TypeOfGood",
+            "Type": "System.String",
+            "TypeHint": "string"
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ExcludeFromWebsiteSearchResults",
+            "Type": "System.Boolean",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ExcludeFromSearchResultsFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Group",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ItemIdFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_UniqueId",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.UniqueIdFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Parent",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ParentFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_DataSource",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.DataSourceFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_IndexName",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.IndexNameFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_LatestVersion",
+            "Type": "System.Boolean",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.LatestVersionFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Language",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.LanguageFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_FullPath",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.FullPathFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Path",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.PathFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_Name",
+            "Type": "System.String",
+            "ValueSource": {
+              "PropertyName": "FriendlyId",
+              "PropertyPath": ""
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "Name",
+            "Type": "System.String",
+            "ValueSource": {
+              "PropertyName": "FriendlyId",
+              "PropertyPath": ""
+            },
+            "Localizable": true
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "_DisplayName",
+            "Type": "System.String",
+            "ValueSource": {
+              "PropertyName": "DisplayName",
+              "PropertyPath": ""
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "DisplayName",
+            "Type": "System.String",
+            "TypeHint": "string"
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "CommerceSearchItemType",
+            "Type": "System.String",
+            "Localizable": true,
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.ItemTypeFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "CatalogEntityId",
+            "Type": "System.String",
+            "ValueSource": {
+              "PropertyName": "Id",
+              "PropertyPath": ""
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "HasChildren",
+            "Type": "System.Boolean",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.HasChildrenFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "Searchable",
+            "Type": "System.Boolean",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.SearchableFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ChildrenCategoryList",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ChildrenCategoryListHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ParentCatalogList",
+            "Type": "System.Collections.Generic.List`1[System.String]",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Catalog.ParentCatalogListFieldHandler, Sitecore.Commerce.Plugin.Catalog"
+            }
+          },
+          {
+            "$type": "Sitecore.Commerce.Plugin.Search.Solr.SolrIndexFieldConfiguration, Sitecore.Commerce.Plugin.Search.Solr",
+            "Name": "ArtifactStoreId",
+            "Type": "System.String",
+            "Handler": {
+              "$type": "Sitecore.Commerce.Plugin.Search.ArtifactStoreIdFieldHandler, Sitecore.Commerce.Plugin.Search"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

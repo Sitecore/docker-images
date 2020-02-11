@@ -1,0 +1,25 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-sqldev:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.2.0 rev. 002893 (OnPrem)_single.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XCONNECT='C:\\packages\\Sitecore 9.2.0 rev. 002893 (OnPrem)_xp0xconnect.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.1.1 rev. 002459 (OnPrem)_single.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XCONNECT='C:\\packages\\Sitecore 9.1.1 rev. 002459 (OnPrem)_xp0xconnect.scwdp.zip'"
+      ]
+    }
+  ],
+  "sources": []
+}

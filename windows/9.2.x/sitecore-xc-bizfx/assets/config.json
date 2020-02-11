@@ -1,0 +1,13 @@
+{
+    "EnvironmentName": "HabitatAuthoring",
+    "EngineUri": "http://commerce-authoring",
+    "IdentityServerUri": "https://identity",
+    "BizFxUri": "http://bizfx",
+    "Language": "en",
+    "Currency": "USD",
+    "ShopName": "CommerceEngineDefaultStorefront",
+    "LanguageCookieName": "selectedLanguage",
+    "EnvironmentCookieName": "selectedEnvironment",
+    "AutoCompleteTimeout_ms": 300
+}
+  

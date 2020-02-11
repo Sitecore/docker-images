@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform" xdt:Transform="Replace">
+  <Sitecore>
+    <IdentityServer>
+      <CertificateThumbprint>${identity_client_certificate_thumbprint}</CertificateThumbprint>
+      <CertificateStoreLocation>LocalMachine</CertificateStoreLocation>
+      <CertificateStoreName>My</CertificateStoreName>
+      <SitecoreMembershipOptions>
+        <ConnectionString>Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=8Tombs-Given-Clock#-arming-Alva-debut-Spine-monica-Normal-Ted-About1-chard-Easily-granddad-5Context!</ConnectionString>
+      </SitecoreMembershipOptions>
+      <AccountOptions>
+        <PasswordRecoveryUrl>https://identity/sitecore/login?rc=1</PasswordRecoveryUrl>
+      </AccountOptions>
+      <Clients>
+        <DefaultClient>
+          <AllowedCorsOrigins>
+            <AllowedCorsOriginsGroup1>http://cm|http://cd</AllowedCorsOriginsGroup1>
+          </AllowedCorsOrigins>
+        </DefaultClient>
+        <PasswordClient>
+          <ClientSecrets>
+            <ClientSecret1>SIF-Default</ClientSecret1>
+          </ClientSecrets>
+        </PasswordClient>
+      </Clients>
+    </IdentityServer>
+  </Sitecore>
+</Settings>
