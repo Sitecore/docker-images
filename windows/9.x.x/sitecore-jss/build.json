@@ -1,0 +1,69 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm-jss-cm:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-cm:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.3 XM 13.0.0.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-jss-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.3 XM 13.0.0 CD.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-jss-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.3 XP 13.0.0.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-jss-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.3 XP 13.0.0 CD.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-jss-cm:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-cm:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.2 XM 12.0.0 rev. 190522.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-jss-cd:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xm-cd:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.2 XM 12.0.0 rev. 190522 CD.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-jss-standalone:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-standalone:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.2 XP 12.0.0 rev. 190522.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-jss-cd:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-cd:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.2 XP 12.0.0 rev. 190522 CD.scwdp.zip'"
+      ]
+    }
+  ],
+  "sources": []
+}

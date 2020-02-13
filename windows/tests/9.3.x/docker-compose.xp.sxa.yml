@@ -1,4 +1,4 @@
-version: '2.4'
+version: "2.4"
 
 services:
 
@@ -39,8 +39,10 @@ services:
       SITECORE_CONNECTIONSTRINGS_COLLECTION: Data Source=sql;Database=Sitecore.Xdb.Collection.ShardMapManager;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_SOLRCORE: http://solr:8983/solr/sitecore_xdb
     depends_on:
-      - sql
-      - solr
+      sql:
+        condition: service_healthy
+      solr:
+        condition: service_started
 
   xconnect-automationengine:
     image: ${REGISTRY}sitecore-xp-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
@@ -55,8 +57,10 @@ services:
       SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA: Data Source=sql;Database=Sitecore.ReferenceData;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_CONNECTIONSTRINGS_MESSAGING: Data Source=sql;Database=Sitecore.Messaging;User ID=sa;Password=${SQL_SA_PASSWORD}
     depends_on:
-      - sql
-      - xconnect
+      sql:
+        condition: service_healthy
+      xconnect:
+        condition: service_started
 
   xconnect-indexworker:
     image: ${REGISTRY}sitecore-xp-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
@@ -71,8 +75,10 @@ services:
       SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRREADERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
       SITECORE_SITECORE:XCONNECT:SEARCHINDEXER:SERVICES:SOLR.SOLRWRITERSETTINGS:OPTIONS:REQUIREHTTPS: 'false'
     depends_on:
-      - sql
-      - solr
+      sql:
+        condition: service_healthy
+      solr:
+        condition: service_started
 
   xconnect-processingengine:
     image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
@@ -94,8 +100,10 @@ services:
       SITECORE_CONNECTIONSTRINGS_REPORTING: Data Source=sql;Database=Sitecore.Reporting;User ID=sa;Password=${SQL_SA_PASSWORD}
       SITECORE_SETTINGS:SERILOG:MINIMUMLEVEL:DEFAULT: Information
     depends_on:
-      - sql
-      - xconnect
+      sql:
+        condition: service_healthy
+      xconnect:
+        condition: service_started
 
   cd:
     image: ${REGISTRY}sitecore-xp-sxa-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
@@ -117,9 +125,12 @@ services:
       SITECORE_CONNECTIONSTRINGS_SITECORE.REPORTING.CLIENT: http://xconnect
       SITECORE_CONNECTIONSTRINGS_XDB.REFERENCEDATA.CLIENT: http://xconnect
     depends_on:
-      - sql
-      - solr
-      - xconnect
+      sql:
+        condition: service_healthy
+      solr:
+        condition: service_started
+      xconnect:
+        condition: service_started
 
   cm:
     image: ${REGISTRY}sitecore-xp-sxa-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
@@ -152,6 +163,9 @@ services:
       SITECORE_APPSETTINGS_TELERIK.UPLOAD.CONFIGURATIONHASHKEY: ${TELERIK_ENCRYPTION_KEY}
       SITECORE_APPSETTINGS_TELERIK.WEB.UI.DIALOGPARAMETERSENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
     depends_on:
-      - sql
-      - solr
-      - xconnect
+      sql:
+        condition: service_healthy
+      solr:
+        condition: service_started
+      xconnect:
+        condition: service_started

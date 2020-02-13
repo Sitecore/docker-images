@@ -1,0 +1,94 @@
+version: "2.4"
+
+services:
+
+  sql:
+    image: ${REGISTRY}sitecore-xm-sxa-ps-jss-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+    environment:
+      SA_PASSWORD: ${SQL_SA_PASSWORD}
+      ACCEPT_EULA: "Y"
+
+  solr:
+    image: ${REGISTRY}sitecore-xm-sxa-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
+    volumes:
+      - .\data\solr:C:\Data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+
+  ps:
+    image: ${REGISTRY}sitecore-ps:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    environment:
+      CONN_STRING_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      CONN_STRING_MASTER: Data Source=sql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      CONN_STRING_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_LICENSE_LOCATION: ${SITECORE_LICENSE}
+    entrypoint: powershell -NoLogo -NoProfile -File c:\\app\\start.ps1
+    depends_on:
+      sql:
+        condition: service_healthy
+    ports:
+      - "44015:80"
+
+  cd:
+    image: ${REGISTRY}sitecore-xm-sxa-ps-jss-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
+    ports:
+      - "44002:80"
+    environment:
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
+      SITECORE_APPSETTINGS_ROLE:DEFINE: ContentDelivery
+      SITECORE_APPSETTINGS_SXAXM:DEFINE: sxaxmonly
+      SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS: Data Source=sql;Initial Catalog=Sitecore.ExperienceForms;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLR.SEARCH: http://solr:8983/solr
+      ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED: 'true'
+      ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED: 'true'
+      ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED: 'true'
+    depends_on:
+      sql:
+        condition: service_healthy
+      ps:
+        condition: service_started
+      solr:
+        condition: service_started
+
+  cm:
+    image: ${REGISTRY}sitecore-xm-sxa-ps-jss-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
+    ports:
+      - "44001:80"
+    environment:
+      SITECORE_LICENSE: ${SITECORE_LICENSE}
+      SITECORE_APPSETTINGS_ROLE:DEFINE: ContentManagement, Indexing
+      SITECORE_APPSETTINGS_SXAXM:DEFINE: sxaxmonly
+      SITECORE_CONNECTIONSTRINGS_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_MASTER: Data Source=sql;Initial Catalog=Sitecore.Master;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_WEB: Data Source=sql;Initial Catalog=Sitecore.Web;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_EXPERIENCEFORMS: Data Source=sql;Initial Catalog=Sitecore.ExperienceForms;User ID=sa;Password=${SQL_SA_PASSWORD}
+      SITECORE_CONNECTIONSTRINGS_SOLR.SEARCH: http://solr:8983/solr
+      SITECORE_APPSETTINGS_TELERIK.ASYNCUPLOAD.CONFIGURATIONENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_APPSETTINGS_TELERIK.UPLOAD.CONFIGURATIONHASHKEY: ${TELERIK_ENCRYPTION_KEY}
+      SITECORE_APPSETTINGS_TELERIK.WEB.UI.DIALOGPARAMETERSENCRYPTIONKEY: ${TELERIK_ENCRYPTION_KEY}
+      ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED: 'false'
+      ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED: 'false'
+      ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED: 'true'
+    depends_on:
+      sql:
+        condition: service_healthy
+      ps:
+        condition: service_started
+      solr:
+        condition: service_started
+
+networks:
+  default:
+    external:
+      name: nat

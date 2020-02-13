@@ -39,8 +39,10 @@ services:
       ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED: 'true'
       ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED: 'true'
     depends_on:
-      - sql
-      - solr
+      sql:
+        condition: service_healthy
+      solr:
+        condition: service_started
 
   cm:
     image: ${REGISTRY}sitecore-xm-sxa-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
@@ -64,8 +66,10 @@ services:
       ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED: 'false'
       ENTRYPOINT_STDOUT_SITECORE_LOG_ENABLED: 'true'
     depends_on:
-      - sql
-      - solr
+      sql:
+        condition: service_healthy
+      solr:
+        condition: service_started
 
 networks:
   default:
