@@ -20,10 +20,15 @@ services:
 
   xconnect:
     image: ${REGISTRY}sitecore-xp-xconnect:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\xconnect\\Development.ps1"
     volumes:
       - ${LICENSE_PATH}:C:\license
       - .\data\xconnect:C:\inetpub\wwwroot\App_Data\logs
     mem_limit: 1GB
+    environment:
+      ENTRYPOINT_STDOUT_XCONNECT_LOG_ENABLED: 'true'
+      ENTRYPOINT_STDOUT_IIS_ACCESS_LOG_ENABLED: 'true'
+      ENTRYPOINT_STDOUT_IIS_ERROR_LOG_ENABLED: 'true'
     links:
       - sql
       - solr
