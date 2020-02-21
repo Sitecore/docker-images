@@ -42,12 +42,15 @@ SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPref
 # copy from build stage
 COPY --from=build ["C:\\inetpub\\wwwroot\\", "C:\\inetpub\\wwwroot\\"]
 
+# copy serilog assemblies
+COPY --from=assets ["C:\\install\\bin\\serilog", "C:\\inetpub\\wwwroot\\bin"]
+
 RUN Import-Module WebAdministration; `
     $env:INSTALL_TEMP = 'C:\\inetpub\\wwwroot\\temp\\install'; `
     $env:IIS_SITE_HOMEDIR_PATH = 'C:\\inetpub\\wwwroot'; `
     $env:IIS_APPPOOL_IDENTITY = 'IIS AppPool\DefaultAppPool'; `
     # install tools
-    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\tools' -Recurse -Force; `
+    Copy-Item -Path (Join-Path $env:INSTALL_TEMP '\\tools') -Destination 'C:\\' -Recurse -Force; `
     setx /M PATH $($env:PATH + ';C:\tools\scripts;C:\tools\bin') | Out-Null; `
     # configure Windows to disable DNS caching
     Set-ItemProperty -Path 'HKLM:\SYSTEM\CurrentControlSet\Services\Dnscache\Parameters' -Name 'ServerPriorityTimeLimit' -Value 0 -Type DWord; `
