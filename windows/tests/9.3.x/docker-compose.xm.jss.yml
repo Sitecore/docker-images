@@ -23,7 +23,7 @@ services:
       SOLR_LOG_LEVEL: INFO
 
   cd:
-    image: ${REGISTRY}sitecore-xm-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    image: ${REGISTRY}sitecore-xm-jss-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
     ports:
       - "44002:80"
