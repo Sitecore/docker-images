@@ -1,0 +1,12 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-redis:3.0.504-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-${windowsservercore_version}",
+        "--build-arg REDIS_VERSION=3.0.504"
+      ]
+    }
+  ],
+  "sources": []
+}

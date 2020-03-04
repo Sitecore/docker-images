@@ -1,0 +1,35 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xc-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xp-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP_XCONNECT='C:\\packages\\Sitecore 9.3.0 (OnPrem)_xp0xconnect.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_COMMERCE_ENGINE='C:\\packages\\Sitecore.Commerce.Engine.OnPrem.Solr.5.0.145.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_CONNECT_CORE='C:\\packages\\Sitecore Commerce Connect Core OnPrem 14.0.27.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_CONNECT_ENGINE='C:\\packages\\Sitecore Commerce Engine Connect OnPrem 5.0.55.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_MA='C:\\packages\\Sitecore Commerce Marketing Automation Core OnPrem 14.0.27.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XPROFILES='C:\\packages\\Sitecore Commerce ExperienceProfile Core OnPrem 14.0.27.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XANALYTICS='C:\\packages\\Sitecore Commerce ExperienceAnalytics Core OnPrem 14.0.27.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xc-sqldev:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xp-sqldev:9.2.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP_XCONNECT='C:\\packages\\Sitecore 9.2.0 rev. 002893 (OnPrem)_xp0xconnect.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_COMMERCE_ENGINE='C:\\packages\\Sitecore.Commerce.Engine.OnPrem.Solr.4.0.165.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_CONNECT_CORE='C:\\packages\\Sitecore Commerce Connect Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_CONNECT_ENGINE='C:\\packages\\Sitecore Commerce Engine Connect OnPrem 4.0.55.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_MA='C:\\packages\\Sitecore Commerce Marketing Automation Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XPROFILES='C:\\packages\\Sitecore Commerce ExperienceProfile Core OnPrem 13.0.16.scwdp.zip'",
+        "--build-arg ASSETS_USE_WDP_XANALYTICS='C:\\packages\\Sitecore Commerce ExperienceAnalytics Core OnPrem 13.0.16.scwdp.zip'"
+      ]
+    }
+  ],
+  "sources": []
+}

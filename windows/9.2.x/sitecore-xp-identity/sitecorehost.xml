@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sitecore>
+  <Commands>
+    <DefaultCommand>
+      <Command>Web</Command>
+    </DefaultCommand>
+  </Commands>
+  <Logging>
+    <ConfigureLogging>Sitecore.Framework.Logging.Serilog.ConfigureSitecoreLogging, Sitecore.Framework.Logging.Serilog</ConfigureLogging>
+    <Serilog>
+      <MinimumLevel>
+        <Default>Debug</Default>
+      </MinimumLevel>
+      <WriteTo>
+        <Console>
+          <Name>Console</Name>
+          <Args>
+            <outputTemplate>[{Timestamp:HH:mm:ss}] {SourceContext} [{Level}] {Message}{NewLine}{Exception}</outputTemplate>
+          </Args>
+        </Console>
+        <DefaultLogger>
+          <Name>RollingFile</Name>
+          <Args>
+            <pathFormat>logs\sts-{Date}.log</pathFormat>
+            <outputTemplate>{Timestamp:o} [{Level:u3}] ({Application}/{MachineName}) {Message}{NewLine}{Exception}</outputTemplate>
+          </Args>
+        </DefaultLogger>
+      </WriteTo>
+      <Enrich>
+        <FromLogContext>FromLogContext</FromLogContext>
+        <WithMachineName>WithMachineName</WithMachineName>
+      </Enrich>
+      <Properties>
+        <Application>Sitecore STS</Application>
+      </Properties>
+    </Serilog>
+  </Logging>
+  <Host>
+     <LicenseFilePath>C:/license/license.xml</LicenseFilePath>
+  </Host>
+</Sitecore>

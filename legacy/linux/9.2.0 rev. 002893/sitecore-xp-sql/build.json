@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-sql:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/mssql/server:2017-CU14-ubuntu"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore 9.2.0 rev. 002893 (WDP XP0 packages).zip"
+  ]
+}

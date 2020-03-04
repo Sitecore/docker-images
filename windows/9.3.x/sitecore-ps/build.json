@@ -1,0 +1,14 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-ps:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_PS_WDP='C:\\packages\\Sitecore Publishing Service 4.2.0-win-x64.zip'"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": []
+}

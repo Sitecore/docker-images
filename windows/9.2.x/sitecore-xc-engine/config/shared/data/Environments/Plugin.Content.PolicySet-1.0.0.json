@@ -1,0 +1,32 @@
+{
+    "$type": "Sitecore.Commerce.Core.PolicySet, Sitecore.Commerce.Core",
+    "Id": "Entity-PolicySet-ContentPolicySet",
+    "Version": 1,
+    "IsPersisted": false,
+    "Name": "ContentPolicySet",
+    "Policies": {
+      "$type": "System.Collections.Generic.List`1[[Sitecore.Commerce.Core.Policy, Sitecore.Commerce.Core]], mscorlib",
+      "$values": [
+        {
+          "$type": "Sitecore.Commerce.Plugin.Management.SitecoreConnectionPolicy, Sitecore.Commerce.Plugin.Management",
+          "Host": "cm",
+          "SitecoreDatabase": "master",
+          "UserName": "admin",
+          "Domain": "sitecore",
+          "Password": "b",
+          "ConnectionLeaseTimeout": 60000,
+          "AuthRequestUrl": "sitecore/api/ssc/auth/login",
+          "Protocol": "https"
+        },
+        {
+          "$type": "Sitecore.Commerce.Plugin.Content.DefaultContentPathsPolicy, Sitecore.Commerce.Plugin.Content",
+          "ContentPaths": {
+            "$type": "System.Collections.Generic.List`1[[System.String, mscorlib]], mscorlib",
+            "$values": [
+              "/sitecore/Commerce/Commerce Control Panel"
+            ]
+          }
+        }
+      ]
+    }
+}

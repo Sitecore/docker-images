@@ -1,0 +1,147 @@
+version: "2.4"
+
+services:
+  sql:
+    image: ${REGISTRY}sitecore-xc-spe-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+
+  solr:
+    image: ${REGISTRY}sitecore-xc-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
+    volumes:
+      - .\data\solr:C:\Data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+
+  xconnect:
+    image: ${REGISTRY}sitecore-xc-xconnect:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\xconnect:C:\inetpub\wwwroot\App_Data\logs
+    mem_limit: 1GB
+    links:
+      - sql
+      - solr
+
+  xconnect-automationengine:
+    image: ${REGISTRY}sitecore-xc-xconnect-automationengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\xconnect-automationengine:C:\AutomationEngine\App_Data\logs
+    mem_limit: 500MB
+    links:
+      - sql
+      - xconnect
+
+  xconnect-indexworker:
+    image: ${REGISTRY}sitecore-xc-xconnect-indexworker:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\xconnect-indexworker:C:\IndexWorker\App_Data\logs
+    mem_limit: 500MB
+    links:
+      - sql
+      - solr
+
+  xconnect-processingengine:
+    image: ${REGISTRY}sitecore-xp-xconnect-processingengine:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\xconnect-processingengine:C:\ProcessingEngine\App_Data\logs
+    mem_limit: 500MB
+    restart: unless-stopped
+    links:
+      - sql
+      - xconnect
+
+  cd:
+    image: ${REGISTRY}sitecore-xc-spe-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
+    ports:
+      - "44002:80"
+    links:
+      - commerce-ops
+      - commerce-shops
+      - sql
+      - solr
+      - xconnect
+
+  cm:
+    image: ${REGISTRY}sitecore-xc-spe-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
+    ports:
+      - "44001:80"
+    links:
+      - sql
+      - solr
+      - xconnect
+      - commerce-authoring
+
+  commerce-authoring:
+    image: ${REGISTRY}sitecore-xc-engine-authoring:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - .\data\commerce-authoring:C:\inetpub\wwwroot\wwwroot\logs
+    ports:
+      - "44003:80"
+    links:
+      - sql
+      - solr
+
+  commerce-minions:
+    image: ${REGISTRY}sitecore-xc-engine-minions:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - .\data\commerce-minions:C:\inetpub\wwwroot\wwwroot\logs
+    ports:
+      - "44004:80"
+    links:
+      - sql
+      - solr
+
+  commerce-ops:
+    image: ${REGISTRY}sitecore-xc-engine-ops:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - .\data\commerce-ops:C:\inetpub\wwwroot\wwwroot\logs
+    ports:
+      - "44005:80"
+    links:
+      - sql
+      - solr
+
+  commerce-shops:
+    image: ${REGISTRY}sitecore-xc-engine-shops:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - .\data\commerce-shops:C:\inetpub\wwwroot\wwwroot\logs
+    ports:
+      - "44006:80"
+    links:
+      - sql
+      - solr
+
+  bizfx:
+    image: ${REGISTRY}sitecore-xc-bizfx:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    ports:
+      - "4200:80"
+    links:
+      - commerce-authoring
+      - identity
+
+  redis:
+    image: ${REGISTRY}sitecore-redis:3.0.504-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+
+  identity:
+    image: ${REGISTRY}sitecore-xc-identity:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\identity:C:\inetpub\wwwroot\logs
+    ports:
+      - "44008:80"
+    links:
+      - sql

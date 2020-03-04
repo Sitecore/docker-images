@@ -1,0 +1,20 @@
+<Settings>
+  <Serilog>
+    <Using>
+      <UdpSinksAssembly>Serilog.Sinks.Udp</UdpSinksAssembly>
+    </Using>
+    <MinimumLevel>
+      <Default>Debug</Default>
+    </MinimumLevel>
+    <WriteTo>
+      <UdpSink>
+        <Name>Udp</Name>
+        <Args>
+          <remoteAddress>localhost</remoteAddress>
+          <remotePort>7777</remotePort>
+          <family>InterNetwork</family>
+        </Args>
+      </UdpSink>
+    </WriteTo>
+  </Serilog>
+</Settings>

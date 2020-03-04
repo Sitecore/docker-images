@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-spe-sql:9.2.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-sql:9.2.0-linux"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore.PowerShell.Extensions-6.0.scwdp.zip"
+  ]
+}

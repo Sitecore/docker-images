@@ -1,0 +1,25 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm-sxa-ps-jss-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xm-sxa-ps-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.3 XM 13.0.0.scwdp.zip'"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "sitecore-xp-sxa-ps-jss-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xp-sxa-ps-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore JavaScript Services Server for Sitecore 9.3 XP 13.0.0.scwdp.zip'"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": []
+}

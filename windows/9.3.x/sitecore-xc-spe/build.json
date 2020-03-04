@@ -1,0 +1,20 @@
+{
+    "tags": [{
+            "tag": "sitecore-xc-spe-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
+            "build-options": [
+                "--build-arg BASE_IMAGE=sitecore-xc-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
+                "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+                "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore.PowerShell.Extensions-6.0.scwdp.zip'"
+            ]
+        },
+        {
+            "tag": "sitecore-xc-spe-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+            "build-options": [
+                "--build-arg BASE_IMAGE=sitecore-xc-cd:9.3.0-windowsservercore-${windowsservercore_version}",
+                "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+                "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore.PowerShell.Extensions-6.0.scwdp.zip'"
+            ]
+        }
+    ],
+    "sources": []
+}

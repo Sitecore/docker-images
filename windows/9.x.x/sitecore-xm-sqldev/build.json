@@ -1,0 +1,41 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm-sqldev:9.3.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.3.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.3.0 (XM) (OnPrem)_cm.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-sqldev:9.2.0-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.2.0 rev. 002893 (XM) (OnPrem)_cm.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore 9.1.1 rev. 002459 (XM) (OnPrem)_cm.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xm-sqldev:9.0.2-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=mssql-developer:2017-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.0.2-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\XM\\Sitecore 9.0.2 rev. 180604 (OnPrem)_cm.scwdp.zip'"
+      ]
+    }
+  ],
+  "sources": []
+}
