@@ -56,6 +56,10 @@ function Invoke-Build
         ,
         [Parameter(Mandatory = $false)]
         [switch]$SkipHashValidation
+        ,
+        [Parameter(Mandatory = $false)]
+        [ValidateSet("hyperv", "process")]
+        [string]$IsolationMode = $null
     )
 
     # Setup
@@ -81,7 +85,7 @@ function Invoke-Build
     # Print results
     $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
 
-    # Determine OS
+    # Determine OS (windows or linux)
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
 
     Write-Message "Build specifications loaded..." -Level Info
@@ -199,7 +203,11 @@ function Invoke-Build
 
             if ($osType -eq "windows")
             {
-                $buildOptions.Add("--isolation 'hyperv'")
+                # fix build issues on windows server core ltsc2019
+                if ($IsolationMode)
+                {
+                    $buildOptions.Add("--isolation '$IsolationMode'")
+                }
             }
 
             $spec.BuildOptions | ForEach-Object {
