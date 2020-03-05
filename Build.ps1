@@ -37,7 +37,7 @@ param(
     [switch]$IncludeExperimental,
     [Parameter(Mandatory = $false)]
     [ValidateSet("hyperv", "process")]
-    [string]$IsolationMode = $null
+    [string]$IsolationMode = "unspecified"
 )
 
 function Write-Message

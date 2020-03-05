@@ -58,8 +58,8 @@ function Invoke-Build
         [switch]$SkipHashValidation
         ,
         [Parameter(Mandatory = $false)]
-        [ValidateSet("hyperv", "process")]
-        [string]$IsolationMode = $null
+        [ValidateSet("unspecified", "hyperv", "process")]
+        [string]$IsolationMode = "unspecified"
     )
 
     # Setup
@@ -204,7 +204,7 @@ function Invoke-Build
             if ($osType -eq "windows")
             {
                 # fix build issues on windows server core ltsc2019
-                if ($IsolationMode)
+                if (!($IsolationMode -ieq 'unspecified'))
                 {
                     $buildOptions.Add("--isolation '$IsolationMode'")
                 }
