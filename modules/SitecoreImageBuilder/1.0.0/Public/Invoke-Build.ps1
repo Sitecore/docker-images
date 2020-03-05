@@ -58,8 +58,8 @@ function Invoke-Build
         [switch]$SkipHashValidation
         ,
         [Parameter(Mandatory = $false)]
-        [ValidateSet("unspecified", "hyperv", "process")]
-        [string]$IsolationMode = "unspecified"
+        [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess")]
+        [string]$IsolationModeBehaviour = "ForceHyperV"
     )
 
     # Setup
@@ -201,13 +201,16 @@ function Invoke-Build
             # Build image
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
 
-            if ($osType -eq "windows")
-            {
-                # fix build issues on windows server core ltsc2019
-                if (!($IsolationMode -ieq 'unspecified'))
-                {
-                    $buildOptions.Add("--isolation '$IsolationMode'")
-                }
+            if ($osType -ieq "windows" -and $IsolationMode -ieq "ForceHyperV") {
+                # --isolation 'hyperv' | makes sense on windows host only?
+                $buildOptions.Add("--isolation 'hyperv'")
+            }
+            elseif ($IsolationMode -ieq "ForceProcess") {
+                # --isolation 'process' | makes sense on all operating systems
+                $buildOptions.Add("--isolation 'process'")
+            }
+            else {
+                # no --isolation option | use engine default if none of the above (f.e. ForceHyperV on linux)
             }
 
             $spec.BuildOptions | ForEach-Object {
