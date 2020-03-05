@@ -69,7 +69,7 @@ $packages.GetEnumerator() | ForEach-Object {
 
 }
 
-$Destination = Join-Path $PSScriptRoot "packages"
+$Destination = $InstallSourcePath
 
 # Install Azure toolkit
 Write-Host "Prepare Azure toolkit"
