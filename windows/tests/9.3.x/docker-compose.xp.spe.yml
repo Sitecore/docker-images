@@ -108,6 +108,8 @@ services:
   cd:
     image: ${REGISTRY}sitecore-xp-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
+    volumes:
+      - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44002:80"
     environment:
@@ -134,6 +136,8 @@ services:
   cm:
     image: ${REGISTRY}sitecore-xp-spe-standalone:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
     entrypoint: powershell.exe -Command "& C:\\tools\\entrypoints\\iis\\Development.ps1"
+    volumes:
+      - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
     ports:
       - "44001:80"
     environment:
