@@ -56,6 +56,9 @@ function Invoke-Build
         ,
         [Parameter(Mandatory = $false)]
         [switch]$SkipHashValidation
+        ,
+        [Parameter(Mandatory = $false)]
+        [switch]$DisableHyperV
     )
 
     # Setup
@@ -197,7 +200,7 @@ function Invoke-Build
             # Build image
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
 
-            if ($osType -eq "windows")
+            if ($osType -eq "windows" -and (-not $DisableHyperV))
             {
                 $buildOptions.Add("--isolation 'hyperv'")
             }
