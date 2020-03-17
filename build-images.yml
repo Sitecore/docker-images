@@ -38,7 +38,6 @@ trigger:
   branches:
     include:
     - master
-    - integration/*
 schedules: 
   - cron: "0 12 * * 0"
     displayName: Weekly Sunday build
@@ -46,11 +45,6 @@ schedules:
       include:
       - master
     always: true
-pr:
-  autoCancel: true
-  branches:
-    include:
-    - master
 
 stages:
   - stage: Start_VMs
