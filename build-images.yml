@@ -93,6 +93,7 @@ stages:
               Invoke-Expression -Command "cmdkey /add:$(assets.shared.folder.server) /user:Azure\dockerassets /pass:$(assets.azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(assets.shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
             condition: eq(variables['assets.useDrive'], 'true')
+            displayName: "Connect Asset Drive (optional)"
           - task: Docker@2
             displayName: "Docker registry login"
             inputs:
@@ -105,11 +106,11 @@ stages:
               Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
               SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(windows.install.source.path) -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
               SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(windows.install.source.path) -Registry $(container.registry.fullname) -PushMode $(build.pushMode)
-            displayName: "Restore packages"
+            displayName: "Build Images"
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
-            displayName: 'Prune images'
+            displayName: 'Prune images (optional)'
 
       - job: Build_Linux_Images
         timeoutInMinutes: 720
