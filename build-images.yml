@@ -104,7 +104,7 @@ stages:
               "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
               Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
               SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(windows.install.source.path) -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
-              SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(windows.install.source.path) -Registry $(container.registry.name) -PushMode $(build.pushMode)
+              SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(windows.install.source.path) -Registry $(container.registry.fullname) -PushMode $(build.pushMode)
             displayName: "Restore packages"
           - powershell: |
                 docker image prune --force
@@ -153,7 +153,7 @@ stages:
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
                 Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
                 SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(linux.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
-                SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(linux.install.source.path)" -Registry $(container.registry.name) -PushMode $(build.pushMode)
+                SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(linux.install.source.path)" -Registry $(container.registry.fullname) -PushMode $(build.pushMode)
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
