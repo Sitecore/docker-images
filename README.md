@@ -112,6 +112,11 @@ $installSourcePath = (Join-Path $PSScriptRoot "\packages")
 #
 $registry = "YOUR REGISTRY NAME" `
 
+# Ensure that the private registry connection is authenticated. eg. Azure Container Registry
+# az acr login --name $registry
+# or
+# docker login
+
 # optional, default value is the latest Sitecore version on latest LTSC version
 # of Windows. Set to for example "*" for build everything or "*:9.1.1*1903", "*:9.2.0*1903" to
 # only build 9.1.1 and 9.2.0 on Windows 1903.
