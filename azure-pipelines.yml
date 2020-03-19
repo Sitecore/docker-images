@@ -1,0 +1,140 @@
+trigger:
+  paths:
+    exclude:
+    - azure-pipelines.cleanup.yml
+    - build-images.yml
+    - "*.md"
+    - "*.ps1"
+    - CODEOWNERS
+    - LICENSE
+    - windows/tests/*
+
+variables:
+  - group: general
+  - name: poolname
+    value: sitecore-docker-images
+  - name: resourcegroup
+    value: valtechazurepipelines-rg
+
+schedules:
+  - cron: "0 11 * * 0"
+    displayName: Weekly Sunday build
+    branches:
+      include:
+      - master
+    always: true
+
+stages:
+  - stage: windows
+    dependsOn: []
+    jobs:
+      - job: build
+        timeoutInMinutes: 720
+        pool:
+          name: $(poolname)
+          demands:
+           - Agent.OS -equals Windows_NT
+           - Agent.OSVersion -equals 10.0.18363
+           - docker
+        steps:
+          - checkout: self
+            clean: false
+          - powershell: |
+              $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$(storage.user)", (ConvertTo-SecureString -String "$(storage.secret)" -AsPlainText -Force)
+              $existing = Get-PSDrive -Name "$(storage.drive)" -ErrorAction SilentlyContinue
+              if ($null -eq $existing) { New-PSDrive -Name "$(storage.drive)" -PSProvider FileSystem -Root "\\$(storage.host)\$(storage.share)" -Credential $credential -Persist }
+            errorActionPreference: stop
+            displayName: Map storage
+          - task: Docker@2
+            inputs:
+              containerRegistry: valtech.azurecr.io
+              command: login
+            displayName: Registry login
+          - powershell: |
+              $whatIf = $false
+              $tags = "*"
+              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+              SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
+              if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
+              SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
+            displayName: Build
+  - stage: linux
+    dependsOn: []
+    jobs:
+      - job: start_vms
+        pool:
+          vmImage: ubuntu-18.04
+        steps:
+          - checkout: none
+          - task: AzureCLI@2
+            inputs:
+              azureSubscription: $(resourcegroup)
+              scriptType: pscore
+              scriptLocation: inlineScript
+              powerShellErrorActionPreference: stop
+              inlineScript: az vm start --ids (az resource list --tag pool=$(poolname) --tag platform=linux --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
+            displayName: 'Start agent vms'
+      - job: build
+        dependsOn:
+          - start_vms
+        timeoutInMinutes: 720
+        pool:
+          name: $(poolname)
+          demands:
+            - Agent.OS -equals Linux
+            - docker
+        variables:
+          install.source.path: /mnt/packages
+        steps:
+          - checkout: self
+            clean: true
+          - task: Bash@3
+            inputs:
+              targetType: inline
+              script: |
+                if [ -d "$(install.source.path)" ]; then
+                  exit 0
+                fi
+
+                if [ ! -d "/etc/smbcredentials" ]; then
+                  sudo mkdir /etc/smbcredentials
+                fi
+
+                if [ ! -f "/etc/smbcredentials/assets.cred" ]; then
+                    sudo bash -c 'echo "username=$(storage.user)" >> /etc/smbcredentials/assets.cred'
+                    sudo bash -c 'echo "password=$(storage.secret)" >> /etc/smbcredentials/assets.cred'
+                fi
+
+                sudo chmod 600 /etc/smbcredentials/assets.cred
+                sudo mkdir $(install.source.path)
+                sudo bash -c 'echo "//$(storage.host)/$(storage.share) $(install.source.path) cifs nofail,vers=3.0,credentials=/etc/smbcredentials/assets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
+                sudo mount -t cifs //$(storage.host)/$(storage.share) $(install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/assets.cred,dir_mode=0777,file_mode=0777,serverino
+            displayName: Map storage
+          - task: Docker@2
+            inputs:
+              containerRegistry: valtech.azurecr.io
+              command: login
+            displayName: Registry login
+          - powershell: |
+              $whatIf = $false
+              $tags = "*"
+              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+              SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(install.source.path)" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
+              if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
+              SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.source.path)" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
+            displayName: Build
+      - job: stop_vms
+        dependsOn:
+          - build
+        pool:
+          vmImage: ubuntu-18.04
+        steps:
+          - checkout: none
+          - task: AzureCLI@2
+            inputs:
+              azureSubscription: $(resourcegroup)
+              scriptType: pscore
+              scriptLocation: inlineScript
+              powerShellErrorActionPreference: stop
+              inlineScript: az vm deallocate --no-wait --ids (az resource list --tag pool=$(poolname) --tag platform=linux --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
+            displayName: 'Deallocate agent vms'
