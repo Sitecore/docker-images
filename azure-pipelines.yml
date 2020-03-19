@@ -17,48 +17,18 @@ variables:
     value: valtechazurepipelines-rg
 
 schedules:
-  - cron: "0 10 * * 0"
+  - cron: "0 11 * * 0"
     displayName: Weekly Sunday build
     branches:
       include:
       - master
     always: true
 
+# TODO: Smid start/stop in i windows/linux stages for at stoppe VM'er så snart de ikke er i brug mere fremfor først til aller sidst
+# TODO: Matrix: brug "TAGS" fremfrom specifickke versioner
+
 stages:
-  - stage: windows
-    dependsOn: []
-    jobs:
-      - job: build
-        timeoutInMinutes: 720
-        pool:
-          name: $(poolname)
-          demands:
-           - Agent.OS -equals Windows_NT
-           - Agent.OSVersion -equals 10.0.18363
-           - docker
-        steps:
-          - checkout: self
-            clean: false
-          - powershell: |
-              $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$(storage.user)", (ConvertTo-SecureString -String "$(storage.secret)" -AsPlainText -Force)
-              $existing = Get-PSDrive -Name "$(storage.drive)" -ErrorAction SilentlyContinue
-              if ($null -eq $existing) { New-PSDrive -Name "$(storage.drive)" -PSProvider FileSystem -Root "\\$(storage.host)\$(storage.share)" -Credential $credential -Persist }
-            errorActionPreference: stop
-            displayName: Map storage
-          - task: Docker@2
-            inputs:
-              containerRegistry: valtech.azurecr.io
-              command: login
-            displayName: Registry login
-          - powershell: |
-              $whatIf = $false
-              $tags = "*"
-              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-              SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
-              if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
-              SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
-            displayName: Build
-  - stage: linux
+  - stage: start
     dependsOn: []
     jobs:
       - job: start_vms
@@ -66,17 +36,121 @@ stages:
           vmImage: ubuntu-18.04
         steps:
           - checkout: none
-          - task: AzureCLI@2
-            inputs:
-              azureSubscription: $(resourcegroup)
-              scriptType: pscore
-              scriptLocation: inlineScript
-              powerShellErrorActionPreference: stop
-              inlineScript: az vm start --ids (az resource list --tag pool=$(poolname) --tag platform=linux --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
-            displayName: 'Start agent vms'
+          # - task: AzureCLI@2
+          #   inputs:
+          #     azureSubscription: $(resourcegroup)
+          #     scriptType: pscore
+          #     scriptLocation: inlineScript
+          #     powerShellErrorActionPreference: stop
+          #     inlineScript: az vm start --ids (az resource list --tag pool=$(poolname) --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
+          #   displayName: 'Start agent vms'
+  - stage: windows
+    dependsOn:
+      - start
+    jobs:
       - job: build
-        dependsOn:
-          - start_vms
+        timeoutInMinutes: 720
+        strategy:
+          matrix:
+            # 9.3.0
+            sitecore_930_1909:
+              SITECORE_VERSION: '9.3.0'
+              WINDOWS_BUILD: '1909'
+              NANO_BUILD: '1909'
+              OS_VERSION: '10.0.18363'
+            sitecore_930_1903:
+              SITECORE_VERSION: '9.3.0'
+              WINDOWS_BUILD: '1903'
+              NANO_BUILD: '1903'
+              OS_VERSION: '10.0.18362'
+            sitecore_930_ltsc2019:
+              SITECORE_VERSION: '9.3.0'
+              WINDOWS_BUILD: 'ltsc2019'
+              NANO_BUILD: '1809'
+              OS_VERSION: '10.0.17763'
+            # 9.2.0
+            sitecore_920_1909:
+              SITECORE_VERSION: '9.2.0'
+              WINDOWS_BUILD: '1909'
+              NANO_BUILD: '1909'
+              OS_VERSION: '10.0.18363'
+            sitecore_920_1903:
+              SITECORE_VERSION: '9.2.0'
+              WINDOWS_BUILD: '1903'
+              NANO_BUILD: '1903'
+              OS_VERSION: '10.0.18362'
+            sitecore_920_ltsc2019:
+              SITECORE_VERSION: '9.2.0'
+              WINDOWS_BUILD: 'ltsc2019'
+              NANO_BUILD: '1809'
+              OS_VERSION: '10.0.17763'
+            # 9.1.1
+            sitecore_911_1909:
+              SITECORE_VERSION: '9.1.1'
+              WINDOWS_BUILD: '1909'
+              NANO_BUILD: '1909'
+              OS_VERSION: '10.0.18363'
+            sitecore_911_1903:
+              SITECORE_VERSION: '9.1.1'
+              WINDOWS_BUILD: '1903'
+              NANO_BUILD: '1903'
+              OS_VERSION: '10.0.18362'
+            sitecore_911_ltsc2019:
+              SITECORE_VERSION: '9.1.1'
+              WINDOWS_BUILD: 'ltsc2019'
+              NANO_BUILD: '1809'
+              OS_VERSION: '10.0.17763'
+            # 9.0.2
+            sitecore_902_1909:
+              SITECORE_VERSION: '9.0.2'
+              WINDOWS_BUILD: '1909'
+              NANO_BUILD: '1909'
+              OS_VERSION: '10.0.18363'
+            sitecore_902_1903:
+              SITECORE_VERSION: '9.0.2'
+              WINDOWS_BUILD: '1903'
+              NANO_BUILD: '1903'
+              OS_VERSION: '10.0.18362'
+            sitecore_902_ltsc2019:
+              SITECORE_VERSION: '9.0.2'
+              WINDOWS_BUILD: 'ltsc2019'
+              NANO_BUILD: '1809'
+              OS_VERSION: '10.0.17763'
+          maxParallel: 0
+        pool:
+          name: $(poolname)
+          demands:
+           - Agent.OS -equals Windows_NT
+           - Agent.OSVersion -equals $(OS_VERSION)
+           - docker
+        steps:
+        - checkout: self
+          clean: false
+        - powershell: |
+            $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$(storage.user)", (ConvertTo-SecureString -String "$(storage.secret)" -AsPlainText -Force)
+            $existing = Get-PSDrive -Name "$(storage.drive)" -ErrorAction SilentlyContinue
+            if ($null -eq $existing) { New-PSDrive -Name "$(storage.drive)" -PSProvider FileSystem -Root "\\$(storage.host)\$(storage.share)" -Credential $credential -Persist }
+          errorActionPreference: stop
+          displayName: Map storage
+        - task: Docker@2
+          inputs:
+            containerRegistry: valtech.azurecr.io
+            command: login
+          displayName: Registry login
+        - powershell: |
+            $whatIf = $false
+            $tags = "*:$(SITECORE_VERSION)*$(WINDOWS_BUILD)", "*:$(SITECORE_VERSION)*$(NANO_BUILD)", "sitecore-openjdk:*$(NANO_BUILD)"
+            Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+            SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
+            if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
+            SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
+          errorActionPreference: stop
+          displayName: Build
+  - stage: linux
+    dependsOn:
+      - start
+    jobs:
+      - job: build
         timeoutInMinutes: 720
         pool:
           name: $(poolname)
@@ -123,18 +197,22 @@ stages:
               if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
               SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.source.path)" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
             displayName: Build
+  - stage: stop
+    dependsOn:
+      - windows
+      - linux
+    condition: always()
+    jobs:
       - job: stop_vms
-        dependsOn:
-          - build
         pool:
           vmImage: ubuntu-18.04
         steps:
           - checkout: none
-          - task: AzureCLI@2
-            inputs:
-              azureSubscription: $(resourcegroup)
-              scriptType: pscore
-              scriptLocation: inlineScript
-              powerShellErrorActionPreference: stop
-              inlineScript: az vm deallocate --no-wait --ids (az resource list --tag pool=$(poolname) --tag platform=linux --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
-            displayName: 'Deallocate agent vms'
+          # - task: AzureCLI@2
+          #   inputs:
+          #     azureSubscription: $(resourcegroup)
+          #     scriptType: pscore
+          #     scriptLocation: inlineScript
+          #     powerShellErrorActionPreference: stop
+          #     inlineScript: az vm deallocate --no-wait --ids (az resource list --tag pool=$(poolname) --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
+          #   displayName: 'Deallocate agent vms'

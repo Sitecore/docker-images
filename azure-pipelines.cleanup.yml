@@ -8,76 +8,24 @@ schedules:
       - master
     always: true
 
-variables:
-  - name: poolname
-    value: sitecore-docker-images
-  - name: resourcegroup
-    value: valtechazurepipelines-rg
-
 stages:
-  - stage: cleanup_windows
+  - stage: cleanup
     dependsOn: []
     jobs:
-      - job: prune
+      - job: prune_windows
         timeoutInMinutes: 480
         pool:
-          name: $(poolname)
-          demands:
-           - Agent.OS -equals Windows_NT
-           - Agent.OSVersion -equals 10.0.18363
-           - docker
+          name: windows-1909
         steps:
           - checkout: none
-          - powershell: |
-              Get-Service docker
-              Start-Service docker
-              Get-Service docker
-            displayName: Prepare
-          - powershell: |
-              docker system prune --volumes --force
+          - script: docker system prune --volumes --force
             displayName: Prune
-  - stage: cleanup_linux
-    dependsOn: []
-    jobs:
-      - job: start_vms
-        pool:
-          vmImage: ubuntu-18.04
-        steps:
-          - checkout: none
-          - task: AzureCLI@2
-            inputs:
-              azureSubscription: $(resourcegroup)
-              scriptType: pscore
-              scriptLocation: inlineScript
-              powerShellErrorActionPreference: stop
-              inlineScript: az vm start --ids (az resource list --tag pool=$(poolname) --tag platform=linux --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
-            displayName: 'Start agent vms'
-      - job: prune
-        dependsOn:
-          - start_vms
+      - job: prune_linux
         timeoutInMinutes: 480
         pool:
-          name: $(poolname)
-          demands:
-            - Agent.OS -equals Linux
-            - docker
+          name: linux
         steps:
           - checkout: none
           - powershell: |
               docker system prune --volumes --force
             displayName: Prune
-      - job: stop_vms
-        dependsOn:
-          - prune
-        pool:
-          vmImage: ubuntu-18.04
-        steps:
-          - checkout: none
-          - task: AzureCLI@2
-            inputs:
-              azureSubscription: $(resourcegroup)
-              scriptType: pscore
-              scriptLocation: inlineScript
-              powerShellErrorActionPreference: stop
-              inlineScript: az vm deallocate --no-wait --ids (az resource list --tag pool=$(poolname) --tag platform=linux --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
-            displayName: 'Deallocate agent vms'
