@@ -70,8 +70,14 @@ To verify that everything is working okay browse to:
 
 ### Storefront Configuration
 
-To setup a storefront, after initializing the engine you need to create a new Tenant & Site, then perform a full publish and index rebuild.
+To setup a storefront, after initializing the engine you need to follow the [standard commerce SXA setup instructions](https://doc.sitecore.com/users/91/sitecore-experience-commerce/en/set-up-a-storefront-site.html):
 
-You can follow the [standard setup instructions](https://doc.sitecore.com/users/91/sitecore-experience-commerce/en/set-up-a-storefront-site.html).
+1. Create a new Tenant.
+   - Use a tenant name without spaces and special characters.
+1. Create a new Site.
+   - Use a site name without spaces and special characters.
+   - Use "cd" as the host name for the site.
+1. Perform a full publish.
+1. Perform an index rebuild of `sitecore_master_index` and `sitecore_web_index`.
 
 After this you can access the storefront on CD (<https://cd/>).
