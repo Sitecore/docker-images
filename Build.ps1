@@ -23,8 +23,8 @@ param(
     [string[]]$SitecoreVersion = @("9.3.0"),
     [ValidateSet("xm", "xp", "xc")]
     [string[]]$Topology = @("xm", "xp"),
-    [ValidateSet("1909", "1903", "ltsc2019")]
-    [string[]]$WindowsVersion = @("ltsc2019"),
+    [ValidateSet("1909", "1903", "ltsc2019", "linux")]
+    [string[]]$OSVersion = @("ltsc2019"),
     [Parameter()]
     [switch]$IncludeSpe,
     [Parameter()]
@@ -67,6 +67,14 @@ $windowsVersionMapping = @{
     "ltsc2019" = "1809"
 }
 
+filter LinuxFilter
+{
+    if ($_ -like "*-linux")
+    {
+        $_
+    }
+}
+
 filter WindowsFilter
 {
     param([string]$Version)
@@ -79,13 +87,18 @@ filter WindowsFilter
 filter SitecoreFilter
 {
     param([string]$Version)
-    if ($_ -like "*:$($Version)-windowsservercore-*" -or $_ -like "*:$($Version)-nanoserver-*")
+    if ($_ -like "*:$($Version)-windowsservercore-*" -or $_ -like "*:$($Version)-nanoserver-*" -or $_ -like "*:$($Version)-linux")
     {
         $_
     }
 }
 
-$availableSpecs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot "\windows")
+$rootFolder = "windows"
+if ($OSVersion -eq "linux") {
+    $rootFolder = "linux"
+}
+
+$availableSpecs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot $rootFolder)
 
 if (!$IncludeExperimental)
 {
@@ -118,7 +131,7 @@ $knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $
 # These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
 $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
 
-foreach ($wv in $WindowsVersion)
+foreach ($wv in $OSVersion)
 {
     $defaultTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
 
@@ -140,6 +153,10 @@ foreach ($wv in $WindowsVersion)
         if ($Topology -contains "xm")
         {
             $xmTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+
+            if ($wv -eq "linux") {
+                $xmTags | SitecoreFilter -Version $scv | LinuxFilter | ForEach-Object { $tags.Add($_) > $null }
+            }
         }
 
         if ($Topology -contains "xp")
@@ -231,7 +248,7 @@ else
 
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path (Join-Path $PSScriptRoot "\windows") `
+    -Path (Join-Path $PSScriptRoot $rootFolder) `
     -Destination $InstallSourcePath `
     -SitecoreUsername $SitecoreUsername `
     -SitecorePassword $SitecorePassword `
@@ -241,7 +258,7 @@ SitecoreImageBuilder\Invoke-PackageRestore `
 
 # start the build
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot "\windows") `
+    -Path (Join-Path $PSScriptRoot $rootFolder) `
     -InstallSourcePath $InstallSourcePath `
     -Registry $Registry `
     -Tags $tags `
