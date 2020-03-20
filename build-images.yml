@@ -11,7 +11,15 @@
 # - build.tags
 # - build.pushMode
 # - build.pruneImages
-#
+# - build.sitecoreVersion
+# - build.sitecoreTopology
+# - build.sitecoreWindowsVersion
+# - build.includeSpe
+# - build.includeSxa
+# - build.includeJss
+# - build.skipExistingImages
+# - build.includeExperimentalImages
+
 # Sitecore credentials
 # - sitecore.username
 # - sitecore.password
@@ -38,7 +46,7 @@ trigger:
   branches:
     include:
     - master
-schedules: 
+schedules:
   - cron: "0 12 * * 0"
     displayName: Weekly Sunday build
     branches:
@@ -74,7 +82,7 @@ stages:
               VmName: $(azure.vm.linux.name)
 
   - stage: Build_Images
-    dependsOn: Start_VMs
+    # dependsOn: Start_VMs
     jobs:
       - job: Build_Windows_Images
         timeoutInMinutes: 720
@@ -94,12 +102,18 @@ stages:
               containerRegistry: "docker-registry"
               command: login
           - checkout: self
-            clean: all
+            clean: true
           - powershell: |
               "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-              SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(windows.install.source.path) -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
-              SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(windows.install.source.path) -Registry $(container.registry.fullname) -PushMode $(build.pushMode)
+              $switches=@{
+                IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
+                IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
+                IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
+                SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+              }
+              Write-Host @switches
+              .\Build.ps1 -InstallSourcePath "$(windows.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)" -Registry "$(container.registry.fullname)" -RegistryUserName "$(container.registry.username)" -RegistryPassword "$(container.registry.password)" -SitecoreVersion "$(build.sitecoreVersion)" -Topology $(build.sitecoreTopology) -WindowsVersion "$(build.sitecoreWindowsVersion)" @switches
             displayName: "Build Images"
           - powershell: |
                 docker image prune --force
@@ -124,7 +138,7 @@ stages:
                   exit 0
                   fi
                   sudo mkdir $(linux.install.source.path)
-                  
+
                   if [ ! -d "/etc/smbcredentials" ]; then
                   sudo mkdir /etc/smbcredentials
                   fi
