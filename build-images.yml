@@ -105,14 +105,24 @@ stages:
             clean: true
           - powershell: |
               "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-              $switches=@{
+              $buildProps = @{
+                InstallSourcePath = "$(windows.install.source.path)"
+                SitecoreUsername = "$(sitecore.username)"
+                SitecorePassword = "$(sitecore.password)"
+                egistry = "$(container.registry.fullname)"
+                RegistryUserName = "$(container.registry.username)"
+                RegistryPassword = "$(container.registry.password)"
+                SitecoreVersion = "$(build.sitecoreVersion)"
+                Topology = $(build.sitecoreTopology)
+                OSVersion = "$(build.WindowsOSVersion)"
                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
               }
-              .\Build.ps1 -InstallSourcePath "$(windows.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)" -Registry "$(container.registry.fullname)" -RegistryUserName "$(container.registry.username)" -RegistryPassword "$(container.registry.password)" -SitecoreVersion "$(build.sitecoreVersion)" -Topology $(build.sitecoreTopology) -OSVersion "$(build.OSVersion)" @switches
+
+              .\Build.ps1 @buildProps
             displayName: "Build Images"
           - powershell: |
                 docker image prune --force
@@ -159,14 +169,24 @@ stages:
             clean: all
           - powershell: |
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-                $switches=@{
+                $buildProps = @{
+                  InstallSourcePath = "$(windows.install.source.path)"
+                  SitecoreUsername = "$(sitecore.username)"
+                  SitecorePassword = "$(sitecore.password)"
+                  egistry = "$(container.registry.fullname)"
+                  RegistryUserName = "$(container.registry.username)"
+                  RegistryPassword = "$(container.registry.password)"
+                  SitecoreVersion = "$(build.sitecoreVersion)"
+                  Topology = $(build.sitecoreTopology)
+                  OSVersion = "linux"
                   IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                   IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                   IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
                   IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                   SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
                 }
-                .\Build.ps1 -InstallSourcePath "$(linux.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)" -Registry "$(container.registry.fullname)" -RegistryUserName "$(container.registry.username)" -RegistryPassword "$(container.registry.password)" -SitecoreVersion "$(build.sitecoreVersion)" -Topology $(build.sitecoreTopology) -OSVersion "$(build.OSVersion)" @switches
+
+                .\Build.ps1 @buildProps
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
