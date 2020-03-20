@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xm-sql:9.3.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/mssql/server:2019-CU3-ubuntu-16.04"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore 9.3.0 rev. 003498 (WDP XM1 packages).zip"
+  ]
+}
