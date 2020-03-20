@@ -138,7 +138,7 @@ stages:
                 containerRegistry: "docker-registry"
                 command: login
           - checkout: self
-            clean: all
+            clean: true
           - powershell: |
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
                 $buildProps = @{
@@ -159,6 +159,7 @@ stages:
                 }
 
                 .\Build.ps1 @buildProps
+            displayName: "Build Linux Images"
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
