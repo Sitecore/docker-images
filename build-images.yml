@@ -134,9 +134,7 @@ stages:
         displayName: "Build Linux Images"
         condition: eq(variables['linux.buildImages'], 'true')
         pool:
-          name: $(azure.agentPoolName)
-          demands:
-            - Agent.OS -equals Linux
+          vmImage: 'ubuntu-18.04'
         steps:
           - task: Bash@3
             condition: eq(variables['assets.useDrive'], 'true')
