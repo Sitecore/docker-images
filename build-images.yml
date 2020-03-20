@@ -106,7 +106,7 @@ stages:
       - job: Build_Linux_Images
         timeoutInMinutes: 720
         displayName: "Build Linux Images"
-        condition: eq(variables['linux.buildImages'], 'true')
+        condition: eq(variables['build.linuxImages'], 'true')
         pool:
           vmImage: 'ubuntu-18.04'
         steps:
