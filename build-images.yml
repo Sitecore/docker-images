@@ -112,7 +112,7 @@ stages:
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
               }
-              .\Build.ps1 -InstallSourcePath "$(windows.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)" -Registry "$(container.registry.fullname)" -RegistryUserName "$(container.registry.username)" -RegistryPassword "$(container.registry.password)" -SitecoreVersion "$(build.sitecoreVersion)" -Topology $(build.sitecoreTopology) -OSVersion "$(build.sitecoreWindowsVersion)" @switches
+              .\Build.ps1 -InstallSourcePath "$(windows.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)" -Registry "$(container.registry.fullname)" -RegistryUserName "$(container.registry.username)" -RegistryPassword "$(container.registry.password)" -SitecoreVersion "$(build.sitecoreVersion)" -Topology $(build.sitecoreTopology) -OSVersion "$(build.OSVersion)" @switches
             displayName: "Build Images"
           - powershell: |
                 docker image prune --force
@@ -159,9 +159,14 @@ stages:
             clean: all
           - powershell: |
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-                Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-                SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(linux.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
-                SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(linux.install.source.path)" -Registry $(container.registry.fullname) -PushMode $(build.pushMode)
+                $switches=@{
+                  IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
+                  IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
+                  IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                  IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
+                  SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+                }
+                .\Build.ps1 -InstallSourcePath "$(linux.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)" -Registry "$(container.registry.fullname)" -RegistryUserName "$(container.registry.username)" -RegistryPassword "$(container.registry.password)" -SitecoreVersion "$(build.sitecoreVersion)" -Topology $(build.sitecoreTopology) -OSVersion "$(build.OSVersion)" @switches
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
