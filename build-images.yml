@@ -142,7 +142,7 @@ stages:
           - powershell: |
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
                 $buildProps = @{
-                  InstallSourcePath = "$(windows.install.source.path)"
+                  InstallSourcePath = "$(linux.install.source.path)"
                   SitecoreUsername = "$(sitecore.username)"
                   SitecorePassword = "$(sitecore.password)"
                   Registry = "$(container.registry.fullname)"
