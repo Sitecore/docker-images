@@ -145,7 +145,7 @@ stages:
 
     - powershell: |
         $whatIf = $false
-        $tags = "*:$(SITECORE_VERSION)*$(WINDOWS_BUILD)", "*:$(SITECORE_VERSION)*$(NANO_BUILD)", "sitecore-openjdk:*$(NANO_BUILD)"
+        $tags = "*:$(SITECORE_VERSION)*$(WINDOWS_BUILD)", "*:$(SITECORE_VERSION)*$(NANO_BUILD)"
         Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
         SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
         if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
@@ -161,6 +161,15 @@ stages:
   - job: build
     displayName: Build
     timeoutInMinutes: 720
+    strategy:
+      matrix:
+        # 9.3.0
+        sitecore_930:
+          SITECORE_VERSION: '9.3.0'
+        # 9.2.0
+        sitecore_920:
+          SITECORE_VERSION: '9.2.0'
+      maxParallel: 0
     pool:
       name: $(pool_name)
       demands:
@@ -203,7 +212,7 @@ stages:
 
     - pwsh: |
         $whatIf = $false
-        $tags = "*"
+        $tags = "*:$(SITECORE_VERSION)*"
         Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
         SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(install.source.path)" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
         if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
