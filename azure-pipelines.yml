@@ -10,209 +10,202 @@ trigger:
     - windows/tests/*
 
 variables:
-  - group: general
-  - name: poolname
-    value: sitecore-docker-images
-  - name: resourcegroup
-    value: valtechazurepipelines-rg
+- group: general
+- name: pool_name
+  value: docker-agent-pool
+- name: resource_group_service_connection
+  value: valtechazurepipelines-rg
 
 schedules:
-  - cron: "0 11 * * 0"
-    displayName: Weekly Sunday build
-    branches:
-      include:
-      - master
-    always: true
-
-# TODO: Smid start/stop in i windows/linux stages for at stoppe VM'er så snart de ikke er i brug mere fremfor først til aller sidst
-# TODO: Matrix: brug "TAGS" fremfrom specifickke versioner
+- cron: "0 11 * * 0"
+  displayName: Weekly Sunday build
+  branches:
+    include:
+    - master
+  always: true
 
 stages:
-  - stage: start
-    dependsOn: []
-    jobs:
-      - job: start_vms
-        pool:
-          vmImage: ubuntu-18.04
-        steps:
-          - checkout: none
-          # - task: AzureCLI@2
-          #   inputs:
-          #     azureSubscription: $(resourcegroup)
-          #     scriptType: pscore
-          #     scriptLocation: inlineScript
-          #     powerShellErrorActionPreference: stop
-          #     inlineScript: az vm start --ids (az resource list --tag pool=$(poolname) --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
-          #   displayName: 'Start agent vms'
-  - stage: windows
-    dependsOn:
-      - start
-    jobs:
-      - job: build
-        timeoutInMinutes: 720
-        strategy:
-          matrix:
-            # 9.3.0
-            sitecore_930_1909:
-              SITECORE_VERSION: '9.3.0'
-              WINDOWS_BUILD: '1909'
-              NANO_BUILD: '1909'
-              OS_VERSION: '10.0.18363'
-            sitecore_930_1903:
-              SITECORE_VERSION: '9.3.0'
-              WINDOWS_BUILD: '1903'
-              NANO_BUILD: '1903'
-              OS_VERSION: '10.0.18362'
-            sitecore_930_ltsc2019:
-              SITECORE_VERSION: '9.3.0'
-              WINDOWS_BUILD: 'ltsc2019'
-              NANO_BUILD: '1809'
-              OS_VERSION: '10.0.17763'
-            # 9.2.0
-            sitecore_920_1909:
-              SITECORE_VERSION: '9.2.0'
-              WINDOWS_BUILD: '1909'
-              NANO_BUILD: '1909'
-              OS_VERSION: '10.0.18363'
-            sitecore_920_1903:
-              SITECORE_VERSION: '9.2.0'
-              WINDOWS_BUILD: '1903'
-              NANO_BUILD: '1903'
-              OS_VERSION: '10.0.18362'
-            sitecore_920_ltsc2019:
-              SITECORE_VERSION: '9.2.0'
-              WINDOWS_BUILD: 'ltsc2019'
-              NANO_BUILD: '1809'
-              OS_VERSION: '10.0.17763'
-            # 9.1.1
-            sitecore_911_1909:
-              SITECORE_VERSION: '9.1.1'
-              WINDOWS_BUILD: '1909'
-              NANO_BUILD: '1909'
-              OS_VERSION: '10.0.18363'
-            sitecore_911_1903:
-              SITECORE_VERSION: '9.1.1'
-              WINDOWS_BUILD: '1903'
-              NANO_BUILD: '1903'
-              OS_VERSION: '10.0.18362'
-            sitecore_911_ltsc2019:
-              SITECORE_VERSION: '9.1.1'
-              WINDOWS_BUILD: 'ltsc2019'
-              NANO_BUILD: '1809'
-              OS_VERSION: '10.0.17763'
-            # 9.0.2
-            sitecore_902_1909:
-              SITECORE_VERSION: '9.0.2'
-              WINDOWS_BUILD: '1909'
-              NANO_BUILD: '1909'
-              OS_VERSION: '10.0.18363'
-            sitecore_902_1903:
-              SITECORE_VERSION: '9.0.2'
-              WINDOWS_BUILD: '1903'
-              NANO_BUILD: '1903'
-              OS_VERSION: '10.0.18362'
-            sitecore_902_ltsc2019:
-              SITECORE_VERSION: '9.0.2'
-              WINDOWS_BUILD: 'ltsc2019'
-              NANO_BUILD: '1809'
-              OS_VERSION: '10.0.17763'
-          maxParallel: 0
-        pool:
-          name: $(poolname)
-          demands:
-           - Agent.OS -equals Windows_NT
-           - Agent.OSVersion -equals $(OS_VERSION)
-           - docker
-        steps:
-        - checkout: self
-          clean: false
-        - powershell: |
-            $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$(storage.user)", (ConvertTo-SecureString -String "$(storage.secret)" -AsPlainText -Force)
-            $existing = Get-PSDrive -Name "$(storage.drive)" -ErrorAction SilentlyContinue
-            if ($null -eq $existing) { New-PSDrive -Name "$(storage.drive)" -PSProvider FileSystem -Root "\\$(storage.host)\$(storage.share)" -Credential $credential -Persist }
-          errorActionPreference: stop
-          displayName: Map storage
-        - task: Docker@2
-          inputs:
-            containerRegistry: valtech.azurecr.io
-            command: login
-          displayName: Registry login
-        - powershell: |
-            $whatIf = $false
-            $tags = "*:$(SITECORE_VERSION)*$(WINDOWS_BUILD)", "*:$(SITECORE_VERSION)*$(NANO_BUILD)", "sitecore-openjdk:*$(NANO_BUILD)"
-            Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-            SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
-            if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
-            SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
-          errorActionPreference: stop
-          displayName: Build
-  - stage: linux
-    dependsOn:
-      - start
-    jobs:
-      - job: build
-        timeoutInMinutes: 720
-        pool:
-          name: $(poolname)
-          demands:
-            - Agent.OS -equals Linux
-            - docker
-        variables:
-          install.source.path: /mnt/packages
-        steps:
-          - checkout: self
-            clean: true
-          - task: Bash@3
-            inputs:
-              targetType: inline
-              script: |
-                if [ -d "$(install.source.path)" ]; then
-                  exit 0
-                fi
+- stage: warmup
+  displayName: "Warmup"
+  dependsOn: []
+  jobs:
+  - job: start_vms
+    pool:
+      vmImage: ubuntu-18.04
+    steps:
+    - checkout: none
 
-                if [ ! -d "/etc/smbcredentials" ]; then
-                  sudo mkdir /etc/smbcredentials
-                fi
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: $(resource_group_service_connection)
+        scriptType: pscore
+        scriptLocation: inlineScript
+        powerShellErrorActionPreference: stop
+        inlineScript: az vm start --ids (az resource list --tag pool=$(pool_name) --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
+      displayName: 'Start agent vms'
 
-                if [ ! -f "/etc/smbcredentials/assets.cred" ]; then
-                    sudo bash -c 'echo "username=$(storage.user)" >> /etc/smbcredentials/assets.cred'
-                    sudo bash -c 'echo "password=$(storage.secret)" >> /etc/smbcredentials/assets.cred'
-                fi
+- stage: windows
+  displayName: Windows
+  dependsOn:
+    - warmup
+  jobs:
+  - job: build
+    displayName: Build
+    timeoutInMinutes: 720
+    strategy:
+      matrix:
+        # 9.3.0
+        sitecore_930_1909:
+          SITECORE_VERSION: '9.3.0'
+          WINDOWS_BUILD: '1909'
+          NANO_BUILD: '1909'
+          OS_VERSION: '10.0.18363'
+        sitecore_930_1903:
+          SITECORE_VERSION: '9.3.0'
+          WINDOWS_BUILD: '1903'
+          NANO_BUILD: '1903'
+          OS_VERSION: '10.0.18362'
+        sitecore_930_ltsc2019:
+          SITECORE_VERSION: '9.3.0'
+          WINDOWS_BUILD: 'ltsc2019'
+          NANO_BUILD: '1809'
+          OS_VERSION: '10.0.17763'
+        # 9.2.0
+        sitecore_920_1909:
+          SITECORE_VERSION: '9.2.0'
+          WINDOWS_BUILD: '1909'
+          NANO_BUILD: '1909'
+          OS_VERSION: '10.0.18363'
+        sitecore_920_1903:
+          SITECORE_VERSION: '9.2.0'
+          WINDOWS_BUILD: '1903'
+          NANO_BUILD: '1903'
+          OS_VERSION: '10.0.18362'
+        sitecore_920_ltsc2019:
+          SITECORE_VERSION: '9.2.0'
+          WINDOWS_BUILD: 'ltsc2019'
+          NANO_BUILD: '1809'
+          OS_VERSION: '10.0.17763'
+        # 9.1.1
+        sitecore_911_1909:
+          SITECORE_VERSION: '9.1.1'
+          WINDOWS_BUILD: '1909'
+          NANO_BUILD: '1909'
+          OS_VERSION: '10.0.18363'
+        sitecore_911_1903:
+          SITECORE_VERSION: '9.1.1'
+          WINDOWS_BUILD: '1903'
+          NANO_BUILD: '1903'
+          OS_VERSION: '10.0.18362'
+        sitecore_911_ltsc2019:
+          SITECORE_VERSION: '9.1.1'
+          WINDOWS_BUILD: 'ltsc2019'
+          NANO_BUILD: '1809'
+          OS_VERSION: '10.0.17763'
+        # 9.0.2
+        sitecore_902_1909:
+          SITECORE_VERSION: '9.0.2'
+          WINDOWS_BUILD: '1909'
+          NANO_BUILD: '1909'
+          OS_VERSION: '10.0.18363'
+        sitecore_902_1903:
+          SITECORE_VERSION: '9.0.2'
+          WINDOWS_BUILD: '1903'
+          NANO_BUILD: '1903'
+          OS_VERSION: '10.0.18362'
+        sitecore_902_ltsc2019:
+          SITECORE_VERSION: '9.0.2'
+          WINDOWS_BUILD: 'ltsc2019'
+          NANO_BUILD: '1809'
+          OS_VERSION: '10.0.17763'
+      maxParallel: 0
+    pool:
+      name: $(pool_name)
+      demands:
+      - Agent.OS -equals Windows_NT
+      - Agent.OSVersion -equals $(OS_VERSION)
+      - docker
+    steps:
+    - checkout: self
+      clean: false
 
-                sudo chmod 600 /etc/smbcredentials/assets.cred
-                sudo mkdir $(install.source.path)
-                sudo bash -c 'echo "//$(storage.host)/$(storage.share) $(install.source.path) cifs nofail,vers=3.0,credentials=/etc/smbcredentials/assets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
-                sudo mount -t cifs //$(storage.host)/$(storage.share) $(install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/assets.cred,dir_mode=0777,file_mode=0777,serverino
-            displayName: Map storage
-          - task: Docker@2
-            inputs:
-              containerRegistry: valtech.azurecr.io
-              command: login
-            displayName: Registry login
-          - powershell: |
-              $whatIf = $false
-              $tags = "*"
-              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-              SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(install.source.path)" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
-              if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
-              SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.source.path)" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
-            displayName: Build
-  - stage: stop
-    dependsOn:
-      - windows
-      - linux
-    condition: always()
-    jobs:
-      - job: stop_vms
-        pool:
-          vmImage: ubuntu-18.04
-        steps:
-          - checkout: none
-          # - task: AzureCLI@2
-          #   inputs:
-          #     azureSubscription: $(resourcegroup)
-          #     scriptType: pscore
-          #     scriptLocation: inlineScript
-          #     powerShellErrorActionPreference: stop
-          #     inlineScript: az vm deallocate --no-wait --ids (az resource list --tag pool=$(poolname) --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
-          #   displayName: 'Deallocate agent vms'
+    - pwsh: |
+        $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$(storage.user)", (ConvertTo-SecureString -String "$(storage.secret)" -AsPlainText -Force)
+        $existing = Get-PSDrive -Name "$(storage.drive)" -ErrorAction SilentlyContinue
+        if ($null -eq $existing) { New-PSDrive -Name "$(storage.drive)" -PSProvider FileSystem -Root "\\$(storage.host)\$(storage.share)" -Credential $credential -Persist }
+      errorActionPreference: stop
+      displayName: Map storage
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: valtech.azurecr.io
+        command: login
+      displayName: Registry login
+
+    - pwsh: |
+        $whatIf = $false
+        $tags = "*:$(SITECORE_VERSION)*$(WINDOWS_BUILD)", "*:$(SITECORE_VERSION)*$(NANO_BUILD)", "sitecore-openjdk:*$(NANO_BUILD)"
+        Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+        SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
+        if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
+        SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
+      errorActionPreference: stop
+      displayName: Build
+
+- stage: linux
+  displayName: Linux
+  dependsOn:
+    - warmup
+  jobs:
+  - job: build
+    displayName: Build
+    timeoutInMinutes: 720
+    pool:
+      name: $(pool_name)
+      demands:
+      - Agent.OS -equals Linux
+      - docker
+    variables:
+      install.source.path: /mnt/packages
+    steps:
+    - checkout: self
+      clean: true
+
+    - task: Bash@3
+      inputs:
+        targetType: inline
+        script: |
+          if [ -d "$(install.source.path)" ]; then
+            exit 0
+          fi
+
+          if [ ! -d "/etc/smbcredentials" ]; then
+            sudo mkdir /etc/smbcredentials
+          fi
+
+          if [ ! -f "/etc/smbcredentials/assets.cred" ]; then
+              sudo bash -c 'echo "username=$(storage.user)" >> /etc/smbcredentials/assets.cred'
+              sudo bash -c 'echo "password=$(storage.secret)" >> /etc/smbcredentials/assets.cred'
+          fi
+
+          sudo chmod 600 /etc/smbcredentials/assets.cred
+          sudo mkdir $(install.source.path)
+          sudo bash -c 'echo "//$(storage.host)/$(storage.share) $(install.source.path) cifs nofail,vers=3.0,credentials=/etc/smbcredentials/assets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
+          sudo mount -t cifs //$(storage.host)/$(storage.share) $(install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/assets.cred,dir_mode=0777,file_mode=0777,serverino
+      displayName: Map storage
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: valtech.azurecr.io
+        command: login
+      displayName: Registry login
+
+    - pwsh: |
+        $whatIf = $false
+        $tags = "*"
+        Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+        SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(install.source.path)" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
+        if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
+        SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.source.path)" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
+      errorActionPreference: stop
+      displayName: Build
