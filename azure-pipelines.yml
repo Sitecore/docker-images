@@ -1,4 +1,7 @@
 trigger:
+  branches:
+    include:
+    - master
   paths:
     exclude:
     - azure-pipelines.cleanup.yml

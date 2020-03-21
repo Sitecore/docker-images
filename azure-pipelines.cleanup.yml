@@ -1,12 +1,12 @@
 trigger: none
 
 schedules:
-  - cron: "0 21 * * 0"
-    displayName: Weekly Sunday cleanup
-    branches:
-      include:
-      - master
-    always: true
+- cron: "0 21 * * 0"
+  displayName: Weekly Sunday cleanup
+  branches:
+    include:
+    - master
+  always: true
 
 stages:
   - stage: cleanup
