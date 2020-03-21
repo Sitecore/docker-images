@@ -1,9 +1,9 @@
-﻿# All images
+# All images
 
 ## Index
 
-- [Windows images](#current-images)
-- [Linux images](#current-linux)
+- [Windows images](#current-windows-images)
+- [Linux images](#current-linux.images)
 
 > Deprecated tags are marked with ~~strike through~~ and they are not built by default.
 
@@ -532,12 +532,14 @@
 
 [//]: # "end: current windows"
 
-## Current linux
+## Current linux images
 
 [//]: # "start: current linux"
 
 | Version | Repository | OS  | Build      | Tag |
 | ------- | ---------- | --- | -----------| --- |
+| 9.3.0 | sitecore-xm-sql | linux |  | `sitecore-xm-sql:9.3.0-linux` [Dockerfile](linux/9.3.x/sitecore-xm-sql/Dockerfile) |
+| 9.3.0 | sitecore-xm-solr | linux |  | `sitecore-xm-solr:9.3.0-linux` [Dockerfile](linux/9.3.x/sitecore-xm-solr/Dockerfile) |
 | 9.2.0 | sitecore-xp-sxa-sql | linux |  | `sitecore-xp-sxa-sql:9.2.0-linux` [Dockerfile](linux/9.2.0/sitecore-xp-sxa-sql/Dockerfile) |
 | 9.2.0 | sitecore-xp-sxa-solr | linux |  | `sitecore-xp-sxa-solr:9.2.0-linux` [Dockerfile](linux/9.2.0/sitecore-xp-solr/Dockerfile) |
 | 9.2.0 | sitecore-xp-sql | linux |  | `sitecore-xp-sql:9.2.0-linux` [Dockerfile](linux/9.2.0/sitecore-xp-sql/Dockerfile) |

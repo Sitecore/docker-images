@@ -11,7 +11,15 @@
 # - build.tags
 # - build.pushMode
 # - build.pruneImages
-#
+# - build.sitecoreVersion
+# - build.sitecoreTopology
+# - build.sitecoreWindowsVersion
+# - build.includeSpe
+# - build.includeSxa
+# - build.includeJss
+# - build.skipExistingImages
+# - build.includeExperimentalImages
+
 # Sitecore credentials
 # - sitecore.username
 # - sitecore.password
@@ -38,7 +46,7 @@ trigger:
   branches:
     include:
     - master
-schedules: 
+schedules:
   - cron: "0 12 * * 0"
     displayName: Weekly Sunday build
     branches:
@@ -47,34 +55,8 @@ schedules:
     always: true
 
 stages:
-  - stage: Start_VMs
-    jobs:
-      - job: Start_Windows_VM
-        pool:
-          vmImage: Windows-2019 # Use Microsoft hosted image to start VMs
-        steps:
-          - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-            displayName: "Start Docker Build VM"
-            inputs:
-              Action: "Start VM"
-              azureSubscription: $(azure.subscription)
-              ResourceGroupName: $(azure.vm.resourceGroupName)
-              VmName: $(azure.vm.windows.name)
-      - job: Start_Linux_VM
-        condition: eq(variables['linux.buildImages'], 'true')
-        pool:
-          vmImage: Windows-2019
-        steps:
-          - task: vfabing.AzureVirtualMachineManagerTask.custom-build-release-task.AzureVirtualMachineManagerTask@1
-            displayName: "Start Docker Build VM"
-            inputs:
-              Action: "Start VM"
-              azureSubscription: $(azure.subscription)
-              ResourceGroupName: $(azure.vm.resourceGroupName)
-              VmName: $(azure.vm.linux.name)
 
-  - stage: Build_Images
-    dependsOn: Start_VMs
+  - stage: Build_Wndows_Images
     jobs:
       - job: Build_Windows_Images
         timeoutInMinutes: 720
@@ -94,12 +76,27 @@ stages:
               containerRegistry: "docker-registry"
               command: login
           - checkout: self
-            clean: all
+            clean: true
           - powershell: |
               "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-              Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-              SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination $(windows.install.source.path) -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
-              SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath $(windows.install.source.path) -Registry $(container.registry.fullname) -PushMode $(build.pushMode)
+              $buildProps = @{
+                InstallSourcePath = "$(windows.install.source.path)"
+                SitecoreUsername = "$(sitecore.username)"
+                SitecorePassword = "$(sitecore.password)"
+                Registry = "$(container.registry.fullname)"
+                RegistryUserName = "$(container.registry.username)"
+                RegistryPassword = "$(container.registry.password)"
+                SitecoreVersion = "$(build.sitecoreVersion)"
+                Topology = $(build.sitecoreTopology)
+                OSVersion = "$(build.WindowsOSVersion)"
+                IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
+                IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
+                IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
+                SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+              }
+
+              .\Build.ps1 @buildProps
             displayName: "Build Images"
           - powershell: |
                 docker image prune --force
@@ -109,11 +106,9 @@ stages:
       - job: Build_Linux_Images
         timeoutInMinutes: 720
         displayName: "Build Linux Images"
-        condition: eq(variables['linux.buildImages'], 'true')
+        condition: eq(variables['build.linuxImages'], 'true')
         pool:
-          name: $(azure.agentPoolName)
-          demands:
-            - Agent.OS -equals Linux
+          vmImage: 'ubuntu-18.04'
         steps:
           - task: Bash@3
             condition: eq(variables['assets.useDrive'], 'true')
@@ -124,7 +119,7 @@ stages:
                   exit 0
                   fi
                   sudo mkdir $(linux.install.source.path)
-                  
+
                   if [ ! -d "/etc/smbcredentials" ]; then
                   sudo mkdir /etc/smbcredentials
                   fi
@@ -143,12 +138,28 @@ stages:
                 containerRegistry: "docker-registry"
                 command: login
           - checkout: self
-            clean: all
+            clean: true
           - powershell: |
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-                Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-                SitecoreImageBuilder\Invoke-PackageRestore -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -Destination "$(linux.install.source.path)" -SitecoreUsername "$(sitecore.username)" -SitecorePassword "$(sitecore.password)"
-                SitecoreImageBuilder\Invoke-Build -Tags "$(build.tags)" -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(linux.install.source.path)" -Registry $(container.registry.fullname) -PushMode $(build.pushMode)
+                $buildProps = @{
+                  InstallSourcePath = "$(linux.install.source.path)"
+                  SitecoreUsername = "$(sitecore.username)"
+                  SitecorePassword = "$(sitecore.password)"
+                  Registry = "$(container.registry.fullname)"
+                  RegistryUserName = "$(container.registry.username)"
+                  RegistryPassword = "$(container.registry.password)"
+                  SitecoreVersion = "$(build.sitecoreVersion)"
+                  Topology = $(build.sitecoreTopology)
+                  OSVersion = "linux"
+                  IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
+                  IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
+                  IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                  IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
+                  SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+                }
+
+                .\Build.ps1 @buildProps
+            displayName: "Build Linux Images"
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
