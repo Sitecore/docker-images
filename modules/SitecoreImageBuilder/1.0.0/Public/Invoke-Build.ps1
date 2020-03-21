@@ -197,10 +197,10 @@ function Invoke-Build
             # Build image
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
 
-            if ($osType -eq "windows")
-            {
-                $buildOptions.Add("--isolation 'hyperv'")
-            }
+            # if ($osType -eq "windows")
+            # {
+            #     $buildOptions.Add("--isolation 'hyperv'")
+            # }
 
             $spec.BuildOptions | ForEach-Object {
                 $option = $_
