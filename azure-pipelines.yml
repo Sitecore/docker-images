@@ -130,7 +130,7 @@ stages:
     - checkout: self
       clean: false
 
-    - pwsh: |
+    - powershell: |
         $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$(storage.user)", (ConvertTo-SecureString -String "$(storage.secret)" -AsPlainText -Force)
         $existing = Get-PSDrive -Name "$(storage.drive)" -ErrorAction SilentlyContinue
         if ($null -eq $existing) { New-PSDrive -Name "$(storage.drive)" -PSProvider FileSystem -Root "\\$(storage.host)\$(storage.share)" -Credential $credential -Persist }
@@ -143,7 +143,7 @@ stages:
         command: login
       displayName: Registry login
 
-    - pwsh: |
+    - powershell: |
         $whatIf = $false
         $tags = "*:$(SITECORE_VERSION)*$(WINDOWS_BUILD)", "*:$(SITECORE_VERSION)*$(NANO_BUILD)", "sitecore-openjdk:*$(NANO_BUILD)"
         Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
