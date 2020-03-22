@@ -156,6 +156,10 @@ stages:
       errorActionPreference: stop
       displayName: Build
 
+    - powershell: |
+        docker image prune --force
+      displayName: Prune
+
 - stage: linux
   displayName: Linux
   dependsOn:
@@ -222,3 +226,7 @@ stages:
         SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "linux") -InstallSourcePath "$(install.source.path)" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
       errorActionPreference: stop
       displayName: Build
+
+    - pwsh: |
+        docker image prune --force
+      displayName: Prune
