@@ -150,9 +150,9 @@ stages:
         $whatIf = $false
         $tags = "*:$(SITECORE_VERSION)*$(WINDOWS_BUILD)", "*:$(SITECORE_VERSION)*$(NANO_BUILD)"
         Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
-        SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
+        SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -AutoGenerateWindowsVersionTags @("$(WINDOWS_BUILD)") -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
         if("$(Build.SourceBranchName)" -eq "master") { $pushMode = "WhenChanged" } else { $pushMode = "Never" }
-        SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
+        SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -AutoGenerateWindowsVersionTags @("$(WINDOWS_BUILD)") -Path (Join-Path "$(Build.SourcesDirectory)" "windows") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -Verbose
       errorActionPreference: stop
       displayName: Build
 
