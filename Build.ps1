@@ -162,6 +162,10 @@ foreach ($wv in $OSVersion)
         if ($Topology -contains "xp")
         {
             $xpTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+
+            if ($wv -eq "linux") {
+                $xpTags | SitecoreFilter -Version $scv | LinuxFilter | ForEach-Object { $tags.Add($_) > $null }
+            }
         }
 
         if ($Topology -contains "xc")
