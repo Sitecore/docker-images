@@ -45,7 +45,7 @@ stages:
         scriptType: pscore
         scriptLocation: inlineScript
         powerShellErrorActionPreference: stop
-        inlineScript: az vm start --ids (az resource list --tag pool=$(pool_name) --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv) | Out-Null
+        inlineScript: az vm start --ids (az resource list --tag pool=$(pool_name) --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
       displayName: Ensure all machines in pool are started
 
 - stage: windows
