@@ -21,6 +21,9 @@ COPY --from=assets ["C:\\install\\tools\\", "C:\\install\\tools\\"]
 # find transform files and do transformation
 RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\*.xdt' -Recurse ) | ForEach-Object { & 'C:\\install\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\inetpub\\wwwroot\\web.config' -XdtPath $_.FullName -XdtDllPath 'C:\\install\\tools\\bin\\Microsoft.Web.XmlTransform.dll'; }; 
 
+# add config patches
+COPY .\config\*.config C:\\inetpub\\wwwroot\\App_Config\\Include\\
+
 FROM $BASE_IMAGE
 
 SHELL ["powershell", "-Command", "$ErrorActionPreference = 'Stop'; $ProgressPreference = 'SilentlyContinue';"]
