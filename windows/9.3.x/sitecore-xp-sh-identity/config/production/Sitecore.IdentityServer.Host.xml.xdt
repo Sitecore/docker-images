@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <Sitecore>
+    <IdentityServer>
+      <AccountOptions>
+        <PasswordRecoveryUrl xdt:Transform="Replace">https://cm/sitecore/login?rc=1</PasswordRecoveryUrl>
+      </AccountOptions>
+      <Clients>
+        <DefaultClient>
+          <AllowedCorsOrigins>
+            <AllowedCorsOriginsGroup1 xdt:Transform="Replace">http://cm|http://cd|https://cm|https://cd</AllowedCorsOriginsGroup1>
+            <AuthoringHostHttpsCorsOrigin xdt:Transform="Insert">https://authoringhost</AuthoringHostHttpsCorsOrigin>
+            <AuthoringHostHttpCorsOrigin xdt:Transform="Insert">http://authoringhost</AuthoringHostHttpCorsOrigin>
+          </AllowedCorsOrigins>
+        </DefaultClient>
+      </Clients>
+    </IdentityServer>
+  </Sitecore>
+</Settings>

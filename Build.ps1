@@ -31,6 +31,8 @@ param(
     [switch]$IncludeSxa,
     [Parameter()]
     [switch]$IncludeJss,
+    [Parameter()]
+    [switch]$IncludeSh,
     [Parameter(HelpMessage = "If the docker image is already built it should be skipped.")]
     [switch]$SkipExistingImage,
     [Parameter()]
@@ -118,7 +120,7 @@ $xcMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*"
 
 $assetTags = $availableTags | Where-Object { $_ -like "sitecore-assets:*" }
 $xmTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(?!sxa|spe|jss).*:.*" }
-$xpTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(?!sxa|spe|jss).*:.*" }
+$xpTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(?!sxa|spe|jss|sh).*:.*" }
 $xcTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(?!sxa|spe|jss).*:.*" }
 
 $xmSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(spe).*:.*" }
@@ -128,11 +130,12 @@ $xmJssTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(jss).*:.*" 
 $xpSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(spe).*:.*" }
 $xpSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(sxa).*:.*" }
 $xpJssTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(jss).*:.*" }
+$xpShTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(sh).*:.*" }
 
 $xcSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(spe).*:.*" }
 $xcSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(sxa).*:.*" }
 
-$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xpJssTags
+$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xpJssTags + $xpShTags
 # These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
 $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
 
@@ -236,6 +239,14 @@ foreach ($wv in $OSVersion)
             if ($Topology -contains "xp")
             {
                 $xpJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+            }
+        }
+
+        if ($IncludeSh)
+        {
+            if ($Topology -contains "xp")
+            {
+                $xpShTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
         }
     }

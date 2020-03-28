@@ -17,6 +17,7 @@
 # - build.includeSpe
 # - build.includeSxa
 # - build.includeJss
+# - build.includeSh
 # - build.skipExistingImages
 # - build.includeExperimentalImages
 
@@ -92,6 +93,7 @@ stages:
                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
               }
@@ -154,6 +156,7 @@ stages:
                   IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                   IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                   IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                  IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                   IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                   SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
                 }
