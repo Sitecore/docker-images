@@ -58,7 +58,7 @@ function Invoke-Build
         [switch]$SkipHashValidation
         ,
         [Parameter(Mandatory = $false)]
-        [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess")]
+        [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess", "ForceDefault")]
         [string]$IsolationModeBehaviour = "ForceHyperV"
     )
 
@@ -205,12 +205,16 @@ function Invoke-Build
                 # --isolation 'hyperv' | makes sense on windows host only?
                 $buildOptions.Add("--isolation 'hyperv'")
             }
-            elseif ($IsolationModeBehaviour -ieq "ForceProcess") {
-                # --isolation 'process' | makes sense on all operating systems
+            elseif ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceProcess") {
+                # --isolation 'process' | works only on windows
                 $buildOptions.Add("--isolation 'process'")
             }
+			elseif ($osType -ne "windows" -and $IsolationModeBehaviour -ieq "ForceDefault") {
+				# --isolation 'default' | works on non-windows
+				$buildOptions.Add("--isolation 'default'")
+			}
             else {
-                # no --isolation option | use engine default if none of the above (f.e. ForceHyperV on linux)
+                # no --isolation option | also use engine default if none of the above has been selected
             }
 
             $spec.BuildOptions | ForEach-Object {

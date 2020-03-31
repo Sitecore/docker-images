@@ -36,7 +36,7 @@ param(
     [Parameter()]
     [switch]$IncludeExperimental,
     [Parameter(Mandatory = $false)]
-    [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess")]
+    [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess", "ForceDefault")]
     [string]$IsolationModeBehaviour = "ForceHyperV"
 )
 
