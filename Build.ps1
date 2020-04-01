@@ -34,7 +34,10 @@ param(
     [Parameter(HelpMessage = "If the docker image is already built it should be skipped.")]
     [switch]$SkipExistingImage,
     [Parameter()]
-    [switch]$IncludeExperimental
+    [switch]$IncludeExperimental,
+    [Parameter(Mandatory = $false)]
+    [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess", "ForceDefault")]
+    [string]$IsolationModeBehaviour = "ForceHyperV"
 )
 
 function Write-Message
@@ -267,4 +270,5 @@ SitecoreImageBuilder\Invoke-Build `
     -Registry $Registry `
     -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
+    -IsolationModeBehaviour $IsolationModeBehaviour `
     -WhatIf:$WhatIfPreference
