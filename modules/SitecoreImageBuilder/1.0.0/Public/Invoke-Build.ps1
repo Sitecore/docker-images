@@ -201,19 +201,23 @@ function Invoke-Build
             # Build image
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
 
-            if ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceHyperV") {
+            if ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceHyperV")
+            {
                 # --isolation 'hyperv' | makes sense on windows host only?
                 $buildOptions.Add("--isolation 'hyperv'")
             }
-            elseif ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceProcess") {
+            elseif ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceProcess")
+            {
                 # --isolation 'process' | works only on windows
                 $buildOptions.Add("--isolation 'process'")
             }
-			elseif ($osType -ne "windows" -and $IsolationModeBehaviour -ieq "ForceDefault") {
-				# --isolation 'default' | works on non-windows
-				$buildOptions.Add("--isolation 'default'")
-			}
-            else {
+            elseif ($osType -ne "windows" -and $IsolationModeBehaviour -ieq "ForceDefault")
+            {
+                # --isolation 'default' | works on non-windows
+                $buildOptions.Add("--isolation 'default'")
+            }
+            else
+            {
                 # no --isolation option | also use engine default if none of the above has been selected
             }
 

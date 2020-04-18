@@ -2,11 +2,11 @@
 param(
     # Path to watch for changes
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})]
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$Path,
     # Destination path to keep updated
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})]
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$Destination,
     # Milliseconds to sleep between sync operations
     [Parameter(Mandatory = $false)]
@@ -106,7 +106,8 @@ Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageDa
     {
         $retryAttempts = 50
         $retryAttemptsCount = $retryAttempts
-        while ($retryAttemptsCount -gt 0) {
+        while ($retryAttemptsCount -gt 0)
+        {
             try
             {
                 Remove-Item -Path $destinationPath -Force -Recurse -ErrorAction Stop
@@ -123,8 +124,9 @@ Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageDa
             }
         }
 
-        if($retryAttemptsCount -eq 0) {
-            Write-Host ("{0}: Could not delete '{1}'... Retry attempts made: {2}. The file will NOT be deleted!" -f  [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $retryAttempts) -ForegroundColor Red
+        if ($retryAttemptsCount -eq 0)
+        {
+            Write-Host ("{0}: Could not delete '{1}'... Retry attempts made: {2}. The file will NOT be deleted!" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $retryAttempts) -ForegroundColor Red
         }
     }
 } | Out-Null

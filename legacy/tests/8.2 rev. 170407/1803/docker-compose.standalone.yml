@@ -11,7 +11,7 @@ services:
     links:
       - sql
       - mongodb
-  
+
   mongodb:
     image: mongo:4.1.8-windowsservercore-1803
     volumes:
@@ -19,7 +19,7 @@ services:
     mem_limit: 2GB
     ports:
       - "27117:27017"
-      
+
   sql:
     image: ${REGISTRY:-}sitecore-sqldev:8.2.170407-windowsservercore-1803
     volumes:

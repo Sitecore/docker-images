@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$Path
 )
 
@@ -15,7 +15,7 @@ Get-ChildItem -Path $Path -Filter "*(OnPrem)*.zip" | ForEach-Object {
         $stream = New-Object IO.FileStream($zipPath, [IO.FileMode]::Open)
         $zip = New-Object IO.Compression.ZipArchive($stream, [IO.Compression.ZipArchiveMode]::Read)
 
-        ($zip.Entries | Where-Object { $_.FullName -like "Sitecore.*.dacpac" -and !($_.Name -like "*azure*") }) | Foreach-Object { 
+        ($zip.Entries | Where-Object { $_.FullName -like "Sitecore.*.dacpac" -and !($_.Name -like "*azure*") }) | Foreach-Object {
             [IO.Compression.ZipFileExtensions]::ExtractToFile($_, (Join-Path $Path $_.Name), $true)
         }
     }
@@ -27,7 +27,7 @@ Get-ChildItem -Path $Path -Filter "*(OnPrem)*.zip" | ForEach-Object {
         }
 
         if ($stream -ne $null)
-        {   
+        {
             $stream.Dispose()
         }
     }

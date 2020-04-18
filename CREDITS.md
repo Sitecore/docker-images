@@ -45,3 +45,5 @@ https://github.com/RamblingCookieMonster/PSDepend/
 
 **Gabe Streza**: His PowerShell script to validate Sitecore pre-requisites was used during some developments.
 http://www.sitecoregabe.com/2018/04/sitecore-9-machine-prerequisites-check.html
+
+**Rabehaja Harivola Loïc**: He is a contributor regarding the variant images (SXA, JSS etc) also active in the #Docker Slack channel.

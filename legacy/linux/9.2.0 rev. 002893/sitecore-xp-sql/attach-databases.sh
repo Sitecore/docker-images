@@ -4,7 +4,7 @@ dataDir=$1
 
 echo "### Attaching databases in '$dataDir':"
 
-ls $dataDir 
+ls $dataDir
 
 for filename in $dataDir/*.mdf; do
     [ -e "$filename" ] || continue
@@ -12,7 +12,7 @@ for filename in $dataDir/*.mdf; do
     fileBaseName=$(basename $filename .mdf)
     databaseName="${fileBaseName/_Primary/}"
     ldfPath="$dataDir/$fileBaseName.ldf"
-    mdfPath=$filename 
+    mdfPath=$filename
 
     echo "### Attaching '$databaseName' using '$mdfPath' and '$ldfPath'..."
 

@@ -27,7 +27,7 @@ services:
     links:
       - sql
       - solr
-      
+
   cm:
     image: ${REGISTRY:-}sitecore-xm1-cm:9.0.180604-windowsservercore-1803
     volumes:

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<connectionStrings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <add name="messaging" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Messaging" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="processing.engine.storage" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.ProcessingEngineStorage" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="reporting" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Reporting" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.marketingautomation" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.MarketingAutomation" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.processing.pools" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Processing.Pools" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="xdb.referencedata" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.ReferenceData" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="collection" connectionString="user id=sa;password=HASH-epsom-sunset-cost7!;Data Source=sql;Database=Sitecore.Xdb.Collection.ShardMapManager" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+    <add name="solrCore" connectionString="http://solr:8983/solr/sitecore_xdb" xdt:Transform="SetAttributes" xdt:Locator="Match(name)" />
+</connectionStrings>

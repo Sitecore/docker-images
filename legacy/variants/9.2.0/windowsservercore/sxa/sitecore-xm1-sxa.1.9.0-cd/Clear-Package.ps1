@@ -1,7 +1,7 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateScript( { Test-Path $_ -PathType "Leaf" })] 
+    [ValidateScript( { Test-Path $_ -PathType "Leaf" })]
     [string]$Path
 )
 
@@ -40,7 +40,7 @@ try
     $zip = New-Object IO.Compression.ZipArchive($stream, [IO.Compression.ZipArchiveMode]::Update)
 
     # delete dacpac, old parameters and archive files
-    ($zip.Entries | Where-Object { $_.FullName -like "*.dacpac" -or $_.FullName -eq "parameters.xml" -or $_.FullName -eq "archive.xml" }) | Foreach-Object { 
+    ($zip.Entries | Where-Object { $_.FullName -like "*.dacpac" -or $_.FullName -eq "parameters.xml" -or $_.FullName -eq "archive.xml" }) | Foreach-Object {
         $_.Delete()
     }
 
@@ -56,7 +56,7 @@ finally
     }
 
     if ($null -ne $stream)
-    {   
+    {
         $stream.Dispose()
     }
 }

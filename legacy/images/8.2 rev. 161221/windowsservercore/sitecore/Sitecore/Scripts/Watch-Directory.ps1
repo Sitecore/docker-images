@@ -2,11 +2,11 @@
 param(
     # Path to watch for changes
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     $Path,
     # Destination path to keep updated
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     $Destination
 )
 
@@ -27,7 +27,7 @@ function Sync
 
         if ($dirty)
         {
-            Write-Host ("{0}: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $line) -ForegroundColor DarkGray            
+            Write-Host ("{0}: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $line) -ForegroundColor DarkGray
         }
     }
 
@@ -77,7 +77,7 @@ try
         Start-Sleep -Milliseconds 200
     }
 }
-finally 
+finally
 {
     # Cleanup
     Get-EventSubscriber -SourceIdentifier "FileDeleted" | Unregister-Event
