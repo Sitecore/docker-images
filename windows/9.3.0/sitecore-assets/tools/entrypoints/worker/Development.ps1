@@ -14,7 +14,7 @@ Write-Host ("$(Get-Date -Format $timeFormat): Sitecore Development ENTRYPOINT, s
 
 # check to see if we should start the Watch-Directory.ps1 script
 $watchDirectoryJobName = "Watch-Directory.ps1"
-$useWatchDirectory = (Test-Path -Path "C:\src" -PathType "Container") -eq $true
+$useWatchDirectory = $null -ne $WatchDirectoryParameters -bor (Test-Path -Path "C:\src" -PathType "Container") -eq $true
 
 if ($useWatchDirectory)
 {
