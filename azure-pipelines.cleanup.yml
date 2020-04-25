@@ -1,0 +1,57 @@
+trigger: none
+
+variables:
+- name: resource_group_service_connection
+  value: valtechshared-rg
+- name: registry_name
+  value: valtech
+
+schedules:
+- cron: "cron 0 22 * * 3"
+  displayName: Weekly Wednesday maintenence
+  branches:
+    include:
+    - master
+  always: true
+
+stages:
+- stage: maintenence
+  displayName: ACR maintenence
+  jobs:
+  - job: cleanup
+    displayName: Cleanup
+    timeoutInMinutes: 1440
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - checkout: none
+
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: $(resource_group_service_connection)
+        scriptType: pscore
+        scriptLocation: inlineScript
+        powerShellErrorActionPreference: stop
+        inlineScript: |
+          az acr show-usage --resource-group $(resource_group_service_connection) --name $(registry_name) --output table
+      displayName: Show current usage
+
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: $(resource_group_service_connection)
+        scriptType: pscore
+        scriptLocation: inlineScript
+        powerShellErrorActionPreference: stop
+        inlineScript: |
+          Write-Host "XXX"
+      displayName: Delete untagged images
+
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: $(resource_group_service_connection)
+        scriptType: pscore
+        scriptLocation: inlineScript
+        powerShellErrorActionPreference: stop
+        inlineScript: |
+          az acr show-usage --resource-group $(resource_group_service_connection) --name $(registry_name) --output table
+      displayName: Show current usage
