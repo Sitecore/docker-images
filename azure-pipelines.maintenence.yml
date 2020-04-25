@@ -7,7 +7,7 @@ variables:
   value: valtech
 
 schedules:
-- cron: "cron 0 22 * * 3"
+- cron: "0 22 * * 3"
   displayName: Weekly Wednesday maintenence
   branches:
     include:
