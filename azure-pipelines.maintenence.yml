@@ -43,7 +43,16 @@ stages:
         scriptLocation: inlineScript
         powerShellErrorActionPreference: stop
         inlineScript: |
-          Write-Host "XXX"
+          $repositories = (az acr repository list --name $(registry_name) -o tsv)
+
+          foreach ($repository in $repositories)
+          {
+              Write-Host "Cleaning untagged images in '$repository'..."
+
+              az acr repository show-manifests --name $(registry_name) --repository $repository --query "[?tags[0]==null].digest" -o tsv | ForEach-Object {
+                  az acr repository delete --name$(registry_name) --image $repository@$_ --yes
+              }
+          }
       displayName: Delete untagged images
 
     - task: AzureCLI@2
