@@ -4,7 +4,7 @@ trigger:
     - master
   paths:
     exclude:
-    - azure-pipelines.*.yml
+    - azure-pipelines.maintenence.yml
     - build-images.yml
     - "*.md"
     - "*.ps1"
