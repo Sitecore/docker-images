@@ -1,8 +1,12 @@
 # Changelog
 
+## April 2020
+
+- [Added] Sitecore 9.3.0 XP SPE/SXA SQL linux images
+- [Added] Sitecore 9.3.0 XP SQL and Solr linux images
+
 ## March 2020
 
-- [Added] Sitecore 9.3.0 XP Solr linux images.
 - [Added] Sitecore 9.3.0 XM SQL and Solr linux images.
 - [**Breaking**] Modified WindowsOSVersion to OSVersion in Build.ps1 in support of Linux. See [#279](https://github.com/Sitecore/docker-images/pull/279)
 - [**Breaking**] Modified yml pipeline to remove "Start VM" stage and switch to `.\build.ps1`. New parameters required. See [#279](https://github.com/Sitecore/docker-images/pull/279) and [#280](https://github.com/Sitecore/docker-images/pull/280)
