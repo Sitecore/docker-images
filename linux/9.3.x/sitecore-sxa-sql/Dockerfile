@@ -20,8 +20,9 @@ COPY install-databases.sh /opt/
 ENV DB_PREFIX='sc'
 
 RUN mkdir -p /install \
-    && cp /clean/* /install/ \
     && chmod -R 700 /install \
+    && chmod +x /opt/*.sh \
+    && cp /clean/* /install/ \
     && ( /opt/mssql/bin/sqlservr & ) | grep -q "Service Broker manager has started" \
     && ./opt/attach-databases.sh /install \
     && ./opt/install-databases.sh /opt/wdp
