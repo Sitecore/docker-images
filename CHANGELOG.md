@@ -1,5 +1,10 @@
 # Changelog
 
+## April 2020
+
+- [Added] Sitecore 9.3.0 XP SPE/SXA SQL linux images
+- [Added] Sitecore 9.3.0 XP SQL and Solr linux images
+
 ## March 2020
 
 - [Added] Sitecore 9.3.0 XM SQL and Solr linux images.

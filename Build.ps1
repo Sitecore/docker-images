@@ -34,7 +34,10 @@ param(
     [Parameter(HelpMessage = "If the docker image is already built it should be skipped.")]
     [switch]$SkipExistingImage,
     [Parameter()]
-    [switch]$IncludeExperimental
+    [switch]$IncludeExperimental,
+    [Parameter(Mandatory = $false)]
+    [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess", "ForceDefault")]
+    [string]$IsolationModeBehaviour = "ForceHyperV"
 )
 
 function Write-Message
@@ -162,6 +165,10 @@ foreach ($wv in $OSVersion)
         if ($Topology -contains "xp")
         {
             $xpTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+
+            if ($wv -eq "linux") {
+                $xpTags | SitecoreFilter -Version $scv | LinuxFilter | ForEach-Object { $tags.Add($_) > $null }
+            }
         }
 
         if ($Topology -contains "xc")
@@ -179,6 +186,10 @@ foreach ($wv in $OSVersion)
             if ($Topology -contains "xp")
             {
                 $xpSpeTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+
+                if ($wv -eq "linux") {
+                    $xpSpeTags | SitecoreFilter -Version $scv | LinuxFilter | ForEach-Object { $tags.Add($_) > $null }
+                }
             }
 
             if ($Topology -contains "xc")
@@ -197,6 +208,11 @@ foreach ($wv in $OSVersion)
             if ($Topology -contains "xp")
             {
                 $xpSxaTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+
+                if ($wv -eq "linux")
+                {
+                    $xpSxaTags | SitecoreFilter -Version $scv | LinuxFilter | ForEach-Object { $tags.Add($_) > $null }
+                }
             }
 
             if ($Topology -contains "xc")
@@ -263,4 +279,5 @@ SitecoreImageBuilder\Invoke-Build `
     -Registry $Registry `
     -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
+    -IsolationModeBehaviour $IsolationModeBehaviour `
     -WhatIf:$WhatIfPreference
