@@ -1,0 +1,79 @@
+trigger: none
+
+variables:
+- group: general
+- name: pool_name
+  value: docker-agent-pool
+- name: resource_group_service_connection
+  value: valtechazurepipelines-rg
+
+stages:
+- stage: warmup
+  displayName: "Warmup"
+  dependsOn: []
+  jobs:
+  - job: start
+    displayName: Start machines
+    pool:
+      vmImage: ubuntu-latest
+    steps:
+    - checkout: none
+
+    - task: AzureCLI@2
+      inputs:
+        azureSubscription: $(resource_group_service_connection)
+        scriptType: pscore
+        scriptLocation: inlineScript
+        powerShellErrorActionPreference: stop
+        inlineScript: az vm start --ids (az resource list --tag pool=$(pool_name) --tag osbuild=ltsc2019 --query "[?type=='Microsoft.Compute/virtualMachines'].id" -o tsv)
+      displayName: Ensure all machines in pool are started
+
+- stage: windows
+  displayName: Windows
+  dependsOn:
+    - warmup
+  jobs:
+  - job: build
+    displayName: Build
+    timeoutInMinutes: 720
+    strategy:
+      matrix:
+        # 8.2.0
+        sitecore_820_ltsc2019:
+          SITECORE_VERSION: '8.2.180406'
+          WINDOWS_BUILD: 'ltsc2019'
+          NANO_BUILD: '1809'
+          OS_VERSION: '10.0.17763'
+      maxParallel: 0
+    pool:
+      name: $(pool_name)
+      demands:
+      - Agent.OS -equals Windows_NT
+      - Agent.OSVersion -equals $(OS_VERSION)
+      - docker
+    steps:
+    - checkout: self
+      clean: false
+
+    - pwsh: |
+        $credential = New-Object System.Management.Automation.PSCredential -ArgumentList "Azure\$(storage.user)", (ConvertTo-SecureString -String "$(storage.secret)" -AsPlainText -Force)
+        $existing = Get-PSDrive -Name "$(storage.drive)" -ErrorAction SilentlyContinue
+        if ($null -eq $existing) { New-PSDrive -Name "$(storage.drive)" -PSProvider FileSystem -Root "\\$(storage.host)\$(storage.share)" -Credential $credential -Persist }
+      errorActionPreference: stop
+      displayName: Map storage
+
+    - task: Docker@2
+      inputs:
+        containerRegistry: valtech.azurecr.io
+        command: login
+      displayName: Registry login
+
+    - pwsh: |
+        $tags = "*:$(SITECORE_VERSION)*$(WINDOWS_BUILD)", "*:$(SITECORE_VERSION)*$(NANO_BUILD)"
+        $pushMode = "WhenChanged"
+        $whatIf = $false
+        Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
+        SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -AutoGenerateWindowsVersionTags @("$(WINDOWS_BUILD)") -Path (Join-Path "$(Build.SourcesDirectory)" "legacy") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
+        SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -AutoGenerateWindowsVersionTags @("$(WINDOWS_BUILD)") -Path (Join-Path "$(Build.SourcesDirectory)" "legacy") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -IsolationModeBehaviour "EngineDefault" -Verbose
+      errorActionPreference: stop
+      displayName: Build
