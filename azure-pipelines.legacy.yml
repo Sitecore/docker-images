@@ -74,6 +74,6 @@ stages:
         $whatIf = $false
         Import-Module (Join-Path "$(Build.SourcesDirectory)" "\modules\SitecoreImageBuilder") -Force
         SitecoreImageBuilder\Invoke-PackageRestore -WhatIf:$whatIf -Tags $tags -AutoGenerateWindowsVersionTags @("$(WINDOWS_BUILD)") -Path (Join-Path "$(Build.SourcesDirectory)" "legacy") -Destination "$(storage.drive):\" -SitecoreUsername $(sitecore.username) -SitecorePassword $(sitecore.password) -Verbose
-        SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -AutoGenerateWindowsVersionTags @("$(WINDOWS_BUILD)") -Path (Join-Path "$(Build.SourcesDirectory)" "legacy") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -IsolationModeBehaviour "EngineDefault" -Verbose
+        SitecoreImageBuilder\Invoke-Build -WhatIf:$whatIf -Tags $tags -AutoGenerateWindowsVersionTags @("$(WINDOWS_BUILD)") -Path (Join-Path "$(Build.SourcesDirectory)" "legacy") -InstallSourcePath "$(storage.drive):\" -Registry "valtech.azurecr.io" -PushMode $pushMode -IsolationModeBehaviour "EngineDefault" -SkipHashValidation -Verbose
       errorActionPreference: stop
       displayName: Build
