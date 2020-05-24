@@ -24,6 +24,10 @@ Please see [CHANGELOG.md](CHANGELOG.md).
 
 Please see [IMAGES.md](IMAGES.md).
 
+### Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+
 ### Tagging and Windows versions
 
 This repository can build multiple Windows versions. Read more about [Windows Container Version Compatibility](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility).
