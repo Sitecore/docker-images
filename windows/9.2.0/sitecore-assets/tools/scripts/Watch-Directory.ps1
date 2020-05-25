@@ -100,21 +100,32 @@ $watcher.EnableRaisingEvents = $true
 
 Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageData $Destination {
     $destinationPath = Join-Path $event.MessageData $eventArgs.Name
-    $delete = !(Test-Path $eventArgs.FullPath) -and (Test-Path $destinationPath) -and !(Test-Path -Path $destinationPath -PathType "Container")
+    $delete = !(Test-Path $eventArgs.FullPath) -and (Test-Path $destinationPath)
 
     if ($delete)
     {
-        try
-        {
-            Remove-Item -Path $destinationPath -Force -Recurse -ErrorAction "SilentlyContinue"
+        $retryAttempts = 50
+        $retryAttemptsCount = $retryAttempts
+        while ($retryAttemptsCount -gt 0) {
+            try
+            {
+                Remove-Item -Path $destinationPath -Force -Recurse -ErrorAction Stop
+                Write-Host ("{0}: Deleted '{1}'..." -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath) -ForegroundColor Green
 
-            Write-Host ("{0}: Deleted '{1}'..." -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath) -ForegroundColor Green
-        }
-        catch
-        {
-            Write-Host ("{0}: Could not delete '{1}'..." -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath) -ForegroundColor Red
+                $retryAttemptsCount = -1
+            }
+            catch
+            {
+                Write-Host ("{0}: Could not delete '{1}'... `r`n'{2}'" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $_.ToString()) -ForegroundColor DarkGray
+
+                $retryAttemptsCount--
+                Start-Sleep -Milliseconds 100
+            }
         }
 
+        if($retryAttemptsCount -eq 0) {
+            Write-Host ("{0}: Could not delete '{1}'... Retry attempts made: {2}. The file will NOT be deleted!" -f  [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $retryAttempts) -ForegroundColor Red
+        }
     }
 } | Out-Null
 
