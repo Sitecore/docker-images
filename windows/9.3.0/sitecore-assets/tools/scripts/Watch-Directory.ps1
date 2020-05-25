@@ -104,7 +104,7 @@ Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageDa
 
     if ($delete)
     {
-        $retryAttempts = 5
+        $retryAttempts = 50
         $retryAttemptsCount = $retryAttempts
         while ($retryAttemptsCount -gt 0) {
             try
@@ -119,7 +119,7 @@ Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageDa
                 Write-Host ("{0}: Could not delete '{1}'... `r`n'{2}'" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $_.ToString()) -ForegroundColor DarkGray
 
                 $retryAttemptsCount--
-                Start-Sleep -Seconds 1
+                Start-Sleep -Milliseconds 100
             }
         }
 
