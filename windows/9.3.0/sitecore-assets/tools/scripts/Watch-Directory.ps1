@@ -104,7 +104,7 @@ Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageDa
 
     if ($delete)
     {
-        $retryAttempts = 300
+        $retryAttempts = 5
         $retryAttemptsCount = $retryAttempts
         while ($retryAttemptsCount -gt 0) {
             try
