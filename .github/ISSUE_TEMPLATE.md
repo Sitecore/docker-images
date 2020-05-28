@@ -33,9 +33,10 @@ Please, help us understand the problem. For instance:
 
     ```text
     ...
-    ```text
-  - Are you running inside a virtualized Windows machine or physical:
-  - ...
+    ```
+
+- Are you running inside a virtualized Windows machine or physical:
+- ...
 
 ## Steps to reproduce the behavior
 
