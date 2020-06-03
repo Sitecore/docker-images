@@ -8,7 +8,7 @@ param(
     [string]$DataPath,
     [Parameter(Mandatory = $true)]
     [ValidateNotNullOrEmpty()]
-    [string]$SqlHostname
+    [string]$SqlHostname,
     [Parameter(Mandatory = $false)]
     [ValidateNotNullOrEmpty()]
     [string]$DatabasePrefix = "Sitecore"
