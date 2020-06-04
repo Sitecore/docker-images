@@ -37,7 +37,9 @@ param(
     [switch]$IncludeExperimental,
     [Parameter(Mandatory = $false)]
     [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess", "ForceDefault")]
-    [string]$IsolationModeBehaviour = "ForceHyperV"
+    [string]$IsolationModeBehaviour = "ForceHyperV",
+    [Parameter()]
+    [switch]$OnlyList
 )
 
 function Write-Message
@@ -122,17 +124,20 @@ $xpTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(?!sxa|spe|jss)
 $xcTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(?!sxa|spe|jss).*:.*" }
 
 $xmSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(spe).*:.*" }
-$xmSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(sxa).*:.*" }
+$xmSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(sxa(?!-jss)).*:.*" }
 $xmJssTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(jss).*:.*" }
+$xmSxaJssTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(sxa-jss).*:.*" }
 
 $xpSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(spe).*:.*" }
-$xpSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(sxa).*:.*" }
+$xpSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(sxa(?!-jss)).*:.*" }
 $xpJssTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(jss).*:.*" }
+$xpSxaJssTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(sxa-jss).*:.*" }
 
 $xcSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(spe).*:.*" }
 $xcSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(sxa).*:.*" }
+$xcSxaJssTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(sxa-jss).*:.*" }
 
-$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xpJssTags
+$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmSxaJssTags + $xpSxaJssTags + $xcSxaJssTags + $xmJssTags + $xpJssTags
 # These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
 $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
 
@@ -237,6 +242,29 @@ foreach ($wv in $OSVersion)
             {
                 $xpJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
+
+            if ($IncludeSxa)
+            {
+                if ($Topology -contains "xm")
+                {
+                    $xmSxaJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+                }
+
+                if ($Topology -contains "xp")
+                {
+                    $xpSxaJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+
+                    if ($wv -eq "linux")
+                    {
+                        $xpSxaJssTags | SitecoreFilter -Version $scv | LinuxFilter | ForEach-Object { $tags.Add($_) > $null }
+                    }
+                }
+
+                if ($Topology -contains "xc")
+                {
+                    $xcSxaJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+                }
+            }
         }
     }
 }
@@ -264,6 +292,11 @@ if ($tags)
 else
 {
     Write-Message "No images need to be built."
+    exit
+}
+
+if($OnlyList)
+{
     exit
 }
 
