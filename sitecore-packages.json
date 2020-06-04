@@ -227,6 +227,10 @@
     "url": "https://github.com/SitecorePowerShell/Console/releases/download/6.0/Sitecore.PowerShell.Extensions-6.0.scwdp.zip",
     "hash": "982FFAFCE17EB62D626FFB9ABE0FBE8E85A1EC4BA034C9DE18C5FCBA945BBBAC"
   },
+  "Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip": {
+    "url": "https://github.com/SitecorePowerShell/Console/releases/download/6.1.1/Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip",
+    "hash": "7429606A34562862F28F3ABCEFDB9B91A15C7A0608782F17E00D76918CE65D88"
+  },
   "Sitecore Publishing Service 4.2.0-win-x64.zip": {
     "url": "https://dev.sitecore.net/~/media/1AD1BA4204634EB5B4B18179E23FA285.ashx",
     "hash": "AD843341D495A7C52CDAFBEAA90023E447C65A691B2F39EDAC9B1D2C6C751046"
