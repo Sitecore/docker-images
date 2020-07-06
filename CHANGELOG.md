@@ -2,9 +2,9 @@
 
 ## July 2020
 
-## May 2020
-
 - [Fixed] Sitecore 9.3.0 XP/SXA Solr linux images.
+
+## May 2020
 
 - [Added] Windows 2004 is now supported. You can override which platforms you want by setting the parameter `AutoGenerateWindowsVersionTags` when calling `Invoke-Build`, default value is now: `"2004", "1909", "1903", "ltsc2019"`.
 
