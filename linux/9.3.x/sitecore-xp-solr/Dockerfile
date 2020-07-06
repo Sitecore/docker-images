@@ -4,22 +4,17 @@ FROM $BASE_IMAGE as builder
 
 ARG CORE_NAMES
 ARG MANAGED_SCHEMA_DEFAULT_NAME
-
-COPY ${MANAGED_SCHEMA_DEFAULT_NAME} /opt/managed-schema
+ARG MANAGED_SCHEMA_XDB_NAME
 
 USER root
 
-RUN set -e; \
-    CORES_DIR='/opt/solr/server/solr'; \
-    ORIG_IFS=${IFS}; \
-    IFS=', '; \
-        for core in ${CORE_NAMES}; do \
-        echo "Creating '$CORES_DIR/$core'..."; \
-        cp -r /opt/solr/server/solr/configsets/_default/ $CORES_DIR/$core; \
-        cp /opt/managed-schema $CORES_DIR/$core/conf/managed-schema; \
-        touch "$CORES_DIR/$core/core.properties"; \
-    done; \
-    IFS=${ORIG_IFS};
+RUN mkdir /opt/xdb
+
+COPY ${MANAGED_SCHEMA_DEFAULT_NAME} /opt/managed-schema
+COPY ${MANAGED_SCHEMA_XDB_NAME} /opt/xdb
+
+COPY initialize-solr.sh /opt/initialize-solr.sh
+RUN chmod +x /opt/initialize-solr.sh;/opt/initialize-solr.sh
 
 FROM $BASE_IMAGE
 
