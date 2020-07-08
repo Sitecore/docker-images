@@ -2,6 +2,7 @@
 
 ## July 2020
 
+- [Added] Sitecore 9.3.0 XP/SXA/PS SQL linux images.
 - [Fixed] Sitecore 9.3.0 XP/SXA Solr linux images.
 
 ## May 2020
