@@ -711,6 +711,8 @@
 | Version | Repository | OS  | Build      | Tag |
 | ------- | ---------- | --- | -----------| --- |
 | 9.3.0 | sitecore-xp-sxa-sql | linux |  | `sitecore-xp-sxa-sql:9.3.0-linux` [Dockerfile](linux/9.3.x/sitecore-sxa-sql/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-solr | linux |  | `sitecore-xp-sxa-solr:9.3.0-linux` [Dockerfile](linux/9.3.x/sitecore-xp-solr/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-ps-sql | linux |  | `sitecore-xp-sxa-ps-sql:9.3.0-linux` [Dockerfile](linux/9.3.x/sitecore-sxa-ps-sql/Dockerfile) |
 | 9.3.0 | sitecore-xp-sql | linux |  | `sitecore-xp-sql:9.3.0-linux` [Dockerfile](linux/9.3.x/sitecore-xp-sql/Dockerfile) |
 | 9.3.0 | sitecore-xp-spe-sql | linux |  | `sitecore-xp-spe-sql:9.3.0-linux` [Dockerfile](linux/9.3.x/sitecore-spe-sql/Dockerfile) |
 | 9.3.0 | sitecore-xp-solr | linux |  | `sitecore-xp-solr:9.3.0-linux` [Dockerfile](linux/9.3.x/sitecore-xp-solr/Dockerfile) |
