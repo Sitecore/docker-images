@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "sitecore-xp-sxa-ps-sqldev:9.3.0-linux",
+      "tag": "sitecore-xp-sxa-ps-sql:9.3.0-linux",
       "build-options": [
         "--build-arg BASE_IMAGE=sitecore-xp-sxa-sql:9.3.0-linux"
       ]
