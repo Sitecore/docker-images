@@ -2,11 +2,11 @@
 param(
     # Path to watch for changes
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( {Test-Path $_ -PathType 'Container'})]
     [string]$Path,
     # Destination path to keep updated
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( {Test-Path $_ -PathType 'Container'})]
     [string]$Destination,
     # Milliseconds to sleep between sync operations
     [Parameter(Mandatory = $false)]
@@ -39,9 +39,9 @@ function Sync
     )
 
     $command = @("robocopy", "`"$Path`"", "`"$Destination`"", "/E", "/XX", "/MT:1", "/NJH", "/NJS", "/FP", "/NDL", "/NP", "/NS", "/R:5", "/W:1")
-    
+
     if ($ExcludeDirectories.Count -gt 0)
-    {        
+    {
         $command += "/XD "
 
         $ExcludeDirectories | ForEach-Object {
@@ -52,7 +52,7 @@ function Sync
     }
 
     if ($ExcludeFiles.Count -gt 0)
-    {        
+    {
         $command += "/XF "
 
         $ExcludeFiles | ForEach-Object {
@@ -61,7 +61,7 @@ function Sync
 
         $command = $command.TrimEnd()
     }
-    
+
     $commandString = $command -join " "
 
     $dirty = $false
@@ -72,7 +72,7 @@ function Sync
 
         if ($dirty)
         {
-            Write-Host ("{0}: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $line) -ForegroundColor DarkGray            
+            Write-Host ("{0}: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $line) -ForegroundColor DarkGray
         }
     }
 
@@ -104,15 +104,27 @@ Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageDa
 
     if ($delete)
     {
-        try
-        {
-            Remove-Item -Path $destinationPath -Force -Recurse -ErrorAction "SilentlyContinue"
+        $retryAttempts = 50
+        $retryAttemptsCount = $retryAttempts
+        while ($retryAttemptsCount -gt 0) {
+            try
+            {
+                Remove-Item -Path $destinationPath -Force -Recurse -ErrorAction Stop
+                Write-Host ("{0}: Deleted '{1}'..." -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath) -ForegroundColor Green
 
-            Write-Host ("{0}: Deleted '{1}'..." -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath) -ForegroundColor Green
+                $retryAttemptsCount = -1
+            }
+            catch
+            {
+                Write-Host ("{0}: Could not delete '{1}'... `r`n'{2}'" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $_.ToString()) -ForegroundColor DarkGray
+
+                $retryAttemptsCount--
+                Start-Sleep -Milliseconds 100
+            }
         }
-        catch
-        {
-            Write-Host ("{0}: Could not delete '{1}'..." -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath) -ForegroundColor Red
+
+        if($retryAttemptsCount -eq 0) {
+            Write-Host ("{0}: Could not delete '{1}'... Retry attempts made: {2}. The file will NOT be deleted!" -f  [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $retryAttempts) -ForegroundColor Red
         }
     }
 } | Out-Null
@@ -129,7 +141,7 @@ try
         Start-Sleep -Milliseconds $SleepMilliseconds
     }
 }
-finally 
+finally
 {
     # Cleanup
     Get-EventSubscriber -SourceIdentifier "FileDeleted" | Unregister-Event

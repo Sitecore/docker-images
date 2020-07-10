@@ -23,7 +23,7 @@ SQL_PID=$!
 
 echo "### SQL Server PID = '$SQL_PID'."
 
-./opt/attach-databases.sh $dataDir
+/opt/attach-databases.sh $dataDir
 
 # Pull sql server to foreground and support SIGTERM so shutdown works
 

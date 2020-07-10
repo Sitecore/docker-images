@@ -2,7 +2,7 @@
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-104-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-534-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-92-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-9.3.0%20on%20ltsc2019/1809-blue?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-105-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-708-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-93-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-9.3.0%20on%20ltsc2019/1809-blue?style=flat-square)
 
 [//]: # "end: stats"
 
@@ -23,6 +23,10 @@ Please see [CHANGELOG.md](CHANGELOG.md).
 ### List of all images
 
 Please see [IMAGES.md](IMAGES.md).
+
+### Contributing
+
+Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Tagging and Windows versions
 
@@ -64,6 +68,8 @@ When completed then...
 
 1. Run `Set-LicenseEnvironmentVariable.ps1 -Path C:\license\license.xml` (use the `PersistForCurrentUser` switch to persist the license for future sessions). This will gzip and base64 encode the license file content and save it in `$env:SITECORE_LICENSE`.
 1. Switch directory to `.\windows\tests\9.3.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
+
+9.3 docker images still supports mounting the license file inside the container, if for some reason you need to use this method please see [License file volume mount configuration for 9.3 docker images](#license-file-volume-mount-configuration-for-9.3-docker-images)
 
 **For Sitecore 9.2.x:**
 
@@ -245,6 +251,37 @@ SitecoreImageBuilder\Invoke-Build `
     -Tags $tags, `
     -ExperimentalTagBehavior Include
 
+```
+
+### License file volume mount configuration for 9.3 docker images
+
+If you've been using the license file mounted approach in 9.2 docker images, you can still continue using the same approach in 9.3 docker images. Follow these steps
+
+1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
+1. Switch directory to `.\windows\tests\9.3.x\`  and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up` after the docker compose file has been updated following the instruction below
+
+#### For cm and cd
+1. Add a new volume mount configuration using the environment variable `LICENSE_PATH` to a folder inside the container, for example `C:\license`
+1. Add a new environment variable `SITECORE_LICENSE_LOCATION` that point to the license file path inside the container, for example: `C:\license\license.xml`
+
+```
+cm:
+  environment:
+    SITECORE_LICENSE_LOCATION: C:\license\license.xml
+  volumes:
+    - ${LICENSE_PATH}:C:\license
+```
+
+#### For xconnect, xconnect-automationengine, xconnect-indexworker, xconnect-processingengine
+1. Add a new volume mount configuration using the environment variable `LICENSE_PATH` to a folder inside the container, for example `C:\license`
+1. Add a new environment variable `SITECORE_LICENSE_LOCATION` that point to the license file folder path inside the container, for example: `C:\license`
+
+```
+xconnect:
+  environment:
+    SITECORE_LICENSE_LOCATION: C:\license
+  volumes:
+    - ${LICENSE_PATH}:C:\license
 ```
 
 ## Cleanup
