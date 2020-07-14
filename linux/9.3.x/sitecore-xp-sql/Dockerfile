@@ -10,35 +10,49 @@ RUN apt-get -y update \
     && unzip -qq sqlpackage.zip -d /opt/sqlpackage \
     && chmod +x /opt/sqlpackage/sqlpackage
 
+# install pwsh
+RUN wget -q https://packages.microsoft.com/config/ubuntu/16.04/packages-microsoft-prod.deb \
+    && dpkg -i packages-microsoft-prod.deb \
+    && apt-get update \
+    && apt-get install -y powershell \
+    && pwsh -command "Set-PackageSource -Name PSGallery -Trusted ; Install-Module -Name SqlServer"
+
 COPY *.zip /opt/wdp/
+COPY InstallShards.ps1 /opt
+COPY install-databases.sh /opt
+COPY replace_log.sh /opt
 
 RUN unzip -qq /opt/wdp/Sitecore*.zip -d /opt/wdp/ \
-    && unzip -qq /opt/wdp/Sitecore*_cm.scwdp.zip -d /opt/wdp/
-
-COPY install-databases.sh /opt/
+    && ls /opt/wdp \
+    && unzip -qq /opt/wdp/Sitecore*_cm.scwdp.zip -d /opt/wdp/cm/ \
+    && unzip -qq /opt/wdp/*xp1collection.scwdp.zip -d /opt/wdp/xp1collection/
 
 ENV ACCEPT_EULA='Y' \
     SA_PASSWORD='envy-$taleness-Jelly-3twin-aided-Sterile-Bawd' \
     MSSQL_PID=Developer
 
 RUN ( /opt/mssql/bin/sqlservr & ) | grep -q "Service Broker manager has started" \
-    && chmod +x /opt/install-databases.sh && ./opt/install-databases.sh /opt/wdp \
-    && pkill sqlservr
+    && chmod +x /opt/install-databases.sh \
+    && ./opt/install-databases.sh /opt/wdp/cm \
+    && pwsh /opt/InstallShards.ps1 -SqlServer . -SqlAdminUser sa -SqlAdminPassword $SA_PASSWORD -SqlElasticPoolName xp -ResourcesDirectory /opt/wdp/xp1collection/ \
+    && pkill sqlservr \
+    && /opt/replace_log.sh
 
 FROM $BASE_IMAGE
+
+USER root
 
 COPY --from=builder ["/var/opt/mssql/data/Sitecore*", "/clean/"]
 COPY boot.sh /opt/
 COPY attach-databases.sh /opt/
 COPY install-databases.sh /opt/
 
-USER root
-
 RUN chmod +x /opt/boot.sh && \
     chmod +x /opt/attach-databases.sh && \
     chmod +x /opt/install-databases.sh && \
     chmod -R 777 /clean && \
-    mkdir -p /var/opt/mssql/data && chmod -R 777 /var/opt/mssql/data
+    mkdir -p /var/opt/mssql/data && \
+    chmod -R 777 /var/opt/mssql/data
 
 ENV ACCEPT_EULA='Y' \
     SA_PASSWORD='envy-$taleness-Jelly-3twin-aided-Sterile-Bawd' \
