@@ -29,7 +29,6 @@ echo "### SQL Server PID = '$SQL_PID'."
 
 echo "### INIT XCONNECT = '$SQL_PID'."
 
-# to-do
 DatabasePrefix='Sitecore'
 
 /opt/mssql-tools/bin/sqlcmd -S . -U sa -P $SA_PASSWORD -t 120 -l 120 \
