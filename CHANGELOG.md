@@ -2,6 +2,7 @@
 
 ## July 2020
 
+- [Bug] Sitecore 9.3.0 XP set ServerName xConnect shards on SQL linux images.
 - [Fixed] Sitecore 9.3.0 XP SQL Shard linux images.
 - [Added] Sitecore 9.3.0 XP/SXA/PS SQL linux images.
 - [Fixed] Sitecore 9.3.0 XP/SXA Solr linux images.

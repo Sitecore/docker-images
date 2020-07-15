@@ -25,6 +25,26 @@ echo "### SQL Server PID = '$SQL_PID'."
 
 /opt/attach-databases.sh $dataDir
 
+# set shard
+
+echo "### INIT XCONNECT = '$SQL_PID'."
+
+DatabasePrefix='Sitecore'
+
+/opt/mssql-tools/bin/sqlcmd -S . -U sa -P $SA_PASSWORD -t 120 -l 120 \
+-Q "EXEC sp_MSforeachdb 'IF charindex(''Sitecore'', ''?'' ) = 1 BEGIN EXEC [?]..sp_changedbowner ''sa'' END'"
+
+/opt/mssql-tools/bin/sqlcmd -S . -U sa -P $SA_PASSWORD -t 120 -l 120 \
+-Q "UPDATE [$DatabasePrefix.Xdb.Collection.ShardMapManager].[__ShardManagement].[ShardsGlobal] SET ServerName = '$SQL_HOSTNAME'"
+
+/opt/mssql-tools/bin/sqlcmd -S . -U sa -P $SA_PASSWORD -t 120 -l 120 \
+-Q "UPDATE [$DatabasePrefix.Xdb.Collection.Shard0].[__ShardManagement].[ShardsLocal] SET ServerName = '$SQL_HOSTNAME'"
+
+/opt/mssql-tools/bin/sqlcmd -S . -U sa -P $SA_PASSWORD -t 120 -l 120 \
+-Q "UPDATE [$DatabasePrefix.Xdb.Collection.Shard1].[__ShardManagement].[ShardsLocal] SET ServerName = '$SQL_HOSTNAME'"
+
+echo "### ENDING XCONNECT = '$SQL_PID'."
+
 # Pull sql server to foreground and support SIGTERM so shutdown works
 
 echo "### Bring SQLServer to foreground..."
