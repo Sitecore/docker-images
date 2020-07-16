@@ -1,10 +1,10 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$InstallPath,
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$DataPath
 )
 

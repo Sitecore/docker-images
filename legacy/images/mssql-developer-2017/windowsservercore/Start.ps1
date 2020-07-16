@@ -52,13 +52,13 @@ $dbs = $attach_dbs_cleaned | ConvertFrom-Json
 if ($null -ne $dbs -And $dbs.Length -gt 0)
 {
     Write-Verbose "Attaching $($dbs.Length) database(s)"
-	    
-    Foreach ($db in $dbs) 
-    {            
+
+    Foreach ($db in $dbs)
+    {
         $files = @();
         Foreach ($file in $db.dbFiles)
         {
-            $files += "(FILENAME = N'$($file)')";           
+            $files += "(FILENAME = N'$($file)')";
         }
 
         $files = $files -join ","
@@ -71,10 +71,10 @@ if ($null -ne $dbs -And $dbs.Length -gt 0)
 
 Write-Verbose "Started SQL Server."
 
-$lastCheck = (Get-Date).AddSeconds(-2) 
-while ($true) 
-{ 
-    Get-EventLog -LogName Application -Source "MSSQL*" -After $lastCheck | Select-Object TimeGenerated, EntryType, Message	 
-    $lastCheck = Get-Date 
-    Start-Sleep -Seconds 2 
+$lastCheck = (Get-Date).AddSeconds(-2)
+while ($true)
+{
+    Get-EventLog -LogName Application -Source "MSSQL*" -After $lastCheck | Select-Object TimeGenerated, EntryType, Message
+    $lastCheck = Get-Date
+    Start-Sleep -Seconds 2
 }

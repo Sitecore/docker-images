@@ -1,4 +1,7 @@
 # Changelog
+## July 2020
+- [Added] Sitecore 9.1.1 SXA, SPE, JSS, Automation Engine, Indexworker, Processing Enging images.
+<<<<<<< HEAD
 
 ## July 2020
 
@@ -15,6 +18,8 @@
 
 - [Added] Sitecore 9.3.0 XP SPE/SXA SQL linux images
 - [Added] Sitecore 9.3.0 XP SQL and Solr linux images
+=======
+>>>>>>> 0a639a9... removed xc datafolders, updated readme with the correct values, updated
 
 ## March 2020
 

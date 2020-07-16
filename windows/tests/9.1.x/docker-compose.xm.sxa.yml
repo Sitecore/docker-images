@@ -1,0 +1,46 @@
+version: "2.4"
+
+services:
+
+  sql:
+    image: ${REGISTRY}sitecore-xm-sxa-sqldev:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - .\data\sql:C:\Data
+    mem_limit: 2GB
+    ports:
+      - "44010:1433"
+
+  solr:
+    image: ${REGISTRY}sitecore-xm-sxa-solr:${SITECORE_VERSION}-nanoserver-${NANOSERVER_VERSION}
+    volumes:
+      - .\data\solr:C:\Data
+    mem_limit: 1GB
+    ports:
+      - "44011:8983"
+
+  cd:
+    image: ${REGISTRY}sitecore-xm-sxa-cd:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\cd:C:\inetpub\wwwroot\App_Data\logs
+    ports:
+      - "44002:80"
+    links:
+      - sql
+      - solr
+
+  cm:
+    image: ${REGISTRY}sitecore-xm-sxa-cm:${SITECORE_VERSION}-windowsservercore-${WINDOWSSERVERCORE_VERSION}
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+      - .\data\cm:C:\inetpub\wwwroot\App_Data\logs
+    ports:
+      - "44001:80"
+    links:
+      - sql
+      - solr
+
+networks:
+  default:
+    external:
+      name: nat

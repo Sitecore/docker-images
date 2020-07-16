@@ -1,5 +1,6 @@
 {
-    "tags": [{
+    "tags": [
+        {
             "tag": "sitecore-xc-spe-standalone:9.2.0-windowsservercore-${windowsservercore_version}",
             "build-options": [
                 "--build-arg BASE_IMAGE=sitecore-xc-standalone:9.2.0-windowsservercore-${windowsservercore_version}",

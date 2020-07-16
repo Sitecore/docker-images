@@ -9,7 +9,7 @@ for filename in $source/*.bacpac; do
 
     fileBaseName=$(basename $filename .bacpac)
     databaseName="${DB_PREFIX}_${fileBaseName/Sitecore./}"
-    
+
     echo "### Installing '$databaseName' from '$filename'..."
 
     /opt/sqlpackage/sqlpackage /a:Import /tsn:. /tdn:$databaseName /tu:sa /tp:$SA_PASSWORD /sf:$filename

@@ -2,11 +2,11 @@
 param(
     # Path to watch for changes
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$Path,
     # Destination path to keep updated
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$Destination,
     # Milliseconds to sleep between sync operations
     [Parameter(Mandatory = $false)]
@@ -39,9 +39,9 @@ function Sync
     )
 
     $command = @("robocopy", "`"$Path`"", "`"$Destination`"", "/E", "/XX", "/MT:1", "/NJH", "/NJS", "/FP", "/NDL", "/NP", "/NS", "/R:5", "/W:1")
-    
+
     if ($ExcludeDirectories.Count -gt 0)
-    {        
+    {
         $command += "/XD "
 
         $ExcludeDirectories | ForEach-Object {
@@ -52,7 +52,7 @@ function Sync
     }
 
     if ($ExcludeFiles.Count -gt 0)
-    {        
+    {
         $command += "/XF "
 
         $ExcludeFiles | ForEach-Object {
@@ -61,7 +61,7 @@ function Sync
 
         $command = $command.TrimEnd()
     }
-    
+
     $commandString = $command -join " "
 
     $dirty = $false
@@ -72,7 +72,7 @@ function Sync
 
         if ($dirty)
         {
-            Write-Host ("{0}: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $line) -ForegroundColor DarkGray            
+            Write-Host ("{0}: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $line) -ForegroundColor DarkGray
         }
     }
 
@@ -129,7 +129,7 @@ try
         Start-Sleep -Milliseconds $SleepMilliseconds
     }
 }
-finally 
+finally
 {
     # Cleanup
     Get-EventSubscriber -SourceIdentifier "FileDeleted" | Unregister-Event

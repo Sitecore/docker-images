@@ -6,7 +6,7 @@ dataDir=$2
 # prepare data
 if [ ! -f "$dataDir/solr.xml" ]; then
     echo "### No solr.xml found in '$dataDir', seeding..."
-   
+
     cp -R --verbose $cleanDir/. $dataDir/
 
     echo "### Done seeding."

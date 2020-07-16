@@ -1,13 +1,13 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$InstallPath,
     [Parameter(Mandatory = $true)]
-    [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$DataPath,
     [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()] 
+    [ValidateNotNullOrEmpty()]
     [string]$DatabasePrefix
 )
 
@@ -18,7 +18,7 @@ $server.Properties["DefaultFile"].Value = $InstallPath
 $server.Properties["DefaultLog"].Value = $InstallPath
 $server.Alter()
 
-$sqlPackageExePath =Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
+$sqlPackageExePath = Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
 
 # attach
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
@@ -34,7 +34,7 @@ Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
 
 # do modules
 $TextInfo = (Get-Culture).TextInfo
-Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurse | ForEach-Object { 
+Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurse | ForEach-Object {
 
     $dacpacPath = $_.FullName
     $databaseName = "$DatabasePrefix`_" + $TextInfo.ToTitleCase($_.BaseName)
@@ -43,8 +43,8 @@ Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurs
     Write-Host "install module path: $InstallPath dacpac: $dacpacPath dbname: $databaseName"
 
     # Install
-    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q    
-} 
+    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q
+}
 
 # detach DB
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {

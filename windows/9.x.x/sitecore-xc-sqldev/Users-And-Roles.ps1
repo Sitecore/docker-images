@@ -1,50 +1,56 @@
 [CmdletBinding()]
 param(
-	[Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [string]$SqlHostname,
-	[Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [string]$SqlDatabasePrefix,
-	[Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [string]$CreateRoles,
-	[Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [string]$AddRolesToUserUserNames,
-	[Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [string]$AddRolesToUserRoleNames,
-	[Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [string]$AddRoleToRoleMemberRoleNames,
-	[Parameter(Mandatory = $true)]
+    [Parameter(Mandatory = $true)]
     [string]$AddRoleToRoleTargetRoleNames
 )
 
-Function OpenConnection {
+Function OpenConnection
+{
     param(
         [Parameter(Mandatory = $true)]
         [string]$ConnString
     )
-	Write-Host "Open connection"
-    try {
+    Write-Host "Open connection"
+    try
+    {
         $global:SqlConnection = New-Object System.Data.SqlClient.SqlConnection
         $global:SqlConnection.ConnectionString = $ConnString.Replace('\\', '\')
         $global:SqlConnection.Open()
     }
-    catch {
+    catch
+    {
         Write-Host "An error happened in OpenConnection, transaction will be rollbacked..." -ForegroundColor Red
         $global:SqlTransaction.Rollback()
-        foreach ( $errorRecord in $Error ) {
+        foreach ( $errorRecord in $Error )
+        {
             Write-Host -Object $errorRecord -ForegroundColor Red
             Write-Host -Object $errorRecord.InvocationInfo.PositionMessage -ForegroundColor Red
         }
     }
-	Write-Host "Connection opened"
+    Write-Host "Connection opened"
 }
 
-Function CloseConnection {
-	Write-Host "Close connection"
+Function CloseConnection
+{
+    Write-Host "Close connection"
     $global:SqlConnection.Close();
-	Write-Host "Connection closed"
+    Write-Host "Connection closed"
 }
 
-Function CreateRole {
+Function CreateRole
+{
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -53,8 +59,9 @@ Function CreateRole {
     )
 
     Write-Host "Create Role $RoleName" -ForegroundColor Green
-    try {
-	    $global:SqlTransaction = $global:SqlConnection.BeginTransaction()
+    try
+    {
+        $global:SqlTransaction = $global:SqlConnection.BeginTransaction()
         $SqlCommand = $global:SqlConnection.CreateCommand()
         $SqlCommand.Transaction = $global:SqlTransaction
         $SqlCommand.CommandText = "[dbo].[aspnet_Roles_CreateRole]"
@@ -62,19 +69,22 @@ Function CreateRole {
         $SqlCommand.Parameters.AddWithValue("@ApplicationName", $ApplicationName) | Out-Null
         $SqlCommand.Parameters.AddWithValue("@RoleName", $RoleName) | Out-Null
         $SqlCommand.ExecuteNonQuery()
-		$global:SqlTransaction.Commit();
+        $global:SqlTransaction.Commit();
     }
-    catch {
+    catch
+    {
         Write-Host "An error happened, transaction will be rollbacked..." -ForegroundColor Red
         $global:SqlTransaction.Rollback()
-        foreach ( $errorRecord in $Error ) {
+        foreach ( $errorRecord in $Error )
+        {
             Write-Host -Object $errorRecord -ForegroundColor Red
             Write-Host -Object $errorRecord.InvocationInfo.PositionMessage -ForegroundColor Red
         }
     }
 }
 
-Function AddRolesToUser {
+Function AddRolesToUser
+{
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -85,8 +95,9 @@ Function AddRolesToUser {
     )
 
     Write-Host "Add user $UserName to roles $RoleNames" -ForegroundColor Green
-    try {
-		$global:SqlTransaction = $global:SqlConnection.BeginTransaction()
+    try
+    {
+        $global:SqlTransaction = $global:SqlConnection.BeginTransaction()
         $SqlCommand = $global:SqlConnection.CreateCommand()
         $SqlCommand.Transaction = $global:SqlTransaction
         $SqlCommand.CommandText = "[dbo].[aspnet_UsersInRoles_AddUsersToRoles]"
@@ -96,19 +107,22 @@ Function AddRolesToUser {
         $SqlCommand.Parameters.AddWithValue("@RoleNames", $RoleNames) | Out-Null
         $SqlCommand.Parameters.AddWithValue("@CurrentTimeUtc", (Get-Date)) | Out-Null
         $SqlCommand.ExecuteNonQuery();
-		$global:SqlTransaction.Commit();
+        $global:SqlTransaction.Commit();
     }
-    catch {
+    catch
+    {
         Write-Host "An error happened, transaction will be rollbacked..." -ForegroundColor Red
         $global:SqlTransaction.Rollback()
-        foreach ( $errorRecord in $Error ) {
+        foreach ( $errorRecord in $Error )
+        {
             Write-Host -Object $errorRecord -ForegroundColor Red
             Write-Host -Object $errorRecord.InvocationInfo.PositionMessage -ForegroundColor Red
         }
     }
 }
 
-Function AddRoleToRole {
+Function AddRoleToRole
+{
     [CmdletBinding()]
     param(
         [Parameter(Mandatory = $true)]
@@ -119,8 +133,9 @@ Function AddRoleToRole {
     )
 
     Write-Host "Add member role $MemberRoleName to target role $TargetRoleName" -ForegroundColor Green
-    try {
-		$global:SqlTransaction = $global:SqlConnection.BeginTransaction()
+    try
+    {
+        $global:SqlTransaction = $global:SqlConnection.BeginTransaction()
         $SqlCommand = $global:SqlConnection.CreateCommand()
         $SqlCommand.Transaction = $global:SqlTransaction
         $SqlCommand.CommandText = "INSERT INTO RolesInRoles (MemberRoleName, TargetRoleName, ApplicationName, Created) VALUES (@MemberRoleName, @TargetRoleName, @ApplicationName, @CurrentTimeUtc)"
@@ -129,56 +144,65 @@ Function AddRoleToRole {
         $SqlCommand.Parameters.AddWithValue("@ApplicationName", $ApplicationName) | Out-Null
         $SqlCommand.Parameters.AddWithValue("@CurrentTimeUtc", (Get-Date)) | Out-Null
         $SqlCommand.ExecuteNonQuery()
-		$global:SqlTransaction.Commit();
+        $global:SqlTransaction.Commit();
     }
-    catch {
+    catch
+    {
         Write-Host "An error happened, transaction will be rollbacked..." -ForegroundColor Red
         $global:SqlTransaction.Rollback()
-        foreach ( $errorRecord in $Error ) {
+        foreach ( $errorRecord in $Error )
+        {
             Write-Host -Object $errorRecord -ForegroundColor Red
             Write-Host -Object $errorRecord.InvocationInfo.PositionMessage -ForegroundColor Red
         }
     }
 }
 
-$ConnString="Server=$SqlHostname;Database=${SqlDatabasePrefix}Core;Integrated Security=True;"
-$CreateRolesArray=$CreateRoles.split(",")
-$AddRolesToUserUserNamesArray=$AddRolesToUserUserNames.split(",")
-$AddRolesToUserRoleNamesArray=$AddRolesToUserRoleNames.split(",")
-$AddRoleToRoleMemberRoleNamesArray=$AddRoleToRoleMemberRoleNames.split(",")
-$AddRoleToRoleTargetRoleNamesArray=$AddRoleToRoleTargetRoleNames.split(",")
+$ConnString = "Server=$SqlHostname;Database=${SqlDatabasePrefix}Core;Integrated Security=True;"
+$CreateRolesArray = $CreateRoles.split(",")
+$AddRolesToUserUserNamesArray = $AddRolesToUserUserNames.split(",")
+$AddRolesToUserRoleNamesArray = $AddRolesToUserRoleNames.split(",")
+$AddRoleToRoleMemberRoleNamesArray = $AddRoleToRoleMemberRoleNames.split(",")
+$AddRoleToRoleTargetRoleNamesArray = $AddRoleToRoleTargetRoleNames.split(",")
 
-try {
-	OpenConnection -ConnString $ConnString
+try
+{
+    OpenConnection -ConnString $ConnString
 
-	if ($CreateRolesArray -And $CreateRolesArray.Count -gt 0){
-		$CreateRolesArray | ForEach-Object {
-			CreateRole -RoleName "$_"
-		}
-	}
+    if ($CreateRolesArray -And $CreateRolesArray.Count -gt 0)
+    {
+        $CreateRolesArray | ForEach-Object {
+            CreateRole -RoleName "$_"
+        }
+    }
 
-	if ($AddRolesToUserUserNamesArray -And $AddRolesToUserRoleNamesArray -And $AddRolesToUserUserNamesArray.Count -gt 0 -And $AddRolesToUserUserNamesArray.Count -eq $AddRolesToUserRoleNamesArray.Count){
-		$i = 0
-		$AddRolesToUserUserNamesArray | ForEach-Object {
-			AddRolesToUser -UserName "$_" -RoleNames $AddRolesToUserRoleNamesArray[$i]
-			$i++
-		}
-	}
+    if ($AddRolesToUserUserNamesArray -And $AddRolesToUserRoleNamesArray -And $AddRolesToUserUserNamesArray.Count -gt 0 -And $AddRolesToUserUserNamesArray.Count -eq $AddRolesToUserRoleNamesArray.Count)
+    {
+        $i = 0
+        $AddRolesToUserUserNamesArray | ForEach-Object {
+            AddRolesToUser -UserName "$_" -RoleNames $AddRolesToUserRoleNamesArray[$i]
+            $i++
+        }
+    }
 
-	if ($AddRoleToRoleMemberRoleNamesArray -And $AddRoleToRoleTargetRoleNamesArray -And $AddRoleToRoleMemberRoleNamesArray.Count -gt 0 -And $AddRoleToRoleMemberRoleNamesArray.Count -eq $AddRoleToRoleTargetRoleNamesArray.Count){
-		$i = 0
-		$AddRoleToRoleMemberRoleNamesArray | ForEach-Object {
-			AddRoleToRole -MemberRoleName "$_" -TargetRoleName $AddRoleToRoleTargetRoleNamesArray[$i]
-			$i++
-		}
-	}
+    if ($AddRoleToRoleMemberRoleNamesArray -And $AddRoleToRoleTargetRoleNamesArray -And $AddRoleToRoleMemberRoleNamesArray.Count -gt 0 -And $AddRoleToRoleMemberRoleNamesArray.Count -eq $AddRoleToRoleTargetRoleNamesArray.Count)
+    {
+        $i = 0
+        $AddRoleToRoleMemberRoleNamesArray | ForEach-Object {
+            AddRoleToRole -MemberRoleName "$_" -TargetRoleName $AddRoleToRoleTargetRoleNamesArray[$i]
+            $i++
+        }
+    }
 }
-catch {
-	foreach ( $errorRecord in $Error ) {
+catch
+{
+    foreach ( $errorRecord in $Error )
+    {
         Write-Host -Object $errorRecord -ForegroundColor Red
         Write-Host -Object $errorRecord.InvocationInfo.PositionMessage -ForegroundColor Red
-	}
+    }
 }
-finally{
-	CloseConnection 
+finally
+{
+    CloseConnection
 }

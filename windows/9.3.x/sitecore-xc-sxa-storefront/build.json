@@ -1,5 +1,6 @@
 {
-    "tags": [{
+    "tags": [
+        {
             "tag": "sitecore-xc-sxa-storefront-standalone:9.3.0-windowsservercore-${windowsservercore_version}",
             "build-options": [
                 "--build-arg BASE_IMAGE=sitecore-xc-sxa-standalone:9.3.0-windowsservercore-${windowsservercore_version}",

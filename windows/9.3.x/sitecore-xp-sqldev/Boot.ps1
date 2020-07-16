@@ -40,20 +40,24 @@ Get-ChildItem -Path $DataPath -Filter "*.mdf" | ForEach-Object {
     $mdfPath = $_.FullName
     $ldfPath = $mdfPath.Replace(".mdf", ".ldf")
 
-    try {
+    try
+    {
         Write-Host "$(Get-Date -Format $timeFormat): Setting single user for [$databaseName]..."
         Invoke-Sqlcmd -Query "IF EXISTS (SELECT 1 FROM SYS.DATABASES WHERE NAME = '$databaseName') ALTER DATABASE [$databaseName] SET SINGLE_USER WITH ROLLBACK IMMEDIATE" -Querytimeout 65535 -ConnectionTimeout 65535
 
         Write-Host "$(Get-Date -Format $timeFormat): Reattaching '$databaseName'..."
 
         $sqlcmd = "IF EXISTS (SELECT 1 FROM SYS.DATABASES WHERE NAME = '$databaseName') BEGIN EXEC sp_detach_db [$databaseName] END;CREATE DATABASE [$databaseName] ON (FILENAME = N'$mdfPath') FOR ATTACH;"
-        if (Test-Path $ldfPath) {
+        if (Test-Path $ldfPath)
+        {
             $sqlcmd = "IF EXISTS (SELECT 1 FROM SYS.DATABASES WHERE NAME = '$databaseName') BEGIN EXEC sp_detach_db [$databaseName] END;CREATE DATABASE [$databaseName] ON (FILENAME = N'$mdfPath'), (FILENAME = N'$ldfPath') FOR ATTACH;"
         }
 
         # Pass in explicit long timeouts because by default its not infinite (in contrary to what the documentation claims)
         Invoke-Sqlcmd -Query $sqlcmd -Querytimeout 65535 -ConnectionTimeout 65535
-    } catch {
+    }
+    catch
+    {
         $ErrorMessage = $_.Exception.Message
         Write-Host "$(Get-Date -Format $timeFormat): The following error occurred while attaching $databaseName : $ErrorMessage"
         Write-Host "$(Get-Date -Format $timeFormat): Repairing '$databaseName'..."

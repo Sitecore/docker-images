@@ -1,13 +1,13 @@
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$InstallPath,
     [Parameter(Mandatory = $true)]
-    [ValidateScript( { Test-Path $_ -PathType 'Container' })] 
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$DataPath,
     [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()] 
+    [ValidateNotNullOrEmpty()]
     [string]$DatabasePrefix
 )
 
@@ -34,14 +34,14 @@ Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {
 
 # do modules
 $TextInfo = (Get-Culture).TextInfo
-Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurse | ForEach-Object { 
+Get-ChildItem -Path $InstallPath -Include "core.dacpac", "master.dacpac" -Recurse | ForEach-Object {
 
     $dacpacPath = $_.FullName
     $databaseName = "$DatabasePrefix`_" + $TextInfo.ToTitleCase($_.BaseName)
 
     # Install
-    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q    
-} 
+    & $sqlPackageExePath /a:Publish /sf:$dacpacPath /tdn:$databaseName /tsn:$env:COMPUTERNAME /q
+}
 
 # detach DB
 Get-ChildItem -Path $InstallPath -Filter "*.mdf" | ForEach-Object {

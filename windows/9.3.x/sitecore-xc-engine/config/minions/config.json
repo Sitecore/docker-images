@@ -99,6 +99,6 @@
     }
   },
   "CommerceConnector": {
-    "ClientId":"CommerceEngineConnect"
+    "ClientId": "CommerceEngineConnect"
   }
 }

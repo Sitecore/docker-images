@@ -35,6 +35,62 @@
         "--build-arg ASSETS_IMAGE=sitecore-assets:9.2.0-nanoserver-${nanoserver_version}",
         "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Experience Accelerator 1.9.0 rev. 190528 for 9.2.scwdp.zip'"
       ]
+    },
+    {
+      "tag": "sitecore-xm-sxa-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xm-spe-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Experience Accelerator XM 1.8.1 rev. 190319 for 9.1.1.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-sxa-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xp-spe-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.1.1.scwdp.zip'"
+      ]
+    }
+    ,
+    {
+      "tag": "sitecore-xm-sxa-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xm-spe-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Experience Accelerator XM 1.8.1 rev. 190319 for 9.1.1.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-sxa-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xp-spe-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.1.1.scwdp.zip'"
+      ]
+    }
+    ,
+    {
+      "tag": "sitecore-xm-sxa-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xm-spe-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Experience Accelerator XM 1.8.1 rev. 190319 for 9.1.1.scwdp.zip'"
+      ]
+    },
+    {
+      "tag": "sitecore-xp-sxa-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=sitecore-xp-spe-sqldev:9.1.1-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-assets:9.1.1-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\Sitecore Experience Accelerator 1.8.1 rev. 190319 for 9.1.1.scwdp.zip'"
+      ]
     }
   ],
   "sources": []
