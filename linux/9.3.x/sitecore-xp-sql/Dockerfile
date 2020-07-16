@@ -32,6 +32,7 @@ ENV ACCEPT_EULA='Y' \
     MSSQL_PID=Developer
 
 RUN ( /opt/mssql/bin/sqlservr & ) | grep -q "Service Broker manager has started" \
+    && chmod +x /opt/replace_log.sh \
     && chmod +x /opt/install-databases.sh \
     && ./opt/install-databases.sh /opt/wdp/cm \
     && pwsh /opt/InstallShards.ps1 -SqlServer . -SqlAdminUser sa -SqlAdminPassword $SA_PASSWORD -SqlElasticPoolName xp -ResourcesDirectory /opt/wdp/xp1collection/ \
