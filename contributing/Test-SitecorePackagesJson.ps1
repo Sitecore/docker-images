@@ -16,9 +16,15 @@ $packagesPath = Join-Path $PSScriptRoot "..\sitecore-packages.json"
 $downloadUrl = "https://dev.sitecore.net"
 $downloadSession = $null
 
-Get-Content -Raw $packagesPath | ConvertFrom-Json -PipelineVariable jo | Get-Member -Type  NoteProperty | Sort-Object Name | ForEach-Object { 
+Get-Content -Raw $packagesPath | ConvertFrom-Json -PipelineVariable jo | Get-Member -Type  NoteProperty | Sort-Object Name | ForEach-Object {
     $name = $_.Name
     $url = $jo.$($_.Name).url
+
+    if (!$url)
+    {
+        Write-Verbose ("[{0}] Doesn't have a URL, skipping..." -f $name)
+        continue
+    }
 
     if ($null -eq $downloadSession)
     {
@@ -37,9 +43,9 @@ Get-Content -Raw $packagesPath | ConvertFrom-Json -PipelineVariable jo | Get-Mem
 
         Write-Verbose ("Logged in to '{0}'." -f $downloadUrl)
     }
-    
+
     Write-Verbose ("[{0}] Checking '{1}'..." -f $name, $url)
-        
+
     $response = Invoke-WebRequest -Uri $url -WebSession $downloadSession -UseBasicParsing -Method "HEAD"
 
     if ($response.StatusCode -ne 200)
