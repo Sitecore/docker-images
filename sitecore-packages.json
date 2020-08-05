@@ -234,5 +234,13 @@
   "Sitecore Publishing Module 9.3.0.0 rev. r00546.2197.scwdp.zip": {
     "url": "",
     "hash": ""
+  },
+  "Sitecore Publishing Module 10.0.0.0 rev. r00565.2578.scwdp.zip": {
+    "url": "",
+    "hash": ""
+  },
+  "Sitecore Publishing Service 4.3.0-win-x64.zip": {
+    "url": "https://dev.sitecore.net/~/media/3BA8C0FD6894405ABF3CD53803007272.ashx",
+    "hash": ""
   }
 }

@@ -101,7 +101,7 @@ function Invoke-Build
             $specs | Where-Object { $_.Include -eq $true } | ForEach-Object {
                 $spec = $_
 
-                $spec.Base | Where-Object { $_.Contains("/") -eq $true } | ForEach-Object {
+                $spec.Base | Where-Object { $_.Contains("/") -eq $true -and -not $_.StartsWith("modules")} | ForEach-Object {
                     $baseImages += $_
                 }
             }

@@ -19,8 +19,8 @@ param(
     [Parameter()]
     [string]$RegistryPassword = "",
     [Parameter()]
-    [ValidateSet("9.3.0", "9.2.0", "9.1.1", "9.0.2")]
-    [string[]]$SitecoreVersion = @("9.3.0"),
+    [ValidateSet("10.0.0", "9.3.0", "9.2.0", "9.1.1", "9.0.2")]
+    [string[]]$SitecoreVersion = @("10.0.0"),
     [ValidateSet("xm", "xp", "xc")]
     [string[]]$Topology = @("xm", "xp"),
     [ValidateSet("2004", "1909", "1903", "ltsc2019", "linux")]
@@ -116,23 +116,24 @@ $defaultTags = $availableTags | Where-Object { $_ -like "mssql-developer:*" -or 
 $xpMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" }
 $xcMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" -or $_ -like "sitecore-redis:*" }
 
-$assetTags = $availableTags | Where-Object { $_ -like "sitecore-assets:*" }
+$assetTags = $availableTags | Where-Object { $_ -match "sitecore(-custom)?-assets:.*" }
+$moduleAssetTags = $availableTags | Where-Object { $_ -like "modules/*" }
 $xmTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(?!sxa|spe|jss).*:.*" }
 $xpTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(?!sxa|spe|jss).*:.*" }
 $xcTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(?!sxa|spe|jss).*:.*" }
 
-$xmSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(spe).*:.*" }
-$xmSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(sxa).*:.*" }
-$xmJssTags = $availableTags | Where-Object { $_ -match "sitecore-xm-(jss).*:.*" }
+$xmSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xm([0,1]{0,1})(-custom)?-(spe).*:.*"  }
+$xmSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xm([0,1]{0,1})(-custom)?-(sxa).*:.*" }
+$xmJssTags = $availableTags | Where-Object { $_ -match "sitecore-xm([0,1]{0,1})(-custom)?-(jss).*:.*" }
 
-$xpSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(spe).*:.*" }
-$xpSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(sxa).*:.*" }
-$xpJssTags = $availableTags | Where-Object { $_ -match "sitecore-xp-(jss).*:.*" }
+$xpSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xp([0,1]{0,1})(-custom)?-(spe).*:.*" }
+$xpSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xp([0,1]{0,1})(-custom)?-(sxa).*:.*" }
+$xpJssTags = $availableTags | Where-Object { $_ -match "sitecore-xp([0,1]{0,1})(-custom)?-(jss).*:.*" }
 
 $xcSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(spe).*:.*" }
 $xcSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(sxa).*:.*" }
 
-$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xpJssTags
+$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $moduleAssetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xpJssTags
 # These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
 $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
 
@@ -153,6 +154,7 @@ foreach ($wv in $OSVersion)
     foreach ($scv in $SitecoreVersion)
     {
         $assetTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+        $moduleAssetTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
         $catchAllTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
 
         if ($Topology -contains "xm")

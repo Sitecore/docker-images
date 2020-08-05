@@ -1,5 +1,11 @@
 # Changelog
 
+## August 2020
+
+- [WIP]   Sitecore 10.0.0 docker-compose tests
+- [Added] Sitecore 10.0.0 XM/SPE/SXA/JSS/PS Windows images.
+- [Added] Sitecore 10.0.0 XP/SPE/SXA/JSS/PS Windows images.
+
 ## July 2020
 
 - [Bug] Sitecore 9.3.0 XP set ServerName xConnect shards on SQL linux images.
