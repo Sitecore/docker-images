@@ -2,10 +2,19 @@
 
 ## September 2020
 
+- [**Breaking**] Sitecore Version ```build.ps1``` default set to ```10.0.0```
+- [Added] XP0 10.0.0. SPE/SXA/JSS
+- [WIP] Sitecore 10.0.0 docker-compose tests (XM/XP/XP0)
 - [**Breaking**] Removed sitecore-tags.md from the root of the repo. Could cause broken links if someone refers to it
 - [Changed] Refactored README.md to reflect official Sitecore folder, pulled out instructions
 - [Added] INSTRUCTIONS.md pulled from the original README.md
 - [Added] /sitecore-container-support folder which will hold sitecore-tags.md and other official assets
+
+## August 2020
+
+- [Added] Sitecore 10.0.0 XM/SPE/SXA/JSS/PS Windows images.
+- [Added] Sitecore 10.0.0 XP/SPE/SXA/JSS/PS Windows images.
+
 
 ## July 2020
 
