@@ -82,7 +82,7 @@ filter LinuxFilter
 filter WindowsFilter
 {
     param([string]$Version)
-    if ($_ -like "*-windowsservercore-$($Version)" -or $_ -like "*-nanoserver-$($windowsVersionMapping[$Version])")
+    if ($_ -match ".*((-windowsservercore){0,1})-$($Version)" -or $_ -match ".*((-nanoserver){0,1})-$($windowsVersionMapping[$Version])")
     {
         $_
     }
@@ -91,7 +91,7 @@ filter WindowsFilter
 filter SitecoreFilter
 {
     param([string]$Version)
-    if ($_ -like "*:$($Version)-windowsservercore-*" -or $_ -like "*:$($Version)-nanoserver-*" -or $_ -like "*:$($Version)-linux")
+    if ($_ -match ".*:$($Version)((-windowsservercore){0,1})-*" -or $_ -match ".*:$($Version)((-nanoserver){0,1})-*" -or $_ -like "*:$($Version)-linux")
     {
         $_
     }
