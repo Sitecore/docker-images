@@ -30,7 +30,8 @@
                 "--memory 4GB",
                 "--build-arg BASE_IMAGE=sitecore-xm1-custom-spe-sxa-jss-mssql:10.0.0-windowsservercore-${windowsservercore_version}",
                 "--build-arg MODULE_ASSETS=modules/custom-ps-assets:10.0.0-nanoserver-1809"
-            ]
+            ],
+            "experimental": true
         }
     ],
     "sources": []

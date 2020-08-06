@@ -38,7 +38,8 @@
         "--memory 4GB",
         "--build-arg ROLE=cm",
         "--target base"
-      ]
+      ],
+      "experimental": true
     },
     {
       "tag": "sitecore-xp1-custom-spe-cd:10.0.0-windowsservercore-${windowsservercore_version}",
