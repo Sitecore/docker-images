@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "modules/custom-ps-assets:10.0.0-nanoserver-1809",
+      "tag": "modules/custom-ps-assets:10.0.0-1809",
       "build-options": [
         "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:1809",
         "--build-arg TOOL_IMAGE=scr.sitecore.com/tools/sitecore-docker-tools-assets:10.0.0-1809",
