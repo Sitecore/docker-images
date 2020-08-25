@@ -242,5 +242,27 @@
   "Sitecore Publishing Service 4.3.0-win-x64.zip": {
     "url": "https://dev.sitecore.net/~/media/3BA8C0FD6894405ABF3CD53803007272.ashx",
     "hash": ""
+  },
+  "Horizon.FeatureIntegration 4.0.0-r00721.scwdp.zip": {
+    "url": "",
+    "hash": ""
+  },
+  "Horizon.FeatureIntegration.Insights 4.0.0-r00721.scwdp.zip": {
+    "url": "",
+    "hash": ""
+  },
+  "HorizonHost.1.36.0.scwdp.zip": {
+    "url": "",
+    "hash": ""
+  },
+  "Sitecore Zenith Integration 1.270.0.scwdp.zip": {
+    "url": "",
+    "hash": ""
+  },
+  "SitecoreIdentityIntegration.1.36.0.scwdp.zip": {
+    "url": "",
+    "hash": ""
   }
+
+
 }

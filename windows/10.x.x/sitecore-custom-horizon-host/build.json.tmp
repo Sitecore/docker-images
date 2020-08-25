@@ -1,0 +1,14 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-custom-horizon-host:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=sitecore-custom-assets:10.0.0-${nanoserver_version}",
+        "--build-arg ASSETS_USE_PS_WDP='C:\\packages\\HorizonHost.1.36.0.scwdp.zip'"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": []
+}

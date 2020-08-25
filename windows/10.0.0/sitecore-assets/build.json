@@ -9,6 +9,7 @@
     }
   ],
   "sources": [
-    "Sitecore Publishing Service 4.3.0-win-x64.zip"
+    "Sitecore Publishing Service 4.3.0-win-x64.zip",
+    "HorizonHost.1.36.0.scwdp.zip"
   ]
 }
