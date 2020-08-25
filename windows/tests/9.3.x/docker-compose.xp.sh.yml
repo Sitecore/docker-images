@@ -41,11 +41,11 @@ services:
       - "44016:80"
       - "44018:443"
     environment:
-      HOST_HEADER: authoringhost
+      HOST_HEADER: authoringhost.dev.local
     networks:
       default:
         aliases:
-          - authoringhost
+          - authoringhost.dev.local
     depends_on:
       sql:
         condition: service_healthy
@@ -159,9 +159,9 @@ services:
     networks:
       default:
         aliases:
-          - cd
+          - cd.dev.local
     environment:
-      HOST_HEADER: cd
+      HOST_HEADER: cd.dev.local
       SITECORE_LICENSE: ${SITECORE_LICENSE}
       SITECORE_APPSETTINGS_ROLE:DEFINE: ContentDelivery
       SITECORE_CONNECTIONSTRINGS_SECURITY: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
@@ -198,9 +198,9 @@ services:
     networks:
       default:
         aliases:
-          - cm
+          - cm.dev.local
     environment:
-      HOST_HEADER: cm
+      HOST_HEADER: cm.dev.local
       SITECORE_LICENSE: ${SITECORE_LICENSE}
       SITECORE_APPSETTINGS_ROLE:DEFINE: Standalone
       SITECORE_CONNECTIONSTRINGS_CORE: Data Source=sql;Initial Catalog=Sitecore.Core;User ID=sa;Password=${SQL_SA_PASSWORD}
@@ -249,11 +249,11 @@ services:
       - "44008:80"
       - "44019:443"
     environment:
-      HOST_HEADER: identity
+      HOST_HEADER: identity.dev.local
     networks:
       default:
         aliases:
-          - identity
+          - identity.dev.local
     depends_on:
       sql:
         condition: service_healthy

@@ -6,12 +6,12 @@
       <OpenIdConnectOptions>
         <RequireHttpsMetadata>false</RequireHttpsMetadata>
         <ClientId>Sitecore</ClientId>
-        <Authority>https://identity/</Authority>
+        <Authority>https://identity.dev.local/</Authority>
         <LockTimeoutSeconds>300</LockTimeoutSeconds>
         <ClientSecret>SIF-Default</ClientSecret>
       </OpenIdConnectOptions>
       <BearerAuthenticationOptions>
-        <Authority>https://identity/</Authority>
+        <Authority>https://identity.dev.local/</Authority>
       </BearerAuthenticationOptions>
     </Authentication>
   </Sitecore>

@@ -42,6 +42,6 @@
      <LicenseFilePath>C:/license/license.xml</LicenseFilePath>
   </Host>
   <FederatedUI>
-    <HostBaseUrl>https://authoringhost</HostBaseUrl>
+    <HostBaseUrl>https://authoringhost.dev.local</HostBaseUrl>
   </FederatedUI>
 </Sitecore>

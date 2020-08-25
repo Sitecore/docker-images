@@ -3,14 +3,14 @@
   <Sitecore>
     <IdentityServer>
       <AccountOptions>
-        <PasswordRecoveryUrl xdt:Transform="Replace">https://cm/sitecore/login?rc=1</PasswordRecoveryUrl>
+        <PasswordRecoveryUrl xdt:Transform="Replace">https://cm.dev.local/sitecore/login?rc=1</PasswordRecoveryUrl>
       </AccountOptions>
       <Clients>
         <DefaultClient>
           <AllowedCorsOrigins>
-            <AllowedCorsOriginsGroup1 xdt:Transform="Replace">http://cm|http://cd|https://cm|https://cd</AllowedCorsOriginsGroup1>
-            <AuthoringHostHttpsCorsOrigin xdt:Transform="Insert">https://authoringhost</AuthoringHostHttpsCorsOrigin>
-            <AuthoringHostHttpCorsOrigin xdt:Transform="Insert">http://authoringhost</AuthoringHostHttpCorsOrigin>
+            <AllowedCorsOriginsGroup1 xdt:Transform="Replace">http://cm.dev.local|http://cd.dev.local|https://cm.dev.local|https://cd.dev.local</AllowedCorsOriginsGroup1>
+            <AuthoringHostHttpsCorsOrigin xdt:Transform="Insert">https://authoringhost.dev.local</AuthoringHostHttpsCorsOrigin>
+            <AuthoringHostHttpCorsOrigin xdt:Transform="Insert">http://authoringhost.dev.local</AuthoringHostHttpCorsOrigin>
           </AllowedCorsOrigins>
         </DefaultClient>
       </Clients>

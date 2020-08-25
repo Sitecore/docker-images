@@ -2,7 +2,7 @@
 
 <Settings>
   <ApiGateway>
-    <SitecoreHost>https://cm</SitecoreHost>
+    <SitecoreHost>https://cm.dev.local</SitecoreHost>
     <EnableGraphiQL>false</EnableGraphiQL>
     <ShowDetailedErrors>false</ShowDetailedErrors>
   </ApiGateway>
