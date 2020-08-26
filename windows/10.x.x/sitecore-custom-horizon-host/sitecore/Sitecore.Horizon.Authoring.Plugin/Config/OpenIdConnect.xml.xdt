@@ -3,11 +3,11 @@
   <Sitecore>
     <Authentication>
       <OpenIdConnectOptions>
-        <Authority xdt:Transform="Replace">https://identity.dev.local/</Authority>
+        <Authority xdt:Transform="Replace">https://id.sc.localhost/</Authority>
         <ClientSecret xdt:Transform="Replace">YourOwnClientSecret</ClientSecret>
       </OpenIdConnectOptions>
       <BearerAuthenticationOptions>
-        <Authority xdt:Transform="Replace">https://identity.dev.local/</Authority>
+        <Authority xdt:Transform="Replace">https://id.sc.localhost/</Authority>
       </BearerAuthenticationOptions>
     </Authentication>
   </Sitecore>
