@@ -5,7 +5,7 @@ ARG ASSETS_IMAGE
 FROM $ASSETS_IMAGE as assets
 FROM ${BASE_IMAGE} as build
 
-ARG ASSETS_USE_PS_WDP
+ARG ASSETS_USE_WDP
 
 ARG CONN_STRING_CORE
 ARG CONN_STRING_MASTER
@@ -16,13 +16,13 @@ SHELL ["powershell", "-NoProfile", "-Command", "$ErrorActionPreference = 'Stop';
 WORKDIR /app/
 
 # Copy Publishing Service files
-COPY --from=assets ["${ASSETS_USE_PS_WDP}", "/packages/"]
+COPY --from=assets ["${ASSETS_USE_WDP}", "/packages/"]
 
 # Copy PS scripts
 COPY scripts/ .
 
 # expand selected wdp into installation directory
-RUN Expand-Archive -Path $env:ASSETS_USE_PS_WDP -DestinationPath "/app"
+RUN Expand-Archive -Path $env:ASSETS_USE_WDP -DestinationPath "/app"
 
 FROM ${BASE_IMAGE} as final
 

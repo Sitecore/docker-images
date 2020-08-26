@@ -20,6 +20,7 @@ services:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
+      Sitecore_Sitecore__IdentityServer__Clients__DefaultClient__AllowedCorsOrigins__AllowedCorsOriginsGroup1: https://${CM_HOST}|https://{SH_HOST}
 
   cm:
     image: ${REGISTRY}sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-windowsservercore-ltsc2019
@@ -27,3 +28,28 @@ services:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
+
+  authoringhost:
+    isolation: ${ISOLATION}
+    image: ${REGISTRY}sitecore-custom-horizon-host:${SITECORE_VERSION}
+    build:
+      context: ..\..\..\10.x.x\sitecore-custom-horizon-host
+      args:
+        BASE_IMAGE: mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-${windowsservercore_version}
+        TOOL_IMAGE: scr.sitecore.com/tools/sitecore-docker-tools-assets:10.0.0-1809
+        ASSETS_IMAGE: sitecore-custom-assets:10.0.0-${nanoserver_version}
+        ASSETS_USE_WDP: 'C:\\packages\\HorizonHost.1.36.0.scwdp.zip'
+    volumes:
+      - ${LICENSE_PATH}:C:\license
+    depends_on:
+      id:
+        condition: service_healthy
+      cm:
+        condition: service_healthy
+      mssql:
+        condition: service_healthy
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.id-secure.entrypoints=websecure"
+      - "traefik.http.routers.id-secure.rule=Host(`${SH_HOST}`)"
+      - "traefik.http.routers.id-secure.tls=true"
