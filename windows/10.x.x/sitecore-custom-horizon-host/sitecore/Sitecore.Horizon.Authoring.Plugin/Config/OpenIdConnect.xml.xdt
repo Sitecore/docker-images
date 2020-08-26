@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Settings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+  <Sitecore>
+    <Authentication>
+      <OpenIdConnectOptions>
+        <Authority xdt:Transform="Replace">https://identity.dev.local/</Authority>
+        <ClientSecret xdt:Transform="Replace">YourOwnClientSecret</ClientSecret>
+      </OpenIdConnectOptions>
+      <BearerAuthenticationOptions>
+        <Authority xdt:Transform="Replace">https://identity.dev.local/</Authority>
+      </BearerAuthenticationOptions>
+    </Authentication>
+  </Sitecore>
+</Settings>
