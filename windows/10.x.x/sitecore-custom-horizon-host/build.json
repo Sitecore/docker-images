@@ -5,7 +5,7 @@
       "build-options": [
         "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-${windowsservercore_version}",
         "--build-arg ASSETS_IMAGE=sitecore-custom-assets:10.0.0-${nanoserver_version}",
-        "--build-arg ASSETS_USE_PS_WDP='C:\\packages\\HorizonHost.1.36.0.scwdp.zip'"
+        "--build-arg ASSETS_USE_WDP='C:\\packages\\HorizonHost.1.36.0.scwdp.zip'"
       ],
       "experimental": true
     }

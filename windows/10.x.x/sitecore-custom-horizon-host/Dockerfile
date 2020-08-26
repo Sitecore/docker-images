@@ -1,40 +1,26 @@
 # escape=`
 ARG BASE_IMAGE
 ARG ASSETS_IMAGE
+#ARG TOOL_IMAGE
 
-FROM $ASSETS_IMAGE as assets
+FROM ${ASSETS_IMAGE} as assets
 FROM ${BASE_IMAGE} as build
+#FROM ${TOOL_IMAGE} as tools
 
-ARG ASSETS_USE_PS_WDP
-
-ARG CONN_STRING_CORE
-ARG CONN_STRING_MASTER
-ARG CONN_STRING_WEB
+ARG ASSETS_USE_WDP
 
 SHELL ["powershell", "-NoProfile", "-Command", "$ErrorActionPreference = 'Stop';"]
-
-WORKDIR /app/
-
-# Copy Publishing Service files
-COPY --from=assets ["${ASSETS_USE_PS_WDP}", "/packages/"]
+ENV PACKAGE="/packages/HorizonHost.1.36.0.scwdp.zip"
+# Copy files
+COPY --from=assets ${PACKAGE} /packages/
 
 # expand selected wdp into installation directory
-RUN Expand-Archive -Path $env:ASSETS_USE_PS_WDP -DestinationPath "/expanded"
+RUN Expand-Archive -Path $env:PACKAGE -DestinationPath "/output/"; `
+    Copy-Item /output/content/website/* /inetpub/wwwroot/ -Recurse;
 
 FROM ${BASE_IMAGE} as final
+COPY --from=build /inetpub/wwwroot/ /inetpub/wwwroot/
 
-WORKDIR /app/
-
-COPY --from=build /expanded/Content/Website .
-
-#Configure web servers to bind to port 80 when present
-# ENV ASPNETCORE_URLS=http://+:80 `
-#     # Enable detection of running in a container
-#     DOTNET_RUNNING_IN_CONTAINER=true `
-#     # Deprecated, use `DOTNET_RUNNING_IN_CONTAINER` instead - https://github.com/dotnet/dotnet-docker/issues/677
-#     DOTNET_RUNNING_IN_CONTAINERS=true
-
-# EXPOSE 80
-
-#ENTRYPOINT [ "powershell", "/app/start.ps1" ]
-
+# enable support for WebSocket protocol in IIS
+RUN Import-Module ServerManager; `
+    Install-WindowsFeature -name Web-WebSockets;
