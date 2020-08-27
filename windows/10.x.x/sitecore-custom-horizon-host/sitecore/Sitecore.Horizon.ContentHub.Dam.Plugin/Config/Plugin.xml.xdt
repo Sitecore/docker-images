@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<Settings xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
-  <ContentHubDam>
-    <PlatformUrl xdt:Transform="Replace">https://platformURL</PlatformUrl>
-  </ContentHubDam>
-</Settings>
