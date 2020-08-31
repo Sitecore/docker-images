@@ -1,5 +1,11 @@
 # Changelog
 
+## September 2020
+
+- [Changed] Refactored README.md to reflect official Sitecore folder, pulled out instructions
+- [Added] INSTRUCTIONS.md pulled from the original README.md
+- [Added] /sitecore-container-support folder which will hold sitecore-tags.md and other official assets
+
 ## July 2020
 
 - [Bug] Sitecore 9.3.0 XP set ServerName xConnect shards on SQL linux images.
