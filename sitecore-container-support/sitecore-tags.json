@@ -1,5 +1,1293 @@
 [
     {
+        "Name":  "sxc/nonproduction/sitecore-xc0-mssql",
+        "Namespace":  "sxc/nonproduction",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:4ed863c7510a7b8cf1dbdd8bc35b98b392437c2c3e99232dfdaf8aa08a52c8b5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 09:57:26",
+                         "LastUpdateTime":  "08/14/2020 11:02:17",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:417449433f287755b6db29177a8745516389e6f98dccf6a89c2f2094eb06d81b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:42:22",
+                         "LastUpdateTime":  "08/14/2020 11:42:22",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:417449433f287755b6db29177a8745516389e6f98dccf6a89c2f2094eb06d81b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:42:11",
+                         "LastUpdateTime":  "08/14/2020 11:42:11",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:4ed863c7510a7b8cf1dbdd8bc35b98b392437c2c3e99232dfdaf8aa08a52c8b5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:02:07",
+                         "LastUpdateTime":  "08/14/2020 11:02:07",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/nonproduction/sitecore-xc0-solr",
+        "Namespace":  "sxc/nonproduction",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:7eae4f1af79d3f1730cf46d1a444542f0e7f2fc9721fd957e4983406bf816d01",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 09:58:12",
+                         "LastUpdateTime":  "08/14/2020 11:02:40",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:df37f6904e3196f1879b08bafb8ae065f3a9aaf3901b1a0c6863bb3ceb32244e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:42:49",
+                         "LastUpdateTime":  "08/14/2020 11:42:49",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:df37f6904e3196f1879b08bafb8ae065f3a9aaf3901b1a0c6863bb3ceb32244e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:42:39",
+                         "LastUpdateTime":  "08/14/2020 11:42:39",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:7eae4f1af79d3f1730cf46d1a444542f0e7f2fc9721fd957e4983406bf816d01",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:02:30",
+                         "LastUpdateTime":  "08/14/2020 11:02:30",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/nonproduction/sitecore-xc1-mssql",
+        "Namespace":  "sxc/nonproduction",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:98d283e55f16a6657d21ad27f05954b5ce300f0292d60053c9181bd76563b6a4",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 09:53:33",
+                         "LastUpdateTime":  "08/14/2020 11:00:00",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:05affa8be99329cdb92b495d50fb5d8daf9fd54b31990b4044402bb12540d3cf",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:39:40",
+                         "LastUpdateTime":  "08/14/2020 11:39:40",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:05affa8be99329cdb92b495d50fb5d8daf9fd54b31990b4044402bb12540d3cf",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:39:28",
+                         "LastUpdateTime":  "08/14/2020 11:39:28",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:98d283e55f16a6657d21ad27f05954b5ce300f0292d60053c9181bd76563b6a4",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:59:47",
+                         "LastUpdateTime":  "08/14/2020 10:59:47",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/nonproduction/sitecore-xc1-solr",
+        "Namespace":  "sxc/nonproduction",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:aed0d95208bbda1d479d845d71e1677be7f780dbcb23a78fe7ddee33dbbe7ba6",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 09:55:11",
+                         "LastUpdateTime":  "08/14/2020 11:00:54",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:ce624cce502a721aee840c5f869b0228c10cb4d689809a36ba4a8e50793e3408",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:40:59",
+                         "LastUpdateTime":  "08/14/2020 11:40:59",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:ce624cce502a721aee840c5f869b0228c10cb4d689809a36ba4a8e50793e3408",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:40:49",
+                         "LastUpdateTime":  "08/14/2020 11:40:49",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:aed0d95208bbda1d479d845d71e1677be7f780dbcb23a78fe7ddee33dbbe7ba6",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:00:44",
+                         "LastUpdateTime":  "08/14/2020 11:00:44",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/nonproduction/xc1-mssql",
+        "Namespace":  "sxc/nonproduction",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:4ed863c7510a7b8cf1dbdd8bc35b98b392437c2c3e99232dfdaf8aa08a52c8b5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 09:55:56",
+                         "LastUpdateTime":  "08/14/2020 11:01:28",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:417449433f287755b6db29177a8745516389e6f98dccf6a89c2f2094eb06d81b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:41:27",
+                         "LastUpdateTime":  "08/14/2020 11:41:27",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:417449433f287755b6db29177a8745516389e6f98dccf6a89c2f2094eb06d81b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:41:17",
+                         "LastUpdateTime":  "08/14/2020 11:41:17",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:4ed863c7510a7b8cf1dbdd8bc35b98b392437c2c3e99232dfdaf8aa08a52c8b5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:01:10",
+                         "LastUpdateTime":  "08/14/2020 11:01:10",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/nonproduction/xc1-solr",
+        "Namespace":  "sxc/nonproduction",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:7eae4f1af79d3f1730cf46d1a444542f0e7f2fc9721fd957e4983406bf816d01",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 09:56:43",
+                         "LastUpdateTime":  "08/14/2020 11:01:55",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:df37f6904e3196f1879b08bafb8ae065f3a9aaf3901b1a0c6863bb3ceb32244e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:41:56",
+                         "LastUpdateTime":  "08/14/2020 11:41:56",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:df37f6904e3196f1879b08bafb8ae065f3a9aaf3901b1a0c6863bb3ceb32244e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:41:46",
+                         "LastUpdateTime":  "08/14/2020 11:41:46",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:7eae4f1af79d3f1730cf46d1a444542f0e7f2fc9721fd957e4983406bf816d01",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:01:44",
+                         "LastUpdateTime":  "08/14/2020 11:01:44",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc0-cm",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:f0d909ab82e7f77a21f02229d2e802fa148d0a02cef9f9afca7855d1ef138acb",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:21:12",
+                         "LastUpdateTime":  "08/14/2020 11:15:39",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:46d4e961fa83d32fc4a49a0231b9ab36633d88b7988dd0ddc7b4b2a45b7d0479",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:01:44",
+                         "LastUpdateTime":  "08/14/2020 12:01:44",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:46d4e961fa83d32fc4a49a0231b9ab36633d88b7988dd0ddc7b4b2a45b7d0479",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:01:34",
+                         "LastUpdateTime":  "08/14/2020 12:01:34",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:f0d909ab82e7f77a21f02229d2e802fa148d0a02cef9f9afca7855d1ef138acb",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:15:27",
+                         "LastUpdateTime":  "08/14/2020 11:15:27",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc0-xconnect",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:20ffdf89e7fe8a9bdd12016c2ff333973a735c03795bbfe66b2cd99cae270cb5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:24:46",
+                         "LastUpdateTime":  "08/14/2020 11:17:32",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:3aa310b4ff3058381dd89582dd61a81f61d104720920e588e88122e4603d0c43",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:04:31",
+                         "LastUpdateTime":  "08/14/2020 12:04:31",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:3aa310b4ff3058381dd89582dd61a81f61d104720920e588e88122e4603d0c43",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:04:22",
+                         "LastUpdateTime":  "08/14/2020 12:04:22",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:20ffdf89e7fe8a9bdd12016c2ff333973a735c03795bbfe66b2cd99cae270cb5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:17:22",
+                         "LastUpdateTime":  "08/14/2020 11:17:22",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc0-xdbautomationworker",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:44b3c6905731a2f6071d187586a71bc7f3b1c4de02412e6daa7c51399d4b0d60",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:23:55",
+                         "LastUpdateTime":  "08/14/2020 11:17:04",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:7c63b6bdafed04b0cefdab7c2c3c3b8f9900743ee596817177f6d7bb4e3438d1",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:03:59",
+                         "LastUpdateTime":  "08/14/2020 12:03:59",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:7c63b6bdafed04b0cefdab7c2c3c3b8f9900743ee596817177f6d7bb4e3438d1",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:03:49",
+                         "LastUpdateTime":  "08/14/2020 12:03:49",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:44b3c6905731a2f6071d187586a71bc7f3b1c4de02412e6daa7c51399d4b0d60",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:16:53",
+                         "LastUpdateTime":  "08/14/2020 11:16:53",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc0-xdbsearchworker",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:4da598534dc8f63464cbeee3c1eae191f58bdac014d0310b4fea7d0f9a1fe371",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:22:19",
+                         "LastUpdateTime":  "08/14/2020 11:16:07",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:7611e2c10e379165d6e5a7fb69e94b74c2f6ca8f60d26b4a55ec9fe25f3661e1",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:02:58",
+                         "LastUpdateTime":  "08/14/2020 12:02:58",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:7611e2c10e379165d6e5a7fb69e94b74c2f6ca8f60d26b4a55ec9fe25f3661e1",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:02:05",
+                         "LastUpdateTime":  "08/14/2020 12:02:05",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:4da598534dc8f63464cbeee3c1eae191f58bdac014d0310b4fea7d0f9a1fe371",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:15:58",
+                         "LastUpdateTime":  "08/14/2020 11:15:58",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-cd",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:b7660d3e56e9ea70cc879cbb2de04d906359b8192311852946d4ff6444bdf481",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:05:02",
+                         "LastUpdateTime":  "08/14/2020 11:07:00",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:63b2193cf5268cb6cf17a3e424a683f6db1e0a69f47bdb9e62c58d46c572f39f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:49:56",
+                         "LastUpdateTime":  "08/14/2020 11:49:56",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:63b2193cf5268cb6cf17a3e424a683f6db1e0a69f47bdb9e62c58d46c572f39f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:49:46",
+                         "LastUpdateTime":  "08/14/2020 11:49:46",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:b7660d3e56e9ea70cc879cbb2de04d906359b8192311852946d4ff6444bdf481",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:06:48",
+                         "LastUpdateTime":  "08/14/2020 11:06:48",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-cm",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:1d61712ea2b16107a519f5b778e4915c006dc1d268f3d2bee23ebda36bab1d95",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:02:42",
+                         "LastUpdateTime":  "08/14/2020 11:05:31",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:df09ab2b9366ceccdf55c54d2ebab0cc3034f7a8965371f60484e368f245ecf9",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:48:13",
+                         "LastUpdateTime":  "08/14/2020 11:48:13",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:df09ab2b9366ceccdf55c54d2ebab0cc3034f7a8965371f60484e368f245ecf9",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:48:01",
+                         "LastUpdateTime":  "08/14/2020 11:48:01",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:1d61712ea2b16107a519f5b778e4915c006dc1d268f3d2bee23ebda36bab1d95",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:05:20",
+                         "LastUpdateTime":  "08/14/2020 11:05:20",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-mssql-init",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:0f95a5553b5764f42ec375cea5c526371bd577e6dbfebdf9aaa91e74a6f8509d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:09:03",
+                         "LastUpdateTime":  "08/14/2020 11:09:13",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:f0b287efff54adad63ef0bc6dfea1df246bac9c814a9e0fc19e58fefb5504fc5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:52:39",
+                         "LastUpdateTime":  "08/14/2020 11:52:39",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:f0b287efff54adad63ef0bc6dfea1df246bac9c814a9e0fc19e58fefb5504fc5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:52:23",
+                         "LastUpdateTime":  "08/14/2020 11:52:23",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:0f95a5553b5764f42ec375cea5c526371bd577e6dbfebdf9aaa91e74a6f8509d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:09:02",
+                         "LastUpdateTime":  "08/14/2020 11:09:02",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-prc",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:ddd4e8bddd788e416bb7413a605d816a16bf97bb6773e03628d269f4b0a4d58a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:14:08",
+                         "LastUpdateTime":  "08/14/2020 11:12:19",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:cce265655015b8d661385ef161f86e11ea0cab4a43b16bfdeca27524863cf983",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:57:06",
+                         "LastUpdateTime":  "08/14/2020 11:57:06",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:cce265655015b8d661385ef161f86e11ea0cab4a43b16bfdeca27524863cf983",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:56:56",
+                         "LastUpdateTime":  "08/14/2020 11:56:56",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:ddd4e8bddd788e416bb7413a605d816a16bf97bb6773e03628d269f4b0a4d58a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:12:08",
+                         "LastUpdateTime":  "08/14/2020 11:12:08",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-rep",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:3f50bc13e4bb7e6d1a801e3771d066a6e5e6b5f581bd5a07838dce1adf51b26f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:18:04",
+                         "LastUpdateTime":  "08/14/2020 11:14:12",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:772e200a53b797e15ffa3fcd0c57b16ca8b901ab2b550e940903ea802dd2106e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:59:37",
+                         "LastUpdateTime":  "08/14/2020 11:59:37",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:772e200a53b797e15ffa3fcd0c57b16ca8b901ab2b550e940903ea802dd2106e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:59:27",
+                         "LastUpdateTime":  "08/14/2020 11:59:27",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:3f50bc13e4bb7e6d1a801e3771d066a6e5e6b5f581bd5a07838dce1adf51b26f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:14:02",
+                         "LastUpdateTime":  "08/14/2020 11:14:02",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-solr-init",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:9092df911e944bd137c70c0f2ecb7fcce7a06ae92c854f74681de71315534383",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:10:03",
+                         "LastUpdateTime":  "08/14/2020 11:09:52",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:51a707b60450b13d9c45e08394919078d0c9016c49f88366fdffcb63857dfaef",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:53:17",
+                         "LastUpdateTime":  "08/14/2020 11:53:17",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:51a707b60450b13d9c45e08394919078d0c9016c49f88366fdffcb63857dfaef",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:53:06",
+                         "LastUpdateTime":  "08/14/2020 11:53:06",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:9092df911e944bd137c70c0f2ecb7fcce7a06ae92c854f74681de71315534383",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:09:40",
+                         "LastUpdateTime":  "08/14/2020 11:09:40",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-xdbautomation",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:148ce95d3cf7274392d9e2a6bebc73a26d307bea4f46b9f42870a1012417938b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:12:25",
+                         "LastUpdateTime":  "08/14/2020 11:11:21",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:01c1effc06b39345e8f7d4ee80b1c822d4401057e498e29b6c07fe8115492a1d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:55:24",
+                         "LastUpdateTime":  "08/14/2020 11:55:24",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:01c1effc06b39345e8f7d4ee80b1c822d4401057e498e29b6c07fe8115492a1d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:55:14",
+                         "LastUpdateTime":  "08/14/2020 11:55:14",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:148ce95d3cf7274392d9e2a6bebc73a26d307bea4f46b9f42870a1012417938b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:11:11",
+                         "LastUpdateTime":  "08/14/2020 11:11:11",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-xdbautomationworker",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:30202ce8735ad78700f4ba29a629c6dddd7126f9e4b0a6ddeec41770d29a24a4",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:15:56",
+                         "LastUpdateTime":  "08/14/2020 11:13:19",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:0b2dc894e5430909ca61d4068f343d27782e74d51129dc812cf1dc6cdc4fa11e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:58:16",
+                         "LastUpdateTime":  "08/14/2020 11:58:16",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:0b2dc894e5430909ca61d4068f343d27782e74d51129dc812cf1dc6cdc4fa11e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:58:06",
+                         "LastUpdateTime":  "08/14/2020 11:58:06",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:30202ce8735ad78700f4ba29a629c6dddd7126f9e4b0a6ddeec41770d29a24a4",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:13:09",
+                         "LastUpdateTime":  "08/14/2020 11:13:09",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-xdbcollection",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:fc1abe8fb96d6f43ca7661ef4fa38236c1c6a237a9ae1fa3a5b52aebfda54ecb",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:15:05",
+                         "LastUpdateTime":  "08/14/2020 11:12:49",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:1fc5be6df9a49b2080a6cbe41019ef74fa4570aa2e2babe4c7329d331148671e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:57:41",
+                         "LastUpdateTime":  "08/14/2020 11:57:41",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:1fc5be6df9a49b2080a6cbe41019ef74fa4570aa2e2babe4c7329d331148671e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:57:31",
+                         "LastUpdateTime":  "08/14/2020 11:57:31",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:fc1abe8fb96d6f43ca7661ef4fa38236c1c6a237a9ae1fa3a5b52aebfda54ecb",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:12:39",
+                         "LastUpdateTime":  "08/14/2020 11:12:39",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-xdbsearch",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:eb985ac2403da880f85f7b38a7f218e7d5362bd68b49bd67be92613cd515c1b6",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:18:57",
+                         "LastUpdateTime":  "08/14/2020 11:14:39",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:9b4519a3d01257661dad743439d3083fd634151ddc63675191636c51319b0186",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:00:08",
+                         "LastUpdateTime":  "08/14/2020 12:00:08",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:9b4519a3d01257661dad743439d3083fd634151ddc63675191636c51319b0186",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:59:59",
+                         "LastUpdateTime":  "08/14/2020 11:59:59",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:eb985ac2403da880f85f7b38a7f218e7d5362bd68b49bd67be92613cd515c1b6",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:14:29",
+                         "LastUpdateTime":  "08/14/2020 11:14:29",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc1-xdbsearchworker",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:caf7979551ae9189fee592e81fefbb3efc8b64acc425c644176f1a568f114a56",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:23:06",
+                         "LastUpdateTime":  "08/14/2020 11:16:34",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:84ca17c86bcf8361041519e769a48c0f945429877fe152f050858344c35ca559",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:03:29",
+                         "LastUpdateTime":  "08/14/2020 12:03:29",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:84ca17c86bcf8361041519e769a48c0f945429877fe152f050858344c35ca559",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:03:20",
+                         "LastUpdateTime":  "08/14/2020 12:03:20",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:caf7979551ae9189fee592e81fefbb3efc8b64acc425c644176f1a568f114a56",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:16:25",
+                         "LastUpdateTime":  "08/14/2020 11:16:25",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc-bizfx",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:ad35ad8f7ad81989fc9761237b4ee9d0160c7ce234a54b0d6f04f09272421dfe",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:25:44",
+                         "LastUpdateTime":  "08/14/2020 11:21:24",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:ffff2e803b54aae4621e62c78f5804aec235b2a3644f1d232f64907c85e68a88",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:07:23",
+                         "LastUpdateTime":  "08/14/2020 12:07:23",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:ffff2e803b54aae4621e62c78f5804aec235b2a3644f1d232f64907c85e68a88",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:07:13",
+                         "LastUpdateTime":  "08/14/2020 12:07:13",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:ad35ad8f7ad81989fc9761237b4ee9d0160c7ce234a54b0d6f04f09272421dfe",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:21:13",
+                         "LastUpdateTime":  "08/14/2020 11:21:13",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc-engine",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:43394003cb2fba851563e9e065e85c84eee3a46623129390d9e6700acfe38597",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:27:21",
+                         "LastUpdateTime":  "08/14/2020 11:22:38",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:921f789e0936108f20e0ab1e8675d7b1380618b9695b8491a7f8a6145f3159fd",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:09:12",
+                         "LastUpdateTime":  "08/14/2020 12:09:12",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:921f789e0936108f20e0ab1e8675d7b1380618b9695b8491a7f8a6145f3159fd",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:09:01",
+                         "LastUpdateTime":  "08/14/2020 12:09:01",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:43394003cb2fba851563e9e065e85c84eee3a46623129390d9e6700acfe38597",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:22:27",
+                         "LastUpdateTime":  "08/14/2020 11:22:27",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/sitecore-xc-id",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:2e2bd21a3e48b4a82cba01a02f134e68f14bcf44a2efc1e49ab208405202566f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:28:56",
+                         "LastUpdateTime":  "08/14/2020 11:23:18",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:2d5dab54eb416027c76ee0ceef569e06ffad4d91cbfe5ce5d8f6a3fee1480965",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:10:21",
+                         "LastUpdateTime":  "08/14/2020 12:10:21",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:2d5dab54eb416027c76ee0ceef569e06ffad4d91cbfe5ce5d8f6a3fee1480965",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 12:10:11",
+                         "LastUpdateTime":  "08/14/2020 12:10:11",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:2e2bd21a3e48b4a82cba01a02f134e68f14bcf44a2efc1e49ab208405202566f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:23:07",
+                         "LastUpdateTime":  "08/14/2020 11:23:07",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/xc1-cd",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:dedf0c0c1619c2e03bc3bac450da0cb00de6128ee2fd05168e9d04a39ba3248d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:06:41",
+                         "LastUpdateTime":  "08/14/2020 11:07:55",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:0b10d4286c7fefaaf810924ccae7f5a626fd8ce057631c20bc4d6647cee68dab",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:51:00",
+                         "LastUpdateTime":  "08/14/2020 11:51:00",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:0b10d4286c7fefaaf810924ccae7f5a626fd8ce057631c20bc4d6647cee68dab",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:50:50",
+                         "LastUpdateTime":  "08/14/2020 11:50:50",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:dedf0c0c1619c2e03bc3bac450da0cb00de6128ee2fd05168e9d04a39ba3248d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:07:44",
+                         "LastUpdateTime":  "08/14/2020 11:07:44",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/xc1-cm",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:d6d031c7b594fda2c7c9aaf31f8201c159581a5c7fa331b36f47a55a56e1d509",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:05:49",
+                         "LastUpdateTime":  "08/14/2020 11:07:28",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:06ea57aa33ac56a5e16d4d85172de4783398a7cea54d61efbda8c85c929f7d31",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:50:29",
+                         "LastUpdateTime":  "08/14/2020 11:50:29",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:06ea57aa33ac56a5e16d4d85172de4783398a7cea54d61efbda8c85c929f7d31",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:50:18",
+                         "LastUpdateTime":  "08/14/2020 11:50:18",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:d6d031c7b594fda2c7c9aaf31f8201c159581a5c7fa331b36f47a55a56e1d509",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:07:17",
+                         "LastUpdateTime":  "08/14/2020 11:07:17",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/xc1-mssql-init",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:76ae5adfe6bfb368ec889c2b523ed8edc132bba7da51e91438e42569dc17b4ed",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:11:35",
+                         "LastUpdateTime":  "08/14/2020 11:10:45",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:673a0cacbb00d00498ed1444a398452d16e84654450d87f13001abd1e4f3752f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:54:10",
+                         "LastUpdateTime":  "08/14/2020 11:54:10",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:673a0cacbb00d00498ed1444a398452d16e84654450d87f13001abd1e4f3752f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:54:00",
+                         "LastUpdateTime":  "08/14/2020 11:54:00",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:76ae5adfe6bfb368ec889c2b523ed8edc132bba7da51e91438e42569dc17b4ed",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:10:34",
+                         "LastUpdateTime":  "08/14/2020 11:10:34",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
+        "Name":  "sxc/xc1-solr-init",
+        "Namespace":  "sxc",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-1909",
+                         "Digest":  "sha256:2c72782048fa08e434994247854b15b7b3379f72bb3edda02025c74004fd5325",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 10:10:52",
+                         "LastUpdateTime":  "08/14/2020 11:10:19",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:2820447d9b8716d0f23fa2b02111684910778b2cf5f012705b40ee3ca36485aa",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:53:45",
+                         "LastUpdateTime":  "08/14/2020 11:53:45",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:2820447d9b8716d0f23fa2b02111684910778b2cf5f012705b40ee3ca36485aa",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:53:35",
+                         "LastUpdateTime":  "08/14/2020 11:53:35",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.60238.10214-10.0.18363.1016-1909",
+                         "Digest":  "sha256:2c72782048fa08e434994247854b15b7b3379f72bb3edda02025c74004fd5325",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/14/2020 11:10:08",
+                         "LastUpdateTime":  "08/14/2020 11:10:08",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     }
+                 ]
+    },
+    {
         "Name":  "sxp/modules/jss-xm1-assets",
         "Namespace":  "sxp/modules",
         "Tags":  [
@@ -187,22 +1475,22 @@
         "Tags":  [
                      {
                          "Tag":  "2017-10.0.0-1909",
-                         "Digest":  "sha256:e114329cdaf57d65b98a651ed402392b7e9204cf68f6dd5c17072ce503d29e76",
+                         "Digest":  "sha256:46363e4204761ded3ef39b0d4e862cee2f0499bb304afb91e63cd9b4ff17c77e",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 13:55:46",
-                         "LastUpdateTime":  "08/03/2020 19:59:13",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:46:52",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "2017-10.0.0-ltsc2019",
-                         "Digest":  "sha256:e4349ec0b9a79036f426977b0e9077de62f0db90de1583dfec1aa105a81ac0e0",
+                         "Digest":  "sha256:c533735c35dd6e11a834e3d24c7f005913d24abffea8aa1b34504e0f06ba83e4",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:41:52",
-                         "LastUpdateTime":  "08/03/2020 20:26:26",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:18:16",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -244,6 +1532,26 @@
                          "LastUpdateTime":  "08/03/2020 20:26:17",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "2017-10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:46363e4204761ded3ef39b0d4e862cee2f0499bb304afb91e63cd9b4ff17c77e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:46:42",
+                         "LastUpdateTime":  "08/25/2020 10:46:42",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "2017-10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:c533735c35dd6e11a834e3d24c7f005913d24abffea8aa1b34504e0f06ba83e4",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:18:06",
+                         "LastUpdateTime":  "08/25/2020 11:18:06",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -253,22 +1561,22 @@
         "Tags":  [
                      {
                          "Tag":  "8.4.0-10.0.0-1909",
-                         "Digest":  "sha256:3d695da0b975ae5341aa631b3a7f7cbc63a76fd9dc1879d240fd2edbbaeb8b8e",
+                         "Digest":  "sha256:3c263e8f7f1574e5e01ee455fbd27d79391a8089014072d129bac23f93dbebe5",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 13:56:48",
-                         "LastUpdateTime":  "08/03/2020 19:59:44",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:47:32",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "8.4.0-10.0.0-ltsc2019",
-                         "Digest":  "sha256:41f1d1843d36b82c8be6120a49c45c0ce428a92d0179232ad4248cad078dbce4",
+                         "Digest":  "sha256:708816c90f822a602469dce16eb522afee8c4704f9b3b1bf1b4327759942029b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:42:48",
-                         "LastUpdateTime":  "08/03/2020 20:27:19",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:19:09",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -310,6 +1618,26 @@
                          "LastUpdateTime":  "08/03/2020 20:27:11",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "8.4.0-10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:3c263e8f7f1574e5e01ee455fbd27d79391a8089014072d129bac23f93dbebe5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:47:22",
+                         "LastUpdateTime":  "08/25/2020 10:47:22",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "8.4.0-10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:708816c90f822a602469dce16eb522afee8c4704f9b3b1bf1b4327759942029b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:18:58",
+                         "LastUpdateTime":  "08/25/2020 11:18:58",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -319,22 +1647,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:0813f06712e6b77e6902e49c9e25e4524888f60322c0c1554ebdbc7daaa3e8ce",
+                         "Digest":  "sha256:119d09b112cfaad9eed336febfc0830c441a0d0a66ab7fd221eb29db48031384",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 13:58:04",
-                         "LastUpdateTime":  "08/03/2020 20:00:46",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:48:50",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:428899f0088164733368166efd4adaf5b3f4d93809a39002069d554e5078f874",
+                         "Digest":  "sha256:71f86002dd9a8c1e532d8f152ab10bb0f6e15e1991d33cac8c7496562e95daa4",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:44:03",
-                         "LastUpdateTime":  "08/03/2020 20:28:15",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:20:14",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -376,6 +1704,26 @@
                          "LastUpdateTime":  "08/03/2020 20:28:06",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:119d09b112cfaad9eed336febfc0830c441a0d0a66ab7fd221eb29db48031384",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:48:41",
+                         "LastUpdateTime":  "08/25/2020 10:48:41",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:71f86002dd9a8c1e532d8f152ab10bb0f6e15e1991d33cac8c7496562e95daa4",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:20:03",
+                         "LastUpdateTime":  "08/25/2020 11:20:03",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -385,22 +1733,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:1fbdef6b4b1a1a756f14a0b8c6f07dbde0172e6de01f37dcd936fbf8b85ce7ee",
+                         "Digest":  "sha256:908f306a656c6713cb44aafca7db08d3d8615997b80d4bbd946c695d8b00b952",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 13:58:44",
-                         "LastUpdateTime":  "08/03/2020 20:01:09",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:49:12",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:db6fc2fb3fa87ded8397b7ceb335f58601d8c2f5ec5b9c744be7cbfa0f49e663",
+                         "Digest":  "sha256:3cb2e1d0c9d4d1bc8aa873e1ba6a66812a1a6c65f035bd057ae4c818f13c72b9",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:44:52",
-                         "LastUpdateTime":  "08/03/2020 20:28:38",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:20:38",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -442,6 +1790,26 @@
                          "LastUpdateTime":  "08/03/2020 20:28:29",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:908f306a656c6713cb44aafca7db08d3d8615997b80d4bbd946c695d8b00b952",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:49:03",
+                         "LastUpdateTime":  "08/25/2020 10:49:03",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:3cb2e1d0c9d4d1bc8aa873e1ba6a66812a1a6c65f035bd057ae4c818f13c72b9",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:20:28",
+                         "LastUpdateTime":  "08/25/2020 11:20:28",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -451,22 +1819,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:38ea54848d38a93ac0b484d7734e555dbb7ccc5d5639264b41d9d15d92dd1a3f",
+                         "Digest":  "sha256:1b05fb0fcf152df4340a472a40460d0fad602dd5dccad02f61bf49c9da9ea2c5",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:02:08",
-                         "LastUpdateTime":  "08/03/2020 20:02:42",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:51:08",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:e605fe117d3bdef317d0efd6b4fb01eadcbf53702a545918f8e3354b53c6a768",
+                         "Digest":  "sha256:721c1f5499c49c040757bd2b9632b5d74d918b2c0806409224e4d67a55bdcd71",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:51:33",
-                         "LastUpdateTime":  "08/03/2020 20:32:21",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:22:37",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -508,6 +1876,26 @@
                          "LastUpdateTime":  "08/03/2020 20:32:09",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:1b05fb0fcf152df4340a472a40460d0fad602dd5dccad02f61bf49c9da9ea2c5",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:50:57",
+                         "LastUpdateTime":  "08/25/2020 10:50:57",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:721c1f5499c49c040757bd2b9632b5d74d918b2c0806409224e4d67a55bdcd71",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:22:24",
+                         "LastUpdateTime":  "08/25/2020 11:22:24",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -517,22 +1905,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:aad446f0b5384383021c05cdbb3e6954165f666cbbd6bf5116491319ece2ae90",
+                         "Digest":  "sha256:0cb6572aeeeab8f4b4a3445a114e2745cc3764558ba04ad9ce4e1e95e76e9e7e",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:03:24",
-                         "LastUpdateTime":  "08/03/2020 20:03:46",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:52:40",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:90dcd49fe74b4525f258c332375fd558d33003da4d2deedb5eb9b9a43bdb6386",
+                         "Digest":  "sha256:74a3e88307f40266a4caf98e8466235cc8be384e9246fd04636a0990bb0455db",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:52:54",
-                         "LastUpdateTime":  "08/03/2020 20:33:27",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:23:27",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -574,6 +1962,26 @@
                          "LastUpdateTime":  "08/03/2020 20:33:16",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:0cb6572aeeeab8f4b4a3445a114e2745cc3764558ba04ad9ce4e1e95e76e9e7e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:52:29",
+                         "LastUpdateTime":  "08/25/2020 10:52:29",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:74a3e88307f40266a4caf98e8466235cc8be384e9246fd04636a0990bb0455db",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:23:17",
+                         "LastUpdateTime":  "08/25/2020 11:23:17",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -583,22 +1991,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:53c6bf7e23dd3d4777a88faa407bb12f5aa87c4aabd5c4e9c3f6ce97254aaf7f",
+                         "Digest":  "sha256:68fd40af1de417756e5af08b6257be99294ef79f82146650c19bb58d7733cb14",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:04:17",
-                         "LastUpdateTime":  "08/03/2020 20:04:33",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:53:56",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:0377680b3331cc40d0de2260f45b505f32a01bd3326489659587e4b0f73d74cf",
+                         "Digest":  "sha256:3829b6fafca5205fc6488f08149a1f4e0795be7065ce0159d9ed8cb79742416d",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:53:43",
-                         "LastUpdateTime":  "08/03/2020 20:34:09",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:25:04",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -640,6 +2048,26 @@
                          "LastUpdateTime":  "08/03/2020 20:33:59",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:68fd40af1de417756e5af08b6257be99294ef79f82146650c19bb58d7733cb14",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:53:46",
+                         "LastUpdateTime":  "08/25/2020 10:53:46",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:3829b6fafca5205fc6488f08149a1f4e0795be7065ce0159d9ed8cb79742416d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:24:54",
+                         "LastUpdateTime":  "08/25/2020 11:24:54",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -649,22 +2077,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:9d23cbbd4990e0c77d0f3900c2239d42fd24bd4bfba807b8f6d60ea0547c8916",
+                         "Digest":  "sha256:98c08890e9b0241afb02bbc98ba8b7b4b98b3a733c640d05e66706b9e80e2a7b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:05:08",
-                         "LastUpdateTime":  "08/03/2020 20:05:07",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:54:25",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:12d97b9279c93156713e1e1761a3be7f9b106d88ae3bb7531ee7e28a384c553a",
+                         "Digest":  "sha256:bc340190333486ad03cb17c8d3d590f4d852452143ada3c1f71aa9aadef83538",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:54:19",
-                         "LastUpdateTime":  "08/03/2020 20:34:44",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:25:32",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -706,6 +2134,26 @@
                          "LastUpdateTime":  "08/03/2020 20:34:34",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:98c08890e9b0241afb02bbc98ba8b7b4b98b3a733c640d05e66706b9e80e2a7b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:54:16",
+                         "LastUpdateTime":  "08/25/2020 10:54:16",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:bc340190333486ad03cb17c8d3d590f4d852452143ada3c1f71aa9aadef83538",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:25:22",
+                         "LastUpdateTime":  "08/25/2020 11:25:22",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -715,22 +2163,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:e1204098531bfb2ab60468a968bfc7165f28ea3bee3eadd3c9966325a65b3e2f",
+                         "Digest":  "sha256:10c2bdc26381e6581fd56a4ef812954062dab3bb7ddfd6547b04c022249d0e53",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:05:57",
-                         "LastUpdateTime":  "08/03/2020 20:05:43",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:54:54",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:b9f95b0115e0829dfc3012ec1117845d06de362f4f674bb30e776dfa8d42ff4d",
+                         "Digest":  "sha256:0d77039e51288e274485335321a3f68a8c3b382e766258f0773ae4abbc99d32f",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:54:53",
-                         "LastUpdateTime":  "08/03/2020 20:35:17",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:26:01",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -772,6 +2220,26 @@
                          "LastUpdateTime":  "08/03/2020 20:35:06",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:10c2bdc26381e6581fd56a4ef812954062dab3bb7ddfd6547b04c022249d0e53",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:54:45",
+                         "LastUpdateTime":  "08/25/2020 10:54:45",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:0d77039e51288e274485335321a3f68a8c3b382e766258f0773ae4abbc99d32f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:25:49",
+                         "LastUpdateTime":  "08/25/2020 11:25:49",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -781,22 +2249,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:e543b554f75bcd05b4c4a90f9043f8599dc9abe74326ddb280b4d24403602b22",
+                         "Digest":  "sha256:3682c9bb21091e0842e1e9e3ab5fe6812178050173959a0ad69bd98b6fa5dea1",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:06:48",
-                         "LastUpdateTime":  "08/03/2020 20:06:14",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:55:25",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:377b40c09a4f8058dc7f65777704f7aa6d592e04decbfdcab6ddbc33909f82db",
+                         "Digest":  "sha256:8baff14a1d6fe9e44fa2a65c804120ad45142ba32e1f78ed9ad560297270391a",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:55:28",
-                         "LastUpdateTime":  "08/03/2020 20:35:51",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:26:30",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -838,6 +2306,26 @@
                          "LastUpdateTime":  "08/03/2020 20:35:40",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:3682c9bb21091e0842e1e9e3ab5fe6812178050173959a0ad69bd98b6fa5dea1",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:55:15",
+                         "LastUpdateTime":  "08/25/2020 10:55:15",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:8baff14a1d6fe9e44fa2a65c804120ad45142ba32e1f78ed9ad560297270391a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:26:19",
+                         "LastUpdateTime":  "08/25/2020 11:26:19",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -847,22 +2335,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:0b5198496ca51d67ee8a51f2ad334c678d1715909e38d5721012f123f712a841",
+                         "Digest":  "sha256:589bc5bed0141757a496b004915082d1d27c2afcbd0f82a675d0917b66b280f2",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:28:20",
-                         "LastUpdateTime":  "08/03/2020 20:19:41",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:13:00",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:df862d88d186610362aa288453663d479760cc5c44f0dd2523ada8cfab6830f7",
+                         "Digest":  "sha256:293b3916482ae6458a0c13578fb9be84e5f10b6213b6ef95964f825a2f9ad37c",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:11:39",
-                         "LastUpdateTime":  "08/03/2020 20:50:40",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:38:43",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -904,6 +2392,26 @@
                          "LastUpdateTime":  "08/03/2020 20:50:28",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:589bc5bed0141757a496b004915082d1d27c2afcbd0f82a675d0917b66b280f2",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:12:49",
+                         "LastUpdateTime":  "08/25/2020 11:12:49",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:293b3916482ae6458a0c13578fb9be84e5f10b6213b6ef95964f825a2f9ad37c",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:38:33",
+                         "LastUpdateTime":  "08/25/2020 11:38:33",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -913,22 +2421,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:157bfd31dddd9924982bdbb55172520486ae7af3e111e730995886c96c98ccd0",
+                         "Digest":  "sha256:4cc9c976b4f5425a21662fcb3c880a3d158b7d4477260263c03c7a67e2fcfc63",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:33:13",
-                         "LastUpdateTime":  "08/03/2020 20:22:33",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:15:59",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:5fdf187b97c029eefb94c5bd6eea8c92f6513986dd29a655585d174c094ba47d",
+                         "Digest":  "sha256:82646be5ec3e0358d64b4415e385162ab6a4b36375039d7a57d1b6299e0e8eb3",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:14:36",
-                         "LastUpdateTime":  "08/03/2020 20:53:47",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:41:20",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -970,6 +2478,26 @@
                          "LastUpdateTime":  "08/03/2020 20:53:37",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:4cc9c976b4f5425a21662fcb3c880a3d158b7d4477260263c03c7a67e2fcfc63",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:15:49",
+                         "LastUpdateTime":  "08/25/2020 11:15:49",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:82646be5ec3e0358d64b4415e385162ab6a4b36375039d7a57d1b6299e0e8eb3",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:41:10",
+                         "LastUpdateTime":  "08/25/2020 11:41:10",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -979,22 +2507,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:87fe9697f11dfe3e1cf90e86ea9bf416abfe393b6879ff8bf8deddfd0df419bf",
+                         "Digest":  "sha256:5a8f487899dd16a9d17328d501e4e022609200802a4c40841cbaec44c3546188",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:29:01",
-                         "LastUpdateTime":  "08/03/2020 20:20:07",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:13:24",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:93ccdc1b32e0508e884cf869591ba7834b0cb16b72684ece185b21797ff3142d",
+                         "Digest":  "sha256:6906c2496fefafc509be70fc814c4d6ed12da9e99b63abd3be0bb79b9302a94d",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:12:04",
-                         "LastUpdateTime":  "08/03/2020 20:51:09",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:39:07",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1036,6 +2564,26 @@
                          "LastUpdateTime":  "08/03/2020 20:50:57",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:5a8f487899dd16a9d17328d501e4e022609200802a4c40841cbaec44c3546188",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:13:15",
+                         "LastUpdateTime":  "08/25/2020 11:13:15",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:6906c2496fefafc509be70fc814c4d6ed12da9e99b63abd3be0bb79b9302a94d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:38:59",
+                         "LastUpdateTime":  "08/25/2020 11:38:59",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1045,22 +2593,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:21e55797ac628bb749a060ba7ddfca2342a1b0e1ef4d8a4f3420ea6228e57f4a",
+                         "Digest":  "sha256:d021fecfa4a73db7485875ab8c5b96ab4234b18a78408c0e662c189cce066967",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:29:48",
-                         "LastUpdateTime":  "08/03/2020 20:20:36",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:13:50",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:6fd1d0fe78b42ed84e2279b105404f2ec561730fca53c78347088f0a7d4a80e1",
+                         "Digest":  "sha256:7f704e7bc389ba984fc7cc29b77b4be83e28bdf66f811226c743375735b40829",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:12:34",
-                         "LastUpdateTime":  "08/03/2020 20:51:39",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:39:33",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1102,6 +2650,26 @@
                          "LastUpdateTime":  "08/03/2020 20:51:28",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:d021fecfa4a73db7485875ab8c5b96ab4234b18a78408c0e662c189cce066967",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:13:41",
+                         "LastUpdateTime":  "08/25/2020 11:13:41",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:7f704e7bc389ba984fc7cc29b77b4be83e28bdf66f811226c743375735b40829",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:39:23",
+                         "LastUpdateTime":  "08/25/2020 11:39:23",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1111,22 +2679,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:7f9283c5041a7ae240a06f76d4734d35b6db6c5db9f4954af94384aa66e4a130",
+                         "Digest":  "sha256:5d144b60a1cb1684579041fca2c708c6616e2fab14d0be266a4994448fd65590",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:30:40",
-                         "LastUpdateTime":  "08/03/2020 20:21:11",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:14:25",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:501a3efecd0942a2bd82ab4974dd4333c38247ebbb63d58c5f4f54f446808932",
+                         "Digest":  "sha256:270328e19edbe625a83fde0a94654501b4af3e5c060f342e4dedde32ef5cd7ac",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:13:06",
-                         "LastUpdateTime":  "08/03/2020 20:52:15",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:40:02",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1168,6 +2736,26 @@
                          "LastUpdateTime":  "08/03/2020 20:52:02",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:5d144b60a1cb1684579041fca2c708c6616e2fab14d0be266a4994448fd65590",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:14:12",
+                         "LastUpdateTime":  "08/25/2020 11:14:12",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:270328e19edbe625a83fde0a94654501b4af3e5c060f342e4dedde32ef5cd7ac",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:39:50",
+                         "LastUpdateTime":  "08/25/2020 11:39:50",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1177,22 +2765,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:192c2ca2e3f2f9ea748eb07a68f396f644a68bfdaf8f11eb7835143c36ae2a5f",
+                         "Digest":  "sha256:86250ce8c9aba8ff6dd12a0fd50231966016f237db1acec2e79d513400a9e1c6",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:32:29",
-                         "LastUpdateTime":  "08/03/2020 20:22:06",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:15:31",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:432f317b36220c2821b4c5feeacc64cb64051379784551cdff853a9fa332d4b7",
+                         "Digest":  "sha256:4b3abc06cc09a55b8bdfdeabe4ff7f09249e5b6789748bc037e84625e7059dde",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:14:11",
-                         "LastUpdateTime":  "08/03/2020 20:53:20",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:40:56",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1234,6 +2822,26 @@
                          "LastUpdateTime":  "08/03/2020 20:53:08",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:86250ce8c9aba8ff6dd12a0fd50231966016f237db1acec2e79d513400a9e1c6",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:15:18",
+                         "LastUpdateTime":  "08/25/2020 11:15:18",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:4b3abc06cc09a55b8bdfdeabe4ff7f09249e5b6789748bc037e84625e7059dde",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:40:45",
+                         "LastUpdateTime":  "08/25/2020 11:40:45",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1243,22 +2851,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:a98f4bf0772d97efaa5b33b7dad179f8a39f59cb2db923cfcd51af87f6c3824a",
+                         "Digest":  "sha256:b893fbc8f6c536695a274504937a947afdc5387208577b0331af727ad0b9011c",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:31:35",
-                         "LastUpdateTime":  "08/03/2020 20:21:38",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:14:49",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:732a303b29f5edc44880b091e0801c2761e86fd3c4bdf40451a88866adee17e0",
+                         "Digest":  "sha256:f877c6ea7805b653b49fb96d40559907a5fbfe715314b81f61fed102d8af4c9d",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:13:39",
-                         "LastUpdateTime":  "08/03/2020 20:52:43",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:40:28",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1300,6 +2908,26 @@
                          "LastUpdateTime":  "08/03/2020 20:52:31",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:b893fbc8f6c536695a274504937a947afdc5387208577b0331af727ad0b9011c",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:14:39",
+                         "LastUpdateTime":  "08/25/2020 11:14:39",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:f877c6ea7805b653b49fb96d40559907a5fbfe715314b81f61fed102d8af4c9d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:40:17",
+                         "LastUpdateTime":  "08/25/2020 11:40:17",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1309,22 +2937,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:db015c7317d1e38a4a66284dde7b5e4af7300a0002b571a3e795c0d7acf9b9cd",
+                         "Digest":  "sha256:50076d4c95fa9ed50456a7e4c0c5309dcdae228ec866a5273e38a1de21674149",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:08:28",
-                         "LastUpdateTime":  "08/03/2020 20:07:23",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:56:42",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:61d394bd517c3e7237eb22d0befaa30860dc96458aef0d3ead7baeb1bd4161d3",
+                         "Digest":  "sha256:62e77bd9671891b01fc075c8232f9ec9561b4a068bfc7a844480c0d37037e266",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:57:05",
-                         "LastUpdateTime":  "08/03/2020 20:37:06",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:28:26",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1366,6 +2994,26 @@
                          "LastUpdateTime":  "08/03/2020 20:36:55",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:50076d4c95fa9ed50456a7e4c0c5309dcdae228ec866a5273e38a1de21674149",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:56:32",
+                         "LastUpdateTime":  "08/25/2020 10:56:32",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:62e77bd9671891b01fc075c8232f9ec9561b4a068bfc7a844480c0d37037e266",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:28:14",
+                         "LastUpdateTime":  "08/25/2020 11:28:14",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1375,22 +3023,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:03e9877e7d3f940600db475e3834235596055cb67b42a70a5c40c7420b7271b6",
+                         "Digest":  "sha256:0019139970ac342aff168e810df94e4a6915f07971b228edf655aa509be34ae3",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:10:01",
-                         "LastUpdateTime":  "08/03/2020 20:08:40",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:58:06",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:f375e63a8fe7dc6fe5634c287fb0e3e4347a1b91517273f13c2fecf989aa8cc0",
+                         "Digest":  "sha256:35840680a6a73969bdfb9206a762a4e516c135f396f7a8fd029dd1dbddcae809",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:58:38",
-                         "LastUpdateTime":  "08/03/2020 20:38:25",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:29:16",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1432,6 +3080,26 @@
                          "LastUpdateTime":  "08/03/2020 20:38:15",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:0019139970ac342aff168e810df94e4a6915f07971b228edf655aa509be34ae3",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:57:57",
+                         "LastUpdateTime":  "08/25/2020 10:57:57",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:35840680a6a73969bdfb9206a762a4e516c135f396f7a8fd029dd1dbddcae809",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:29:05",
+                         "LastUpdateTime":  "08/25/2020 11:29:05",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1441,22 +3109,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:6a7eb4778e707fa14c2658d9473507d38010eb832e289ac69c59e7219df86aaa",
+                         "Digest":  "sha256:50d6a8d3765ad6a5835d32ab6adb670935d2282be5b3b8ef416a7264fb567742",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:18:44",
-                         "LastUpdateTime":  "08/03/2020 20:14:08",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:04:26",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:dc83eeafc4635d8ebb165d5252417c368972cfaec498d77a0c5d4f412346d855",
+                         "Digest":  "sha256:95ad925d274337c805c811f7e2c9c4e0a0e31d3bda1e6291e7bcdc06b0809ae6",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:05:11",
-                         "LastUpdateTime":  "08/03/2020 20:43:52",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:33:58",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1498,6 +3166,26 @@
                          "LastUpdateTime":  "08/03/2020 20:43:43",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:50d6a8d3765ad6a5835d32ab6adb670935d2282be5b3b8ef416a7264fb567742",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:04:17",
+                         "LastUpdateTime":  "08/25/2020 11:04:17",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:95ad925d274337c805c811f7e2c9c4e0a0e31d3bda1e6291e7bcdc06b0809ae6",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:33:47",
+                         "LastUpdateTime":  "08/25/2020 11:33:47",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1507,22 +3195,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:157bfd31dddd9924982bdbb55172520486ae7af3e111e730995886c96c98ccd0",
+                         "Digest":  "sha256:4cc9c976b4f5425a21662fcb3c880a3d158b7d4477260263c03c7a67e2fcfc63",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:19:33",
-                         "LastUpdateTime":  "08/03/2020 20:14:37",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:04:57",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:5fdf187b97c029eefb94c5bd6eea8c92f6513986dd29a655585d174c094ba47d",
+                         "Digest":  "sha256:82646be5ec3e0358d64b4415e385162ab6a4b36375039d7a57d1b6299e0e8eb3",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:05:41",
-                         "LastUpdateTime":  "08/03/2020 20:44:21",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:34:24",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1564,6 +3252,26 @@
                          "LastUpdateTime":  "08/03/2020 20:44:11",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:4cc9c976b4f5425a21662fcb3c880a3d158b7d4477260263c03c7a67e2fcfc63",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:04:46",
+                         "LastUpdateTime":  "08/25/2020 11:04:46",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:82646be5ec3e0358d64b4415e385162ab6a4b36375039d7a57d1b6299e0e8eb3",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:34:14",
+                         "LastUpdateTime":  "08/25/2020 11:34:14",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1573,22 +3281,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:eef126df1551bfccf0d9791207e644719dde72e1340926f147cdb512be92ed36",
+                         "Digest":  "sha256:6a1698dce4db4fc52f6c247208316badcea5a2d47976d5549c792fd693da62ab",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:20:26",
-                         "LastUpdateTime":  "08/03/2020 20:15:05",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:05:41",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:f53d1306bf574b6e7a2f9fbfe16c84e47fe40f20a06cb13472813d562f478f50",
+                         "Digest":  "sha256:99270751dbf46a3bfdfede8842f974071667925e4d03bff5e52f1fd6ca3bae2b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:06:15",
-                         "LastUpdateTime":  "08/03/2020 20:44:57",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:34:52",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1630,6 +3338,26 @@
                          "LastUpdateTime":  "08/03/2020 20:44:43",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:6a1698dce4db4fc52f6c247208316badcea5a2d47976d5549c792fd693da62ab",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:05:27",
+                         "LastUpdateTime":  "08/25/2020 11:05:27",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:99270751dbf46a3bfdfede8842f974071667925e4d03bff5e52f1fd6ca3bae2b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:34:42",
+                         "LastUpdateTime":  "08/25/2020 11:34:42",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1639,22 +3367,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:87fe9697f11dfe3e1cf90e86ea9bf416abfe393b6879ff8bf8deddfd0df419bf",
+                         "Digest":  "sha256:5a8f487899dd16a9d17328d501e4e022609200802a4c40841cbaec44c3546188",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:23:54",
-                         "LastUpdateTime":  "08/03/2020 20:17:00",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:08:49",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:93ccdc1b32e0508e884cf869591ba7834b0cb16b72684ece185b21797ff3142d",
+                         "Digest":  "sha256:6906c2496fefafc509be70fc814c4d6ed12da9e99b63abd3be0bb79b9302a94d",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:08:45",
-                         "LastUpdateTime":  "08/03/2020 20:47:03",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:36:20",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1696,6 +3424,26 @@
                          "LastUpdateTime":  "08/03/2020 20:46:51",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:5a8f487899dd16a9d17328d501e4e022609200802a4c40841cbaec44c3546188",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:08:38",
+                         "LastUpdateTime":  "08/25/2020 11:08:38",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:6906c2496fefafc509be70fc814c4d6ed12da9e99b63abd3be0bb79b9302a94d",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:36:10",
+                         "LastUpdateTime":  "08/25/2020 11:36:10",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1705,22 +3453,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:dcf91132b4941f8787153f0285acf65ca2641673f7e9ceef74be3f34db72f20c",
+                         "Digest":  "sha256:9d8823b9f2c8f6128653916d55492054657da47fa0069bf17c988591009116cc",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:24:53",
-                         "LastUpdateTime":  "08/03/2020 20:17:32",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:09:24",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:5c2eda17cbae28db111f6a107a70c8d01f547063f4ebac69239eccad77f38225",
+                         "Digest":  "sha256:b92909e0c49d6d4eff8a0d8a2167257917ba6b3aca311716f81fca64ae961efd",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:09:19",
-                         "LastUpdateTime":  "08/03/2020 20:48:15",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:36:47",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1762,6 +3510,26 @@
                          "LastUpdateTime":  "08/03/2020 20:48:04",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:9d8823b9f2c8f6128653916d55492054657da47fa0069bf17c988591009116cc",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:09:15",
+                         "LastUpdateTime":  "08/25/2020 11:09:15",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:b92909e0c49d6d4eff8a0d8a2167257917ba6b3aca311716f81fca64ae961efd",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:36:38",
+                         "LastUpdateTime":  "08/25/2020 11:36:38",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1771,22 +3539,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:6eae39941b21ea137e33ff1a0a3eb442f77ec0c8736273514d7b831cca768a2f",
+                         "Digest":  "sha256:f82ccc0772ad02b85ff5bb5052da0b650902c2edb29cfb6899f553ef80f98f71",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:22:33",
-                         "LastUpdateTime":  "08/03/2020 20:16:12",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:07:49",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:f9311e63b661fa81b92303c9ecb443d2194ada26d3cc1430aa8d8d9cc51d5cce",
+                         "Digest":  "sha256:fe807dc1111b034057a6b470744ab1ad5d1524d318a75fc57c66e30937054643",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:07:47",
-                         "LastUpdateTime":  "08/03/2020 20:46:09",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:35:39",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1828,6 +3596,26 @@
                          "LastUpdateTime":  "08/03/2020 20:45:58",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:f82ccc0772ad02b85ff5bb5052da0b650902c2edb29cfb6899f553ef80f98f71",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:07:38",
+                         "LastUpdateTime":  "08/25/2020 11:07:38",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:fe807dc1111b034057a6b470744ab1ad5d1524d318a75fc57c66e30937054643",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:35:28",
+                         "LastUpdateTime":  "08/25/2020 11:35:28",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1837,22 +3625,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:33d5ab70d95c0997e096933f332585db0ca66f62bee47e9d5758a20ac0c4e4c3",
+                         "Digest":  "sha256:2f53d6e954d7ec5f927bde4d6326455becc486c3e050110d40a3bf7676d655b3",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:11:50",
-                         "LastUpdateTime":  "08/03/2020 20:10:08",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 10:59:46",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:8b3af1885d124fa53c4e2d9f0f37ab72600012596f3380e4efe5309ade17a0c1",
+                         "Digest":  "sha256:b40e4a96d58cd6fc8bd102b2a21f141c98e41aec868b6f79a5b0b9802df182f0",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:00:23",
-                         "LastUpdateTime":  "08/03/2020 20:39:40",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:30:07",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1894,6 +3682,26 @@
                          "LastUpdateTime":  "08/03/2020 20:39:28",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:2f53d6e954d7ec5f927bde4d6326455becc486c3e050110d40a3bf7676d655b3",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 10:59:35",
+                         "LastUpdateTime":  "08/25/2020 10:59:35",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:b40e4a96d58cd6fc8bd102b2a21f141c98e41aec868b6f79a5b0b9802df182f0",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:29:57",
+                         "LastUpdateTime":  "08/25/2020 11:29:57",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1903,22 +3711,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:21e55797ac628bb749a060ba7ddfca2342a1b0e1ef4d8a4f3420ea6228e57f4a",
+                         "Digest":  "sha256:d021fecfa4a73db7485875ab8c5b96ab4234b18a78408c0e662c189cce066967",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:25:42",
-                         "LastUpdateTime":  "08/03/2020 20:18:03",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:09:58",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:6fd1d0fe78b42ed84e2279b105404f2ec561730fca53c78347088f0a7d4a80e1",
+                         "Digest":  "sha256:7f704e7bc389ba984fc7cc29b77b4be83e28bdf66f811226c743375735b40829",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:09:52",
-                         "LastUpdateTime":  "08/03/2020 20:48:46",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:37:21",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -1960,6 +3768,26 @@
                          "LastUpdateTime":  "08/03/2020 20:48:36",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:d021fecfa4a73db7485875ab8c5b96ab4234b18a78408c0e662c189cce066967",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:09:49",
+                         "LastUpdateTime":  "08/25/2020 11:09:49",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:7f704e7bc389ba984fc7cc29b77b4be83e28bdf66f811226c743375735b40829",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:37:05",
+                         "LastUpdateTime":  "08/25/2020 11:37:05",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -1969,22 +3797,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:da04d6778dde0a5a987b84ebbfb80b33701579b58fa85d91d470d26f841dcef1",
+                         "Digest":  "sha256:979a1ce9de53e0be0fe1915039d7f749a3facc4963e0b9c2ac847192e29feb2c",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:26:31",
-                         "LastUpdateTime":  "08/03/2020 20:18:33",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:10:32",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:9edad072abe0a2c4e9caf0f6c26f2033c01d8472bad256a704d1b4759c8175f2",
+                         "Digest":  "sha256:6c9217761ee3d71232bedf34b17a8556ff391652fce4e020a26f75e2d98224aa",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:10:25",
-                         "LastUpdateTime":  "08/03/2020 20:49:16",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:37:50",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -2026,6 +3854,26 @@
                          "LastUpdateTime":  "08/03/2020 20:49:06",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:979a1ce9de53e0be0fe1915039d7f749a3facc4963e0b9c2ac847192e29feb2c",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:10:22",
+                         "LastUpdateTime":  "08/25/2020 11:10:22",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:6c9217761ee3d71232bedf34b17a8556ff391652fce4e020a26f75e2d98224aa",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:37:40",
+                         "LastUpdateTime":  "08/25/2020 11:37:40",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -2035,22 +3883,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:7d5b89bce1c99aecf8b06d53931085e1a9b83e0e3af9a2ddd6773ba7b225ca0e",
+                         "Digest":  "sha256:8173a539ce24e5468245a254dbfa86fa502c8d5da6fa60c75cf0dd9fe45043fa",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:12:58",
-                         "LastUpdateTime":  "08/03/2020 20:10:40",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:00:24",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:dd8b7a24a4e0ba10612d7af5fe1e8c576e97d1bc1ea56eae98666a8bd8880fd8",
+                         "Digest":  "sha256:80baa60b8dcaeb77738a104ec3bff82d64e36935531bc5d960606a3e4914a899",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:01:01",
-                         "LastUpdateTime":  "08/03/2020 20:40:13",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:30:37",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -2092,6 +3940,26 @@
                          "LastUpdateTime":  "08/03/2020 20:40:03",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:8173a539ce24e5468245a254dbfa86fa502c8d5da6fa60c75cf0dd9fe45043fa",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:00:14",
+                         "LastUpdateTime":  "08/25/2020 11:00:14",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:80baa60b8dcaeb77738a104ec3bff82d64e36935531bc5d960606a3e4914a899",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:30:25",
+                         "LastUpdateTime":  "08/25/2020 11:30:25",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -2101,22 +3969,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:510df42f21813da20bc0cf10b744bd707e59927692ff9253d9c19a5d6d1c6631",
+                         "Digest":  "sha256:4772b8c99e1e73a374ac6a0ce8df8d9c9f84f8027a7f404f2cac705f244e33e1",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:13:50",
-                         "LastUpdateTime":  "08/03/2020 20:11:10",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:00:57",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:f24b76aab61fb7b96e91c6a924733a6fba732e80dbc901193ad167995afaacfe",
+                         "Digest":  "sha256:9b96450695cdefbfe79f9cab31f2be2594864db3f61a89ba2b3183e889262d08",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:01:36",
-                         "LastUpdateTime":  "08/03/2020 20:40:46",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:31:04",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -2158,6 +4026,26 @@
                          "LastUpdateTime":  "08/03/2020 20:40:35",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:4772b8c99e1e73a374ac6a0ce8df8d9c9f84f8027a7f404f2cac705f244e33e1",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:00:48",
+                         "LastUpdateTime":  "08/25/2020 11:00:48",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:9b96450695cdefbfe79f9cab31f2be2594864db3f61a89ba2b3183e889262d08",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:30:53",
+                         "LastUpdateTime":  "08/25/2020 11:30:53",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -2167,22 +4055,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:015aa22dc1ded6f25c699628c956b137f113a2e3c1e6654d054580d5fa3a082b",
+                         "Digest":  "sha256:e65e9983a1bf81509efe19669797beb4ac401098a83ef8e02739f86076ca289a",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:14:38",
-                         "LastUpdateTime":  "08/03/2020 20:11:39",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:01:48",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:fa68a18c3398d702c3d7498ffb5293e791f25ab1f04962e256f9ef48c9b6b861",
+                         "Digest":  "sha256:fd7649d42262d5c64c01a60a7adc8ef60b2a739b97564d3654b9ec1061d71f2c",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:02:14",
-                         "LastUpdateTime":  "08/03/2020 20:41:14",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:31:29",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -2224,6 +4112,26 @@
                          "LastUpdateTime":  "08/03/2020 20:41:05",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:e65e9983a1bf81509efe19669797beb4ac401098a83ef8e02739f86076ca289a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:01:38",
+                         "LastUpdateTime":  "08/25/2020 11:01:38",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:fd7649d42262d5c64c01a60a7adc8ef60b2a739b97564d3654b9ec1061d71f2c",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:31:19",
+                         "LastUpdateTime":  "08/25/2020 11:31:19",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -2233,22 +4141,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:eb888d149c7ba8f9e424800b864539683df98efd9de2ed136133127adce7e3b9",
+                         "Digest":  "sha256:dea2f8f6df66dbc14f84a63aef6d15a423ffa0b33bf1ca9a566b5c8924d3449b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:15:28",
-                         "LastUpdateTime":  "08/03/2020 20:12:11",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:02:22",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:dec835a867413e8f5468f5327843daf249e29b6a2fec1bea413614715b0b058d",
+                         "Digest":  "sha256:6ba16d260f7e33d8913a9af637f23f5708d101c4c59143ccb9b4a0a23ab56f93",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:02:57",
-                         "LastUpdateTime":  "08/03/2020 20:41:48",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:31:58",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -2290,6 +4198,26 @@
                          "LastUpdateTime":  "08/03/2020 20:41:38",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:dea2f8f6df66dbc14f84a63aef6d15a423ffa0b33bf1ca9a566b5c8924d3449b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:02:12",
+                         "LastUpdateTime":  "08/25/2020 11:02:12",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:6ba16d260f7e33d8913a9af637f23f5708d101c4c59143ccb9b4a0a23ab56f93",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:31:48",
+                         "LastUpdateTime":  "08/25/2020 11:31:48",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -2299,22 +4227,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:1d3495433f69a39e40f0b3253976fc608b3a5705ae7a8df20e8d8c856c77bb11",
+                         "Digest":  "sha256:0cc379d5cf6b975ef673792a8efd010f5c459f7befa96096d5607b5f82b1d79a",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:16:19",
-                         "LastUpdateTime":  "08/03/2020 20:12:40",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:02:54",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:da024c2aa14fb7820ef232194ee7f8722d6ff239608bb5265fadccb2c218b676",
+                         "Digest":  "sha256:8ccfbbd72e6259e4a123a8de78a91464404a01b58636c0e549c296765258b79b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:03:30",
-                         "LastUpdateTime":  "08/03/2020 20:42:20",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:32:31",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -2356,6 +4284,26 @@
                          "LastUpdateTime":  "08/03/2020 20:42:09",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:0cc379d5cf6b975ef673792a8efd010f5c459f7befa96096d5607b5f82b1d79a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:02:44",
+                         "LastUpdateTime":  "08/25/2020 11:02:44",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:8ccfbbd72e6259e4a123a8de78a91464404a01b58636c0e549c296765258b79b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:32:20",
+                         "LastUpdateTime":  "08/25/2020 11:32:20",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -2365,22 +4313,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:c75d1e1ce6c50010a790032f764e6359a0ab51f11cee7e478a867567f3480992",
+                         "Digest":  "sha256:13d3974948d1161c594f83318a0677a59ca00e4563b7457afdd4c2139d57fab9",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:17:07",
-                         "LastUpdateTime":  "08/03/2020 20:13:10",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:03:25",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:b9648f004773138d2835cd4bfbdf23086515ec55d7cf93091b83bb30eb3e2f83",
+                         "Digest":  "sha256:7246dee32711020136d552e3b3b3f25e3dba7ed8a86f227cf77f71285cabf5c4",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:04:04",
-                         "LastUpdateTime":  "08/03/2020 20:42:52",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:33:04",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -2422,6 +4370,26 @@
                          "LastUpdateTime":  "08/03/2020 20:42:41",
                          "OSVersion":  "10.0.17763.1339",
                          "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:13d3974948d1161c594f83318a0677a59ca00e4563b7457afdd4c2139d57fab9",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:03:15",
+                         "LastUpdateTime":  "08/25/2020 11:03:15",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:7246dee32711020136d552e3b3b3f25e3dba7ed8a86f227cf77f71285cabf5c4",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:32:49",
+                         "LastUpdateTime":  "08/25/2020 11:32:49",
+                         "OSVersion":  "10.0.17763.1397",
+                         "TargetOS":  "ltsc2019"
                      }
                  ]
     },
@@ -2431,22 +4399,22 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-1909",
-                         "Digest":  "sha256:a98f4bf0772d97efaa5b33b7dad179f8a39f59cb2db923cfcd51af87f6c3824a",
+                         "Digest":  "sha256:b893fbc8f6c536695a274504937a947afdc5387208577b0331af727ad0b9011c",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 14:17:52",
-                         "LastUpdateTime":  "08/03/2020 20:13:38",
-                         "OSVersion":  "10.0.18363.959",
+                         "LastUpdateTime":  "08/25/2020 11:03:55",
+                         "OSVersion":  "10.0.18363.1016",
                          "TargetOS":  "1909"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:732a303b29f5edc44880b091e0801c2761e86fd3c4bdf40451a88866adee17e0",
+                         "Digest":  "sha256:4914ed1edb738a66189ba15f5fedc75044a4a25007b1667f5c219fa7c5cc1c1a",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:04:37",
-                         "LastUpdateTime":  "08/03/2020 20:43:21",
-                         "OSVersion":  "10.0.17763.1339",
+                         "LastUpdateTime":  "08/25/2020 11:33:30",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      },
                      {
@@ -2487,6 +4455,26 @@
                          "CreatedTime":  "08/03/2020 20:43:11",
                          "LastUpdateTime":  "08/03/2020 20:43:11",
                          "OSVersion":  "10.0.17763.1339",
+                         "TargetOS":  "ltsc2019"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.356-10.0.18363.1016-1909",
+                         "Digest":  "sha256:b893fbc8f6c536695a274504937a947afdc5387208577b0331af727ad0b9011c",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:03:45",
+                         "LastUpdateTime":  "08/25/2020 11:03:45",
+                         "OSVersion":  "10.0.18363.1016",
+                         "TargetOS":  "1909"
+                     },
+                     {
+                         "Tag":  "10.0.0.004346.371-10.0.17763.1397-ltsc2019",
+                         "Digest":  "sha256:4914ed1edb738a66189ba15f5fedc75044a4a25007b1667f5c219fa7c5cc1c1a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "08/25/2020 11:33:21",
+                         "LastUpdateTime":  "08/25/2020 11:33:21",
+                         "OSVersion":  "10.0.17763.1397",
                          "TargetOS":  "ltsc2019"
                      }
                  ]
