@@ -19,7 +19,7 @@ Using this repository you can also build custom Docker images for the most recen
 
 ### Official Sitecore image tags
 
-Please see [sitecore-tags.md](/sitecore-container-support/sitecore-tags.md)
+Please see [SITECORE-TAGS.md](/sitecore-container-support/sitecore-tags.md).
 
 ### How to setup and build custom images
 
