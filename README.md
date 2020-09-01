@@ -14,7 +14,7 @@ Using this repository you can also build custom Docker images for the most recen
 
 - This repository was initially created to help consolidate efforts around Sitecore and Docker.
 - Official statement on running Sitecore in containers, see [https://kb.sitecore.net/articles/161310](https://kb.sitecore.net/articles/161310).
-- The build scripts and examples in this repository are provided and maintained by the community, with contributions and code reviews by Sitecore employees.
+- The build scripts and examples in this repository are provided and maintained by the community, with contributions and code reviews by Sitecore.
 - The images built from this repo (including pre v10 images) are considered custom images and not officially provided or supported by Sitecore.
 
 ### Official Sitecore image tags
