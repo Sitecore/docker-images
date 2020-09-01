@@ -8,7 +8,7 @@
 
 In this repository you will find the official Sitecore container support files, all located in the `/sitecore-container-support/` folder. This folder contains primarily the official tag list (see [SITECORE-TAGS](/sitecore-container-support/sitecore-tags.md)) of all published images but will also be used to hold additional official Sitecore materials related to containers.
 
-Using this repository you can also build custom Docker images for the most recent versions of Sitecore. You can use this repository (preferably from a fork) from your build server and have it build and push images to your private Docker registry. See [INSTRUCTIONS.md](INSTRUCTIONS.md) for how to setup and build, and [IMAGES.md](IMAGES.md) for a list of all images currently available to be built.
+Using this repository you can also build custom Docker images for the most recent versions of Sitecore. You can use this repository (preferably from a fork) from your build server and have it build and push images to your private Docker registry. See [INSTRUCTIONS.md](INSTRUCTIONS.md) for how to setup and build, and [IMAGES.md](IMAGES.md) for a list of all custom images currently available to be built.
 
 Note: The images built from this repo (including pre v10 images) are considered custom images and not officially provided or supported by Sitecore.
 
