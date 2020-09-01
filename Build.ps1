@@ -19,7 +19,7 @@ param(
     [Parameter()]
     [string]$RegistryPassword = "",
     [Parameter()]
-    [ValidateSet("9.3.0", "9.2.0", "9.1.1", "9.0.2")]
+    [ValidatePattern('[0-9]+\.[0-9]+\.[0-9]+')]
     [string[]]$SitecoreVersion = @("9.3.0"),
     [ValidateSet("xm", "xp", "xc")]
     [string[]]$Topology = @("xm", "xp"),
