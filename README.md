@@ -6,30 +6,33 @@
 
 [//]: # "end: stats"
 
-In this repository you will find the official Sitecore container support files, all located in the `/sitecore-container-support/` folder. This folder contains primarily the official tag list (see [SITECORE-TAGS](/sitecore-container-support/sitecore-tags.md)) of all published images but will also be used to hold additional official Sitecore materials related to containers.
+In this repository you will find the official Sitecore container support files, all located in the `/sitecore-container-support/` folder. This folder contains primarily the official tag list of all published images (see [SITECORE-TAGS.md](/sitecore-container-support/sitecore-tags.md)), but will also be used to hold additional official Sitecore materials related to containers.
 
 Using this repository you can also build custom Docker images for the most recent versions of Sitecore. You can use this repository (preferably from a fork) from your build server and have it build and push images to your private Docker registry. See [INSTRUCTIONS.md](INSTRUCTIONS.md) for how to setup and build, and [IMAGES.md](IMAGES.md) for a list of all custom images currently available to be built.
-
-Note: The images built from this repo (including pre v10 images) are considered custom images and not officially provided or supported by Sitecore.
 
 ## Information about this repository
 
 - This repository was initially created to help consolidate efforts around Sitecore and Docker.
 - Official statement on running Sitecore in containers, see [https://kb.sitecore.net/articles/161310](https://kb.sitecore.net/articles/161310).
 - The build scripts and examples in this repository are provided and maintained by the community, with contributions and code reviews by Sitecore employees.
+- The images built from this repo (including pre v10 images) are considered custom images and not officially provided or supported by Sitecore.
 
 ### Official Sitecore image tags
 
 Please see [sitecore-tags.md](/sitecore-container-support/sitecore-tags.md)
 
-### Change Log
+### How to setup and build custom images
 
-Please see [CHANGELOG.md](CHANGELOG.md).
+Please see [INSTRUCTIONS.md](INSTRUCTIONS.md).
 
-### List of all images
+### List of custom images available to build
 
 Please see [IMAGES.md](IMAGES.md).
 
-### Contributing
+### How to contribute
 
 Please see [CONTRIBUTING.md](CONTRIBUTING.md).
+
+### Repository changelog
+
+Please see [CHANGELOG.md](CHANGELOG.md).
