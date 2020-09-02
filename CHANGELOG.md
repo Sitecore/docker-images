@@ -2,6 +2,7 @@
 
 ## September 2020
 
+- [**Breaking**] Removed sitecore-tags.md from the root of the repo. Could cause broken links if someone refers to it
 - [Changed] Refactored README.md to reflect official Sitecore folder, pulled out instructions
 - [Added] INSTRUCTIONS.md pulled from the original README.md
 - [Added] /sitecore-container-support folder which will hold sitecore-tags.md and other official assets
