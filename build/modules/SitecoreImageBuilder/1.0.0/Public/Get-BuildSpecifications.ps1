@@ -19,7 +19,7 @@ function Get-BuildSpecifications
         $buildContextPath = $_.Directory.FullName
         $buildFilePath = $_.FullName
         $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
-        $dockerFile = "" 
+        $dockerFile = ""
 
         $sources = @()
 
@@ -54,7 +54,7 @@ function Get-BuildSpecifications
 
             if ($options -match '--file*')
             {
-                $dockerFile = Get-Item -Path (Resolve-Path ((@($options) -like '--file*') -replace '--file ', ''))
+                $dockerFile = Get-Item -Path (Resolve-Path ((@($options) -like '--file*') -replace '--file ', 'build/'))
             }
             else
             {
