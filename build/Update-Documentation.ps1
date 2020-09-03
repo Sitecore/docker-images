@@ -71,6 +71,6 @@ $stats += (" ![{0}](https://img.shields.io/badge/{0}-{1}-{2}.svg?style={3})" -f 
 $stats += (" ![{0}](https://img.shields.io/badge/Default%20version-{1}%20on%20{2}/{3}-blue?style=flat-square)`n" -f "Default version", $defaultVersion.Sitecore, $defaultVersion.WindowsServerCore, $defaultVersion.NanoServer, "blue", $style)
 
 Update-Section `
-    -Path (Join-Path $PSScriptRoot "\README.md") `
+    -Path (Resolve-Path  "..\README.md") `
     -Name "stats" `
     -Content $stats
