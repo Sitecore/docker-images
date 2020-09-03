@@ -54,7 +54,7 @@ function Get-BuildSpecifications
 
             if ($options -match '--file*')
             {
-                $dockerFile = Get-Item -Path (Resolve-Path ((@($options) -like '--file*') -replace '--file ', 'build/'))
+                $dockerFile = Get-Item -Path (Resolve-Path ((@($options) -like '--file*') -replace '--file ', ''))
             }
             else
             {
