@@ -40,6 +40,8 @@ param(
     [string]$IsolationModeBehaviour = "ForceHyperV"
 )
 
+Push-Location build
+
 function Write-Message
 {
     param(
@@ -53,14 +55,14 @@ function Write-Message
 
 if ([string]::IsNullOrEmpty($InstallSourcePath))
 {
-    $InstallSourcePath = (Join-Path -Path $PSScriptRoot -ChildPath "\packages")
+    $InstallSourcePath = (Join-Path -Path $(Get-Location) -ChildPath "\packages")
 }
 
 $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
 
 # load module
-Import-Module (Join-Path $PSScriptRoot "\build\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
+Import-Module (Join-Path $(Get-Location) "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
 
 $tags = [System.Collections.ArrayList]@()
 
@@ -97,13 +99,13 @@ filter SitecoreFilter
     }
 }
 
-$rootFolder = "build\windows"
+$rootFolder = "windows"
 if ($OSVersion -eq "linux")
 {
-    $rootFolder = "build\linux"
+    $rootFolder = "linux"
 }
 
-$availableSpecs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot $rootFolder)
+$availableSpecs = Get-BuildSpecifications -Path (Join-Path $(Get-Location) $rootFolder)
 
 if (!$IncludeExperimental)
 {
@@ -298,7 +300,7 @@ else
 
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path (Join-Path $PSScriptRoot $rootFolder) `
+    -Path (Join-Path $(Get-Location) $rootFolder) `
     -Destination $InstallSourcePath `
     -SitecoreUsername $SitecoreUsername `
     -SitecorePassword $SitecorePassword `
@@ -308,10 +310,12 @@ SitecoreImageBuilder\Invoke-PackageRestore `
 
 # start the build
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot $rootFolder) `
+    -Path (Join-Path $(Get-Location) $rootFolder) `
     -InstallSourcePath $InstallSourcePath `
     -Registry $Registry `
     -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -IsolationModeBehaviour $IsolationModeBehaviour `
     -WhatIf:$WhatIfPreference
+
+    Pop-Location
