@@ -60,7 +60,7 @@ $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
 
 # load module
-Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
+Import-Module (Join-Path $PSScriptRoot "\build\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
 
 $tags = [System.Collections.ArrayList]@()
 
@@ -97,10 +97,10 @@ filter SitecoreFilter
     }
 }
 
-$rootFolder = "windows"
+$rootFolder = "build\windows"
 if ($OSVersion -eq "linux")
 {
-    $rootFolder = "linux"
+    $rootFolder = "build\linux"
 }
 
 $availableSpecs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot $rootFolder)
