@@ -15,11 +15,11 @@ function Get-BuildSpecifications
 
     $versionMap = Get-WindowsServerCoreToNanoServerVersionMap
 
-    Get-ChildItem -Path $Path -Filter "build.json" -Recurse | ForEach-Object {
+    Get-ChildItem -Path $Path -Filter "*build.json" -Recurse | ForEach-Object {
         $buildContextPath = $_.Directory.FullName
         $buildFilePath = $_.FullName
         $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
-        $dockerFile = Get-Item -Path (Join-Path $buildContextPath "\Dockerfile")
+        $dockerFile = "" 
 
         $sources = @()
 
@@ -51,6 +51,15 @@ function Get-BuildSpecifications
         $dataTags | ForEach-Object {
             $tag = $_
             $options = $tag.'build-options'
+
+            if ($options -match '--file*')
+            {
+                $dockerFile = Get-Item -Path (Resolve-Path ((@($options) -like '--file*') -replace '--file ', ''))
+            }
+            else
+            {
+                $dockerFile = Get-Item -Path (Join-Path $buildContextPath "\Dockerfile")
+            }
 
             if ($null -eq $options)
             {
@@ -116,9 +125,11 @@ function Get-BuildSpecifications
             $baseImages = $dockerFileFromLines | ForEach-Object {
                 $image = $_
 
-                if ($image -like "* as *")
+                $image = $image.toUpper()
+
+                if ($image -like "* AS *")
                 {
-                    $image = $image.Substring(0, $image.IndexOf(" as "))
+                    $image = $image.Substring(0, $image.IndexOf(" AS "))
                 }
 
                 if ($image -like "`$*")
