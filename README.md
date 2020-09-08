@@ -1,4 +1,4 @@
-# Repository of Sitecore Docker images
+﻿# Repository of Sitecore Docker images
 
 [//]: # "start: stats"
 
@@ -6,9 +6,9 @@
 
 [//]: # "end: stats"
 
-In this repository you will find the official Sitecore container support files, all located in the `/sitecore-container-support/` folder. This folder contains primarily the official tags list of all published images (see [SITECORE-TAGS.md](/sitecore-container-support/sitecore-tags.md)), but will also be used to hold additional official Sitecore materials related to containers.
+In this repository you will find the official Sitecore container support files. The `/tags/` folder contains the official tags list of all published images (see [SITECORE-TAGS.md](tags/sitecore-tags.md)).
 
-Using this repository you can also build custom Docker images for the most recent versions of Sitecore. You can use this repository (preferably from a fork) from your build server and have it build and push images to your private Docker registry. See [INSTRUCTIONS.md](INSTRUCTIONS.md) for how to setup and build, and [IMAGES.md](IMAGES.md) for a list of all custom images currently available to be built.
+Using this repository you can also build custom Docker images for the most recent versions of Sitecore. You can use this repository (preferably from a fork) from your build server and have it build and push images to your private Docker registry. See [INSTRUCTIONS.md](build/INSTRUCTIONS.md) for how to setup and build, and [IMAGES.md](build/IMAGES.md) for a list of all custom images currently available to be built.
 
 ## Information about this repository
 
@@ -19,15 +19,15 @@ Using this repository you can also build custom Docker images for the most recen
 
 ### Official Sitecore image tags
 
-Please see [SITECORE-TAGS.md](/sitecore-container-support/sitecore-tags.md).
+Please see [SITECORE-TAGS.md](tags/sitecore-tags.md).
 
 ### How to setup and build custom images
 
-Please see [INSTRUCTIONS.md](INSTRUCTIONS.md).
+Please see [INSTRUCTIONS.md](build/INSTRUCTIONS.md).
 
 ### List of custom images available to build
 
-Please see [IMAGES.md](IMAGES.md).
+Please see [IMAGES.md](build/IMAGES.md).
 
 ### How to contribute
 
@@ -35,4 +35,4 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Repository changelog
 
-Please see [CHANGELOG.md](CHANGELOG.md).
+Please see [CHANGELOG.md](build/CHANGELOG.md).

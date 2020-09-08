@@ -1,0 +1,76 @@
+{
+  "tags": [
+    {
+      "tag":"community/sitecore-xp1-custom-spe-cm:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=scr.sitecore.com/sxp/sitecore-xp1-cm:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/spe-assets:6.1.1-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-spe-cm:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xp1-assets:10.0.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target content"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss-cm:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xp1-assets:14.0.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss-cm:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ],
+      "experimental": true
+    },
+    {
+      "tag":"community/sitecore-xp1-custom-spe-cd:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=scr.sitecore.com/sxp/sitecore-xp1-cd:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xp1-assets:10.0.0-${nanoserver_version}",
+        "--memory 4GB",
+        "--build-arg ROLE=cd",
+        "--target base"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-spe-cd:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xp1-assets:10.0.0-${nanoserver_version}",
+        "--memory 4GB",
+        "--build-arg ROLE=cd",
+        "--target base"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss-cd:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xp1-assets:14.0.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cd",
+        "--target base"
+      ]
+    }
+  ],
+  "sources": []
+}

@@ -40,6 +40,8 @@ param(
     [string]$IsolationModeBehaviour = "ForceHyperV"
 )
 
+Push-Location build
+
 function Write-Message
 {
     param(
@@ -53,14 +55,14 @@ function Write-Message
 
 if ([string]::IsNullOrEmpty($InstallSourcePath))
 {
-    $InstallSourcePath = (Join-Path -Path $PSScriptRoot -ChildPath "\packages")
+    $InstallSourcePath = (Join-Path -Path $(Get-Location) -ChildPath "\packages")
 }
 
 $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
 
 # load module
-Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
+Import-Module (Join-Path $(Get-Location) "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
 
 $tags = [System.Collections.ArrayList]@()
 
@@ -103,7 +105,7 @@ if ($OSVersion -eq "linux")
     $rootFolder = "linux"
 }
 
-$availableSpecs = Get-BuildSpecifications -Path (Join-Path $PSScriptRoot $rootFolder)
+$availableSpecs = Get-BuildSpecifications -Path (Join-Path $(Get-Location) $rootFolder)
 
 if (!$IncludeExperimental)
 {
@@ -116,29 +118,30 @@ $defaultTags = $availableTags | Where-Object { $_ -like "mssql-developer:*" -or 
 $xpMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" }
 $xcMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" -or $_ -like "sitecore-redis:*" }
 
-$assetTags = $availableTags | Where-Object { $_ -match "sitecore(-custom)?-assets:.*" }
-$moduleAssetTags = $availableTags | Where-Object { $_ -like "modules/*" }
-$xmTags = $availableTags | Where-Object { $_ -match "sitecore-xm(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
-$xpTags = $availableTags | Where-Object { $_ -match "sitecore-xp(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$assetTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore(-custom)?-assets:.*" }
+$moduleAssetTags = $availableTags | Where-Object { $_ -like "community/modules/*" }
+$xmTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$xpTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$xp0Tags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
 
-$xcTags = $availableTags | Where-Object { $_ -match "sitecore-xc(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$xcTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
 
-$xmSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xm(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xmSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xm(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xmJssTags = $availableTags | Where-Object { $_ -match "sitecore-xm(-custom)?-(.*jss).*:.*" }
+$xmSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
+$xmSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
+$xmJssTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*jss).*:.*" }
 
-$xp0SpeTags = $availableTags | Where-Object { $_ -match "sitecore-xp0(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xp0SxaTags = $availableTags | Where-Object { $_ -match "sitecore-xp0(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xp0JssTags = $availableTags | Where-Object { $_ -match "sitecore-xp0(-custom)?-(.*jss).*:.*" }
+$xp0SpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(spe)(?!.*sxa).*:.*" }
+$xp0SxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(.*sxa)(?!.*jss).*:.*" }
+$xp0JssTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(.*jss).*:.*" }
 
-$xpSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xp([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xpSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xp([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xpJssTags = $availableTags | Where-Object { $_ -match "sitecore-xp([1]{0,1})(-custom)?-(.*jss).*:.*" }
+$xpSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
+$xpSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
+$xpJssTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*jss).*:.*" }
 
-$xcSpeTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(spe).*:.*" }
-$xcSxaTags = $availableTags | Where-Object { $_ -match "sitecore-xc-(sxa).*:.*" }
+$xcSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc-(spe).*:.*" }
+$xcSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc-(sxa).*:.*" }
 
-$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $moduleAssetTags + $xmTags + $xpTags + $xcTags + $xmSpeTags + $xp0SpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xp0SxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xp0JssTags + $xpJssTags
+$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $moduleAssetTags + $xmTags + $xpTags + $xp0Tags + $xcTags + $xmSpeTags + $xp0SpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xp0SxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xp0JssTags + $xpJssTags
 # These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
 $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
 
@@ -298,7 +301,7 @@ else
 
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path (Join-Path $PSScriptRoot $rootFolder) `
+    -Path (Join-Path $(Get-Location) $rootFolder) `
     -Destination $InstallSourcePath `
     -SitecoreUsername $SitecoreUsername `
     -SitecorePassword $SitecorePassword `
@@ -308,10 +311,12 @@ SitecoreImageBuilder\Invoke-PackageRestore `
 
 # start the build
 SitecoreImageBuilder\Invoke-Build `
-    -Path (Join-Path $PSScriptRoot $rootFolder) `
+    -Path (Join-Path $(Get-Location) $rootFolder) `
     -InstallSourcePath $InstallSourcePath `
     -Registry $Registry `
     -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -IsolationModeBehaviour $IsolationModeBehaviour `
     -WhatIf:$WhatIfPreference
+
+    Pop-Location
