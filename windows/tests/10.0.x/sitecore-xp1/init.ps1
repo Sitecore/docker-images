@@ -27,7 +27,7 @@ if ($InitEnv) {
         Write-Error "Could not find Sitecore license file at path '$LicenseXmlPath'."
     }
     # We actually want the folder that it's in for mounting
-    $LicenseXmlPath = (Get-Item $LicenseXmlPath).Directory.FullName
+    $LicenseXmlFolder = (Get-Item $LicenseXmlPath).Directory.FullName
 }
 
 Write-Host "Preparing your Sitecore Containers environment!" -ForegroundColor Green
@@ -108,11 +108,17 @@ if ($InitEnv) {
     Write-Host "Populating required .env file values..." -ForegroundColor Green
 
     # HOST_LICENSE_FOLDER
-    Set-DockerComposeEnvFileVariable "HOST_LICENSE_FOLDER" -Value $LicenseXmlPath
-
+    Set-DockerComposeEnvFileVariable "HOST_LICENSE_FOLDER" -Value $LicenseXmlFolder
+    
+    # SITECORE_LICENSE
+	Set-DockerComposeEnvFileVariable "SITECORE_LICENSE" -Value (ConvertTo-CompressedBase64String -Path $LicenseXmlPath)
+    
     # CM_HOST
     Set-DockerComposeEnvFileVariable "CM_HOST" -Value "cm.localhost"
-
+    
+    # CD_HOST
+    Set-DockerComposeEnvFileVariable "CD_HOST" -Value "cd.localhost"
+    
     # ID_HOST
     Set-DockerComposeEnvFileVariable "ID_HOST" -Value "id.localhost"
 
