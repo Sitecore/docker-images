@@ -59,7 +59,7 @@ Import-Module SitecoreDockerTools -RequiredVersion $dockerToolsVersion
 ##################################
 # Configure TLS/HTTPS certificates
 ##################################
-
+New-Item -ItemType Directory -Path "traefik\certs" -Force
 Push-Location traefik\certs
 try {
     $mkcert = ".\mkcert.exe"

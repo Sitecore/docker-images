@@ -19,7 +19,7 @@ function Get-BuildSpecifications
         $buildContextPath = $_.Directory.FullName
         $buildFilePath = $_.FullName
         $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
-        $dockerFile = "" 
+        $dockerFile = ""
 
         $sources = @()
 

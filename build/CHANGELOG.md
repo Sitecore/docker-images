@@ -2,6 +2,7 @@
 
 ## September 2020
 
+- [**Breaking**] Refactored repository to most build-related files to a /build folder
 - [**Breaking**] Sitecore Version ```build.ps1``` default set to ```10.0.0```
 - [Added] XP0 10.0.0. SPE/SXA/JSS
 - [WIP] Sitecore 10.0.0 docker-compose tests (XM/XP/XP0)

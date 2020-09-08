@@ -4,10 +4,10 @@
 
 1. Follow the [formatting/style settings](.vscode/settings.json), run "Format Document" in Visual Studio Code (default SHIFT+ALT+F) and also look how everything else is formatted.
 1. Remember to update README.md and/or CHANGELOG.md with relevant info.
-1. When adding or changing images, run `.\Update-Documentation.ps1` so IMAGES.md is updated as well as the stats in README.md.
-1. When you have changes to `.\sitecore-packages.json` you can:
-    1. Run `.\contributing\Test-SitecorePackagesJson.ps1` to verify the urls are working.
-    1. Run `.\contributing\Sort-SitecorePackagesJson.ps1` to sort the packages by name.
+1. When adding or changing images, run `.\build\Update-Documentation.ps1` so IMAGES.md is updated as well as the stats in README.md.
+1. When you have changes to `.\build\sitecore-packages.json` you can:
+    1. Run `.\build\contributing\Test-SitecorePackagesJson.ps1` to verify the urls are working.
+    1. Run `.\build\contributing\Sort-SitecorePackagesJson.ps1` to sort the packages by name.
 
 ## Submitting pull requests
 
