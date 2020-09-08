@@ -111,7 +111,7 @@ if ($InitEnv) {
     Set-DockerComposeEnvFileVariable "HOST_LICENSE_FOLDER" -Value $LicenseXmlFolder
     
     # SITECORE_LICENSE
-	Set-DockerComposeEnvFileVariable "SITECORE_LICENSE" -Value (ConvertTo-CompressedBase64String -Path $LicenseXmlPath)
+    Set-DockerComposeEnvFileVariable "SITECORE_LICENSE" -Value (ConvertTo-CompressedBase64String -Path $LicenseXmlPath)
     
     # CM_HOST
     Set-DockerComposeEnvFileVariable "CM_HOST" -Value "cm.localhost"
