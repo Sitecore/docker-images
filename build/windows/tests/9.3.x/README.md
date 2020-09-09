@@ -17,7 +17,7 @@ PS> docker-compose -f docker-compose.xp.sxa.ps.yml up
 - Sitecore Horizon requires the HTTPS protocol in all communications between the `cm` and the `authoringhost` instances and the secure WebSocket protocol between the `authoringhost` instance and the client user browser. You need to create and install a self-signed SSL certificate on your host machine that contains the DNS alternative names of the services names running in the docker compose definition. The following setup steps are based on [Michael West](https://github.com/michaellwest/docker-https)'s solution to run Docker containers with HTTPS:
    - Clone Michael West's repository: https://github.com/michaellwest/docker-https.git
    - Open the folder Startup and with an elevated PowerShell console run the following command: `.\createcert.ps1 -certificatename cert -dnsNameList "*.dev.local"`
-   - Copy the 4 generated `cert.*` files in the `startup` folder in this Sitecore Docker Images cloned repository (`\windows\tests\9.3.x\startup`).
+   - Copy the 4 generated `cert.*` files in the `startup` folder in this Sitecore Docker Images cloned repository (`\build\windows\tests\9.3.x\startup`).
 
 ### Starting XP with Sitecore Horizon instance
 
