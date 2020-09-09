@@ -15,3 +15,10 @@ windows/tests/**/data/**/*
 
 /.vscode/
 /tools/
+
+windows/tests/**/mssql-data/**/*
+windows/tests/**/solr-data/**/*
+
+*.pem
+*.crt
+*.key
