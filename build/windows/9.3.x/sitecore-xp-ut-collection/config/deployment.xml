@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Sitecore.Tracking.Plugin.Status>
+        <LocalAccessOnly>false</LocalAccessOnly>
+    </Sitecore.Tracking.Plugin.Status>
+  <Sitecore.Tracking.SqlServer>
+    <SqlServerTrackingInteractionCache>
+      <ConnectionString>user id=sa;password=8Tombs-Given-Clock#-arming-Alva-debut-Spine-monica-Normal-Ted-About1-chard-Easily-granddad-5Context!;data source=sql;database=Sitecore.Tracking;ConnectRetryCount=5;ConnectRetryInterval=10;Connection Timeout=50;</ConnectionString>
+    </SqlServerTrackingInteractionCache>
+  </Sitecore.Tracking.SqlServer>
+</Settings>

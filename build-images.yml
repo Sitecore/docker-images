@@ -9,6 +9,7 @@
 # - build.includeExperimentalImages
 # - build.includeJss
 # - build.includeSh
+# - build.includeUt
 # - build.includeSpe
 # - build.includeSxa
 # - build.includeShortTags
@@ -89,6 +90,7 @@ stages:
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
                 IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
+                IncludeUt = [System.Convert]::ToBoolean($(build.includeUt))
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
                 SitecoreRegistry = "$(sitecore.container.registry)"
@@ -156,6 +158,7 @@ stages:
                   IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                   IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
                   IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
+                  IncludeUt = [System.Convert]::ToBoolean($(build.includeUt))
                   IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                   SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
                   SitecoreRegistry = "$(sitecore.container.registry)"

@@ -1,0 +1,56 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sitecore>
+  <Sitecore.Tracking.Web>
+    <!-- Controls whether the service will accept requests over insecure channels.
+            If the setting is set to true, The service will only accept and process requests made over a secure channel (Https). 
+            Otherwise, it can accept requests over insecure channels (HTTP).
+            Default: true
+        -->
+    <HttpsOnly>true</HttpsOnly>
+  </Sitecore.Tracking.Web>
+  <Commands>
+    <DefaultCommand>
+      <argumentOne>Web</argumentOne>
+    </DefaultCommand>
+  </Commands>
+  <Logging>
+    <ConfigureLogging>Sitecore.Framework.Logging.Serilog.ConfigureSitecoreLogging, Sitecore.Framework.Logging.Serilog</ConfigureLogging>
+    <Serilog>
+      <Using>
+        <Literate>Serilog.Sinks.Literate</Literate>
+        <Rolling>Serilog.Sinks.RollingFile</Rolling>
+        <Environment>Serilog.Enrichers.Environment</Environment>
+      </Using>
+      <MinimumLevel>
+        <Default>Debug</Default>
+      </MinimumLevel>
+      <WriteTo>
+        <ConsoleLogger>
+          <Name>LiterateConsole</Name>
+          <Args>
+            <outputTemplate>[{Timestamp:HH:mm:ss} {SourceContext} [{Level}] {Message}{NewLine}{Exception}</outputTemplate>
+          </Args>
+        </ConsoleLogger>
+        <DefaultLogger>
+          <Name>RollingFile</Name>
+          <Args>
+            <pathFormat>Logs\tracking-log-{Date}.txt</pathFormat>
+            <outputTemplate>{Timestamp:o} [{Level:u3}] ({Application}/{MachineName}) {Message}{NewLine}{Exception}</outputTemplate>
+            <retainedFileCountLimit>7</retainedFileCountLimit>
+            <buffered>False</buffered>
+          </Args>
+        </DefaultLogger>
+      </WriteTo>
+      <Enrich>
+        <FromLogContext>FromLogContext</FromLogContext>
+        <WithMachineName>WithMachineName</WithMachineName>
+      </Enrich>
+      <Properties>
+        <Application>SitecoreTracking</Application>
+      </Properties>
+    </Serilog>
+  </Logging>
+  <Host>
+     <LicenseFilePath>C:/license/license.xml</LicenseFilePath>
+  </Host>
+</Sitecore>

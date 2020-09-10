@@ -33,6 +33,26 @@ PS> docker-compose -f docker-compose.xp.sh.yml up
    - `/sitecore/system/Marketing Control Panel/Experience Analytics/Dimensions/Pages/By page/Computer`
    - `/sitecore/system/Marketing Control Panel/Experience Analytics/Dimensions/Pages/By page/MobilePhone`
    - `/sitecore/system/Marketing Control Panel/Experience Analytics/Dimensions/Pages/By page/Tablet`
+   
+## Running XP with Universal Tracker (UT)
+
+### Considerations
+
+- The Universal Tracker module (version 3) doesn't natively support working with environment variables in configuration files. For this reason, the connection string of the Sitecore Tracking database has been hardcoded in the `\config\deployment.xml` configuration patch file.  
+
+- The status pages for both Universal Tracker services has been configured to be accessible remotely, browsing the following urls:
+   - Tracking Collection Status: `https://tracking-collection/status`
+   - Tracking Processing Status: `http://tracking-processing/status`
+
+- The Tracking Processing batch size has been lowered to `1` to facilitate local development.
+
+### Starting XP with Universal Tracker instance
+
+To start Sitecore XP with Universal Tracker services run the following command in PowerShell:
+
+```{.ps1}
+PS> docker-compose -f docker-compose.xp.ut.yml up
+``` 
 
 ## Running XC
 

@@ -1,0 +1,55 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Sitecore>
+  <Environment>Production</Environment>
+  <Commands>
+    <DefaultCommand>
+      <argumentOne>Web</argumentOne>
+    </DefaultCommand>
+  </Commands>
+  <Logging>
+    <ConfigureLogging>Sitecore.Framework.Logging.Serilog.ConfigureSitecoreLogging, Sitecore.Framework.Logging.Serilog</ConfigureLogging>
+    <Serilog>
+      <Using>
+        <Console>Serilog.Sinks.Console</Console>
+        <Rolling>Serilog.Sinks.RollingFile</Rolling>
+        <Environment>Serilog.Enrichers.Environment</Environment>
+      </Using>
+      <MinimumLevel>
+        <Default>Information</Default>
+      </MinimumLevel>
+      <WriteTo>
+        <ConsoleLogger>
+          <Name>LiterateConsole</Name>
+          <Args>
+            <outputTemplate>[{Timestamp:HH:mm:ss} {Level:u3}] {SourceContext} - {Message}{NewLine}{Exception}</outputTemplate>
+          </Args>
+        </ConsoleLogger>
+        <DefaultLogger>
+          <Name>RollingFile</Name>
+          <Args>
+            <pathFormat>App_Data\logs\Processing-{Date}.log</pathFormat>
+            <outputTemplate>[{Timestamp:o}] [{Level:u3}] [{Application}/{MachineName}] {SourceContext} - {Message}{NewLine}{Exception}</outputTemplate>
+          </Args>
+        </DefaultLogger>
+      </WriteTo>
+      <Enrich>
+        <FromLogContext>FromLogContext</FromLogContext>
+        <WithMachineName>WithMachineName</WithMachineName>
+      </Enrich>
+      <Properties>
+        <Application>Tracking.Processing.WebHost</Application>
+      </Properties>
+    </Serilog>
+  </Logging>
+  <Host>
+    <Services>
+      <Add>
+        <BaseAggregationService>
+          <Type>Sitecore.Tracking.Processing.Engine.Services.XConnectAggregationService, Sitecore.Tracking.Processing.Engine</Type>
+          <As>Sitecore.Tracking.Processing.Abstractions.Services.IAggregationService, Sitecore.Tracking.Processing.Abstractions</As>
+        </BaseAggregationService>
+      </Add>
+    </Services>
+    <LicenseFilePath>C:/license/license.xml</LicenseFilePath>
+  </Host>
+</Sitecore>

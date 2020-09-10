@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Settings>
+  <Sitecore.Tracking.Plugin.Status>
+        <LocalAccessOnly>false</LocalAccessOnly>
+    </Sitecore.Tracking.Plugin.Status>
+  <Sitecore.Tracking.SqlServer>
+    <SqlServerTrackingInteractionCache>
+      <ConnectionString>user id=sa;password=8Tombs-Given-Clock#-arming-Alva-debut-Spine-monica-Normal-Ted-About1-chard-Easily-granddad-5Context!;data source=sql;database=Sitecore.Tracking;ConnectRetryCount=5;ConnectRetryInterval=10;Connection Timeout=50;</ConnectionString>
+    </SqlServerTrackingInteractionCache>
+  </Sitecore.Tracking.SqlServer>
+  <XConnect>
+    <ServiceUrl>http://xconnect</ServiceUrl>
+  </XConnect>
+  <Tracking.Processing>
+    <!--Defines interval of getting work operation. Seconds-->
+    <ProcessingInterval>5.0</ProcessingInterval>
+    <!--Timeout for checked out interaction. Minutes-->
+    <InteractionTimeoutIncrement>60</InteractionTimeoutIncrement>
+    <!--defines workers count in a pool-->
+    <MaxConcurrency>5</MaxConcurrency>
+    <!--Defines count of interactions got for processing in one iteration-->
+    <BatchSize>1</BatchSize>
+    <!--Defines amount (in percents) completed interactions to initiate getting new batch-->
+    <ProcessingThresholdPercent>90</ProcessingThresholdPercent>
+  </Tracking.Processing>
+</Settings>
