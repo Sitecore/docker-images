@@ -3,7 +3,7 @@ version: "2.4"
 services:
 
   mssql:
-    image: ${REGISTRY}sitecore-xp1-custom-spe-sxa-jss-ps-mssql:10.0.0-windowsservercore-ltsc2019
+    image: ${REGISTRY}sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-windowsservercore-ltsc2019
     volumes:
       - type: bind
         source: .\mssql-data
