@@ -24,6 +24,7 @@ $sitecoreDownloadUrl = "https://dev.sitecore.net"
 
 $packages = @{"Sitecore Azure Toolkit 2.4.0-r02514.1001.zip"  = "https://dev.sitecore.net/~/media/B627BFA7070B40AD854A0FF08719381D.ashx"
     "Sitecore Publishing Module 9.3.0.0 rev. r00546.2197.zip" = "https://dev.sitecore.net/~/media/417C43AC4F334C4085D18925367FE79A.ashx"
+    "Sitecore Publishing Module 10.0.0.0 rev. r00568.2697.zip" = "https://dev.sitecore.net/~/media/A06BC5BBBCA84F2F90AC08CB456A3801.ashx"
 }
 
 # download packages from Sitecore download
