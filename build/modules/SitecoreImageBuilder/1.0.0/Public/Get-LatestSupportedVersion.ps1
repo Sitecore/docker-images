@@ -7,7 +7,7 @@ function Get-LatestSupportedVersion
     )
 
     # get the latest version number for Sitecore
-    $sitecore = Get-LatestVersionNumberForTag -Specs $specs -Tag "sitecore-*:*windowsservercore-*"
+    $sitecore = Get-LatestVersionNumberForTag -Specs $specs -Tag "*sitecore-*:*"
 
     # pick latest 'windowsservercore' LTSC version
     $windowsServerCore = (Get-SupportedWindowsVersions | Where-Object { $_ -like "ltsc*" } | Select-Object -First 1)
