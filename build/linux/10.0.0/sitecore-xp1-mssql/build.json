@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-xp1-custom-mssql:10.0.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/mssql/server:2019-CU5-ubuntu-16.04"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore 10.0.0 rev. 004346 (WDP XP1 packages).zip"
+  ]
+}

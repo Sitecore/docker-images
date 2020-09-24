@@ -12,7 +12,7 @@ RUN New-Item -Path 'C:\\downloads' -ItemType 'Directory' -Force | Out-Null; `
     & curl.exe -sS -L -o C:\\downloads\\urlrewrite.msi https://download.microsoft.com/download/1/2/8/128E2E22-C1B9-44A4-BE2A-5859ED1D4592/rewrite_amd64_en-US.msi; `
     & curl.exe -sS -L -o C:\\downloads\\vc_redist.exe https://aka.ms/vs/15/release/VC_redist.x64.exe; `
     & curl.exe -sS -L -o C:\\downloads\\filebeat.zip https://artifacts.elastic.co/downloads/beats/filebeat/filebeat-7.4.1-windows-x86_64.zip; `
-    & curl.exe -sS -L -o C:\\downloads\\dotnet-hosting.exe https://download.visualstudio.microsoft.com/download/pr/633b17e5-a489-4da4-9713-5ddedf17a5f0/5c18f4203e837dd90ba3da59eee92b01/dotnet-hosting-2.1.15-win.exe; `
+    & curl.exe -sS -L -o C:\\downloads\\dotnet-hosting.exe https://download.visualstudio.microsoft.com/download/pr/5a059308-c27a-4223-b04d-0e815dce2cd0/10f528c237fed56192ea22283d81c409/dotnet-hosting-2.1.16-win.exe; `
     & curl.exe -sS -L -o c:\\downloads\\node.msi https://nodejs.org/dist/v12.13.0/node-v12.13.0-x64.msi;
 
 # install nuget
