@@ -2,6 +2,9 @@
 
 ## September 2020
 
+- [Changed] Add Namespace to make difference between Sitecore vs commintry tags. Example: ```community/TAG```, and ```community/modules/TAG```
+- [Added] Sitcore 10.0.0 community modules Linux/Windows CMP/DAM/DEF/PS/SFMC/SPE/SXA assets images
+- [Added] Sitcore 10.0.0 XP0/XP1/SPE/SXA/JSS/PS MsSql Linux images
 - [**Breaking**] Refactored repository to most build-related files to a /build folder
 - [**Breaking**] Sitecore Version ```build.ps1``` default set to ```10.0.0```
 - [Added] XP0 10.0.0. SPE/SXA/JSS
