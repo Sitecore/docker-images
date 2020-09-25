@@ -171,12 +171,12 @@ stages:
     dependsOn:
     - Build_Windows_Images
     - Build_Linux_Images
-    condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'), eq(variables['Build.SourceBranch'], 'refs/heads/develop'), ne(variables['build.triggerAdditionalBuild'], '') )
+    condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'), ne(variables['build.triggerAdditionalBuild'], '') ) #, eq(variables['Build.SourceBranch'], 'refs/heads/master')
     jobs:
       - job: TriggerAdditionalBuild
-        
+
         displayName: "Trigger Additional Build"
-        steps: 
+        steps:
           - task: TriggerBuild@3
             inputs:
               definitionIsInCurrentTeamProject: true
