@@ -8,6 +8,7 @@
 # - azure.vm.windows.name
 #
 # Image build options
+# - build.triggerAdditionalBuild - specify a build ID for triggering an additional build after successful completion
 # - build.tags
 # - build.pushMode
 # - build.pruneImages
@@ -56,7 +57,7 @@ schedules:
 
 stages:
 
-  - stage: Build_Wndows_Images
+  - stage: Build_Windows_Images
     jobs:
       - job: Build_Windows_Images
         timeoutInMinutes: 720
@@ -102,7 +103,9 @@ stages:
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
             displayName: 'Prune images (optional)'
-
+  - stage: Build_Linux_Images
+    dependsOn: []
+    jobs:
       - job: Build_Linux_Images
         timeoutInMinutes: 720
         displayName: "Build Linux Images"
@@ -163,3 +166,32 @@ stages:
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
+  - stage: Trigger
+    dependsOn:
+    - Build_Windows_Images
+    - Build_Linux_Images
+    condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'), ne(variables['build.triggerAdditionalBuild'], ''), eq(variables['Build.SourceBranch'], 'refs/heads/master') )
+    jobs:
+      - job: TriggerAdditionalBuild
+
+        displayName: "Trigger Additional Build"
+        steps:
+          - task: TriggerBuild@3
+            inputs:
+              definitionIsInCurrentTeamProject: true
+              buildDefinition: '$(build.triggerAdditionalBuild)'
+              queueBuildForUserThatTriggeredBuild: false
+              ignoreSslCertificateErrors: false
+              useSameSourceVersion: false
+              useCustomSourceVersion: false
+              useSameBranch: false
+              branchToUse: 'master'
+              waitForQueuedBuildsToFinish: false
+              storeInEnvironmentVariable: false
+              authenticationMethod: 'Personal Access Token'
+              password: '$(System.AccessToken)'
+              enableBuildInQueueCondition: false
+              dependentOnSuccessfulBuildCondition: false
+              dependentOnFailedBuildCondition: false
+              checkbuildsoncurrentbranch: false
+              failTaskIfConditionsAreNotFulfilled: false
