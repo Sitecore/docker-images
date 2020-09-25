@@ -57,7 +57,7 @@ schedules:
 
 stages:
 
-  - stage: Build_Wndows_Images
+  - stage: Build_Windows_Images
     jobs:
       - job: Build_Windows_Images
         timeoutInMinutes: 720
