@@ -27,7 +27,7 @@ WORKDIR /
 
 RUN ./tools/Extract-Resources.ps1 -Roles $env:ROLES -SourceFolder /wdp -DestinationFolder /extract
 
-RUN ./tools/Prepare-cd-assets.ps1 -SourceFolder /extract/cm -DestinationFolder /extract/cd
+RUN ./tools/Prepare-cd-assets.ps1 -SourceFolder /extract/cm/content -DestinationFolder /extract/cd/content
 FROM ${BASE_IMAGE} as production
 
 COPY --from=build /extract /module/
