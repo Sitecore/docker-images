@@ -1,5 +1,10 @@
 # Changelog
 
+## October 2020
+
+- [Added] Sitcore 10.0.0 (XP1) CD with PS and JSS
+- [Changed] Sitcore 10.0.0 community module Windows PS include CD role
+
 ## September 2020
 
 - [Changed] Add Namespace to make difference between Sitecore vs commintry tags. Example: ```community/TAG```, and ```community/modules/TAG```
