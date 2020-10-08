@@ -195,3 +195,55 @@ stages:
               dependentOnFailedBuildCondition: false
               checkbuildsoncurrentbranch: false
               failTaskIfConditionsAreNotFulfilled: false
+  - stage: Trigger_Harbor_Push
+    dependsOn:
+    - Build_Windows_Images
+    - Build_Linux_Images
+    condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'),eq(variables['Build.SourceBranch'], 'refs/heads/develop'))
+    jobs:
+      - job: Harbor_Push
+        displayName: 'Harbor Push'
+        steps:
+        - task: TriggerBuild@3
+          displayName: "Trigger Community XP"
+          inputs:
+            definitionIsInCurrentTeamProject: true
+            buildDefinition: '103'
+            queueBuildForUserThatTriggeredBuild: true
+            ignoreSslCertificateErrors: false
+            useSameSourceVersion: false
+            useCustomSourceVersion: false
+            useSameBranch: false
+            branchToUse: 'master'
+            waitForQueuedBuildsToFinish: false
+            storeInEnvironmentVariable: false
+            buildParameters: 'namespace: community, groupName: xp, tag:""'
+            authenticationMethod: 'Personal Access Token'
+            password: '$(System.AccessToken)'
+            enableBuildInQueueCondition: false
+            dependentOnSuccessfulBuildCondition: false
+            dependentOnFailedBuildCondition: false
+            checkbuildsoncurrentbranch: false
+            failTaskIfConditionsAreNotFulfilled: false
+
+        - task: TriggerBuild@3
+          displayName: "Trigger Community XM"
+          inputs:
+            definitionIsInCurrentTeamProject: true
+            buildDefinition: '103'
+            queueBuildForUserThatTriggeredBuild: true
+            ignoreSslCertificateErrors: false
+            useSameSourceVersion: false
+            useCustomSourceVersion: false
+            useSameBranch: false
+            branchToUse: 'master'
+            waitForQueuedBuildsToFinish: false
+            storeInEnvironmentVariable: false
+            buildParameters: 'namespace: community, groupName: xm, tag:""'
+            authenticationMethod: 'Personal Access Token'
+            password: '$(System.AccessToken)'
+            enableBuildInQueueCondition: false
+            dependentOnSuccessfulBuildCondition: false
+            dependentOnFailedBuildCondition: false
+            checkbuildsoncurrentbranch: false
+            failTaskIfConditionsAreNotFulfilled: false
