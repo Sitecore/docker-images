@@ -2,6 +2,16 @@
 
 ## October 2020
 
+- [Added] missing packages to download file
+- [**Breaking**] Renamed `Download-PS-Prerequisites.ps1` to `Download-Module-Prerequisites.ps1`
+- [Changed] Refactored `Download-Module-Prerequisites.ps1` to download more than just Publishing Service
+- [Changed] Fixed incorrect path logic in `Download-Module-Prerequisites.ps1`
+- [Added] DEF tenant service (TS)
+- [Added] additional TS plugin asset images
+- [Added] additional DEF MA Action asset images
+- [Changed] Removed defaultTags (`mssql-developer-2017`) from building for v10.x +
+- [WIP] Temporarily disabling Horizon asset images
+
 - [Added] Sitcore 10.0.0 (XP1) CD with PS and JSS
 - [Changed] Sitcore 10.0.0 community module Windows PS include CD role
 

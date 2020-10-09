@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "community/modules/custom-def-sfdc-assets:10.0.0-${nanoserver_version}",
+      "tag": "community/modules/custom-sfmc-bde-ts-assets:10.0.0-${nanoserver_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}",
         "--build-arg TOOL_IMAGE=scr.sitecore.com/tools/sitecore-docker-tools-assets:10.0.0-1809",
@@ -12,6 +12,6 @@
     }
   ],
   "sources": [
-    "Sitecore Connect for Salesforce CRM 5.0.0 rev. 01431.scwdp.zip"
+    "Sitecore Connect for Salesforce Marketing Cloud - BDE Plugin for Tenant Service 5.0.0 rev. 00294.scwdp.zip"
   ]
 }
