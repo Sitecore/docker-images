@@ -304,6 +304,13 @@ else
     exit
 }
 
+if ($IncludeExperimental -eq $true) {
+    # restore any missing PS packages
+    .\Download-PS-Prerequisites.ps1 `
+        -SitecoreUsername $SitecoreUsername `
+        -SitecorePassword $SitecorePassword
+}
+
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
     -Path (Join-Path $(Get-Location) $rootFolder) `
