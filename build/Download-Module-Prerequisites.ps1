@@ -37,7 +37,7 @@ $packages = @{"Sitecore Azure Toolkit 2.5.0-r02519.1061.zip"                    
     "Sitecore Connect for Sitecore DAM-2.0.0.zip"                                                     = "https://dev.sitecore.net/~/media/7F118478CF78478087A1DB3EBDF9FBFE.ashx"
 }
 
-# download packages from Sitecore download
+# download packages from Sitecore
 $packages.GetEnumerator() | ForEach-Object {
 
     $filePath = Join-Path $InstallSourcePath $_.Key
@@ -112,12 +112,34 @@ if (!(Test-Path (Join-Path $sat "tools\Sitecore.Cloud.Cmdlets.dll") -PathType Le
 Write-Host "Import Sitecore Azure Toolkit"
 Import-Module (Join-Path $sat "tools\Sitecore.Cloud.Cmdlets.dll")  -Force
 
-# Find publishing ,odule
-$zips = Get-ChildItem -Recurse -Path $Destination -Exclude "*scwdp*", "*Azure Toolkit*" -Include "*.zip"
+# Convert packages
+$packages.GetEnumerator() | ForEach-Object {
+    $fileName = $_.Key
 
-$zips | ForEach-Object {
-    Write-Host "Convert to WDP $_"
-    ConvertTo-SCModuleWebDeployPackage -Path $_ -Destination $Destination -Force
+    if ($fileName -notlike "*Azure Toolkit*") {
+        $filePath = Join-Path $Destination $fileName
+        $expectedScwdpFilePath = $filePath -replace ".zip",".scwdp.zip"
+
+        if (Test-Path $expectedScwdpFilePath -PathType Leaf)
+        {
+            Write-Host ("Required WDP found: '{0}'" -f $expectedScwdpFilePath)
+        }
+        else {
+            if ($PSCmdlet.ShouldProcess($filePath)) {
+                Write-Host "Convert to WDP $filePath"
+
+                if (Test-Path $filePath -PathType Leaf)
+                {
+                    ConvertTo-SCModuleWebDeployPackage -Path $filePath -Destination $Destination -Force
+                }
+                else
+                {
+                    Throw "Cannot find file: $filePath"
+                }
+            }
+        }
+    }
 }
+
 $ProgressPreference = $preference
 Write-Host "DONE"
