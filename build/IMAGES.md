@@ -2,8 +2,10 @@
 
 ## Index
 
-- [Windows images](#current-windows-images)
-- [Linux images](#current-linux-images)
+- [All community images](#all-community-images)
+	- [Index](#index)
+	- [Current Windows images](#current-windows-images)
+	- [Current linux images](#current-linux-images)
 
 > Deprecated tags are marked with ~~strike through~~ and they are not built by default.
 
@@ -1002,11 +1004,15 @@
 | 9.2.0 | sitecore-xm-jss-sql | linux |  | `sitecore-xm-jss-sql:9.2.0-linux` [Dockerfile](linux/9.2.0/sitecore-xm-jss-sql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql | linux |  | `community/sitecore-xp1-custom-sxa-ps-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-mssql | linux |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-ps-mssql | linux |  | `community/sitecore-xp1-custom-spe-ps-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-mssql | linux |  | `community/sitecore-xp1-custom-spe-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-mssql | linux |  | `community/sitecore-xp1-custom-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-xp1-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | linux |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-mssql | linux |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-spe-ps-mssql | linux |  | `community/sitecore-xp0-custom-spe-ps-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-spe-mssql | linux |  | `community/sitecore-xp0-custom-spe-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-modules-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-mssql | linux |  | `community/sitecore-xp0-custom-mssql:10.0.0-linux` [Dockerfile](linux/10.0.0/sitecore-xp0-mssql/Dockerfile) |
@@ -1016,6 +1022,7 @@
 | 10.0.0 | community/modules/custom-sfmc-ce-assets | linux |  | `community/modules/custom-sfmc-ce-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-bde-assets | linux |  | `community/modules/custom-sfmc-bde-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-ps-assets | linux |  | `community/modules/custom-ps-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-jss-assets | linux |  | `community/modules/custom-jss-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-horizon-zenith-assets | linux |  | `community/modules/custom-horizon-zenith-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-horizon-insights-assets | linux |  | `community/modules/custom-horizon-insights-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-horizon-identity-assets | linux |  | `community/modules/custom-horizon-identity-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |

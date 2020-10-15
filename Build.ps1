@@ -314,6 +314,14 @@ SitecoreImageBuilder\Invoke-PackageRestore `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 
+if ($IncludeExperimental -eq $true) {
+    # restore any missing experimental packages
+    .\Download-Module-Prerequisites.ps1 `
+        -InstallSourcePath $InstallSourcePath `
+        -SitecoreUsername $SitecoreUsername `
+        -SitecorePassword $SitecorePassword
+}
+
 # start the build
 SitecoreImageBuilder\Invoke-Build `
     -Path (Join-Path $(Get-Location) $rootFolder) `

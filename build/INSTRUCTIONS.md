@@ -7,7 +7,7 @@ These instructions will help you understand how to build custom images derived f
 
 This repository can build multiple Windows versions. Read more about [Windows Container Version Compatibility](https://docs.microsoft.com/en-us/virtualization/windowscontainers/deploy-containers/version-compatibility).
 
-Here is the convention used for Sitecore image tags:
+Here is the convention used for Sitecore image tags before Sitecore 10.x:
 
 ```text
  [REGISTRY/]sitecore-<TOPOLOGY>[-VARIANT]-<ROLE>:<SITECORE_VERSION>-<OS_VERSION>
@@ -16,25 +16,25 @@ Here is the convention used for Sitecore image tags:
 Example:
 
 ```text
- registry.example.com/sitecore-xm-cm:9.2.0-windowsservercore-1903
- \__________________/ \____________/ \___/ \____________________/
-           |                 |         |             |
-   registry/org/user    repository  sc version   os version
+ registry.example.com/sitecore-xm-sxa-jss-cm:9.2.0-windowsservercore-1903
+ \__________________/ \____________________/ \___/ \____________________/
+           |                    |              |             |
+   registry/org/user       repository       sc version   os version
 ```
 
 **Starting with Sitecore 10.x:**
 
 ```text
- [REGISTRY/]sitecore-<TOPOLOGY>[-VARIANT]-<ROLE>:<SITECORE_VERSION>-<OS_VERSION>
+ [REGISTRY/]community/sitecore-<TOPOLOGY>-custom[-VARIANT]-<ROLE>:<SITECORE_VERSION>-<OS_VERSION>
 ```
 
 Example:
 
 ```text
- registry.example.com/sitecore-xm-cm:9.2.0-windowsservercore-1903
- \__________________/ \____________/ \___/ \____________________/
-           |                 |         |             |
-   registry/org/user    repository  sc version   os version
+ registry.example.com/community/sitecore-xm-custom-sxa-jss-cm:10.0.0-windowsservercore-1903
+ \__________________/ \_____________________________________/ \____/ \____________________/
+           |                             |                      |             |
+  registry/org/user                 repository               sc version   os version
 ```
 
 ## Quick start
@@ -64,26 +64,28 @@ When completed then...
 1. Place your Sitecore license file at `C:\license\license.xml`, or override location using the environment variable `LICENSE_PATH` like so: `$env:LICENSE_PATH="D:\my\sitecore\licenses"`
 1. Switch directory to `.\windows\tests\9.2.x\` and then run any of the docker-compose files, for example an XM with: `docker-compose --file .\docker-compose.xm.yml up`
 
+**For all Sitecore versions:**
+
 > IMPORTANT: When switching between versions, variants or topologies you need to clear the data folders, you can use the `.\windows\tests\*.*.*\Clean-Data.ps1` script to do so.
 
 ## Setting up automated builds
 
-## Prerequisites
+### Prerequisites
 
 - A **private** Docker repository. Any will do, but the easiest is to use a [Azure Container Registry](https://azure.microsoft.com/en-us/services/container-registry/).
 - A file location that your build agents can reach to store downloads from [https://dev.sitecore.net/](https://dev.sitecore.net/).
 
-### Windows
+#### Windows
 
 1. Latest Windows 10 or Windows Server 2019 with Hyper-V and Containers features installed.
 1. Latest stable Docker engine and cli.
 
-### Linux (optional)
+#### Linux (optional)
 
 1. [PowerShell Core](https://github.com/powershell/powershell) so you can use the PowerShell module.
 1. Latest stable Docker engine and cli.
 
-## Configure your build server
+### Configure your build server
 
 1. Trigger a build on changes to `master` - to get new versions.
 1. Trigger once a week - to get base images updated when Microsoft releases patched images.
@@ -91,7 +93,6 @@ When completed then...
 Example:
 
 ```PowerShell
-
 # required, change if you need to build images in other folders such as ".\linux" or ".\legacy"
 $imagesPath = (Join-Path $PSScriptRoot "\windows")
 
@@ -196,49 +197,26 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 
 See the `commerce-authoring` service in [windows/tests/9.3.x/docker-compose.xc.yml](windows/tests/9.3.x/docker-compose.xc.yml) for configuration examples.
 
-## Experimental Publishing Service (not automatically build because of missing prerequisites from Sitecore)
+## Experimental Modules (not automatically build because of missing prerequisites from Sitecore)
 
-The 'Download-PS-Prerequisites.ps1' script will download the regular Sitecore Publishing Module package, and convert the asset into the proper WDP package by using Sitecore Sitecore Azure Toolkit.
+The `Download-Module-Prerequisites.ps1` script will download regular Sitecore packages, and convert them into proper WDP packages by using Sitecore Sitecore Azure Toolkit.
+
+Experimental modules include, and are not limited to:
+
+- Sitecore Publishing Service
+- Data Exchange Framework
+- Sitecore Commect for Salesforce Marketing Cloud
+- Sitecore Connect for Salesforce CRM
+- Sitecore Connect for Microsoft Dynamics 365 for Sales
+- Sitecore Connect for CMP
+- Sitecore Connect for Sitecore DAM
 
 Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/sat/20/sitecore-azure-toolkit/en/getting-started-with-the-sitecore-azure-toolkit.html)
 
-Add  -ExperimentalTagBehavior Include `
+To enable experimental modules, add the `-IncludeExperimental` parameter when calling `Build.ps1`
 
 ```PowerShell
-
-# required powershell 5.0
-
-# required
-$sitecoreUsername = "YOUR dev.sitecore.net USERNAME"
-
-# required
-$sitecorePassword = "YOUR dev.sitecore.net PASSWORD"
-
-# restore packages needed for the build, only files missing in $installSourcePath will be downloaded
-Download-PS-Prerequisites.ps1 `
-    -SitecoreUsername $sitecoreUsername `
-    -SitecorePassword $sitecorePassword
-
-
-# required, build with ExperimentalTagBehavior parameter
-
-# restore packages needed for the build
-SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path $imagesPath `
-    -Destination $installSourcePath `
-    -Tags $tags `
-    -ExperimentalTagBehavior Include `
-    -SitecoreUsername $sitecoreUsername `
-    -SitecorePassword $sitecorePassword
-
-# build and push images
-SitecoreImageBuilder\Invoke-Build `
-    -Path $imagesPath `
-    -InstallSourcePath $installSourcePath `
-    -Registry $registry `
-    -Tags $tags, `
-    -ExperimentalTagBehavior Include
-
+.\Build.ps1 -SitecoreUsername "YOUR dev.sitecore.net USERNAME" -SitecorePassword "YOUR dev.sitecore.net PASSWORD" -SitecoreVersion "three digit Sitecore version number" -IncludeExperimental
 ```
 
 ## License file volume mount configuration for 9.3 docker images
