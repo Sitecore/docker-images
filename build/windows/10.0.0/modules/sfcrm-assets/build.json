@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "community/modules/custom-def-sfdc-assets:10.0.0-${nanoserver_version}",
+      "tag": "community/modules/custom-sfcrm-assets:10.0.0-${nanoserver_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}",
         "--build-arg TOOL_IMAGE=scr.sitecore.com/tools/sitecore-docker-tools-assets:10.0.0-1809",

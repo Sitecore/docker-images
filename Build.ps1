@@ -147,8 +147,13 @@ $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [stri
 
 foreach ($wv in $OSVersion)
 {
-    $defaultTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
 
+    [regex]$versionReg = "[789]\.[0-9]\.[0-9]"
+    #Check if version being built is 7.x, 8.x or 9.x. We only need the defaultTags if building < 10.x
+    if (($SitecoreVersion -match $versionReg).count -gt 0)
+    {
+        $defaultTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+    }
     if ($Topology -contains "xp")
     {
         $xpMiscTags | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
@@ -319,4 +324,4 @@ SitecoreImageBuilder\Invoke-Build `
     -IsolationModeBehaviour $IsolationModeBehaviour `
     -WhatIf:$WhatIfPreference
 
-    Pop-Location
+Pop-Location
