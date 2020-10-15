@@ -197,13 +197,23 @@ See the `cm` and `cd` service in [windows/tests/9.3.x/docker-compose.xm.yml](win
 
 See the `commerce-authoring` service in [windows/tests/9.3.x/docker-compose.xc.yml](windows/tests/9.3.x/docker-compose.xc.yml) for configuration examples.
 
-## Experimental Publishing Service (not automatically build because of missing prerequisites from Sitecore)
+## Experimental Modules (not automatically build because of missing prerequisites from Sitecore)
 
-The `Download-PS-Prerequisites.ps1` script will download the regular Sitecore Publishing Module package, and convert the asset into the proper WDP package by using Sitecore Sitecore Azure Toolkit.
+The `Download-Module-Prerequisites.ps1` script will download regular Sitecore packages, and convert them into proper WDP packages by using Sitecore Sitecore Azure Toolkit.
+
+Experimental modules include, and are not limited to:
+
+- Sitecore Publishing Service
+- Data Exchange Framework
+- Sitecore Commect for Salesforce Marketing Cloud
+- Sitecore Connect for Salesforce CRM
+- Sitecore Connect for Microsoft Dynamics 365 for Sales
+- Sitecore Connect for CMP
+- Sitecore Connect for Sitecore DAM
 
 Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/sat/20/sitecore-azure-toolkit/en/getting-started-with-the-sitecore-azure-toolkit.html)
 
-To enable experimental Publishing Service, add the `-IncludeExperimental` parameter when calling `Build.ps1`
+To enable experimental modules, add the `-IncludeExperimental` parameter when calling `Build.ps1`
 
 ```PowerShell
 .\Build.ps1 -SitecoreUsername "YOUR dev.sitecore.net USERNAME" -SitecorePassword "YOUR dev.sitecore.net PASSWORD" -SitecoreVersion "three digit Sitecore version number" -IncludeExperimental
