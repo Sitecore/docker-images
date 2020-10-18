@@ -1,0 +1,14 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-sxa-ps-sql:9.3.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=sitecore-xp-sxa-sql:9.3.0-linux"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": [
+    "Sitecore Publishing Module 9.3.0.0 rev. r00546.2197.scwdp.zip"
+  ]
+}

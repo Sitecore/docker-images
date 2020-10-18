@@ -1,0 +1,24 @@
+{
+  "tags": [
+    {
+      "tag": "sitecore-xp-solr:9.3.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=solr:8.1.1-slim",
+        "--build-arg CORE_NAMES='sitecore_core_index, sitecore_master_index, sitecore_web_index, sitecore_marketingdefinitions_master, sitecore_marketingdefinitions_web, sitecore_marketing_asset_index_master, sitecore_marketing_asset_index_web, sitecore_testing_index, sitecore_suggested_test_index, sitecore_fxm_master_index, sitecore_fxm_web_index, sitecore_personalization_index, sitecore_xdb, sitecore_xdb_rebuild'",
+        "--build-arg MANAGED_SCHEMA_DEFAULT_NAME='managed-schema.default.930'",
+        "--build-arg MANAGED_SCHEMA_XDB_NAME='managed-schema.xdb.930'"
+      ]
+    },
+    {
+        "tag": "sitecore-xp-sxa-solr:9.3.0-linux",
+        "build-options": [
+          "--build-arg BASE_IMAGE=solr:8.1.1-slim",
+          "--build-arg CORE_NAMES='sitecore_core_index, sitecore_master_index, sitecore_web_index, sitecore_marketingdefinitions_master, sitecore_marketingdefinitions_web, sitecore_marketing_asset_index_master, sitecore_marketing_asset_index_web, sitecore_testing_index, sitecore_suggested_test_index, sitecore_fxm_master_index, sitecore_fxm_web_index, sitecore_personalization_index, sitecore_xdb, sitecore_xdb_rebuild, sitecore_sxa_master_index, sitecore_sxa_web_index'",
+          "--build-arg MANAGED_SCHEMA_DEFAULT_NAME='managed-schema.default.930'",
+          "--build-arg MANAGED_SCHEMA_XDB_NAME='managed-schema.xdb.930'"
+        ]
+      }
+  ],
+  "sources": []
+}
+

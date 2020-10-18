@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <appSettings>
+        <!-- fixes the duplicat keys so commands from the "WebAdministration" module works as expected -->
+        <add key="Telerik.AsyncUpload.ConfigurationEncryptionKey" xdt:Transform="RemoveAll" xdt:Locator="Match(key)" />
+        <add key="Telerik.AsyncUpload.ConfigurationEncryptionKey" value="YOUR_ENCRYPTION_KEY_TO_GO_HERE" xdt:Transform="Insert" />
+        <add key="Telerik.Upload.ConfigurationHashKey" xdt:Transform="RemoveAll" xdt:Locator="Match(key)" />
+        <add key="Telerik.Upload.ConfigurationHashKey" value="YOUR_ENCRYPTION_KEY_TO_GO_HERE" xdt:Transform="Insert" />
+        <add key="Telerik.Web.UI.DialogParametersEncryptionKey" xdt:Transform="RemoveAll" xdt:Locator="Match(key)" />
+        <add key="Telerik.Web.UI.DialogParametersEncryptionKey" value="YOUR_ENCRYPTION_KEY_TO_GO_HERE" xdt:Transform="Insert" />
+    </appSettings>
+    <location path="sitecore">
+        <system.webServer>
+            <httpProtocol>
+                <customHeaders>
+                    <!-- Removes "upgrade-insecure-requests; block-all-mixed-content;" directives which cause issues when not using HTTPS -->
+                    <add name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;"
+                         xdt:Locator="Match(name)" xdt:Transform="Replace" />
+                </customHeaders>
+            </httpProtocol>
+        </system.webServer>
+    </location>
+    <system.web>
+        <customErrors mode="Off" xdt:Transform="SetAttributes" />
+    </system.web>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <rule xdt:Transform="RemoveAll" />
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>

@@ -14,4 +14,11 @@ windows/tests/**/data/**/*
 !windows/tests/**/data/*/.gitkeep
 
 /.vscode/
-/tools/
+/build/tools/
+
+windows/tests/**/mssql-data/**/*
+windows/tests/**/solr-data/**/*
+
+*.pem
+*.crt
+*.key
