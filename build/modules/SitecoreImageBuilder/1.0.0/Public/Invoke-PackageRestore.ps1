@@ -83,7 +83,7 @@ function Invoke-PackageRestore
             Remove-Item -Path $filePath -Force
         }
 
-        $fileName = $filePath.Replace(("{0}\" -f $destinationPath), "")
+        $fileName = ($filePath.Replace(("{0}" -f $destinationPath), "")) -replace "([\/\\])", ""
         $package = $packages.$fileName
 
         if ($null -eq $package)

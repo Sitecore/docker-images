@@ -20,7 +20,7 @@ function Get-LatestVersionNumberForTag
         $_.Substring(0, $_.IndexOf('-'))
     }
 
-    $versions = $versions | Sort-Object -Unique -Descending
+    $versions = $versions | Sort-Object -Unique -Descending | Sort-Object
 
     # pick latest version for the tag
     Write-Output ($versions | Select-Object -First 1)

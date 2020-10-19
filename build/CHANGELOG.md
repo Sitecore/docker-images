@@ -1,7 +1,25 @@
 # Changelog
 
+## October 2020
+
+- [Added] missing packages to download file
+- [**Breaking**] Renamed `Download-PS-Prerequisites.ps1` to `Download-Module-Prerequisites.ps1`
+- [Changed] Refactored `Download-Module-Prerequisites.ps1` to download more than just Publishing Service
+- [Changed] Fixed incorrect path logic in `Download-Module-Prerequisites.ps1`
+- [Added] DEF tenant service (TS)
+- [Added] additional TS plugin asset images
+- [Added] additional DEF MA Action asset images
+- [Changed] Removed defaultTags (`mssql-developer-2017`) from building for v10.x +
+- [WIP] Temporarily disabling Horizon asset images
+
+- [Added] Sitcore 10.0.0 (XP1) CD with PS and JSS
+- [Changed] Sitcore 10.0.0 community module Windows PS include CD role
+
 ## September 2020
 
+- [Changed] Add Namespace to make difference between Sitecore vs commintry tags. Example: ```community/TAG```, and ```community/modules/TAG```
+- [Added] Sitcore 10.0.0 community modules Linux/Windows CMP/DAM/DEF/PS/SFMC/SPE/SXA assets images
+- [Added] Sitcore 10.0.0 XP0/XP1/SPE/SXA/JSS/PS MsSql Linux images
 - [**Breaking**] Refactored repository to most build-related files to a /build folder
 - [**Breaking**] Sitecore Version ```build.ps1``` default set to ```10.0.0```
 - [Added] XP0 10.0.0. SPE/SXA/JSS

@@ -2,11 +2,11 @@
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-151-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-886-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-101-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-9.3.0%20on%20ltsc2019/1809-blue?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-185-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-1009-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-107-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-10.0.0%20on%20ltsc2019/1809-blue?style=flat-square)
 
 [//]: # "end: stats"
 
-In this repository you will find the official Sitecore container support files, all located in the `/sitecore-container-support/` folder. This folder contains primarily the official tags list of all published images (see [SITECORE-TAGS.md](/sitecore-container-support/sitecore-tags.md)), but will also be used to hold additional official Sitecore materials related to containers.
+In this repository you will find the official Sitecore container support files. The `/tags/` folder contains the official tags list of all published images (see [SITECORE-TAGS.md](tags/sitecore-tags.md)).
 
 Using this repository you can also build custom Docker images for the most recent versions of Sitecore. You can use this repository (preferably from a fork) from your build server and have it build and push images to your private Docker registry. See [INSTRUCTIONS.md](build/INSTRUCTIONS.md) for how to setup and build, and [IMAGES.md](build/IMAGES.md) for a list of all custom images currently available to be built.
 
@@ -19,7 +19,7 @@ Using this repository you can also build custom Docker images for the most recen
 
 ### Official Sitecore image tags
 
-Please see [SITECORE-TAGS.md](/sitecore-container-support/sitecore-tags.md).
+Please see [SITECORE-TAGS.md](tags/sitecore-tags.md).
 
 ### How to setup and build custom images
 

@@ -1,0 +1,15 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-spe-assets:10.0.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.0/modules/Dockerfile"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip"
+  ]
+}
