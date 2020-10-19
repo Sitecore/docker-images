@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "sitecore-xp1-custom-sxa-solr-init:10.0.0-${windowsservercore_version}",
+      "tag":"community/sitecore-xp1-custom-sxa-solr-init:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=scr.sitecore.com/sxp/sitecore-xp1-solr-init:10.0.0-${windowsservercore_version}",

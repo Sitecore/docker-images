@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "sitecore-xm-custom-sxa-solr:10.0.0-${windowsservercore_version}",
+      "tag": "community/sitecore-xm1-custom-sxa-solr:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=scr.sitecore.com/sxp/sitecore-xm1-solr:10.0.0-ltsc2019",

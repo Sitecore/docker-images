@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "sitecore-custom-assets:10.0.0-1809",
+      "tag": "community/sitecore-custom-assets:10.0.0-1809",
       "build-options": [
         "--build-arg BUILD_IMAGE=mcr.microsoft.com/windows/servercore:ltsc2019",
         "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:1809"
@@ -9,6 +9,7 @@
     }
   ],
   "sources": [
-    "Sitecore Publishing Service 4.3.0-win-x64.zip"
+    "Sitecore Publishing Service 4.3.0-win-x64.zip",
+    "Sitecore Data Exchange Framework Tenant Web Service 5.0.0 rev. 01466.scwdp.zip"
   ]
 }
