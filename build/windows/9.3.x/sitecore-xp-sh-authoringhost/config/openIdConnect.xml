@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Settings>
+  <Sitecore>
+    <Authentication>
+      <OpenIdConnectOptions>
+        <RequireHttpsMetadata>false</RequireHttpsMetadata>
+        <ClientId>Sitecore</ClientId>
+        <Authority>https://identity.dev.local/</Authority>
+        <LockTimeoutSeconds>300</LockTimeoutSeconds>
+        <ClientSecret>SIF-Default</ClientSecret>
+      </OpenIdConnectOptions>
+      <BearerAuthenticationOptions>
+        <Authority>https://identity.dev.local/</Authority>
+      </BearerAuthenticationOptions>
+    </Authentication>
+  </Sitecore>
+</Settings>

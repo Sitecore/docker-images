@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+
+<Settings>
+  <ApiGateway>
+    <SitecoreHost>https://cm.dev.local</SitecoreHost>
+    <EnableGraphiQL>false</EnableGraphiQL>
+    <ShowDetailedErrors>false</ShowDetailedErrors>
+  </ApiGateway>
+</Settings>

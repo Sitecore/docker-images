@@ -3,4 +3,5 @@ data/**
 !data/*/
 !data/**/*/
 !data/**/*/.gitkeep
-
+startup/*
+!startup/*.ps1

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configuration xmlns:xdt="http://schemas.microsoft.com/XML-Document-Transform">
+    <location path="sitecore">
+        <system.webServer>
+            <httpProtocol>
+                <customHeaders>
+                    <!-- Removes "upgrade-insecure-requests; block-all-mixed-content;" directives which cause issues when not using HTTPS -->
+                    <add name="Content-Security-Policy" value="default-src 'self' 'unsafe-inline' 'unsafe-eval' https://apps.sitecore.net; img-src 'self' data:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' 'unsafe-inline' https://fonts.gstatic.com;"
+                         xdt:Locator="Match(name)" xdt:Transform="Replace" />
+                </customHeaders>
+            </httpProtocol>
+        </system.webServer>
+    </location>
+    <system.webServer>
+        <rewrite>
+            <rules>
+                <rule xdt:Transform="RemoveAll" />
+            </rules>
+        </rewrite>
+    </system.webServer>
+</configuration>

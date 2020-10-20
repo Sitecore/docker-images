@@ -40,9 +40,14 @@ RUN Expand-Archive -Path 'C:\\downloads\\filebeat.zip' -DestinationPath 'C:\\ins
     Remove-Item -Path 'C:\\downloads\\filebeat.zip' -Force;
 
 # extract assets, skip wdps, move already extracted wdps
-RUN $zips = Get-ChildItem -Path 'C:\\downloads\\*.zip' -Exclude @('*.scwdp.zip', '*win-x64*'); `
+RUN $zips = Get-ChildItem -Path 'C:\\downloads\\*.zip' -Exclude @('*.scwdp.zip', '*win-x64*', '*for Azure.zip'); `
     $zips | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath 'C:\\packages' -Force; }; `
     $zips | ForEach-Object { Remove-Item -Path $_.FullName -Force; }; `
+    $zips = Get-ChildItem -Path 'C:\\downloads\\*for Azure.zip'; `
+    $zips | ForEach-Object { Expand-Archive -Path $_.FullName -DestinationPath 'C:\\downloads\\forazure' -Force; }; `
+    $zips | ForEach-Object { Remove-Item -Path $_.FullName -Force; }; `
+    $zips = Get-ChildItem -Path 'C:\\downloads\\forazure\\wdps\\*.scwdp.zip'; `
+    $zips | ForEach-Object { Move-Item -Path $_.FullName -Destination 'C:\\packages'; }; `
     $zips = Get-ChildItem -Path 'C:\\downloads\\*.zip' -Exclude '*Configuration files*.zip'; `
     $zips | ForEach-Object { Move-Item -Path $_.FullName -Destination 'C:\\packages'; }; `
     $zips = Get-ChildItem -Path 'C:\\packages\\*.scwdp.zip' | Rename-Item -NewName {$_.Name -replace '.rev\..(\d*)|(r[0-9]+.[0-9]+)'};
