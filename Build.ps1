@@ -31,6 +31,8 @@ param(
     [switch]$IncludeSxa,
     [Parameter()]
     [switch]$IncludeJss,
+    [Parameter()]
+    [switch]$IncludeSh,
     [Parameter(HelpMessage = "If the docker image is already built it should be skipped.")]
     [switch]$SkipExistingImage,
     [Parameter()]
@@ -121,7 +123,7 @@ $xcMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*"
 $assetTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore(-custom)?-assets:.*" }
 $moduleAssetTags = $availableTags | Where-Object { $_ -like "community/modules/*" }
 $xmTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
-$xpTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$xpTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss|.*sh).*:.*" }
 $xp0Tags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
 
 $xcTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
@@ -137,11 +139,12 @@ $xp0JssTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-x
 $xpSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
 $xpSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
 $xpJssTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*jss).*:.*" }
+$xpShTags = $availableTags | Where-Object { $_ -match "sitecore-xp([1]{0,1})(-custom)?-(.*sh).*:.*" }
 
 $xcSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc-(spe).*:.*" }
 $xcSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc-(sxa).*:.*" }
 
-$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $moduleAssetTags + $xmTags + $xpTags + $xp0Tags + $xcTags + $xmSpeTags + $xp0SpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xp0SxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xp0JssTags + $xpJssTags
+$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $moduleAssetTags + $xmTags + $xpTags + $xp0Tags + $xcTags + $xmSpeTags + $xp0SpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xp0SxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xp0JssTags + $xpJssTags + $xpShTags
 # These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
 $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
 
@@ -273,6 +276,14 @@ foreach ($wv in $OSVersion)
             if ($Topology -eq "xp")
             {
                 $xpJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+            }
+        }
+
+        if ($IncludeSh)
+        {
+            if ($Topology -eq "xp")
+            {
+                $xpShTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
             }
         }
     }

@@ -18,6 +18,7 @@
 # - build.includeSpe
 # - build.includeSxa
 # - build.includeJss
+# - build.includeSh
 # - build.skipExistingImages
 # - build.includeExperimentalImages
 
@@ -93,6 +94,7 @@ stages:
                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
               }
@@ -111,9 +113,10 @@ stages:
         displayName: "Build Linux Images"
         condition: eq(variables['build.linuxImages'], 'true')
         pool:
-          vmImage: 'ubuntu-18.04'
+          name: 'docker-linux-agents'
         steps:
           - task: Bash@3
+            displayName: "Connect to asset drive"
             condition: eq(variables['assets.useDrive'], 'true')
             inputs:
                 targetType: inline
@@ -143,6 +146,7 @@ stages:
           - checkout: self
             clean: true
           - powershell: |
+                sudo chmod 777 /mnt/dockerassets -R
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
                 $buildProps = @{
                   InstallSourcePath = "$(linux.install.source.path)"
@@ -157,6 +161,7 @@ stages:
                   IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                   IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                   IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                  IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                   IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                   SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
                 }
