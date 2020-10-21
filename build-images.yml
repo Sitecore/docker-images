@@ -173,35 +173,6 @@ stages:
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
-  - stage: Trigger
-    dependsOn:
-    - Build_Windows_Images
-    - Build_Linux_Images
-    condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'), ne(variables['build.triggerAdditionalBuild'], ''), eq(variables['Build.SourceBranch'], 'refs/heads/master') )
-    jobs:
-      - job: TriggerAdditionalBuild
-
-        displayName: "Trigger Additional Build"
-        steps:
-          - task: TriggerBuild@3
-            inputs:
-              definitionIsInCurrentTeamProject: true
-              buildDefinition: '$(build.triggerAdditionalBuild)'
-              queueBuildForUserThatTriggeredBuild: false
-              ignoreSslCertificateErrors: false
-              useSameSourceVersion: false
-              useCustomSourceVersion: false
-              useSameBranch: false
-              branchToUse: 'master'
-              waitForQueuedBuildsToFinish: false
-              storeInEnvironmentVariable: false
-              authenticationMethod: 'Personal Access Token'
-              password: '$(System.AccessToken)'
-              enableBuildInQueueCondition: false
-              dependentOnSuccessfulBuildCondition: false
-              dependentOnFailedBuildCondition: false
-              checkbuildsoncurrentbranch: false
-              failTaskIfConditionsAreNotFulfilled: false
   - stage: Trigger_Harbor_Push
     dependsOn:
     - Build_Windows_Images
