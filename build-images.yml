@@ -81,6 +81,7 @@ stages:
             clean: true
           - powershell: |
               "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              $topology = $(build.sitecoreTopology) -split ","
               $buildProps = @{
                 InstallSourcePath = "$(windows.install.source.path)"
                 SitecoreUsername = "$(sitecore.username)"
@@ -89,7 +90,7 @@ stages:
                 RegistryUserName = "$(container.registry.username)"
                 RegistryPassword = "$(container.registry.password)"
                 SitecoreVersion = "$(build.sitecoreVersion)"
-                Topology = $(build.sitecoreTopology)
+                Topology = $topology
                 OSVersion = "$(build.WindowsOSVersion)"
                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
@@ -148,6 +149,7 @@ stages:
           - powershell: |
                 sudo chmod 777 /mnt/dockerassets -R
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+                $topology = $(build.sitecoreTopology) -split ","
                 $buildProps = @{
                   InstallSourcePath = "$(linux.install.source.path)"
                   SitecoreUsername = "$(sitecore.username)"
@@ -156,7 +158,7 @@ stages:
                   RegistryUserName = "$(container.registry.username)"
                   RegistryPassword = "$(container.registry.password)"
                   SitecoreVersion = "$(build.sitecoreVersion)"
-                  Topology = $(build.sitecoreTopology)
+                  Topology = $topology
                   OSVersion = "linux"
                   IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                   IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
