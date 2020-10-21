@@ -81,7 +81,7 @@ stages:
             clean: true
           - powershell: |
               "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-              $topology = $(build.sitecoreTopology) -split ","
+              $topology = "$(build.sitecoreTopology)" -split ","
               $buildProps = @{
                 InstallSourcePath = "$(windows.install.source.path)"
                 SitecoreUsername = "$(sitecore.username)"
@@ -149,7 +149,7 @@ stages:
           - powershell: |
                 sudo chmod 777 /mnt/dockerassets -R
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
-                $topology = $(build.sitecoreTopology) -split ","
+                $topology = "$(build.sitecoreTopology)" -split ","
                 $buildProps = @{
                   InstallSourcePath = "$(linux.install.source.path)"
                   SitecoreUsername = "$(sitecore.username)"
