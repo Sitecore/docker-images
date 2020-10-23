@@ -57,14 +57,22 @@ schedules:
     always: true
 
 stages:
-
   - stage: Build_Windows_Images
     jobs:
       - job: Build_Windows_Images
+        strategy:
+          matrix:
+            windows2004:
+              poolName: 'docker-2004-agents'
+              osVersion: '2004'
+            ltsc2019:
+              poolName: 'docker-ltsc2019-agents'
+              osVersion: 'ltsc2019'
+              
         timeoutInMinutes: 720
         displayName: "Build Windows Images"
         pool:
-          name: $(azure.agentPoolName)
+          name: $(poolName)
         steps:
           - powershell: |
               Test-NetConnection -ComputerName "$(assets.shared.folder.server)" -Port 445
