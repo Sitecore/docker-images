@@ -99,7 +99,7 @@ stages:
                 RegistryPassword = "$(container.registry.password)"
                 SitecoreVersion = "$(build.sitecoreVersion)"
                 Topology = $topology
-                OSVersion = "$(build.WindowsOSVersion)"
+                OSVersion = "$(osVersion)"
                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
