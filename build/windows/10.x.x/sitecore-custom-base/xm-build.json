@@ -45,7 +45,7 @@
       "tag": "community/sitecore-xm1-custom-spe-cd:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=scr.sitecore.com/sxp/sitecore-xm1-cd:10.0.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xm1-assets:10.0.0-${nanoserver_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xm1-assets:10.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cd",
         "--target base"
@@ -55,7 +55,7 @@
       "tag": "community/sitecore-xm1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-spe-cd:10.0.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xm1-assets:10.0.0-${nanoserver_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xm1-assets:10.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cd",
         "--target base"

@@ -18,6 +18,7 @@
 # - build.includeSpe
 # - build.includeSxa
 # - build.includeJss
+# - build.includeSh
 # - build.skipExistingImages
 # - build.includeExperimentalImages
 
@@ -80,6 +81,7 @@ stages:
             clean: true
           - powershell: |
               "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              $topology = "$(build.sitecoreTopology)" -split ","
               $buildProps = @{
                 InstallSourcePath = "$(windows.install.source.path)"
                 SitecoreUsername = "$(sitecore.username)"
@@ -88,11 +90,12 @@ stages:
                 RegistryUserName = "$(container.registry.username)"
                 RegistryPassword = "$(container.registry.password)"
                 SitecoreVersion = "$(build.sitecoreVersion)"
-                Topology = $(build.sitecoreTopology)
+                Topology = $topology
                 OSVersion = "$(build.WindowsOSVersion)"
                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
               }
@@ -111,9 +114,10 @@ stages:
         displayName: "Build Linux Images"
         condition: eq(variables['build.linuxImages'], 'true')
         pool:
-          vmImage: 'ubuntu-18.04'
+          name: 'docker-linux-agents'
         steps:
           - task: Bash@3
+            displayName: "Connect to asset drive"
             condition: eq(variables['assets.useDrive'], 'true')
             inputs:
                 targetType: inline
@@ -143,7 +147,9 @@ stages:
           - checkout: self
             clean: true
           - powershell: |
+                sudo chmod 777 /mnt/dockerassets -R
                 "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+                $topology = "$(build.sitecoreTopology)" -split ","
                 $buildProps = @{
                   InstallSourcePath = "$(linux.install.source.path)"
                   SitecoreUsername = "$(sitecore.username)"
@@ -152,11 +158,12 @@ stages:
                   RegistryUserName = "$(container.registry.username)"
                   RegistryPassword = "$(container.registry.password)"
                   SitecoreVersion = "$(build.sitecoreVersion)"
-                  Topology = $(build.sitecoreTopology)
+                  Topology = $topology
                   OSVersion = "linux"
                   IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                   IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                   IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                  IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                   IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                   SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
                 }
@@ -166,35 +173,6 @@ stages:
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
-  - stage: Trigger
-    dependsOn:
-    - Build_Windows_Images
-    - Build_Linux_Images
-    condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'), ne(variables['build.triggerAdditionalBuild'], ''), eq(variables['Build.SourceBranch'], 'refs/heads/master') )
-    jobs:
-      - job: TriggerAdditionalBuild
-
-        displayName: "Trigger Additional Build"
-        steps:
-          - task: TriggerBuild@3
-            inputs:
-              definitionIsInCurrentTeamProject: true
-              buildDefinition: '$(build.triggerAdditionalBuild)'
-              queueBuildForUserThatTriggeredBuild: false
-              ignoreSslCertificateErrors: false
-              useSameSourceVersion: false
-              useCustomSourceVersion: false
-              useSameBranch: false
-              branchToUse: 'master'
-              waitForQueuedBuildsToFinish: false
-              storeInEnvironmentVariable: false
-              authenticationMethod: 'Personal Access Token'
-              password: '$(System.AccessToken)'
-              enableBuildInQueueCondition: false
-              dependentOnSuccessfulBuildCondition: false
-              dependentOnFailedBuildCondition: false
-              checkbuildsoncurrentbranch: false
-              failTaskIfConditionsAreNotFulfilled: false
   - stage: Trigger_Harbor_Push
     dependsOn:
     - Build_Windows_Images

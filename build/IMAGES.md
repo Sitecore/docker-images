@@ -39,6 +39,10 @@
 | 9.3.0 | sitecore-xp-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xp-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-spe-standalone | windowsservercore | ltsc2019 | `sitecore-xp-spe-standalone:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-spe/Dockerfile) |
 | 9.3.0 | sitecore-xp-spe-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-spe-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-spe-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-standalone | windowsservercore | ltsc2019 | `sitecore-xp-sh-standalone:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xp-sh/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-sh-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xp-sh-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-identity | windowsservercore | ltsc2019 | `sitecore-xp-sh-identity:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xp-sh-identity/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-authoringhost | windowsservercore | ltsc2019 | `sitecore-xp-sh-authoringhost:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xp-sh-authoringhost/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-standalone | windowsservercore | ltsc2019 | `sitecore-xp-ps-standalone:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-ps/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-sqldev | windowsservercore | ltsc2019 | `sitecore-xp-ps-sqldev:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-jss-standalone | windowsservercore | ltsc2019 | `sitecore-xp-ps-jss-standalone:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-ps-jss/Dockerfile) |
@@ -126,6 +130,10 @@
 | 9.3.0 | sitecore-xp-spe-standalone | windowsservercore | 2004 | `sitecore-xp-spe-standalone:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.x.x/sitecore-spe/Dockerfile) |
 | 9.3.0 | sitecore-xp-spe-sqldev | windowsservercore | 2004 | `sitecore-xp-spe-sqldev:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.x.x/sitecore-spe-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-solr | nanoserver | 2004 | `sitecore-xp-solr:9.3.0-nanoserver-2004` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-standalone | windowsservercore | 2004 | `sitecore-xp-sh-standalone:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.3.x/sitecore-xp-sh/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-sqldev | windowsservercore | 2004 | `sitecore-xp-sh-sqldev:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.3.x/sitecore-xp-sh-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-identity | windowsservercore | 2004 | `sitecore-xp-sh-identity:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.3.x/sitecore-xp-sh-identity/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-authoringhost | windowsservercore | 2004 | `sitecore-xp-sh-authoringhost:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.3.x/sitecore-xp-sh-authoringhost/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-standalone | windowsservercore | 2004 | `sitecore-xp-ps-standalone:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.x.x/sitecore-ps/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-sqldev | windowsservercore | 2004 | `sitecore-xp-ps-sqldev:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.x.x/sitecore-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-jss-standalone | windowsservercore | 2004 | `sitecore-xp-ps-jss-standalone:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.x.x/sitecore-ps-jss/Dockerfile) |
@@ -217,6 +225,10 @@
 | 9.3.0 | sitecore-xp-spe-standalone | windowsservercore | 1909 | `sitecore-xp-spe-standalone:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-spe/Dockerfile) |
 | 9.3.0 | sitecore-xp-spe-sqldev | windowsservercore | 1909 | `sitecore-xp-spe-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-spe-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-solr | nanoserver | 1909 | `sitecore-xp-solr:9.3.0-nanoserver-1909` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-standalone | windowsservercore | 1909 | `sitecore-xp-sh-standalone:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.3.x/sitecore-xp-sh/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-sqldev | windowsservercore | 1909 | `sitecore-xp-sh-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.3.x/sitecore-xp-sh-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-identity | windowsservercore | 1909 | `sitecore-xp-sh-identity:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.3.x/sitecore-xp-sh-identity/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-authoringhost | windowsservercore | 1909 | `sitecore-xp-sh-authoringhost:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.3.x/sitecore-xp-sh-authoringhost/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-standalone | windowsservercore | 1909 | `sitecore-xp-ps-standalone:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-ps/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-sqldev | windowsservercore | 1909 | `sitecore-xp-ps-sqldev:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-jss-standalone | windowsservercore | 1909 | `sitecore-xp-ps-jss-standalone:9.3.0-windowsservercore-1909` [Dockerfile](windows/9.x.x/sitecore-ps-jss/Dockerfile) |
@@ -308,6 +320,10 @@
 | 9.3.0 | sitecore-xp-spe-standalone | windowsservercore | 1903 | `sitecore-xp-spe-standalone:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-spe/Dockerfile) |
 | 9.3.0 | sitecore-xp-spe-sqldev | windowsservercore | 1903 | `sitecore-xp-spe-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-spe-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-solr | nanoserver | 1903 | `sitecore-xp-solr:9.3.0-nanoserver-1903` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-standalone | windowsservercore | 1903 | `sitecore-xp-sh-standalone:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.3.x/sitecore-xp-sh/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-sqldev | windowsservercore | 1903 | `sitecore-xp-sh-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.3.x/sitecore-xp-sh-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-identity | windowsservercore | 1903 | `sitecore-xp-sh-identity:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.3.x/sitecore-xp-sh-identity/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-authoringhost | windowsservercore | 1903 | `sitecore-xp-sh-authoringhost:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.3.x/sitecore-xp-sh-authoringhost/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-standalone | windowsservercore | 1903 | `sitecore-xp-ps-standalone:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-ps/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-sqldev | windowsservercore | 1903 | `sitecore-xp-ps-sqldev:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-ps-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-ps-jss-standalone | windowsservercore | 1903 | `sitecore-xp-ps-jss-standalone:9.3.0-windowsservercore-1903` [Dockerfile](windows/9.x.x/sitecore-ps-jss/Dockerfile) |
