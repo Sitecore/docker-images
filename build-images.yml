@@ -68,7 +68,7 @@ stages:
             ltsc2019:
               poolName: 'docker-ltsc2019-agents'
               osVersion: 'ltsc2019'
-              
+
         timeoutInMinutes: 720
         displayName: "Build Windows Images"
         pool:
@@ -200,7 +200,7 @@ stages:
             useSameSourceVersion: false
             useCustomSourceVersion: false
             useSameBranch: false
-            branchToUse: 'master'
+            branchToUse: 'main'
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
             buildParameters: 'namespace: community, groupName: xp, tag:""'
@@ -222,7 +222,7 @@ stages:
             useSameSourceVersion: false
             useCustomSourceVersion: false
             useSameBranch: false
-            branchToUse: 'master'
+            branchToUse: 'main'
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
             buildParameters: 'namespace: community, groupName: xm, tag:""'
