@@ -57,14 +57,22 @@ schedules:
     always: true
 
 stages:
-
   - stage: Build_Windows_Images
     jobs:
       - job: Build_Windows_Images
+        strategy:
+          matrix:
+            windows2004:
+              poolName: 'docker-2004-agents'
+              osVersion: '2004'
+            ltsc2019:
+              poolName: 'docker-ltsc2019-agents'
+              osVersion: 'ltsc2019'
+
         timeoutInMinutes: 720
         displayName: "Build Windows Images"
         pool:
-          name: $(azure.agentPoolName)
+          name: $(poolName)
         steps:
           - powershell: |
               Test-NetConnection -ComputerName "$(assets.shared.folder.server)" -Port 445
@@ -91,7 +99,7 @@ stages:
                 RegistryPassword = "$(container.registry.password)"
                 SitecoreVersion = "$(build.sitecoreVersion)"
                 Topology = $topology
-                OSVersion = "$(build.WindowsOSVersion)"
+                OSVersion = "$(osVersion)"
                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
@@ -192,7 +200,7 @@ stages:
             useSameSourceVersion: false
             useCustomSourceVersion: false
             useSameBranch: false
-            branchToUse: 'master'
+            branchToUse: 'main'
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
             buildParameters: 'namespace: community, groupName: xp, tag:""'
@@ -214,7 +222,7 @@ stages:
             useSameSourceVersion: false
             useCustomSourceVersion: false
             useSameBranch: false
-            branchToUse: 'master'
+            branchToUse: 'main'
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
             buildParameters: 'namespace: community, groupName: xm, tag:""'
