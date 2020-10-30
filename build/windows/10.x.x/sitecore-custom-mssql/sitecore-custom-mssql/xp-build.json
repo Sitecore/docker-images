@@ -33,7 +33,7 @@
             ]
         },
         {
-            "tag": "community/sitecore-xp1-custom-sxa-jss15-mssql:10.0.0-${windowsservercore_version}",
+            "tag": "community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-${windowsservercore_version}",
             "build-options": [
                 "--memory 4GB",
                 "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
@@ -41,7 +41,7 @@
             ]
         },
         {
-            "tag": "community/sitecore-xp1-custom-sxa-jss14-mssql:10.0.0-${windowsservercore_version}",
+            "tag": "community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.0-${windowsservercore_version}",
             "build-options": [
                 "--memory 4GB",
                 "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
@@ -58,19 +58,19 @@
             "experimental": true
         },
         {
-            "tag": "community/sitecore-xp1-custom-sxa-jss15-ps-mssql:10.0.0-${windowsservercore_version}",
+            "tag": "community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.0-${windowsservercore_version}",
             "build-options": [
                 "--memory 4GB",
-                "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss15-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-${windowsservercore_version}",
                 "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809"
             ],
             "experimental": true
         },
         {
-            "tag": "community/sitecore-xp1-custom-sxa-jss14-ps-mssql:10.0.0-${windowsservercore_version}",
+            "tag": "community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.0-${windowsservercore_version}",
             "build-options": [
                 "--memory 4GB",
-                "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss14-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.0-${windowsservercore_version}",
                 "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809"
             ],
             "experimental": true

@@ -219,9 +219,17 @@
         "url": "https://dev.sitecore.net/~/media/497E3634E3FA41258BDD6FCB69CB3D6F.ashx",
         "hash": "CC0AE16A94523CC0879F7772E53A8D1844081105B2DC21053750284B96507A1D"
     },
+    "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 14.0.0 rev. 200714.scwdp.zip": {
+        "url": "https://dev.sitecore.net/~/media/DB53E8083B1944B2AAD5980CCE221070.ashx",
+        "hash": "9BEF80A8373AC4DFDDFE5BB655F917FDDF0AE63DE6EBD6D39A509434F74C380B"
+    },
     "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.0 rev. 201020.scwdp.zip": {
-        "url": "https://dev.sitecore.net/~/media/CE93C56611FC4B91A312B4AD6AB7A203.ashx",
+        "url": "https://dev.sitecore.net/~/media/384105C83898473BA93EE59A40E0E25F.ashx",
         "hash": "C321686AB5724762566A3DDB4B711671BC851CA33F7567A43638AAD08C783B89"
+    },
+    "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.0 rev. 201020.scwdp.zip": {
+        "url": "https://dev.sitecore.net/~/media/9BE6C188B19E4FDEA9D8B30843E0CDF4.ashx",
+        "hash": "D16457F173ED31126CEB8EA75D7C1E8EA0F6DF80D986380C061C4302C6070E06"
     },
     "Sitecore PowerShell Extensions-5.0 for 9.2.scwdp.zip": {
         "url": "https://dev.sitecore.net/~/media/7AB15C0432624E6CA9786DF00DD653AB.ashx",
