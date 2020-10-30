@@ -33,10 +33,27 @@
             ]
         },
         {
+            "tag": "community/sitecore-xp0-custom-sxa-jss14-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xp1-assets:14.0.0-1809"
+            ]
+        },
+        {
             "tag": "community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.0-${windowsservercore_version}",
             "build-options": [
                 "--memory 4GB",
                 "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809"
+            ],
+            "experimental": true
+        },
+        {
+            "tag": "community/sitecore-xp0-custom-sxa-jss14-ps-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-jss14-mssql:10.0.0-${windowsservercore_version}",
                 "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809"
             ],
             "experimental": true
