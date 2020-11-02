@@ -27,7 +27,7 @@
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xp1-assets:14.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cm",
-        "--target base"
+        "--target content"
       ]
     },
     {
@@ -58,7 +58,7 @@
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xp1-assets:10.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cd",
-        "--target base"
+        "--target content"
       ]
     },
     {
@@ -68,7 +68,7 @@
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xp1-assets:14.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cd",
-        "--target base"
+        "--target content"
       ]
     },
     {
