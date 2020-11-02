@@ -19,5 +19,3 @@ COPY --from=module_assets C:\module\tools C:\module\tools
 
 RUN C:\module\tools\Initialize-Content.ps1 -TargetPath C:\inetpub\wwwroot; `
     Remove-Item -Path C:\module -Recurse -Force;
-
-

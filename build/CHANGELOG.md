@@ -1,5 +1,9 @@
 # Changelog
 
+## November 2020
+
+- [Fixed] Sitecore 10.0.0 SXA / JSS missing Web.config transforms. See [#387](https://github.com/Sitecore/docker-images/issues/387). Thanks [@vtml](https://github.com/vtml) :+1:
+
 ## October 2020
 
 - [Added] JSS 15 images
