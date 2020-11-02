@@ -20,5 +20,5 @@ COPY --from=module_assets C:\module\tools C:\module\tools
 RUN C:\module\tools\Initialize-Content.ps1 -TargetPath C:\inetpub\wwwroot; `
     Remove-Item -Path C:\module -Recurse -Force;
 
-
+FROM module_assets
 RUN (Get-ChildItem -Path 'C:\\inetpub\\wwwroot\\App_Data\\*Xdt\\web.config.xdt' -Recurse ) | ForEach-Object { & 'C:\\tools\\scripts\\Invoke-XdtTransform.ps1' -Path 'C:\\inetpub\\wwwroot\\web.config' -XdtPath $_.FullName; Remove-Item -Path $_.FullName -Force };
