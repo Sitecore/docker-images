@@ -2,6 +2,8 @@
 
 ## October 2020
 
+- [Added] JSS 15 images
+- [**Breaking**] -JSS tags now upgraded to v10. To use JSS v14, make sure you use the `-jss1400` tag
 - [Added] missing packages to download file
 - [**Breaking**] Renamed `Download-PS-Prerequisites.ps1` to `Download-Module-Prerequisites.ps1`
 - [Changed] Refactored `Download-Module-Prerequisites.ps1` to download more than just Publishing Service
@@ -33,7 +35,6 @@
 
 - [Added] Sitecore 10.0.0 XM/SPE/SXA/JSS/PS Windows images.
 - [Added] Sitecore 10.0.0 XP/SPE/SXA/JSS/PS Windows images.
-
 
 ## July 2020
 
