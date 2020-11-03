@@ -37,7 +37,7 @@
         "build-options": [
           "--memory 4GB",
           "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.0.0-linux",
-          "--build-arg MODULE_ASSETS=community/modules/custom-jss1400-assets:10.0.0-linux"
+          "--build-arg MODULE_ASSETS=community/modules/custom-jss1400-xp-assets:10.0.0-linux"
         ]
       },
     {
