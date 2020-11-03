@@ -24,7 +24,7 @@ Fixes #
 
 ## Pre-submit Checklist
 
-- [ ] I have read and am familiar with the contents of [CONTRIBUTING.md](CONTRIBUTING.md)
+- [ ] I have read and am familiar with the contents of [CONTRIBUTING.md](https://github.com/Sitecore/docker-images/blob/master/CONTRIBUTING.md)
 - [ ] I have built the images locally (all relevant OS versions, including Linux if applicable)
 
   - Include the `.\build.ps1` command used (don't forget to exclude your credentials!)
