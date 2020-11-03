@@ -191,7 +191,7 @@ stages:
         displayName: 'Harbor Push'
         steps:
         - task: TriggerBuild@3
-          displayName: "Trigger Community XP"
+          displayName: "Trigger Community Modules"
           inputs:
             definitionIsInCurrentTeamProject: true
             buildDefinition: '103'
@@ -203,7 +203,7 @@ stages:
             branchToUse: 'main'
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
-            buildParameters: 'namespace: community, groupName: xp, tag:""'
+            buildParameters: 'namespace: community, groupName: communityModules, tag:""'
             authenticationMethod: 'Personal Access Token'
             password: '$(System.AccessToken)'
             enableBuildInQueueCondition: false
@@ -213,7 +213,7 @@ stages:
             failTaskIfConditionsAreNotFulfilled: false
 
         - task: TriggerBuild@3
-          displayName: "Trigger Community XM"
+          displayName: "Trigger Community Images"
           inputs:
             definitionIsInCurrentTeamProject: true
             buildDefinition: '103'
@@ -225,7 +225,7 @@ stages:
             branchToUse: 'main'
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
-            buildParameters: 'namespace: community, groupName: xm, tag:""'
+            buildParameters: 'namespace: community, groupName: community, tag:""'
             authenticationMethod: 'Personal Access Token'
             password: '$(System.AccessToken)'
             enableBuildInQueueCondition: false
