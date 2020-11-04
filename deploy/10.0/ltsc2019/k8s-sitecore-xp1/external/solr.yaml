@@ -1,0 +1,39 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: solr
+spec:
+  selector:
+    app: solr
+  ports:
+  - protocol: TCP
+    port: 8983
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: solr
+  labels:
+    app: solr
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: solr
+  template:
+    metadata:
+      labels:
+        app: solr
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows
+      containers:
+      - name: solr
+        image: scr.sitecore.com/sxp/nonproduction/solr:8.4.0-10.0.0-ltsc2019
+        ports:
+        - containerPort: 8983
+        env:
+        - name: SOLR_MODE
+          value: solrcloud
+      imagePullSecrets:
+      - name: sitecore-docker-registry

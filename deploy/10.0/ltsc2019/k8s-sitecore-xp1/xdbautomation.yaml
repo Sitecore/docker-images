@@ -1,0 +1,114 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: xdbautomation
+spec:
+  selector:
+    app: xdbautomation
+  ports:
+  - protocol: TCP
+    port: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xdbautomation
+  labels:
+    app: xdbautomation
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xdbautomation
+  template:
+    metadata:
+      labels:
+        app: xdbautomation
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows
+      initContainers:
+        - name: wait-xdbcollection
+          image: mcr.microsoft.com/powershell:lts-nanoserver-1809
+          command: ["pwsh", "-Command", "do { Start-Sleep -Seconds 3 } until ($(try {(iwr http://xdbcollection/healthz/ready).StatusCode -eq 200} catch { $false }));"]
+        - name: wait-xdbsearch
+          image: mcr.microsoft.com/powershell:lts-nanoserver-1809
+          command: ["pwsh", "-Command", "do { Start-Sleep -Seconds 3 } until ($(try {(iwr http://xdbsearch/healthz/ready).StatusCode -eq 200} catch { $false }));"]
+      containers:
+      - name: sitecore-xp1-xdbautomation
+        image: scr.sitecore.com/sxp/sitecore-xp1-xdbautomation:10.0.0-ltsc2019
+        ports:
+        - containerPort: 80
+        env:
+        - name: Database_Server
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseservername.txt
+        - name: Marketing_Automation_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-marketing-automation-database-username.txt
+        - name: Marketing_Automation_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-marketing-automation-database-password.txt
+        - name: Messaging_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-messaging-database-username.txt
+        - name: Messaging_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-messaging-database-password.txt
+        - name: Reference_Data_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reference-data-database-username.txt
+        - name: Reference_Data_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reference-data-database-password.txt
+        - name: Sitecore_License
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-license
+              key: sitecore-license.txt
+        - name: Sitecore_ConnectionStrings_Messaging
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Messaging;User ID=$(Messaging_Database_Username);Password=$(Messaging_Database_Password);
+        - name: Sitecore_ConnectionStrings_Xdb.Marketingautomation
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Marketingautomation;User ID=$(Marketing_Automation_Database_Username);Password=$(Marketing_Automation_Database_Password);
+        - name: Sitecore_ConnectionStrings_Xdb.Referencedata
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Referencedata;User ID=$(Reference_Data_Database_Username);Password=$(Reference_Data_Database_Password);
+        - name: Sitecore_ConnectionStrings_XConnect.Collection
+          value: http://xdbcollection
+        - name: Sitecore_ConnectionStrings_XConnect.Search
+          value: http://xdbsearch
+        livenessProbe:
+          httpGet:
+            path: /healthz/live
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Liveness
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 3
+        startupProbe:
+          httpGet:
+            path: /healthz/ready
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Startup
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 10
+      imagePullSecrets:
+      - name: sitecore-docker-registry

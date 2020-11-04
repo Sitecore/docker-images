@@ -1,0 +1,156 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: prc
+spec:
+  selector:
+    app: prc
+  ports:
+  - protocol: TCP
+    port: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: prc
+  labels:
+    app: prc
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: prc
+  template:
+    metadata:
+      labels:
+        app: prc
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows
+      initContainers:
+        - name: wait-xdbcollection
+          image: mcr.microsoft.com/powershell:lts-nanoserver-1809
+          command: ["pwsh", "-Command", "do { Start-Sleep -Seconds 3 } until ($(try {(iwr http://xdbcollection/healthz/ready).StatusCode -eq 200} catch { $false }));"]
+      containers:
+      - name: sitecore-xp1-prc
+        image: scr.sitecore.com/sxp/sitecore-xp1-prc:10.0.0-ltsc2019
+        ports:
+        - containerPort: 80
+        env:
+        - name: Sitecore_InstanceName
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: Database_Server
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseservername.txt          
+        - name: Master_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-master-database-username.txt
+        - name: Master_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-master-database-password.txt
+        - name: Core_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-username.txt
+        - name: Core_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-password.txt
+        - name: Reporting_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reporting-database-username.txt
+        - name: Reporting_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reporting-database-password.txt
+        - name: Reference_Data_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reference-data-database-username.txt
+        - name: Reference_Data_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reference-data-database-password.txt
+        - name: Processing_Pools_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-pools-database-username.txt
+        - name: Processing_Pools_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-pools-database-password.txt
+        - name: Processing_Tasks_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-tasks-database-username.txt
+        - name: Processing_Tasks_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-tasks-database-password.txt
+        - name: Sitecore_ConnectionStrings_Reporting.ApiKey
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-reporting
+              key: sitecore-reportingapikey.txt
+        - name: Sitecore_License
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-license
+              key: sitecore-license.txt
+        - name: Sitecore_ConnectionStrings_Core
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Core;User ID=$(Core_Database_Username);Password=$(Core_Database_Password);
+        - name: Sitecore_ConnectionStrings_Security
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Core;User ID=$(Core_Database_Username);Password=$(Core_Database_Password);
+        - name: Sitecore_ConnectionStrings_Master
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Master;User ID=$(Master_Database_Username);Password=$(Master_Database_Password);
+        - name: Sitecore_ConnectionStrings_Xdb.Processing.Pools
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Processing.pools;User ID=$(Processing_Pools_Database_Username);Password=$(Processing_Pools_Database_Password);
+        - name: Sitecore_ConnectionStrings_Xdb.Referencedata
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Referencedata;User ID=$(Reference_Data_Database_Username);Password=$(Reference_Data_Database_Password);
+        - name: Sitecore_ConnectionStrings_Xdb.Processing.Tasks
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Processing.tasks;User ID=$(Processing_Tasks_Database_Username);Password=$(Processing_Tasks_Database_Password);
+        - name: Sitecore_ConnectionStrings_Reporting
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Reporting;User ID=$(Reporting_Database_Username);Password=$(Reporting_Database_Password);
+        - name: Sitecore_ConnectionStrings_XConnect.Collection
+          value: http://xdbcollection
+        livenessProbe:
+          httpGet:
+            path: /healthz/live
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Liveness
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 3
+        startupProbe:
+          httpGet:
+            path: /healthz/ready
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Startup
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 10
+      imagePullSecrets:
+      - name: sitecore-docker-registry

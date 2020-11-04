@@ -1,0 +1,5 @@
+Add TLS certificates for xm1cm.localhost and xm1id.localhost hosts to this folder:
+    xm1cm.localhost.crt
+    xm1cm.localhost.key
+    xm1id.localhost.crt
+    xm1id.localhost.key

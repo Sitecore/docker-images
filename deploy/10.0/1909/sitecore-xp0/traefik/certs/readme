@@ -1,0 +1,5 @@
+Add TLS certificates for xp0cm.localhost and xp0id.localhost hosts to this folder:
+    xp0cm.localhost.crt
+    xp0cm.localhost.key
+    xp0id.localhost.crt
+    xp0id.localhost.key

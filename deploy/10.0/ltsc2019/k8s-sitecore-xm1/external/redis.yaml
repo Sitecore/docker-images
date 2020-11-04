@@ -1,0 +1,36 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: redis
+spec:
+  selector:
+    app: redis
+  ports:
+  - protocol: TCP
+    port: 6379
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: redis
+  labels:
+    app: redis
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: redis
+  template:
+    metadata:
+      labels:
+        app: redis
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows
+      containers:
+      - name: sitecore-redis
+        image: scr.sitecore.com/sxp/sitecore-redis:10.0.0-ltsc2019
+        ports:
+        - containerPort: 6379
+      imagePullSecrets:
+      - name: sitecore-docker-registry

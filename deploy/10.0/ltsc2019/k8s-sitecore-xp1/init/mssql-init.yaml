@@ -1,0 +1,180 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mssql-init
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: sitecore-docker-registry
+      containers:
+      - name: mssql-init
+        image: scr.sitecore.com/sxp/sitecore-xp1-mssql-init:10.0.0-ltsc2019
+        env:
+        - name: sitecore_admin_password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-admin
+              key: sitecore-adminpassword.txt
+        - name: SQL_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databasepassword.txt
+        - name: SQL_ADMIN_LOGIN
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseusername.txt
+        - name: SQL_SERVER
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseservername.txt
+        - name: SQL_ELASTIC_POOL_NAME
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-database-elastic-pool-name.txt
+        - name: Master_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-master-database-username.txt
+        - name: Master_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-master-database-password.txt
+        - name: Core_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-username.txt
+        - name: Core_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-password.txt
+        - name: Web_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-web-database-username.txt
+        - name: Web_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-web-database-password.txt
+        - name: Forms_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-forms-database-username.txt
+        - name: Forms_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-forms-database-password.txt
+        - name: Exm_Master_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-exm-master-database-username.txt
+        - name: Exm_Master_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-exm-master-database-password.txt
+        - name: Marketing_Automation_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-marketing-automation-database-username.txt
+        - name: Marketing_Automation_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-marketing-automation-database-password.txt
+        - name: Messaging_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-messaging-database-username.txt
+        - name: Messaging_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-messaging-database-password.txt
+        - name: Reporting_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reporting-database-username.txt
+        - name: Reporting_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reporting-database-password.txt
+        - name: Reference_Data_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reference-data-database-username.txt
+        - name: Reference_Data_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reference-data-database-password.txt
+        - name: Processing_Pools_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-pools-database-username.txt
+        - name: Processing_Pools_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-pools-database-password.txt
+        - name: Processing_Tasks_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-tasks-database-username.txt
+        - name: Processing_Tasks_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-tasks-database-password.txt
+        - name: Processing_Engine_Tasks_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-engine-tasks-database-username.txt
+        - name: Processing_Engine_Tasks_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-engine-tasks-database-password.txt
+        - name: Processing_Engine_Storage_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-engine-storage-database-username.txt
+        - name: Processing_Engine_Storage_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-engine-storage-database-password.txt
+        - name: Collection_ShardMapManager_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-collection-shardmapmanager-database-username.txt
+        - name: Collection_ShardMapManager_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-collection-shardmapmanager-database-password.txt
+      restartPolicy: Never
+  backoffLimit: 5

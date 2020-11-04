@@ -1,0 +1,129 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cortexprocessingworker
+spec:
+  selector:
+    app: cortexprocessingworker
+  ports:
+    - protocol: TCP
+      port: 8080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cortexprocessingworker
+  labels:
+    app: cortexprocessingworker
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cortexprocessingworker
+  template:
+    metadata:
+      labels:
+        app: cortexprocessingworker
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows
+      initContainers:
+        - name: wait-cortexprocessing
+          image: mcr.microsoft.com/powershell:lts-nanoserver-1809
+          command: ["pwsh", "-Command", "do { Start-Sleep -Seconds 3 } until ($(try {(iwr http://cortexprocessing/healthz/ready).StatusCode -eq 200} catch { $false }));"]
+        - name: wait-xdbcollection
+          image: mcr.microsoft.com/powershell:lts-nanoserver-1809
+          command: ["pwsh", "-Command", "do { Start-Sleep -Seconds 3 } until ($(try {(iwr http://xdbcollection/healthz/ready).StatusCode -eq 200} catch { $false }));"]
+        - name: wait-xdbsearch
+          image: mcr.microsoft.com/powershell:lts-nanoserver-1809
+          command: ["pwsh", "-Command", "do { Start-Sleep -Seconds 3 } until ($(try {(iwr http://xdbsearch/healthz/ready).StatusCode -eq 200} catch { $false }));"]
+      containers:
+      - name: sitecore-xp1-cortexprocessingworker
+        image: scr.sitecore.com/sxp/sitecore-xp1-cortexprocessingworker:10.0.0-ltsc2019
+        env:
+        - name: Database_Server
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseservername.txt
+        - name: Processing_Engine_Tasks_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-engine-tasks-database-username.txt
+        - name: Processing_Engine_Tasks_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-engine-tasks-database-password.txt
+        - name: Processing_Engine_Storage_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-engine-storage-database-username.txt
+        - name: Processing_Engine_Storage_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-processing-engine-storage-database-password.txt
+        - name: Messaging_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-messaging-database-username.txt
+        - name: Messaging_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-messaging-database-password.txt
+        - name: Reporting_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reporting-database-username.txt
+        - name: Reporting_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reporting-database-password.txt
+        - name: Sitecore_License
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-license
+              key: sitecore-license.txt
+        - name: Sitecore_ConnectionStrings_Processing.Engine.Storage
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Processing.Engine.Storage;User ID=$(Processing_Engine_Storage_Database_Username);Password=$(Processing_Engine_Storage_Database_Password);
+        - name: Sitecore_ConnectionStrings_Processing.Engine.Tasks
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Processing.Engine.Tasks;User ID=$(Processing_Engine_Tasks_Database_Username);Password=$(Processing_Engine_Tasks_Database_Password);
+        - name: Sitecore_ConnectionStrings_Processing.Webapi.Blob
+          value: http://cortexprocessing
+        - name: Sitecore_ConnectionStrings_Processing.Webapi.Table
+          value: http://cortexprocessing
+        - name: Sitecore_ConnectionStrings_Xconnect.Collection
+          value: http://xdbcollection
+        - name: Sitecore_ConnectionStrings_Xconnect.Configuration
+          value: http://xdbcollection
+        - name: Sitecore_ConnectionStrings_XConnect.Search
+          value: http://xdbsearch
+        - name: Sitecore_ConnectionStrings_Messaging
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Messaging;User ID=$(Messaging_Database_Username);Password=$(Messaging_Database_Password);
+        - name: Sitecore_ConnectionStrings_Reporting
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Reporting;User ID=$(Reporting_Database_Username);Password=$(Reporting_Database_Password);
+        livenessProbe:
+          exec:
+            command:
+            - curl
+            - http://localhost:8080/healthz/live
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 3
+        startupProbe:
+          exec:
+            command:
+            - curl
+            - http://localhost:8080/healthz/ready          
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 10
+      imagePullSecrets:
+      - name: sitecore-docker-registry

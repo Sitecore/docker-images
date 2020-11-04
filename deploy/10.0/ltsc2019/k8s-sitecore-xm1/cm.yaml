@@ -1,0 +1,154 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cm
+spec:
+  selector:
+    app: cm
+  ports:
+  - protocol: TCP
+    port: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cm
+  labels:
+    app: cm
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: cm
+  template:
+    metadata:
+      labels:
+        app: cm
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows
+      containers:
+      - name: sitecore-xm1-cm
+        image: scr.sitecore.com/sxp/sitecore-xm1-cm:10.0.0-ltsc2019
+        ports:
+        - containerPort: 80
+        env:
+        - name: Sitecore_InstanceName
+          valueFrom:
+            fieldRef:
+              fieldPath: metadata.name
+        - name: Database_Server
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseservername.txt
+        - name: Master_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-master-database-username.txt
+        - name: Master_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-master-database-password.txt
+        - name: Core_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-username.txt
+        - name: Core_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-password.txt
+        - name: Web_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-web-database-username.txt
+        - name: Web_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-web-database-password.txt
+        - name: Forms_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-forms-database-username.txt
+        - name: Forms_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-forms-database-password.txt
+        - name: Sitecore_ConnectionStrings_Sitecoreidentity.secret
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-identity
+              key: sitecore-identitysecret.txt
+        - name: Sitecore_AppSettings_Telerik.AsyncUpload.ConfigurationEncryptionKey
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-telerik
+              key: sitecore-telerikencryptionkey.txt
+        - name: Sitecore_AppSettings_Telerik.Upload.ConfigurationHashKey
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-telerik
+              key: sitecore-telerikencryptionkey.txt
+        - name: Sitecore_AppSettings_Telerik.Web.UI.DialogParametersEncryptionKey
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-telerik
+              key: sitecore-telerikencryptionkey.txt
+        - name: Sitecore_License
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-license
+              key: sitecore-license.txt
+        - name: Sitecore_ConnectionStrings_Core
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Core;User ID=$(Core_Database_Username);Password=$(Core_Database_Password);
+        - name: Sitecore_ConnectionStrings_Security
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Core;User ID=$(Core_Database_Username);Password=$(Core_Database_Password);
+        - name: Sitecore_ConnectionStrings_Master
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Master;User ID=$(Master_Database_Username);Password=$(Master_Database_Password);
+        - name: Sitecore_ConnectionStrings_Web
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Web;User ID=$(Web_Database_Username);Password=$(Web_Database_Password);
+        - name: Sitecore_ConnectionStrings_ExperienceForms
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.ExperienceForms;User ID=$(Forms_Database_Username);Password=$(Forms_Database_Password);
+        - name: Sitecore_ConnectionStrings_Solr.Search
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-solr
+              key: sitecore-solr-connection-string.txt
+        - name: Sitecore_Identity_Server_Authority
+          value: https://id.globalhost
+        - name: Sitecore_Identity_Server_CallbackAuthority
+          value: https://cm.globalhost
+        - name: Sitecore_Identity_Server_InternalAuthority
+          value: http://id
+        - name: Sitecore_Identity_Server_Require_Https
+          value: "false"
+        livenessProbe:
+          httpGet:
+            path: /healthz/live
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Liveness
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 3
+        startupProbe:
+          httpGet:
+            path: /healthz/ready
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Startup
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 10
+      imagePullSecrets:
+      - name: sitecore-docker-registry

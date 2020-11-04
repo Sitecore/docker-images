@@ -1,0 +1,6 @@
+tls:
+  certificates:
+    - certFile: C:\etc\traefik\certs\xp1cm.localhost.crt
+      keyFile: C:\etc\traefik\certs\xp1cm.localhost.key
+    - certFile: C:\etc\traefik\certs\xp1id.localhost.crt
+      keyFile: C:\etc\traefik\certs\xp1id.localhost.key

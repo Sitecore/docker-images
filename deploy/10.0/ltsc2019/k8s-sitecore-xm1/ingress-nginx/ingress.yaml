@@ -1,0 +1,41 @@
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  name: sitecore-ingress
+  annotations:
+    nginx.ingress.kubernetes.io/proxy-buffer-size: "32k"
+    nginx.ingress.kubernetes.io/affinity: "cookie"
+    nginx.ingress.kubernetes.io/rewrite-target: /
+spec:
+  rules:
+  - host: cd.globalhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: cd
+          servicePort: 80
+  - host: cm.globalhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: cm
+          servicePort: 80
+  - host: id.globalhost
+    http:
+      paths:
+      - path: /
+        backend:
+          serviceName: id
+          servicePort: 80
+  tls:
+  - secretName: global-cd-tls
+    hosts:
+    - cd.globalhost
+  - secretName: global-cm-tls
+    hosts:
+    - cm.globalhost
+  - secretName: global-id-tls
+    hosts:
+    - id.globalhost

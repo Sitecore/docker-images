@@ -1,0 +1,100 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: id
+spec:
+  selector:
+    app: id
+  ports:
+  - protocol: TCP
+    port: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: id
+  labels:
+    app: id
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: id
+  template:
+    metadata:
+      labels:
+        app: id
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows
+      containers:
+      - name: sitecore-xm1-id
+        image: scr.sitecore.com/sxp/sitecore-id:10.0.0-ltsc2019
+        ports:
+        - containerPort: 80
+        env:
+        - name: Database_Server
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseservername.txt
+        - name: Core_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-username.txt
+        - name: Core_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-password.txt
+        - name: Sitecore_Sitecore__IdentityServer__Clients__PasswordClient__ClientSecrets__ClientSecret1
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-identity
+              key: sitecore-identitysecret.txt
+        - name: Sitecore_Sitecore__IdentityServer__CertificateRawData
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-identitycertificate
+              key: sitecore-identitycertificate.txt
+        - name: Sitecore_Sitecore__IdentityServer__CertificateRawDataPassword
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-identitycertificate
+              key: sitecore-identitycertificatepassword.txt
+        - name: Sitecore_License
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-license
+              key: sitecore-license.txt
+        - name: Sitecore_Sitecore__IdentityServer__SitecoreMemberShipOptions__ConnectionString
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Core;User ID=$(Core_Database_Username);Password=$(Core_Database_Password);
+        - name: Sitecore_Sitecore__IdentityServer__AccountOptions__PasswordRecoveryUrl
+          value: https://cm.globalhost/sitecore/login?rc=1
+        - name: Sitecore_Sitecore__IdentityServer__Clients__DefaultClient__AllowedCorsOrigins__AllowedCorsOriginsGroup1
+          value: https://cm.globalhost
+        - name: Sitecore_Sitecore__IdentityServer__PublicOrigin
+          value: https://id.globalhost
+        livenessProbe:
+          httpGet:
+            path: /healthz/live
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Liveness
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 3
+        startupProbe:
+          httpGet:
+            path: /healthz/ready
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Startup
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 10
+      imagePullSecrets:
+      - name: sitecore-docker-registry

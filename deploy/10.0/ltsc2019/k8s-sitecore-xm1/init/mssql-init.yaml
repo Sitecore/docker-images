@@ -1,0 +1,80 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: mssql-init
+spec:
+  template:
+    spec:
+      imagePullSecrets:
+        - name: sitecore-docker-registry
+      containers:
+      - name: mssql-init
+        image: scr.sitecore.com/sxp/sitecore-xm1-mssql-init:10.0.0-ltsc2019
+        env:
+        - name: sitecore_admin_password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-admin
+              key: sitecore-adminpassword.txt
+        - name: SQL_ADMIN_PASSWORD
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databasepassword.txt
+        - name: SQL_ADMIN_LOGIN
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseusername.txt
+        - name: SQL_SERVER
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseservername.txt
+        - name: SQL_ELASTIC_POOL_NAME
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-database-elastic-pool-name.txt
+        - name: Master_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-master-database-username.txt
+        - name: Master_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-master-database-password.txt
+        - name: Core_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-username.txt
+        - name: Core_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-core-database-password.txt
+        - name: Web_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-web-database-username.txt
+        - name: Web_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-web-database-password.txt
+        - name: Forms_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-forms-database-username.txt
+        - name: Forms_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-forms-database-password.txt
+      restartPolicy: Never
+  backoffLimit: 5

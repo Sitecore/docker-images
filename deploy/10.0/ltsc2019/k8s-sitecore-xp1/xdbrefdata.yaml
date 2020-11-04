@@ -1,0 +1,79 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: xdbrefdata
+spec:
+  selector:
+    app: xdbrefdata
+  ports:
+  - protocol: TCP
+    port: 80
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: xdbrefdata
+  labels:
+    app: xdbrefdata
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: xdbrefdata
+  template:
+    metadata:
+      labels:
+        app: xdbrefdata
+    spec:
+      nodeSelector:
+        kubernetes.io/os: windows
+      containers:
+      - name: sitecore-xp1-xdbrefdata
+        image: scr.sitecore.com/sxp/sitecore-xp1-xdbrefdata:10.0.0-ltsc2019
+        ports:
+        - containerPort: 80
+        env:
+        - name: Database_Server
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-databaseservername.txt
+        - name: Reference_Data_Database_Username
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reference-data-database-username.txt
+        - name: Reference_Data_Database_Password
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-database
+              key: sitecore-reference-data-database-password.txt
+        - name: Sitecore_License
+          valueFrom:
+            secretKeyRef:
+              name: sitecore-license
+              key: sitecore-license.txt
+        - name: Sitecore_ConnectionStrings_Xdb.Referencedata
+          value: Data Source=$(Database_Server);Initial Catalog=Sitecore.Referencedata;User ID=$(Reference_Data_Database_Username);Password=$(Reference_Data_Database_Password);
+        livenessProbe:
+          httpGet:
+            path: /healthz/live
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Liveness
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 3
+        startupProbe:
+          httpGet:
+            path: /healthz/ready
+            port: 80
+            httpHeaders:
+            - name: X-Kubernetes-Probe
+              value: Startup
+          timeoutSeconds: 300
+          periodSeconds: 30
+          failureThreshold: 10
+      imagePullSecrets:
+      - name: sitecore-docker-registry
