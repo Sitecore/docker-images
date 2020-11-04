@@ -21,7 +21,7 @@
             "build-options": [
                 "--memory 4GB",
                 "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
-                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809"
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}"
             ]
         },
         {
@@ -53,7 +53,7 @@
             "build-options": [
                 "--memory 4GB",
                 "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-${windowsservercore_version}",
-                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809"
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}"
             ],
             "experimental": true
         },
@@ -62,7 +62,7 @@
             "build-options": [
                 "--memory 4GB",
                 "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.0-${windowsservercore_version}",
-                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809"
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}"
             ],
             "experimental": true
         },
@@ -71,7 +71,7 @@
             "build-options": [
                 "--memory 4GB",
                 "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-jss1400-mssql:10.0.0-${windowsservercore_version}",
-                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-1809"
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}"
             ],
             "experimental": true
         }
