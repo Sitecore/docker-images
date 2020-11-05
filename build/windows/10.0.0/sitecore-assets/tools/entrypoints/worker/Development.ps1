@@ -4,27 +4,36 @@ param(
     [hashtable]$WatchDirectoryParameters
 )
 
-# setup
-$ErrorActionPreference = "STOP"
-
+# Setup
+$ErrorActionPreference = "Stop"
+$InformationPreference = "Continue"
 $timeFormat = "HH:mm:ss:fff"
 
-# print start message
-Write-Host ("$(Get-Date -Format $timeFormat): Sitecore Development ENTRYPOINT, starting...")
+# Print start message
+Write-Host "$(Get-Date -Format $timeFormat): Development ENTRYPOINT: starting..."
 
-# check to see if we should start the Watch-Directory.ps1 script
+# Check to see if we should start the Watch-Directory.ps1 script
 $watchDirectoryJobName = "Watch-Directory.ps1"
-$useWatchDirectory = $null -ne $WatchDirectoryParameters -bor (Test-Path -Path "C:\src" -PathType "Container") -eq $true
+$useWatchDirectory = $null -ne $WatchDirectoryParameters -bor (Test-Path -Path "C:\deploy" -PathType "Container") -eq $true
 
 if ($useWatchDirectory)
 {
-    # setup default parameters if none is supplied
+    # Setup default parameters if none is supplied
     if ($null -eq $WatchDirectoryParameters)
     {
-        $WatchDirectoryParameters = @{ Path = "C:\src"; Destination = "C:\worker"; }
+        $WatchDirectoryParameters = @{ Path = "C:\deploy"; Destination = "C:\service"; }
     }
 
-    # start Watch-Directory.ps1 in background, kill foreground process if it fails
+    Write-Host "$(Get-Date -Format $timeFormat): Development ENTRYPOINT: '$watchDirectoryJobName' validating..."
+
+    # First a trial-run to catch any parameter validation / setup errors
+    $WatchDirectoryParameters["WhatIf"] = $true
+    & "C:\tools\scripts\Watch-Directory.ps1" @WatchDirectoryParameters
+    $WatchDirectoryParameters["WhatIf"] = $false
+    
+    Write-Host "$(Get-Date -Format $timeFormat): Development ENTRYPOINT: '$watchDirectoryJobName' starting..."
+
+    # Start Watch-Directory.ps1 in background
     Start-Job -Name $watchDirectoryJobName -ArgumentList $WatchDirectoryParameters -ScriptBlock {
         param([hashtable]$params)
 
@@ -32,27 +41,14 @@ if ($useWatchDirectory)
 
     } | Out-Null
 
-    # wait to see if job have failed (it will if for example parsing in invalid parameters)...
-    Start-Sleep -Milliseconds 1000
-
-    Get-Job -Name $watchDirectoryJobName | ForEach-Object {
-        $job = $_
-
-        if ($job.State -ne "Running")
-        {
-            # writes output stream
-            Receive-Job $job
-
-            # exit
-            exit 1
-        }
-
-        Write-Host "$(Get-Date -Format $timeFormat): Job '$($job.Name)' started..."
-    }
+    Write-Host "$(Get-Date -Format $timeFormat): Development ENTRYPOINT: '$watchDirectoryJobName' started."
 }
 else
 {
-    Write-Host ("$(Get-Date -Format $timeFormat): Skipping start of '$watchDirectoryJobName', to enable you should mount a directory into 'C:\src'.")
+    Write-Host ("$(Get-Date -Format $timeFormat): Development ENTRYPOINT: Skipping start of '$watchDirectoryJobName'. To enable you should mount a directory into 'C:\deploy'.")
 }
 
-& "C:\\worker\\$($env:SC_ROLE_EXE)"
+# Print ready message
+Write-Host "$(Get-Date -Format $timeFormat): Development ENTRYPOINT: ready!"
+
+& "C:\\service\\$($env:WORKER_EXECUTABLE_NAME_ENV)"

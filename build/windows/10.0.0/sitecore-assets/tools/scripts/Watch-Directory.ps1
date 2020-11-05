@@ -1,29 +1,123 @@
-[CmdletBinding()]
+<#
+.SYNOPSIS
+    Sync files from source to destination path.
+.DESCRIPTION
+    Watches source path for file changes and updates the destination path accordingly.
+.PARAMETER Path
+    Path to watch for changes.
+.PARAMETER Destination
+    Destination path to keep updated.
+.PARAMETER Sleep
+    Milliseconds to sleep between sync operations.
+.PARAMETER Timeout
+    Timeout for sync operation in milliseconds. Default is 0 (disabled).
+.PARAMETER DefaultExcludedFiles
+    Default files to skip during sync. Default is "*.user", "*.cs", "*.csproj", "packages.config", "*ncrunch*", ".gitignore", ".gitkeep", ".dockerignore", "*.example", "*.disabled".
+.PARAMETER ExcludeFiles
+    Additional files to skip during sync.
+.PARAMETER DefaultExcludedDirectories
+    Default directories to skip during sync. Default is "obj", "Properties", "node_modules".
+.PARAMETER ExcludeDirectories
+    Additional directories to skip during sync.
+.EXAMPLE
+    PS C:\> .\Watch-Directory.ps1 -Path 'C:\source' -Destination 'C:\destination' -ExcludeFiles @("web.config")
+.INPUTS
+    None
+.OUTPUTS
+    None
+#>
+[CmdletBinding(SupportsShouldProcess)]
 param(
-    # Path to watch for changes
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})]
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$Path,
-    # Destination path to keep updated
+
     [Parameter(Mandatory = $true)]
-    [ValidateScript( {Test-Path $_ -PathType 'Container'})]
+    [ValidateScript( { Test-Path $_ -PathType 'Container' })]
     [string]$Destination,
-    # Milliseconds to sleep between sync operations
+
     [Parameter(Mandatory = $false)]
-    [int]$SleepMilliseconds = 200,
-    # Default files to skip during sync
+    [int]$Sleep = 200,
+
+    [Parameter(Mandatory = $false)]
+    [int]$Timeout = 0,
+
     [Parameter(Mandatory = $false)]
     [array]$DefaultExcludedFiles = @("*.user", "*.cs", "*.csproj", "packages.config", "*ncrunch*", ".gitignore", ".gitkeep", ".dockerignore", "*.example", "*.disabled"),
-    # Additional files to skip during sync
+
     [Parameter(Mandatory = $false)]
     [array]$ExcludeFiles = @(),
-    # Default directories to skip during sync
+
     [Parameter(Mandatory = $false)]
     [array]$DefaultExcludedDirectories = @("obj", "Properties", "node_modules"),
-    # Additional directories to skip during sync
+
     [Parameter(Mandatory = $false)]
     [array]$ExcludeDirectories = @()
 )
+
+# Setup
+$ErrorActionPreference = "Stop"
+$timeFormat = "HH:mm:ss:fff"
+
+# Setup exclude rules
+$fileRules = ($DefaultExcludedFiles + $ExcludeFiles) | Select-Object -Unique
+$directoryRules = ($DefaultExcludedDirectories + $ExcludeDirectories) | Select-Object -Unique
+
+Write-Information "$(Get-Date -Format $timeFormat): Excluding files: $($fileRules -join ", ")"
+Write-Information "$(Get-Date -Format $timeFormat): Excluding directories: $($directoryRules -join ", ")"
+
+# If -WhatIf was used, stop here
+if (!$PSCmdlet.ShouldProcess($Path, "Start file watchers")) {
+    return
+}
+
+# Cleanup old event if present in current session
+Get-EventSubscriber -SourceIdentifier "FileDeleted" -ErrorAction "SilentlyContinue" | Unregister-Event
+
+# Setup delete watcher
+$watcher = New-Object System.IO.FileSystemWatcher
+$watcher.Path = $Path
+$watcher.IncludeSubdirectories = $true
+$watcher.EnableRaisingEvents = $true
+
+$watcherData = New-Object PSObject -Property @{
+    Destination = $Destination
+    ExcludeFiles = $fileRules
+    TimeFormat = $timeFormat
+}
+
+Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageData $watcherData {
+    $destinationPath = Join-Path $event.MessageData.Destination $eventArgs.Name
+    
+    if ((Test-Path $eventArgs.FullPath) -or                                                    # Present on source
+        !(Test-Path $destinationPath) -or                                                      # Not present on destination
+        (Test-Path -Path $destinationPath -PathType "Container") -or                           # Folder
+        (($event.MessageData.ExcludeFiles | % { $eventArgs.Name -like $_ }) -contains $true))  # Excluded
+    {
+        return
+    }
+
+    $retries = 50
+    while ($retries -gt 0) 
+    {
+        try
+        {
+            Remove-Item -Path $destinationPath -Force -Recurse -ErrorAction Stop
+            Write-Information "$(Get-Date -Format $event.MessageData.TimeFormat): Deleted '$destinationPath'..."
+
+            $retries = -1
+        }
+        catch
+        {
+            $retries--
+            Start-Sleep -Milliseconds 100
+        }
+    }
+    if ($retries -eq 0) 
+    {
+        Write-Error "$(Get-Date -Format $event.MessageData.TimeFormat): Could not delete '$destinationPath'..."
+    }
+} | Out-Null
 
 function Sync
 {
@@ -72,73 +166,27 @@ function Sync
 
         if ($dirty)
         {
-            Write-Host ("{0}: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $line) -ForegroundColor DarkGray
+            Write-Information "$(Get-Date -Format $timeFormat): $line"
         }
     }
 
     if ($dirty)
     {
-        Write-Host ("{0}: Done syncing..." -f [DateTime]::Now.ToString("HH:mm:ss:fff")) -ForegroundColor Green
+        Write-Information "$(Get-Date -Format $timeFormat): Done syncing..."
     }
 }
 
-# Setup exclude rules
-$fileRules = ($DefaultExcludedFiles + $ExcludeFiles) | Select-Object -Unique
-$directoryRules = ($DefaultExcludedDirectories + $ExcludeDirectories) | Select-Object -Unique
-
-Write-Host ("{0}: Excluding files: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), ($fileRules -join ", "))
-Write-Host ("{0}: Excluding directories: {1}" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), ($directoryRules -join ", "))
-
-# Cleanup old event if present in current session
-Get-EventSubscriber -SourceIdentifier "FileDeleted" -ErrorAction "SilentlyContinue" | Unregister-Event
-
-# Setup delete watcher
-$watcher = New-Object System.IO.FileSystemWatcher
-$watcher.Path = $Path
-$watcher.IncludeSubdirectories = $true
-$watcher.EnableRaisingEvents = $true
-
-Register-ObjectEvent $watcher Deleted -SourceIdentifier "FileDeleted" -MessageData $Destination {
-    $destinationPath = Join-Path $event.MessageData $eventArgs.Name
-    $delete = !(Test-Path $eventArgs.FullPath) -and (Test-Path $destinationPath)
-
-    if ($delete)
-    {
-        $retryAttempts = 50
-        $retryAttemptsCount = $retryAttempts
-        while ($retryAttemptsCount -gt 0) {
-            try
-            {
-                Remove-Item -Path $destinationPath -Force -Recurse -ErrorAction Stop
-                Write-Host ("{0}: Deleted '{1}'..." -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath) -ForegroundColor Green
-
-                $retryAttemptsCount = -1
-            }
-            catch
-            {
-                Write-Host ("{0}: Could not delete '{1}'... `r`n'{2}'" -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $_.ToString()) -ForegroundColor DarkGray
-
-                $retryAttemptsCount--
-                Start-Sleep -Milliseconds 100
-            }
-        }
-
-        if($retryAttemptsCount -eq 0) {
-            Write-Host ("{0}: Could not delete '{1}'... Retry attempts made: {2}. The file will NOT be deleted!" -f  [DateTime]::Now.ToString("HH:mm:ss:fff"), $destinationPath, $retryAttempts) -ForegroundColor Red
-        }
-    }
-} | Out-Null
-
 try
 {
-    Write-Host ("{0}: Watching '{1}' for changes, will copy to '{2}'..." -f [DateTime]::Now.ToString("HH:mm:ss:fff"), $Path, $Destination)
+    Write-Information "$(Get-Date -Format $timeFormat): Watching '$Path' for changes, will copy to '$Destination'..."
 
     # Main loop
-    while ($true)
+    $timer = [System.Diagnostics.Stopwatch]::StartNew()
+    while ($Timeout -eq 0 -or $timer.ElapsedMilliseconds -lt $Timeout)
     {
         Sync -Path $Path -Destination $Destination -ExcludeFiles $fileRules -ExcludeDirectories $directoryRules
 
-        Start-Sleep -Milliseconds $SleepMilliseconds
+        Start-Sleep -Milliseconds $Sleep
     }
 }
 finally
@@ -146,11 +194,11 @@ finally
     # Cleanup
     Get-EventSubscriber -SourceIdentifier "FileDeleted" | Unregister-Event
 
-    if ($watcher -ne $null)
+    if ($null -ne $watcher)
     {
         $watcher.Dispose()
         $watcher = $null
     }
 
-    Write-Host ("{0}: Stopped." -f [DateTime]::Now.ToString("HH:mm:ss:fff")) -ForegroundColor Red
+    Write-Information "$(Get-Date -Format $timeFormat): Stopped."
 }
