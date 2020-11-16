@@ -16,31 +16,31 @@ Images in this namespace are module asset images built from the https://github.c
 ### custom-cmp-xm-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:511787b343c71f6c6dd4cfd808cafbb59797db4480aafd875f6288d9572c8465 | 10/27/2020 22:11:44  | 11/05/2020 08:43:06 |
+10.0.0-1809 | amd64           | windows | sha256:56e4fb0720a3c8c4a6cc190424dfa8510cd3f043d92b25ed591a66db3d825ec3 | 10/27/2020 22:11:44  | 11/16/2020 16:59:04 |
 ### custom-cmp-xp-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:e9dc2d5afaed8064ec26df984c85b95fbb107d1577a1d7cb0cd3ecfe1a4f2806 | 10/23/2020 15:50:42  | 11/05/2020 08:42:35 |
+10.0.0-1809 | amd64           | windows | sha256:3f7378e27727f86ee9a79a76748f1abb0f6ff3e243ddfeffb11c2b3f7d7077b2 | 10/23/2020 15:50:42  | 11/16/2020 16:58:32 |
 ### custom-dam-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:db31438e00cd3e66bfd845188fef65cefe073bd9462db00da7bfe16c85436fff | 10/23/2020 15:51:07  | 11/05/2020 08:43:52 |
+10.0.0-1809 | amd64           | windows | sha256:45b1c7aaa9484e072234622e1fef56eb615d5314cdef7cac8ebca205ee03ef40 | 10/23/2020 15:51:07  | 11/16/2020 16:59:49 |
 ### custom-def-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:1d129547e688a3b801a42c62d32ce30a8ea8167e9a4040ee5df76fccc1d6531e | 10/23/2020 15:51:34  | 11/05/2020 08:43:22 |
+10.0.0-1809 | amd64           | windows | sha256:ed51e31c539b2118c3d2a4c99c06793e63daf6c5eaddc161e1c5a9c1fb2f7c19 | 10/23/2020 15:51:34  | 11/16/2020 16:59:19 |
 ### custom-def-d365-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:f79733f071ac7822f348b103b230a6f28ea41cbbd65fa275a34538f4bee6cdfe | 10/23/2020 15:51:59  | 11/05/2020 08:41:18 |
+10.0.0-1809 | amd64           | windows | sha256:adab15ce361186f7e014d6814086730374a2d155ac9eacee72118491abe2f5c1 | 10/23/2020 15:51:59  | 11/16/2020 16:57:10 |
 ### custom-def-ma-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:95eb3ab87a042f85b4c4479f8a569df43a029bcf22a01e3835acb3254823b4cc | 10/27/2020 22:12:28  | 11/05/2020 08:43:37 |
+10.0.0-1809 | amd64           | windows | sha256:690339838fb676658a0d2c67431554045a43db07ab5df1eccf9e1cb00dd63ddf | 10/27/2020 22:12:28  | 11/16/2020 16:59:34 |
 ### custom-def-sfdc-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:f690d4aaaf72676cdc8a64bec7c707ab1f4aecc0a4fb8ee9406e111db247e691 | 10/23/2020 15:52:25  | 11/05/2020 08:44:06 |
+10.0.0-1809 | amd64           | windows | sha256:3c3cbf40b0957ca7e9dd445e9b195cc9e7d6493ac6bfd72de449939ecfc77b31 | 10/23/2020 15:52:25  | 11/16/2020 17:00:02 |
 ### custom-horizon-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -60,35 +60,35 @@ Tag         | Architecture    | OS      | Digest                                
 ### custom-ps-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:8493803e12ff8f9cfb255c406a5566d822d5e2524be0955115764b8a4406b59c | 10/23/2020 15:55:25  | 11/05/2020 08:42:50 |
+10.0.0-1809 | amd64           | windows | sha256:026cffd5146bfa59b0977c4843e196ae9216b436a90b8b1e3902ba15fe654431 | 10/23/2020 15:55:25  | 11/16/2020 16:58:47 |
 ### custom-sfcrm-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:f690d4aaaf72676cdc8a64bec7c707ab1f4aecc0a4fb8ee9406e111db247e691 | 10/27/2020 22:09:38  | 11/05/2020 08:41:36 |
+10.0.0-1809 | amd64           | windows | sha256:3c3cbf40b0957ca7e9dd445e9b195cc9e7d6493ac6bfd72de449939ecfc77b31 | 10/27/2020 22:09:38  | 11/16/2020 16:57:26 |
 ### custom-sfcrm-ts-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:f88c6aac010e6ef8458f39773db1bc18748ac014c0a29088fd799fabc10b6bc2 | 10/27/2020 22:08:08  | 11/05/2020 08:40:32 |
+10.0.0-1809 | amd64           | windows | sha256:cfeb3f8cb13bd6c4aa4c65e37a792832bc5b3c78f647b28bfd0e6d7c62a18932 | 10/27/2020 22:08:08  | 11/16/2020 16:56:20 |
 ### custom-sfmc-bde-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:f18a3286c856bae9e2b845db2bf8f850b9d283ce82e29a6980a619f2729d0070 | 10/23/2020 15:55:51  | 11/05/2020 08:42:06 |
+10.0.0-1809 | amd64           | windows | sha256:d6c82eef4e4af7bb85a55c21929f17b81400cdc32f97049ed35fe2e5114498d6 | 10/23/2020 15:55:51  | 11/16/2020 16:57:58 |
 ### custom-sfmc-bde-ma-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:5f4edf17c6b10ff1da8cbe3084c221c9b9ce5bbd8d40e06a612d8ba4c5f3eb6e | 10/27/2020 22:08:38  | 11/05/2020 08:40:48 |
+10.0.0-1809 | amd64           | windows | sha256:9dad2eb5233d785ac6427b330beca96ed9b5b53db7fc71211515403d744ac2f2 | 10/27/2020 22:08:38  | 11/16/2020 16:56:38 |
 ### custom-sfmc-bde-ts-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:54f7fe940a9e4b998452a22df9d807f9d1b00a62fd287e90c2d55ad12177dfca | 10/27/2020 22:10:36  | 11/05/2020 08:42:20 |
+10.0.0-1809 | amd64           | windows | sha256:00277f14154ff5ab22cdbec317af7b671d61a98d4ad2321fc2af60b468bc72b4 | 10/27/2020 22:10:36  | 11/16/2020 16:58:15 |
 ### custom-sfmc-ce-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:72292eb47ba8d3345f5087055bea376e23079ad25e2f349f58c602dd3a2c821c | 10/23/2020 15:56:21  | 11/05/2020 08:41:49 |
+10.0.0-1809 | amd64           | windows | sha256:92f13614af09d1e2105919a34c2328181e7158d0c738207b4a21681c0d7fd8d2 | 10/23/2020 15:56:21  | 11/16/2020 16:57:42 |
 ### custom-xgenerator-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-1809 | amd64           | windows | sha256:511b8b8997fcef1e9772c5f14b3b34b8a232d63764455b4cdf121de8faabc7e9 | 10/23/2020 15:56:48  | 11/05/2020 08:41:02 |
+10.0.0-1809 | amd64           | windows | sha256:b626d3d3177c0dc6e814309353366db037867e8b21697b56b8f91238e9430a6c | 10/23/2020 15:56:48  | 11/16/2020 16:56:54 |
 ## community 
 Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
 ### sitecore-custom-def-tenant-service
@@ -1596,4 +1596,4 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.0.1-1809                            | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:57  | 08/26/2020 15:41:57 |
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:19  | 08/26/2020 15:41:19 |
  
-*This listing was automatically generated on November 15, 2020.*
+*This listing was automatically generated on November 16, 2020.*
