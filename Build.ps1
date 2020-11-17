@@ -39,7 +39,10 @@ param(
     [switch]$IncludeExperimental,
     [Parameter(Mandatory = $false)]
     [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess", "ForceDefault")]
-    [string]$IsolationModeBehaviour = "ForceHyperV"
+    [string]$IsolationModeBehaviour = "ForceHyperV",
+    [Parameter(Mandatory = $false, HelpMessage = "If supplied, will output a 'docker-images.json' file in the working folder")]
+    [switch]
+    $OutputJson
 )
 
 Push-Location build
@@ -290,6 +293,13 @@ foreach ($wv in $OSVersion)
 }
 
 $tags = [System.Collections.ArrayList]@($tags | Select-Object -Unique)
+
+if ($tags -and $OutputJson)
+{
+    # if -OutputJson, send $tags for formatting and output to working folder
+    $json = Format-BuildOutputToJson $tags
+    $json | Set-Content -Path (Join-Path $PWD "docker-images.json") -Force
+}
 
 if ($SkipExistingImage)
 {
