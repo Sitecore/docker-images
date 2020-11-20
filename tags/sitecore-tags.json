@@ -6116,6 +6116,26 @@
                          "LastUpdateTime":  "10/29/2020 08:39:00",
                          "OSVersion":  "10.0.17763.1518",
                          "TargetOS":  "1809"
+                     },
+                     {
+                         "Tag":  "15.0.1-1809",
+                         "Digest":  "sha256:4d8f9ec3b18e204d47e4d5535ee00810818ed3945f34386f8b5a190cae0601a0",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "11/20/2020 10:07:07",
+                         "LastUpdateTime":  "11/20/2020 10:07:07",
+                         "OSVersion":  "10.0.17763.1577",
+                         "TargetOS":  "1809"
+                     },
+                     {
+                         "Tag":  "15.0.1.00403.169-10.0.17763.1577-1809",
+                         "Digest":  "sha256:4d8f9ec3b18e204d47e4d5535ee00810818ed3945f34386f8b5a190cae0601a0",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "11/20/2020 10:06:55",
+                         "LastUpdateTime":  "11/20/2020 10:06:55",
+                         "OSVersion":  "10.0.17763.1577",
+                         "TargetOS":  "1809"
                      }
                  ]
     },
@@ -6161,6 +6181,26 @@
                          "CreatedTime":  "10/29/2020 08:39:29",
                          "LastUpdateTime":  "10/29/2020 08:39:29",
                          "OSVersion":  "10.0.17763.1518",
+                         "TargetOS":  "1809"
+                     },
+                     {
+                         "Tag":  "15.0.1-1809",
+                         "Digest":  "sha256:95693717166f097331d978e983213b50125f3e62b889133fc555c2fdfb257271",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "11/20/2020 10:07:36",
+                         "LastUpdateTime":  "11/20/2020 10:07:36",
+                         "OSVersion":  "10.0.17763.1577",
+                         "TargetOS":  "1809"
+                     },
+                     {
+                         "Tag":  "15.0.1.00403.169-10.0.17763.1577-1809",
+                         "Digest":  "sha256:95693717166f097331d978e983213b50125f3e62b889133fc555c2fdfb257271",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "11/20/2020 10:07:23",
+                         "LastUpdateTime":  "11/20/2020 10:07:23",
+                         "OSVersion":  "10.0.17763.1577",
                          "TargetOS":  "1809"
                      }
                  ]
