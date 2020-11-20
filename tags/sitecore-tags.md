@@ -514,18 +514,18 @@ Images in this namespace are built from the https://github.com/sitecore/Sitecore
 ### lighthouse-xp0-modules-base-cm
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:e17c656cb8c84dd0224a7eaf6d136e2179a45c95974d1d98dc39329e5b97612e | 10/27/2020 22:06:46  | 11/13/2020 00:01:13 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:e17c656cb8c84dd0224a7eaf6d136e2179a45c95974d1d98dc39329e5b97612e | 10/27/2020 22:06:28  | 11/13/2020 00:00:57 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:e1b88072970fd2ec87b1a981c2c2abc4b46e87a205a94c2dd4927109e16ed975 | 10/27/2020 22:06:46  | 11/20/2020 23:50:55 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:e1b88072970fd2ec87b1a981c2c2abc4b46e87a205a94c2dd4927109e16ed975 | 10/27/2020 22:06:28  | 11/20/2020 23:50:41 |
 ### lighthouse-xp0-modules-base-mssql
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:54c13f26676e09d8b0ea09c7cef92d678b5cf5db568f734873e4a6c647be9960 | 10/27/2020 22:05:52  | 11/12/2020 23:54:46 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:54c13f26676e09d8b0ea09c7cef92d678b5cf5db568f734873e4a6c647be9960 | 10/27/2020 22:05:33  | 11/12/2020 23:54:29 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:f7aee9f889881250d28aa71fe177b54f39a41bb00577f0c9a6d6725c84a63a08 | 10/27/2020 22:05:52  | 11/20/2020 23:44:50 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:f7aee9f889881250d28aa71fe177b54f39a41bb00577f0c9a6d6725c84a63a08 | 10/27/2020 22:05:33  | 11/20/2020 23:44:34 |
 ### lighthouse-xp1-modules-base-cd
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:511226cd17d43f55ff11398f501c18ecaabdbd597b8d9dea91a2141e791e5509 | 10/27/2020 22:07:35  | 11/13/2020 00:02:53 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:511226cd17d43f55ff11398f501c18ecaabdbd597b8d9dea91a2141e791e5509 | 10/27/2020 22:07:18  | 11/13/2020 00:02:36 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:b108f5b5ef9581becaa50bfe4708448533868a4d5584ea2d22f0a1cbc153de27 | 10/27/2020 22:07:35  | 11/20/2020 23:52:44 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:b108f5b5ef9581becaa50bfe4708448533868a4d5584ea2d22f0a1cbc153de27 | 10/27/2020 22:07:18  | 11/20/2020 23:52:31 |
 ## demo 
 Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Platform GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
 ### lighthouse-id
@@ -1852,4 +1852,4 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.0.1-1809                            | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:57  | 08/26/2020 15:41:57 |
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:19  | 08/26/2020 15:41:19 |
  
-*This listing was automatically generated on November 20, 2020.*
+*This listing was automatically generated on November 21, 2020.*
