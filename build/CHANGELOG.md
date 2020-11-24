@@ -2,6 +2,7 @@
 
 ## November 2020
 
+- [Added] Windows 20H2 is now supported.
 - [Added] Ability to provide `-OutputJson` switch to `build.ps1` to generate a Json file with a formatted list of images
 
 ## October 2020

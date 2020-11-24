@@ -15,6 +15,7 @@
 
 | Version | Repository | OS  | Build      | Tag |
 | ------- | ---------- | --- | -----------| --- |
+| latest | sitecore-certificates | nanoserver | 20H2 | `sitecore-certificates:latest-nanoserver-20H2` [Dockerfile](windows/dependencies/sitecore-certificates/Dockerfile) |
 | latest | sitecore-certificates | nanoserver | 2004 | `sitecore-certificates:latest-nanoserver-2004` [Dockerfile](windows/dependencies/sitecore-certificates/Dockerfile) |
 | latest | sitecore-certificates | nanoserver | 1909 | `sitecore-certificates:latest-nanoserver-1909` [Dockerfile](windows/dependencies/sitecore-certificates/Dockerfile) |
 | latest | sitecore-certificates | nanoserver | 1903 | `sitecore-certificates:latest-nanoserver-1903` [Dockerfile](windows/dependencies/sitecore-certificates/Dockerfile) |
@@ -108,6 +109,101 @@
 | 9.3.0 | sitecore-xc-cd | windowsservercore | ltsc2019 | `sitecore-xc-cd:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xc/Dockerfile) |
 | 9.3.0 | sitecore-xc-bizfx | windowsservercore | ltsc2019 | `sitecore-xc-bizfx:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-xc-bizfx/Dockerfile) |
 | 9.3.0 | sitecore-ps | windowsservercore | ltsc2019 | `sitecore-ps:9.3.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.3.x/sitecore-ps/Dockerfile) |
+| 9.3.0 | sitecore-xp-xconnect-processingengine | windowsservercore | 20H2 | `sitecore-xp-xconnect-processingengine:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect-worker/Dockerfile) |
+| 9.3.0 | sitecore-xp-xconnect-indexworker | windowsservercore | 20H2 | `sitecore-xp-xconnect-indexworker:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect-worker/Dockerfile) |
+| 9.3.0 | sitecore-xp-xconnect-automationengine | windowsservercore | 20H2 | `sitecore-xp-xconnect-automationengine:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect-worker/Dockerfile) |
+| 9.3.0 | sitecore-xp-xconnect | windowsservercore | 20H2 | `sitecore-xp-xconnect:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-standalone | windowsservercore | 20H2 | `sitecore-xp-sxa-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-sqldev | windowsservercore | 20H2 | `sitecore-xp-sxa-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-solr | nanoserver | 20H2 | `sitecore-xp-sxa-solr:9.3.0-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-ps-standalone | windowsservercore | 20H2 | `sitecore-xp-sxa-ps-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-ps-sqldev | windowsservercore | 20H2 | `sitecore-xp-sxa-ps-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-ps-jss-standalone | windowsservercore | 20H2 | `sitecore-xp-sxa-ps-jss-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-ps-jss-sqldev | windowsservercore | 20H2 | `sitecore-xp-sxa-ps-jss-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-ps-jss-cd | windowsservercore | 20H2 | `sitecore-xp-sxa-ps-jss-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-ps-cd | windowsservercore | 20H2 | `sitecore-xp-sxa-ps-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-standalone | windowsservercore | 20H2 | `sitecore-xp-sxa-jss-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-sqldev | windowsservercore | 20H2 | `sitecore-xp-sxa-jss-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-jss-cd | windowsservercore | 20H2 | `sitecore-xp-sxa-jss-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-sxa-cd | windowsservercore | 20H2 | `sitecore-xp-sxa-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
+| 9.3.0 | sitecore-xp-standalone | windowsservercore | 20H2 | `sitecore-xp-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp/Dockerfile) |
+| 9.3.0 | sitecore-xp-sqldev | windowsservercore | 20H2 | `sitecore-xp-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-spe-standalone | windowsservercore | 20H2 | `sitecore-xp-spe-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-spe/Dockerfile) |
+| 9.3.0 | sitecore-xp-spe-sqldev | windowsservercore | 20H2 | `sitecore-xp-spe-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-spe-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-solr | nanoserver | 20H2 | `sitecore-xp-solr:9.3.0-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-standalone | windowsservercore | 20H2 | `sitecore-xp-sh-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-sh/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-sqldev | windowsservercore | 20H2 | `sitecore-xp-sh-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-sh-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-identity | windowsservercore | 20H2 | `sitecore-xp-sh-identity:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-sh-identity/Dockerfile) |
+| 9.3.0 | sitecore-xp-sh-authoringhost | windowsservercore | 20H2 | `sitecore-xp-sh-authoringhost:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-sh-authoringhost/Dockerfile) |
+| 9.3.0 | sitecore-xp-ps-standalone | windowsservercore | 20H2 | `sitecore-xp-ps-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps/Dockerfile) |
+| 9.3.0 | sitecore-xp-ps-sqldev | windowsservercore | 20H2 | `sitecore-xp-ps-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-ps-jss-standalone | windowsservercore | 20H2 | `sitecore-xp-ps-jss-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-ps-jss-sqldev | windowsservercore | 20H2 | `sitecore-xp-ps-jss-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-ps-jss-cd | windowsservercore | 20H2 | `sitecore-xp-ps-jss-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-ps-cd | windowsservercore | 20H2 | `sitecore-xp-ps-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps/Dockerfile) |
+| 9.3.0 | sitecore-xp-jss-standalone | windowsservercore | 20H2 | `sitecore-xp-jss-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-jss-sqldev | windowsservercore | 20H2 | `sitecore-xp-jss-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-jss-cd | windowsservercore | 20H2 | `sitecore-xp-jss-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss/Dockerfile) |
+| 9.3.0 | sitecore-xp-identity | windowsservercore | 20H2 | `sitecore-xp-identity:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp-identity/Dockerfile) |
+| 9.3.0 | sitecore-xp-cd | windowsservercore | 20H2 | `sitecore-xp-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xp/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-sqldev | windowsservercore | 20H2 | `sitecore-xm-sxa-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-solr | nanoserver | 20H2 | `sitecore-xm-sxa-solr:9.3.0-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-ps-sqldev | windowsservercore | 20H2 | `sitecore-xm-sxa-ps-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-ps-jss-sqldev | windowsservercore | 20H2 | `sitecore-xm-sxa-ps-jss-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-ps-jss-cm | windowsservercore | 20H2 | `sitecore-xm-sxa-ps-jss-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-ps-jss-cd | windowsservercore | 20H2 | `sitecore-xm-sxa-ps-jss-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-ps-cm | windowsservercore | 20H2 | `sitecore-xm-sxa-ps-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-ps-cd | windowsservercore | 20H2 | `sitecore-xm-sxa-ps-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-ps/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-sqldev | windowsservercore | 20H2 | `sitecore-xm-sxa-jss-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-cm | windowsservercore | 20H2 | `sitecore-xm-sxa-jss-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-jss-cd | windowsservercore | 20H2 | `sitecore-xm-sxa-jss-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-cm | windowsservercore | 20H2 | `sitecore-xm-sxa-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
+| 9.3.0 | sitecore-xm-sxa-cd | windowsservercore | 20H2 | `sitecore-xm-sxa-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
+| 9.3.0 | sitecore-xm-sqldev | windowsservercore | 20H2 | `sitecore-xm-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-spe-sqldev | windowsservercore | 20H2 | `sitecore-xm-spe-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-spe-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-spe-cm | windowsservercore | 20H2 | `sitecore-xm-spe-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-spe/Dockerfile) |
+| 9.3.0 | sitecore-xm-solr | nanoserver | 20H2 | `sitecore-xm-solr:9.3.0-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
+| 9.3.0 | sitecore-xm-ps-sqldev | windowsservercore | 20H2 | `sitecore-xm-ps-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-ps-jss-sqldev | windowsservercore | 20H2 | `sitecore-xm-ps-jss-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-ps-jss-cm | windowsservercore | 20H2 | `sitecore-xm-ps-jss-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-ps-jss-cd | windowsservercore | 20H2 | `sitecore-xm-ps-jss-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-ps-cm | windowsservercore | 20H2 | `sitecore-xm-ps-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps/Dockerfile) |
+| 9.3.0 | sitecore-xm-ps-cd | windowsservercore | 20H2 | `sitecore-xm-ps-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps/Dockerfile) |
+| 9.3.0 | sitecore-xm-jss-sqldev | windowsservercore | 20H2 | `sitecore-xm-jss-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xm-jss-cm | windowsservercore | 20H2 | `sitecore-xm-jss-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-jss-cd | windowsservercore | 20H2 | `sitecore-xm-jss-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss/Dockerfile) |
+| 9.3.0 | sitecore-xm-cm | windowsservercore | 20H2 | `sitecore-xm-cm:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xm/Dockerfile) |
+| 9.3.0 | sitecore-xm-cd | windowsservercore | 20H2 | `sitecore-xm-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xm/Dockerfile) |
+| 9.3.0 | sitecore-xc-xconnect-indexworker | windowsservercore | 20H2 | `sitecore-xc-xconnect-indexworker:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-xconnect-indexworker/Dockerfile) |
+| 9.3.0 | sitecore-xc-xconnect-automationengine | windowsservercore | 20H2 | `sitecore-xc-xconnect-automationengine:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-xconnect-automationengine/Dockerfile) |
+| 9.3.0 | sitecore-xc-xconnect | windowsservercore | 20H2 | `sitecore-xc-xconnect:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-xconnect/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-storefront-standalone | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-sxa-storefront/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-storefront-sqldev | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-sxa-storefront-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-storefront-ps-standalone | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-ps-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xc-ps/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-storefront-ps-sqldev | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-ps-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xc-ps-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-storefront-ps-cd | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-ps-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xc-ps/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-storefront-cd | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-sxa-storefront/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-standalone | windowsservercore | 20H2 | `sitecore-xc-sxa-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-sxa/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-sqldev | windowsservercore | 20H2 | `sitecore-xc-sxa-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-sxa-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-ps-standalone | windowsservercore | 20H2 | `sitecore-xc-sxa-ps-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xc-ps/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-ps-sqldev | windowsservercore | 20H2 | `sitecore-xc-sxa-ps-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xc-ps-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-ps-cd | windowsservercore | 20H2 | `sitecore-xc-sxa-ps-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xc-ps/Dockerfile) |
+| 9.3.0 | sitecore-xc-sxa-cd | windowsservercore | 20H2 | `sitecore-xc-sxa-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-sxa/Dockerfile) |
+| 9.3.0 | sitecore-xc-standalone | windowsservercore | 20H2 | `sitecore-xc-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc/Dockerfile) |
+| 9.3.0 | sitecore-xc-sqldev | windowsservercore | 20H2 | `sitecore-xc-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xc-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xc-spe-standalone | windowsservercore | 20H2 | `sitecore-xc-spe-standalone:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-spe/Dockerfile) |
+| 9.3.0 | sitecore-xc-spe-sqldev | windowsservercore | 20H2 | `sitecore-xc-spe-sqldev:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-spe-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xc-spe-cd | windowsservercore | 20H2 | `sitecore-xc-spe-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-spe/Dockerfile) |
+| 9.3.0 | sitecore-xc-solr | nanoserver | 20H2 | `sitecore-xc-solr:9.3.0-nanoserver-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-solr/Dockerfile) |
+| 9.3.0 | sitecore-xc-identity | windowsservercore | 20H2 | `sitecore-xc-identity:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-identity/Dockerfile) |
+| 9.3.0 | sitecore-xc-engine-shops | windowsservercore | 20H2 | `sitecore-xc-engine-shops:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-engine/Dockerfile) |
+| 9.3.0 | sitecore-xc-engine-ops | windowsservercore | 20H2 | `sitecore-xc-engine-ops:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-engine/Dockerfile) |
+| 9.3.0 | sitecore-xc-engine-minions | windowsservercore | 20H2 | `sitecore-xc-engine-minions:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-engine/Dockerfile) |
+| 9.3.0 | sitecore-xc-engine-authoring | windowsservercore | 20H2 | `sitecore-xc-engine-authoring:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-engine/Dockerfile) |
+| 9.3.0 | sitecore-xc-cd | windowsservercore | 20H2 | `sitecore-xc-cd:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc/Dockerfile) |
+| 9.3.0 | sitecore-xc-bizfx | windowsservercore | 20H2 | `sitecore-xc-bizfx:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-xc-bizfx/Dockerfile) |
+| 9.3.0 | sitecore-ps | windowsservercore | 20H2 | `sitecore-ps:9.3.0-windowsservercore-20H2` [Dockerfile](windows/9.3.x/sitecore-ps/Dockerfile) |
+| 9.3.0 | sitecore-assets | nanoserver | 20H2 | `sitecore-assets:9.3.0-nanoserver-20H2` [Dockerfile](windows/9.3.0/sitecore-assets/Dockerfile) |
 | 9.3.0 | sitecore-xp-xconnect-processingengine | windowsservercore | 2004 | `sitecore-xp-xconnect-processingengine:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect-worker/Dockerfile) |
 | 9.3.0 | sitecore-xp-xconnect-indexworker | windowsservercore | 2004 | `sitecore-xp-xconnect-indexworker:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect-worker/Dockerfile) |
 | 9.3.0 | sitecore-xp-xconnect-automationengine | windowsservercore | 2004 | `sitecore-xp-xconnect-automationengine:9.3.0-windowsservercore-2004` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect-worker/Dockerfile) |
@@ -457,6 +553,71 @@
 | 9.2.0 | sitecore-xc-engine-authoring | windowsservercore | ltsc2019 | `sitecore-xc-engine-authoring:9.2.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.2.x/sitecore-xc-engine/Dockerfile) |
 | 9.2.0 | sitecore-xc-cd | windowsservercore | ltsc2019 | `sitecore-xc-cd:9.2.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.2.x/sitecore-xc/Dockerfile) |
 | 9.2.0 | sitecore-xc-bizfx | windowsservercore | ltsc2019 | `sitecore-xc-bizfx:9.2.0-windowsservercore-ltsc2019` [Dockerfile](windows/9.2.x/sitecore-xc-bizfx/Dockerfile) |
+| 9.2.0 | sitecore-xp-xconnect-processingengine | windowsservercore | 20H2 | `sitecore-xp-xconnect-processingengine:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xp-xconnect-processingengine/Dockerfile) |
+| 9.2.0 | sitecore-xp-xconnect-indexworker | windowsservercore | 20H2 | `sitecore-xp-xconnect-indexworker:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xp-xconnect-indexworker/Dockerfile) |
+| 9.2.0 | sitecore-xp-xconnect-automationengine | windowsservercore | 20H2 | `sitecore-xp-xconnect-automationengine:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xp-xconnect-automationengine/Dockerfile) |
+| 9.2.0 | sitecore-xp-xconnect | windowsservercore | 20H2 | `sitecore-xp-xconnect:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xp-xconnect/Dockerfile) |
+| 9.2.0 | sitecore-xp-sxa-standalone | windowsservercore | 20H2 | `sitecore-xp-sxa-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
+| 9.2.0 | sitecore-xp-sxa-sqldev | windowsservercore | 20H2 | `sitecore-xp-sxa-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xp-sxa-solr | nanoserver | 20H2 | `sitecore-xp-sxa-solr:9.2.0-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
+| 9.2.0 | sitecore-xp-sxa-jss-standalone | windowsservercore | 20H2 | `sitecore-xp-sxa-jss-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.2.0 | sitecore-xp-sxa-jss-sqldev | windowsservercore | 20H2 | `sitecore-xp-sxa-jss-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xp-sxa-jss-cd | windowsservercore | 20H2 | `sitecore-xp-sxa-jss-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.2.0 | sitecore-xp-sxa-cd | windowsservercore | 20H2 | `sitecore-xp-sxa-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
+| 9.2.0 | sitecore-xp-standalone | windowsservercore | 20H2 | `sitecore-xp-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xp/Dockerfile) |
+| 9.2.0 | sitecore-xp-sqldev | windowsservercore | 20H2 | `sitecore-xp-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xp-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xp-spe-standalone | windowsservercore | 20H2 | `sitecore-xp-spe-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-spe/Dockerfile) |
+| 9.2.0 | sitecore-xp-spe-sqldev | windowsservercore | 20H2 | `sitecore-xp-spe-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-spe-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xp-solr | nanoserver | 20H2 | `sitecore-xp-solr:9.2.0-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
+| 9.2.0 | sitecore-xp-ps-sqldev | windowsservercore | 20H2 | `sitecore-xp-ps-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xp-ps-jss-sqldev | windowsservercore | 20H2 | `sitecore-xp-ps-jss-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-jss-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xp-jss-standalone | windowsservercore | 20H2 | `sitecore-xp-jss-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss/Dockerfile) |
+| 9.2.0 | sitecore-xp-jss-sqldev | windowsservercore | 20H2 | `sitecore-xp-jss-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xp-jss-cd | windowsservercore | 20H2 | `sitecore-xp-jss-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss/Dockerfile) |
+| 9.2.0 | sitecore-xp-identity | windowsservercore | 20H2 | `sitecore-xp-identity:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xp-identity/Dockerfile) |
+| 9.2.0 | sitecore-xp-cd | windowsservercore | 20H2 | `sitecore-xp-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xp/Dockerfile) |
+| 9.2.0 | sitecore-xm-sxa-sqldev | windowsservercore | 20H2 | `sitecore-xm-sxa-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xm-sxa-solr | nanoserver | 20H2 | `sitecore-xm-sxa-solr:9.2.0-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
+| 9.2.0 | sitecore-xm-sxa-jss-sqldev | windowsservercore | 20H2 | `sitecore-xm-sxa-jss-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xm-sxa-jss-cm | windowsservercore | 20H2 | `sitecore-xm-sxa-jss-cm:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.2.0 | sitecore-xm-sxa-jss-cd | windowsservercore | 20H2 | `sitecore-xm-sxa-jss-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa-jss/Dockerfile) |
+| 9.2.0 | sitecore-xm-sxa-cm | windowsservercore | 20H2 | `sitecore-xm-sxa-cm:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
+| 9.2.0 | sitecore-xm-sxa-cd | windowsservercore | 20H2 | `sitecore-xm-sxa-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
+| 9.2.0 | sitecore-xm-sqldev | windowsservercore | 20H2 | `sitecore-xm-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xm-spe-sqldev | windowsservercore | 20H2 | `sitecore-xm-spe-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-spe-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xm-spe-cm | windowsservercore | 20H2 | `sitecore-xm-spe-cm:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-spe/Dockerfile) |
+| 9.2.0 | sitecore-xm-solr | nanoserver | 20H2 | `sitecore-xm-solr:9.2.0-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
+| 9.2.0 | sitecore-xm-ps-sqldev | windowsservercore | 20H2 | `sitecore-xm-ps-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xm-ps-jss-sqldev | windowsservercore | 20H2 | `sitecore-xm-ps-jss-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-ps-jss-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xm-jss-sqldev | windowsservercore | 20H2 | `sitecore-xm-jss-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xm-jss-cm | windowsservercore | 20H2 | `sitecore-xm-jss-cm:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss/Dockerfile) |
+| 9.2.0 | sitecore-xm-jss-cd | windowsservercore | 20H2 | `sitecore-xm-jss-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-jss/Dockerfile) |
+| 9.2.0 | sitecore-xm-cm | windowsservercore | 20H2 | `sitecore-xm-cm:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xm/Dockerfile) |
+| 9.2.0 | sitecore-xm-cd | windowsservercore | 20H2 | `sitecore-xm-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xm/Dockerfile) |
+| 9.2.0 | sitecore-xc-xconnect-indexworker | windowsservercore | 20H2 | `sitecore-xc-xconnect-indexworker:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-xconnect-indexworker/Dockerfile) |
+| 9.2.0 | sitecore-xc-xconnect-automationengine | windowsservercore | 20H2 | `sitecore-xc-xconnect-automationengine:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-xconnect-automationengine/Dockerfile) |
+| 9.2.0 | sitecore-xc-xconnect | windowsservercore | 20H2 | `sitecore-xc-xconnect:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-xconnect/Dockerfile) |
+| 9.2.0 | sitecore-xc-sxa-storefront-standalone | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-sxa-storefront/Dockerfile) |
+| 9.2.0 | sitecore-xc-sxa-storefront-sqldev | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-sxa-storefront-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xc-sxa-storefront-cd | windowsservercore | 20H2 | `sitecore-xc-sxa-storefront-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-sxa-storefront/Dockerfile) |
+| 9.2.0 | sitecore-xc-sxa-standalone | windowsservercore | 20H2 | `sitecore-xc-sxa-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-sxa/Dockerfile) |
+| 9.2.0 | sitecore-xc-sxa-sqldev | windowsservercore | 20H2 | `sitecore-xc-sxa-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-sxa-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xc-sxa-solr | nanoserver | 20H2 | `sitecore-xc-sxa-solr:9.2.0-nanoserver-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-solr/Dockerfile) |
+| 9.2.0 | sitecore-xc-sxa-cd | windowsservercore | 20H2 | `sitecore-xc-sxa-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-sxa/Dockerfile) |
+| 9.2.0 | sitecore-xc-standalone | windowsservercore | 20H2 | `sitecore-xc-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc/Dockerfile) |
+| 9.2.0 | sitecore-xc-sqldev | windowsservercore | 20H2 | `sitecore-xc-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xc-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xc-spe-standalone | windowsservercore | 20H2 | `sitecore-xc-spe-standalone:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-spe/Dockerfile) |
+| 9.2.0 | sitecore-xc-spe-sqldev | windowsservercore | 20H2 | `sitecore-xc-spe-sqldev:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-spe-sqldev/Dockerfile) |
+| 9.2.0 | sitecore-xc-spe-cd | windowsservercore | 20H2 | `sitecore-xc-spe-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-spe/Dockerfile) |
+| 9.2.0 | sitecore-xc-solr | nanoserver | 20H2 | `sitecore-xc-solr:9.2.0-nanoserver-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-solr/Dockerfile) |
+| 9.2.0 | sitecore-xc-identity | windowsservercore | 20H2 | `sitecore-xc-identity:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-identity/Dockerfile) |
+| 9.2.0 | sitecore-xc-engine-shops | windowsservercore | 20H2 | `sitecore-xc-engine-shops:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-engine/Dockerfile) |
+| 9.2.0 | sitecore-xc-engine-ops | windowsservercore | 20H2 | `sitecore-xc-engine-ops:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-engine/Dockerfile) |
+| 9.2.0 | sitecore-xc-engine-minions | windowsservercore | 20H2 | `sitecore-xc-engine-minions:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-engine/Dockerfile) |
+| 9.2.0 | sitecore-xc-engine-authoring | windowsservercore | 20H2 | `sitecore-xc-engine-authoring:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-engine/Dockerfile) |
+| 9.2.0 | sitecore-xc-cd | windowsservercore | 20H2 | `sitecore-xc-cd:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc/Dockerfile) |
+| 9.2.0 | sitecore-xc-bizfx | windowsservercore | 20H2 | `sitecore-xc-bizfx:9.2.0-windowsservercore-20H2` [Dockerfile](windows/9.2.x/sitecore-xc-bizfx/Dockerfile) |
+| 9.2.0 | sitecore-assets | nanoserver | 20H2 | `sitecore-assets:9.2.0-nanoserver-20H2` [Dockerfile](windows/9.2.0/sitecore-assets/Dockerfile) |
 | 9.2.0 | sitecore-xp-xconnect-processingengine | windowsservercore | 2004 | `sitecore-xp-xconnect-processingengine:9.2.0-windowsservercore-2004` [Dockerfile](windows/9.2.x/sitecore-xp-xconnect-processingengine/Dockerfile) |
 | 9.2.0 | sitecore-xp-xconnect-indexworker | windowsservercore | 2004 | `sitecore-xp-xconnect-indexworker:9.2.0-windowsservercore-2004` [Dockerfile](windows/9.2.x/sitecore-xp-xconnect-indexworker/Dockerfile) |
 | 9.2.0 | sitecore-xp-xconnect-automationengine | windowsservercore | 2004 | `sitecore-xp-xconnect-automationengine:9.2.0-windowsservercore-2004` [Dockerfile](windows/9.2.x/sitecore-xp-xconnect-automationengine/Dockerfile) |
@@ -663,6 +824,13 @@
 | 9.1.1 | sitecore-xm-sqldev | windowsservercore | ltsc2019 | `sitecore-xm-sqldev:9.1.1-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
 | 9.1.1 | sitecore-xm-cm | windowsservercore | ltsc2019 | `sitecore-xm-cm:9.1.1-windowsservercore-ltsc2019` [Dockerfile](windows/9.1.1/sitecore-xm/Dockerfile) |
 | 9.1.1 | sitecore-xm-cd | windowsservercore | ltsc2019 | `sitecore-xm-cd:9.1.1-windowsservercore-ltsc2019` [Dockerfile](windows/9.1.1/sitecore-xm/Dockerfile) |
+| 9.1.1 | sitecore-xp-sqldev | windowsservercore | 20H2 | `sitecore-xp-sqldev:9.1.1-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xp-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xp-solr | nanoserver | 20H2 | `sitecore-xp-solr:9.1.1-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
+| 9.1.1 | sitecore-xm-sqldev | windowsservercore | 20H2 | `sitecore-xm-sqldev:9.1.1-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
+| 9.1.1 | sitecore-xm-solr | nanoserver | 20H2 | `sitecore-xm-solr:9.1.1-nanoserver-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-solr/Dockerfile) |
+| 9.1.1 | sitecore-xm-cm | windowsservercore | 20H2 | `sitecore-xm-cm:9.1.1-windowsservercore-20H2` [Dockerfile](windows/9.1.1/sitecore-xm/Dockerfile) |
+| 9.1.1 | sitecore-xm-cd | windowsservercore | 20H2 | `sitecore-xm-cd:9.1.1-windowsservercore-20H2` [Dockerfile](windows/9.1.1/sitecore-xm/Dockerfile) |
+| 9.1.1 | sitecore-assets | nanoserver | 20H2 | `sitecore-assets:9.1.1-nanoserver-20H2` [Dockerfile](windows/9.1.1/sitecore-assets/Dockerfile) |
 | 9.1.1 | sitecore-xp-sqldev | windowsservercore | 2004 | `sitecore-xp-sqldev:9.1.1-windowsservercore-2004` [Dockerfile](windows/9.x.x/sitecore-xp-sqldev/Dockerfile) |
 | 9.1.1 | sitecore-xp-solr | nanoserver | 2004 | `sitecore-xp-solr:9.1.1-nanoserver-2004` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
 | 9.1.1 | sitecore-xm-sqldev | windowsservercore | 2004 | `sitecore-xm-sqldev:9.1.1-windowsservercore-2004` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
@@ -690,6 +858,11 @@
 | 9.0.2 | sitecore-xm-sqldev | windowsservercore | ltsc2019 | `sitecore-xm-sqldev:9.0.2-windowsservercore-ltsc2019` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
 | 9.0.2 | sitecore-xm-cm | windowsservercore | ltsc2019 | `sitecore-xm-cm:9.0.2-windowsservercore-ltsc2019` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
 | 9.0.2 | sitecore-xm-cd | windowsservercore | ltsc2019 | `sitecore-xm-cd:9.0.2-windowsservercore-ltsc2019` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
+| 9.0.2 | sitecore-xm-sqldev | windowsservercore | 20H2 | `sitecore-xm-sqldev:9.0.2-windowsservercore-20H2` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
+| 9.0.2 | sitecore-xm-solr | nanoserver | 20H2 | `sitecore-xm-solr:9.0.2-nanoserver-20H2` [Dockerfile](windows/9.0.x/sitecore-xm-solr/Dockerfile) |
+| 9.0.2 | sitecore-xm-cm | windowsservercore | 20H2 | `sitecore-xm-cm:9.0.2-windowsservercore-20H2` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
+| 9.0.2 | sitecore-xm-cd | windowsservercore | 20H2 | `sitecore-xm-cd:9.0.2-windowsservercore-20H2` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
+| 9.0.2 | sitecore-assets | nanoserver | 20H2 | `sitecore-assets:9.0.2-nanoserver-20H2` [Dockerfile](windows/9.0.2/sitecore-assets/Dockerfile) |
 | 9.0.2 | sitecore-xm-sqldev | windowsservercore | 2004 | `sitecore-xm-sqldev:9.0.2-windowsservercore-2004` [Dockerfile](windows/9.x.x/sitecore-xm-sqldev/Dockerfile) |
 | 9.0.2 | sitecore-xm-solr | nanoserver | 2004 | `sitecore-xm-solr:9.0.2-nanoserver-2004` [Dockerfile](windows/9.0.x/sitecore-xm-solr/Dockerfile) |
 | 9.0.2 | sitecore-xm-cm | windowsservercore | 2004 | `sitecore-xm-cm:9.0.2-windowsservercore-2004` [Dockerfile](windows/9.0.2/sitecore-xm/Dockerfile) |
@@ -707,446 +880,556 @@
 | 9.0.2 | sitecore-assets | nanoserver | 1903 | `sitecore-assets:9.0.2-nanoserver-1903` [Dockerfile](windows/9.0.2/sitecore-assets/Dockerfile) |
 | 9.0.2 | sitecore-xm-solr | nanoserver | 1809 | `sitecore-xm-solr:9.0.2-nanoserver-1809` [Dockerfile](windows/9.0.x/sitecore-xm-solr/Dockerfile) |
 | 9.0.2 | sitecore-assets | nanoserver | 1809 | `sitecore-assets:9.0.2-nanoserver-1809` [Dockerfile](windows/9.0.2/sitecore-assets/Dockerfile) |
+| 8 | sitecore-openjdk | nanoserver | 20H2 | `sitecore-openjdk:8-nanoserver-20H2` [Dockerfile](windows/dependencies/sitecore-openjdk/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 2004 | `sitecore-openjdk:8-nanoserver-2004` [Dockerfile](windows/dependencies/sitecore-openjdk/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1909 | `sitecore-openjdk:8-nanoserver-1909` [Dockerfile](windows/dependencies/sitecore-openjdk/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1903 | `sitecore-openjdk:8-nanoserver-1903` [Dockerfile](windows/dependencies/sitecore-openjdk/Dockerfile) |
 | 8 | sitecore-openjdk | nanoserver | 1809 | `sitecore-openjdk:8-nanoserver-1809` [Dockerfile](windows/dependencies/sitecore-openjdk/Dockerfile) |
 | 3.0.504 | sitecore-redis | windowsservercore | ltsc2019 | `sitecore-redis:3.0.504-windowsservercore-ltsc2019` [Dockerfile](windows/dependencies/sitecore-redis/Dockerfile) |
+| 3.0.504 | sitecore-redis | windowsservercore | 20H2 | `sitecore-redis:3.0.504-windowsservercore-20H2` [Dockerfile](windows/dependencies/sitecore-redis/Dockerfile) |
 | 3.0.504 | sitecore-redis | windowsservercore | 2004 | `sitecore-redis:3.0.504-windowsservercore-2004` [Dockerfile](windows/dependencies/sitecore-redis/Dockerfile) |
 | 3.0.504 | sitecore-redis | windowsservercore | 1909 | `sitecore-redis:3.0.504-windowsservercore-1909` [Dockerfile](windows/dependencies/sitecore-redis/Dockerfile) |
 | 3.0.504 | sitecore-redis | windowsservercore | 1903 | `sitecore-redis:3.0.504-windowsservercore-1903` [Dockerfile](windows/dependencies/sitecore-redis/Dockerfile) |
 | 2017 | mssql-developer | windowsservercore | ltsc2019 | `mssql-developer:2017-windowsservercore-ltsc2019` [Dockerfile](windows/dependencies/mssql-developer-2017/Dockerfile) |
+| 2017 | mssql-developer | windowsservercore | 20H2 | `mssql-developer:2017-windowsservercore-20H2` [Dockerfile](windows/dependencies/mssql-developer-2017/Dockerfile) |
 | 2017 | mssql-developer | windowsservercore | 2004 | `mssql-developer:2017-windowsservercore-2004` [Dockerfile](windows/dependencies/mssql-developer-2017/Dockerfile) |
 | 2017 | mssql-developer | windowsservercore | 1909 | `mssql-developer:2017-windowsservercore-1909` [Dockerfile](windows/dependencies/mssql-developer-2017/Dockerfile) |
 | 2017 | mssql-developer | windowsservercore | 1903 | `mssql-developer:2017-windowsservercore-1903` [Dockerfile](windows/dependencies/mssql-developer-2017/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-solr-init | 2004 |  | `community/sitecore-xp1-custom-sxa-solr-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-solr-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-solr-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-solr-init | 1909 |  | `community/sitecore-xp1-custom-sxa-solr-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-solr-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-solr-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-solr-init | 2004 |  | `community/sitecore-xp1-custom-sxa-solr-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-solr-init | 1903 |  | `community/sitecore-xp1-custom-sxa-solr-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-solr | 1903 |  | `community/sitecore-xp1-custom-sxa-solr:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-solr-init | 1909 |  | `community/sitecore-xp1-custom-sxa-solr-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-solr | 1909 |  | `community/sitecore-xp1-custom-sxa-solr:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-solr | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-solr:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-solr | 2004 |  | `community/sitecore-xp1-custom-sxa-solr:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-solr | 1903 |  | `community/sitecore-xp1-custom-sxa-solr:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-solr | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-solr:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-solr | 20H2 |  | `community/sitecore-xp1-custom-sxa-solr:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-ps-mssql | 20H2 |  | `community/sitecore-xp1-custom-sxa-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-ps-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-ps-cd | 20H2 |  | `community/sitecore-xp1-custom-sxa-ps-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-ps-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-ps-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-ps-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-ps-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-ps-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-ps-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-ps-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql | 20H2 |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cm | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cd | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-ps-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-ps-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-mssql | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cm | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-jss-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-jss-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss-cd | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cm | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cd | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-ps-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cm | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1500-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1500-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1500-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1500-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1500-cd | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1500-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cm | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-ps-cd | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql-init | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql-init | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql-init | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-mssql | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cm | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1400-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cd | 20H2 |  | `community/sitecore-xp1-custom-sxa-jss1400-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-jss1400-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-jss1400-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-jss1400-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-jss1400-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-jss1400-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-cm | 20H2 |  | `community/sitecore-xp1-custom-sxa-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-cm | 2004 |  | `community/sitecore-xp1-custom-sxa-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-cm | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-cm | 1903 |  | `community/sitecore-xp1-custom-sxa-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-cm | 1909 |  | `community/sitecore-xp1-custom-sxa-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-cd | 1909 |  | `community/sitecore-xp1-custom-sxa-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-cd | 1903 |  | `community/sitecore-xp1-custom-sxa-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-sxa-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-cd | 20H2 |  | `community/sitecore-xp1-custom-sxa-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-sxa-cd | ltsc2019 |  | `community/sitecore-xp1-custom-sxa-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-sxa-cd | 2004 |  | `community/sitecore-xp1-custom-sxa-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-ps-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-spe-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-ps-mssql-init | 2004 |  | `community/sitecore-xp1-custom-spe-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-ps-mssql-init | 1903 |  | `community/sitecore-xp1-custom-spe-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-ps-mssql-init | 1909 |  | `community/sitecore-xp1-custom-spe-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-spe-ps-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-spe-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-spe-mssql-init | 1909 |  | `community/sitecore-xp1-custom-spe-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-spe-mssql-init | 2004 |  | `community/sitecore-xp1-custom-spe-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-spe-mssql-init | 1903 |  | `community/sitecore-xp1-custom-spe-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-ps-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-spe-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-mssql-init | 20H2 |  | `community/sitecore-xp1-custom-spe-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-mssql-init | ltsc2019 |  | `community/sitecore-xp1-custom-spe-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-mssql-init | 1903 |  | `community/sitecore-xp1-custom-spe-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-mssql-init | 2004 |  | `community/sitecore-xp1-custom-spe-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-mssql-init | 1909 |  | `community/sitecore-xp1-custom-spe-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-mssql | 2004 |  | `community/sitecore-xp1-custom-spe-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-spe-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-spe-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-spe-mssql | 1903 |  | `community/sitecore-xp1-custom-spe-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-mssql | 20H2 |  | `community/sitecore-xp1-custom-spe-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-mssql | 1909 |  | `community/sitecore-xp1-custom-spe-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-mssql | 1903 |  | `community/sitecore-xp1-custom-spe-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-mssql | ltsc2019 |  | `community/sitecore-xp1-custom-spe-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-cm | ltsc2019 |  | `community/sitecore-xp1-custom-spe-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-spe-cm | 2004 |  | `community/sitecore-xp1-custom-spe-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-cm | 1903 |  | `community/sitecore-xp1-custom-spe-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-cm | 20H2 |  | `community/sitecore-xp1-custom-spe-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-cm | 2004 |  | `community/sitecore-xp1-custom-spe-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-cm | 1909 |  | `community/sitecore-xp1-custom-spe-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp1-custom-spe-cd | 1903 |  | `community/sitecore-xp1-custom-spe-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-cd | ltsc2019 |  | `community/sitecore-xp1-custom-spe-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-cd | 1903 |  | `community/sitecore-xp1-custom-spe-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-cd | 1909 |  | `community/sitecore-xp1-custom-spe-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp1-custom-spe-cd | 2004 |  | `community/sitecore-xp1-custom-spe-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-solr | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-solr:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xp1-custom-spe-cd | 20H2 |  | `community/sitecore-xp1-custom-spe-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-solr | 1903 |  | `community/sitecore-xp0-custom-sxa-solr:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-solr | 1909 |  | `community/sitecore-xp0-custom-sxa-solr:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-solr | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-solr:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-solr | 2004 |  | `community/sitecore-xp0-custom-sxa-solr:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-solr | 20H2 |  | `community/sitecore-xp0-custom-sxa-solr:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-solr | 1909 |  | `community/sitecore-xp0-custom-sxa-solr:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | 20H2 |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-ps-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-mssql | 20H2 |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-mssql | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-cm | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-jss-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-cm | 1903 |  | `community/sitecore-xp0-custom-sxa-jss-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-ps-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-mssql | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-cm | 1903 |  | `community/sitecore-xp0-custom-sxa-jss-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-jss-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-cm | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-mssql | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-cm | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-cm | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-ps-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-mssql | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1500-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-cm | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss1500-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1500-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-cm | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1500-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1500-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1500-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1500-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1500-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-mssql | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-cm | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-cm | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-ps-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1400-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-mssql | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss1400-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-mssql | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1400-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-mssql | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1400-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-mssql | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1400-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1400-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1400-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1400-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-cm | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1400-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-jss1400-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-jss1400-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-cm | 1903 |  | `community/sitecore-xp0-custom-sxa-jss1400-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-cm | 20H2 |  | `community/sitecore-xp0-custom-sxa-jss1400-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-jss1400-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-jss1400-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-cm | ltsc2019 |  | `community/sitecore-xp0-custom-sxa-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-sxa-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-cm | 20H2 |  | `community/sitecore-xp0-custom-sxa-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-cm | 1903 |  | `community/sitecore-xp0-custom-sxa-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-sxa-cm | 2004 |  | `community/sitecore-xp0-custom-sxa-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-spe-mssql | 1909 |  | `community/sitecore-xp0-custom-spe-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-spe-mssql | 1903 |  | `community/sitecore-xp0-custom-spe-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-sxa-cm | 1909 |  | `community/sitecore-xp0-custom-sxa-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-spe-mssql | ltsc2019 |  | `community/sitecore-xp0-custom-spe-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-spe-mssql | 2004 |  | `community/sitecore-xp0-custom-spe-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xp0-custom-spe-cm | 2004 |  | `community/sitecore-xp0-custom-spe-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-spe-mssql | 20H2 |  | `community/sitecore-xp0-custom-spe-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-spe-mssql | 1909 |  | `community/sitecore-xp0-custom-spe-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-spe-mssql | 1903 |  | `community/sitecore-xp0-custom-spe-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-spe-cm | 1909 |  | `community/sitecore-xp0-custom-spe-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-spe-cm | 1903 |  | `community/sitecore-xp0-custom-spe-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-spe-cm | 20H2 |  | `community/sitecore-xp0-custom-spe-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xp0-custom-spe-cm | 2004 |  | `community/sitecore-xp0-custom-spe-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xp0-custom-spe-cm | ltsc2019 |  | `community/sitecore-xp0-custom-spe-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-solr-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-solr-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-solr-init | 1903 |  | `community/sitecore-xm1-custom-sxa-solr-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-solr-init | 1909 |  | `community/sitecore-xm1-custom-sxa-solr-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-solr-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-solr-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-solr-init | 2004 |  | `community/sitecore-xm1-custom-sxa-solr-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-solr | 2004 |  | `community/sitecore-xm1-custom-sxa-solr:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-solr-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-solr-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-solr/sitecore-custom-solr-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-solr | 1909 |  | `community/sitecore-xm1-custom-sxa-solr:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-solr | 1903 |  | `community/sitecore-xm1-custom-sxa-solr:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-solr | 2004 |  | `community/sitecore-xm1-custom-sxa-solr:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-solr | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-solr:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-ps-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-solr | 20H2 |  | `community/sitecore-xm1-custom-sxa-solr:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-solr | 1903 |  | `community/sitecore-xm1-custom-sxa-solr:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-solr/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-ps-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-ps-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-ps-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-ps-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-ps-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-ps-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-mssql | 1903 |  | `community/sitecore-xm1-custom-sxa-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-mssql | 20H2 |  | `community/sitecore-xm1-custom-sxa-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql | 1903 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-mssql | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-cm | 1903 |  | `community/sitecore-xm1-custom-sxa-jss-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-ps-cm | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql | 1903 |  | `community/sitecore-xm1-custom-sxa-jss-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cm | 1903 |  | `community/sitecore-xm1-custom-sxa-jss-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cm | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cd | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cd | 1903 |  | `community/sitecore-xm1-custom-sxa-jss-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cd | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cd | 1909 |  | `community/sitecore-xm1-custom-sxa-jss-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cd | 2004 |  | `community/sitecore-xm1-custom-sxa-jss-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss-cd | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-cm | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-cm | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-ps-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cm | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cd | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cd | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cd | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cm | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1500-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cd | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1500-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cd | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1500-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cd | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1500-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cd | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1500-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1500-cd | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1500-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-cm | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-cm | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-ps-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1400-ps-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql-init | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql-init | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql-init | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-mssql | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cm | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cm | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1400-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cm | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1400-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cd | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cd | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-jss1400-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cd | 20H2 |  | `community/sitecore-xm1-custom-sxa-jss1400-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cd | 2004 |  | `community/sitecore-xm1-custom-sxa-jss1400-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cd | 1903 |  | `community/sitecore-xm1-custom-sxa-jss1400-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-jss1400-cd | 1909 |  | `community/sitecore-xm1-custom-sxa-jss1400-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-cm | 2004 |  | `community/sitecore-xm1-custom-sxa-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-cm | 20H2 |  | `community/sitecore-xm1-custom-sxa-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-cm | 1909 |  | `community/sitecore-xm1-custom-sxa-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-cm | 1903 |  | `community/sitecore-xm1-custom-sxa-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-sxa-cd | 1909 |  | `community/sitecore-xm1-custom-sxa-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-cm | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-cd | 2004 |  | `community/sitecore-xm1-custom-sxa-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-cd | 20H2 |  | `community/sitecore-xm1-custom-sxa-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-sxa-cd | 1909 |  | `community/sitecore-xm1-custom-sxa-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-cd | ltsc2019 |  | `community/sitecore-xm1-custom-sxa-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-sxa-cd | 1903 |  | `community/sitecore-xm1-custom-sxa-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-ps-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-spe-ps-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-ps-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-spe-ps-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-ps-mssql-init | 1903 |  | `community/sitecore-xm1-custom-spe-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-ps-mssql-init | 2004 |  | `community/sitecore-xm1-custom-spe-ps-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-ps-mssql-init | 1909 |  | `community/sitecore-xm1-custom-spe-ps-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-spe-ps-mssql-init | 1903 |  | `community/sitecore-xm1-custom-spe-ps-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-mssql-init | 1909 |  | `community/sitecore-xm1-custom-spe-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-mssql-init | 20H2 |  | `community/sitecore-xm1-custom-spe-mssql-init:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-mssql-init | 1903 |  | `community/sitecore-xm1-custom-spe-mssql-init:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-mssql-init | 2004 |  | `community/sitecore-xm1-custom-spe-mssql-init:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-spe-mssql-init | 1909 |  | `community/sitecore-xm1-custom-spe-mssql-init:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-mssql-init | ltsc2019 |  | `community/sitecore-xm1-custom-spe-mssql-init:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-modules-mssql-init/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-mssql | 20H2 |  | `community/sitecore-xm1-custom-spe-mssql:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-mssql | ltsc2019 |  | `community/sitecore-xm1-custom-spe-mssql:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-spe-mssql | 2004 |  | `community/sitecore-xm1-custom-spe-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-mssql | 1909 |  | `community/sitecore-xm1-custom-spe-mssql:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-mssql | 2004 |  | `community/sitecore-xm1-custom-spe-mssql:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-mssql | 1903 |  | `community/sitecore-xm1-custom-spe-mssql:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-mssql/sitecore-custom-mssql/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-spe-cm | ltsc2019 |  | `community/sitecore-xm1-custom-spe-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-cm | 1903 |  | `community/sitecore-xm1-custom-spe-cm:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-spe-cm | 2004 |  | `community/sitecore-xm1-custom-spe-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-cm | ltsc2019 |  | `community/sitecore-xm1-custom-spe-cm:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-cm | 1909 |  | `community/sitecore-xm1-custom-spe-cm:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-cm | 2004 |  | `community/sitecore-xm1-custom-spe-cm:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-cm | 20H2 |  | `community/sitecore-xm1-custom-spe-cm:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-cd | 1909 |  | `community/sitecore-xm1-custom-spe-cd:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-spe-cd | 1903 |  | `community/sitecore-xm1-custom-spe-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-xm1-custom-spe-cd | ltsc2019 |  | `community/sitecore-xm1-custom-spe-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-xm1-custom-spe-cd | 2004 |  | `community/sitecore-xm1-custom-spe-cd:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
-| 10.0.0 | community/sitecore-custom-ps | 1903 |  | `community/sitecore-custom-ps:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-ps/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-cd | ltsc2019 |  | `community/sitecore-xm1-custom-spe-cd:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-cd | 1903 |  | `community/sitecore-xm1-custom-spe-cd:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
+| 10.0.0 | community/sitecore-xm1-custom-spe-cd | 20H2 |  | `community/sitecore-xm1-custom-spe-cd:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-base/Dockerfile) |
 | 10.0.0 | community/sitecore-custom-ps | 1909 |  | `community/sitecore-custom-ps:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-ps/Dockerfile) |
 | 10.0.0 | community/sitecore-custom-ps | 2004 |  | `community/sitecore-custom-ps:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-ps/Dockerfile) |
+| 10.0.0 | community/sitecore-custom-ps | 1903 |  | `community/sitecore-custom-ps:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-ps/Dockerfile) |
+| 10.0.0 | community/sitecore-custom-ps | 20H2 |  | `community/sitecore-custom-ps:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-ps/Dockerfile) |
 | 10.0.0 | community/sitecore-custom-ps | ltsc2019 |  | `community/sitecore-custom-ps:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-ps/Dockerfile) |
-| 10.0.0 | community/sitecore-custom-def-tenant-service | 2004 |  | `community/sitecore-custom-def-tenant-service:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-def-tenant-service/Dockerfile) |
+| 10.0.0 | community/sitecore-custom-def-tenant-service | 20H2 |  | `community/sitecore-custom-def-tenant-service:10.0.0-20H2` [Dockerfile](windows/10.x.x/sitecore-custom-def-tenant-service/Dockerfile) |
 | 10.0.0 | community/sitecore-custom-def-tenant-service | 1903 |  | `community/sitecore-custom-def-tenant-service:10.0.0-1903` [Dockerfile](windows/10.x.x/sitecore-custom-def-tenant-service/Dockerfile) |
-| 10.0.0 | community/sitecore-custom-def-tenant-service | 1909 |  | `community/sitecore-custom-def-tenant-service:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-def-tenant-service/Dockerfile) |
 | 10.0.0 | community/sitecore-custom-def-tenant-service | ltsc2019 |  | `community/sitecore-custom-def-tenant-service:10.0.0-ltsc2019` [Dockerfile](windows/10.x.x/sitecore-custom-def-tenant-service/Dockerfile) |
-| 10.0.0 | community/sitecore-custom-assets | 1903 |  | `community/sitecore-custom-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/sitecore-assets/Dockerfile) |
+| 10.0.0 | community/sitecore-custom-def-tenant-service | 1909 |  | `community/sitecore-custom-def-tenant-service:10.0.0-1909` [Dockerfile](windows/10.x.x/sitecore-custom-def-tenant-service/Dockerfile) |
+| 10.0.0 | community/sitecore-custom-def-tenant-service | 2004 |  | `community/sitecore-custom-def-tenant-service:10.0.0-2004` [Dockerfile](windows/10.x.x/sitecore-custom-def-tenant-service/Dockerfile) |
 | 10.0.0 | community/sitecore-custom-assets | 1909 |  | `community/sitecore-custom-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/sitecore-assets/Dockerfile) |
 | 10.0.0 | community/sitecore-custom-assets | 2004 |  | `community/sitecore-custom-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/sitecore-assets/Dockerfile) |
+| 10.0.0 | community/sitecore-custom-assets | 1903 |  | `community/sitecore-custom-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/sitecore-assets/Dockerfile) |
+| 10.0.0 | community/sitecore-custom-assets | 20H2 |  | `community/sitecore-custom-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/sitecore-assets/Dockerfile) |
 | 10.0.0 | community/sitecore-custom-assets | 1809 |  | `community/sitecore-custom-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/sitecore-assets/Dockerfile) |
+| 10.0.0 | community/modules/custom-xgenerator-assets | 1903 |  | `community/modules/custom-xgenerator-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-xgenerator-assets | 1809 |  | `community/modules/custom-xgenerator-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-xgenerator-assets | 20H2 |  | `community/modules/custom-xgenerator-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-xgenerator-assets | 2004 |  | `community/modules/custom-xgenerator-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-xgenerator-assets | 1909 |  | `community/modules/custom-xgenerator-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-xgenerator-assets | 1903 |  | `community/modules/custom-xgenerator-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfmc-ce-assets | 1809 |  | `community/modules/custom-sfmc-ce-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-ce-assets | 1903 |  | `community/modules/custom-sfmc-ce-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-ce-assets | 1809 |  | `community/modules/custom-sfmc-ce-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-ce-assets | 1909 |  | `community/modules/custom-sfmc-ce-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-ce-assets | 20H2 |  | `community/modules/custom-sfmc-ce-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-ce-assets | 2004 |  | `community/modules/custom-sfmc-ce-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-bde-ts-assets | 1903 |  | `community/modules/custom-sfmc-bde-ts-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfmc-bde-ts-assets | 1909 |  | `community/modules/custom-sfmc-bde-ts-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-bde-ts-assets | 2004 |  | `community/modules/custom-sfmc-bde-ts-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-ts-assets | 1909 |  | `community/modules/custom-sfmc-bde-ts-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-bde-ts-assets | 1809 |  | `community/modules/custom-sfmc-bde-ts-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfmc-bde-ma-assets | 1809 |  | `community/modules/custom-sfmc-bde-ma-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-ts-assets | 20H2 |  | `community/modules/custom-sfmc-bde-ts-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-ma-assets | 20H2 |  | `community/modules/custom-sfmc-bde-ma-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-bde-ma-assets | 1903 |  | `community/modules/custom-sfmc-bde-ma-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfmc-bde-ma-assets | 2004 |  | `community/modules/custom-sfmc-bde-ma-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-bde-ma-assets | 1909 |  | `community/modules/custom-sfmc-bde-ma-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfmc-bde-assets | 1909 |  | `community/modules/custom-sfmc-bde-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfmc-bde-assets | 1809 |  | `community/modules/custom-sfmc-bde-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfmc-bde-assets | 1903 |  | `community/modules/custom-sfmc-bde-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-ma-assets | 2004 |  | `community/modules/custom-sfmc-bde-ma-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-ma-assets | 1809 |  | `community/modules/custom-sfmc-bde-ma-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfmc-bde-assets | 2004 |  | `community/modules/custom-sfmc-bde-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-assets | 1903 |  | `community/modules/custom-sfmc-bde-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-assets | 1809 |  | `community/modules/custom-sfmc-bde-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-assets | 1909 |  | `community/modules/custom-sfmc-bde-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfmc-bde-assets | 20H2 |  | `community/modules/custom-sfmc-bde-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfcrm-ts-assets | 1909 |  | `community/modules/custom-sfcrm-ts-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfcrm-ts-assets | 1903 |  | `community/modules/custom-sfcrm-ts-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfcrm-ts-assets | 1809 |  | `community/modules/custom-sfcrm-ts-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfcrm-ts-assets | 2004 |  | `community/modules/custom-sfcrm-ts-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfcrm-ts-assets | 1909 |  | `community/modules/custom-sfcrm-ts-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfcrm-assets | 1809 |  | `community/modules/custom-sfcrm-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfcrm-ts-assets | 20H2 |  | `community/modules/custom-sfcrm-ts-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfcrm-assets | 1903 |  | `community/modules/custom-sfcrm-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-sfcrm-assets | 2004 |  | `community/modules/custom-sfcrm-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfcrm-assets | 1809 |  | `community/modules/custom-sfcrm-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-sfcrm-assets | 1909 |  | `community/modules/custom-sfcrm-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-ps-assets | 2004 |  | `community/modules/custom-ps-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/ps-assets/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfcrm-assets | 20H2 |  | `community/modules/custom-sfcrm-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-sfcrm-assets | 2004 |  | `community/modules/custom-sfcrm-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-ps-assets | 1809 |  | `community/modules/custom-ps-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/ps-assets/Dockerfile) |
 | 10.0.0 | community/modules/custom-ps-assets | 1909 |  | `community/modules/custom-ps-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/ps-assets/Dockerfile) |
 | 10.0.0 | community/modules/custom-ps-assets | 1903 |  | `community/modules/custom-ps-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/ps-assets/Dockerfile) |
+| 10.0.0 | community/modules/custom-ps-assets | 2004 |  | `community/modules/custom-ps-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/ps-assets/Dockerfile) |
+| 10.0.0 | community/modules/custom-ps-assets | 20H2 |  | `community/modules/custom-ps-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/ps-assets/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-sfdc-assets | 1909 |  | `community/modules/custom-def-sfdc-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-sfdc-assets | 2004 |  | `community/modules/custom-def-sfdc-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-def-sfdc-assets | 20H2 |  | `community/modules/custom-def-sfdc-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-sfdc-assets | 1903 |  | `community/modules/custom-def-sfdc-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-sfdc-assets | 1809 |  | `community/modules/custom-def-sfdc-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-ma-assets | 1809 |  | `community/modules/custom-def-ma-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-ma-assets | 1909 |  | `community/modules/custom-def-ma-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-def-ma-assets | 1903 |  | `community/modules/custom-def-ma-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-ma-assets | 2004 |  | `community/modules/custom-def-ma-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-def-d365-assets | 1809 |  | `community/modules/custom-def-d365-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-def-d365-assets | 2004 |  | `community/modules/custom-def-d365-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-def-ma-assets | 20H2 |  | `community/modules/custom-def-ma-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-def-ma-assets | 1903 |  | `community/modules/custom-def-ma-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-d365-assets | 1903 |  | `community/modules/custom-def-d365-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-def-d365-assets | 1809 |  | `community/modules/custom-def-d365-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-def-d365-assets | 20H2 |  | `community/modules/custom-def-d365-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-def-d365-assets | 2004 |  | `community/modules/custom-def-d365-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-d365-assets | 1909 |  | `community/modules/custom-def-d365-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-assets | 1809 |  | `community/modules/custom-def-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-def-assets | 20H2 |  | `community/modules/custom-def-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-def-assets | 1903 |  | `community/modules/custom-def-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-assets | 2004 |  | `community/modules/custom-def-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-assets | 1909 |  | `community/modules/custom-def-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-def-assets | 1903 |  | `community/modules/custom-def-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-dam-assets | 1903 |  | `community/modules/custom-dam-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-dam-assets | 1809 |  | `community/modules/custom-dam-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-dam-assets | 2004 |  | `community/modules/custom-dam-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-dam-assets | 1909 |  | `community/modules/custom-dam-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-cmp-xp-assets | 2004 |  | `community/modules/custom-cmp-xp-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-cmp-xp-assets | 1809 |  | `community/modules/custom-cmp-xp-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-dam-assets | 20H2 |  | `community/modules/custom-dam-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-dam-assets | 2004 |  | `community/modules/custom-dam-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-cmp-xp-assets | 20H2 |  | `community/modules/custom-cmp-xp-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xp-assets | 1903 |  | `community/modules/custom-cmp-xp-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xp-assets | 1909 |  | `community/modules/custom-cmp-xp-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-cmp-xm-assets | 2004 |  | `community/modules/custom-cmp-xm-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
-| 10.0.0 | community/modules/custom-cmp-xm-assets | 1903 |  | `community/modules/custom-cmp-xm-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-cmp-xp-assets | 1809 |  | `community/modules/custom-cmp-xp-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-cmp-xp-assets | 2004 |  | `community/modules/custom-cmp-xp-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-cmp-xm-assets | 20H2 |  | `community/modules/custom-cmp-xm-assets:10.0.0-20H2` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xm-assets | 1909 |  | `community/modules/custom-cmp-xm-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-cmp-xm-assets | 1903 |  | `community/modules/custom-cmp-xm-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xm-assets | 1809 |  | `community/modules/custom-cmp-xm-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-cmp-xm-assets | 2004 |  | `community/modules/custom-cmp-xm-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 
 [//]: # "end: current windows"
 

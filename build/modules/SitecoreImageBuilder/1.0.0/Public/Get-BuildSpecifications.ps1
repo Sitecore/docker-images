@@ -13,7 +13,8 @@ function Get-BuildSpecifications
     # Disable strict mode checking when working with a dynamic JSON structure where some properties are optional
     Set-StrictMode -Off
 
-    $versionMap = Get-WindowsServerCoreToNanoServerVersionMap
+    $nanoServerVersionMap = Get-WindowsServerCoreToNanoServerVersionMap
+    $RuntimeWindowsServerCoreMap = Get-WindowsServerCoreToRuntimeWindowsServerCoreMap
 
     Get-ChildItem -Path $Path -Filter "*build.json" -Recurse | ForEach-Object {
         $buildContextPath = $_.Directory.FullName
@@ -70,7 +71,9 @@ function Get-BuildSpecifications
             {
                 $AutoGenerateWindowsVersionTags | ForEach-Object {
                     $windowsServerCoreVersion = $_
-                    $nanoServerVersion = $versionMap[$windowsServerCoreVersion]
+                    $nanoServerVersion = $nanoServerVersionMap[$windowsServerCoreVersion]
+                    $runtimeWindowsServerCoreVersion = $RuntimeWindowsServerCoreMap[$windowsServerCoreVersion]
+
 
                     if ([string]::IsNullOrEmpty($nanoServerVersion))
                     {
@@ -78,11 +81,11 @@ function Get-BuildSpecifications
                     }
 
                     $copy = $tag | Select-Object *
-                    $copy.tag = $copy.tag.Replace("`${windowsservercore_version}", $windowsServerCoreVersion).Replace("`${nanoserver_version}", $nanoServerVersion)
+                    $copy.tag = $copy.tag.Replace("`${windowsservercore_version}", $windowsServerCoreVersion).Replace("`${runtimewindowsservercore_version}", $runtimeWindowsServerCoreVersion).Replace("`${nanoserver_version}", $nanoServerVersion)
                     $copy.'build-options' = @()
 
                     $options | ForEach-Object {
-                        $copy.'build-options' += $_.Replace("`${windowsservercore_version}", $windowsServerCoreVersion).Replace("`${nanoserver_version}", $nanoServerVersion)
+                        $copy.'build-options' += $_.Replace("`${windowsservercore_version}", $windowsServerCoreVersion).Replace("`${runtimewindowsservercore_version}", $runtimeWindowsServerCoreVersion).Replace("`${nanoserver_version}", $nanoServerVersion)
                     }
 
                     $tags += $copy
