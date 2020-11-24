@@ -531,48 +531,48 @@ Images in this namespace are built from the https://github.com/sitecore/Sitecore
 ### lighthouse-id
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:e94babdc76b9c0a7c645393978ea847103ae9deb904f58edd71edd17c2441933 | 10/23/2020 15:26:07  | 11/11/2020 11:51:13 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:e94babdc76b9c0a7c645393978ea847103ae9deb904f58edd71edd17c2441933 | 10/23/2020 15:25:50  | 11/11/2020 11:50:57 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:48c719ff65ec11f073386d8692edba971c6692de8d8c976d66d1caa62e5c4b94 | 10/23/2020 15:26:07  | 11/24/2020 17:50:33 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:48c719ff65ec11f073386d8692edba971c6692de8d8c976d66d1caa62e5c4b94 | 10/23/2020 15:25:50  | 11/24/2020 17:50:20 |
 ### lighthouse-init
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:8b8fe8bc394435690df013059b4e536419c5cfd80364ff3618f913508ab11e15 | 10/23/2020 15:27:13  | 11/11/2020 11:52:31 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:8b8fe8bc394435690df013059b4e536419c5cfd80364ff3618f913508ab11e15 | 10/23/2020 15:26:56  | 11/11/2020 11:52:13 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:1685dace2f1203a98fa79bf2c1cd558e815d3ff6b367ec05c10c4fb3b7daa792 | 10/23/2020 15:27:13  | 11/24/2020 17:51:04 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:1685dace2f1203a98fa79bf2c1cd558e815d3ff6b367ec05c10c4fb3b7daa792 | 10/23/2020 15:26:56  | 11/24/2020 17:50:52 |
 ### lighthouse-mssql
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:aeb5851c4c7553d68f51889b1fee78f596a214de5f2e881ed33db559543c9766 | 10/23/2020 15:36:30  | 11/11/2020 12:02:28 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:aeb5851c4c7553d68f51889b1fee78f596a214de5f2e881ed33db559543c9766 | 10/23/2020 15:36:13  | 11/11/2020 12:02:00 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:5ce00edc2311c8bf04fbbdd04ec89554f7e928368b8c533416eb9ae3852a1920 | 10/23/2020 15:36:30  | 11/24/2020 17:53:44 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:5ce00edc2311c8bf04fbbdd04ec89554f7e928368b8c533416eb9ae3852a1920 | 10/23/2020 15:36:13  | 11/24/2020 17:53:29 |
 ### lighthouse-ps
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:16f6f8292ee21b69a3f012674e407b9fb36c92dcbe5a47dab1592ec815dafa47 | 10/23/2020 15:39:08  | 11/11/2020 12:03:12 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:16f6f8292ee21b69a3f012674e407b9fb36c92dcbe5a47dab1592ec815dafa47 | 10/23/2020 15:38:52  | 11/11/2020 12:02:59 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:0a39be35c49e04de535e94c59e1dcd5ebf051339de4e6b7cd681477f19a51ccb | 10/23/2020 15:39:08  | 11/24/2020 17:54:33 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:0a39be35c49e04de535e94c59e1dcd5ebf051339de4e6b7cd681477f19a51ccb | 10/23/2020 15:38:52  | 11/24/2020 17:54:21 |
 ### lighthouse-solr
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:1acbcb909b6daa659ac482c997d4e3829fecb453baa71c40715a978a65eed6a8 | 10/23/2020 15:40:29  | 11/11/2020 12:04:21 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:1acbcb909b6daa659ac482c997d4e3829fecb453baa71c40715a978a65eed6a8 | 10/23/2020 15:40:15  | 11/11/2020 12:04:05 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:87bdbda3290e1090bfe2f7ba34aee4a7e771e1864c7dafb88d31bd1c292c87a0 | 10/23/2020 15:40:29  | 11/24/2020 17:55:17 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:87bdbda3290e1090bfe2f7ba34aee4a7e771e1864c7dafb88d31bd1c292c87a0 | 10/23/2020 15:40:15  | 11/24/2020 17:55:04 |
 ### lighthouse-xp0-cd
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:b9ac80b274c32d3124b68756a180618d72ffe03d28f2d5d5b17b54423fd5af28 | 10/23/2020 15:45:34  | 11/11/2020 12:12:01 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:b9ac80b274c32d3124b68756a180618d72ffe03d28f2d5d5b17b54423fd5af28 | 10/23/2020 15:45:16  | 11/11/2020 12:11:42 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:c5364c1332110c025081c9c33f06ba5b2e0e0e4e29125c666e53d038ddc356c3 | 10/23/2020 15:45:34  | 11/24/2020 17:56:22 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:c5364c1332110c025081c9c33f06ba5b2e0e0e4e29125c666e53d038ddc356c3 | 10/23/2020 15:45:16  | 11/24/2020 17:56:11 |
 ### lighthouse-xp0-cm
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:8cd6f86f9e135ad072e27b215054a3709d9bc9a5c232eeae59df4c986abb5c9d | 10/23/2020 15:48:40  | 11/11/2020 12:16:35 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:8cd6f86f9e135ad072e27b215054a3709d9bc9a5c232eeae59df4c986abb5c9d | 10/23/2020 15:48:20  | 11/11/2020 12:16:19 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:aaa0d6eaeda05b322ab9f1c5027ccb26064240f92d06a591eb0b9d350b507b26 | 10/23/2020 15:48:40  | 11/24/2020 17:57:32 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:aaa0d6eaeda05b322ab9f1c5027ccb26064240f92d06a591eb0b9d350b507b26 | 10/23/2020 15:48:20  | 11/24/2020 17:57:19 |
 ### lighthouse-xp0-xconnect
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:9211954fca3b08eb2301d9c9465360984b79505d6f028cd38335cb1e69a92bb8 | 10/23/2020 15:49:31  | 11/11/2020 12:17:21 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:9211954fca3b08eb2301d9c9465360984b79505d6f028cd38335cb1e69a92bb8 | 10/23/2020 15:49:14  | 11/11/2020 12:17:07 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:e35c2197f8bf33784d654af7d64f3a398304c5711af86776b2f5b9964c1fd55e | 10/23/2020 15:49:31  | 11/24/2020 17:59:30 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:e35c2197f8bf33784d654af7d64f3a398304c5711af86776b2f5b9964c1fd55e | 10/23/2020 15:49:14  | 11/24/2020 17:59:17 |
 ### lighthouse-xp0-xdbsearchworker
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:9fa435829c4a2d2755be33d3a25d39bf84409ae0911756f745c1457b42a88aab | 10/23/2020 15:50:20  | 11/11/2020 12:18:00 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:9fa435829c4a2d2755be33d3a25d39bf84409ae0911756f745c1457b42a88aab | 10/23/2020 15:50:02  | 11/11/2020 12:17:47 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:49230485198713c7265f4626d6132fdedad4c572947bc02032d94e780bcfb5e5 | 10/23/2020 15:50:20  | 11/24/2020 18:00:02 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:49230485198713c7265f4626d6132fdedad4c572947bc02032d94e780bcfb5e5 | 10/23/2020 15:50:02  | 11/24/2020 17:59:49 |
 ## sxc/nonproduction 
 This namespace includes supporting images for *Sitecore Experience Commerce (SXC)*. supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. 
 ### sitecore-xc0-mssql
@@ -1852,4 +1852,4 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.0.1-1809                            | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:57  | 08/26/2020 15:41:57 |
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:19  | 08/26/2020 15:41:19 |
  
-*This listing was automatically generated on November 22, 2020.*
+*This listing was automatically generated on November 24, 2020.*
