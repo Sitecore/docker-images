@@ -35,7 +35,7 @@ $packages = @{"Sitecore Azure Toolkit 2.5.0-r02519.1061.zip"                    
     "Sitecore Connect for CMP XP for 10.0 v. 3.0.0 rev. 00134.zip"                                    = "https://dev.sitecore.net/~/media/8443DB808C834186B40D66D58499355B.ashx"
     "Sitecore Connect for CMP XM for 10.0 v. 3.0.0 rev. 00134.zip"                                    = "https://dev.sitecore.net/~/media/36489D794FA5489CBBB78653F03F81A3.ashx"
     "Sitecore Connect for Sitecore DAM-2.0.0.zip"                                                     = "https://dev.sitecore.net/~/media/7F118478CF78478087A1DB3EBDF9FBFE.ashx"
-    "Coveo for Sitecore SXA 10.0 5.0.822.2.zip"                                                       = "https://static.cloud.coveo.com/coveoforsitecore/packages/v5.0.822.2/Coveo%20for%20Sitecore%20SXA%2010.0%205.0.822.2.zip"
+    "Coveo for Sitecore SXA 10.0 5.0.788.5.zip"                                                       = "https://static.cloud.coveo.com/coveoforsitecore/packages/v5.0.788.5/Coveo%20for%20Sitecore%20SXA%2010.0%205.0.788.5.zip"
 }
 
 # download packages from Sitecore
