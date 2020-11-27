@@ -1,47 +1,36 @@
 # The following variables need to be set in Azure Devops:
 
-# Azure
-# - azure.subscription
-# - azure.agentPoolName
-# - azure.vm.resourceGroupName
-# - (optional) azure.vm.linux.name
-# - azure.vm.windows.name
-#
-# Image build options
-# - build.triggerAdditionalBuild - specify a build ID for triggering an additional build after successful completion
-# - build.tags
-# - build.pushMode
-# - build.pruneImages
-# - build.sitecoreVersion
-# - build.sitecoreTopology
-# - build.sitecoreWindowsVersion
-# - build.includeSpe
-# - build.includeSxa
-# - build.includeJss
-# - build.includeSh
-# - build.skipExistingImages
-# - build.includeExperimentalImages
-
-# Sitecore credentials
-# - sitecore.username
-# - sitecore.password
-#
-# Container registry
-# - container.registry.password
-# - container.registry.username
-# - container.registry.fullname
-#
-# Windows:
-# - windows.install.source.path
-#
 # Assets drive
-# - assets.useDrive
 # - (optional) assets.azure.fileshare.password
 # - (optional) assets.shared.folder.server
-#
+# - assets.useDrive
+
+# Image build options
+# - build.includeExperimentalImages
+# - build.includeJss
+# - build.includeSh
+# - build.includeSpe
+# - build.includeSxa
+# - build.linuxImages
+# - build.pruneImages
+# - build.sitecoreTopology
+# - build.sitecoreVersion
+# - build.skipExistingImages
+
+# Container registry
+# - container.registry.fullname
+# - container.registry.password
+# - container.registry.username
+
 # Linux
-# - linux.buildImages
 # - (optional) linux.install.source.path
+
+# Sitecore credentials
+# - sitecore.password
+# - sitecore.username
+
+# Windows:
+# - windows.install.source.path
 
 trigger:
   batch: true
