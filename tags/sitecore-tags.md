@@ -2,15 +2,15 @@
 This document provides a list of the images and tags available on the official Sitecore container registry hosted at scr.sitecore.com. 
 The Sitecore container images are structured in namespaces according to product line:  
 - **[sxp](#sxp):** Contains all *Sitecore Experience Platform (SXP)* image repositories. Primary platform repositories are found at the root.  
-- **[sxp/nonproduction](#sxp/nonproduction):** Images for SXP supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. 
+- **[sxp/nonproduction](#sxpnonproduction):** Images for SXP supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. 
 - **[sxc](#sxc):** Contains all *Sitecore Experience Commerce (SXC)* image repositories. Primary SXC repositories are found at the root.  
-- **[sxc/nonproduction](#sxc/nonproduction):** Images for SXC supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction..  
-- **[sxp/modules](#sxp/modules):** Contains image repositories for SXP-specific modules.  
+- **[sxc/nonproduction](#sxcnonproduction):** Images for SXC supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction..  
+- **[sxp/modules](#sxpmodules):** Contains image repositories for SXP-specific modules.  
 - **[tools](#tools):** Tools to support Sitecore products  
 - **[demo](#demo):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Platform GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.  
-- **[demo/base](#demo/base):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.  
+- **[demo/base](#demobase):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.  
 - **[community](#community):** Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.  
-- **[community/modules](#community/modules):** Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
+- **[community/modules](#communitymodules):** Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
 ## community/modules 
 Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
 ### custom-cmp-xm-assets
@@ -531,48 +531,48 @@ Images in this namespace are built from the https://github.com/sitecore/Sitecore
 ### lighthouse-id
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:48c719ff65ec11f073386d8692edba971c6692de8d8c976d66d1caa62e5c4b94 | 10/23/2020 15:26:07  | 11/24/2020 17:50:33 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:48c719ff65ec11f073386d8692edba971c6692de8d8c976d66d1caa62e5c4b94 | 10/23/2020 15:25:50  | 11/24/2020 17:50:20 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:071f2b6eef95502a46bf1ba2de66919f8833f66c6811226acb259b20e4e9b1b2 | 10/23/2020 15:26:07  | 11/27/2020 19:57:41 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:071f2b6eef95502a46bf1ba2de66919f8833f66c6811226acb259b20e4e9b1b2 | 10/23/2020 15:25:50  | 11/27/2020 19:57:29 |
 ### lighthouse-init
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:1685dace2f1203a98fa79bf2c1cd558e815d3ff6b367ec05c10c4fb3b7daa792 | 10/23/2020 15:27:13  | 11/24/2020 17:51:04 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:1685dace2f1203a98fa79bf2c1cd558e815d3ff6b367ec05c10c4fb3b7daa792 | 10/23/2020 15:26:56  | 11/24/2020 17:50:52 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:a7385bdc66de80639690afbfd7ae7a6f2e7fd5e3ce7ef394d97bf813698c2b55 | 10/23/2020 15:27:13  | 11/27/2020 19:58:11 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:a7385bdc66de80639690afbfd7ae7a6f2e7fd5e3ce7ef394d97bf813698c2b55 | 10/23/2020 15:26:56  | 11/27/2020 19:57:59 |
 ### lighthouse-mssql
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:5ce00edc2311c8bf04fbbdd04ec89554f7e928368b8c533416eb9ae3852a1920 | 10/23/2020 15:36:30  | 11/24/2020 17:53:44 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:5ce00edc2311c8bf04fbbdd04ec89554f7e928368b8c533416eb9ae3852a1920 | 10/23/2020 15:36:13  | 11/24/2020 17:53:29 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:a6b0ec45f116ca4e178b973259d8a396601675a514224923036dad481aa1ac8b | 10/23/2020 15:36:30  | 11/27/2020 20:01:23 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:a6b0ec45f116ca4e178b973259d8a396601675a514224923036dad481aa1ac8b | 10/23/2020 15:36:13  | 11/27/2020 20:01:09 |
 ### lighthouse-ps
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:0a39be35c49e04de535e94c59e1dcd5ebf051339de4e6b7cd681477f19a51ccb | 10/23/2020 15:39:08  | 11/24/2020 17:54:33 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:0a39be35c49e04de535e94c59e1dcd5ebf051339de4e6b7cd681477f19a51ccb | 10/23/2020 15:38:52  | 11/24/2020 17:54:21 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:73c87cac61f17dad0a7e99f49f338a44ce704fcd5d6e54115608a77a1af9e2c3 | 10/23/2020 15:39:08  | 11/27/2020 20:01:53 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:73c87cac61f17dad0a7e99f49f338a44ce704fcd5d6e54115608a77a1af9e2c3 | 10/23/2020 15:38:52  | 11/27/2020 20:01:42 |
 ### lighthouse-solr
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:87bdbda3290e1090bfe2f7ba34aee4a7e771e1864c7dafb88d31bd1c292c87a0 | 10/23/2020 15:40:29  | 11/24/2020 17:55:17 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:87bdbda3290e1090bfe2f7ba34aee4a7e771e1864c7dafb88d31bd1c292c87a0 | 10/23/2020 15:40:15  | 11/24/2020 17:55:04 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:0d371164573e24288344ffa2503ab1f0eb0cb45b2dd97b6359522c286ee618cf | 10/23/2020 15:40:29  | 11/27/2020 20:02:21 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:0d371164573e24288344ffa2503ab1f0eb0cb45b2dd97b6359522c286ee618cf | 10/23/2020 15:40:15  | 11/27/2020 20:02:10 |
 ### lighthouse-xp0-cd
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:c5364c1332110c025081c9c33f06ba5b2e0e0e4e29125c666e53d038ddc356c3 | 10/23/2020 15:45:34  | 11/24/2020 17:56:22 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:c5364c1332110c025081c9c33f06ba5b2e0e0e4e29125c666e53d038ddc356c3 | 10/23/2020 15:45:16  | 11/24/2020 17:56:11 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:d802923613da06d64dca18573dcc3d08696f9ed046b5c9879b45bf18d0315119 | 10/23/2020 15:45:34  | 11/27/2020 20:04:25 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:d802923613da06d64dca18573dcc3d08696f9ed046b5c9879b45bf18d0315119 | 10/23/2020 15:45:16  | 11/27/2020 20:04:12 |
 ### lighthouse-xp0-cm
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:aaa0d6eaeda05b322ab9f1c5027ccb26064240f92d06a591eb0b9d350b507b26 | 10/23/2020 15:48:40  | 11/24/2020 17:57:32 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:aaa0d6eaeda05b322ab9f1c5027ccb26064240f92d06a591eb0b9d350b507b26 | 10/23/2020 15:48:20  | 11/24/2020 17:57:19 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:14026011d1a1838350b9338144f2787175a536f219c4da2c58f35928ede68f9f | 10/23/2020 15:48:40  | 11/27/2020 20:05:41 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:14026011d1a1838350b9338144f2787175a536f219c4da2c58f35928ede68f9f | 10/23/2020 15:48:20  | 11/27/2020 20:05:27 |
 ### lighthouse-xp0-xconnect
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:e35c2197f8bf33784d654af7d64f3a398304c5711af86776b2f5b9964c1fd55e | 10/23/2020 15:49:31  | 11/24/2020 17:59:30 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:e35c2197f8bf33784d654af7d64f3a398304c5711af86776b2f5b9964c1fd55e | 10/23/2020 15:49:14  | 11/24/2020 17:59:17 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:0aa15dd72ec238925c8f6241ab8fc0981372b50db2c5a21d7766349e446b3828 | 10/23/2020 15:49:31  | 11/27/2020 20:06:07 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:0aa15dd72ec238925c8f6241ab8fc0981372b50db2c5a21d7766349e446b3828 | 10/23/2020 15:49:14  | 11/27/2020 20:05:56 |
 ### lighthouse-xp0-xdbsearchworker
 Tag                    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | amd64           | windows | sha256:49230485198713c7265f4626d6132fdedad4c572947bc02032d94e780bcfb5e5 | 10/23/2020 15:50:20  | 11/24/2020 18:00:02 |
-10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:49230485198713c7265f4626d6132fdedad4c572947bc02032d94e780bcfb5e5 | 10/23/2020 15:50:02  | 11/24/2020 17:59:49 |
+10.0.0-ltsc2019        | amd64           | windows | sha256:d93d24a94f1966a5c56d29df1dbfea1235c53da2d1a4a18bddae1082bc81389a | 10/23/2020 15:50:20  | 11/27/2020 20:06:32 |
+10.0.0-ltsc2019-1000.0 | amd64           | windows | sha256:d93d24a94f1966a5c56d29df1dbfea1235c53da2d1a4a18bddae1082bc81389a | 10/23/2020 15:50:02  | 11/27/2020 20:06:22 |
 ## sxc/nonproduction 
 This namespace includes supporting images for *Sitecore Experience Commerce (SXC)*. supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. 
 ### sitecore-xc0-mssql
