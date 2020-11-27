@@ -26,8 +26,7 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:15.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cm",
-        "--target installnodejs"
+        "--build-arg ROLE=cm"
       ]
     },
     {
@@ -36,8 +35,7 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:15.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cm",
-        "--target installnodejs"
+        "--build-arg ROLE=cm"
       ]
     },
     {
@@ -46,8 +44,7 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:14.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cm",
-        "--target installnodejs"
+        "--build-arg ROLE=cm"
       ]
     },
     {
@@ -109,8 +106,7 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:15.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cd",
-        "--target installnodejs"
+        "--build-arg ROLE=cd"
       ]
     },
     {
@@ -119,8 +115,7 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:15.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cd",
-        "--target installnodejs"
+        "--build-arg ROLE=cd"
       ]
     },
     {
@@ -129,8 +124,7 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:14.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cd",
-        "--target installnodejs"
+        "--build-arg ROLE=cd"
       ]
     }
   ],
