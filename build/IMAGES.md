@@ -1139,6 +1139,22 @@
 | 10.0.0 | community/modules/custom-dam-assets | 1809 |  | `community/modules/custom-dam-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-dam-assets | 2004 |  | `community/modules/custom-dam-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-dam-assets | 1909 |  | `community/modules/custom-dam-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-sxa-assets | 2004 |  | `community/modules/custom-coveo-sxa-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-sxa-assets | 1809 |  | `community/modules/custom-coveo-sxa-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-sxa-assets | 1903 |  | `community/modules/custom-coveo-sxa-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-sxa-assets | 1909 |  | `community/modules/custom-coveo-sxa-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-assets | 1909 |  | `community/modules/custom-coveo-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-assets | 2004 |  | `community/modules/custom-coveo-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-assets | 1903 |  | `community/modules/custom-coveo-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-assets | 1809 |  | `community/modules/custom-coveo-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-sxa-assets | 2004 |  | `community/modules/custom-coveo507885-sxa-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-sxa-assets | 1809 |  | `community/modules/custom-coveo507885-sxa-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-sxa-assets | 1903 |  | `community/modules/custom-coveo507885-sxa-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-sxa-assets | 1909 |  | `community/modules/custom-coveo507885-sxa-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-assets | 2004 |  | `community/modules/custom-coveo507885-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-assets | 1809 |  | `community/modules/custom-coveo507885-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-assets | 1903 |  | `community/modules/custom-coveo507885-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-assets | 1909 |  | `community/modules/custom-coveo507885-assets:10.0.0-1909` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xp-assets | 2004 |  | `community/modules/custom-cmp-xp-assets:10.0.0-2004` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xp-assets | 1809 |  | `community/modules/custom-cmp-xp-assets:10.0.0-1809` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xp-assets | 1903 |  | `community/modules/custom-cmp-xp-assets:10.0.0-1903` [Dockerfile](windows/10.0.0/modules/Dockerfile) |
@@ -1215,6 +1231,10 @@
 | 10.0.0 | community/modules/custom-def-d365-assets | linux |  | `community/modules/custom-def-d365-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-def-assets | linux |  | `community/modules/custom-def-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-dam-assets | linux |  | `community/modules/custom-dam-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-sxa-assets | linux |  | `community/modules/custom-coveo-sxa-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo-assets | linux |  | `community/modules/custom-coveo-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-sxa-assets | linux |  | `community/modules/custom-coveo507885-sxa-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
+| 10.0.0 | community/modules/custom-coveo507885-assets | linux |  | `community/modules/custom-coveo507885-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xp-assets | linux |  | `community/modules/custom-cmp-xp-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.0 | community/modules/custom-cmp-xm-assets | linux |  | `community/modules/custom-cmp-xm-assets:10.0.0-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 

@@ -3,6 +3,7 @@
 ## November 2020
 
 - [Added] Ability to provide `-OutputJson` switch to `build.ps1` to generate a Json file with a formatted list of images
+- [Added] Sitecore 10.0.0 community modules Linux/Windows Coveo for Sitecore and Coveo for Sitecore SXA 5.0.788.5 assets images
 
 ## October 2020
 
