@@ -31,6 +31,11 @@ services:
 
   cm:
     image: ${REGISTRY}sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-windowsservercore-ltsc2019
+    build:
+      context: ./build/jss-integrated-mode
+      args:
+        BASE_IMAGE: ${REGISTRY}sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-windowsservercore-ltsc2019
+        NodeJsVersion: 14.15.0
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
