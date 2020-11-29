@@ -3,13 +3,14 @@ version: "2.4"
 services:
 
   mssql:
-    image: ${REGISTRY}sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-windowsservercore-ltsc2019
+    image: ${REGISTRY}sitecore-xp1-custom-sxa-jss1500-mssql:10.0.0-windowsservercore-ltsc2019
     volumes:
       - type: bind
         source: .\mssql-data
         target: c:\data
 
   solr:
+    image: ${SITECORE_DOCKER_REGISTRY}sitecore-xp1-custom-sxa-solr:10.0.0-ltsc2019
     volumes:
       - type: bind
         source: .\solr-data
@@ -21,8 +22,15 @@ services:
     environment:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
 
+  cd:
+    image: ${REGISTRY}sitecore-xp1-custom-sxa-jss1500-cd:10.0.0-windowsservercore-ltsc2019
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+
   cm:
-    image: ${REGISTRY}sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-windowsservercore-ltsc2019
+    image: ${REGISTRY}sitecore-xp1-custom-sxa-jss1500-cm:10.0.0-windowsservercore-ltsc2019
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
