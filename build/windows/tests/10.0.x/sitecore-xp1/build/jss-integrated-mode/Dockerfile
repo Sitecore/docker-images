@@ -1,5 +1,7 @@
 # escape=`
 
+# The purpose of this DockerFile is to install NodeJS for JSS Integrated Mode. This can be used in CM or CD
+
 ARG BASE_IMAGE
 
 FROM $BASE_IMAGE as base
