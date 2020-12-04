@@ -1,9 +1,14 @@
 # Changelog
 
 ## November 2020
+<<<<<<< HEAD
 
 - [Added] Ability to skip Module Asset Images with -SkipModuleAssets
 - [Added] Ability to provide `-OutputJson` switch to `build.ps1` to generate a Json file with a formatted list of images
+=======
+- [Fixed] Sitecore 10.0.0 JSS missing NodeJS in CM / CD Docker containers, which causes JSS Integrated mode to fail. See [#386](https://github.com/Sitecore/docker-images/issues/386). Thanks [@vtml](https://github.com/vtml) :+1:
+- [Fixed] Sitecore 10.0.0 SXA / JSS missing Web.config transforms. See [#387](https://github.com/Sitecore/docker-images/issues/387). Thanks [@vtml](https://github.com/vtml) :+1:
+>>>>>>> ad0db52... Fxies issues 386 and 387
 
 ## October 2020
 
