@@ -98,62 +98,6 @@
                  ]
     },
     {
-        "Name":  "community/modules/custom-horizon-assets",
-        "Namespace":  "community/modules",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-1809",
-                         "Digest":  "sha256:085b445e097fe327a88d8f052b3ea55759287f7945587c182b4c13fd5e70801b",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "10/23/2020 15:53:03",
-                         "LastUpdateTime":  "10/23/2020 15:53:03"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/modules/custom-horizon-identity-assets",
-        "Namespace":  "community/modules",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-1809",
-                         "Digest":  "sha256:15428c4ef1a4217ab04d12631eb2835a3719bc677e146459b9b4d1e6b2b64f47",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "10/23/2020 15:53:52",
-                         "LastUpdateTime":  "10/23/2020 15:53:52"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/modules/custom-horizon-insights-assets",
-        "Namespace":  "community/modules",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-1809",
-                         "Digest":  "sha256:c53b4cdf76c0a53e54558192f647be08cd0fc6482058ca66de7ee5d2619e092d",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "10/23/2020 15:54:20",
-                         "LastUpdateTime":  "10/23/2020 15:54:20"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/modules/custom-horizon-zenith-assets",
-        "Namespace":  "community/modules",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-1809",
-                         "Digest":  "sha256:204522a5214fd368c6af46a88eef05ef24daab2e764c9f27cd1b4867a6345013",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "10/23/2020 15:54:59",
-                         "LastUpdateTime":  "10/23/2020 15:54:59"
-                     }
-                 ]
-    },
-    {
         "Name":  "community/modules/custom-ps-assets",
         "Namespace":  "community/modules",
         "Tags":  [
@@ -1288,6 +1232,48 @@
                  ]
     },
     {
+        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-ps-cm",
+        "Namespace":  "community",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:1fe10afa08b46d7542f6a49b7c566ae7f704ed81fd3f36a71d0065e8980561f4",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "11/05/2020 09:18:11",
+                         "LastUpdateTime":  "11/16/2020 17:51:25"
+                     }
+                 ]
+    },
+    {
+        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-ps-mssql",
+        "Namespace":  "community",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:462a1369078123cde8817a16e923553a43951ada3493071a28ecb2fde39c6b4f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "11/05/2020 09:13:20",
+                         "LastUpdateTime":  "11/16/2020 17:47:45"
+                     }
+                 ]
+    },
+    {
+        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init",
+        "Namespace":  "community",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.0-ltsc2019",
+                         "Digest":  "sha256:0a2f30ed442645b3aa2382ca332f24d6d129271d984ead8f5179161fde54d62f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "11/05/2020 09:22:50",
+                         "LastUpdateTime":  "11/16/2020 17:54:57"
+                     }
+                 ]
+    },
+    {
         "Name":  "community/sitecore-xp1-custom-sxa-jss-cd",
         "Namespace":  "community",
         "Tags":  [
@@ -1396,230 +1382,6 @@
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 16:14:58",
                          "LastUpdateTime":  "11/16/2020 17:54:24"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1400-cd",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:04e369254713b03303ec5c2e7be342b2e6c3fd1b0032c9a35bbf11a296e7260d",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:08:58",
-                         "LastUpdateTime":  "11/16/2020 17:43:23"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1400-cm",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:636cb070db8d1facf2d1857eb625135ae91709813132f5064ee390abb6be6de7",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:01:13",
-                         "LastUpdateTime":  "11/16/2020 17:37:27"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1400-mssql",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:4d9b863a44fac119a50c4e30627f16d1bcae0de8f18b3642475f11e5e27fd6d7",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 08:56:21",
-                         "LastUpdateTime":  "11/16/2020 17:33:43"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1400-mssql-init",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:17a4b9fd2ee366d7e4c55830dd77003ab91b7efce5b5dec711b64c3f3b47fd62",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:05:52",
-                         "LastUpdateTime":  "11/16/2020 17:41:23"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1400-ps-cd",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:fc80be53018fb407ac8c836aff47b3635cd9671e1859267a99d0cf2bc140653b",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:23:43",
-                         "LastUpdateTime":  "11/16/2020 17:55:53"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1400-ps-cm",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:9f2f630135774b4b8fa5309039067a28f4f890072c1d33e9889dc14bfcf59697",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:17:31",
-                         "LastUpdateTime":  "11/16/2020 17:51:08"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1400-ps-mssql",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:76e68b1a5e3b08391bae7f1bda4041f1ce4357d5933fdf4d26b77253d5604a10",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:12:45",
-                         "LastUpdateTime":  "11/16/2020 17:47:26"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1400-ps-mssql-init",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:9741c11c99275cd2f9726b2976caa96be4fa71dd7ef442f00b9407464ac1f33f",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:22:19",
-                         "LastUpdateTime":  "11/16/2020 17:54:41"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-cd",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:e250ee9ee18cd337b1042148915843eb8bd000a583bc950af7f3b42193ed4586",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:09:35",
-                         "LastUpdateTime":  "11/16/2020 17:43:40"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-cm",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:d4ad316bf2bd013559fe9134f841c3c4f3483f8b7809c10a76c5ff37956912c5",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:01:48",
-                         "LastUpdateTime":  "11/16/2020 17:37:57"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-mssql",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:2736cfbfc23cfa6d416de2ad376496969a87d05306eeb5595f06e815b2fad30b",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 08:56:55",
-                         "LastUpdateTime":  "11/16/2020 17:33:59"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-mssql-init",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:91612677b9448dcdb49386325d11c9492494792acc7285d5ff27822cbfb8dfb4",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:06:20",
-                         "LastUpdateTime":  "11/16/2020 17:41:40"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-ps-cd",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:295a3801d8e03325fa198dfadf11caa71a46ef2251df7b76408f44bfd46735d5",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:24:19",
-                         "LastUpdateTime":  "11/16/2020 17:56:10"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-ps-cm",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:1fe10afa08b46d7542f6a49b7c566ae7f704ed81fd3f36a71d0065e8980561f4",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:18:11",
-                         "LastUpdateTime":  "11/16/2020 17:51:25"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-ps-mssql",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:462a1369078123cde8817a16e923553a43951ada3493071a28ecb2fde39c6b4f",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:13:20",
-                         "LastUpdateTime":  "11/16/2020 17:47:45"
-                     }
-                 ]
-    },
-    {
-        "Name":  "community/sitecore-xp1-custom-sxa-jss1500-ps-mssql-init",
-        "Namespace":  "community",
-        "Tags":  [
-                     {
-                         "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:0a2f30ed442645b3aa2382ca332f24d6d129271d984ead8f5179161fde54d62f",
-                         "Architecture":  "amd64",
-                         "OS":  "windows",
-                         "CreatedTime":  "11/05/2020 09:22:50",
-                         "LastUpdateTime":  "11/16/2020 17:54:57"
                      }
                  ]
     },
@@ -1793,19 +1555,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:48c719ff65ec11f073386d8692edba971c6692de8d8c976d66d1caa62e5c4b94",
+                         "Digest":  "sha256:071f2b6eef95502a46bf1ba2de66919f8833f66c6811226acb259b20e4e9b1b2",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:26:07",
-                         "LastUpdateTime":  "11/24/2020 17:50:33"
+                         "LastUpdateTime":  "11/27/2020 19:57:41"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:48c719ff65ec11f073386d8692edba971c6692de8d8c976d66d1caa62e5c4b94",
+                         "Digest":  "sha256:071f2b6eef95502a46bf1ba2de66919f8833f66c6811226acb259b20e4e9b1b2",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:25:50",
-                         "LastUpdateTime":  "11/24/2020 17:50:20"
+                         "LastUpdateTime":  "11/27/2020 19:57:29"
                      }
                  ]
     },
@@ -1815,19 +1577,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:1685dace2f1203a98fa79bf2c1cd558e815d3ff6b367ec05c10c4fb3b7daa792",
+                         "Digest":  "sha256:a7385bdc66de80639690afbfd7ae7a6f2e7fd5e3ce7ef394d97bf813698c2b55",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:27:13",
-                         "LastUpdateTime":  "11/24/2020 17:51:04"
+                         "LastUpdateTime":  "11/27/2020 19:58:11"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:1685dace2f1203a98fa79bf2c1cd558e815d3ff6b367ec05c10c4fb3b7daa792",
+                         "Digest":  "sha256:a7385bdc66de80639690afbfd7ae7a6f2e7fd5e3ce7ef394d97bf813698c2b55",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:26:56",
-                         "LastUpdateTime":  "11/24/2020 17:50:52"
+                         "LastUpdateTime":  "11/27/2020 19:57:59"
                      }
                  ]
     },
@@ -1837,19 +1599,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:5ce00edc2311c8bf04fbbdd04ec89554f7e928368b8c533416eb9ae3852a1920",
+                         "Digest":  "sha256:a6b0ec45f116ca4e178b973259d8a396601675a514224923036dad481aa1ac8b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:36:30",
-                         "LastUpdateTime":  "11/24/2020 17:53:44"
+                         "LastUpdateTime":  "11/27/2020 20:01:23"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:5ce00edc2311c8bf04fbbdd04ec89554f7e928368b8c533416eb9ae3852a1920",
+                         "Digest":  "sha256:a6b0ec45f116ca4e178b973259d8a396601675a514224923036dad481aa1ac8b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:36:13",
-                         "LastUpdateTime":  "11/24/2020 17:53:29"
+                         "LastUpdateTime":  "11/27/2020 20:01:09"
                      }
                  ]
     },
@@ -1859,19 +1621,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:0a39be35c49e04de535e94c59e1dcd5ebf051339de4e6b7cd681477f19a51ccb",
+                         "Digest":  "sha256:73c87cac61f17dad0a7e99f49f338a44ce704fcd5d6e54115608a77a1af9e2c3",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:39:08",
-                         "LastUpdateTime":  "11/24/2020 17:54:33"
+                         "LastUpdateTime":  "11/27/2020 20:01:53"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:0a39be35c49e04de535e94c59e1dcd5ebf051339de4e6b7cd681477f19a51ccb",
+                         "Digest":  "sha256:73c87cac61f17dad0a7e99f49f338a44ce704fcd5d6e54115608a77a1af9e2c3",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:38:52",
-                         "LastUpdateTime":  "11/24/2020 17:54:21"
+                         "LastUpdateTime":  "11/27/2020 20:01:42"
                      }
                  ]
     },
@@ -1881,19 +1643,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:87bdbda3290e1090bfe2f7ba34aee4a7e771e1864c7dafb88d31bd1c292c87a0",
+                         "Digest":  "sha256:0d371164573e24288344ffa2503ab1f0eb0cb45b2dd97b6359522c286ee618cf",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:40:29",
-                         "LastUpdateTime":  "11/24/2020 17:55:17"
+                         "LastUpdateTime":  "11/27/2020 20:02:21"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:87bdbda3290e1090bfe2f7ba34aee4a7e771e1864c7dafb88d31bd1c292c87a0",
+                         "Digest":  "sha256:0d371164573e24288344ffa2503ab1f0eb0cb45b2dd97b6359522c286ee618cf",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:40:15",
-                         "LastUpdateTime":  "11/24/2020 17:55:04"
+                         "LastUpdateTime":  "11/27/2020 20:02:10"
                      }
                  ]
     },
@@ -1903,19 +1665,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:c5364c1332110c025081c9c33f06ba5b2e0e0e4e29125c666e53d038ddc356c3",
+                         "Digest":  "sha256:d802923613da06d64dca18573dcc3d08696f9ed046b5c9879b45bf18d0315119",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:45:34",
-                         "LastUpdateTime":  "11/24/2020 17:56:22"
+                         "LastUpdateTime":  "11/27/2020 20:04:25"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:c5364c1332110c025081c9c33f06ba5b2e0e0e4e29125c666e53d038ddc356c3",
+                         "Digest":  "sha256:d802923613da06d64dca18573dcc3d08696f9ed046b5c9879b45bf18d0315119",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:45:16",
-                         "LastUpdateTime":  "11/24/2020 17:56:11"
+                         "LastUpdateTime":  "11/27/2020 20:04:12"
                      }
                  ]
     },
@@ -1925,19 +1687,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:aaa0d6eaeda05b322ab9f1c5027ccb26064240f92d06a591eb0b9d350b507b26",
+                         "Digest":  "sha256:14026011d1a1838350b9338144f2787175a536f219c4da2c58f35928ede68f9f",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:48:40",
-                         "LastUpdateTime":  "11/24/2020 17:57:32"
+                         "LastUpdateTime":  "11/27/2020 20:05:41"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:aaa0d6eaeda05b322ab9f1c5027ccb26064240f92d06a591eb0b9d350b507b26",
+                         "Digest":  "sha256:14026011d1a1838350b9338144f2787175a536f219c4da2c58f35928ede68f9f",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:48:20",
-                         "LastUpdateTime":  "11/24/2020 17:57:19"
+                         "LastUpdateTime":  "11/27/2020 20:05:27"
                      }
                  ]
     },
@@ -1947,19 +1709,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:e35c2197f8bf33784d654af7d64f3a398304c5711af86776b2f5b9964c1fd55e",
+                         "Digest":  "sha256:0aa15dd72ec238925c8f6241ab8fc0981372b50db2c5a21d7766349e446b3828",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:49:31",
-                         "LastUpdateTime":  "11/24/2020 17:59:30"
+                         "LastUpdateTime":  "11/27/2020 20:06:07"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:e35c2197f8bf33784d654af7d64f3a398304c5711af86776b2f5b9964c1fd55e",
+                         "Digest":  "sha256:0aa15dd72ec238925c8f6241ab8fc0981372b50db2c5a21d7766349e446b3828",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:49:14",
-                         "LastUpdateTime":  "11/24/2020 17:59:17"
+                         "LastUpdateTime":  "11/27/2020 20:05:56"
                      }
                  ]
     },
@@ -1969,19 +1731,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.0-ltsc2019",
-                         "Digest":  "sha256:49230485198713c7265f4626d6132fdedad4c572947bc02032d94e780bcfb5e5",
+                         "Digest":  "sha256:d93d24a94f1966a5c56d29df1dbfea1235c53da2d1a4a18bddae1082bc81389a",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:50:20",
-                         "LastUpdateTime":  "11/24/2020 18:00:02"
+                         "LastUpdateTime":  "11/27/2020 20:06:32"
                      },
                      {
                          "Tag":  "10.0.0-ltsc2019-1000.0",
-                         "Digest":  "sha256:49230485198713c7265f4626d6132fdedad4c572947bc02032d94e780bcfb5e5",
+                         "Digest":  "sha256:d93d24a94f1966a5c56d29df1dbfea1235c53da2d1a4a18bddae1082bc81389a",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "10/23/2020 15:50:02",
-                         "LastUpdateTime":  "11/24/2020 17:59:49"
+                         "LastUpdateTime":  "11/27/2020 20:06:22"
                      }
                  ]
     },

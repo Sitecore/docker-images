@@ -2,6 +2,7 @@
 
 ## November 2020
 
+- [Added] Ability to skip Module Asset Images with -SkipModuleAssets
 - [Added] Ability to provide `-OutputJson` switch to `build.ps1` to generate a Json file with a formatted list of images
 
 ## October 2020
