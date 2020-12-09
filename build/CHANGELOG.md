@@ -1,5 +1,9 @@
 # Changelog
 
+## December 2020
+
+- [Added] Windows 2009 is now supported. You can override which platforms you want by setting the parameter `AutoGenerateWindowsVersionTags` when calling `Invoke-Build`, default value is now: `"2009", "2004", "1909", "1903", "ltsc2019"`.
+
 ## November 2020
 
 - [Added] Ability to skip Module Asset Images with -SkipModuleAssets
