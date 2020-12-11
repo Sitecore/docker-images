@@ -3,13 +3,14 @@ version: "2.4"
 services:
 
   mssql:
-    image: ${REGISTRY}sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.0-windowsservercore-ltsc2019
+    image: ${REGISTRY}sitecore-xm1-custom-sxa-jss-mssql:${SITECORE_VERSION}
     volumes:
       - type: bind
         source: .\mssql-data
         target: c:\data
 
   solr:
+    image: ${REGISTRY}sitecore-xm1-custom-sxa-solr:${SITECORE_VERSION}
     volumes:
       - type: bind
         source: .\solr-data
@@ -22,7 +23,24 @@ services:
       SITECORE_LICENSE_LOCATION: c:\license\license.xml
 
   cm:
-    image: ${REGISTRY}sitecore-xp1-custom-sxa-jss-ps-cm:10.0.0-windowsservercore-ltsc2019
+    build:
+      context: ../build/jss-integrated-mode
+      args:
+        BASE_IMAGE: ${REGISTRY}sitecore-xm1-custom-sxa-jss-cm:${SITECORE_VERSION}
+        NODEJS_VERSION: ${NODEJS_VERSION}
+    image: ${REGISTRY}sitecore-xm1-custom-sxa-jss-cm:${SITECORE_VERSION}
+    volumes:
+      - ${HOST_LICENSE_FOLDER}:c:\license
+    environment:
+      SITECORE_LICENSE_LOCATION: c:\license\license.xml
+
+  cd:
+    build:
+      context: ../build/jss-integrated-mode
+      args:
+        BASE_IMAGE: ${REGISTRY}sitecore-xm1-custom-sxa-jss-cd:${SITECORE_VERSION}
+        NODEJS_VERSION: ${NODEJS_VERSION}
+    image: ${REGISTRY}sitecore-xm1-custom-sxa-jss-cd:${SITECORE_VERSION}
     volumes:
       - ${HOST_LICENSE_FOLDER}:c:\license
     environment:
