@@ -1,0 +1,32 @@
+version: "2.4"
+
+services:
+
+  mssql:
+    image: ${REGISTRY}sitecore-xm1-custom-sxa-jss-mssql:${SITECORE_VERSION}
+    volumes:
+      - type: bind
+        source: .\mssql-data
+        target: c:\data
+
+  solr:
+    image: ${REGISTRY}sitecore-xm1-custom-sxa-solr:${SITECORE_VERSION}
+    volumes:
+      - type: bind
+        source: .\solr-data
+        target: c:\data
+
+  cm:
+    build:
+      context: ../build/jss-integrated-mode
+      args:
+        BASE_IMAGE: ${REGISTRY}sitecore-xm1-custom-sxa-jss-cm:${SITECORE_VERSION}
+        NODEJS_VERSION: ${NODEJS_VERSION}
+    image: ${REGISTRY}sitecore-xm1-custom-sxa-jss-cm:${SITECORE_VERSION}
+
+  cd:
+    image: ${REGISTRY}sitecore-xm1-custom-sxa-jss-cd:${SITECORE_VERSION}
+    labels:
+      - "traefik.http.routers.cd-secure.entrypoints=websecure"
+      - "traefik.http.routers.cd-secure.rule=Host(`${CD_HOST}`)"
+      - "traefik.http.routers.cd-secure.tls=true"
