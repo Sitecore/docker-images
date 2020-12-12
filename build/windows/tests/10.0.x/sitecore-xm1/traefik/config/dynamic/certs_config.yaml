@@ -2,9 +2,9 @@ tls:
   certificates:
     - certFile: C:\etc\traefik\certs\_wildcard.localhost.pem
       keyFile: C:\etc\traefik\certs\_wildcard.localhost-key.pem
-    - certFile: C:\etc\traefik\certs\1566 cd.localhost.pem
+    - certFile: C:\etc\traefik\certs\cd.localhost.pem
       keyFile: C:\etc\traefik\certs\cd.localhost-key.pem
-    - certFile: C:\etc\traefik\certs\1566 cm.localhost.pem
+    - certFile: C:\etc\traefik\certs\cm.localhost.pem
       keyFile: C:\etc\traefik\certs\cm.localhost-key.pem
     - certFile: C:\etc\traefik\certs\id.localhost.pem
       keyFile: C:\etc\traefik\certs\id.localhost-key.pem

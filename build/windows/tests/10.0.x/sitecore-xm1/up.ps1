@@ -1,7 +1,7 @@
 $ErrorActionPreference = "Stop";
 
 # Double check whether init has been run
-$envCheckVariable = "HOST_LICENSE_FOLDER"
+$envCheckVariable = "SITECORE_LICENSE"
 $envCheck = Get-Content .env -Encoding UTF8 | Where-Object { $_ -imatch "^$envCheckVariable=.+" }
 if (-not $envCheck) {
     throw "$envCheckVariable does not have a value. Did you run 'init.ps1 -InitEnv'?"
@@ -9,7 +9,7 @@ if (-not $envCheck) {
 
 # Start the Sitecore instance
 Write-Host "Starting Sitecore environment..." -ForegroundColor Green
-docker-compose -f docker-compose.yml up -d
+docker-compose up -d --build
 
 # Wait for Traefik to expose CM route
 Write-Host "Waiting for CM to become available..." -ForegroundColor Green
