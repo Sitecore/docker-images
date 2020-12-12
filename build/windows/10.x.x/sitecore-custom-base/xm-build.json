@@ -69,6 +69,17 @@
       "experimental": true
     },
     {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-ps-cm:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1501-cm:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ],
+      "experimental": true
+    },
+    {
       "tag": "community/sitecore-xm1-custom-sxa-jss1500-ps-cm:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1500-cm:10.0.0-${windowsservercore_version}",
