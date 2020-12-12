@@ -43,7 +43,16 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql-init:10.0.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:15.0.0-1809",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:15.0.1-1809",
+        "--build-arg MODULE_NAME=jss"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-mssql-init:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql-init:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/jss-xm1-assets:15.0.1-1809",
         "--build-arg MODULE_NAME=jss"
       ]
     },
@@ -70,6 +79,16 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss-mssql-init:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}",
+        "--build-arg MODULE_NAME=ps"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-ps-mssql-init:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1501-mssql-init:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}",
         "--build-arg MODULE_NAME=ps"
       ],
