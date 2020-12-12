@@ -9,7 +9,7 @@ if (-not $envCheck) {
 
 # Start the Sitecore instance
 Write-Host "Starting Sitecore environment..." -ForegroundColor Green
-docker-compose -f docker-compose.yml up -d --build
+docker-compose -f docker-compose.yml up -d
 
 # Wait for Traefik to expose CM route
 Write-Host "Waiting for CM to become available..." -ForegroundColor Green
