@@ -10,7 +10,7 @@
       "experimental": true
     },
     {
-      "tag": "community/modules/custom-coveo507885-assets:10.0.1-linux",
+      "tag": "community/modules/custom-coveo508581-assets:10.0.1-linux",
       "build-options": [
         "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
         "--build-arg ROLES=cm",
@@ -20,6 +20,6 @@
     }
   ],
   "sources": [
-    "Coveo for Sitecore 10.0 5.0.788.5.scwdp.zip"
+    "Coveo for Sitecore 10.0 5.0.858.1.scwdp.zip"
   ]
 }

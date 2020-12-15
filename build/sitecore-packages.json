@@ -367,11 +367,11 @@
         "url": "https://github.com/Sitecore/xGenerator/releases/download/10.0.0/ExperienceGenerator_10.0.scwdp.zip",
         "hash": "F7E41060501D7BEFEA5D7C8E12F0D6EC06DED278884D1B96AC819F8A5A7B5A1A"
     },
-    "Coveo for Sitecore 10.0 5.0.788.5.scwdp.zip": {
-        "url": "https://static.cloud.coveo.com/coveoforsitecore/packages/v5.0.788.5/Coveo%20for%20Sitecore%2010.0%205.0.788.5.scwdp.zip",
-        "hash": "6D6AC455F26887D4D6F3A82209AEAA06F58DDA1D46861C96D442F0ED4A9ACC03"
+    "Coveo for Sitecore 10.0 5.0.858.1.scwdp.zip": {
+        "url": "https://static.cloud.coveo.com/coveoforsitecore/packages/v5.0.858.1/Coveo%20for%20Sitecore%2010.0%205.0.858.1.scwdp.zip",
+        "hash": "0FEE82E7E3EA4D57E22F5139B152E1D10B900EE402BE49EB914A4D1AC7662503"
     },
-    "Coveo for Sitecore SXA 10.0 5.0.788.5.scwdp.zip": {
+    "Coveo for Sitecore SXA 10.0 5.0.858.1.scwdp.zip": {
         "url": "",
         "hash": ""
     }
