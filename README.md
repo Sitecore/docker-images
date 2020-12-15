@@ -1,8 +1,8 @@
-﻿# Repository of Sitecore Docker images
+# Repository of Sitecore Docker images
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-228-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-1193-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-111-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-10.0.0%20on%20ltsc2019/1809-blue?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-228-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-1476-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-111-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-10.0.0%20on%20ltsc2019/1809-blue?style=flat-square)
 
 [//]: # "end: stats"
 
