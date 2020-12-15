@@ -4,8 +4,16 @@
       "tag": "community/sitecore-xm1-custom-sxa-solr:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--memory 4GB",
-        "--build-arg BASE_IMAGE=scr.sitecore.com/sxp/sitecore-xm1-solr:10.0.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=scr.sitecore.com/sxp/modules/sxa-xm1-assets:10.0.0-1809"
+        "--build-arg BASE_IMAGE=${sitecore_registry}/sxp/sitecore-xm1-solr:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sxa-xm1-assets:10.0.0-1809"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-solr:10.0.1-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=${sitecore_registry}/sxp/sitecore-xm1-solr:10.0.1-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sxa-xm1-assets:10.0.0-1809"
       ]
     }
   ],

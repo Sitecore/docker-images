@@ -44,7 +44,11 @@ param(
     [string]$IsolationModeBehaviour = "ForceHyperV",
     [Parameter(Mandatory = $false, HelpMessage = "If supplied, will output a 'docker-images.json' file in the working folder")]
     [switch]
-    $OutputJson
+    $OutputJson,
+    [Parameter(Mandatory = $false)]
+    [string]$SitecoreRegistry = "scr.sitecore.com",
+    [Parameter(Mandatory = $false)]
+    [switch]$IncludeShortTags
 )
 
 Push-Location build
@@ -365,9 +369,11 @@ SitecoreImageBuilder\Invoke-Build `
     -Path (Join-Path $(Get-Location) $rootFolder) `
     -InstallSourcePath $InstallSourcePath `
     -Registry $Registry `
+    -SitecoreRegistry $SitecoreRegistry `
     -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -IsolationModeBehaviour $IsolationModeBehaviour `
+    -IncludeShortTags:$IncludeShortTags `
     -WhatIf:$WhatIfPreference
 
 Pop-Location

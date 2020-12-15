@@ -1,0 +1,23 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-def-d365-assets:10.0.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.x/modules/Dockerfile"
+      ]
+    },
+    {
+      "tag": "community/modules/custom-def-d365-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.x/modules/Dockerfile"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore Connect for Microsoft Dynamics 365 for Sales 5.0.0 rev. 01439.scwdp.zip"
+  ]
+}

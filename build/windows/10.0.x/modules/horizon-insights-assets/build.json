@@ -1,0 +1,18 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-horizon-insights-assets:10.0.1-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}",
+        "--build-arg TOOL_IMAGE=scr.sitecore.com/tools/sitecore-docker-tools-assets:10.0.0-1809",
+        "--build-arg BASE_BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg ROLES=cm",
+        "--file windows/10.0.x/modules/Dockerfile"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": [
+    "Horizon.FeatureIntegration.Insights 4.1.0-r00725.scwdp.zip"
+  ]
+}

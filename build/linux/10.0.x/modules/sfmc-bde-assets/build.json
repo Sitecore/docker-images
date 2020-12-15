@@ -1,0 +1,23 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-sfmc-bde-assets:10.0.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.x/modules/Dockerfile"
+      ]
+    },
+    {
+      "tag": "community/modules/custom-sfmc-bde-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.x/modules/Dockerfile"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore Connect for Salesforce Marketing Cloud - Behavioral Data Exchange 5.0.0 rev. 00294.scwdp.zip"
+  ]
+}

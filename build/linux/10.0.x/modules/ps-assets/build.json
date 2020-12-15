@@ -1,0 +1,25 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-ps-assets:10.0.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.x/modules/Dockerfile"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "community/modules/custom-ps-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.x/modules/Dockerfile"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": [
+    "Sitecore Publishing Module 10.0.0.0 rev. r00568.2697.scwdp.zip"
+  ]
+}
