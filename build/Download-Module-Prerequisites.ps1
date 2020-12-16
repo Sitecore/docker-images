@@ -106,7 +106,10 @@ $packages.GetEnumerator() | ForEach-Object {
 
                         #extraction
                         $entries | ForEach-Object {
-                            [IO.Compression.ZipFileExtensions]::ExtractToFile( $_, $(Join-Path $InstallSourcePath $_.Name))
+                            if (-not (Test-path (Join-Path $InstallSourcePath $_.Name)))
+                            {
+                                [IO.Compression.ZipFileExtensions]::ExtractToFile( $_, $(Join-Path $InstallSourcePath $_.Name))
+                            }
                         }
 
                         #free object
