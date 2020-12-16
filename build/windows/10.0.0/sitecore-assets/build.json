@@ -9,7 +9,6 @@
     }
   ],
   "sources": [
-    "Sitecore Publishing Service 4.3.0-win-x64.zip",
-    "Sitecore Data Exchange Framework Tenant Web Service 5.0.0 rev. 01466.scwdp.zip"
+    "Sitecore Publishing Service 4.3.0-win-x64.zip"
   ]
 }

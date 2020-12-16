@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-custom-horizon-authoringhost:10.0.1-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/aspnet:2.1.23-nanoserver-${nanoserver_version}",
+        "--build-arg ASSETS_IMAGE=community/modules/custom-horizon-assets:10.0.1-${nanoserver_version}"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": []
+}

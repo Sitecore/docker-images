@@ -1,0 +1,25 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-coveo-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.x/modules/Dockerfile"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "community/modules/custom-coveo508581-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.x/modules/Dockerfile"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": [
+    "Coveo for Sitecore 10.0 5.0.858.1.scwdp.zip"
+  ]
+}

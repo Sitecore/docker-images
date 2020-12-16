@@ -11,6 +11,7 @@
 # - build.includeSh
 # - build.includeSpe
 # - build.includeSxa
+# - build.includeShortTags
 # - build.linuxImages
 # - build.pruneImages
 # - build.sitecoreTopology
@@ -37,13 +38,6 @@ trigger:
   branches:
     include:
     - master
-schedules:
-  - cron: "0 12 * * 0"
-    displayName: Weekly Sunday build
-    branches:
-      include:
-      - master
-    always: true
 
 stages:
   - stage: Build_Windows_Images
@@ -51,6 +45,9 @@ stages:
       - job: Build_Windows_Images
         strategy:
           matrix:
+            windows20H2:
+              poolName: 'docker-20H2-agents'
+              osVersion: '2009'
             windows2004:
               poolName: 'docker-2004-agents'
               osVersion: '2004'
@@ -63,21 +60,22 @@ stages:
         pool:
           name: $(poolName)
         steps:
+          - checkout: self
+            clean: true
           - powershell: |
               Test-NetConnection -ComputerName "$(assets.shared.folder.server)" -Port 445
               Invoke-Expression -Command "cmdkey /add:$(assets.shared.folder.server) /user:Azure\dockerassets /pass:$(assets.azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(assets.shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
             condition: eq(variables['assets.useDrive'], 'true')
             displayName: "Connect Asset Drive (optional)"
-          - task: Docker@2
-            displayName: "Docker registry login"
-            inputs:
-              containerRegistry: "docker-registry"
-              command: login
-          - checkout: self
-            clean: true
+
           - powershell: |
-              "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
+              if ("$(sitecore.container.registry)" -ne "scr.sitecore.com"){
+                az acr login -n "$(sitecore.container.registry)"
+              }
+                az acr login -n "$(container.registry.fullname)"
+
               $topology = "$(build.sitecoreTopology)" -split ","
               $buildProps = @{
                 InstallSourcePath = "$(windows.install.source.path)"
@@ -95,6 +93,8 @@ stages:
                 IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+                SitecoreRegistry = "$(sitecore.container.registry)"
+                IncludeShortTags = [System.Convert]::ToBoolean($(build.includeShortTags))
               }
 
               .\Build.ps1 @buildProps
@@ -113,6 +113,8 @@ stages:
         pool:
           name: 'docker-linux-agents'
         steps:
+          - checkout: self
+            clean: true
           - task: Bash@3
             displayName: "Connect to asset drive"
             condition: eq(variables['assets.useDrive'], 'true')
@@ -135,17 +137,14 @@ stages:
 
                   sudo bash -c 'echo "//$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) cifs nofail,vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
                   sudo mount -t cifs //$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
-          - task: Docker@2
-            enabled: true
-            displayName: "Docker registry login"
-            inputs:
-                containerRegistry: "docker-registry"
-                command: login
-          - checkout: self
-            clean: true
           - powershell: |
                 sudo chmod 777 /mnt/dockerassets -R
-                "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+                az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
+                if ("$(sitecore.container.registry)" -ne "scr.sitecore.com"){
+                  az acr login -n "$(sitecore.container.registry)"
+                }
+                az acr login -n "$(container.registry.fullname)"
+
                 $topology = "$(build.sitecoreTopology)" -split ","
                 $buildProps = @{
                   InstallSourcePath = "$(linux.install.source.path)"
@@ -163,6 +162,8 @@ stages:
                   IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                   IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                   SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+                  SitecoreRegistry = "$(sitecore.container.registry)"
+                  IncludeShortTags = [System.Convert]::ToBoolean($(build.includeShortTags))
                 }
 
                 .\Build.ps1 @buildProps

@@ -210,6 +210,8 @@ Experimental modules include, and are not limited to:
 - Sitecore Connect for Microsoft Dynamics 365 for Sales
 - Sitecore Connect for CMP
 - Sitecore Connect for Sitecore DAM
+- Coveo for Sitecore
+- Coveo for Sitecore SXA
 
 Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/sat/20/sitecore-azure-toolkit/en/getting-started-with-the-sitecore-azure-toolkit.html)
 

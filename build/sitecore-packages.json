@@ -279,6 +279,14 @@
         "url": "https://dev.sitecore.net/~/media/1461853C8977488D9AABA716242137FC.ashx",
         "hash": "9F154EAFAD2CAC5F084B4C5721EB24CD3DCBF4F45E57D365BF26F32A79910A14"
     },
+    "Sitecore 10.0.1 rev. 004842 (WDP XP1 packages).zip": {
+        "url": "https://sitecoredev.azureedge.net/~/media/671D1AD834134C3D93BA5339F631C417.ashx?date=20201211T133416",
+        "hash": ""
+    },
+    "Sitecore 10.0.1 rev. 004842 (WDP XPSingle packages).zip": {
+        "url": "https://sitecoredev.azureedge.net/~/media/AA2E4008524740FFA4B58E716452F391.ashx?date=20201211T130732",
+        "hash": ""
+    },
     "Data Exchange Framework 5.0.0 rev. 01466.scwdp.zip": {
         "url": "",
         "hash": ""
@@ -299,9 +307,9 @@
         "url": "https://dev.sitecore.net/~/media/88308FA870E141EBADC7515D8CE2A705.ashx",
         "hash": "316BE8D03AC4E0F8465C71623C0F0A54FA18DC5ABE3ADDA13C9DEDBAC52A5784"
     },
-    "Sitecore Connect for Salesforce Marketing Cloud - BDE Plugin for Tenant Service 5.0.0 rev. 00294.scwdp.zip":{
-        "url":"https://dev.sitecore.net/~/media/D884E95F8D514ECDA0ABAEF4506F9DC3.ashx",
-        "hash":"17AAAF320B87EBF09539CD8D247FA5CE8EF93A745FD9E8765E8D4BA75DA1FD91"
+    "Sitecore Connect for Salesforce Marketing Cloud - BDE Plugin for Tenant Service 5.0.0 rev. 00294.scwdp.zip": {
+        "url": "https://dev.sitecore.net/~/media/D884E95F8D514ECDA0ABAEF4506F9DC3.ashx",
+        "hash": "17AAAF320B87EBF09539CD8D247FA5CE8EF93A745FD9E8765E8D4BA75DA1FD91"
     },
     "Sitecore Connect for Salesforce Marketing Cloud - Content Exchange 5.0.0 rev. 00162.scwdp.zip": {
         "url": "",
@@ -311,17 +319,17 @@
         "url": "",
         "hash": ""
     },
-    "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 5.0.0 rev. 01431.scwdp.zip":{
-        "url":"https://dev.sitecore.net/~/media/279A2A5330794778A59D91258D51DA69.ashx",
-        "hash":"3E80D5839CA33332B9E3FD2843F0FC18EDC04C803E9005AD5E3F10B50B3C4483"
+    "Sitecore Connect for Salesforce CRM Plugin for Tenant Service 5.0.0 rev. 01431.scwdp.zip": {
+        "url": "https://dev.sitecore.net/~/media/279A2A5330794778A59D91258D51DA69.ashx",
+        "hash": "3E80D5839CA33332B9E3FD2843F0FC18EDC04C803E9005AD5E3F10B50B3C4483"
     },
     "Sitecore Connect for Microsoft Dynamics 365 for Sales 5.0.0 rev. 01439.scwdp.zip": {
         "url": "",
         "hash": ""
     },
-    "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 5.0.0 rev. 01439.scwdp.zip":{
-        "url":"https://dev.sitecore.net/~/media/1F68DE2526D643CBA0C4A18D969D20F3.ashx",
-        "hash":"2511E168EE47E260180A252349BABDB05FBCAB941DD1D7E8F6E0E12AA3DFB97E"
+    "Sitecore Connect for Microsoft Dynamics 365 for Sales Plugin for Tenant Service 5.0.0 rev. 01439.scwdp.zip": {
+        "url": "https://dev.sitecore.net/~/media/1F68DE2526D643CBA0C4A18D969D20F3.ashx",
+        "hash": "2511E168EE47E260180A252349BABDB05FBCAB941DD1D7E8F6E0E12AA3DFB97E"
     },
     "Sitecore Connect for CMP XP for 10.0 v. 3.0.0 rev. 00134.scwdp.zip": {
         "url": "",
@@ -335,19 +343,19 @@
         "url": "",
         "hash": ""
     },
-    "Horizon.FeatureIntegration 4.0.0-r00721.scwdp.zip": {
+    "Horizon.FeatureIntegration 4.1.0-r00725.scwdp.zip": {
         "url": "",
         "hash": ""
     },
-    "Horizon.FeatureIntegration.Insights 4.0.0-r00721.scwdp.zip": {
+    "Horizon.FeatureIntegration.Insights 4.1.0-r00725.scwdp.zip": {
         "url": "",
         "hash": ""
     },
-    "HorizonHost.1.36.0.scwdp.zip": {
+    "HorizonHost.1.46.0.scwdp.zip": {
         "url": "",
         "hash": ""
     },
-    "Sitecore Zenith Integration 1.270.0.scwdp.zip": {
+    "Sitecore Zenith Integration 1.273.0.scwdp.zip": {
         "url": "",
         "hash": ""
     },
@@ -358,5 +366,13 @@
     "ExperienceGenerator_10.0.scwdp.zip": {
         "url": "https://github.com/Sitecore/xGenerator/releases/download/10.0.0/ExperienceGenerator_10.0.scwdp.zip",
         "hash": "F7E41060501D7BEFEA5D7C8E12F0D6EC06DED278884D1B96AC819F8A5A7B5A1A"
+    },
+    "Coveo for Sitecore 10.0 5.0.858.1.scwdp.zip": {
+        "url": "https://static.cloud.coveo.com/coveoforsitecore/packages/v5.0.858.1/Coveo%20for%20Sitecore%2010.0%205.0.858.1.scwdp.zip",
+        "hash": "0FEE82E7E3EA4D57E22F5139B152E1D10B900EE402BE49EB914A4D1AC7662503"
+    },
+    "Coveo for Sitecore SXA 10.0 5.0.858.1.scwdp.zip": {
+        "url": "",
+        "hash": ""
     }
 }
