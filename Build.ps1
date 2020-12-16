@@ -359,9 +359,7 @@ if ($IncludeExperimental -eq $true)
 {
     # restore any missing experimental packages
     .\Download-Module-Prerequisites.ps1 `
-        -InstallSourcePath $InstallSourcePath `
-        -SitecoreUsername $SitecoreUsername `
-        -SitecorePassword $SitecorePassword
+        -InstallSourcePath $InstallSourcePath
 }
 
 # start the build

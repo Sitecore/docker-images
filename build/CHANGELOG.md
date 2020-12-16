@@ -2,6 +2,8 @@
 
 ## December 2020
 
+- [Changed] Download-Module-Prerequisites.ps1 to use new CDN urls and no longer require username/password
+- [Added] Automatic download and extract of Horizon assets
 - [Added] Sitecore 10.0.1 Images, including Horizon
 - [Fixed] Sitecore 10.0.0 JSS missing NodeJS in CM / CD Docker containers, which causes JSS Integrated mode to fail. See [#386](https://github.com/Sitecore/docker-images/issues/386). Thanks [@vtml](https://github.com/vtml) :+1:
 - [Fixed] Sitecore 10.0.0 SXA / JSS missing Web.config transforms. See [#387](https://github.com/Sitecore/docker-images/issues/387). Thanks [@vtml](https://github.com/vtml) :+1:
