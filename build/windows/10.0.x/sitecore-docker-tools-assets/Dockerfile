@@ -6,4 +6,4 @@ ARG TOOL_IMAGE
 FROM ${TOOL_IMAGE} as tools
 FROM ${BASE_IMAGE}
 
-COPY tools/ tools/
+COPY --from=tools tools/ tools/
