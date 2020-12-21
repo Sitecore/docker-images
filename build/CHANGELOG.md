@@ -1,7 +1,7 @@
 # Changelog
 
 ## December 2020
-
+- [Added] Sitecore JSS v15.0.1 See [#474](https://github.com/Sitecore/docker-images/issues/474). Thanks [@vtml](https://github.com/vtml) :+1:
 - [Added] re-tagged versions of sitecore-docker-tools-assets (now called custom-sitecore-docker-tools-assets)
 - [Changed] Download-Module-Prerequisites.ps1 to use new CDN urls and no longer require username/password
 - [Added] Automatic download and extract of Horizon assets
