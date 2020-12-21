@@ -24,9 +24,10 @@
       "tag": "community/sitecore-xm1-custom-sxa-jss-cm:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cm"
+        "--build-arg ROLE=cm",
+        "--target content"
       ]
     },
     {
@@ -35,7 +36,18 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cm"
+        "--build-arg ROLE=cm",
+        "--target content"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-cm:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target content"
       ]
     },
     {
@@ -44,13 +56,25 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:14.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cm"
+        "--build-arg ROLE=cm",
+        "--target content"
       ]
     },
     {
       "tag": "community/sitecore-xm1-custom-sxa-jss-ps-cm:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss-cm:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-ps-cm:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1501-cm:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}",
         "--memory 4GB",
         "--build-arg ROLE=cm",
@@ -104,9 +128,10 @@
       "tag": "community/sitecore-xm1-custom-sxa-jss-cd:10.0.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cd"
+        "--build-arg ROLE=cd",
+        "--target content"
       ]
     },
     {
@@ -115,7 +140,18 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cd"
+        "--build-arg ROLE=cd",
+        "--target content"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-cd:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cd",
+        "--target content"
       ]
     },
     {
@@ -125,7 +161,7 @@
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:14.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cd",
-        "--target base"
+        "--target content"
       ]
     },
     {
@@ -152,10 +188,10 @@
       "tag": "community/sitecore-xm1-custom-sxa-jss-cm:10.0.1-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.1-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809",
         "--memory 4GB",
         "--build-arg ROLE=cm",
-        "--target base"
+        "--target content"
       ]
     },
     {
@@ -165,7 +201,17 @@
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cm",
-        "--target base"
+        "--target content"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-cm:10.0.1-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cm:10.0.1-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target content"
       ]
     },
     {
@@ -175,13 +221,24 @@
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:14.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cm",
-        "--target base"
+        "--target content"
       ]
     },
     {
       "tag": "community/sitecore-xm1-custom-sxa-jss-ps-cm:10.0.1-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss-cm:10.0.1-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-ps-cm:10.0.1-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1501-cm:10.0.1-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}",
         "--memory 4GB",
         "--build-arg ROLE=cm",
@@ -228,17 +285,17 @@
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sxa-xm1-assets:10.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cd",
-        "--target base"
+        "--target content"
       ]
     },
     {
       "tag": "community/sitecore-xm1-custom-sxa-jss-cd:10.0.1-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.1-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809",
         "--memory 4GB",
         "--build-arg ROLE=cd",
-        "--target base"
+        "--target content"
       ]
     },
     {
@@ -248,7 +305,17 @@
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809",
         "--memory 4GB",
         "--build-arg ROLE=cd",
-        "--target base"
+        "--target content"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xm1-custom-sxa-jss1501-cd:10.0.1-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.1-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cd",
+        "--target content"
       ]
     },
     {
@@ -257,7 +324,8 @@
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-cd:10.0.1-${windowsservercore_version}",
         "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:14.0.0-1809",
         "--memory 4GB",
-        "--build-arg ROLE=cd"
+        "--build-arg ROLE=cd",
+        "--target content"
       ]
     }
   ],
