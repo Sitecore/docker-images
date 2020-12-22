@@ -1,17 +1,10 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
-[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
 [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "RegistryPassword")]
 
 param(
     [Parameter()]
     [ValidateNotNullOrEmpty()]
     [string]$InstallSourcePath,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string]$SitecoreUsername,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string]$SitecorePassword,
     [Parameter()]
     [string]$Registry = "",
     [Parameter()]
@@ -346,12 +339,7 @@ else
 }
 
 # restore any missing packages
-SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path (Join-Path $(Get-Location) $rootFolder) `
-    -Destination $InstallSourcePath `
-    -SitecoreUsername $SitecoreUsername `
-    -SitecorePassword $SitecorePassword `
-    -Tags $tags `
+SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path $(Get-Location) $rootFolder) -Destination $InstallSourcePath -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 

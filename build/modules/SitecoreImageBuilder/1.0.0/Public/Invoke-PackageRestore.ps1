@@ -24,14 +24,6 @@ function Invoke-PackageRestore
         [Parameter(Mandatory = $false)]
         [ValidateSet("Include", "Skip")]
         [string]$ExperimentalTagBehavior = "Skip"
-        ,
-        [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [string]$SitecoreUsername
-        ,
-        [Parameter(Mandatory = $true)]
-        [ValidateNotNullOrEmpty()]
-        [string]$SitecorePassword
     )
 
     # Setup
@@ -102,36 +94,10 @@ function Invoke-PackageRestore
             if ($PSCmdlet.ShouldProcess($fileName))
             {
                 Write-Message ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
-
-                if ($fileUrl.StartsWith($sitecoreDownloadUrl))
-                {
-                    # Login to dev.sitecore.net and save session for re-use
-                    if ($null -eq $sitecoreDownloadSession)
-                    {
-                        Write-Message ("Logging in to '{0}'..." -f $sitecoreDownloadUrl) -Level Verbose
-
-                        $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
-                            username   = $SitecoreUsername
-                            password   = $SitecorePassword
-                            rememberMe = $true
-                        } -SessionVariable "sitecoreDownloadSession" -UseBasicParsing
-
-                        if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
-                        {
-                            throw ("Unable to login to '{0}' with the supplied credentials." -f $sitecoreDownloadUrl)
-                        }
-
-                        Write-Message ("Logged in to '{0}'." -f $sitecoreDownloadUrl) -Level Verbose
-                    }
-
-                    # Download package using saved session
-                    Invoke-FileDownload -Url $fileUrl -Path $filePath -Cookies $sitecoreDownloadSession.Cookies
-                }
-                else
-                {
-                    # Download package
-                    Invoke-FileDownload -Url $fileUrl -Path $filePath
-                }
+                
+                # Download package
+                Invoke-FileDownload -Url $fileUrl -Path $filePath
+                
             }
         }
     }
