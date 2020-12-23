@@ -446,18 +446,18 @@ Images in this namespace are built from the https://github.com/sitecore/Sitecore
 ### lighthouse-xp0-modules-base-cm
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | ltsc2019     | 1000.0      | amd64           | windows | sha256:e1b88072970fd2ec87b1a981c2c2abc4b46e87a205a94c2dd4927109e16ed975 | 10/27/2020 22:06:46  | 11/20/2020 23:50:55 |
-10.0.0-ltsc2019-1000.0 | ltsc2019     | 1000.0      | amd64           | windows | sha256:e1b88072970fd2ec87b1a981c2c2abc4b46e87a205a94c2dd4927109e16ed975 | 10/27/2020 22:06:28  | 11/20/2020 23:50:41 |
+10.0.0-ltsc2019        | ltsc2019     | 1000.0      | amd64           | windows | sha256:7e0554ed542b131d81b31cd6463ca6e89a5d4b64e8122bf7e42a8b8b466bf85c | 10/27/2020 22:06:46  | 12/23/2020 03:13:44 |
+10.0.0-ltsc2019-1000.0 | ltsc2019     | 1000.0      | amd64           | windows | sha256:7e0554ed542b131d81b31cd6463ca6e89a5d4b64e8122bf7e42a8b8b466bf85c | 10/27/2020 22:06:28  | 12/23/2020 03:13:31 |
 ### lighthouse-xp0-modules-base-mssql
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | ltsc2019     | 1000.0      | amd64           | windows | sha256:f7aee9f889881250d28aa71fe177b54f39a41bb00577f0c9a6d6725c84a63a08 | 10/27/2020 22:05:52  | 11/20/2020 23:44:50 |
-10.0.0-ltsc2019-1000.0 | ltsc2019     | 1000.0      | amd64           | windows | sha256:f7aee9f889881250d28aa71fe177b54f39a41bb00577f0c9a6d6725c84a63a08 | 10/27/2020 22:05:33  | 11/20/2020 23:44:34 |
+10.0.0-ltsc2019        | ltsc2019     | 1000.0      | amd64           | windows | sha256:8d5a67b3d3329abc024a68a34bb07f567a755dd476e74a20ede954770d0c5557 | 10/27/2020 22:05:52  | 12/23/2020 03:09:36 |
+10.0.0-ltsc2019-1000.0 | ltsc2019     | 1000.0      | amd64           | windows | sha256:8d5a67b3d3329abc024a68a34bb07f567a755dd476e74a20ede954770d0c5557 | 10/27/2020 22:05:33  | 12/23/2020 03:09:23 |
 ### lighthouse-xp1-modules-base-cd
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019        | ltsc2019     | 1000.0      | amd64           | windows | sha256:b108f5b5ef9581becaa50bfe4708448533868a4d5584ea2d22f0a1cbc153de27 | 10/27/2020 22:07:35  | 11/20/2020 23:52:44 |
-10.0.0-ltsc2019-1000.0 | ltsc2019     | 1000.0      | amd64           | windows | sha256:b108f5b5ef9581becaa50bfe4708448533868a4d5584ea2d22f0a1cbc153de27 | 10/27/2020 22:07:18  | 11/20/2020 23:52:31 |
+10.0.0-ltsc2019        | ltsc2019     | 1000.0      | amd64           | windows | sha256:94d98f3a4c7f53b59bc22202a54900a8d590d547718359c6359bf9e65257aba0 | 10/27/2020 22:07:35  | 12/23/2020 03:14:57 |
+10.0.0-ltsc2019-1000.0 | ltsc2019     | 1000.0      | amd64           | windows | sha256:94d98f3a4c7f53b59bc22202a54900a8d590d547718359c6359bf9e65257aba0 | 10/27/2020 22:07:18  | 12/23/2020 03:14:45 |
 ## demo 
 Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Platform GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
 ### lighthouse-id
