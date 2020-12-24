@@ -11,6 +11,7 @@
 - [Added] Windows 2009 is now supported. You can override which platforms you want by setting the parameter `AutoGenerateWindowsVersionTags` when calling `Invoke-Build`, default value is now: `"2009", "2004", "1909", "1903", "ltsc2019"`.
 - [Added] Sitecore 10.0.1 community modules Linux/Windows Coveo for Sitecore and Coveo for Sitecore SXA 5.0.858.1 assets images
 - [Added] Global Downloads Support
+- [Changed] Removed username/password from documentation. Fixed Test-SitecorePackages and sorted packages.
 
 ## November 2020
 

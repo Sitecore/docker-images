@@ -79,8 +79,6 @@ stages:
               $topology = "$(build.sitecoreTopology)" -split ","
               $buildProps = @{
                 InstallSourcePath = "$(windows.install.source.path)"
-                SitecoreUsername = "$(sitecore.username)"
-                SitecorePassword = "$(sitecore.password)"
                 Registry = "$(container.registry.fullname)"
                 RegistryUserName = "$(container.registry.username)"
                 RegistryPassword = "$(container.registry.password)"
@@ -148,8 +146,6 @@ stages:
                 $topology = "$(build.sitecoreTopology)" -split ","
                 $buildProps = @{
                   InstallSourcePath = "$(linux.install.source.path)"
-                  SitecoreUsername = "$(sitecore.username)"
-                  SitecorePassword = "$(sitecore.password)"
                   Registry = "$(container.registry.fullname)"
                   RegistryUserName = "$(container.registry.username)"
                   RegistryPassword = "$(container.registry.password)"
