@@ -42,7 +42,7 @@ Example:
 ## Quick start
 
 ```PowerShell
-.\Build.ps1 -SitecoreUsername "YOUR dev.sitecore.net USERNAME" -SitecorePassword "YOUR dev.sitecore.net PASSWORD" -SitecoreVersion "three digit Sitecore version number"
+.\Build.ps1 -SitecoreVersion "three digit Sitecore version number"
 ```
 
 This will:
@@ -119,12 +119,6 @@ $registry = "YOUR REGISTRY NAME" `
 # only build 9.1.1 and 9.2.0 on Windows 1903.
 $tags = "*"
 
-# required
-$sitecoreUsername = "YOUR dev.sitecore.net USERNAME"
-
-# required
-$sitecorePassword = "YOUR dev.sitecore.net PASSWORD"
-
 # import builder module
 Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 
@@ -132,9 +126,7 @@ Import-Module (Join-Path $PSScriptRoot "\modules\SitecoreImageBuilder") -Force
 SitecoreImageBuilder\Invoke-PackageRestore `
     -Path $imagesPath `
     -Destination $installSourcePath `
-    -Tags $tags `
-    -SitecoreUsername $sitecoreUsername `
-    -SitecorePassword $sitecorePassword
+    -Tags $tags
 
 # build and push images
 SitecoreImageBuilder\Invoke-Build `
@@ -220,7 +212,7 @@ Azure Toolkit has also prerequisites, see (https://doc.sitecore.com/developers/s
 To enable experimental modules, add the `-IncludeExperimental` parameter when calling `Build.ps1`
 
 ```PowerShell
-.\Build.ps1 -SitecoreUsername "YOUR dev.sitecore.net USERNAME" -SitecorePassword "YOUR dev.sitecore.net PASSWORD" -SitecoreVersion "three digit Sitecore version number" -IncludeExperimental
+.\Build.ps1 -SitecoreVersion "three digit Sitecore version number" -IncludeExperimental
 ```
 
 ## License file volume mount configuration for 9.3 docker images

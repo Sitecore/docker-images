@@ -1,24 +1,14 @@
-[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
-param(
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string]$SitecoreUsername
-    ,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string]$SitecorePassword
-)
 
 $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
 
 $packagesPath = Join-Path $PSScriptRoot "..\sitecore-packages.json"
-$downloadUrl = "https://dev.sitecore.net"
-$downloadSession = $null
 
-Get-Content -Raw $packagesPath | ConvertFrom-Json -PipelineVariable jo | Get-Member -Type  NoteProperty | Sort-Object Name | ForEach-Object {
-    $name = $_.Name
-    $url = $jo.$($_.Name).url
+$content = Get-Content -Raw $packagesPath | ConvertFrom-Json -OutVariable jo | Get-Member -Type  NoteProperty | Sort-Object Name
+foreach ($item in $content)
+{
+    $name = $item.Name
+    $url = $jo.$($item.Name).url
 
     if (!$url)
     {
@@ -26,27 +16,13 @@ Get-Content -Raw $packagesPath | ConvertFrom-Json -PipelineVariable jo | Get-Mem
         continue
     }
 
-    if ($null -eq $downloadSession)
-    {
-        Write-Verbose ("Logging in to '{0}'..." -f $downloadUrl)
-
-        $loginResponse = Invoke-WebRequest "https://dev.sitecore.net/api/authorization" -Method Post -Body @{
-            username   = $SitecoreUsername
-            password   = $SitecorePassword
-            rememberMe = $true
-        } -SessionVariable "downloadSession" -UseBasicParsing
-
-        if ($null -eq $loginResponse -or $loginResponse.StatusCode -ne 200 -or $loginResponse.Content -eq "false")
-        {
-            throw ("Unable to login to '{0}' with the supplied credentials." -f $downloadUrl)
-        }
-
-        Write-Verbose ("Logged in to '{0}'." -f $downloadUrl)
-    }
-
     Write-Verbose ("[{0}] Checking '{1}'..." -f $name, $url)
-
-    $response = Invoke-WebRequest -Uri $url -WebSession $downloadSession -UseBasicParsing -Method "HEAD"
+    if ($url -like "*github*")
+    {
+        Write-Host "Skipping GitHub urls - no support for HEAD"
+        continue
+    }
+    $response = Invoke-WebRequest -Uri $url -UseBasicParsing -Method "HEAD"
 
     if ($response.StatusCode -ne 200)
     {
@@ -57,6 +33,9 @@ Get-Content -Raw $packagesPath | ConvertFrom-Json -PipelineVariable jo | Get-Mem
 
     if (!$contentDispositionHeader.Contains($name))
     {
-        throw ("[{0}] The header 'Content-Disposition: {1}' did not match the file name." -f $name, $contentDispositionHeader)
+        if (-not $name -like "Coveo*")
+        {
+            throw ("[{0}] The header 'Content-Disposition: {1}' did not match the file name." -f $name, $contentDispositionHeader)
+        }
     }
 }
