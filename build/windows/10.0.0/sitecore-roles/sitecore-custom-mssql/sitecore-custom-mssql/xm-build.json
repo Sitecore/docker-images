@@ -1,0 +1,89 @@
+{
+    "tags": [
+        {
+            "tag": "community/sitecore-xm1-custom-spe-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=${sitecore_registry}/sxp/sitecore-xm1-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/spe-assets:6.1.1-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-spe-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sxa-xm1-assets:10.0.0-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-jss-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-jss1501-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.1-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:15.0.0-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-jss1400-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xm1-assets:14.0.0-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-jss-ps-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}"
+            ],
+            "experimental": true
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-jss1501-ps-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1501-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}"
+            ],
+            "experimental": true
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-jss1500-ps-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1500-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}"
+            ],
+            "experimental": true
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-jss1400-ps-mssql:10.0.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1400-mssql:10.0.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.0-${nanoserver_version}"
+            ],
+            "experimental": true
+        }
+    ],
+    "sources": []
+}

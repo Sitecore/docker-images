@@ -1,0 +1,26 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-jss1400-xp-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 14.0.0 rev. 200714.scwdp.zip'",
+        "--file linux/10.0.1/modules/Dockerfile"
+      ]
+    },
+    {
+      "tag": "community/modules/custom-jss1400-xm-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 14.0.0 rev. 200714.scwdp.zip'",
+        "--file linux/10.0.1/modules/Dockerfile"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 14.0.0 rev. 200714.scwdp.zip",
+    "Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 14.0.0 rev. 200714.scwdp.zip"
+  ]
+}

@@ -1,0 +1,14 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-custom-ps:10.0.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=community/sitecore-custom-assets:10.0.0-${nanoserver_version}",
+        "--build-arg ASSETS_USE_PS_WDP='C:\\packages\\Sitecore Publishing Service 4.3.0-win-x64.zip'"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-solr:10.0.1-${windowsservercore_version}",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=${sitecore_registry}/sxp/sitecore-xp1-solr:10.0.1-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sxa-xp1-assets:10.0.0-1809"
+      ]
+    }
+  ],
+  "sources": []
+}

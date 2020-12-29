@@ -13,6 +13,7 @@
 - [Added] Global Downloads Support
 - [Changed] Removed username/password from documentation. Fixed Test-SitecorePackages and sorted packages.
 - [Changed] Removed -Property FullName from Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -ExpandProperty FullName.
+- [Changed] Collapsed 10.x.x folders into version-specific to greatly improve upgradability. Added build\New-SitecoreVersion.ps1 script.
 
 ## November 2020
 
