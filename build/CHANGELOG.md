@@ -12,6 +12,7 @@
 - [Added] Sitecore 10.0.1 community modules Linux/Windows Coveo for Sitecore and Coveo for Sitecore SXA 5.0.858.1 assets images
 - [Added] Global Downloads Support
 - [Changed] Removed username/password from documentation. Fixed Test-SitecorePackages and sorted packages.
+- [Changed] Removed -Property FullName from Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -ExpandProperty FullName.
 
 ## November 2020
 
