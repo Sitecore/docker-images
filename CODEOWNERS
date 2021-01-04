@@ -6,3 +6,8 @@
 # @global-owner1 and @global-owner2 will be requested for
 # review when someone opens a pull request.
 *       @jeanfrancoislarente @bplasmeijer @adoprog
+
+# The tags files in the `/tags/` directory are only expected
+# to be updated by build script/bot. Setting CODEOWNER to
+# overall repo admin.
+/tags/ @sc-jonasbangchristensen
