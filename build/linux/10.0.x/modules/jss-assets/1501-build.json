@@ -6,7 +6,7 @@
                 "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
                 "--build-arg ROLES=cm",
                 "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112.scwdp.zip'",
-                "--file linux/10.0.0/modules/Dockerfile"
+                "--file linux/10.0.x/modules/Dockerfile"
             ]
         },
         {
@@ -15,7 +15,7 @@
                 "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
                 "--build-arg ROLES=cm",
                 "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112.scwdp.zip'",
-                "--file linux/10.0.0/modules/Dockerfile"
+                "--file linux/10.0.x/modules/Dockerfile"
             ]
         },
         {
@@ -24,7 +24,7 @@
                 "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
                 "--build-arg ROLES=cm",
                 "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112.scwdp.zip'",
-                "--file linux/10.0.0/modules/Dockerfile"
+                "--file linux/10.0.x/modules/Dockerfile"
             ]
         },
         {
@@ -33,7 +33,7 @@
                 "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
                 "--build-arg ROLES=cm",
                 "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112.scwdp.zip'",
-                "--file linux/10.0.0/modules/Dockerfile"
+                "--file linux/10.0.x/modules/Dockerfile"
             ]
         },
         {
@@ -42,7 +42,7 @@
                 "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
                 "--build-arg ROLES=cm",
                 "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112.scwdp.zip'",
-                "--file linux/10.0.0/modules/Dockerfile"
+                "--file linux/10.0.x/modules/Dockerfile"
             ]
         },
         {
@@ -51,7 +51,7 @@
                 "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
                 "--build-arg ROLES=cm",
                 "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XP 15.0.1 rev. 201112.scwdp.zip'",
-                "--file linux/10.0.0/modules/Dockerfile"
+                "--file linux/10.0.x/modules/Dockerfile"
             ]
         },
         {
@@ -60,7 +60,7 @@
                 "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
                 "--build-arg ROLES=cm",
                 "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112.scwdp.zip'",
-                "--file linux/10.0.0/modules/Dockerfile"
+                "--file linux/10.0.x/modules/Dockerfile"
             ]
         },
         {
@@ -69,7 +69,7 @@
                 "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
                 "--build-arg ROLES=cm",
                 "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.0.0 XM 15.0.1 rev. 201112.scwdp.zip'",
-                "--file linux/10.0.0/modules/Dockerfile"
+                "--file linux/10.0.x/modules/Dockerfile"
             ]
         }
     ],
