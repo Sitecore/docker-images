@@ -92,8 +92,14 @@ function Invoke-Build
     $specs = Update-SitecoreRegistry -specs $specs -SitecoreRegistry $SitecoreRegistry
 
     # Print results
-    $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
-
+    if ($PSCmdlet.MyInvocation.BoundParameters["Verbose"].IsPresent)
+    {
+        $specs | Select-Object -Property Tag, Include, Deprecated, Priority, Base | Format-Table
+    }
+    else
+    {
+        $specs | Where-Object { $_.Include -eq $true } | Select-Object -Property Tag, Deprecated, Priority, Base | Format-Table
+    }
     # Determine OS (windows or linux)
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
 
@@ -211,19 +217,23 @@ function Invoke-Build
             # Build image
             $buildOptions = New-Object System.Collections.Generic.List[System.Object]
 
-            if ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceHyperV") {
+            if ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceHyperV")
+            {
                 # --isolation 'hyperv' | makes sense on windows host only?
                 $buildOptions.Add("--isolation 'hyperv'")
             }
-            elseif ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceProcess") {
+            elseif ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceProcess")
+            {
                 # --isolation 'process' | works only on windows
                 $buildOptions.Add("--isolation 'process'")
             }
-            elseif ($osType -ne "windows" -and $IsolationModeBehaviour -ieq "ForceDefault") {
+            elseif ($osType -ne "windows" -and $IsolationModeBehaviour -ieq "ForceDefault")
+            {
                 # --isolation 'default' | works on non-windows
                 $buildOptions.Add("--isolation 'default'")
             }
-            else {
+            else
+            {
                 # no --isolation option | also use engine default if none of the above has been selected
             }
 
@@ -247,7 +257,8 @@ function Invoke-Build
             Write-Message "Build completed for $($tag). Time: $($currentWatch.Elapsed.ToString("hh\:mm\:ss\.fff"))." -Level Debug
             $reportRecords.Add(([ReportRecord]::new($tag, $currentWatch.Elapsed.ToString("hh\:mm\:ss\.fff"), $currentCount))) > $null
 
-            if ($IncludeShortTags) {
+            if ($IncludeShortTags)
+            {
                 $shortTag = $tag -replace '(?<prefix>.*)(?<majorminor>\d{2}\.\d{1,2})(\.)(?<patch>\d{1,2})(?<suffix>.+)', '${prefix}${majorminor}${suffix}'
                 docker image tag $tag $shortTag
                 Write-Message "Successfully tagged $shortTag"
@@ -270,7 +281,8 @@ function Invoke-Build
                 $fulltag = "{0}/{1}" -f $Registry, $tag
             }
 
-            if ($IncludeShortTags) {
+            if ($IncludeShortTags)
+            {
                 $registryShortTag = $fulltag -replace '(?<prefix>.*)(?<majorminor>\d{2}\.\d{1,2})(\.)(?<patch>\d{1,2})(?<suffix>.+)', '${prefix}${majorminor}${suffix}'
                 docker image tag $tag $registryShortTag
                 Write-Message "Successfully tagged $registryShortTag"
@@ -299,13 +311,15 @@ function Invoke-Build
 
             # Push image
             docker image push $fulltag
-            if ($IncludeShortTags) {
+            if ($IncludeShortTags)
+            {
                 docker image push $registryShortTag
             }
             $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
 
             Write-Message ("Processing complete for '{0}', image pushed." -f $fulltag)
-            if ($IncludeShortTags) {
+            if ($IncludeShortTags)
+            {
                 Write-Message ("Processing complete for '{0}', image pushed." -f $registryShortTag)
             }
 

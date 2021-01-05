@@ -360,6 +360,7 @@ SitecoreImageBuilder\Invoke-Build `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -IsolationModeBehaviour $IsolationModeBehaviour `
     -IncludeShortTags:$IncludeShortTags `
-    -WhatIf:$WhatIfPreference
+    -WhatIf:$WhatIfPreference `
+    -Verbose:$VerbosePreference
 
 Pop-Location
