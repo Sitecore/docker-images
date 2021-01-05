@@ -1,0 +1,17 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-xgenerator-assets:10.0.0-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}",
+        "--build-arg TOOL_IMAGE=${sitecore_registry}/tools/sitecore-docker-tools-assets:10.0.0-1809",
+        "--build-arg BASE_BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg ROLES=cm",
+        "--file windows/10.0.0/modules/Dockerfile"
+      ]
+    }
+  ],
+  "sources": [
+    "ExperienceGenerator_10.0.scwdp.zip"
+  ]
+}

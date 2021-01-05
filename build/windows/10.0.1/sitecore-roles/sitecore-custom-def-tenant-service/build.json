@@ -1,0 +1,14 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-custom-def-tenant-service:10.0.1-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/dotnet/framework/aspnet:4.8-windowsservercore-${windowsservercore_version}",
+        "--build-arg ASSETS_IMAGE=community/modules/custom-def-ts-assets:10.0.1-${nanoserver_version}",
+        "--build-arg TOOL_IMAGE=${sitecore_registry}/tools/sitecore-docker-tools-assets:10.0.0-1809"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": []
+}

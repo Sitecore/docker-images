@@ -1,0 +1,17 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-sfcrm-assets:10.0.1-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}",
+        "--build-arg TOOL_IMAGE=${sitecore_registry}/tools/sitecore-docker-tools-assets:10.0.0-1809",
+        "--build-arg BASE_BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg ROLES=cm",
+        "--file windows/10.0.1/modules/Dockerfile"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore Connect for Salesforce CRM 5.0.0 rev. 01431.scwdp.zip"
+  ]
+}
