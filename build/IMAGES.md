@@ -2258,6 +2258,8 @@
 | 10.0.1 | community/sitecore-xp1-custom-sxa-mssql | linux |  | `community/sitecore-xp1-custom-sxa-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp1-custom-sxa-jss-ps-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp1-custom-sxa-jss-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
+| 10.0.1 | community/sitecore-xp1-custom-sxa-jss1501-ps-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss1501-ps-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
+| 10.0.1 | community/sitecore-xp1-custom-sxa-jss1501-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss1501-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp1-custom-sxa-jss1500-ps-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp1-custom-sxa-jss1500-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp1-custom-sxa-jss1400-ps-mssql | linux |  | `community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
@@ -2269,6 +2271,8 @@
 | 10.0.1 | community/sitecore-xp0-custom-sxa-mssql | linux |  | `community/sitecore-xp0-custom-sxa-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp0-custom-sxa-jss-ps-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss-ps-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp0-custom-sxa-jss-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
+| 10.0.1 | community/sitecore-xp0-custom-sxa-jss1501-ps-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss1501-ps-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
+| 10.0.1 | community/sitecore-xp0-custom-sxa-jss1501-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss1501-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp0-custom-sxa-jss1500-ps-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss1500-ps-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp0-custom-sxa-jss1500-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss1500-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
 | 10.0.1 | community/sitecore-xp0-custom-sxa-jss1400-ps-mssql | linux |  | `community/sitecore-xp0-custom-sxa-jss1400-ps-mssql:10.0.1-linux` [Dockerfile](linux/10.0.1/sitecore-roles/sitecore-modules-mssql/Dockerfile) |
