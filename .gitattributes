@@ -2,5 +2,5 @@
 * text=auto
 # Perform LF normalization on shell scripts (required when used as ENTRYPOINT in Docker)
 *.sh text eol=lf
-# Force markdown files to be text
-*.md text
+# Force markdown files to be text with crlf eol
+*.md text eol=crlf

@@ -1,0 +1,101 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-xp1-custom-spe-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-spe-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-spe-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-sxa-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-jss-xp-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-jss1500-xp-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss1501-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-jss1501-xp-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-jss1400-xp-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-spe-ps-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-spe-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-ps-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss-ps-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss1500-ps-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss1500-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss1501-ps-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss1501-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.1-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp1-custom-sxa-jss1400-ps-mssql:10.0.1-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss1400-mssql:10.0.1-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-ps-assets:10.0.1-linux"
+      ]
+    }
+  ],
+  "sources": []
+}

@@ -15,7 +15,7 @@ $server.Properties["DefaultFile"].Value = $InstallPath
 $server.Properties["DefaultLog"].Value = $InstallPath
 $server.Alter()
 
-$sqlPackageExePath = Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -Property FullName -ExpandProperty FullName
+$sqlPackageExePath = Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -ExpandProperty FullName
 
 Get-ChildItem -Path $InstallPath -Filter "*.dacpac" | ForEach-Object {
     $databaseName = $_.BaseName

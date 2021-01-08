@@ -1,6 +1,7 @@
 function Get-WindowsServerCoreToNanoServerVersionMap
 {
     Write-Output @{
+        "2009"     = "2009";
         "2004"     = "2004";
         "1909"     = "1909";
         "1903"     = "1903";

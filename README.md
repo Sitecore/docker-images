@@ -2,7 +2,7 @@
 
 [//]: # "start: stats"
 
-[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-185-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-1009-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-107-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-10.0.0%20on%20ltsc2019/1809-blue?style=flat-square)
+[![License: MIT](https://img.shields.io/badge/License-MIT-green.svg?style=flat-square)](https://opensource.org/licenses/MIT) ![Repositories](https://img.shields.io/badge/Repositories-261-blue.svg?style=flat-square) ![Tags](https://img.shields.io/badge/Tags-2328-blue.svg?style=flat-square) ![Deprecated](https://img.shields.io/badge/Deprecated-0-lightgrey.svg?style=flat-square) ![Dockerfiles](https://img.shields.io/badge/Dockerfiles-129-blue.svg?style=flat-square) ![Default version](https://img.shields.io/badge/Default%20version-10.0.0%20on%20ltsc2019/1809-blue?style=flat-square)
 
 [//]: # "end: stats"
 
@@ -13,7 +13,7 @@ Using this repository you can also build custom Docker images for the most recen
 ## Information about this repository
 
 - Official statement on running Sitecore in containers, see [https://kb.sitecore.net/articles/161310](https://kb.sitecore.net/articles/161310).
-- The images built from this repo (including pre v10 images) are considered custom images and not officially provided or supported by Sitecore.
+- **The images built from the build folder in this repo are not supported by Sitecore.**
 - The build scripts and examples in this repository are provided and maintained by the community, with contributions and code reviews by Sitecore.
 - This repository was initially created to help consolidate efforts around Sitecore and Docker.
 

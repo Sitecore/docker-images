@@ -1,7 +1,34 @@
 # Changelog
 
+## January 2021
+
+- [Changed] Removed -Property FullName from Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -ExpandProperty FullName.
+- [Changed] Collapsed 10.x.x folders into version-specific to greatly improve upgradability. Added build\New-SitecoreVersion.ps1 script.
+- [Added] Missing JSS 15.0.1 Linux images
+
+## December 2020
+
+- [Added] Sitecore JSS v15.0.1 See [#474](https://github.com/Sitecore/docker-images/issues/474). Thanks [@vtml](https://github.com/vtml) :+1:
+- [Added] re-tagged versions of sitecore-docker-tools-assets (now called custom-sitecore-docker-tools-assets)
+- [Changed] Download-Module-Prerequisites.ps1 to use new CDN urls and no longer require username/password
+- [Added] Automatic download and extract of Horizon assets
+- [Added] Sitecore 10.0.1 Images, including Horizon
+- [Fixed] Sitecore 10.0.0 JSS missing NodeJS in CM / CD Docker containers, which causes JSS Integrated mode to fail. See [#386](https://github.com/Sitecore/docker-images/issues/386). Thanks [@vtml](https://github.com/vtml) :+1:
+- [Fixed] Sitecore 10.0.0 SXA / JSS missing Web.config transforms. See [#387](https://github.com/Sitecore/docker-images/issues/387). Thanks [@vtml](https://github.com/vtml) :+1:
+- [Added] Windows 2009 is now supported. You can override which platforms you want by setting the parameter `AutoGenerateWindowsVersionTags` when calling `Invoke-Build`, default value is now: `"2009", "2004", "1909", "1903", "ltsc2019"`.
+- [Added] Sitecore 10.0.1 community modules Linux/Windows Coveo for Sitecore and Coveo for Sitecore SXA 5.0.858.1 assets images
+- [Added] Global Downloads Support
+- [Changed] Removed username/password from documentation. Fixed Test-SitecorePackages and sorted packages.
+
+## November 2020
+
+- [Added] Ability to skip Module Asset Images with -SkipModuleAssets
+- [Added] Ability to provide `-OutputJson` switch to `build.ps1` to generate a Json file with a formatted list of images
+
 ## October 2020
 
+- [Added] JSS 15 images
+- [**Breaking**] -JSS tags now upgraded to v10. To use JSS v14, make sure you use the `-jss1400` tag
 - [Added] missing packages to download file
 - [**Breaking**] Renamed `Download-PS-Prerequisites.ps1` to `Download-Module-Prerequisites.ps1`
 - [Changed] Refactored `Download-Module-Prerequisites.ps1` to download more than just Publishing Service
@@ -33,7 +60,6 @@
 
 - [Added] Sitecore 10.0.0 XM/SPE/SXA/JSS/PS Windows images.
 - [Added] Sitecore 10.0.0 XP/SPE/SXA/JSS/PS Windows images.
-
 
 ## July 2020
 

@@ -1,0 +1,16 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-horizon-integration-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.0.1/modules/Dockerfile"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": [
+    "Horizon.FeatureIntegration 4.1.0-r00725.scwdp.zip"
+  ]
+}

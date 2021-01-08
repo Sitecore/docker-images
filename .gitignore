@@ -15,6 +15,7 @@ windows/tests/**/data/**/*
 
 /.vscode/
 /build/tools/
+/build/docker-images.json
 
 windows/tests/**/mssql-data/**/*
 windows/tests/**/solr-data/**/*

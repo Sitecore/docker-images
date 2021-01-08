@@ -1,17 +1,10 @@
 [CmdletBinding(SupportsShouldProcess = $true)]
-[System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
 [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "RegistryPassword")]
 
 param(
     [Parameter()]
     [ValidateNotNullOrEmpty()]
     [string]$InstallSourcePath,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string]$SitecoreUsername,
-    [Parameter(Mandatory = $true)]
-    [ValidateNotNullOrEmpty()]
-    [string]$SitecorePassword,
     [Parameter()]
     [string]$Registry = "",
     [Parameter()]
@@ -20,10 +13,10 @@ param(
     [string]$RegistryPassword = "",
     [Parameter()]
     [ValidatePattern('[0-9]+\.[0-9]+\.[0-9]+')]
-    [string[]]$SitecoreVersion = @("10.0.0"),
+    [string[]]$SitecoreVersion = @("10.0.1"),
     [ValidateSet("xm", "xp", "xc", "xp0")]
     [string[]]$Topology = @("xm", "xp", "xp0"),
-    [ValidateSet("2004", "1909", "1903", "ltsc2019", "linux")]
+    [ValidateSet("2009", "2004", "1909", "1903", "ltsc2019", "linux")]
     [string[]]$OSVersion = @("ltsc2019"),
     [Parameter()]
     [switch]$IncludeSpe,
@@ -33,13 +26,22 @@ param(
     [switch]$IncludeJss,
     [Parameter()]
     [switch]$IncludeSh,
+    [Parameter()]
+    [switch]$SkipModuleAssets,
     [Parameter(HelpMessage = "If the docker image is already built it should be skipped.")]
     [switch]$SkipExistingImage,
     [Parameter()]
     [switch]$IncludeExperimental,
     [Parameter(Mandatory = $false)]
     [ValidateSet("ForceHyperV", "EngineDefault", "ForceProcess", "ForceDefault")]
-    [string]$IsolationModeBehaviour = "ForceHyperV"
+    [string]$IsolationModeBehaviour = "ForceHyperV",
+    [Parameter(Mandatory = $false, HelpMessage = "If supplied, will output a 'docker-images.json' file in the working folder")]
+    [switch]
+    $OutputJson,
+    [Parameter(Mandatory = $false)]
+    [string]$SitecoreRegistry = "scr.sitecore.com",
+    [Parameter(Mandatory = $false)]
+    [switch]$IncludeShortTags
 )
 
 Push-Location build
@@ -69,6 +71,7 @@ Import-Module (Join-Path $(Get-Location) "\modules\SitecoreImageBuilder") -Requi
 $tags = [System.Collections.ArrayList]@()
 
 $windowsVersionMapping = @{
+    "2009"     = "2009"
     "2004"     = "2004"
     "1909"     = "1909"
     "1903"     = "1903"
@@ -144,7 +147,17 @@ $xpShTags = $availableTags | Where-Object { $_ -match "sitecore-xp([1]{0,1})(-cu
 $xcSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc-(spe).*:.*" }
 $xcSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc-(sxa).*:.*" }
 
-$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $moduleAssetTags + $xmTags + $xpTags + $xp0Tags + $xcTags + $xmSpeTags + $xp0SpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xp0SxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xp0JssTags + $xpJssTags + $xpShTags
+$knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xp0Tags + $xcTags + $xmSpeTags + $xp0SpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xp0SxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xp0JssTags + $xpJssTags + $xpShTags
+if ($SkipModuleAssets)
+{
+    # remove module tags from the avaiableTags to prevent getting processed later
+    $availableTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$moduleAssetTags)
+}
+else
+{
+    $knownTags += $moduleAssetTags
+}
+
 # These tags are not yet classified and no dependency check is made at this point to know which image it belongs to.
 $catchAllTags = [System.Linq.Enumerable]::Except([string[]]$availableTags, [string[]]$knownTags)
 
@@ -170,7 +183,10 @@ foreach ($wv in $OSVersion)
     foreach ($scv in $SitecoreVersion)
     {
         $assetTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
-        $moduleAssetTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+        if (-not $SkipModuleAssets)
+        {
+            $moduleAssetTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+        }
         $catchAllTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
 
         if ($Topology -eq "xm")
@@ -291,6 +307,13 @@ foreach ($wv in $OSVersion)
 
 $tags = [System.Collections.ArrayList]@($tags | Select-Object -Unique)
 
+if ($tags -and $OutputJson)
+{
+    # if -OutputJson, send $tags for formatting and output to working folder
+    $json = Format-BuildOutputToJson $tags
+    $json | Set-Content -Path (Join-Path $PWD "docker-images.json") -Force
+}
+
 if ($SkipExistingImage)
 {
     Write-Message "Existing images will be excluded from the build."
@@ -316,21 +339,15 @@ else
 }
 
 # restore any missing packages
-SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path (Join-Path $(Get-Location) $rootFolder) `
-    -Destination $InstallSourcePath `
-    -SitecoreUsername $SitecoreUsername `
-    -SitecorePassword $SitecorePassword `
-    -Tags $tags `
+SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path $(Get-Location) $rootFolder) -Destination $InstallSourcePath -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 
-if ($IncludeExperimental -eq $true) {
+if ($IncludeExperimental -or -not $SkipModuleAssets)
+{
     # restore any missing experimental packages
     .\Download-Module-Prerequisites.ps1 `
-        -InstallSourcePath $InstallSourcePath `
-        -SitecoreUsername $SitecoreUsername `
-        -SitecorePassword $SitecorePassword
+        -InstallSourcePath $InstallSourcePath
 }
 
 # start the build
@@ -338,9 +355,12 @@ SitecoreImageBuilder\Invoke-Build `
     -Path (Join-Path $(Get-Location) $rootFolder) `
     -InstallSourcePath $InstallSourcePath `
     -Registry $Registry `
+    -SitecoreRegistry $SitecoreRegistry `
     -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -IsolationModeBehaviour $IsolationModeBehaviour `
-    -WhatIf:$WhatIfPreference
+    -IncludeShortTags:$IncludeShortTags `
+    -WhatIf:$WhatIfPreference `
+    -Verbose:$VerbosePreference
 
 Pop-Location

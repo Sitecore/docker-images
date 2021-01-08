@@ -1,102 +1,98 @@
 # The following variables need to be set in Azure Devops:
 
-# Azure
-# - azure.subscription
-# - azure.agentPoolName
-# - azure.vm.resourceGroupName
-# - (optional) azure.vm.linux.name
-# - azure.vm.windows.name
-#
-# Image build options
-# - build.triggerAdditionalBuild - specify a build ID for triggering an additional build after successful completion
-# - build.tags
-# - build.pushMode
-# - build.pruneImages
-# - build.sitecoreVersion
-# - build.sitecoreTopology
-# - build.sitecoreWindowsVersion
-# - build.includeSpe
-# - build.includeSxa
-# - build.includeJss
-# - build.includeSh
-# - build.skipExistingImages
-# - build.includeExperimentalImages
-
-# Sitecore credentials
-# - sitecore.username
-# - sitecore.password
-#
-# Container registry
-# - container.registry.password
-# - container.registry.username
-# - container.registry.fullname
-#
-# Windows:
-# - windows.install.source.path
-#
 # Assets drive
-# - assets.useDrive
 # - (optional) assets.azure.fileshare.password
 # - (optional) assets.shared.folder.server
-#
+# - assets.useDrive
+
+# Image build options
+# - build.includeExperimentalImages
+# - build.includeJss
+# - build.includeSh
+# - build.includeSpe
+# - build.includeSxa
+# - build.includeShortTags
+# - build.linuxImages
+# - build.pruneImages
+# - build.sitecoreTopology
+# - build.sitecoreVersion
+# - build.skipExistingImages
+
+# Container registry
+# - container.registry.fullname
+# - container.registry.password
+# - container.registry.username
+
 # Linux
-# - linux.buildImages
 # - (optional) linux.install.source.path
+
+# Sitecore credentials
+# - sitecore.password
+# - sitecore.username
+
+# Windows:
+# - windows.install.source.path
 
 trigger:
   batch: true
   branches:
     include:
     - master
-schedules:
-  - cron: "0 12 * * 0"
-    displayName: Weekly Sunday build
-    branches:
-      include:
-      - master
-    always: true
 
 stages:
-
   - stage: Build_Windows_Images
     jobs:
       - job: Build_Windows_Images
+        strategy:
+          matrix:
+            windows20H2:
+              poolName: 'docker-20H2-agents'
+              osVersion: '2009'
+            windows2004:
+              poolName: 'docker-2004-agents'
+              osVersion: '2004'
+            ltsc2019:
+              poolName: 'docker-ltsc2019-agents'
+              osVersion: 'ltsc2019'
+
         timeoutInMinutes: 720
         displayName: "Build Windows Images"
         pool:
-          name: $(azure.agentPoolName)
+          name: $(poolName)
         steps:
+          - checkout: self
+            clean: true
           - powershell: |
               Test-NetConnection -ComputerName "$(assets.shared.folder.server)" -Port 445
               Invoke-Expression -Command "cmdkey /add:$(assets.shared.folder.server) /user:Azure\dockerassets /pass:$(assets.azure.fileshare.password)"
               New-PSDrive -Name Z -PSProvider FileSystem -Root "\\$(assets.shared.folder.server)\docker-assets" -Persist -ErrorAction SilentlyContinue
             condition: eq(variables['assets.useDrive'], 'true')
             displayName: "Connect Asset Drive (optional)"
-          - task: Docker@2
-            displayName: "Docker registry login"
-            inputs:
-              containerRegistry: "docker-registry"
-              command: login
-          - checkout: self
-            clean: true
+
           - powershell: |
-              "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+              az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
+              if ("$(sitecore.container.registry)" -ne "scr.sitecore.com"){
+                az acr login -n "$(sitecore.container.registry)"
+              }
+                az acr login -n "$(container.registry.fullname)"
+
+              $topology = "$(build.sitecoreTopology)" -split ","
               $buildProps = @{
                 InstallSourcePath = "$(windows.install.source.path)"
-                SitecoreUsername = "$(sitecore.username)"
-                SitecorePassword = "$(sitecore.password)"
                 Registry = "$(container.registry.fullname)"
                 RegistryUserName = "$(container.registry.username)"
                 RegistryPassword = "$(container.registry.password)"
                 SitecoreVersion = "$(build.sitecoreVersion)"
-                Topology = $(build.sitecoreTopology)
-                OSVersion = "$(build.WindowsOSVersion)"
+                Topology = $topology
+                OSVersion = "$(osVersion)"
                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
                 IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+                SitecoreRegistry = "$(sitecore.container.registry)"
+                IncludeShortTags = [System.Convert]::ToBoolean($(build.includeShortTags))
               }
 
               .\Build.ps1 @buildProps
@@ -115,6 +111,8 @@ stages:
         pool:
           name: 'docker-linux-agents'
         steps:
+          - checkout: self
+            clean: true
           - task: Bash@3
             displayName: "Connect to asset drive"
             condition: eq(variables['assets.useDrive'], 'true')
@@ -137,26 +135,22 @@ stages:
 
                   sudo bash -c 'echo "//$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) cifs nofail,vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
                   sudo mount -t cifs //$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
-          - task: Docker@2
-            enabled: true
-            displayName: "Docker registry login"
-            inputs:
-                containerRegistry: "docker-registry"
-                command: login
-          - checkout: self
-            clean: true
           - powershell: |
                 sudo chmod 777 /mnt/dockerassets -R
-                "$(container.registry.password)" | docker login -u "$(container.registry.username)" --password-stdin $(container.registry.fullname)
+                az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
+                if ("$(sitecore.container.registry)" -ne "scr.sitecore.com"){
+                  az acr login -n "$(sitecore.container.registry)"
+                }
+                az acr login -n "$(container.registry.fullname)"
+
+                $topology = "$(build.sitecoreTopology)" -split ","
                 $buildProps = @{
                   InstallSourcePath = "$(linux.install.source.path)"
-                  SitecoreUsername = "$(sitecore.username)"
-                  SitecorePassword = "$(sitecore.password)"
                   Registry = "$(container.registry.fullname)"
                   RegistryUserName = "$(container.registry.username)"
                   RegistryPassword = "$(container.registry.password)"
                   SitecoreVersion = "$(build.sitecoreVersion)"
-                  Topology = $(build.sitecoreTopology)
+                  Topology = $topology
                   OSVersion = "linux"
                   IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
                   IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
@@ -164,6 +158,8 @@ stages:
                   IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                   IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                   SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+                  SitecoreRegistry = "$(sitecore.container.registry)"
+                  IncludeShortTags = [System.Convert]::ToBoolean($(build.includeShortTags))
                 }
 
                 .\Build.ps1 @buildProps
@@ -171,35 +167,6 @@ stages:
           - powershell: |
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
-  - stage: Trigger
-    dependsOn:
-    - Build_Windows_Images
-    - Build_Linux_Images
-    condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'), ne(variables['build.triggerAdditionalBuild'], ''), eq(variables['Build.SourceBranch'], 'refs/heads/master') )
-    jobs:
-      - job: TriggerAdditionalBuild
-
-        displayName: "Trigger Additional Build"
-        steps:
-          - task: TriggerBuild@3
-            inputs:
-              definitionIsInCurrentTeamProject: true
-              buildDefinition: '$(build.triggerAdditionalBuild)'
-              queueBuildForUserThatTriggeredBuild: false
-              ignoreSslCertificateErrors: false
-              useSameSourceVersion: false
-              useCustomSourceVersion: false
-              useSameBranch: false
-              branchToUse: 'master'
-              waitForQueuedBuildsToFinish: false
-              storeInEnvironmentVariable: false
-              authenticationMethod: 'Personal Access Token'
-              password: '$(System.AccessToken)'
-              enableBuildInQueueCondition: false
-              dependentOnSuccessfulBuildCondition: false
-              dependentOnFailedBuildCondition: false
-              checkbuildsoncurrentbranch: false
-              failTaskIfConditionsAreNotFulfilled: false
   - stage: Trigger_Harbor_Push
     dependsOn:
     - Build_Windows_Images
@@ -210,7 +177,7 @@ stages:
         displayName: 'Harbor Push'
         steps:
         - task: TriggerBuild@3
-          displayName: "Trigger Community XP"
+          displayName: "Trigger Community Modules"
           inputs:
             definitionIsInCurrentTeamProject: true
             buildDefinition: '103'
@@ -219,10 +186,10 @@ stages:
             useSameSourceVersion: false
             useCustomSourceVersion: false
             useSameBranch: false
-            branchToUse: 'master'
+            branchToUse: 'main'
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
-            buildParameters: 'namespace: community, groupName: xp, tag:""'
+            buildParameters: 'namespace: community, groupName: communityModules, tag:""'
             authenticationMethod: 'Personal Access Token'
             password: '$(System.AccessToken)'
             enableBuildInQueueCondition: false
@@ -232,7 +199,7 @@ stages:
             failTaskIfConditionsAreNotFulfilled: false
 
         - task: TriggerBuild@3
-          displayName: "Trigger Community XM"
+          displayName: "Trigger Community Images"
           inputs:
             definitionIsInCurrentTeamProject: true
             buildDefinition: '103'
@@ -241,10 +208,10 @@ stages:
             useSameSourceVersion: false
             useCustomSourceVersion: false
             useSameBranch: false
-            branchToUse: 'master'
+            branchToUse: 'main'
             waitForQueuedBuildsToFinish: false
             storeInEnvironmentVariable: false
-            buildParameters: 'namespace: community, groupName: xm, tag:""'
+            buildParameters: 'namespace: community, groupName: community, tag:""'
             authenticationMethod: 'Personal Access Token'
             password: '$(System.AccessToken)'
             enableBuildInQueueCondition: false

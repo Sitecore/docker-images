@@ -21,3 +21,25 @@ When submitting a pull request to the docker-images repo, we ask that you squash
 1. Finally force push the squashed commit: `git push --force-with-lease origin`.
 
 Squashing commits can be a tricky process but once you figure it out, it's really helpful and keeps our repo concise and clean.
+
+## Pull Request Template
+
+A pull request template has been added to ensure consistency and a smooth process. Please follow the checklist in the template to respect the reviewer's time and reduce the amount of work required between the start of the review and the merge!
+
+## Images on scr.sitecore.com
+
+For Sitecore 10 and above, the images in this repository generally make their way to scr.sitecore.com.
+
+Adding images is an internal process and requires manual steps by a Sitecore employee.
+
+### Adding new images
+
+If you are adding a new image, please indicate this clearly with the relevant checkbox in the Pull Request (template provided).
+
+Once the Pull Request is successfully merged to master, an internal process is triggered which can take, in most cases, up to 5 days to process although we'll strive to aim for "as quickly as possible".
+
+### Updating existing images
+
+Updating existing images on scr.sitecore.com is automated. Once a Pull Request is merged into master, a build chain is triggered which ultimately pushes the updated images to the SCR.
+
+It is important to provide as many details as possible in the Pull Request to help the reviewer understand the changes and the possible impact of those changes.

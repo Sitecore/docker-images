@@ -1,0 +1,29 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-coveo-sxa-assets:10.0.1-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}",
+        "--build-arg TOOL_IMAGE=${sitecore_registry}/tools/sitecore-docker-tools-assets:10.0.0-1809",
+        "--build-arg BASE_BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg ROLES=cm",
+        "--file windows/10.0.1/modules/Dockerfile"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "community/modules/custom-coveo508581-sxa-assets:10.0.1-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}",
+        "--build-arg TOOL_IMAGE=${sitecore_registry}/tools/sitecore-docker-tools-assets:10.0.0-1809",
+        "--build-arg BASE_BUILD_IMAGE=mcr.microsoft.com/windows/servercore:${windowsservercore_version}",
+        "--build-arg ROLES=cm",
+        "--file windows/10.0.1/modules/Dockerfile"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": [
+    "Coveo for Sitecore SXA 10.0 5.0.858.1.scwdp.zip"
+  ]
+}
