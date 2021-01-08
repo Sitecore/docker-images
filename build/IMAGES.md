@@ -116,6 +116,9 @@
 | 9.3.0 | sitecore-xp-xconnect-indexworker | windowsservercore | 2009 | `sitecore-xp-xconnect-indexworker:9.3.0-windowsservercore-2009` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect-worker/Dockerfile) |
 | 9.3.0 | sitecore-xp-xconnect-automationengine | windowsservercore | 2009 | `sitecore-xp-xconnect-automationengine:9.3.0-windowsservercore-2009` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect-worker/Dockerfile) |
 | 9.3.0 | sitecore-xp-xconnect | windowsservercore | 2009 | `sitecore-xp-xconnect:9.3.0-windowsservercore-2009` [Dockerfile](windows/9.3.x/sitecore-xp-xconnect/Dockerfile) |
+| 9.3.0 | sitecore-xp-ut-sqldev | windowsservercore | 2009 | `sitecore-xp-ut-sqldev:9.3.0-windowsservercore-2009` [Dockerfile](windows/9.3.x/sitecore-xp-ut-sqldev/Dockerfile) |
+| 9.3.0 | sitecore-xp-ut-processing | windowsservercore | 2009 | `sitecore-xp-ut-processing:9.3.0-windowsservercore-2009` [Dockerfile](windows/9.3.x/sitecore-xp-ut-processing/Dockerfile) |
+| 9.3.0 | sitecore-xp-ut-collection | windowsservercore | 2009 | `sitecore-xp-ut-collection:9.3.0-windowsservercore-2009` [Dockerfile](windows/9.3.x/sitecore-xp-ut-collection/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-standalone | windowsservercore | 2009 | `sitecore-xp-sxa-standalone:9.3.0-windowsservercore-2009` [Dockerfile](windows/9.x.x/sitecore-sxa/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-sqldev | windowsservercore | 2009 | `sitecore-xp-sxa-sqldev:9.3.0-windowsservercore-2009` [Dockerfile](windows/9.x.x/sitecore-sxa-sqldev/Dockerfile) |
 | 9.3.0 | sitecore-xp-sxa-solr | nanoserver | 2009 | `sitecore-xp-sxa-solr:9.3.0-nanoserver-2009` [Dockerfile](windows/9.x.x/sitecore-xp-solr/Dockerfile) |
