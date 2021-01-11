@@ -98,7 +98,7 @@ function Invoke-Build
     }
     else
     {
-        $specs | Where-Object { $_.Include -eq $true } | Select-Object -Property Tag, Deprecated, Priority, Base | Format-Table
+        $specs | Where-Object { $_.Include -eq $true } | Select-Object -Property Tag, Priority, Base | Format-Table
     }
     # Determine OS (windows or linux)
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })

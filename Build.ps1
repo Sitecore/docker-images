@@ -41,7 +41,10 @@ param(
     [Parameter(Mandatory = $false)]
     [string]$SitecoreRegistry = "scr.sitecore.com",
     [Parameter(Mandatory = $false)]
-    [switch]$IncludeShortTags
+    [switch]$IncludeShortTags,
+    [Parameter(Mandatory = $false)]
+    [ValidateSet("WhenChanged", "Always", "Never")]
+    [string]$PushMode = "WhenChanged"
 )
 
 Push-Location build
@@ -357,6 +360,7 @@ SitecoreImageBuilder\Invoke-Build `
     -Registry $Registry `
     -SitecoreRegistry $SitecoreRegistry `
     -Tags $tags `
+    -PushMode $PushMode `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -IsolationModeBehaviour $IsolationModeBehaviour `
     -IncludeShortTags:$IncludeShortTags `
