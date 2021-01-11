@@ -98,13 +98,12 @@ function Invoke-Build
     }
     else
     {
-        $specs | Where-Object { $_.Include -eq $true } | Select-Object -Property Tag, Deprecated, Priority, Base | Format-Table
+        $specs | Where-Object { $_.Include -eq $true } | Select-Object -Property Tag, Priority, Base | Format-Table
     }
     # Determine OS (windows or linux)
     $osType = (docker system info --format '{{json .}}' | ConvertFrom-Json | ForEach-Object { $_.OSType })
 
     Write-Message "Build specifications loaded..." -Level Info
-
 
     # Pull latest external images
     if ($PSCmdlet.ShouldProcess("Pull latest images"))
@@ -140,6 +139,7 @@ function Invoke-Build
             Write-Message ("Pulling external images skipped since PullMode was '{0}'." -f $PullMode) -Level Warning
         }
     }
+
 
     # Start build...
     if ($PSCmdlet.ShouldProcess("Start image builds"))
@@ -245,6 +245,10 @@ function Invoke-Build
 
             $buildOptions.Add("--tag '$tag'")
 
+            if ($tag -match "linux")
+            {
+                $buildOptions.add("--platform linux")
+            }
             $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
 
             Write-Message ("Invoking: {0} " -f $buildCommand) -Level Verbose -Verbose:$VerbosePreference

@@ -32,7 +32,6 @@ function Invoke-PackageRestore
 
     $watch = [System.Diagnostics.StopWatch]::StartNew()
 
-    $sitecoreDownloadUrl = "https://dev.sitecore.net"
     $destinationPath = $Destination.TrimEnd('\')
 
     # Load packages
@@ -43,8 +42,6 @@ function Invoke-PackageRestore
     {
         New-Item $destinationPath -ItemType Directory -WhatIf:$false | Out-Null
     }
-
-    $sitecoreDownloadSession = $null
 
     # Find out which files is needed
     $allSpecs = Get-BuildSpecifications -Path $Path -AutoGenerateWindowsVersionTags $AutoGenerateWindowsVersionTags
@@ -94,10 +91,10 @@ function Invoke-PackageRestore
             if ($PSCmdlet.ShouldProcess($fileName))
             {
                 Write-Message ("Downloading '{0}' to '{1}'..." -f $fileUrl, $filePath)
-                
+
                 # Download package
                 Invoke-FileDownload -Url $fileUrl -Path $filePath
-                
+
             }
         }
     }

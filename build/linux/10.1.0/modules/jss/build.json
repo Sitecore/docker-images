@@ -1,0 +1,45 @@
+{
+    "tags": [
+        {
+            "tag": "community/modules/custom-jss-xp1-assets:16.0.0-linux",
+            "build-options": [
+                "--build-arg BASE_IMAGE=docker.io/alpine:3",
+                "--build-arg TOPOLOGY=XP1",
+                "--file linux/10.1.0/modules/Dockerfile.CI"
+            ],
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xp1-assets:16.0.0-1809",
+            "topology": "XP1"
+        },
+        {
+            "tag": "community/modules/custom-jss1600-xp1-assets:16.0.0-linux",
+            "build-options": [
+                "--build-arg BASE_IMAGE=docker.io/alpine:3",
+                "--build-arg TOPOLOGY=XP1",
+                "--file linux/10.1.0/modules/Dockerfile.CI"
+            ],
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xp1-assets:16.0.0-1809",
+            "topology": "XP1"
+        },
+        {
+            "tag": "community/modules/custom-jss-xm1-assets:16.0.0-linux",
+            "build-options": [
+                "--build-arg BASE_IMAGE=docker.io/alpine:3",
+                "--build-arg TOPOLOGY=XM1",
+                "--file linux/10.1.0/modules/Dockerfile.CI"
+            ],
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xm1-assets:16.0.0-1809",
+            "topology": "XM1"
+        },
+        {
+            "tag": "community/modules/custom-jss1600-xm1-assets:16.0.0-linux",
+            "build-options": [
+                "--build-arg BASE_IMAGE=docker.io/alpine:3",
+                "--build-arg TOPOLOGY=XM1",
+                "--file linux/10.1.0/modules/Dockerfile.CI"
+            ],
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xm1-assets:16.0.0-1809",
+            "topology": "XM1"
+        }
+    ],
+    "sources": []
+}

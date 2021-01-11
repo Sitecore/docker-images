@@ -2287,8 +2287,14 @@
 | 10.0.1 | community/modules/custom-sfmc-bde-assets | linux |  | `community/modules/custom-sfmc-bde-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
 | 10.0.1 | community/modules/custom-sfcrm-assets | linux |  | `community/modules/custom-sfcrm-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
 | 10.0.1 | community/modules/custom-ps-assets | linux |  | `community/modules/custom-ps-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
+| 10.0.1 | community/modules/custom-jss-xp-assets | linux |  | `community/modules/custom-jss-xp-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
+| 10.0.1 | community/modules/custom-jss-xm-assets | linux |  | `community/modules/custom-jss-xm-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
 | 10.0.1 | community/modules/custom-jss1501-xp-assets | linux |  | `community/modules/custom-jss1501-xp-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
 | 10.0.1 | community/modules/custom-jss1501-xm-assets | linux |  | `community/modules/custom-jss1501-xm-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
+| 10.0.1 | community/modules/custom-jss-xp-assets | linux |  | `community/modules/custom-jss-xp-assets:10.0.1-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
+| 10.0.1 | community/modules/custom-jss-xm-assets | linux |  | `community/modules/custom-jss-xm-assets:10.0.1-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
+| 10.0.1 | community/modules/custom-jss1501-xp-assets | linux |  | `community/modules/custom-jss1501-xp-assets:10.0.1-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
+| 10.0.1 | community/modules/custom-jss1501-xm-assets | linux |  | `community/modules/custom-jss1501-xm-assets:10.0.1-linux` [Dockerfile](linux/10.0.0/modules/Dockerfile) |
 | 10.0.1 | community/modules/custom-jss1500-xp-assets | linux |  | `community/modules/custom-jss1500-xp-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
 | 10.0.1 | community/modules/custom-jss1500-xm-assets | linux |  | `community/modules/custom-jss1500-xm-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |
 | 10.0.1 | community/modules/custom-jss1400-xp-assets | linux |  | `community/modules/custom-jss1400-xp-assets:10.0.1-linux` [Dockerfile](linux/10.0.1/modules/Dockerfile) |

@@ -1,0 +1,12 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-sitecore-docker-tools-assets:10.1.0-${nanoserver_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/windows/nanoserver:${nanoserver_version}",
+        "--build-arg TOOL_IMAGE=${sitecore_registry}/tools/sitecore-docker-tools-assets:10.1.0-1809"
+      ]
+    }
+  ],
+  "sources": []
+}
