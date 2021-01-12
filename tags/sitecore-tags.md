@@ -916,6 +916,15 @@ Tag             | Architecture    | OS      | Digest                            
 10.0.1-ltsc2019 | amd64           | windows | sha256:374591ce27c02477fd903dc4ab565c6565f71b2a65afc0daa126fc2c2e7a9a4c | 01/08/2021 04:05:44  | 01/08/2021 04:05:44 |
 ## demo/base 
 Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
+### lighthouse-hotfixes
+Tag                | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+------------------ | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.1-1809        | 1809         | 1001.0      | amd64           | windows | sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f | 01/12/2021 21:12:32  | 01/12/2021 21:12:32 |
+10.0.1-1809-1001.0 | 1809         | 1001.0      | amd64           | windows | sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f | 01/12/2021 21:12:16  | 01/12/2021 21:12:16 |
+10.0.1-2004        | 2004         | 1001.0      | amd64           | windows | sha256:3618107a34b172cff0172ff2aaca85aba000e3238e845cda30290bd069652332 | 01/12/2021 21:20:17  | 01/12/2021 21:20:17 |
+10.0.1-2004-1001.0 | 2004         | 1001.0      | amd64           | windows | sha256:3618107a34b172cff0172ff2aaca85aba000e3238e845cda30290bd069652332 | 01/12/2021 21:20:03  | 01/12/2021 21:20:03 |
+10.0.1-2009        | 2009         | 1001.0      | amd64           | windows | sha256:54fdefdee5c8a28a7eb2c58c9a035db20930f850b1243e46364a09d20f7c2fff | 01/12/2021 21:36:33  | 01/12/2021 21:36:33 |
+10.0.1-2009-1001.0 | 2009         | 1001.0      | amd64           | windows | sha256:54fdefdee5c8a28a7eb2c58c9a035db20930f850b1243e46364a09d20f7c2fff | 01/12/2021 21:36:22  | 01/12/2021 21:36:22 |
 ### lighthouse-xp0-modules-base-cm
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -2446,6 +2455,8 @@ Tag                                        | OSVersion       | TargetOS    | Arc
 10.0.1.004842.53-10.0.19042.685-2009       | 10.0.19042.685  | 2009        | amd64           | windows | sha256:5aaf1d7122a82d1fd593b30896b11b2501c5f2c91ca088b9dff5e4d779e3bfa6 | 12/15/2020 20:19:35  | 12/15/2020 20:19:35 |
 10.0.1.004842.91-10.0.19041.630-2004       | 10.0.19041.630  | 2004        | amd64           | windows | sha256:5b9d6f6cc2aa5f7f0b1360e0d0994c069d6d49e12ec60e8715a3a23d921b9c41 | 12/15/2020 12:57:43  | 12/15/2020 12:57:43 |
 10.0.1.004842.98-10.0.19041.685-2004       | 10.0.19041.685  | 2004        | amd64           | windows | sha256:772af90aff31830310e83b02fac19fd9a83e661ad200113ba17d1d4126d87dbb | 12/15/2020 19:27:09  | 12/15/2020 19:27:09 |
+## sxp 
+This namespace includes images of the *Sitecore Experience Platform (SXP)*. 
 ### sitecore-xp0-mssql
 Tag                                        | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------------ | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -2482,8 +2493,6 @@ Tag                                        | OSVersion       | TargetOS    | Arc
 10.0.1.004842.53-10.0.19042.685-2009       | 10.0.19042.685  | 2009        | amd64           | windows | sha256:0dd9e7bd533c429ed1fe539e730da7c3bc57b284664dcbda01d40df8667a9e75 | 12/15/2020 20:16:05  | 12/15/2020 20:16:05 |
 10.0.1.004842.91-10.0.19041.630-2004       | 10.0.19041.630  | 2004        | amd64           | windows | sha256:ceb71d1d4131d139cdd2e32fcfc3c0f6230b033913b801121679e678c3800c9e | 12/15/2020 12:53:26  | 12/15/2020 12:53:26 |
 10.0.1.004842.98-10.0.19041.685-2004       | 10.0.19041.685  | 2004        | amd64           | windows | sha256:181626edf570271c7635d99433ffaf99f1fa63269b81c97f23c2b82e475e4c68 | 12/15/2020 19:23:44  | 12/15/2020 19:23:44 |
-## sxp 
-This namespace includes images of the *Sitecore Experience Platform (SXP)*. 
 ### sitecore-xp0-solr
 Tag                                        | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------------ | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
