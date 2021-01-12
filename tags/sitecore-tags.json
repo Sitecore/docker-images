@@ -4818,6 +4818,72 @@
                  ]
     },
     {
+        "Name":  "demo/base/lighthouse-hotfixes",
+        "Namespace":  "demo/base",
+        "Tags":  [
+                     {
+                         "Tag":  "10.0.1-1809",
+                         "Digest":  "sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/12/2021 21:12:32",
+                         "LastUpdateTime":  "01/12/2021 21:12:32",
+                         "OSVersion":  "1809",
+                         "TargetOS":  "1001.0"
+                     },
+                     {
+                         "Tag":  "10.0.1-1809-1001.0",
+                         "Digest":  "sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/12/2021 21:12:16",
+                         "LastUpdateTime":  "01/12/2021 21:12:16",
+                         "OSVersion":  "1809",
+                         "TargetOS":  "1001.0"
+                     },
+                     {
+                         "Tag":  "10.0.1-2004",
+                         "Digest":  "sha256:3618107a34b172cff0172ff2aaca85aba000e3238e845cda30290bd069652332",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/12/2021 21:20:17",
+                         "LastUpdateTime":  "01/12/2021 21:20:17",
+                         "OSVersion":  "2004",
+                         "TargetOS":  "1001.0"
+                     },
+                     {
+                         "Tag":  "10.0.1-2004-1001.0",
+                         "Digest":  "sha256:3618107a34b172cff0172ff2aaca85aba000e3238e845cda30290bd069652332",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/12/2021 21:20:03",
+                         "LastUpdateTime":  "01/12/2021 21:20:03",
+                         "OSVersion":  "2004",
+                         "TargetOS":  "1001.0"
+                     },
+                     {
+                         "Tag":  "10.0.1-2009",
+                         "Digest":  "sha256:54fdefdee5c8a28a7eb2c58c9a035db20930f850b1243e46364a09d20f7c2fff",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/12/2021 21:36:33",
+                         "LastUpdateTime":  "01/12/2021 21:36:33",
+                         "OSVersion":  "2009",
+                         "TargetOS":  "1001.0"
+                     },
+                     {
+                         "Tag":  "10.0.1-2009-1001.0",
+                         "Digest":  "sha256:54fdefdee5c8a28a7eb2c58c9a035db20930f850b1243e46364a09d20f7c2fff",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/12/2021 21:36:22",
+                         "LastUpdateTime":  "01/12/2021 21:36:22",
+                         "OSVersion":  "2009",
+                         "TargetOS":  "1001.0"
+                     }
+                 ]
+    },
+    {
         "Name":  "demo/base/lighthouse-xp0-modules-base-cm",
         "Namespace":  "demo/base",
         "Tags":  [
