@@ -1,18 +1,18 @@
 # Official Sitecore images on scr.sitecore.com
-This document provides a list of the images and tags available on the official Sitecore container registry hosted at scr.sitecore.com. 
-The Sitecore container images are structured in namespaces according to product line:  
-- **[sxp](#sxp):** Contains all *Sitecore Experience Platform (SXP)* image repositories. Primary platform repositories are found at the root.  
-- **[sxp/nonproduction](#sxpnonproduction):** Images for SXP supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. 
-- **[sxc](#sxc):** Contains all *Sitecore Experience Commerce (SXC)* image repositories. Primary SXC repositories are found at the root.  
-- **[sxc/nonproduction](#sxcnonproduction):** Images for SXC supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction..  
-- **[sxp/modules](#sxpmodules):** Contains image repositories for SXP-specific modules.  
-- **[tools](#tools):** Tools to support Sitecore products  
-- **[demo](#demo):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Platform GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.  
-- **[demo/base](#demobase):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.  
-- **[community](#community):** Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.  
-- **[community/modules](#communitymodules):** Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
-## community/modules 
-Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
+This document provides a list of the images and tags available on the official Sitecore container registry hosted at scr.sitecore.com.
+The Sitecore container images are structured in namespaces according to product line:
+- **[sxp](#sxp):** Contains all *Sitecore Experience Platform (SXP)* image repositories. Primary platform repositories are found at the root.
+- **[sxp/nonproduction](#sxpnonproduction):** Images for SXP supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction.
+- **[sxc](#sxc):** Contains all *Sitecore Experience Commerce (SXC)* image repositories. Primary SXC repositories are found at the root.
+- **[sxc/nonproduction](#sxcnonproduction):** Images for SXC supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction.
+- **[sxp/modules](#sxpmodules):** Contains image repositories for SXP-specific modules.
+- **[tools](#tools):** Tools to support Sitecore products.
+- **[demo](#demo):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Platform GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
+- **[demo/base](#demobase):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
+- **[community](#community):** Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
+- **[community/modules](#communitymodules):** Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
+## community/modules
+Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 ### custom-cmp-xm-assets
 Tag         | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -154,8 +154,8 @@ Tag         | Architecture    | OS      | Digest                                
 10.0.1-1809 | amd64           | windows | sha256:a4708f9407178f1d96a803dd1eb985162679f6fe7f31bec8226fb1ba728c4c47 | 01/06/2021 03:46:05  | 01/07/2021 22:27:22 |
 10.0.1-2004 | amd64           | windows | sha256:30fa1e8c877568c96dacb9842f001e4a7238948c594c2843d22832fa29e6fb9e | 01/06/2021 03:52:13  | 01/07/2021 22:34:10 |
 10.0.1-2009 | amd64           | windows | sha256:51c26509a05f6ba881e67c0ec0ab6ac14ec766950144bf21b746e503477650ca | 01/06/2021 04:00:45  | 01/07/2021 22:40:44 |
-## community 
-Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
+## community
+Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 ### sitecore-custom-def-tenant-service
 Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 --------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -703,8 +703,8 @@ Tag             | Architecture    | OS      | Digest                            
 10.0.1-2004     | amd64           | windows | sha256:19b37c0f9663f97a2beddaa5dbce2ed2b6f386055ff025c3e3830575a97ed723 | 01/08/2021 04:38:24  | 01/08/2021 04:38:24 |
 10.0.1-2009     | amd64           | windows | sha256:4b19457545330e29040f73a07984b1af4501b55a88822d2d81748c97d5e3f9b3 | 01/08/2021 05:40:04  | 01/08/2021 05:40:04 |
 10.0.1-ltsc2019 | amd64           | windows | sha256:a9d3136b02c59524c2267c5fbf43ea28d10d824231fc99f5fc47c1417591cf8a | 01/08/2021 03:53:37  | 01/08/2021 03:53:37 |
-## community 
-Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
+## community
+Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 ### sitecore-xp1-custom-sxa-jss1400-cd
 Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 --------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -914,8 +914,8 @@ Tag             | Architecture    | OS      | Digest                            
 10.0.1-2004     | amd64           | windows | sha256:48664220bbc4a3e86cba77c7a7a121fdda7b844befc6cadc7121c034f1adb540 | 01/08/2021 04:49:02  | 01/08/2021 04:49:02 |
 10.0.1-2009     | amd64           | windows | sha256:413f2a60bf1843679c2f99dedd2b960f3cef1931a8334e1d582102593e8cdaf5 | 01/08/2021 05:50:46  | 01/08/2021 05:50:46 |
 10.0.1-ltsc2019 | amd64           | windows | sha256:374591ce27c02477fd903dc4ab565c6565f71b2a65afc0daa126fc2c2e7a9a4c | 01/08/2021 04:05:44  | 01/08/2021 04:05:44 |
-## demo/base 
-Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
+## demo/base
+Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 ### lighthouse-hotfixes
 Tag                | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------ | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -994,8 +994,8 @@ Tag                    | OSVersion    | TargetOS    | Architecture    | OS      
 10.0.1-2009-1001.0     | 2009         | 1001.0      | amd64           | windows | sha256:cb1afa062aff1c747b3fc8efab298de99f8f2af496ea7935662119c030227aa5 | 01/06/2021 23:48:12  | 01/06/2021 23:48:12 |
 10.0.1-ltsc2019        | ltsc2019     | 1001.0      | amd64           | windows | sha256:616107a2382b44c67f585be721912672f7dd7a05aec3d636efd555e3a78abc1d | 01/06/2021 23:29:38  | 01/06/2021 23:29:38 |
 10.0.1-ltsc2019-1001.0 | ltsc2019     | 1001.0      | amd64           | windows | sha256:616107a2382b44c67f585be721912672f7dd7a05aec3d636efd555e3a78abc1d | 01/06/2021 23:29:06  | 01/06/2021 23:29:06 |
-## demo 
-Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Platform GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details. 
+## demo
+Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Platform GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 ### lighthouse-authoringhost
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -1113,8 +1113,8 @@ Tag                    | OSVersion    | TargetOS    | Architecture    | OS      
 10.0.1-2009-1001.0     | 2009         | 1001.0      | amd64           | windows | sha256:8ffeb180742f550ea8c9fd216d04d9388c1377c0461cd31ed149f2fbe92d2ded | 01/06/2021 18:49:47  | 01/19/2021 16:18:58 |
 10.0.1-ltsc2019        | ltsc2019     | 1001.0      | amd64           | windows | sha256:2324d45aca51d02a136b9fe0785af3043867a07a0c1313a5139a19203f3055ed | 01/06/2021 18:02:26  | 01/19/2021 16:01:16 |
 10.0.1-ltsc2019-1001.0 | ltsc2019     | 1001.0      | amd64           | windows | sha256:2324d45aca51d02a136b9fe0785af3043867a07a0c1313a5139a19203f3055ed | 01/06/2021 18:02:14  | 01/19/2021 16:01:04 |
-## sxc/nonproduction 
-This namespace includes supporting images for *Sitecore Experience Commerce (SXC)*. supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. 
+## sxc/nonproduction
+This namespace includes supporting images for *Sitecore Experience Commerce (SXC)*. supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction.
 ### sitecore-xc0-mssql
 Tag                                         | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -1355,8 +1355,8 @@ Tag                                         | OSVersion       | TargetOS    | Ar
 10.0.1.60239.1114-10.0.19041.746-2004       | 10.0.19041.746  | 2004        | amd64           | windows | sha256:33ffe9858812ddec026666e4baa54a4dcac7647fb86cb472aeb1374669407e23 | 01/18/2021 19:26:48  | 01/18/2021 19:26:48 |
 10.0.1.60239.1114-10.0.19042.746-2009       | 10.0.19042.746  | 2009        | amd64           | windows | sha256:529db7dfa3d1f3d51f92e9189e60e7d96a3d6a5fcbcea1916fc0331d4cc1eed8 | 01/18/2021 20:22:39  | 01/18/2021 20:22:39 |
 10.0.1.60239.1114-10.0.19042.746-20H2       | 10.0.19042.746  | 2009        | amd64           | windows | sha256:529db7dfa3d1f3d51f92e9189e60e7d96a3d6a5fcbcea1916fc0331d4cc1eed8 | 01/18/2021 20:23:16  | 01/18/2021 20:23:16 |
-## sxc 
-This namespace includes images for *Sitecore Experience Commerce (SXC)*. 
+## sxc
+This namespace includes images for *Sitecore Experience Commerce (SXC)*.
 ### sitecore-xc0-cm
 Tag                                         | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -2237,8 +2237,8 @@ Tag                                         | OSVersion       | TargetOS    | Ar
 10.0.1.60239.1114-10.0.19041.746-2004       | 10.0.19041.746  | 2004        | amd64           | windows | sha256:36768c99ac35cb18182fb8c5703dc30e3cd05e5425158d28e4bf0ebd235733f7 | 01/18/2021 19:38:23  | 01/18/2021 19:38:23 |
 10.0.1.60239.1114-10.0.19042.746-2009       | 10.0.19042.746  | 2009        | amd64           | windows | sha256:7562f5e21047e953856a467bc2f23ae4d1d5562409cd03b949cde80025bf26b0 | 01/18/2021 20:40:47  | 01/18/2021 20:40:47 |
 10.0.1.60239.1114-10.0.19042.746-20H2       | 10.0.19042.746  | 2009        | amd64           | windows | sha256:7562f5e21047e953856a467bc2f23ae4d1d5562409cd03b949cde80025bf26b0 | 01/18/2021 20:41:26  | 01/18/2021 20:41:26 |
-## sxp/modules 
-This namespace includes images for modules of the *Sitecore Experience Platform (SXP)*. 
+## sxp/modules
+This namespace includes images for modules of the *Sitecore Experience Platform (SXP)*.
 ### jss-xm1-assets
 Tag                                   | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -2282,8 +2282,8 @@ Tag                                  | OSVersion       | TargetOS    | Architect
 ------------------------------------ | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
 10.0.0-1809                          | 10.0.17763.1339 | 1809        | amd64           | windows | sha256:8790d05189b0cee679dc696ee2898d88daa6be228fb2038ade80235645f33f41 | 08/03/2020 15:17:05  | 08/03/2020 15:17:05 |
 10.0.0.3138.205-10.0.17763.1339-1809 | 10.0.17763.1339 | 1809        | amd64           | windows | sha256:8790d05189b0cee679dc696ee2898d88daa6be228fb2038ade80235645f33f41 | 08/03/2020 15:16:43  | 08/03/2020 15:16:43 |
-## sxp/nonproduction 
-This namespace includes images for *Sitecore Experience Platform (SXP)* supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. 
+## sxp/nonproduction
+This namespace includes images for *Sitecore Experience Platform (SXP)* supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction.
 ### mssql-developer
 Tag                                             | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -2378,8 +2378,8 @@ Tag                                              | OSVersion       | TargetOS   
 8.4.0-10.0.1.004842.93-10.0.19042.746-2009       | 10.0            | 2009        | amd64           | windows | sha256:a2ec22eb15fa411772e7f5cde45160dd0f5b1405eb04463c15f549c712d6e046 | 01/15/2021 19:05:39  | 01/15/2021 19:05:39 |
 8.4.0-10.0.1.004842.93-10.0.19042.746-20H2       | 10.0            | 2009        | amd64           | windows | sha256:a2ec22eb15fa411772e7f5cde45160dd0f5b1405eb04463c15f549c712d6e046 | 01/15/2021 19:06:16  | 01/15/2021 19:06:16 |
 8.4.0-10.0.1.004842.98-10.0.19041.685-2004       | 10.0.19041.685  | 2004        | amd64           | windows | sha256:8ada3b90a26e7f22477f6db035d1feaca5686adb0d8519fc2b78b29f2ef1bbdc | 12/15/2020 18:50:13  | 12/15/2020 18:50:13 |
-## sxp 
-This namespace includes images of the *Sitecore Experience Platform (SXP)*. 
+## sxp
+This namespace includes images of the *Sitecore Experience Platform (SXP)*.
 ### sitecore-id
 Tag                                        | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------------ | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -2913,8 +2913,8 @@ Tag                                        | OSVersion       | TargetOS    | Arc
 10.0.1.004842.93-10.0.19042.746-2009       | 10.0.19042.746  | 2009        | amd64           | windows | sha256:d90ae6315cc632196dd950630075b8840fbd82abe2d32efde8108a931cb8f8e6 | 01/15/2021 20:03:06  | 01/15/2021 20:03:06 |
 10.0.1.004842.93-10.0.19042.746-20H2       | 10.0.19042.746  | 2009        | amd64           | windows | sha256:d90ae6315cc632196dd950630075b8840fbd82abe2d32efde8108a931cb8f8e6 | 01/15/2021 20:03:39  | 01/15/2021 20:03:39 |
 10.0.1.004842.98-10.0.19041.685-2004       | 10.0.19041.685  | 2004        | amd64           | windows | sha256:772af90aff31830310e83b02fac19fd9a83e661ad200113ba17d1d4126d87dbb | 12/15/2020 19:27:09  | 12/15/2020 19:27:09 |
-## sxp 
-This namespace includes images of the *Sitecore Experience Platform (SXP)*. 
+## sxp
+This namespace includes images of the *Sitecore Experience Platform (SXP)*.
 ### sitecore-xp0-mssql
 Tag                                        | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------------ | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -4038,8 +4038,8 @@ Tag                                        | OSVersion       | TargetOS    | Arc
 10.0.1.004842.93-10.0.19042.746-2009       | 10.0.19042.746  | 2009        | amd64           | windows | sha256:c590b73ce101eaf7d237fc9a2a5f8c1cc56124bcc10eaac87bf83044296f9223 | 01/15/2021 19:38:08  | 01/15/2021 19:38:08 |
 10.0.1.004842.93-10.0.19042.746-20H2       | 10.0.19042.746  | 2009        | amd64           | windows | sha256:c590b73ce101eaf7d237fc9a2a5f8c1cc56124bcc10eaac87bf83044296f9223 | 01/15/2021 19:38:43  | 01/15/2021 19:38:43 |
 10.0.1.004842.98-10.0.19041.685-2004       | 10.0.19041.685  | 2004        | amd64           | windows | sha256:a63d678cdfbf3d0728f57aef9e71a483f4760cd1d88659544de83b7b0f066606 | 12/15/2020 19:11:19  | 12/15/2020 19:11:19 |
-## tools 
-This namespace includes images with tools supporting the Sitecore products. 
+## tools
+This namespace includes images with tools supporting the Sitecore products.
 ### sitecore-docker-tools-assets
 Tag                                 | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -4050,5 +4050,5 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 ------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
 5.0.1-1809                            | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:57  | 08/26/2020 15:41:57 |
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:19  | 08/26/2020 15:41:19 |
- 
+
 *This listing was automatically generated on January 19, 2021.*
