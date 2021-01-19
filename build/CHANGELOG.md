@@ -5,6 +5,7 @@
 - [Changed] Removed -Property FullName from Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -ExpandProperty FullName.
 - [Changed] Collapsed 10.x.x folders into version-specific to greatly improve upgradability. Added build\New-SitecoreVersion.ps1 script.
 - [Added] Missing JSS 15.0.1 Linux images
+- [Changed] Changed all 2009 images to 20H2
 
 ## December 2020
 

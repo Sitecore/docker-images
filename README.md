@@ -1,4 +1,4 @@
-﻿# Repository of Sitecore Docker images
+# Repository of Sitecore Docker images
 
 [//]: # "start: stats"
 
