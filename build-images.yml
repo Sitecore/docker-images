@@ -47,7 +47,7 @@ stages:
           matrix:
             windows20H2:
               poolName: 'docker-20H2-agents'
-              osVersion: '2009'
+              osVersion: '20H2'
             windows2004:
               poolName: 'docker-2004-agents'
               osVersion: '2004'

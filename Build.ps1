@@ -16,7 +16,7 @@ param(
     [string[]]$SitecoreVersion = @("10.0.1"),
     [ValidateSet("xm", "xp", "xc", "xp0")]
     [string[]]$Topology = @("xm", "xp", "xp0"),
-    [ValidateSet("2009", "2004", "1909", "1903", "ltsc2019", "linux")]
+    [ValidateSet("20H2", "2004", "1909", "1903", "ltsc2019", "linux")]
     [string[]]$OSVersion = @("ltsc2019"),
     [Parameter()]
     [switch]$IncludeSpe,
@@ -71,7 +71,7 @@ Import-Module (Join-Path $(Get-Location) "\modules\SitecoreImageBuilder") -Requi
 $tags = [System.Collections.ArrayList]@()
 
 $windowsVersionMapping = @{
-    "2009"     = "2009"
+    "20H2"     = "20H2"
     "2004"     = "2004"
     "1909"     = "1909"
     "1903"     = "1903"
