@@ -1,2 +1,0 @@
-# turn off autocrlf for markdown files
-*.md text=off
