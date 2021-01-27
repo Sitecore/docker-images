@@ -6,6 +6,7 @@
 - [Changed] Collapsed 10.x.x folders into version-specific to greatly improve upgradability. Added build\New-SitecoreVersion.ps1 script.
 - [Added] Missing JSS 15.0.1 Linux images
 - [Changed] Changed all 2009 images to 20H2
+- [Removed] entrypoint and development scripts from the 10.x asset image. These are available at https://github.com/sitecore/docker-tools
 
 ## December 2020
 
