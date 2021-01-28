@@ -41,9 +41,6 @@ RUN Expand-Archive -Path 'C:\\downloads\\filebeat.zip' -DestinationPath 'C:\\ins
 RUN New-Item -Path 'C:\\install\\setup' -ItemType 'Directory' -Force | Out-Null; `
     Get-ChildItem 'C:\\downloads\\*.*' -Include '*.exe', '*.msi' | Move-Item -Destination 'C:\\install\\setup';
 
-# add tools folder
-COPY tools\\ C:\\install\\tools\\
-
 # copy local assets
 COPY *.zip C:\\assets\\
 
