@@ -13,19 +13,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:c83423f8c844db69a6c5108914d601a39d84fdb7fda4fd85079d6049b2114c5f",
+                         "Digest":  "sha256:764d98f96146b70d11e2b50ce5ae46665fa3cdd03bdd7bffec7164c639f3b8fc",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:40:18",
-                         "LastUpdateTime":  "01/25/2021 19:42:51"
+                         "LastUpdateTime":  "01/28/2021 19:53:21"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:446720174937e10008c84d13bf2add9d39dced7430c886c31afb6f04c53ac972",
+                         "Digest":  "sha256:52330ef56eb974b402170ff2537ba104ba7d10ffe59909b9f285cc4441b1751b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:47:05",
-                         "LastUpdateTime":  "01/25/2021 19:49:31"
+                         "LastUpdateTime":  "01/28/2021 19:59:59"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -34,6 +34,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:55:35",
                          "LastUpdateTime":  "01/07/2021 22:35:24"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:fa8f20702190e9d4b8ce9d7ec94d49a1ac63c638f77351aecfc91975ad57fa53",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:14:19",
+                         "LastUpdateTime":  "01/28/2021 20:14:19"
                      }
                  ]
     },
@@ -51,19 +59,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:cbf44329f0e93e30f08d68c1b712c02d604bd6f70c04caa62dc9c0d64efdc976",
+                         "Digest":  "sha256:9d6c8fd148ee5306eeceb39e100ff498e806bd16a23164754aa5681e48980c5b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:40:38",
-                         "LastUpdateTime":  "01/25/2021 19:43:06"
+                         "LastUpdateTime":  "01/28/2021 19:53:39"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:cc582f252c68c6f2224709f1c6956256807f9b612228bdeb78fb6035fa031033",
+                         "Digest":  "sha256:b0b53ddc69e1c036376986667c3e4836a2f92d78f7080e817ee45f6ca7ea95d5",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:47:20",
-                         "LastUpdateTime":  "01/25/2021 19:49:47"
+                         "LastUpdateTime":  "01/28/2021 20:00:16"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -72,6 +80,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:55:51",
                          "LastUpdateTime":  "01/07/2021 22:35:39"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:5741bd0544be949b4c45fead87e0f709871a962fb815cb015957311eb46b133b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:14:36",
+                         "LastUpdateTime":  "01/28/2021 20:14:36"
                      }
                  ]
     },
@@ -89,19 +105,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:10772e5a0e2975edf00a96a4d3fb1dcbac6e9a156400478a1b428da8096ab1dd",
+                         "Digest":  "sha256:b78a3b6d887a88375cf8efe41d0ef24e660529f28b5408c8d7d164f3ab43911e",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:40:55",
-                         "LastUpdateTime":  "01/25/2021 19:43:22"
+                         "LastUpdateTime":  "01/28/2021 19:53:58"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:6e28656533d96d46dcd6f5f3fce2bb7023ace81e2584ac5e20774626fd630f0b",
+                         "Digest":  "sha256:10bffaba9f699e021d0a598ca44ba1401ba60df6b225e3d661232772ba1e93c1",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:47:35",
-                         "LastUpdateTime":  "01/25/2021 19:50:03"
+                         "LastUpdateTime":  "01/28/2021 20:00:33"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -110,6 +126,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:56:06",
                          "LastUpdateTime":  "01/07/2021 22:35:55"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:0cf84c6a564cc5983b7d2fa19731c7f1f8b1a49f5c5f121157764a471a8c2497",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:14:51",
+                         "LastUpdateTime":  "01/28/2021 20:14:51"
                      }
                  ]
     },
@@ -127,19 +151,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:9c172d9ee28ed605c5201348f5a3610a2e4b96997898531ed9db96c80b81f6de",
+                         "Digest":  "sha256:6918fea2c911d8aaa1eee96d966de30bacff8b8e71e2f9823c51c5fe00072943",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:41:11",
-                         "LastUpdateTime":  "01/25/2021 19:43:37"
+                         "LastUpdateTime":  "01/28/2021 19:54:14"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:cf36cf13782981736ad333c8889b39eb838db59bc13ff30d0d612cde0d80eb81",
+                         "Digest":  "sha256:4438c15501e4010b7703bfb8cf65f0befd0223266757e48dcdcc5dc71cb78389",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:47:51",
-                         "LastUpdateTime":  "01/25/2021 19:50:19"
+                         "LastUpdateTime":  "01/28/2021 20:00:50"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -148,6 +172,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:56:20",
                          "LastUpdateTime":  "01/07/2021 22:36:10"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:e70e44c09fc194dc5c2c04b25d08e0ebcde06068773a31390b7f41ce8e8fb1cd",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:15:06",
+                         "LastUpdateTime":  "01/28/2021 20:15:06"
                      }
                  ]
     },
@@ -165,19 +197,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:d8b594092294e33214b3c915c30556b6a35043ee16a4b708dd732c52090eedf8",
+                         "Digest":  "sha256:7e12095163cbde845849a4124e815b6f4629044a86a8c707f80ab2e5c8b75cb9",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:41:25",
-                         "LastUpdateTime":  "01/25/2021 19:43:54"
+                         "LastUpdateTime":  "01/28/2021 19:54:32"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:070f1e533c12ffb6f027aca45d1c6ab90dcc07c8368093a2332e431c511bfe5a",
+                         "Digest":  "sha256:98435a781904db6e5acd212f3e26b79120b367f67ecae4c8ed42ae7c651dffbe",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:48:07",
-                         "LastUpdateTime":  "01/25/2021 19:50:35"
+                         "LastUpdateTime":  "01/28/2021 20:01:06"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -186,6 +218,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:56:36",
                          "LastUpdateTime":  "01/07/2021 22:36:24"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:eab4481f86af723d1b8946f27607a586f3bade6990fb443e32cedf45f2b9c1cf",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:15:21",
+                         "LastUpdateTime":  "01/28/2021 20:15:21"
                      }
                  ]
     },
@@ -203,19 +243,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:fdfca6a8d614b115836b81443fd78795d936132e3a1d6d48a2d5fff775689483",
+                         "Digest":  "sha256:e0e0522efbcf295a38feedb6cea79b95e558690df4254bb4407da522eea92711",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:41:40",
-                         "LastUpdateTime":  "01/25/2021 19:44:09"
+                         "LastUpdateTime":  "01/28/2021 19:54:52"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:6081c98e22f68a481b30875fe7d6bd44f1076e64fadb91d83ac0c0a24a34890e",
+                         "Digest":  "sha256:b94afb519c42c38c56e34b77e77d1c1fd1d5bb79a0d08209f62a36ec017cf77c",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:48:21",
-                         "LastUpdateTime":  "01/25/2021 19:50:51"
+                         "LastUpdateTime":  "01/28/2021 20:01:22"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -224,6 +264,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:56:51",
                          "LastUpdateTime":  "01/07/2021 22:36:39"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:fe4197f43e63e835622147ef2cb590293eb25d6678b845fbf6424c9f7ea8cadd",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:15:37",
+                         "LastUpdateTime":  "01/28/2021 20:15:37"
                      }
                  ]
     },
@@ -241,19 +289,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:476952f5a7bf047bef80db6ccc40b3b42326adb898c61ecf831c4f8dcc0bb937",
+                         "Digest":  "sha256:bacdcb4e3c74e965d9a91603185d6b95f464622c58a2e6860925e4f4aab77d47",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:41:59",
-                         "LastUpdateTime":  "01/25/2021 19:44:26"
+                         "LastUpdateTime":  "01/28/2021 19:55:07"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:4b3c1b1faa19601ea445f316affa9aea3165676a2cb4675d65f681303b224143",
+                         "Digest":  "sha256:fe37ea2d0275267313b5d5878b8098f94743284ba00ec204743f316d3eca53f7",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:48:37",
-                         "LastUpdateTime":  "01/25/2021 19:51:06"
+                         "LastUpdateTime":  "01/28/2021 20:01:37"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -262,6 +310,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:57:05",
                          "LastUpdateTime":  "01/07/2021 22:36:55"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:b0aef0e8a9b58ec797bfdba459010628d67b5bf7f5fe2796f56ffc55a09e962f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:15:52",
+                         "LastUpdateTime":  "01/28/2021 20:15:52"
                      }
                  ]
     },
@@ -271,19 +327,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:c027747699ce6a9e7d34b3421eedab3ba6b1bd1a5319410fe4199a6d0f93e58c",
+                         "Digest":  "sha256:a93324b10e0a203edd112090367d84814a231985b4d2b4fddb2ad904408dd28b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:42:23",
-                         "LastUpdateTime":  "01/25/2021 19:44:46"
+                         "LastUpdateTime":  "01/28/2021 19:55:25"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:fbb9c7a1805b71d6134d09062f6d21cc9b5474a127f736f9afd1b837e3cadcea",
+                         "Digest":  "sha256:7756a8f3a33b41109198fba0224e6e2928860ed24c2c76174e2d9ab6dba66222",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:48:53",
-                         "LastUpdateTime":  "01/25/2021 19:51:23"
+                         "LastUpdateTime":  "01/28/2021 20:01:57"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -292,6 +348,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:57:21",
                          "LastUpdateTime":  "01/07/2021 22:37:12"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:02c41bd591631aae4851bf1031dd7c5c728acb11a53b0581e3bf44aae68aef38",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:16:09",
+                         "LastUpdateTime":  "01/28/2021 20:16:09"
                      }
                  ]
     },
@@ -301,19 +365,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:9ac59640a4a2e9ef5796b1d24d38e429ad23e64ce0bcee5db27b340929159b87",
+                         "Digest":  "sha256:9140e3130ed79e05098f1b09e7d555e7b78fb2f2049f614145ea0b2de308b79d",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:42:44",
-                         "LastUpdateTime":  "01/25/2021 19:45:01"
+                         "LastUpdateTime":  "01/28/2021 19:55:43"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:51671c52ddb9961620e376b3e91de06d76ae6202fab98bf360381a8e7a97227b",
+                         "Digest":  "sha256:845ced9d1544d99f62c42d2503a9ddc561271a1bd45cf5701aff83c0be931839",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:49:09",
-                         "LastUpdateTime":  "01/25/2021 19:51:39"
+                         "LastUpdateTime":  "01/28/2021 20:02:14"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -322,6 +386,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:57:39",
                          "LastUpdateTime":  "01/07/2021 22:37:30"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:a0927378283197e85effef84361780f22f826f2492afa354d990a62190d54b44",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:16:29",
+                         "LastUpdateTime":  "01/28/2021 20:16:29"
                      }
                  ]
     },
@@ -331,19 +403,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:6a0c45211da4b9cde796373f718cee17bb2d2bfb7ada23a037a2c563d9f1e1f1",
+                         "Digest":  "sha256:70ee1ae09ee5529f5bb2bfb8fa4509805b4fae3dabeaec4006310de511acf6a3",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:42:59",
-                         "LastUpdateTime":  "01/25/2021 19:45:15"
+                         "LastUpdateTime":  "01/28/2021 19:55:59"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:0ed24987034fd73d8f81389ff76d1109e2122b246d233d6841be00efed7f0027",
+                         "Digest":  "sha256:fccf34128e1ba7f2f728bd5e19ba09ff8387ace0f7c41a95be6c84000f1a47f5",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:49:25",
-                         "LastUpdateTime":  "01/25/2021 19:51:55"
+                         "LastUpdateTime":  "01/28/2021 20:02:30"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -352,6 +424,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:57:55",
                          "LastUpdateTime":  "01/07/2021 22:37:46"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:5c8b69ee213a85859e36d4ae3d915522fe4a942e6ef9579b45ebd3dbd03cdd24",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:17:06",
+                         "LastUpdateTime":  "01/28/2021 20:17:06"
                      }
                  ]
     },
@@ -361,19 +441,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:7eb032eaee4ea9d7281fb196467db8510b215ef04a259f7c25f6d00d041a0486",
+                         "Digest":  "sha256:395d25213820cd4927f02c5c7a989567df4d176544eb148e80c0a04158f48a6f",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:43:15",
-                         "LastUpdateTime":  "01/25/2021 19:45:31"
+                         "LastUpdateTime":  "01/28/2021 19:56:15"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:120023997492698f6ce7095d1363e31e93a959414f033f97b891be5edb95a44f",
+                         "Digest":  "sha256:1086f61f9248d7d1cb5d3d03bceb4a2e692fb20c80238b05c0d335923d9e8c5c",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:49:40",
-                         "LastUpdateTime":  "01/25/2021 19:52:11"
+                         "LastUpdateTime":  "01/28/2021 20:02:46"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -382,6 +462,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:58:10",
                          "LastUpdateTime":  "01/07/2021 22:38:02"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:925b0576ff8a36627ac0ad26c1b847401a892bcb75c690d1993ad55983854de7",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:17:21",
+                         "LastUpdateTime":  "01/28/2021 20:17:21"
                      }
                  ]
     },
@@ -391,19 +479,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:0541e3ac4434f5fc7f939bec03ea53401e584910f2f32f0b2ce92cb8efc7230f",
+                         "Digest":  "sha256:11078e7cf05b4a928f4f5fd13063d8f7e6d58c6b546a899e8ed63ec9eb7eee08",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:43:38",
-                         "LastUpdateTime":  "01/25/2021 19:45:47"
+                         "LastUpdateTime":  "01/28/2021 19:56:31"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:8606bd9ebc81231765fa9609b29a35bfcadebe00525fb37b9885c1564c1242de",
+                         "Digest":  "sha256:1f051d7fe7ef56391137b0380c0b2f6836de33e20694809b5a34c0d84a6bba8e",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:49:55",
-                         "LastUpdateTime":  "01/25/2021 19:52:25"
+                         "LastUpdateTime":  "01/28/2021 20:03:02"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -412,6 +500,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:58:25",
                          "LastUpdateTime":  "01/07/2021 22:38:18"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:35845096844b3868935c2ec876cbdcc000412ffe69d82f5de582ac816f8e495a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:17:38",
+                         "LastUpdateTime":  "01/28/2021 20:17:38"
                      }
                  ]
     },
@@ -421,19 +517,19 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:a8cb2a69e15c37efde05355138d39c05836134d3f9292e31340fa57f62b31c9c",
+                         "Digest":  "sha256:b8053f4adf13ce9dfb9d3318940933e40db3de4090abfa2e8ae5f9540827fa8f",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:44:00",
-                         "LastUpdateTime":  "01/25/2021 19:46:04"
+                         "LastUpdateTime":  "01/28/2021 19:56:47"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:b36f80fdf3288d9a341f12bea48c5ed6703a5022d8dbacbc65f4bb161a25c3e6",
+                         "Digest":  "sha256:f7daebe62838fb61ae1f64567e4af15d99d569bfc384b724bf08dda76a040838",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:50:11",
-                         "LastUpdateTime":  "01/25/2021 19:52:40"
+                         "LastUpdateTime":  "01/28/2021 20:03:16"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -442,6 +538,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:58:40",
                          "LastUpdateTime":  "01/07/2021 22:38:33"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:a36906b4e8009b97263cff05e2adcf2ea4a8fe44e62b35472850963630aa0ffa",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:17:52",
+                         "LastUpdateTime":  "01/28/2021 20:17:52"
                      }
                  ]
     },
@@ -459,19 +563,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:47cbc8b1dc9be96561a9adb7a214cf80464214408acc5919c3b0b651d8c1d826",
+                         "Digest":  "sha256:f635c1726c67b0bc27353a46947b8133d4c739cb5d6f02a83ad633ec27807b80",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:44:15",
-                         "LastUpdateTime":  "01/25/2021 19:46:19"
+                         "LastUpdateTime":  "01/28/2021 19:57:03"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:b85c21ee028692ded2459e5420c9e6a2cac1466e27490657af793181760c9a9c",
+                         "Digest":  "sha256:18638ba805399f3364baadbb640494922b300d05ee5164dbe457646bbe72facf",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:50:27",
-                         "LastUpdateTime":  "01/25/2021 19:52:57"
+                         "LastUpdateTime":  "01/28/2021 20:03:32"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -480,6 +584,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:58:54",
                          "LastUpdateTime":  "01/07/2021 22:38:48"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:bcec3f037f5bdaff2b65c874c1255ec0e84c455a93fb74e13814492c64d27e66",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:18:07",
+                         "LastUpdateTime":  "01/28/2021 20:18:07"
                      }
                  ]
     },
@@ -497,19 +609,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:476952f5a7bf047bef80db6ccc40b3b42326adb898c61ecf831c4f8dcc0bb937",
+                         "Digest":  "sha256:bacdcb4e3c74e965d9a91603185d6b95f464622c58a2e6860925e4f4aab77d47",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:44:29",
-                         "LastUpdateTime":  "01/25/2021 19:46:36"
+                         "LastUpdateTime":  "01/28/2021 19:57:17"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:4b3c1b1faa19601ea445f316affa9aea3165676a2cb4675d65f681303b224143",
+                         "Digest":  "sha256:fe37ea2d0275267313b5d5878b8098f94743284ba00ec204743f316d3eca53f7",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:50:41",
-                         "LastUpdateTime":  "01/25/2021 19:53:10"
+                         "LastUpdateTime":  "01/28/2021 20:03:46"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -518,6 +630,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:59:08",
                          "LastUpdateTime":  "01/07/2021 22:39:00"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:b0aef0e8a9b58ec797bfdba459010628d67b5bf7f5fe2796f56ffc55a09e962f",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:18:19",
+                         "LastUpdateTime":  "01/28/2021 20:18:19"
                      }
                  ]
     },
@@ -535,19 +655,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:c1eabfbd3ef28c27a31c779aebe792f514867f075d986d894837fb164bf65b7d",
+                         "Digest":  "sha256:02e4fb5674bc935ca1694f8b1a548e945e5dd07f2295159f3c4245c447da2137",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:44:45",
-                         "LastUpdateTime":  "01/25/2021 19:46:50"
+                         "LastUpdateTime":  "01/28/2021 19:57:31"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:357ba09a2c01bb73a88a044903d44636886368c8df6344dc9be8a73824c7a4bf",
+                         "Digest":  "sha256:0401ed93851e999823c8ef6e5424516bbffbb3e5888ba6ad37df867a2fbcd903",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:50:57",
-                         "LastUpdateTime":  "01/25/2021 19:53:26"
+                         "LastUpdateTime":  "01/28/2021 20:04:03"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -556,6 +676,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:59:24",
                          "LastUpdateTime":  "01/07/2021 22:39:16"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:698085dfad8b0914a0f7bdbf607c1b938fe1504714b0fc8cfc153056c2833f5a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:18:37",
+                         "LastUpdateTime":  "01/28/2021 20:18:37"
                      }
                  ]
     },
@@ -573,19 +701,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:5e03bc185093209735ad273fe273c14969ea05af7a303755f164aed3cb3d7e70",
+                         "Digest":  "sha256:2a9cf5cc0537b3c1dd81e09e8deb24a0e215c8111a8b002d807a1e42eb34fcc0",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:45:02",
-                         "LastUpdateTime":  "01/25/2021 19:47:14"
+                         "LastUpdateTime":  "01/28/2021 19:57:47"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:6b14c282f781cc15bb87cd8b16addf137e949f5e33cffb757078fe6a4ccd2c0d",
+                         "Digest":  "sha256:624adfd7d1ad4088d5ca96b866c49e36772e042a5259fee8db468230ec308075",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:51:13",
-                         "LastUpdateTime":  "01/25/2021 19:53:39"
+                         "LastUpdateTime":  "01/28/2021 20:04:20"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -594,6 +722,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:59:40",
                          "LastUpdateTime":  "01/07/2021 22:39:31"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:8b49b67884ccefb1816da244640212159d11b9a26769349eccb4d91eb3feba47",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:18:51",
+                         "LastUpdateTime":  "01/28/2021 20:18:51"
                      }
                  ]
     },
@@ -611,19 +747,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:40056839e7f576aa0479b0d81cf9bf0cef15decfd434997bc10c63c27857cba5",
+                         "Digest":  "sha256:084d28e7ecb0b8c0bca32d7a8ad77cbb0b6d806ab5512d4cf14b4b0baf6f699d",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:45:18",
-                         "LastUpdateTime":  "01/25/2021 19:47:28"
+                         "LastUpdateTime":  "01/28/2021 19:58:02"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:9fa7f90dc6b633f7ffc2f263206840b7756693b4213805188649fcf384b86ecb",
+                         "Digest":  "sha256:8bbe67f7069f1d8db6c798ddde586a581923312024d5c4adf9a7bcb15e3b3a2a",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:51:29",
-                         "LastUpdateTime":  "01/25/2021 19:53:56"
+                         "LastUpdateTime":  "01/28/2021 20:04:36"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -632,6 +768,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:59:55",
                          "LastUpdateTime":  "01/07/2021 22:39:45"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:2508e05b34bcd19249c023330c0b2c1a60d928c8efc000ed324c12d970dd9bce",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:19:07",
+                         "LastUpdateTime":  "01/28/2021 20:19:07"
                      }
                  ]
     },
@@ -649,19 +793,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:025227614037962259abd7ef0288fc5a218232cd5568351eb88da9231fb0aa76",
+                         "Digest":  "sha256:83e974b6fda5919210f666408e474f4f8795af9dfad8eaf00cec95294e92c63e",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:45:35",
-                         "LastUpdateTime":  "01/25/2021 19:47:44"
+                         "LastUpdateTime":  "01/28/2021 19:58:18"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:593c181d8b944ede3ba71ae68cf4142dfa1477d6fdb12d4c758045a88491b7a5",
+                         "Digest":  "sha256:aa5c34ae0b6e70b99ce7b49278a4dd7e8fd2af40489d26facb07997d5b174760",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:51:43",
-                         "LastUpdateTime":  "01/25/2021 19:54:11"
+                         "LastUpdateTime":  "01/28/2021 20:04:52"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -670,6 +814,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 04:00:11",
                          "LastUpdateTime":  "01/07/2021 22:40:13"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:40dc3afab7226f388f3e4e9e35596e9d79f73e2da382a528b1b5fa4ca04f447e",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:19:24",
+                         "LastUpdateTime":  "01/28/2021 20:19:24"
                      }
                  ]
     },
@@ -687,19 +839,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:88de2d4f31e4c389a980fd1f280509e5d66e263c687780c96269cf83891cc390",
+                         "Digest":  "sha256:cfaa14f34edd13b41b0a07440d0ce9ffe6a1b30280ea6327b11a72d793934273",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:45:49",
-                         "LastUpdateTime":  "01/25/2021 19:48:10"
+                         "LastUpdateTime":  "01/28/2021 19:58:35"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:0e2a748f86218abe0130a486f2ef8394ead117edcebe42c02855ebf29063710a",
+                         "Digest":  "sha256:dedd917038d539e87a4508f344f35b236a885a14ebffad90dcd649b118f55260",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:51:59",
-                         "LastUpdateTime":  "01/25/2021 19:54:25"
+                         "LastUpdateTime":  "01/28/2021 20:05:06"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -708,6 +860,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 04:00:28",
                          "LastUpdateTime":  "01/07/2021 22:40:30"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:c61203774bc7981ff9f6e4621659c66854d7053d4992acec6314688dfffa805a",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:19:41",
+                         "LastUpdateTime":  "01/28/2021 20:19:41"
                      }
                  ]
     },
@@ -725,19 +885,19 @@
                      },
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:503e9a93b37ee6de0acff3d7ad9780947cabd6435e821f9fe4ab23c9124d2be8",
+                         "Digest":  "sha256:21784b981c841f7597a7d333e76e514a998f92644ee55a317386c786143886ec",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:46:05",
-                         "LastUpdateTime":  "01/25/2021 19:48:28"
+                         "LastUpdateTime":  "01/28/2021 19:58:50"
                      },
                      {
                          "Tag":  "10.0.1-2004",
-                         "Digest":  "sha256:bc8ebe83d7e63847af7577cca80b21ac414cfef889e37e9d071dd43cdf6c0598",
+                         "Digest":  "sha256:61fdbe2dc156def8b2e4cbea75fa39be05b3e21904cfeb0e1a8dc0b8d432d68d",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 03:52:13",
-                         "LastUpdateTime":  "01/25/2021 19:54:40"
+                         "LastUpdateTime":  "01/28/2021 20:05:22"
                      },
                      {
                          "Tag":  "10.0.1-2009",
@@ -746,6 +906,14 @@
                          "OS":  "windows",
                          "CreatedTime":  "01/06/2021 04:00:45",
                          "LastUpdateTime":  "01/07/2021 22:40:44"
+                     },
+                     {
+                         "Tag":  "10.0.1-20H2",
+                         "Digest":  "sha256:7633388356d32ffefe1216dbdc6793b5ac777bec574adcc10848f482fd6c914c",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "01/28/2021 20:19:56",
+                         "LastUpdateTime":  "01/28/2021 20:19:56"
                      }
                  ]
     },
