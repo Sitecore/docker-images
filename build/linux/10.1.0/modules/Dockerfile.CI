@@ -1,0 +1,9 @@
+# escape=`
+
+ARG BASE_IMAGE
+
+FROM ${BASE_IMAGE}
+
+WORKDIR /module
+
+COPY ./data .

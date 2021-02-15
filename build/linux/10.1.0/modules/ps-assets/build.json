@@ -1,16 +1,29 @@
 {
   "tags": [
     {
-      "tag": "community/modules/custom-ps-assets:10.0.1-linux",
+      "tag": "community/modules/custom-sps-integration-xp0-assets:10.1.0-linux",
       "build-options": [
-        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
-        "--build-arg ROLES=cm",
-        "--file linux/10.0.1/modules/Dockerfile"
+        "--build-arg BASE_IMAGE=alpine/alpine:3",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
       ],
-      "experimental": true
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xp0-assets:10.1.0-1809"
+    },
+    {
+      "tag": "community/modules/custom-sps-integration-xp1-assets:10.1.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=alpine/alpine:3",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0-1809"
+    },
+    {
+      "tag": "community/modules/custom-sps-integration-xm1-assets:10.1.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=alpine/alpine:3",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0-1809"
     }
   ],
-  "sources": [
-    "Sitecore Publishing Module 10.0.0.0 rev. r00568.2697.scwdp.zip"
-  ]
+  "sources": []
 }

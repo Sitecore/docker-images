@@ -1,15 +1,22 @@
 {
   "tags": [
     {
-      "tag": "community/modules/custom-sxa-assets:10.0.1-linux",
+      "tag": "community/modules/custom-sxa-xm1-assets:10.0.1-linux",
       "build-options": [
-        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
-        "--build-arg ROLES=cm",
-        "--file linux/10.0.1/modules/Dockerfile"
-      ]
+        "--build-arg BASE_IMAGE=alpine/alpine:3",
+        "--file linux/10.0.1/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sxa-xm1-assets:10.1.0-1809"
+    },
+    {
+      "tag": "community/modules/custom-sxa-xp1-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=alpine/alpine:3",
+        "--file linux/10.0.1/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sxa-xp1-assets:10.1.0-1809"
     }
   ],
   "sources": [
-    "Sitecore Experience Accelerator 10.1.0.3672.scwdp.zip"
   ]
 }

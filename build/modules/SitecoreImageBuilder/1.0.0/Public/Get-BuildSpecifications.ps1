@@ -20,14 +20,13 @@ function Get-BuildSpecifications
         $buildFilePath = $_.FullName
         $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
         $dockerFile = ""
-
+        $windowsAssetImage = ""
         $sources = @()
 
         if ($null -ne $data.sources)
         {
             $sources = $data.sources
         }
-
         $dataTags = $data.tags
 
         if ($null -eq $dataTags)
@@ -51,7 +50,10 @@ function Get-BuildSpecifications
         $dataTags | ForEach-Object {
             $tag = $_
             $options = $tag.'build-options'
-
+            if ($null -ne $tag.'windows-asset-image')
+            {
+                $windowsAssetImage = $tag.'windows-asset-image'
+            }
             if ($options -match '--file*')
             {
                 $dockerFile = Get-Item -Path (Resolve-Path ((@($options) -like '--file*') -replace '--file ', ''))
@@ -169,16 +171,17 @@ function Get-BuildSpecifications
             }
 
             Write-Output (New-Object PSObject -Property @{
-                    Tag            = $tag.tag;
-                    BuildOptions   = @($options);
-                    Base           = @($baseImages | Select-Object -Unique);
-                    Path           = $buildContextPath;
-                    DockerFilePath = $dockerFile.FullName;
-                    Sources        = @($sources);
-                    Priority       = $null;
-                    Include        = $false;
-                    Deprecated     = $deprecated;
-                    Experimental   = $experimental;
+                    Tag               = $tag.tag;
+                    BuildOptions      = @($options);
+                    Base              = @($baseImages | Select-Object -Unique);
+                    Path              = $buildContextPath;
+                    DockerFilePath    = $dockerFile.FullName;
+                    Sources           = @($sources);
+                    Priority          = $null;
+                    Include           = $false;
+                    Deprecated        = $deprecated;
+                    Experimental      = $experimental;
+                    WindowsAssetImage = $windowsAssetImage;
                 })
         }
     }

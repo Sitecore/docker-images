@@ -342,7 +342,8 @@ else
 }
 
 # restore any missing packages
-SitecoreImageBuilder\Invoke-PackageRestore -Path (Join-Path $(Get-Location) $rootFolder) -Destination $InstallSourcePath -Tags $tags `
+SitecoreImageBuilder\Invoke-PackageRestore `
+    -Path (Join-Path $(Get-Location) $rootFolder) -Destination $InstallSourcePath -Tags $tags `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 

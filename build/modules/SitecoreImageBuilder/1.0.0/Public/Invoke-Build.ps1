@@ -141,193 +141,207 @@ function Invoke-Build
         }
     }
 
-    # Start build...
-    if ($PSCmdlet.ShouldProcess("Start image builds"))
+    # Pull latest external images
+    if ($PSCmdlet.ShouldProcess("Pull Windows asset images"))
     {
-        $currentCount = 0
-        $totalCount = $specs | Where-Object { $_.Include } | Measure-Object | Select-Object -ExpandProperty Count
-        $specs | Where-Object { $_.Include } | ForEach-Object {
-            $spec = $_
-            $tag = $spec.Tag
-            $currentCount++
-            Write-Message "Processing $($currentCount) of $($totalCount) '$($tag)'..."
+        if ($PullMode -eq "Always")
+        {
+            # Find external base images of included specifications
+            $specs | Where-Object { $_.Include -eq $true } | ForEach-Object {
+                $spec = $_
 
-            $currentWatch = [System.Diagnostics.StopWatch]::StartNew()
-
-            # Save the digest of previous builds for later comparison
-            $previousDigest = $null
-
-            if ((docker image ls $tag --quiet))
-            {
-                $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
+                $spec.$WindowsAssetImage | ForEach-Object {
+                    $assetImage += $_
+                }
             }
+        }
+        # Start build...
+        if ($PSCmdlet.ShouldProcess("Start image builds"))
+        {
+            $currentCount = 0
+            $totalCount = $specs | Where-Object { $_.Include } | Measure-Object | Select-Object -ExpandProperty Count
+            $specs | Where-Object { $_.Include } | ForEach-Object {
+                $spec = $_
+                $tag = $spec.Tag
+                $currentCount++
+                Write-Message "Processing $($currentCount) of $($totalCount) '$($tag)'..."
 
-            # Copy any missing source files into build context
-            $spec.Sources | ForEach-Object {
-                $sourcePath = $_
+                $currentWatch = [System.Diagnostics.StopWatch]::StartNew()
 
-                # Continue if source file doesn't exist
-                if (!(Test-Path $sourcePath))
+                # Save the digest of previous builds for later comparison
+                $previousDigest = $null
+
+                if ((docker image ls $tag --quiet))
                 {
-                    Write-Message "Optional source file '$sourcePath' is missing..." -Level Warning
+                    $previousDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
+                }
+
+                # Copy any missing source files into build context
+                $spec.Sources | ForEach-Object {
+                    $sourcePath = $_
+
+                    # Continue if source file doesn't exist
+                    if (!(Test-Path $sourcePath))
+                    {
+                        Write-Message "Optional source file '$sourcePath' is missing..." -Level Warning
+
+                        return
+                    }
+
+                    $sourceItem = Get-Item -Path $sourcePath
+                    $targetPath = Join-Path $spec.Path $sourceItem.Name
+
+                    # Copy if target doesn't exist. Legacy support: Always copy if the source is license.xml.
+                    if (!(Test-Path -Path $targetPath) -or ($sourceItem.Name -eq "license.xml"))
+                    {
+                        Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
+                    }
+
+                    # Check to see if we can lookup the hash of the source filename in sitecore-packages.json
+                    if (!$SkipHashValidation)
+                    {
+                        $package = $packages."$($sourceItem.Name)"
+
+                        if ($null -ne $package -and ![string]::IsNullOrEmpty($package.hash))
+                        {
+                            $expectedTargetFileHash = $package.hash
+
+                            # Calculate hash of target file
+                            $currentTargetFileHash = Get-FileHash -Path $targetPath -Algorithm "SHA256" | Select-Object -ExpandProperty "Hash"
+
+                            # Compare hashes and fail if not the same
+                            if ($currentTargetFileHash -eq $expectedTargetFileHash)
+                            {
+                                Write-Message ("Hash of '{0}' is valid." -f $sourceItem.Name) -Level Debug
+                            }
+                            else
+                            {
+                                Remove-Item -Path $targetPath -Force -Verbose:$VerbosePreference
+
+                                throw ("Hash of '{0}' is invalid:`n Expected: {1}`n Current : {2}`nThe target file '{3}' was deleted, please also check the source file '{4}' and see if it is corrupted, if so delete it and try again." -f $sourceItem.Name, $expectedTargetFileHash, $currentTargetFileHash, $targetPath, $sourceItem.FullName)
+                            }
+                        }
+                        else
+                        {
+                            Write-Message ("Skipping hash validation on '{0}', package was not found or no hash was defined." -f $sourceItem.Name) -Level Verbose
+                        }
+                    }
+                }
+
+                # Build image
+                $buildOptions = New-Object System.Collections.Generic.List[System.Object]
+
+                if ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceHyperV")
+                {
+                    # --isolation 'hyperv' | makes sense on windows host only?
+                    $buildOptions.Add("--isolation 'hyperv'")
+                }
+                elseif ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceProcess")
+                {
+                    # --isolation 'process' | works only on windows
+                    $buildOptions.Add("--isolation 'process'")
+                }
+                elseif ($osType -ne "windows" -and $IsolationModeBehaviour -ieq "ForceDefault")
+                {
+                    # --isolation 'default' | works on non-windows
+                    $buildOptions.Add("--isolation 'default'")
+                }
+                else
+                {
+                    # no --isolation option | also use engine default if none of the above has been selected
+                }
+
+                $spec.BuildOptions | ForEach-Object {
+                    $option = $_
+
+                    $buildOptions.Add($option)
+                }
+
+                $buildOptions.Add("--tag '$tag'")
+
+                $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
+
+                Write-Message ("Invoking: {0} " -f $buildCommand) -Level Verbose -Verbose:$VerbosePreference
+
+                & ([scriptblock]::create($buildCommand))
+
+                $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
+
+                $currentWatch.Stop()
+                Write-Message "Build completed for $($tag). Time: $($currentWatch.Elapsed.ToString("hh\:mm\:ss\.fff"))." -Level Debug
+                $reportRecords.Add(([ReportRecord]::new($tag, $currentWatch.Elapsed.ToString("hh\:mm\:ss\.fff"), $currentCount))) > $null
+
+                if ($IncludeShortTags)
+                {
+                    $shortTag = $tag -replace '(?<prefix>.*)(?<majorminor>\d{2}\.\d{1,2})(\.)(?<patch>\d{1,2})(?<suffix>.+)', '${prefix}${majorminor}${suffix}'
+                    docker image tag $tag $shortTag
+                    Write-Message "Successfully tagged $shortTag"
+                }
+                # Check to see if we need to stop here...
+                if ([string]::IsNullOrEmpty($Registry))
+                {
+                    Write-Message ("Done with '{0}', but not pushed since 'Registry' was empty." -f $tag) -Level Debug
 
                     return
                 }
 
-                $sourceItem = Get-Item -Path $sourcePath
-                $targetPath = Join-Path $spec.Path $sourceItem.Name
-
-                # Copy if target doesn't exist. Legacy support: Always copy if the source is license.xml.
-                if (!(Test-Path -Path $targetPath) -or ($sourceItem.Name -eq "license.xml"))
+                # Tag image
+                if ([string]::IsNullOrEmpty($Registry))
                 {
-                    Copy-Item $sourceItem -Destination $targetPath -Verbose:$VerbosePreference
+                    $fulltag = $tag
+                }
+                else
+                {
+                    $fulltag = "{0}/{1}" -f $Registry, $tag
                 }
 
-                # Check to see if we can lookup the hash of the source filename in sitecore-packages.json
-                if (!$SkipHashValidation)
+                if ($IncludeShortTags)
                 {
-                    $package = $packages."$($sourceItem.Name)"
-
-                    if ($null -ne $package -and ![string]::IsNullOrEmpty($package.hash))
-                    {
-                        $expectedTargetFileHash = $package.hash
-
-                        # Calculate hash of target file
-                        $currentTargetFileHash = Get-FileHash -Path $targetPath -Algorithm "SHA256" | Select-Object -ExpandProperty "Hash"
-
-                        # Compare hashes and fail if not the same
-                        if ($currentTargetFileHash -eq $expectedTargetFileHash)
-                        {
-                            Write-Message ("Hash of '{0}' is valid." -f $sourceItem.Name) -Level Debug
-                        }
-                        else
-                        {
-                            Remove-Item -Path $targetPath -Force -Verbose:$VerbosePreference
-
-                            throw ("Hash of '{0}' is invalid:`n Expected: {1}`n Current : {2}`nThe target file '{3}' was deleted, please also check the source file '{4}' and see if it is corrupted, if so delete it and try again." -f $sourceItem.Name, $expectedTargetFileHash, $currentTargetFileHash, $targetPath, $sourceItem.FullName)
-                        }
-                    }
-                    else
-                    {
-                        Write-Message ("Skipping hash validation on '{0}', package was not found or no hash was defined." -f $sourceItem.Name) -Level Verbose
-                    }
+                    $registryShortTag = $fulltag -replace '(?<prefix>.*)(?<majorminor>\d{2}\.\d{1,2})(\.)(?<patch>\d{1,2})(?<suffix>.+)', '${prefix}${majorminor}${suffix}'
+                    docker image tag $tag $registryShortTag
+                    Write-Message "Successfully tagged $registryShortTag"
                 }
+                docker image tag $tag $fulltag
+
+                $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
+
+                # Check to see if we need to stop here...
+                if ($PushMode -eq "Never")
+                {
+                    Write-Message ("Processing complete for '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode)
+
+                    return
+                }
+
+                # Determine if we need to push
+                $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
+
+                if (($PushMode -eq "WhenChanged") -and ($currentDigest -eq $previousDigest))
+                {
+                    Write-Message ("Processing complete for '{0}', but not pushed since 'PushMode' is '{1}' and the image has not changed since last build." -f $tag, $PushMode)
+
+                    return
+                }
+
+                # Push image
+                docker image push $fulltag
+                if ($IncludeShortTags)
+                {
+                    docker image push $registryShortTag
+                }
+                $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
+
+                Write-Message ("Processing complete for '{0}', image pushed." -f $fulltag)
+                if ($IncludeShortTags)
+                {
+                    Write-Message ("Processing complete for '{0}', image pushed." -f $registryShortTag)
+                }
+
             }
-
-            # Build image
-            $buildOptions = New-Object System.Collections.Generic.List[System.Object]
-
-            if ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceHyperV")
-            {
-                # --isolation 'hyperv' | makes sense on windows host only?
-                $buildOptions.Add("--isolation 'hyperv'")
-            }
-            elseif ($osType -ieq "windows" -and $IsolationModeBehaviour -ieq "ForceProcess")
-            {
-                # --isolation 'process' | works only on windows
-                $buildOptions.Add("--isolation 'process'")
-            }
-            elseif ($osType -ne "windows" -and $IsolationModeBehaviour -ieq "ForceDefault")
-            {
-                # --isolation 'default' | works on non-windows
-                $buildOptions.Add("--isolation 'default'")
-            }
-            else
-            {
-                # no --isolation option | also use engine default if none of the above has been selected
-            }
-
-            $spec.BuildOptions | ForEach-Object {
-                $option = $_
-
-                $buildOptions.Add($option)
-            }
-
-            $buildOptions.Add("--tag '$tag'")
-
-            $buildCommand = "docker image build {0} '{1}'" -f ($buildOptions -join " "), $spec.Path
-
-            Write-Message ("Invoking: {0} " -f $buildCommand) -Level Verbose -Verbose:$VerbosePreference
-
-            & ([scriptblock]::create($buildCommand))
-
-            $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed: $buildCommand" }
-
-            $currentWatch.Stop()
-            Write-Message "Build completed for $($tag). Time: $($currentWatch.Elapsed.ToString("hh\:mm\:ss\.fff"))." -Level Debug
-            $reportRecords.Add(([ReportRecord]::new($tag, $currentWatch.Elapsed.ToString("hh\:mm\:ss\.fff"), $currentCount))) > $null
-
-            if ($IncludeShortTags)
-            {
-                $shortTag = $tag -replace '(?<prefix>.*)(?<majorminor>\d{2}\.\d{1,2})(\.)(?<patch>\d{1,2})(?<suffix>.+)', '${prefix}${majorminor}${suffix}'
-                docker image tag $tag $shortTag
-                Write-Message "Successfully tagged $shortTag"
-            }
-            # Check to see if we need to stop here...
-            if ([string]::IsNullOrEmpty($Registry))
-            {
-                Write-Message ("Done with '{0}', but not pushed since 'Registry' was empty." -f $tag) -Level Debug
-
-                return
-            }
-
-            # Tag image
-            if ([string]::IsNullOrEmpty($Registry))
-            {
-                $fulltag = $tag
-            }
-            else
-            {
-                $fulltag = "{0}/{1}" -f $Registry, $tag
-            }
-
-            if ($IncludeShortTags)
-            {
-                $registryShortTag = $fulltag -replace '(?<prefix>.*)(?<majorminor>\d{2}\.\d{1,2})(\.)(?<patch>\d{1,2})(?<suffix>.+)', '${prefix}${majorminor}${suffix}'
-                docker image tag $tag $registryShortTag
-                Write-Message "Successfully tagged $registryShortTag"
-            }
-            docker image tag $tag $fulltag
-
-            $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
-
-            # Check to see if we need to stop here...
-            if ($PushMode -eq "Never")
-            {
-                Write-Message ("Processing complete for '{0}', but not pushed since 'PushMode' is '{1}'." -f $tag, $PushMode)
-
-                return
-            }
-
-            # Determine if we need to push
-            $currentDigest = (docker image inspect $tag) | ConvertFrom-Json | ForEach-Object { $_.Id }
-
-            if (($PushMode -eq "WhenChanged") -and ($currentDigest -eq $previousDigest))
-            {
-                Write-Message ("Processing complete for '{0}', but not pushed since 'PushMode' is '{1}' and the image has not changed since last build." -f $tag, $PushMode)
-
-                return
-            }
-
-            # Push image
-            docker image push $fulltag
-            if ($IncludeShortTags)
-            {
-                docker image push $registryShortTag
-            }
-            $LASTEXITCODE -ne 0 | Where-Object { $_ } | ForEach-Object { throw "Failed." }
-
-            Write-Message ("Processing complete for '{0}', image pushed." -f $fulltag)
-            if ($IncludeShortTags)
-            {
-                Write-Message ("Processing complete for '{0}', image pushed." -f $registryShortTag)
-            }
-
         }
+
+        $watch.Stop()
+        Write-Message "Builds completed. Time: $($watch.Elapsed.ToString("hh\:mm\:ss\.fff"))."
+
+        Write-Output $reportRecords | Format-Table -Property Index, Time, Name
     }
-
-    $watch.Stop()
-    Write-Message "Builds completed. Time: $($watch.Elapsed.ToString("hh\:mm\:ss\.fff"))."
-
-    Write-Output $reportRecords | Format-Table -Property Index, Time, Name
-}

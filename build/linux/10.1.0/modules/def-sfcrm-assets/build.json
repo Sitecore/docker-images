@@ -1,15 +1,22 @@
 {
   "tags": [
     {
-      "tag": "community/modules/custom-def-sfcrm-assets:10.0.1-linux",
+      "tag": "community/modules/custom-def-sfcrm-xp0-assets:10.0.1-linux",
       "build-options": [
-        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
-        "--build-arg ROLES=cm",
-        "--file linux/10.0.1/modules/Dockerfile"
-      ]
+        "--build-arg BASE_IMAGE=alpine/alpine:3",
+        "--file linux/10.0.1/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image":"${sitecore_registry}/sxp/modules/sfcrm-xp0-assets:6.0.0-1809"
+    },
+    {
+      "tag": "community/modules/custom-def-sfcrm-xp1-assets:10.0.1-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=alpine/alpine:3",
+        "--file linux/10.0.1/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image":"${sitecore_registry}/sxp/modules/sfcrm-xp1-assets:6.0.0-1809"
+
     }
   ],
-  "sources": [
-    "Sitecore Connect for Salesforce CRM 5.0.0 rev. 01431.scwdp.zip"
-  ]
+  "sources": []
 }

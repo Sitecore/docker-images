@@ -1,44 +1,38 @@
 {
     "tags": [
         {
-            "tag": "community/modules/custom-jss-xp-assets:10.1.0-linux",
+            "tag": "community/modules/custom-jss-xp1-assets:10.1.0-linux",
             "build-options": [
-                "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
-                "--build-arg ROLES=cm",
-                "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.1.0 XP 15.0.0 rev. 201020.scwdp.zip'",
-                "--file linux/10.1.0/modules/Dockerfile"
-            ]
+                "--build-arg BASE_IMAGE=alpine/alpine:3",
+                "--file linux/10.1.0/modules/Dockerfile.CI"
+            ],
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xp1-assets:16.0.0-1809"
         },
         {
-            "tag": "community/modules/custom-jss1501-xp-assets:10.1.0-linux",
+            "tag": "community/modules/custom-jss1600-xp1-assets:10.1.0-linux",
             "build-options": [
-                "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
-                "--build-arg ROLES=cm",
-                "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.1.0 XP 15.0.0 rev. 201020.scwdp.zip'",
-                "--file linux/10.1.0/modules/Dockerfile"
-            ]
+                "--build-arg BASE_IMAGE=alpine/alpine:3",
+                "--file linux/10.1.0/modules/Dockerfile.CI"
+            ],
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xp1-assets:16.0.0-1809"
         },
         {
-            "tag": "community/modules/custom-jss-xm-assets:10.1.0-linux",
+            "tag": "community/modules/custom-jss-xm1-assets:10.1.0-linux",
             "build-options": [
-                "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
-                "--build-arg ROLES=cm",
-                "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.1.0 XM 15.0.0 rev. 201020.scwdp.zip'",
-                "--file linux/10.1.0/modules/Dockerfile"
-            ]
+                "--build-arg BASE_IMAGE=alpine/alpine:3",
+                "--file linux/10.1.0/modules/Dockerfile.CI"
+            ],
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xm1-assets:16.0.0-1809"
         },
         {
-            "tag": "community/modules/custom-jss1501-xm-assets:10.1.0-linux",
+            "tag": "community/modules/custom-jss1600-xm1-assets:10.1.0-linux",
             "build-options": [
-                "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
-                "--build-arg ROLES=cm",
-                "--build-arg ASSET_FILE_NAME='Sitecore JavaScript Services Server for Sitecore 10.1.0 XM 15.0.0 rev. 201020.scwdp.zip'",
-                "--file linux/10.1.0/modules/Dockerfile"
-            ]
+                "--build-arg BASE_IMAGE=alpine/alpine:3",
+                "--build-arg WINDOWS_ASSET_IMAGE=${sitecore_registry}/sxp/modules/sfcrm-xp0-assets:6.0.0-1809",
+                "--file linux/10.1.0/modules/Dockerfile.CI"
+            ],
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xm1-assets:16.0.0-1809"
         }
     ],
-    "sources": [
-        "Sitecore JavaScript Services Server for Sitecore 10.1.0 XM 15.0.0 rev. 201020.scwdp.zip",
-        "Sitecore JavaScript Services Server for Sitecore 10.1.0 XP 15.0.0 rev. 201020.scwdp.zip"
-    ]
+    "sources": []
 }
