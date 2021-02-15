@@ -40,9 +40,9 @@ trigger:
     - master
 
 stages:
-  - stage: Build_Windows_Images
+  - stage: Build_Images
     jobs:
-      - job: Build_Windows_Images
+      - job: Build_Images
         strategy:
           matrix:
             windows20H2:
@@ -60,7 +60,7 @@ stages:
 
 
         timeoutInMinutes: 720
-        displayName: "Build Windows Images"
+        displayName: "Build Images"
         pool:
           name: $(poolName)
         steps:
@@ -112,86 +112,10 @@ stages:
                 docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
             displayName: 'Prune images (optional)'
-  # - stage: Build_Linux_Images
-  #   dependsOn: []
-  #   jobs:
-  #     - job: Build_Linux_Images
-  #       timeoutInMinutes: 720
-  #       displayName: "Build Linux Images"
-  #       condition: eq(variables['build.linuxImages'], 'true')
-  #       pool:
-  #         name: 'docker-20H2-agents'
-  #       steps:
-  #         - checkout: self
-  #           clean: true
-  #         - task: Bash@3
-  #           displayName: "Connect to asset drive"
-  #           condition: eq(variables['assets.useDrive'], 'true')
-  #           inputs:
-  #               targetType: inline
-  #               script: |
-  #                 if [ -d "$(linux.install.source.path)" ]; then
-  #                 exit 0
-  #                 fi
-  #                 sudo mkdir $(linux.install.source.path)
-
-  #                 if [ ! -d "/etc/smbcredentials" ]; then
-  #                 sudo mkdir /etc/smbcredentials
-  #                 fi
-  #                 if [ ! -f "/etc/smbcredentials/dockerassets.cred" ]; then
-  #                     sudo bash -c 'echo "username=dockerassets" >> /etc/smbcredentials/dockerassets.cred'
-  #                     sudo bash -c 'echo "password=$(assets.azure.fileshare.password)" >> /etc/smbcredentials/dockerassets.cred'
-  #                 fi
-  #                 sudo chmod 600 /etc/smbcredentials/dockerassets.cred
-
-  #                 sudo bash -c 'echo "//$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) cifs nofail,vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
-  #                 sudo mount -t cifs //$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
-  #         - powershell: |
-  #               sudo chmod 777 /mnt/dockerassets -R
-
-  #               $sitecoreRegistry = "$(sitecore.container.registry)"
-  #               $sitecoreVersion = "$(build.sitecoreVersion)"
-
-  #               if ("$(Build.SourceBranch)" -match "upgrade/(?<version>\d+\.\d+\.\d+)") {
-  #                   $sitecoreVersion = $matches.version
-  #                   $sitecoreRegistry = "$(sitecore.internal.container.registry)"
-  #               }
-  #               az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
-  #               if ("sitecoreRegistry" -ne "scr.sitecore.com"){
-  #                 az acr login -n "$sitecoreRegistry"
-  #               }
-  #                 az acr login -n "$(container.registry.fullname)"
-
-  #               $topology = "$(build.sitecoreTopology)" -split ","
-  #               $buildProps = @{
-  #                 InstallSourcePath = "$(linux.install.source.path)"
-  #                 Registry = "$(container.registry.fullname)"
-  #                 RegistryUserName = "$(container.registry.username)"
-  #                 RegistryPassword = "$(container.registry.password)"
-  #                 SitecoreVersion = "$sitecoreVersion"
-  #                 SitecoreRegistry = "$sitecoreRegistry"
-  #                 Topology = $topology
-  #                 OSVersion = "linux"
-  #                 IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
-  #                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
-  #                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
-  #                 IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
-  #                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
-  #                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
-  #                 IncludeShortTags = [System.Convert]::ToBoolean($(build.includeShortTags))
-  #               }
-
-  #               .\Build.ps1 @buildProps
-  #           displayName: "Build Linux Images"
-  #         - powershell: |
-  #               docker image prune --force
-  #           condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
   - stage: Trigger_Harbor_Push
     dependsOn:
-    - Build_Windows_Images
-    # - Build_Linux_Images
-    #condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'),eq(variables['Build.SourceBranch'], 'refs/heads/master'))
-    condition: and(succeeded('Build_Windows_Images'),eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    - Build_Images
+    condition: and(succeeded('Build_Images'),eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     jobs:
       - job: Harbor_Push
         displayName: 'Harbor Push'
