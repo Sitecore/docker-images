@@ -1,21 +1,24 @@
 {
   "tags": [
     {
-      "tag": "community/modules/custom-def-sfcrm-xp0-assets:10.0.1-linux",
+      "tag": "community/modules/custom-sfcrm-xp0-assets:10.1.0-linux",
       "build-options": [
-        "--build-arg BASE_IMAGE=alpine/alpine:3",
-        "--file linux/10.0.1/modules/Dockerfile.CI"
+        "--build-arg BASE_IMAGE=docker.io/alpine:3",
+        "--build-arg TOPOLOGY=XP0",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
       ],
-      "windows-asset-image":"${sitecore_registry}/sxp/modules/sfcrm-xp0-assets:6.0.0-1809"
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sfcrm-xp0-assets:6.0.0-1809",
+      "topology": "XP0"
     },
     {
-      "tag": "community/modules/custom-def-sfcrm-xp1-assets:10.0.1-linux",
+      "tag": "community/modules/custom-sfcrm-xp1-assets:10.1.0-linux",
       "build-options": [
-        "--build-arg BASE_IMAGE=alpine/alpine:3",
-        "--file linux/10.0.1/modules/Dockerfile.CI"
+        "--build-arg BASE_IMAGE=docker.io/alpine:3",
+        "--build-arg TOPOLOGY=XP1",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
       ],
-      "windows-asset-image":"${sitecore_registry}/sxp/modules/sfcrm-xp1-assets:6.0.0-1809"
-
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sfcrm-xp1-assets:6.0.0-1809",
+      "topology": "XP1"
     }
   ],
   "sources": []

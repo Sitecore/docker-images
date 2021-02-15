@@ -21,6 +21,7 @@ function Get-BuildSpecifications
         $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
         $dockerFile = ""
         $windowsAssetImage = ""
+        $topology = ""
         $sources = @()
 
         if ($null -ne $data.sources)
@@ -50,10 +51,7 @@ function Get-BuildSpecifications
         $dataTags | ForEach-Object {
             $tag = $_
             $options = $tag.'build-options'
-            if ($null -ne $tag.'windows-asset-image')
-            {
-                $windowsAssetImage = $tag.'windows-asset-image'
-            }
+
             if ($options -match '--file*')
             {
                 $dockerFile = Get-Item -Path (Resolve-Path ((@($options) -like '--file*') -replace '--file ', ''))
@@ -107,6 +105,12 @@ function Get-BuildSpecifications
             if ($null -eq $options)
             {
                 $options = @()
+            }
+
+            if ($null -ne $tag.'windows-asset-image')
+            {
+                $windowsAssetImage = $tag.'windows-asset-image'
+                $topology = $tag.topology
             }
 
             $deprecated = $false
@@ -182,6 +186,7 @@ function Get-BuildSpecifications
                     Deprecated        = $deprecated;
                     Experimental      = $experimental;
                     WindowsAssetImage = $windowsAssetImage;
+                    Topology          = $topology;
                 })
         }
     }

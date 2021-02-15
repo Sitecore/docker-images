@@ -4,6 +4,6 @@ ARG BASE_IMAGE
 
 FROM ${BASE_IMAGE}
 
-WORKDIR /module
+ARG TOPOLOGY
 
-COPY ./data .
+COPY ./data/${TOPOLOGY} .
