@@ -116,7 +116,7 @@ stages:
         displayName: "Build Linux Images"
         condition: eq(variables['build.linuxImages'], 'true')
         pool:
-          name: 'docker-linux-agents'
+          name: 'docker-20H2-agents'
         steps:
           - checkout: self
             clean: true
