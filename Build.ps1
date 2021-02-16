@@ -13,7 +13,7 @@ param(
     [string]$RegistryPassword = "",
     [Parameter()]
     [ValidatePattern('[0-9]+\.[0-9]+\.[0-9]+')]
-    [string[]]$SitecoreVersion = @("10.0.1"),
+    [string[]]$SitecoreVersion = @("10.1.0"),
     [ValidateSet("xm", "xp", "xc", "xp0")]
     [string[]]$Topology = @("xm", "xp", "xp0"),
     [ValidateSet("20H2", "2004", "1909", "1903", "ltsc2019", "linux")]
@@ -347,7 +347,7 @@ SitecoreImageBuilder\Invoke-PackageRestore `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 
-if ($IncludeExperimental -or -not $SkipModuleAssets)
+if ($IncludeExperimental -or -not $SkipModuleAssets -and -not $SitecoreVersion -eq "10.1.0")
 {
     # restore any missing experimental packages
     .\Download-Module-Prerequisites.ps1 `
