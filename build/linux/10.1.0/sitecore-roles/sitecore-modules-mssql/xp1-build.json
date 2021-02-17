@@ -13,7 +13,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-spe-mssql:10.1.0-linux",
-        "--build-arg MODULE_ASSETS=community/modules/custom-sxa-assets:10.1.0-linux"
+        "--build-arg MODULE_ASSETS=community/modules/custom-sxa-xp1-assets:10.1.0-linux"
       ]
     },
     {
