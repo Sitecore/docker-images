@@ -169,7 +169,7 @@ stages:
             inputs:
               targetType: 'inline'
               script: |
-                sudo mv $(Build.SourcesDirectory)/assets/* $(Build.SourcesDirectory)/build/linux/
+                sudo rsync -a $(Build.SourcesDirectory)/assets/* $(Build.SourcesDirectory)/build/linux/
           - task: Bash@3
             displayName: "Connect to asset drive"
             condition: eq(variables['assets.useDrive'], 'true')
