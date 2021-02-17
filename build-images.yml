@@ -133,16 +133,17 @@ stages:
 
               $buildProps = @{
               InstallSourcePath = "$(Build.SourcesDirectory)"
-              PublishModuleAssetsOnly = $true
-              PublishDestination = "$(Build.ArtifactStagingDirectory)"
-              SitecoreVersion = "$(build.sitecoreVersion)"
-              SitecoreRegistry = "$(sitecore.container.registry)"
+              SitecoreVersion = "$sitecoreVersion"
               OSVersion = "linux"
               IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
               IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
               IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
               IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
               IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
+              IncludeModuleAssets = $true
+              SitecoreRegistry = "$sitecoreRegistry"
+              PublishModuleAssetsOnly = $true
+              PublishDestination = "$(Build.ArtifactStagingDirectory)"
               }
               .\Build.ps1 @buildProps
             displayName: "Download Windows Assets"
