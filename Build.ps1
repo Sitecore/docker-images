@@ -83,32 +83,22 @@ $windowsVersionMapping = @{
 }
 
 filter LinuxFilter {
-    if ($_ -like "*-linux") {
+    if ($_.Tag -like "*-linux") {
         $_
     }
 }
 
 filter WindowsFilter {
     param([string]$Version)
-    if ($_ -match ".*((-windowsservercore){0,1})-$($Version)" -or $_ -match ".*((-nanoserver){0,1})-$($windowsVersionMapping[$Version])") {
+    if ($_.Tag -match ".*((-windowsservercore){0,1})-$($Version)" -or $_.Tag -match ".*((-nanoserver){0,1})-$($windowsVersionMapping[$Version])") {
         $_
     }
 }
 
 filter SitecoreFilter {
     param([string]$Version)
-    ## Version number for module asset images changed starting with 10.1 to match Sitecore's version (e.g. cmp-assets:4.0.0)
-    ## This does not match Sitecover version so the following hack (elseif) ensures that any version gets picked up
-    ## This will need to be massaged further with vNext since there is currently nothing to filter out between 10.1 and the next version up.
-    ## Passing in the build path, or an additional parameter would make sense here.
-    [regex]$versionReg = "(?<version>[789]\.[0-9]\.[0-9]|10\.[0]\.[0-9])"
-    $tag = $_
-    $tagVersion = if ($tag -match $versionReg) {$matches.version}
 
-    if ($_ -match ".*:$($Version)((-windowsservercore){0,1})-*" -or $_ -match ".*:$($Version)((-nanoserver){0,1})-*" -or $_ -like "*:$($Version)-linux") {
-        $_
-    }
-    elseif ($_ -like "*-linux" -and [System.Version]$Version -ge "10.1.0" -and $null -eq $tagVersion) {
+    if ($_.Path -like "*$Version*") {
         $_
     }
 }
@@ -125,34 +115,34 @@ if (!$IncludeExperimental) {
     $availableSpecs = $availableSpecs | Where-Object { !$_.Experimental }
 }
 
-$availableTags = $availableSpecs | Select-Object -ExpandProperty Tag
-$defaultTags = $availableTags | Where-Object { $_ -like "mssql-developer:*" -or $_ -like "sitecore-openjdk:*" }
-$xpMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" }
-$xcMiscTags = $availableTags | Where-Object { $_ -like "sitecore-certificates:*" -or $_ -like "sitecore-redis:*" }
+$availableTags = $availableSpecs
+$defaultTags = $availableTags | Where-Object { $_.Tag -like "mssql-developer:*" -or $_.Tag -like "sitecore-openjdk:*" }
+$xpMiscTags = $availableTags | Where-Object { $_.Tag -like "sitecore-certificates:*" }
+$xcMiscTags = $availableTags | Where-Object { $_.Tag -like "sitecore-certificates:*" -or $_.Tag -like "sitecore-redis:*" }
 
-$assetTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore(-custom)?-assets:.*" }
-$moduleAssetTags = $availableTags | Where-Object { $_ -like "community/modules/*" }
-$xmTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
-$xpTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss|.*sh).*:.*" }
-$xp0Tags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$assetTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore(-custom)?-assets:.*" }
+$moduleAssetTags = $availableTags | Where-Object { $_.Tag -like "community/modules/*" }
+$xmTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$xpTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss|.*sh).*:.*" }
+$xp0Tags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
 
-$xcTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$xcTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xc(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
 
-$xmSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xmSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xmJssTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*jss).*:.*" }
+$xmSpeTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
+$xmSxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
+$xmJssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*jss).*:.*" }
 
-$xp0SpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xp0SxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xp0JssTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp0(-custom)?-(.*jss).*:.*" }
+$xp0SpeTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(spe)(?!.*sxa).*:.*" }
+$xp0SxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(.*sxa)(?!.*jss).*:.*" }
+$xp0JssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(.*jss).*:.*" }
 
-$xpSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xpSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xpJssTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*jss).*:.*" }
-$xpShTags = $availableTags | Where-Object { $_ -match "sitecore-xp([1]{0,1})(-custom)?-(.*sh).*:.*" }
+$xpSpeTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
+$xpSxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
+$xpJssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*jss).*:.*" }
+$xpShTags = $availableTags | Where-Object { $_.Tag -match "sitecore-xp([1]{0,1})(-custom)?-(.*sh).*:.*" }
 
-$xcSpeTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc-(spe).*:.*" }
-$xcSxaTags = $availableTags | Where-Object { $_ -match "(community/)?sitecore-xc-(sxa).*:.*" }
+$xcSpeTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xc-(spe).*:.*" }
+$xcSxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xc-(sxa).*:.*" }
 
 $knownTags = $defaultTags + $xpMiscTags + $xcMiscTags + $assetTags + $xmTags + $xpTags + $xp0Tags + $xcTags + $xmSpeTags + $xp0SpeTags + $xpSpeTags + $xcSpeTags + $xmSxaTags + $xp0SxaTags + $xpSxaTags + $xcSxaTags + $xmJssTags + $xp0JssTags + $xpJssTags + $xpShTags
 
@@ -270,6 +260,9 @@ foreach ($wv in $OSVersion) {
 
             if ($Topology -eq "xp") {
                 $xpJssTags | SitecoreFilter -Version $scv | WindowsFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+                if ($wv -eq "linux") {
+                    $xpJssTags | SitecoreFilter -Version $scv | LinuxFilter -Version $wv | ForEach-Object { $tags.Add($_) > $null }
+                }
             }
         }
 
@@ -281,27 +274,28 @@ foreach ($wv in $OSVersion) {
     }
 }
 
-$tags = [System.Collections.ArrayList]@($tags | Select-Object -Unique)
+[System.Collections.ArrayList]$tags = $tags | Sort-Object -Property @{Expression = "Tag"} -Unique
 
 if ($tags -and $OutputJson) {
     # if -OutputJson, send $tags for formatting and output to working folder
-    $json = Format-BuildOutputToJson $tags
+    $json = Format-BuildOutputToJson $($tags | Select-Object -ExpandProperty Tag)
     $json | Set-Content -Path (Join-Path $PWD "docker-images.json") -Force
 }
 
 if ($SkipExistingImage) {
     Write-Message "Existing images will be excluded from the build."
     $existingImages = docker images --format '{{.Repository}}:{{.Tag}}' --filter 'dangling=false'
+
     foreach ($existingImage in $existingImages) {
-        if ($tags -contains $existingImage) {
-            $tags.Remove($existingImage)
+        if (($tags | Select-Object -ExpandProperty Tag) -contains $existingImage) {
+            $tags.Remove($($tags | Where-Object { $_.Tag -eq $existingImage}))
         }
     }
 }
 
 if ($tags) {
     Write-Message "The following images will be built:"
-    $tags
+    $tags | Select-Object -ExpandProperty Tag
 }
 else {
     Write-Message "No images need to be built."
@@ -314,14 +308,13 @@ if ($PublishModuleAssetsOnly){
     -InstallSourcePath $InstallSourcePath `
     -Destination $PublishDestination `
     -SitecoreRegistry $SitecoreRegistry `
-    -Tags $tags `
+    -Tags ($tags | Select-Object -ExpandProperty Tag) `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -Verbose:$VerbosePreference
-    Exit 0
 }
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
-    -Path (Join-Path $(Get-Location) $rootFolder) -Destination $InstallSourcePath -Tags $tags `
+    -Path (Join-Path $(Get-Location) $rootFolder) -Destination $InstallSourcePath -Tags ($tags | Select-Object -ExpandProperty Tag) ` `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 
@@ -338,7 +331,7 @@ SitecoreImageBuilder\Invoke-Build `
     -InstallSourcePath $InstallSourcePath `
     -Registry $Registry `
     -SitecoreRegistry $SitecoreRegistry `
-    -Tags $tags `
+    -Tags ($tags | Select-Object -ExpandProperty Tag) `
     -PushMode $PushMode `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -IsolationModeBehaviour $IsolationModeBehaviour `
