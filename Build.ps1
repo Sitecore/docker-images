@@ -311,6 +311,7 @@ if ($PublishModuleAssetsOnly){
     -Tags ($tags | Select-Object -ExpandProperty Tag) `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -Verbose:$VerbosePreference
+    Exit 0
 }
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
