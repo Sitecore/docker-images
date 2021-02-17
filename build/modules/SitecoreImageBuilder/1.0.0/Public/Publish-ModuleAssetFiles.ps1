@@ -75,6 +75,7 @@ function Publish-ModuleAssetFiles
                 New-Item $DestinationPath -ItemType Directory -Force
             }
             Write-Message "Copying assets from $WindowsAssetImage to $DestinationPath"
+            docker pull $WindowsAssetImage
             docker container create --name tempWindows $WindowsAssetImage
             if ($LASTEXITCODE -ne 0)
             {
