@@ -47,7 +47,7 @@ param(
     [string]$PushMode = "WhenChanged",
     [switch]$PublishModuleAssetsOnly,
     [Parameter(Mandatory = $false)]
-    [string]$PublishDestination
+    [string]$LinuxBuildAssetPath = (Resolve-Path "build\linux")
 )
 
 Push-Location build
@@ -302,16 +302,18 @@ else {
     exit
 }
 
-if ($PublishModuleAssetsOnly){
-    SitecoreImageBuilder\Publish-ModuleAssetFiles `
+if ($PublishModuleAssetsOnly -or $IncludeModuleAssets){
+    SitecoreImageBuilder\Publish-LinuxModuleAssetFiles `
     -Path (Join-Path $(Get-Location) $rootFolder) `
     -InstallSourcePath $InstallSourcePath `
-    -Destination $PublishDestination `
+    -Destination $LinuxBuildAssetPath `
     -SitecoreRegistry $SitecoreRegistry `
     -Tags ($tags | Select-Object -ExpandProperty Tag) `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -Verbose:$VerbosePreference
-    Exit 0
+    if ($PublishModuleAssetsOnly){
+        Exit 0
+    }
 }
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `

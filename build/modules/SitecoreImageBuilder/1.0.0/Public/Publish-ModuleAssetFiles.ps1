@@ -1,4 +1,4 @@
-function Publish-ModuleAssetFiles
+function Publish-LinuxModuleAssetFiles
 {
     [CmdletBinding(SupportsShouldProcess = $true)]
     [System.Diagnostics.CodeAnalysis.SuppressMessageAttribute("PSAvoidUsingPlainTextForPassword", "SitecorePassword")]
