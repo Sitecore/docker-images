@@ -5,7 +5,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-mssql:10.1.0-linux",
-        "--build-arg MODULE_ASSETS=community/modules/custom-spe-assets:10.1.0-linux"
+        "--build-arg MODULE_ASSETS=community/modules/custom-spe-assets:6.2-linux"
       ]
     },
     {
@@ -21,7 +21,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.1.0-linux",
-        "--build-arg MODULE_ASSETS=community/modules/custom-jss-xp-assets:10.1.0-linux"
+        "--build-arg MODULE_ASSETS=community/modules/custom-jss-xp1-assets:16.0.0-linux"
       ]
     },
     {
@@ -29,7 +29,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql:10.1.0-linux",
-        "--build-arg MODULE_ASSETS=community/modules/custom-jss1600-xp-assets:10.1.0-linux"
+        "--build-arg MODULE_ASSETS=community/modules/custom-jss1600-xp1-assets:16.0.0-linux"
       ]
     },
     {
