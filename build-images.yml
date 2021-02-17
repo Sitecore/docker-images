@@ -147,10 +147,7 @@ stages:
               }
               .\Build.ps1 @buildProps
             displayName: "Download Windows Assets"
-          - task: PublishBuildArtifacts@1
-            inputs:
-              pathToPublish: '$(Build.ArtifactStagingDirectory)'
-              artifactName: "moduleAssets"
+          - publish: $(Build.ArtifactStagingDirectory)
             displayName: "Publish Artifacts"
       - job: Build_Linux_Images
         dependsOn: [Publish_Asset_Images]
@@ -162,11 +159,8 @@ stages:
         steps:
           - checkout: self
             clean: true
-          - task: DownloadBuildArtifacts@0
-            inputs:
-              buildType: current
-              artifactName: "moduleAssets"
-              downloadPath: "$(Build.SourcesDirectory)/build/linux/"
+          - download: current
+            path: "$(Build.SourcesDirectory)/build/linux/"
           - task: Bash@3
             displayName: "Connect to asset drive"
             condition: eq(variables['assets.useDrive'], 'true')
