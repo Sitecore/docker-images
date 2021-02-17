@@ -44,7 +44,10 @@ param(
     [switch]$IncludeShortTags,
     [Parameter(Mandatory = $false)]
     [ValidateSet("WhenChanged", "Always", "Never")]
-    [string]$PushMode = "WhenChanged"
+    [string]$PushMode = "WhenChanged",
+    [switch]$PublishModuleAssetsOnly,
+    [Parameter(Mandatory = $false)]
+    [string]$PublishDestination
 )
 
 Push-Location build
@@ -294,6 +297,17 @@ else {
     exit
 }
 
+if ($PublishModuleAssetsOnly){
+    SitecoreImageBuilder\Publish-ModuleAssetFiles `
+    -Path (Join-Path $(Get-Location) $rootFolder) `
+    -InstallSourcePath $InstallSourcePath `
+    -Destination $PublishDestination `
+    -SitecoreRegistry $SitecoreRegistry `
+    -Tags $tags `
+    -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
+    -Verbose:$VerbosePreference
+    Exit 0
+}
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
     -Path (Join-Path $(Get-Location) $rootFolder) -Destination $InstallSourcePath -Tags $tags `

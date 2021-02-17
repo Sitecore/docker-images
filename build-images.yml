@@ -12,6 +12,7 @@
 # - build.includeSpe
 # - build.includeSxa
 # - build.includeShortTags
+# - build.includeModuleAssets
 # - build.linuxImages
 # - build.pruneImages
 # - build.sitecoreTopology
@@ -37,30 +38,25 @@ trigger:
   batch: true
   branches:
     include:
-    - master
+      - master
 
 stages:
-  - stage: Build_Images
+  - stage: Build_Windows_Images
     jobs:
       - job: Build_Images
         strategy:
           matrix:
             windows20H2:
-              poolName: 'docker-20H2-agents'
-              osVersion: '20H2'
+              poolName: "docker-20H2-agents"
+              osVersion: "20H2"
             windows2004:
-              poolName: 'docker-2004-agents'
-              osVersion: '2004'
+              poolName: "docker-2004-agents"
+              osVersion: "2004"
             ltsc2019:
-              poolName: 'docker-ltsc2019-agents'
-              osVersion: 'ltsc2019'
-            linux:
-              poolName: 'docker-20H2-agents'
-              osVersion: 'linux'
-
-
+              poolName: "docker-ltsc2019-agents"
+              osVersion: "ltsc2019"
         timeoutInMinutes: 720
-        displayName: "Build Images"
+        displayName: "Build Windows Images"
         pool:
           name: $(poolName)
         steps:
@@ -109,57 +105,166 @@ stages:
               .\Build.ps1 @buildProps
             displayName: "Build Images"
           - powershell: |
-                docker image prune --force
+              docker image prune --force
             condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
-            displayName: 'Prune images (optional)'
+            displayName: "Prune images (optional)"
+
+  - stage: Build_Linux_Images
+    dependsOn: []
+    jobs:
+      - job: Publish_Asset_Images
+        displayName: "Download and Extract Asset Images"
+        pool:
+          name: "docker-20H2-agents"
+        steps:
+          - powershell: |
+              $sitecoreRegistry = "$(sitecore.container.registry)"
+              $sitecoreVersion = "$(build.sitecoreVersion)"
+
+              if ("$(Build.SourceBranch)" -match "upgrade/(?<version>\d+\.\d+\.\d+)") {
+                  $sitecoreVersion = $matches.version
+                  $sitecoreRegistry = "$(sitecore.internal.container.registry)"
+              }
+              az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
+              if ("sitecoreRegistry" -ne "scr.sitecore.com"){
+                az acr login -n "$sitecoreRegistry"
+              }
+              az acr login -n "$(container.registry.fullname)"
+
+              $buildProps = @{
+              InstallSourcePath = "$(linux.install.source.path)"
+              PublishModuleAssetsOnly = $true
+              PublishDestination = "$(Build.ArtifactStagingDirectory)"
+              SitecoreVersion = "$(build.sitecoreVersion)"
+              SitecoreRegistry = "$(sitecore.container.registry)"
+              OSVersion = "linux"
+              IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
+              IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
+              IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+              IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
+              IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
+              }
+              .\Build.ps1 @buildProps
+            displayName: "Download Windows Assets"
+          - task: PublishBuildArtifacts@1
+            inputs:
+              pathToPublish: '$(Build.ArtifactStagingDirectory)'
+              artifactName: "moduleAssets"
+            displayName: "Publish Artifacts"
+      - job: Build_Linux_Images
+        dependsOn: [Publish_Asset_Images]
+        timeoutInMinutes: 720
+        displayName: "Build Linux Images"
+        condition: and(eq(variables['build.linuxImages'], 'true'), succeeded('Publish_Asset_Images'))
+        pool:
+          name: "docker-linux-agents"
+        steps:
+          - checkout: self
+            clean: true
+          - task: DownloadBuildArtifacts@0
+            inputs:
+              buildType: current
+              artifactName: "moduleAssets"
+              downloadPath: "$(Build.SourcesDirectory)/build/linux/"
+          - task: Bash@3
+            displayName: "Connect to asset drive"
+            condition: eq(variables['assets.useDrive'], 'true')
+            inputs:
+              targetType: inline
+              script: |
+                if [ -d "$(linux.install.source.path)" ]; then
+                exit 0
+                fi
+                sudo mkdir $(linux.install.source.path)
+
+                if [ ! -d "/etc/smbcredentials" ]; then
+                sudo mkdir /etc/smbcredentials
+                fi
+                if [ ! -f "/etc/smbcredentials/dockerassets.cred" ]; then
+                    sudo bash -c 'echo "username=dockerassets" >> /etc/smbcredentials/dockerassets.cred'
+                    sudo bash -c 'echo "password=$(assets.azure.fileshare.password)" >> /etc/smbcredentials/dockerassets.cred'
+                fi
+                sudo chmod 600 /etc/smbcredentials/dockerassets.cred
+
+                sudo bash -c 'echo "//$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) cifs nofail,vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino" >> /etc/fstab'
+                sudo mount -t cifs //$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
+          - powershell: |
+              sudo chmod 777 /mnt/dockerassets -R
+              az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
+              if ("$(sitecore.container.registry)" -ne "scr.sitecore.com"){
+                az acr login -n "$(sitecore.container.registry)"
+              }
+              az acr login -n "$(container.registry.fullname)"
+
+              $topology = "$(build.sitecoreTopology)" -split ","
+              $buildProps = @{
+                InstallSourcePath = "$(linux.install.source.path)"
+                Registry = "$(container.registry.fullname)"
+                RegistryUserName = "$(container.registry.username)"
+                RegistryPassword = "$(container.registry.password)"
+                SitecoreVersion = "$(build.sitecoreVersion)"
+                Topology = $topology
+                OSVersion = "linux"
+                IncludeSpe = [System.Convert]::ToBoolean($(build.includeSpe))
+                IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
+                IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
+                IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
+                IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
+                SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
+                SitecoreRegistry = "$(sitecore.container.registry)"
+                IncludeShortTags = [System.Convert]::ToBoolean($(build.includeShortTags))
+              }
+
+              .\Build.ps1 @buildProps
+            displayName: "Build Linux Images"
+          - powershell: |
+              docker image prune --force
+            condition: and(succeeded(), eq(variables['build.pruneImages'], 'true'))
   - stage: Trigger_Harbor_Push
     dependsOn:
-    - Build_Images
-    condition: and(succeeded('Build_Images'),eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+      - Build_Windows_Images
+      - Build_Linux_Images
+    condition: and(succeeded('Build_Windows_Images'), succeeded('Build_Linux_Images'),eq(variables['Build.SourceBranch'], 'refs/heads/master'))
     jobs:
       - job: Harbor_Push
-        displayName: 'Harbor Push'
+        displayName: "Harbor Push"
         steps:
-        - task: TriggerBuild@3
-          displayName: "Trigger Community Modules"
-          inputs:
-            definitionIsInCurrentTeamProject: true
-            buildDefinition: '103'
-            queueBuildForUserThatTriggeredBuild: true
-            ignoreSslCertificateErrors: false
-            useSameSourceVersion: false
-            useCustomSourceVersion: false
-            useSameBranch: false
-            branchToUse: 'main'
-            waitForQueuedBuildsToFinish: false
-            storeInEnvironmentVariable: false
-            buildParameters: 'namespace: community, groupName: communityModules, tag:""'
-            authenticationMethod: 'Personal Access Token'
-            password: '$(System.AccessToken)'
-            enableBuildInQueueCondition: false
-            dependentOnSuccessfulBuildCondition: false
-            dependentOnFailedBuildCondition: false
-            checkbuildsoncurrentbranch: false
-            failTaskIfConditionsAreNotFulfilled: false
+          - task: TriggerBuild@3
+            displayName: "Trigger Community Modules"
+            inputs:
+              definitionIsInCurrentTeamProject: true
+              buildDefinition: "103"
+              queueBuildForUserThatTriggeredBuild: true
+              ignoreSslCertificateErrors: false
+              useSameSourceVersion: false
+              useCustomSourceVersion: false
+              useSameBranch: false
+              branchToUse: "main"
+              waitForQueuedBuildsToFinish: false
+              storeInEnvironmentVariable: false
+              buildParameters: 'namespace: community, groupName: communityModules, tag:""'
+              authenticationMethod: "Personal Access Token"
+              password: "$(System.AccessToken)"
+              enableBuildInQueueCondition: false
+              dependentOnSuccessfulBuildCondition: false
+              dependentOnFailedBuildCondition: false
+              checkbuildsoncurrentbranch: false
+              failTaskIfConditionsAreNotFulfilled: false
 
-        - task: TriggerBuild@3
-          displayName: "Trigger Community Images"
-          inputs:
-            definitionIsInCurrentTeamProject: true
-            buildDefinition: '103'
-            queueBuildForUserThatTriggeredBuild: true
-            ignoreSslCertificateErrors: false
-            useSameSourceVersion: false
-            useCustomSourceVersion: false
-            useSameBranch: false
-            branchToUse: 'main'
-            waitForQueuedBuildsToFinish: false
-            storeInEnvironmentVariable: false
-            buildParameters: 'namespace: community, groupName: community, tag:""'
-            authenticationMethod: 'Personal Access Token'
-            password: '$(System.AccessToken)'
-            enableBuildInQueueCondition: false
-            dependentOnSuccessfulBuildCondition: false
-            dependentOnFailedBuildCondition: false
-            checkbuildsoncurrentbranch: false
-            failTaskIfConditionsAreNotFulfilled: false
+          - task: TriggerBuild@3
+            displayName: "Trigger Community Images"
+            inputs:
+              definitionIsInCurrentTeamProject: true
+              buildDefinition: "103"
+              queueBuildForUserThatTriggeredBuild: true
+              ignoreSslCertificateErrors: false
+              useSameSourceVersion: false
+              useCustomSourceVersion: false
+              useSameBranch: false
+              branchToUse: "main"
+              waitForQueuedBuildsToFinish: false
+              storeInEnvironmentVariable: false
+              buildParameters: 'namespace: community, groupName: community, tag:""'
+              authenticationMethod: "Personal Access Token"
+              password: "$(System.AccessToken)"
+              enableBuildInQueueCondition: false

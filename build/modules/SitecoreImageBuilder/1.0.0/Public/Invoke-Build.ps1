@@ -105,7 +105,6 @@ function Invoke-Build
 
     Write-Message "Build specifications loaded..." -Level Info
 
-
     # Pull latest external images
     if ($PSCmdlet.ShouldProcess("Pull latest images"))
     {
@@ -141,29 +140,7 @@ function Invoke-Build
         }
     }
 
-    # Pull latest external images
-    if ($PSCmdlet.ShouldProcess("Pull Windows asset images"))
-    {
-        if ($PullMode -eq "Always")
-        {
-            # Find external base images of included specifications
-            $specs | Where-Object { $_.Include -eq $true } | ForEach-Object {
-                $spec = $_
 
-                $spec.WindowsAssetImage | Where-Object { -not [string]::IsNullOrEmpty($_) } | ForEach-Object {
-                    try
-                    {
-                        Copy-WindowsImageContent $_ ([System.IO.Path]::Combine($spec.Path, "data", $spec.Topology))
-                    }
-                    catch
-                    {
-                        Write-Error "Error processing $($spec.WindowsAssetImage) for $($spec.tag)"
-                        Exit 1
-                    }
-                }
-            }
-        }
-    }
     # Start build...
     if ($PSCmdlet.ShouldProcess("Start image builds"))
     {
