@@ -7,7 +7,7 @@
         "--build-arg TOPOLOGY=XP0",
         "--file linux/10.1.0/modules/Dockerfile.CI"
       ],
-      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xp0-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xp0-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
       "topology": "XP0"
     },
     {
@@ -17,7 +17,7 @@
         "--build-arg TOPOLOGY=XP1",
         "--file linux/10.1.0/modules/Dockerfile.CI"
       ],
-      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
       "topology": "XP1"
     },
     {
@@ -27,7 +27,7 @@
         "--build-arg TOPOLOGY=XM1",
         "--file linux/10.1.0/modules/Dockerfile.CI"
       ],
-      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
       "topology": "XM1"
     }
   ],

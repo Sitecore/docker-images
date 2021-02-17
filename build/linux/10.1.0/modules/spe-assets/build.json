@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "community/modules/custom-spe-assets:10.1.0-linux",
+      "tag": "community/modules/custom-spe-assets:6.2-linux",
       "build-options": [
         "--build-arg BASE_IMAGE=docker.io/alpine:3",
         "--file linux/10.1.0/modules/Dockerfile.CI"

@@ -1,7 +1,7 @@
 {
   "tags": [
     {
-      "tag": "community/modules/custom-dcrmcnn-xp0-assets:10.1.0-linux",
+      "tag": "community/modules/custom-dcrmcnn-xp0-assets:6.0.0-linux",
       "build-options": [
         "--build-arg BASE_IMAGE=docker.io/alpine:3",
         "--build-arg TOPOLOGY=XP0",
@@ -11,7 +11,7 @@
       "topology": "XP0"
     },
     {
-      "tag": "community/modules/custom-dcrmcnn-xp1-assets:10.1.0-linux",
+      "tag": "community/modules/custom-dcrmcnn-xp1-assets:6.0.0-linux",
       "build-options": [
         "--build-arg BASE_IMAGE=docker.io/alpine:3",
         "--build-arg TOPOLOGY=XP1",

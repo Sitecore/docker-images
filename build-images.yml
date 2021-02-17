@@ -97,6 +97,7 @@ stages:
                 IncludeSxa = [System.Convert]::ToBoolean($(build.includeSxa))
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
                 IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
+                IncludeModuleAssets = $true
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
                 IncludeShortTags = [System.Convert]::ToBoolean($(build.includeShortTags))

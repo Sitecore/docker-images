@@ -14,7 +14,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-spe-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--build-arg MODULE_NAME=ps"
       ],
       "experimental": true
@@ -33,7 +33,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--build-arg MODULE_NAME=ps"
       ],
       "experimental": true
@@ -61,7 +61,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--build-arg MODULE_NAME=ps"
       ],
       "experimental": true
@@ -71,7 +71,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-jss1600-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xm1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--build-arg MODULE_NAME=ps"
       ],
       "experimental": true

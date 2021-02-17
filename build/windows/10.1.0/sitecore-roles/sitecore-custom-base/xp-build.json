@@ -44,7 +44,7 @@
       "tag": "community/sitecore-xp1-custom-sxa-jss-sps-cm:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss-cm:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--memory 4GB",
         "--build-arg ROLE=cm",
         "--target base"
@@ -55,7 +55,7 @@
       "tag": "community/sitecore-xp1-custom-sxa-jss1600-sps-cm:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss1600-cm:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--memory 4GB",
         "--build-arg ROLE=cm",
         "--target base"
@@ -106,7 +106,7 @@
       "tag": "community/sitecore-xp1-custom-sxa-sps-cd:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-cd:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--memory 4GB",
         "--build-arg ROLE=cd",
         "--target base"
@@ -117,7 +117,7 @@
       "tag": "community/sitecore-xp1-custom-sxa-jss-sps-cd:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss-cd:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--memory 4GB",
         "--build-arg ROLE=cd",
         "--target base"
@@ -128,7 +128,7 @@
       "tag": "community/sitecore-xp1-custom-sxa-jss1600-sps-cd:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss1600-cd:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00579.22-10.0.17763.1697-1809-unstable",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0.00584.48-10.0.17763.1757-1809-unstable",
         "--memory 4GB",
         "--build-arg ROLE=cd",
         "--target base"
