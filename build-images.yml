@@ -150,6 +150,7 @@ stages:
             displayName: "Download Windows Assets"
           - publish: $(Build.ArtifactStagingDirectory)
             displayName: "Publish Artifacts"
+            artifact: "assets"
       - job: Build_Linux_Images
         dependsOn: [Publish_Asset_Images]
         timeoutInMinutes: 720
@@ -162,7 +163,13 @@ stages:
             clean: true
           - task: DownloadPipelineArtifact@2
             inputs:
-              path: "$(Build.SourcesDirectory)/build/linux/"
+              path: "$(Build.SourcesDirectory)"
+          - task: Bash@3
+            displayName: "Move assets to build folder"
+            inputs:
+              targetType: 'inline'
+              script: |
+                sudo mv $(Build.SourcesDirectory)/assets/* $(Build.SourcesDirectory)/build/linux/
           - task: Bash@3
             displayName: "Connect to asset drive"
             condition: eq(variables['assets.useDrive'], 'true')
