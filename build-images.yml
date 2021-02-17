@@ -218,6 +218,7 @@ stages:
                 IncludeJss = [System.Convert]::ToBoolean($(build.includeJss))
                 IncludeSh = [System.Convert]::ToBoolean($(build.includeSh))
                 IncludeExperimental = [System.Convert]::ToBoolean($(build.includeExperimentalImages))
+                IncludeModuleAssets = $true
                 SkipExistingImage = [System.Convert]::ToBoolean($(build.skipExistingImages))
                 SitecoreRegistry = "$(sitecore.container.registry)"
                 IncludeShortTags = [System.Convert]::ToBoolean($(build.includeShortTags))
