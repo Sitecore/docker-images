@@ -191,11 +191,18 @@ stages:
                 sudo mount -t cifs //$(assets.shared.folder.server)/docker-assets $(linux.install.source.path) -o vers=3.0,credentials=/etc/smbcredentials/dockerassets.cred,dir_mode=0777,file_mode=0777,serverino
           - powershell: |
               sudo chmod 777 /mnt/dockerassets -R
-              az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
-              if ("$(sitecore.container.registry)" -ne "scr.sitecore.com"){
-                az acr login -n "$(sitecore.container.registry)"
+              $sitecoreRegistry = "$(sitecore.container.registry)"
+              $sitecoreVersion = "$(build.sitecoreVersion)"
+
+              if ("$(Build.SourceBranch)" -match "upgrade/(?<version>\d+\.\d+\.\d+)") {
+                  $sitecoreVersion = $matches.version
+                  $sitecoreRegistry = "$(sitecore.internal.container.registry)"
               }
-              az acr login -n "$(container.registry.fullname)"
+              az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
+              if ("sitecoreRegistry" -ne "scr.sitecore.com"){
+                az acr login -n "$sitecoreRegistry"
+              }
+                az acr login -n "$(container.registry.fullname)"
 
               $topology = "$(build.sitecoreTopology)" -split ","
               $buildProps = @{
