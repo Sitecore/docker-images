@@ -132,7 +132,7 @@ stages:
               az acr login -n "$(container.registry.fullname)"
 
               $buildProps = @{
-              InstallSourcePath = "$(linux.install.source.path)"
+              InstallSourcePath = "$(Build.SourcesDirectory)"
               PublishModuleAssetsOnly = $true
               PublishDestination = "$(Build.ArtifactStagingDirectory)"
               SitecoreVersion = "$(build.sitecoreVersion)"
