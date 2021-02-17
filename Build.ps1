@@ -97,7 +97,18 @@ filter WindowsFilter {
 
 filter SitecoreFilter {
     param([string]$Version)
+    ## Version number for module asset images changed starting with 10.1 to match Sitecore's version (e.g. cmp-assets:4.0.0)
+    ## This does not match Sitecover version so the following hack (elseif) ensures that any version gets picked up
+    ## This will need to be massaged further with vNext since there is currently nothing to filter out between 10.1 and the next version up.
+    ## Passing in the build path, or an additional parameter would make sense here.
+    [regex]$versionReg = "(?<version>[789]\.[0-9]\.[0-9]|10\.[0]\.[0-9])"
+    $tag = $_
+    $tagVersion = if ($tag -match $versionReg) {$matches.version}
+
     if ($_ -match ".*:$($Version)((-windowsservercore){0,1})-*" -or $_ -match ".*:$($Version)((-nanoserver){0,1})-*" -or $_ -like "*:$($Version)-linux") {
+        $_
+    }
+    elseif ($_ -like "*-linux" -and [System.Version]$Version -ge "10.1.0" -and $null -eq $tagVersion) {
         $_
     }
 }
