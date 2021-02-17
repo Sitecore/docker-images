@@ -159,8 +159,9 @@ stages:
         steps:
           - checkout: self
             clean: true
-          - download: current
-            path: "$(Build.SourcesDirectory)/build/linux/"
+          - task: DownloadPipelineArtifact@2
+            inputs:
+              path: "$(Build.SourcesDirectory)/build/linux/"
           - task: Bash@3
             displayName: "Connect to asset drive"
             condition: eq(variables['assets.useDrive'], 'true')
