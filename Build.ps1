@@ -302,7 +302,7 @@ else {
     exit
 }
 
-if ($PublishModuleAssetsOnly -or $IncludeModuleAssets){
+if ($PublishModuleAssetsOnly){
     SitecoreImageBuilder\Publish-LinuxModuleAssetFiles `
     -Path (Join-Path $(Get-Location) $rootFolder) `
     -InstallSourcePath $InstallSourcePath `
@@ -311,9 +311,7 @@ if ($PublishModuleAssetsOnly -or $IncludeModuleAssets){
     -Tags ($tags | Select-Object -ExpandProperty Tag) `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -Verbose:$VerbosePreference
-    if ($PublishModuleAssetsOnly){
-        Exit 0
-    }
+    Exit 0
 }
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
