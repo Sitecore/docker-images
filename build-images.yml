@@ -144,7 +144,7 @@ stages:
               IncludeModuleAssets = $true
               SitecoreRegistry = "$sitecoreRegistry"
               PublishModuleAssetsOnly = $true
-              PublishDestination = "$(Build.ArtifactStagingDirectory)"
+              LinuxBuildAssetPath = "$(Build.ArtifactStagingDirectory)"
               }
               .\Build.ps1 @buildProps
             displayName: "Download Windows Assets"
