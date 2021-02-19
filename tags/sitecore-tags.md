@@ -1040,8 +1040,9 @@ Images in this namespace are built from the https://github.com/sitecore/Sitecore
 ### lighthouse-hotfixes
 Tag                | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------ | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.1-1809        | 1809         | 1001.0      | amd64           | windows | sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f | 01/12/2021 21:12:32  | 01/12/2021 21:12:32 |
+10.0.1-1809        | 1809         | 1001.1      | amd64           | windows | sha256:76eeac46d393375551818d8af30de2bddd64dbf08957e623ca499687b23084b3 | 01/12/2021 21:12:32  | 02/19/2021 20:29:24 |
 10.0.1-1809-1001.0 | 1809         | 1001.0      | amd64           | windows | sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f | 01/12/2021 21:12:16  | 01/12/2021 21:12:16 |
+10.0.1-1809-1001.1 | 1809         | 1001.1      | amd64           | windows | sha256:76eeac46d393375551818d8af30de2bddd64dbf08957e623ca499687b23084b3 | 02/19/2021 20:29:13  | 02/19/2021 20:29:13 |
 10.0.1-2004        | 2004         | 1001.1      | amd64           | windows | sha256:caabf7b0e0943ed1db7cfee3664e5fa914f1bcda096c6c8479c46f583214d60d | 01/12/2021 21:20:17  | 02/02/2021 20:00:34 |
 10.0.1-2004-1001.0 | 2004         | 1001.0      | amd64           | windows | sha256:3618107a34b172cff0172ff2aaca85aba000e3238e845cda30290bd069652332 | 01/12/2021 21:20:03  | 01/12/2021 21:20:03 |
 10.0.1-2004-1001.1 | 2004         | 1001.1      | amd64           | windows | sha256:caabf7b0e0943ed1db7cfee3664e5fa914f1bcda096c6c8479c46f583214d60d | 02/02/2021 20:00:24  | 02/02/2021 20:00:24 |
@@ -4860,4 +4861,4 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.0.1-1809                            | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:57  | 08/26/2020 15:41:57 |
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:19  | 08/26/2020 15:41:19 |
 
-*This listing was automatically generated on February 18, 2021.*
+*This listing was automatically generated on February 19, 2021.*
