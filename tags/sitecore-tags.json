@@ -5791,13 +5791,13 @@
         "Tags":  [
                      {
                          "Tag":  "10.0.1-1809",
-                         "Digest":  "sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f",
+                         "Digest":  "sha256:76eeac46d393375551818d8af30de2bddd64dbf08957e623ca499687b23084b3",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "01/12/2021 21:12:32",
-                         "LastUpdateTime":  "01/12/2021 21:12:32",
+                         "LastUpdateTime":  "02/19/2021 20:29:24",
                          "OSVersion":  "1809",
-                         "TargetOS":  "1001.0"
+                         "TargetOS":  "1001.1"
                      },
                      {
                          "Tag":  "10.0.1-1809-1001.0",
@@ -5808,6 +5808,16 @@
                          "LastUpdateTime":  "01/12/2021 21:12:16",
                          "OSVersion":  "1809",
                          "TargetOS":  "1001.0"
+                     },
+                     {
+                         "Tag":  "10.0.1-1809-1001.1",
+                         "Digest":  "sha256:76eeac46d393375551818d8af30de2bddd64dbf08957e623ca499687b23084b3",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "02/19/2021 20:29:13",
+                         "LastUpdateTime":  "02/19/2021 20:29:13",
+                         "OSVersion":  "1809",
+                         "TargetOS":  "1001.1"
                      },
                      {
                          "Tag":  "10.0.1-2004",
