@@ -1399,6 +1399,12 @@ Tag                    | OSVersion    | TargetOS    | Architecture    | OS      
 10.0.1-ltsc2019        | ltsc2019     | 1001.1      | amd64           | windows | sha256:e9efe7461af140ab5064301b8bd7d65a1db62d2488c1f1776ee9626f0e982dc5 | 01/06/2021 18:02:26  | 02/25/2021 03:56:47 |
 10.0.1-ltsc2019-1001.0 | ltsc2019     | 1001.0      | amd64           | windows | sha256:2324d45aca51d02a136b9fe0785af3043867a07a0c1313a5139a19203f3055ed | 01/06/2021 18:02:14  | 01/19/2021 16:01:04 |
 10.0.1-ltsc2019-1001.1 | ltsc2019     | 1001.1      | amd64           | windows | sha256:e9efe7461af140ab5064301b8bd7d65a1db62d2488c1f1776ee9626f0e982dc5 | 02/10/2021 15:22:17  | 02/25/2021 03:56:38 |
+## sch
+### ch-cli
+Tag           | Architecture    | OS    | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+------------- | --------------- | ----- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+0.9.0-preview | amd64           | linux | sha256:03837382be928ed35673cfa7f7a1e1413385d15158b8359aee987c18221d7ce1 | 02/26/2021 15:08:52  | 02/26/2021 15:08:52 |
+latest        | amd64           | linux | sha256:03837382be928ed35673cfa7f7a1e1413385d15158b8359aee987c18221d7ce1 | 02/26/2021 15:09:10  | 02/26/2021 15:09:10 |
 ## sxc/nonproduction
 This namespace includes supporting images for *Sitecore Experience Commerce (SXC)* supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. XC1 images with naming format e.g. *sitecore-xc1-mssql* contain SXA Storefront configuration, whereas abbreviated naming e.g. *xc1-mssql* do not contain Storefront.
 ### sitecore-xc0-mssql
@@ -3127,6 +3133,8 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 16.0-1809                             | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:8ca81fc2cf5233b7dae535f9021d3ddaab84b4bc0194cde7b6a4d62e4c3d27e6 | 02/25/2021 10:57:09  | 02/25/2021 10:57:09 |
 16.0.0-1809                           | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:8ca81fc2cf5233b7dae535f9021d3ddaab84b4bc0194cde7b6a4d62e4c3d27e6 | 02/25/2021 10:57:00  | 02/25/2021 10:57:00 |
 16.0.0.00441.259-10.0.17763.1757-1809 | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:8ca81fc2cf5233b7dae535f9021d3ddaab84b4bc0194cde7b6a4d62e4c3d27e6 | 02/25/2021 10:56:45  | 02/25/2021 10:56:45 |
+## sxp/modules
+This namespace includes images for modules of the *Sitecore Experience Platform (SXP)*.
 ### sitecore-horizon
 Tag                                       | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -3142,8 +3150,6 @@ Tag                                       | OSVersion       | TargetOS    | Arch
 2.26.0.02700.154-10.0.19042.804-2009      | 10.0.19042.804  | 2009        | amd64           | windows | sha256:2932b3064d2fb54e6af9af705d897e919dfd407dc113e99215e232023720afd8 | 02/25/2021 10:32:37  | 02/25/2021 10:32:37 |
 2.26.0.02700.154-10.0.19042.804-20H2      | 10.0.19042.804  | 2009        | amd64           | windows | sha256:2932b3064d2fb54e6af9af705d897e919dfd407dc113e99215e232023720afd8 | 02/25/2021 10:33:40  | 02/25/2021 10:33:40 |
 2.26.0.02700.273-10.0.17763.1757-ltsc2019 | 10.0.17763.1757 | ltsc2019    | amd64           | windows | sha256:7798c9d74340e091a46d20f1d13e29db804b0977dd2dc07be16ce2178c6b6f44 | 02/25/2021 10:21:12  | 02/25/2021 10:21:12 |
-## sxp/modules
-This namespace includes images for modules of the *Sitecore Experience Platform (SXP)*.
 ### sitecore-management-services-xm1-assets
 Tag                                  | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------ | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|

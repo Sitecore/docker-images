@@ -8622,6 +8622,28 @@
                  ]
     },
     {
+        "Name":  "sch/ch-cli",
+        "Namespace":  "sch",
+        "Tags":  [
+                     {
+                         "Tag":  "0.9.0-preview",
+                         "Digest":  "sha256:03837382be928ed35673cfa7f7a1e1413385d15158b8359aee987c18221d7ce1",
+                         "Architecture":  "amd64",
+                         "OS":  "linux",
+                         "CreatedTime":  "02/26/2021 15:08:52",
+                         "LastUpdateTime":  "02/26/2021 15:08:52"
+                     },
+                     {
+                         "Tag":  "latest",
+                         "Digest":  "sha256:03837382be928ed35673cfa7f7a1e1413385d15158b8359aee987c18221d7ce1",
+                         "Architecture":  "amd64",
+                         "OS":  "linux",
+                         "CreatedTime":  "02/26/2021 15:09:10",
+                         "LastUpdateTime":  "02/26/2021 15:09:10"
+                     }
+                 ]
+    },
+    {
         "Name":  "sxc/nonproduction/sitecore-xc0-mssql",
         "Namespace":  "sxc/nonproduction",
         "Tags":  [
