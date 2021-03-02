@@ -11,6 +11,7 @@ The Sitecore container images are structured in namespaces according to product 
 - **[demo/base](#demobase):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 - **[community](#community):** Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 - **[community/modules](#communitymodules):** Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
+- **[sch](#sch):** Contains all *Sitecore Content Hub (SCH)* image repositories.
 ## community/modules
 Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 ### custom-cmp-xm-assets
@@ -1400,6 +1401,7 @@ Tag                    | OSVersion    | TargetOS    | Architecture    | OS      
 10.0.1-ltsc2019-1001.0 | ltsc2019     | 1001.0      | amd64           | windows | sha256:2324d45aca51d02a136b9fe0785af3043867a07a0c1313a5139a19203f3055ed | 01/06/2021 18:02:14  | 01/19/2021 16:01:04 |
 10.0.1-ltsc2019-1001.1 | ltsc2019     | 1001.1      | amd64           | windows | sha256:e9efe7461af140ab5064301b8bd7d65a1db62d2488c1f1776ee9626f0e982dc5 | 02/10/2021 15:22:17  | 02/25/2021 03:56:38 |
 ## sch
+This namespace includes images of the *Sitecore Content Hub (SCH)*.
 ### ch-cli
 Tag           | Architecture    | OS    | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------- | --------------- | ----- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -5855,4 +5857,4 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.0.1-1809                            | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:57  | 08/26/2020 15:41:57 |
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:19  | 08/26/2020 15:41:19 |
 
-*This listing was automatically generated on February 26, 2021.*
+*This listing was automatically generated on March 02, 2021.*
