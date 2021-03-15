@@ -299,14 +299,6 @@
         "url": "https://sitecoredev.azureedge.net/~/media/76207D15A2A540C5A4772E33D6EC0E6D.ashx",
         "hash": "577B41671B9195EE0F83E858102A64BD7F2B26E3D852D1E3669DEC609F75EB2D"
     },
-    "Sitecore JavaScript Services Server for Sitecore 10.1.0 XM 15.0.0 rev. 201020.scwdp.zip": {
-        "url": "",
-        "hash": ""
-    },
-    "Sitecore JavaScript Services Server for Sitecore 10.1.0 XP 15.0.0 rev. 201020.scwdp.zip": {
-        "url": "",
-        "hash": ""
-    },
     "Sitecore JavaScript Services Server for Sitecore 9.1.1 XM 11.0.1 rev. 190318 CD.scwdp.zip": {
         "url": "https://sitecoredev.azureedge.net/~/media/31235F1C19FB4FAB943A6A0DD1EBE9B8.ashx",
         "hash": "154932D7A3B04995F16AFA02A41AD883CA360F8745F12003B9E4A2FA83F6B390"
@@ -400,7 +392,7 @@
         "hash": "7429606A34562862F28F3ABCEFDB9B91A15C7A0608782F17E00D76918CE65D88"
     },
     "Sitecore.PowerShell.Extensions-6.2.scwdp.zip": {
-        "url": "https://github.com/SitecorePowerShell/Console/releases/download/6.2/Sitecore.PowerShell.Extensions-6.2.scwdp.zip",
+        "url": "https://sitecoredev.azureedge.net/~/media/646478FBDFC943C8BC9B3D0F49EE470B.ashx",
         "hash": "FA102CA46CD757A9D54C214516AE54D038850B17B5BD813B45590ECB6F98F826"
     },
     "SitecoreIdentityIntegration.1.46.0.scwdp.zip": {
