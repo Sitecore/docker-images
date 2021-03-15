@@ -21,13 +21,13 @@
             "topology": "XP1"
         },
         {
-            "tag": "community/modules/custom-jss-xm1-assets:16.0.0-linux",
+            "tag": "community/modules/custom-sitecore-headless-services:16.0.0-linux",
             "build-options": [
                 "--build-arg BASE_IMAGE=docker.io/alpine:3",
                 "--build-arg TOPOLOGY=XM1",
                 "--file linux/10.1.0/modules/Dockerfile.CI"
             ],
-            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xm1-assets:16.0.0-1809",
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/sitecore-headless-services:16.0.0-1809",
             "topology": "XM1"
         },
         {
@@ -37,7 +37,7 @@
                 "--build-arg TOPOLOGY=XM1",
                 "--file linux/10.1.0/modules/Dockerfile.CI"
             ],
-            "windows-asset-image": "${sitecore_registry}/sxp/modules/jss-xm1-assets:16.0.0-1809",
+            "windows-asset-image": "${sitecore_registry}/sxp/modules/sitecore-headless-services:16.0.0-1809",
             "topology": "XM1"
         }
     ],

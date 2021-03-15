@@ -122,23 +122,23 @@ $xcMiscTags = $availableTags | Where-Object { $_.Tag -like "sitecore-certificate
 
 $assetTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore(-custom)?-assets:.*" }
 $moduleAssetTags = $availableTags | Where-Object { $_.Tag -like "community/modules/*" }
-$xmTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
-$xpTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss|.*sh).*:.*" }
-$xp0Tags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$xmTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss|.*headless).*:.*" }
+$xpTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(?!.*spe|.*sxa|.*jss|.*headless|.*sh).*:.*" }
+$xp0Tags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(?!.*spe|.*sxa|.*jss|.*headless).*:.*" }
 
-$xcTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xc(-custom)?-(?!.*spe|.*sxa|.*jss).*:.*" }
+$xcTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xc(-custom)?-(?!.*spe|.*sxa|.*jss|.*headless).*:.*" }
 
 $xmSpeTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xmSxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xmJssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*jss).*:.*" }
+$xmSxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*sxa)(?!.*jss|.*headless).*:.*" }
+$xmJssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xm([1]{0,1})(-custom)?-(.*jss|.*headless).*:.*" }
 
 $xp0SpeTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xp0SxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xp0JssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(.*jss).*:.*" }
+$xp0SxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(.*sxa)(?!.*jss|.*headless).*:.*" }
+$xp0JssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp0(-custom)?-(.*jss|.*headless).*:.*" }
 
 $xpSpeTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(spe)(?!.*sxa).*:.*" }
-$xpSxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*sxa)(?!.*jss).*:.*" }
-$xpJssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*jss).*:.*" }
+$xpSxaTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*sxa)(?!.*jss|.*headless).*:.*" }
+$xpJssTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xp([1]{0,1})(-custom)?-(.*jss|.*headless).*:.*" }
 $xpShTags = $availableTags | Where-Object { $_.Tag -match "sitecore-xp([1]{0,1})(-custom)?-(.*sh).*:.*" }
 
 $xcSpeTags = $availableTags | Where-Object { $_.Tag -match "(community/)?sitecore-xc-(spe).*:.*" }

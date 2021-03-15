@@ -14,7 +14,7 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-spe-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0-1809",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-sps-integration-xp1-assets:10.1.0-1809",
         "--build-arg MODULE_NAME=ps"
       ],
       "experimental": true
@@ -33,45 +33,45 @@
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0-1809",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-sps-integration-xp1-assets:10.1.0-1809",
         "--build-arg MODULE_NAME=ps"
       ],
       "experimental": true
     },
     {
-      "tag": "community/sitecore-xp1-custom-sxa-jss-mssql-init:10.1.0-${windowsservercore_version}",
+      "tag": "community/sitecore-xp1-custom-sxa-headless-mssql-init:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xp1-assets:16.0.0-1809",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-headless-services-xp1-assets:16.0.0-1809",
         "--build-arg MODULE_NAME=jss"
       ]
     },
     {
-      "tag": "community/sitecore-xp1-custom-sxa-jss1600-mssql-init:10.1.0-${windowsservercore_version}",
+      "tag": "community/sitecore-xp1-custom-sxa-headless1600-mssql-init:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--memory 4GB",
         "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/jss-xp1-assets:16.0.0-1809",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-headless-services-xp1-assets:16.0.0-1809",
         "--build-arg MODULE_NAME=jss"
       ]
     },
     {
-      "tag": "community/sitecore-xp1-custom-sxa-jss-sps-mssql-init:10.1.0-${windowsservercore_version}",
+      "tag": "community/sitecore-xp1-custom-sxa-headless-sps-mssql-init:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--memory 4GB",
-        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0-1809",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-headless-mssql-init:10.1.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-sps-integration-xp1-assets:10.1.0-1809",
         "--build-arg MODULE_NAME=ps"
       ],
       "experimental": true
     },
     {
-      "tag": "community/sitecore-xp1-custom-sxa-jss1600-sps-mssql-init:10.1.0-${windowsservercore_version}",
+      "tag": "community/sitecore-xp1-custom-sxa-headless1600-sps-mssql-init:10.1.0-${windowsservercore_version}",
       "build-options": [
         "--memory 4GB",
-        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-jss1600-mssql-init:10.1.0-${windowsservercore_version}",
-        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sps-integration-xp1-assets:10.1.0-1809",
+        "--build-arg BASE_IMAGE=community/sitecore-xp1-custom-sxa-headless1600-mssql-init:10.1.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-sps-integration-xp1-assets:10.1.0-1809",
         "--build-arg MODULE_NAME=ps"
       ],
       "experimental": true
