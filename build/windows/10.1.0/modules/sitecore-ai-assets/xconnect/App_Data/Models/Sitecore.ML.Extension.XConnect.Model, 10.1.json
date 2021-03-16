@@ -1,0 +1,120 @@
+{
+  "Name": "Sitecore.ML.Extension.XConnect.Model",
+  "Version": "10.1",
+  "References": [
+    {
+      "Name": "XConnect",
+      "Version": "1.0"
+    },
+    {
+      "Name": "Sitecore.XConnect.Collection.Model",
+      "Version": "10.1"
+    }
+  ],
+  "Types": {
+    "Sitecore.ML.Extension.Event.Model.MLComponentViewedEvent": {
+      "Type": "Event",
+      "BaseType": "Sitecore.XConnect.Event",
+      "Properties": {
+        "ActionType": {
+          "Type": "Sitecore.ML.Extension.Event.Model.MLActionType"
+        },
+        "CompId": {
+          "Type": "String"
+        },
+        "RuleId": {
+          "Type": "String"
+        },
+        "CompItemId": {
+          "Type": "String"
+        },
+        "CompItemPath": {
+          "Type": "String"
+        },
+        "PlaceHolder": {
+          "Type": "String"
+        },
+        "DataSource": {
+          "Type": "String"
+        },
+        "DefaultDS": {
+          "Type": "String"
+        },
+        "MLApiCalled": {
+          "Type": "String"
+        },
+        "MLTestId": {
+          "Type": "String"
+        },
+        "MLCellNumber": {
+          "Type": "String"
+        },
+        "MLModelId": {
+          "Type": "String"
+        },
+        "MLModelVersion": {
+          "Type": "String"
+        },
+        "DurationMS": {
+          "Type": "String"
+        },
+        "MLPageId": {
+          "Type": "String"
+        },
+        "MLCompId": {
+          "Type": "String"
+        },
+        "MLRuleId": {
+          "Type": "String"
+        },
+        "Language": {
+          "Type": "String"
+        },
+        "Version": {
+          "Type": "Int32"
+        }
+      }
+    },
+    "Sitecore.ML.Extension.Event.Model.MLActionType": {
+      "Type": "Enum",
+      "IsFlags": false,
+      "UnderlyingType": "Int32",
+      "Values": {
+        "Random": 0,
+        "Scored": 1
+      }
+    },
+    "Sitecore.ML.Extension.Collection.Model.MLInformation": {
+      "Type": "Facet",
+      "BaseType": "Sitecore.XConnect.Facet",
+      "Properties": {
+        "Entries": {
+          "Type": [
+            "Sitecore.ML.Extension.Collection.Model.MLInformationEntry"
+          ]
+        }
+      }
+    },
+    "Sitecore.ML.Extension.Collection.Model.MLInformationEntry": {
+      "Type": "Complex",
+      "Properties": {
+        "MLTestId": {
+          "Type": "String"
+        },
+        "MLCellNumber": {
+          "Type": "String"
+        },
+        "Timestamp": {
+          "Type": "DateTime?"
+        }
+      }
+    }
+  },
+  "Facets": [
+    {
+      "Target": "Contact",
+      "Name": "MLInformation",
+      "Type": "Sitecore.ML.Extension.Collection.Model.MLInformation"
+    }
+  ]
+}

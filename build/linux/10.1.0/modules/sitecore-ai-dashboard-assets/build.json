@@ -1,0 +1,15 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-sitecore-ai-dashboard-assets:10.1.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/powershell:lts-alpine-3.10",
+        "--build-arg ROLES=cm",
+        "--file linux/10.1.0/modules/Dockerfile"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore.AI.Dashboard.201216.scwdp.zip"
+  ]
+}
