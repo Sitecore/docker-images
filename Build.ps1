@@ -319,12 +319,15 @@ SitecoreImageBuilder\Invoke-PackageRestore `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 
-if ($IncludeExperimental -or -not $SkipModuleAssets -and -not $SitecoreVersion -eq "10.1.0")
+if ($IncludeExperimental -or $IncludeModuleAssets)
 {
     # restore any missing experimental packages
-    .\Download-Module-Prerequisites.ps1 `
+
+    foreach ($scv in $SitecoreVersion) {
+        .\Download-Module-Prerequisites.ps1 `
         -InstallSourcePath $InstallSourcePath `
-        -SitecoreVersion $SitecoreVersion
+        -SitecoreVersion $scv
+    }
 }
 
 # start the build
