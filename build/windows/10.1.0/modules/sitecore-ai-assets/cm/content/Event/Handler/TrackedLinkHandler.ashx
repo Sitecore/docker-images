@@ -1,1 +1,0 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="TrackedLinkHandler.ashx.cs" Class="Sitecore.ML.Extension.Event.Handler.TrackedLinkHandler" %>

@@ -1,1 +1,0 @@
-﻿<%@ WebHandler Language="C#" CodeBehind="MLDashboardData.ashx.cs" Class="Sitecore.ML.Extension.Event.Handler.MLDashboardData" %>
