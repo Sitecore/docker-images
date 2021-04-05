@@ -1,5 +1,9 @@
 # Changelog
 
+## February 2021
+
+- [Added] [Azure Blob Storage module](https://doc.sitecore.com/developers/93/sitecore-experience-manager/en/sitecore-blob-storage.html). 9.3.0 image variants for xm/xp topologies, included xm docker-compose test
+
 ## January 2021
 
 - [Changed] Removed -Property FullName from Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -ExpandProperty FullName.
