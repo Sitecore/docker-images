@@ -78,7 +78,7 @@ stages:
                   $sitecoreRegistry = "$(sitecore.internal.container.registry)"
               }
               az login -u "$(sitecore.container.registry.username)" -p "$(sitecore.container.registry.password)" -t "$(sitecore.container.registry.tenant)"
-              if ("sitecoreRegistry" -ne "scr.sitecore.com"){
+              if ($sitecoreRegistry -ne "scr.sitecore.com"){
                 az acr login -n "$sitecoreRegistry"
               }
                 az acr login -n "$(container.registry.fullname)"
