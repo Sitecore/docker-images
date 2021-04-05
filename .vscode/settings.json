@@ -5,4 +5,8 @@
     "powershell.codeFormatting.openBraceOnSameLine": false,
     "powershell.codeFormatting.ignoreOneLineBlock": false,
     "powershell.integratedConsole.focusConsoleOnExecute": false
+    "powershell.integratedConsole.focusConsoleOnExecute": false,
+    "[azure-pipelines]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    },
 }

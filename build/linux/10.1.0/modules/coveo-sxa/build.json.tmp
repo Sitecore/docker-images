@@ -1,0 +1,21 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-coveo-assets:10.1.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=docker.io/alpine:3",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "sitecoredemocontainers.azurecr.io/community/modules/custom-coveo-assets:10.0.1-1809"
+    },
+    {
+      "tag": "community/modules/custom-coveo508581-assets:10.1.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=docker.io/alpine:3",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "sitecoredemocontainers.azurecr.io/community/modules/custom-coveo508581-assets:10.0.1-1809"
+    }
+  ],
+  "sources": []
+}

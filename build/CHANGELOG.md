@@ -1,5 +1,12 @@
 # Changelog
 
+## April 2021
+
+- [Added] Sitecore 10.1.0 images
+- [Added] PublishModuleAssetsOnly parameter (if 'true', Build.ps1 will exit after publishing module assets)
+- [Added] LinuxBuildAssetPath parameter
+- [Changed] 'SkipModuleAssets' parameter was replaced with 'IncludeModuleAssets'
+
 ## January 2021
 
 - [Changed] Removed -Property FullName from Get-Item "C:\Program Files\Microsoft SQL Server\*\DAC\bin\SqlPackage.exe" | Select-Object -Last 1 -ExpandProperty FullName.

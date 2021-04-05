@@ -8,6 +8,7 @@ legacy/tests/**/data/**/*
 !legacy/tests/**/data/*/README.md
 !legacy/tests/**/data/*/.gitkeep
 
+/build/linux/**/data
 windows/**/*.dll
 windows/tests/**/data/**/*
 !windows/tests/**/data/*/

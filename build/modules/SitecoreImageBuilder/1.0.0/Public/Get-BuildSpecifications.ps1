@@ -20,14 +20,14 @@ function Get-BuildSpecifications
         $buildFilePath = $_.FullName
         $data = Get-Content -Path $buildFilePath | ConvertFrom-Json
         $dockerFile = ""
-
+        $windowsAssetImage = ""
+        $topology = ""
         $sources = @()
 
         if ($null -ne $data.sources)
         {
             $sources = $data.sources
         }
-
         $dataTags = $data.tags
 
         if ($null -eq $dataTags)
@@ -107,6 +107,12 @@ function Get-BuildSpecifications
                 $options = @()
             }
 
+            if ($null -ne $tag.'windows-asset-image')
+            {
+                $windowsAssetImage = $tag.'windows-asset-image'
+                $topology = $tag.topology
+            }
+
             $deprecated = $false
 
             if ($null -ne $tag.deprecated)
@@ -169,16 +175,18 @@ function Get-BuildSpecifications
             }
 
             Write-Output (New-Object PSObject -Property @{
-                    Tag            = $tag.tag;
-                    BuildOptions   = @($options);
-                    Base           = @($baseImages | Select-Object -Unique);
-                    Path           = $buildContextPath;
-                    DockerFilePath = $dockerFile.FullName;
-                    Sources        = @($sources);
-                    Priority       = $null;
-                    Include        = $false;
-                    Deprecated     = $deprecated;
-                    Experimental   = $experimental;
+                    Tag               = $tag.tag;
+                    BuildOptions      = @($options);
+                    Base              = @($baseImages | Select-Object -Unique);
+                    Path              = $buildContextPath;
+                    DockerFilePath    = $dockerFile.FullName;
+                    Sources           = @($sources);
+                    Priority          = $null;
+                    Include           = $false;
+                    Deprecated        = $deprecated;
+                    Experimental      = $experimental;
+                    WindowsAssetImage = $windowsAssetImage;
+                    Topology          = $topology;
                 })
         }
     }

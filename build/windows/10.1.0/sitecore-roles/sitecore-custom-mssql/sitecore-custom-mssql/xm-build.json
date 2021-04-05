@@ -1,0 +1,55 @@
+{
+    "tags": [
+        {
+            "tag": "community/sitecore-xm1-custom-spe-mssql:10.1.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=${sitecore_registry}/sxp/sitecore-xm1-mssql:10.1.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/spe-assets:6.2-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-mssql:10.1.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-spe-mssql:10.1.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sxa-xm1-assets:10.1.0-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-headless-mssql:10.1.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql:10.1.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-headless-services-xm1-assets:16.0.0-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-headless1600-mssql:10.1.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-mssql:10.1.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-headless-services-xm1-assets:16.0.0-1809"
+            ]
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-headless-sps-mssql:10.1.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-headless-mssql:10.1.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-sps-integration-xm1-assets:10.1.0-1809"
+            ],
+            "experimental": true
+        },
+        {
+            "tag": "community/sitecore-xm1-custom-sxa-headless1600-sps-mssql:10.1.0-${windowsservercore_version}",
+            "build-options": [
+                "--memory 4GB",
+                "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-sxa-headless1600-mssql:10.1.0-${windowsservercore_version}",
+                "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-sps-integration-xm1-assets:10.1.0-1809"
+            ],
+            "experimental": true
+        }
+    ],
+    "sources": []
+}

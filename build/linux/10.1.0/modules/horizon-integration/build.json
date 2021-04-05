@@ -1,0 +1,35 @@
+{
+  "tags": [
+    {
+      "tag": "community/modules/custom-horizon-integration-xm1-assets:2.26-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=docker.io/alpine:3",
+        "--build-arg TOPOLOGY=XM1",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/horizon-integration-xm1-assets:2.26-1809",
+      "topology": "XM1"
+    },
+    {
+      "tag": "community/modules/custom-horizon-integration-xp0-assets:2.26-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=docker.io/alpine:3",
+        "--build-arg TOPOLOGY=XP0",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/horizon-integration-xp0-assets:2.26-1809",
+      "topology": "XP0"
+    },
+    {
+      "tag": "community/modules/custom-horizon-integration-xp1-assets:2.26-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=docker.io/alpine:3",
+        "--build-arg TOPOLOGY=XP1",
+        "--file linux/10.1.0/modules/Dockerfile.CI"
+      ],
+      "windows-asset-image": "${sitecore_registry}/sxp/modules/horizon-integration-xp1-assets:2.26-1809",
+      "topology": "XP1"
+    }
+  ],
+  "sources": []
+}

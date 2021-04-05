@@ -1,0 +1,37 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-xp0-custom-spe-mssql:10.1.0-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-mssql:10.1.0-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-spe-assets:6.2-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp0-custom-sxa-mssql:10.1.0-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-spe-mssql:10.1.0-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-sxa-xp1-assets:10.1.0-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp0-custom-sxa-headless-mssql:10.1.0-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-mssql:10.1.0-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-sitecore-headless-services-xp1-assets:16.0.0-linux"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp0-custom-sxa-headless1600-mssql:10.1.0-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-mssql:10.1.0-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-sitecore-headless-services-xp1-assets:16.0.0-linux"
+      ]
+    }
+  ],
+  "sources": []
+}

@@ -1,0 +1,69 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-xp0-custom-spe-cm:10.1.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=${sitecore_registry}/sxp/sitecore-xp0-cm:10.1.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/spe-assets:6.2-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp0-custom-sxa-cm:10.1.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-spe-cm:10.1.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sxa-xp1-assets:10.1.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target content"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp0-custom-sxa-headless-cm:10.1.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-cm:10.1.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-headless-services-xp1-assets:16.0.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base",
+        "--target content"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp0-custom-sxa-headless1600-cm:10.1.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-cm:10.1.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-headless-services-xp1-assets:16.0.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base",
+        "--target content"
+      ]
+    },
+    {
+      "tag": "community/sitecore-xp0-custom-sxa-headless-sps-cm:10.1.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-headless-cm:10.1.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-sps-integration-xp1-assets:10.1.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ],
+      "experimental": true
+    },
+    {
+      "tag": "community/sitecore-xp0-custom-sxa-headless1600-sps-cm:10.1.0-${windowsservercore_version}",
+      "build-options": [
+        "--build-arg BASE_IMAGE=community/sitecore-xp0-custom-sxa-headless1600-cm:10.1.0-${windowsservercore_version}",
+        "--build-arg MODULE_ASSETS=${sitecore_registry}/sxp/modules/sitecore-sps-integration-xp1-assets:10.1.0-1809",
+        "--memory 4GB",
+        "--build-arg ROLE=cm",
+        "--target base"
+      ],
+      "experimental": true
+    }
+  ],
+  "sources": []
+}

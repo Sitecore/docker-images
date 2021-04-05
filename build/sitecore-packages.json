@@ -43,6 +43,14 @@
         "url": "https://sitecoredev.azureedge.net/~/media/AA2E4008524740FFA4B58E716452F391.ashx?date=20201211T130732",
         "hash": ""
     },
+    "Sitecore 10.1.0 rev. 005006 (WDP XP1 packages).zip": {
+        "url": "https://sitecoredev.azureedge.net/~/media/9277F042C3B9459D8B970231666B0D48.ashx?date=20210222T220636",
+        "hash": ""
+    },
+    "Sitecore 10.1.0 rev. 005006 (WDP XPSingle packages).zip": {
+        "url": "https://sitecoredev.azureedge.net/~/media/E875A311BB6A487782F5F75129C94E05.ashx?date=20210222T220247",
+        "hash": ""
+    },
     "Sitecore 8.2 rev. 161221.zip": {
         "url": "https://sitecoredev.azureedge.net/~/media/02D2B5F95D1D4B1F894C2E3CA1194E45.ashx",
         "hash": "0C6127151341999126F51D6ABC24996C10756D3850BD79C962B8B39CBFFC3310"
@@ -378,6 +386,10 @@
     "Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip": {
         "url": "https://github.com/SitecorePowerShell/Console/releases/download/6.1.1/Sitecore.PowerShell.Extensions-6.1.1.scwdp.zip",
         "hash": "7429606A34562862F28F3ABCEFDB9B91A15C7A0608782F17E00D76918CE65D88"
+    },
+    "Sitecore.PowerShell.Extensions-6.2.scwdp.zip": {
+        "url": "https://sitecoredev.azureedge.net/~/media/646478FBDFC943C8BC9B3D0F49EE470B.ashx",
+        "hash": "FA102CA46CD757A9D54C214516AE54D038850B17B5BD813B45590ECB6F98F826"
     },
     "SitecoreIdentityIntegration.1.46.0.scwdp.zip": {
         "url": "",
