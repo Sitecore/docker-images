@@ -15,7 +15,10 @@ param(
 $preference = $ProgressPreference
 $ProgressPreference = "SilentlyContinue"
 
-$packages = @{}
+$packages = @{
+    "Sitecore Azure Toolkit 2.5.1-r02522.1082.zip" = "https://sitecoredev.azureedge.net/~/media/AD7EFDD038704CED855039DA8EAF5856.ashx?date=20201214T083612"
+}
+
 $packages += $( if ($SitecoreVersion -eq "9.3.0")
     {
         @{
@@ -57,11 +60,7 @@ $packages += $( if ($SitecoreVersion -eq "9.3.0")
         @{}
     }
 )
-if ($packages.count -eq 1)
-{
-    # Only Sitecore Azure Toolkit was in the packages list, which means we don't have any packages to download.
-    Exit 0
-}
+
 # download packages from Sitecore
 $packages.GetEnumerator() | ForEach-Object {
 
