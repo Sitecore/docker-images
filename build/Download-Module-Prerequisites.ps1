@@ -65,7 +65,6 @@ if ($packages.count -eq 1)
     # Only Sitecore Azure Toolkit was in the packages list, which means we don't have any packages to download.
     Exit 0
 }
-
 # download packages from Sitecore
 $packages.GetEnumerator() | ForEach-Object {
 
