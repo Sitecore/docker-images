@@ -11,6 +11,7 @@ The Sitecore container images are structured in namespaces according to product 
 - **[demo/base](#demobase):** Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 - **[community](#community):** Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 - **[community/modules](#communitymodules):** Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
+- **[sch](#sch):** Contains all *Sitecore Content Hub (SCH)* image repositories.
 ## community/modules
 Images in this namespace are module asset images built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 ### custom-cmp-xm-assets
@@ -695,104 +696,6 @@ Tag             | Architecture    | OS      | Digest                            
 10.0.1-2009     | amd64           | windows | sha256:f81dc4ac9f30d3afa73bc92565a09eef315d0072194deb77b75f2bc76cf68414 | 01/08/2021 05:40:28  | 01/08/2021 05:40:28 |
 10.0.1-20H2     | amd64           | windows | sha256:c5b192bad0b71bc780bdf334e17e11da02c7b4d57fa6cb9e171bb68f6cc7577f | 01/29/2021 16:40:55  | 04/01/2021 02:13:46 |
 10.0.1-ltsc2019 | amd64           | windows | sha256:4bd5af320bf2a869f2bf394dcf52dabb0b3f5f4bb6f727ff7f89983c2bb9ac77 | 01/08/2021 03:54:00  | 04/01/2021 00:23:27 |
-### sitecore-xp1-custom-sxa-jss1400-cm
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:44ca9e41a4726df992bacf2533606d861a262c670940585705b3718d91f18692 | 11/05/2020 09:01:13  | 12/13/2020 17:31:19 |
-10.0.1-2004     | amd64           | windows | sha256:17ece95ef638e731eea5c0137138b358622af1815aa307a3f05ee6690f088e42 | 01/08/2021 04:39:08  | 04/01/2021 01:20:13 |
-10.0.1-2009     | amd64           | windows | sha256:e8b52089e3789b3e8c4d31d7307ba205116b30db78338b726f636cebdf903299 | 01/08/2021 05:40:52  | 01/08/2021 05:40:52 |
-10.0.1-20H2     | amd64           | windows | sha256:eb814d62bbf775373fd6e7ddc4eadb44bce7bf6c0d08502dcca6b5bc2ea5000e | 01/29/2021 17:23:24  | 04/01/2021 02:14:10 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:a0bc773b9bc38c4c2e18f82f9a3231a8636771cf4a001dcc145553603d763dcf | 01/08/2021 03:54:21  | 04/01/2021 00:23:53 |
-### sitecore-xp1-custom-sxa-jss1400-mssql
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:2e62776679bbf542a820a63b8916e149dc19a23e63dfb958c20ed7b07cb7dd2c | 11/05/2020 08:56:21  | 12/13/2020 17:26:59 |
-10.0.1-2004     | amd64           | windows | sha256:eba79024044c2541a1846587405bbfdbd968233f974821c9ba17a8323f4fc46a | 01/08/2021 04:39:26  | 04/01/2021 01:20:30 |
-10.0.1-2009     | amd64           | windows | sha256:fbd56114ee37845f4a89d5efb661c7cbe5b31ee030068ef2506599f426c27a25 | 01/08/2021 05:41:11  | 01/08/2021 05:41:11 |
-10.0.1-20H2     | amd64           | windows | sha256:2394b7945ea4fc524c6f3c79386ca8bbea3c922c54453d565f5d8dc9ed42f552 | 01/29/2021 17:24:22  | 04/01/2021 02:14:25 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:5595699a65ee57a063b8673fed25836923a60338e40e0470f2ea225cac78ac66 | 01/08/2021 03:54:39  | 04/01/2021 00:24:14 |
-### sitecore-xp1-custom-sxa-jss1400-mssql-init
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:bdfa96518409c7da521d4bb8c9ef892b284fb84f578150497068cae2e10c3b04 | 11/05/2020 09:05:52  | 12/13/2020 17:34:57 |
-10.0.1-2004     | amd64           | windows | sha256:fc054014713879a11d7a2d690c04e65044176fa8914acc74905aec613234a12f | 01/08/2021 04:39:44  | 04/01/2021 01:20:45 |
-10.0.1-2009     | amd64           | windows | sha256:059d21c9cf0a4abb651b6243c4c0d04e2902a3b81d909449cbcc580a7065db22 | 01/08/2021 05:41:28  | 01/08/2021 05:41:28 |
-10.0.1-20H2     | amd64           | windows | sha256:f4cdf135b7a9433b94073057b4bfddf82f11f347efa8f18d605ee1afee7bebb2 | 01/29/2021 17:25:13  | 04/01/2021 02:14:40 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:947f414b992b43d37d43ac8e39f27f3b8b90092c3c4f99307d8fa0768c3ab617 | 01/08/2021 03:54:54  | 04/01/2021 00:24:30 |
-### sitecore-xp1-custom-sxa-jss1400-ps-cd
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:0c22e1d9eddfba0fea0fd6e4949c918fba99e2b972923ba7b8e66f2f0db3575f | 11/05/2020 09:23:43  | 12/13/2020 17:49:32 |
-10.0.1-2004     | amd64           | windows | sha256:2721a0b341bc0ce5bd5c6c79eb3bfa6cef8f1b49f4722e7992681a3b351eea65 | 01/08/2021 04:40:11  | 04/01/2021 01:21:09 |
-10.0.1-2009     | amd64           | windows | sha256:9a3b18a26f928be45e8bdc49541cda24c12f2d85b50a8325453c0e3a07a2ac2e | 01/08/2021 05:41:52  | 01/08/2021 05:41:52 |
-10.0.1-20H2     | amd64           | windows | sha256:83ebd44bc2788124f3a8282779ecaa22b7027dde413a2b63e952eb18f596c30f | 01/29/2021 17:26:12  | 04/01/2021 02:15:02 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:c729f1fefa687c9cee26668b24ae6f6f25c2f2c77367ea77806686cd1cabd717 | 01/08/2021 03:55:16  | 04/01/2021 00:25:00 |
-### sitecore-xp1-custom-sxa-jss-cd
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:292e09b228a08a31002b1e1d5507997af5e612ade10ede00a375504bb00abddf | 10/23/2020 16:05:13  | 12/13/2020 17:36:42 |
-10.0.1-2004     | amd64           | windows | sha256:a62b6cccae53a31bb4acc97dfe1f1f72aa141fb5695c09777921d07c5d11160c | 01/08/2021 04:35:58  | 04/01/2021 01:16:57 |
-10.0.1-2009     | amd64           | windows | sha256:97bf1b4f66033afb262a23538b3f5ae1a9b2154d559aed0beef7c5dce5afe0a0 | 01/08/2021 05:37:08  | 01/08/2021 05:37:08 |
-10.0.1-20H2     | amd64           | windows | sha256:aa6a75470989d359a66ddd8778a79c3408184c94152175db05463c21f44994b1 | 01/29/2021 16:32:58  | 04/01/2021 02:10:51 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:dcc487b674e1fe3511c3d698bd661243f7423997ab65edb104c27d5db287589e | 01/08/2021 03:51:10  | 04/01/2021 00:20:17 |
-### sitecore-xp1-custom-sxa-jss-cm
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:efae4620e86a5a98e4b6c517e3814eafa6bbbec160cbfcb96e436eef23b2407b | 10/23/2020 16:02:25  | 12/13/2020 17:30:56 |
-10.0.1-2004     | amd64           | windows | sha256:d74de2544295cbf723a33a5724501265f592893cadcc6b7b896be73457ae5eaf | 01/08/2021 04:36:20  | 04/01/2021 01:17:20 |
-10.0.1-2009     | amd64           | windows | sha256:c1cfab1ecf6d11ac6a37e3e5633e66d592ce9344c129f26d6bd1afcd27eb282c | 01/08/2021 05:37:32  | 01/08/2021 05:37:32 |
-10.0.1-20H2     | amd64           | windows | sha256:f160458af5f775b585e745b7eea818bf1c2ee98bcc34eabfff70241f94e072fc | 01/29/2021 16:34:00  | 04/01/2021 02:11:18 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:5dc48a971cb0c03a4ed14b5bad9c9ab1cb6935f3cb01c8fdd126d7c7077be6d1 | 01/08/2021 03:51:32  | 04/01/2021 00:20:56 |
-### sitecore-xp1-custom-sxa-jss-mssql
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 10/23/2020 16:09:40  | 12/13/2020 17:26:07 |
-10.0.1-2004     | amd64           | windows | sha256:de357ee8ffc8de96ae2c0d2348e10f3fd994b00860dee91e9d4c0fbf8a1b41f6 | 01/08/2021 04:36:40  | 04/01/2021 01:17:37 |
-10.0.1-2009     | amd64           | windows | sha256:25def54c1ad921e40f279be65961406a4fe26bbb0f70037a8831c9387e96025c | 01/08/2021 05:37:50  | 01/08/2021 05:37:50 |
-10.0.1-20H2     | amd64           | windows | sha256:0b5b535208ccbcabbc269beb80a1eeb63080503c20623202b56c48ec4a5fc940 | 01/29/2021 16:34:54  | 04/01/2021 02:11:36 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:70242870fa9bc719a4eb53f3c89949431d2a994b27d1e07504de79426e557454 | 01/08/2021 03:51:50  | 04/01/2021 00:21:20 |
-### sitecore-xp1-custom-sxa-jss-mssql-init
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:e5a36f6f1b60f4e23cf5753576db8faf55ff741b98cf286b4a702d98c547a43c | 10/23/2020 16:14:27  | 12/13/2020 17:34:38 |
-10.0.1-2004     | amd64           | windows | sha256:3cf324e035d26735dab30b49945c4927bd6248e62c599f889bb57ea2adb06aa2 | 01/08/2021 04:36:59  | 04/01/2021 01:17:53 |
-10.0.1-2009     | amd64           | windows | sha256:236a1fa4676ceed81c0a4bf2f7e6626ade3ee3388e0eadbef1c5234ea7842c59 | 01/08/2021 05:38:12  | 01/08/2021 05:38:12 |
-10.0.1-20H2     | amd64           | windows | sha256:d057db4eaa8d521f8b7fc5a1be126d698b91d027c4292df6824423f6230920ab | 01/29/2021 16:35:49  | 04/01/2021 02:11:53 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:e740875068374316233920344b852d250cfb157cb61a445fe584298169b85c33 | 01/08/2021 03:52:07  | 04/01/2021 00:21:38 |
-### sitecore-xp1-custom-sxa-jss-ps-cd
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:37657e927124f40a0c45eedf8fa0cb85358812ce0c957f47fd528d5ec87bc7fe | 10/23/2020 16:05:48  | 12/13/2020 17:49:10 |
-10.0.1-2004     | amd64           | windows | sha256:4517e50c5eb224cda04afadbe4a153ffb8e555276a9d01c16a0cfa74fecd0a93 | 01/08/2021 04:37:24  | 04/01/2021 01:18:15 |
-10.0.1-2009     | amd64           | windows | sha256:56bf9c0be366772bad5524bc863fe779a5fa3fbe80860b4e7375a45966f7b107 | 01/08/2021 05:38:34  | 01/08/2021 05:38:34 |
-10.0.1-20H2     | amd64           | windows | sha256:f2fa9713b82b1dd8193b0df4717f973fbf54add6096536ea1b13a41c0dc55d5e | 01/29/2021 16:36:49  | 04/01/2021 02:12:16 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:d16c8838a8415f8e6425e6825cbc934714119fd7fcb266416d6e15d453156d18 | 01/08/2021 03:52:29  | 04/01/2021 00:22:04 |
-### sitecore-xp1-custom-sxa-jss-ps-cm
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:ef8ec4fb571c654a260ad3a38dcbf0a5d8290ce1976d0aaa5442edd222f987b6 | 10/23/2020 16:03:00  | 12/13/2020 17:44:48 |
-10.0.1-2004     | amd64           | windows | sha256:ab494b04ad2e7634f3337203b8f7695cedd2220d9ff643d04b4754d534f0b58f | 01/08/2021 04:37:47  | 04/01/2021 01:18:37 |
-10.0.1-2009     | amd64           | windows | sha256:31cd148e3a0b15d5ec6e458f5b5d5f8e23a3eaa3074468bc7a5ca16f48d26e53 | 01/08/2021 05:39:25  | 01/08/2021 05:39:25 |
-10.0.1-20H2     | amd64           | windows | sha256:4daeedbdd319f35a3ebb5a81636cb7c2a67ae813dae1f7a607aaefe869b19c94 | 01/29/2021 16:37:48  | 04/01/2021 02:12:40 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:2be76ef41cd44890a31a61a86caf629ec64c906e3a1492d7a5d7b206ed3ecdc6 | 01/08/2021 03:52:53  | 04/01/2021 00:22:27 |
-### sitecore-xp1-custom-sxa-jss-ps-mssql
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 10/23/2020 16:10:36  | 12/13/2020 17:39:52 |
-10.0.1-2004     | amd64           | windows | sha256:a4b9baa31ced1380c84e35d017c8c13bb13585f06b499b1f9aabf1e9f322f629 | 01/08/2021 04:38:06  | 04/01/2021 01:18:56 |
-10.0.1-2009     | amd64           | windows | sha256:685a4bd2417a2e1c36c93c86eefb7855771523e1b235bf4945fba305f33646d1 | 01/08/2021 05:39:45  | 01/08/2021 05:39:45 |
-10.0.1-20H2     | amd64           | windows | sha256:aaf9dfd3f01c292981365342961b2d369cfafb5c7afd8a63f2cc6564db8f0440 | 01/29/2021 16:38:45  | 04/01/2021 02:13:00 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:cabdee31321edf4dddff9d50682a7cef62c8e14407c91972ecbd3e693ae0dd8e | 01/08/2021 03:53:11  | 04/01/2021 00:22:46 |
-### sitecore-xp1-custom-sxa-jss-ps-mssql-init
-Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
---------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
-10.0.0-ltsc2019 | amd64           | windows | sha256:fa160bdb95cdb549ba2f26f4f75304180ce0838a662262b7933fe0d6377f2cbf | 10/23/2020 16:14:58  | 12/13/2020 17:48:09 |
-10.0.1-2004     | amd64           | windows | sha256:f3d4d15984cc8afb6bcb4172c738776b380cec74b01f58548bd033d237e9e9dc | 01/08/2021 04:38:24  | 04/01/2021 01:19:26 |
-10.0.1-2009     | amd64           | windows | sha256:4b19457545330e29040f73a07984b1af4501b55a88822d2d81748c97d5e3f9b3 | 01/08/2021 05:40:04  | 01/08/2021 05:40:04 |
-10.0.1-20H2     | amd64           | windows | sha256:bd1fbca915de53e306d9517d073c845bf4555ed5943b20737419480a9a587734 | 01/29/2021 16:39:58  | 04/01/2021 02:13:19 |
-10.0.1-ltsc2019 | amd64           | windows | sha256:b048f02685e98a9fca4ad3865c0cf85acf89277cab04a1bb32240817363ceff5 | 01/08/2021 03:53:37  | 04/01/2021 00:23:02 |
-## community
-Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
 ### sitecore-xp1-custom-sxa-jss1400-cd
 Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 --------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -809,6 +712,22 @@ Tag             | Architecture    | OS      | Digest                            
 10.0.1-2009     | amd64           | windows | sha256:e8b52089e3789b3e8c4d31d7307ba205116b30db78338b726f636cebdf903299 | 01/08/2021 05:40:52  | 01/08/2021 05:40:52 |
 10.0.1-20H2     | amd64           | windows | sha256:eb814d62bbf775373fd6e7ddc4eadb44bce7bf6c0d08502dcca6b5bc2ea5000e | 01/29/2021 17:23:24  | 04/01/2021 02:14:10 |
 10.0.1-ltsc2019 | amd64           | windows | sha256:a0bc773b9bc38c4c2e18f82f9a3231a8636771cf4a001dcc145553603d763dcf | 01/08/2021 03:54:21  | 04/01/2021 00:23:53 |
+### sitecore-xp1-custom-sxa-jss1400-cm
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:44ca9e41a4726df992bacf2533606d861a262c670940585705b3718d91f18692 | 11/05/2020 09:01:13  | 12/13/2020 17:31:19 |
+10.0.1-2004     | amd64           | windows | sha256:17ece95ef638e731eea5c0137138b358622af1815aa307a3f05ee6690f088e42 | 01/08/2021 04:39:08  | 04/01/2021 01:20:13 |
+10.0.1-2009     | amd64           | windows | sha256:e8b52089e3789b3e8c4d31d7307ba205116b30db78338b726f636cebdf903299 | 01/08/2021 05:40:52  | 01/08/2021 05:40:52 |
+10.0.1-20H2     | amd64           | windows | sha256:eb814d62bbf775373fd6e7ddc4eadb44bce7bf6c0d08502dcca6b5bc2ea5000e | 01/29/2021 17:23:24  | 04/01/2021 02:14:10 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:a0bc773b9bc38c4c2e18f82f9a3231a8636771cf4a001dcc145553603d763dcf | 01/08/2021 03:54:21  | 04/01/2021 00:23:53 |
+### sitecore-xp1-custom-sxa-jss1400-mssql
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:2e62776679bbf542a820a63b8916e149dc19a23e63dfb958c20ed7b07cb7dd2c | 11/05/2020 08:56:21  | 12/13/2020 17:26:59 |
+10.0.1-2004     | amd64           | windows | sha256:eba79024044c2541a1846587405bbfdbd968233f974821c9ba17a8323f4fc46a | 01/08/2021 04:39:26  | 04/01/2021 01:20:30 |
+10.0.1-2009     | amd64           | windows | sha256:fbd56114ee37845f4a89d5efb661c7cbe5b31ee030068ef2506599f426c27a25 | 01/08/2021 05:41:11  | 01/08/2021 05:41:11 |
+10.0.1-20H2     | amd64           | windows | sha256:2394b7945ea4fc524c6f3c79386ca8bbea3c922c54453d565f5d8dc9ed42f552 | 01/29/2021 17:24:22  | 04/01/2021 02:14:25 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:5595699a65ee57a063b8673fed25836923a60338e40e0470f2ea225cac78ac66 | 01/08/2021 03:54:39  | 04/01/2021 00:24:14 |
 ### sitecore-xp1-custom-sxa-jss1400-mssql
 Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 --------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -825,6 +744,22 @@ Tag             | Architecture    | OS      | Digest                            
 10.0.1-2009     | amd64           | windows | sha256:059d21c9cf0a4abb651b6243c4c0d04e2902a3b81d909449cbcc580a7065db22 | 01/08/2021 05:41:28  | 01/08/2021 05:41:28 |
 10.0.1-20H2     | amd64           | windows | sha256:f4cdf135b7a9433b94073057b4bfddf82f11f347efa8f18d605ee1afee7bebb2 | 01/29/2021 17:25:13  | 04/01/2021 02:14:40 |
 10.0.1-ltsc2019 | amd64           | windows | sha256:947f414b992b43d37d43ac8e39f27f3b8b90092c3c4f99307d8fa0768c3ab617 | 01/08/2021 03:54:54  | 04/01/2021 00:24:30 |
+### sitecore-xp1-custom-sxa-jss1400-mssql-init
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:bdfa96518409c7da521d4bb8c9ef892b284fb84f578150497068cae2e10c3b04 | 11/05/2020 09:05:52  | 12/13/2020 17:34:57 |
+10.0.1-2004     | amd64           | windows | sha256:fc054014713879a11d7a2d690c04e65044176fa8914acc74905aec613234a12f | 01/08/2021 04:39:44  | 04/01/2021 01:20:45 |
+10.0.1-2009     | amd64           | windows | sha256:059d21c9cf0a4abb651b6243c4c0d04e2902a3b81d909449cbcc580a7065db22 | 01/08/2021 05:41:28  | 01/08/2021 05:41:28 |
+10.0.1-20H2     | amd64           | windows | sha256:f4cdf135b7a9433b94073057b4bfddf82f11f347efa8f18d605ee1afee7bebb2 | 01/29/2021 17:25:13  | 04/01/2021 02:14:40 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:947f414b992b43d37d43ac8e39f27f3b8b90092c3c4f99307d8fa0768c3ab617 | 01/08/2021 03:54:54  | 04/01/2021 00:24:30 |
+### sitecore-xp1-custom-sxa-jss1400-ps-cd
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:0c22e1d9eddfba0fea0fd6e4949c918fba99e2b972923ba7b8e66f2f0db3575f | 11/05/2020 09:23:43  | 12/13/2020 17:49:32 |
+10.0.1-2004     | amd64           | windows | sha256:2721a0b341bc0ce5bd5c6c79eb3bfa6cef8f1b49f4722e7992681a3b351eea65 | 01/08/2021 04:40:11  | 04/01/2021 01:21:09 |
+10.0.1-2009     | amd64           | windows | sha256:9a3b18a26f928be45e8bdc49541cda24c12f2d85b50a8325453c0e3a07a2ac2e | 01/08/2021 05:41:52  | 01/08/2021 05:41:52 |
+10.0.1-20H2     | amd64           | windows | sha256:83ebd44bc2788124f3a8282779ecaa22b7027dde413a2b63e952eb18f596c30f | 01/29/2021 17:26:12  | 04/01/2021 02:15:02 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:c729f1fefa687c9cee26668b24ae6f6f25c2f2c77367ea77806686cd1cabd717 | 01/08/2021 03:55:16  | 04/01/2021 00:25:00 |
 ### sitecore-xp1-custom-sxa-jss1400-ps-cd
 Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 --------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -977,6 +912,70 @@ Tag             | Architecture    | OS      | Digest                            
 10.0.1-2009     | amd64           | windows | sha256:4b19457545330e29040f73a07984b1af4501b55a88822d2d81748c97d5e3f9b3 | 01/08/2021 05:48:36  | 01/08/2021 05:48:36 |
 10.0.1-20H2     | amd64           | windows | sha256:bd1fbca915de53e306d9517d073c845bf4555ed5943b20737419480a9a587734 | 01/29/2021 18:13:38  | 04/01/2021 02:21:18 |
 10.0.1-ltsc2019 | amd64           | windows | sha256:b048f02685e98a9fca4ad3865c0cf85acf89277cab04a1bb32240817363ceff5 | 01/08/2021 04:03:35  | 04/01/2021 00:32:21 |
+### sitecore-xp1-custom-sxa-jss-cd
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:292e09b228a08a31002b1e1d5507997af5e612ade10ede00a375504bb00abddf | 10/23/2020 16:05:13  | 12/13/2020 17:36:42 |
+10.0.1-2004     | amd64           | windows | sha256:a62b6cccae53a31bb4acc97dfe1f1f72aa141fb5695c09777921d07c5d11160c | 01/08/2021 04:35:58  | 04/01/2021 01:16:57 |
+10.0.1-2009     | amd64           | windows | sha256:97bf1b4f66033afb262a23538b3f5ae1a9b2154d559aed0beef7c5dce5afe0a0 | 01/08/2021 05:37:08  | 01/08/2021 05:37:08 |
+10.0.1-20H2     | amd64           | windows | sha256:aa6a75470989d359a66ddd8778a79c3408184c94152175db05463c21f44994b1 | 01/29/2021 16:32:58  | 04/01/2021 02:10:51 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:dcc487b674e1fe3511c3d698bd661243f7423997ab65edb104c27d5db287589e | 01/08/2021 03:51:10  | 04/01/2021 00:20:17 |
+### sitecore-xp1-custom-sxa-jss-cm
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:efae4620e86a5a98e4b6c517e3814eafa6bbbec160cbfcb96e436eef23b2407b | 10/23/2020 16:02:25  | 12/13/2020 17:30:56 |
+10.0.1-2004     | amd64           | windows | sha256:d74de2544295cbf723a33a5724501265f592893cadcc6b7b896be73457ae5eaf | 01/08/2021 04:36:20  | 04/01/2021 01:17:20 |
+10.0.1-2009     | amd64           | windows | sha256:c1cfab1ecf6d11ac6a37e3e5633e66d592ce9344c129f26d6bd1afcd27eb282c | 01/08/2021 05:37:32  | 01/08/2021 05:37:32 |
+10.0.1-20H2     | amd64           | windows | sha256:f160458af5f775b585e745b7eea818bf1c2ee98bcc34eabfff70241f94e072fc | 01/29/2021 16:34:00  | 04/01/2021 02:11:18 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:5dc48a971cb0c03a4ed14b5bad9c9ab1cb6935f3cb01c8fdd126d7c7077be6d1 | 01/08/2021 03:51:32  | 04/01/2021 00:20:56 |
+### sitecore-xp1-custom-sxa-jss-mssql
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 10/23/2020 16:09:40  | 12/13/2020 17:26:07 |
+10.0.1-2004     | amd64           | windows | sha256:de357ee8ffc8de96ae2c0d2348e10f3fd994b00860dee91e9d4c0fbf8a1b41f6 | 01/08/2021 04:36:40  | 04/01/2021 01:17:37 |
+10.0.1-2009     | amd64           | windows | sha256:25def54c1ad921e40f279be65961406a4fe26bbb0f70037a8831c9387e96025c | 01/08/2021 05:37:50  | 01/08/2021 05:37:50 |
+10.0.1-20H2     | amd64           | windows | sha256:0b5b535208ccbcabbc269beb80a1eeb63080503c20623202b56c48ec4a5fc940 | 01/29/2021 16:34:54  | 04/01/2021 02:11:36 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:70242870fa9bc719a4eb53f3c89949431d2a994b27d1e07504de79426e557454 | 01/08/2021 03:51:50  | 04/01/2021 00:21:20 |
+### sitecore-xp1-custom-sxa-jss-mssql-init
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:e5a36f6f1b60f4e23cf5753576db8faf55ff741b98cf286b4a702d98c547a43c | 10/23/2020 16:14:27  | 12/13/2020 17:34:38 |
+10.0.1-2004     | amd64           | windows | sha256:3cf324e035d26735dab30b49945c4927bd6248e62c599f889bb57ea2adb06aa2 | 01/08/2021 04:36:59  | 04/01/2021 01:17:53 |
+10.0.1-2009     | amd64           | windows | sha256:236a1fa4676ceed81c0a4bf2f7e6626ade3ee3388e0eadbef1c5234ea7842c59 | 01/08/2021 05:38:12  | 01/08/2021 05:38:12 |
+10.0.1-20H2     | amd64           | windows | sha256:d057db4eaa8d521f8b7fc5a1be126d698b91d027c4292df6824423f6230920ab | 01/29/2021 16:35:49  | 04/01/2021 02:11:53 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:e740875068374316233920344b852d250cfb157cb61a445fe584298169b85c33 | 01/08/2021 03:52:07  | 04/01/2021 00:21:38 |
+### sitecore-xp1-custom-sxa-jss-ps-cd
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:37657e927124f40a0c45eedf8fa0cb85358812ce0c957f47fd528d5ec87bc7fe | 10/23/2020 16:05:48  | 12/13/2020 17:49:10 |
+10.0.1-2004     | amd64           | windows | sha256:4517e50c5eb224cda04afadbe4a153ffb8e555276a9d01c16a0cfa74fecd0a93 | 01/08/2021 04:37:24  | 04/01/2021 01:18:15 |
+10.0.1-2009     | amd64           | windows | sha256:56bf9c0be366772bad5524bc863fe779a5fa3fbe80860b4e7375a45966f7b107 | 01/08/2021 05:38:34  | 01/08/2021 05:38:34 |
+10.0.1-20H2     | amd64           | windows | sha256:f2fa9713b82b1dd8193b0df4717f973fbf54add6096536ea1b13a41c0dc55d5e | 01/29/2021 16:36:49  | 04/01/2021 02:12:16 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:d16c8838a8415f8e6425e6825cbc934714119fd7fcb266416d6e15d453156d18 | 01/08/2021 03:52:29  | 04/01/2021 00:22:04 |
+### sitecore-xp1-custom-sxa-jss-ps-cm
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:ef8ec4fb571c654a260ad3a38dcbf0a5d8290ce1976d0aaa5442edd222f987b6 | 10/23/2020 16:03:00  | 12/13/2020 17:44:48 |
+10.0.1-2004     | amd64           | windows | sha256:ab494b04ad2e7634f3337203b8f7695cedd2220d9ff643d04b4754d534f0b58f | 01/08/2021 04:37:47  | 04/01/2021 01:18:37 |
+10.0.1-2009     | amd64           | windows | sha256:31cd148e3a0b15d5ec6e458f5b5d5f8e23a3eaa3074468bc7a5ca16f48d26e53 | 01/08/2021 05:39:25  | 01/08/2021 05:39:25 |
+10.0.1-20H2     | amd64           | windows | sha256:4daeedbdd319f35a3ebb5a81636cb7c2a67ae813dae1f7a607aaefe869b19c94 | 01/29/2021 16:37:48  | 04/01/2021 02:12:40 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:2be76ef41cd44890a31a61a86caf629ec64c906e3a1492d7a5d7b206ed3ecdc6 | 01/08/2021 03:52:53  | 04/01/2021 00:22:27 |
+### sitecore-xp1-custom-sxa-jss-ps-mssql
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 10/23/2020 16:10:36  | 12/13/2020 17:39:52 |
+10.0.1-2004     | amd64           | windows | sha256:a4b9baa31ced1380c84e35d017c8c13bb13585f06b499b1f9aabf1e9f322f629 | 01/08/2021 04:38:06  | 04/01/2021 01:18:56 |
+10.0.1-2009     | amd64           | windows | sha256:685a4bd2417a2e1c36c93c86eefb7855771523e1b235bf4945fba305f33646d1 | 01/08/2021 05:39:45  | 01/08/2021 05:39:45 |
+10.0.1-20H2     | amd64           | windows | sha256:aaf9dfd3f01c292981365342961b2d369cfafb5c7afd8a63f2cc6564db8f0440 | 01/29/2021 16:38:45  | 04/01/2021 02:13:00 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:cabdee31321edf4dddff9d50682a7cef62c8e14407c91972ecbd3e693ae0dd8e | 01/08/2021 03:53:11  | 04/01/2021 00:22:46 |
+### sitecore-xp1-custom-sxa-jss-ps-mssql-init
+Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+--------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+10.0.0-ltsc2019 | amd64           | windows | sha256:fa160bdb95cdb549ba2f26f4f75304180ce0838a662262b7933fe0d6377f2cbf | 10/23/2020 16:14:58  | 12/13/2020 17:48:09 |
+10.0.1-2004     | amd64           | windows | sha256:f3d4d15984cc8afb6bcb4172c738776b380cec74b01f58548bd033d237e9e9dc | 01/08/2021 04:38:24  | 04/01/2021 01:19:26 |
+10.0.1-2009     | amd64           | windows | sha256:4b19457545330e29040f73a07984b1af4501b55a88822d2d81748c97d5e3f9b3 | 01/08/2021 05:40:04  | 01/08/2021 05:40:04 |
+10.0.1-20H2     | amd64           | windows | sha256:bd1fbca915de53e306d9517d073c845bf4555ed5943b20737419480a9a587734 | 01/29/2021 16:39:58  | 04/01/2021 02:13:19 |
+10.0.1-ltsc2019 | amd64           | windows | sha256:b048f02685e98a9fca4ad3865c0cf85acf89277cab04a1bb32240817363ceff5 | 01/08/2021 03:53:37  | 04/01/2021 00:23:02 |
 ### sitecore-xp1-custom-sxa-mssql
 Tag             | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 --------------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -1400,6 +1399,7 @@ Tag                    | OSVersion    | TargetOS    | Architecture    | OS      
 10.0.1-ltsc2019-1001.0 | ltsc2019     | 1001.0      | amd64           | windows | sha256:2324d45aca51d02a136b9fe0785af3043867a07a0c1313a5139a19203f3055ed | 01/06/2021 18:02:14  | 01/19/2021 16:01:04 |
 10.0.1-ltsc2019-1001.1 | ltsc2019     | 1001.1      | amd64           | windows | sha256:e9efe7461af140ab5064301b8bd7d65a1db62d2488c1f1776ee9626f0e982dc5 | 02/10/2021 15:22:17  | 02/25/2021 03:56:38 |
 ## sch
+This namespace includes images of the *Sitecore Content Hub (SCH)*.
 ### ch-cli
 Tag           | Architecture    | OS    | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------- | --------------- | ----- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -3475,8 +3475,6 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 16.0.0.441.12-10.0.19042.804-2009     | 10.0.19042.804  | 2009        | amd64           | windows | sha256:0de1c0cb1f27e98aaae40af05818092bd4a45f8a233c4648732847198dd5c0a5 | 03/04/2021 10:45:46  | 03/04/2021 10:45:46 |
 16.0.0.441.12-10.0.19042.804-20H2     | 10.0.19042.804  | 2009        | amd64           | windows | sha256:0de1c0cb1f27e98aaae40af05818092bd4a45f8a233c4648732847198dd5c0a5 | 03/04/2021 10:46:23  | 03/04/2021 10:46:23 |
 16.0.0.441.9-10.0.19041.804-2004      | 10.0.19041.804  | 2004        | amd64           | windows | sha256:f6d3056eff885f39b49bb8a69adbe50a65caacef7957a98b7102ceb8d121e929 | 03/04/2021 10:38:13  | 03/04/2021 10:38:13 |
-## sxp/modules
-This namespace includes images for modules of the *Sitecore Experience Platform (SXP)*.
 ### sitecore-horizon
 Tag                                       | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ----------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -3526,6 +3524,36 @@ Tag                                  | OSVersion       | TargetOS    | Architect
 3.0.0.00263.33-10.0.19042.804-2009   | 10.0.19042.804  | 2009        | amd64           | windows | sha256:fa82d9b1b1bc0a49025f432f7e139d6d9b82cbb7cb053e6b2f9bc6c01baaea2c | 03/04/2021 10:48:49  | 03/04/2021 10:48:49 |
 3.0.0.00263.33-10.0.19042.804-20H2   | 10.0.19042.804  | 2009        | amd64           | windows | sha256:fa82d9b1b1bc0a49025f432f7e139d6d9b82cbb7cb053e6b2f9bc6c01baaea2c | 03/04/2021 10:49:23  | 03/04/2021 10:49:23 |
 3.0.0.00263.989-10.0.17763.1757-1809 | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:69c85121abd3936fb91d87178795b313c6d9c5a85302e2d75c321c895ff8bc89 | 02/25/2021 10:57:55  | 02/25/2021 10:57:55 |
+### sitecore-sfcrm-xp0-assets
+Tag                                  | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+------------------------------------ | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+6.0-1809                             | 10.0.17763.1817 | 1809        | amd64           | windows | sha256:ec64b92da2d5694e9d59a62507e7b3819e0a36faf06befb271f90781f685dde0 | 04/13/2021 08:09:28  | 04/13/2021 08:09:28 |
+6.0-2004                             | 10.0.19041.867  | 2004        | amd64           | windows | sha256:3997416746b526ce202600dc79fce505b1d05594668e8cb99435a487526fb3ce | 04/13/2021 08:11:44  | 04/13/2021 08:11:44 |
+6.0-2009                             | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:16:15  | 04/13/2021 08:16:15 |
+6.0-20H2                             | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:16:50  | 04/13/2021 08:16:50 |
+6.0.0-1809                           | 10.0.17763.1817 | 1809        | amd64           | windows | sha256:ec64b92da2d5694e9d59a62507e7b3819e0a36faf06befb271f90781f685dde0 | 04/13/2021 08:09:18  | 04/13/2021 08:09:18 |
+6.0.0-2004                           | 10.0.19041.867  | 2004        | amd64           | windows | sha256:3997416746b526ce202600dc79fce505b1d05594668e8cb99435a487526fb3ce | 04/13/2021 08:11:32  | 04/13/2021 08:11:32 |
+6.0.0-2009                           | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:16:04  | 04/13/2021 08:16:04 |
+6.0.0-20H2                           | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:16:39  | 04/13/2021 08:16:39 |
+6.0.0.01456.109-10.0.19042.867-2009  | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:15:53  | 04/13/2021 08:15:53 |
+6.0.0.01456.109-10.0.19042.867-20H2  | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:16:28  | 04/13/2021 08:16:28 |
+6.0.0.01456.110-10.0.17763.1817-1809 | 10.0.17763.1817 | 1809        | amd64           | windows | sha256:ec64b92da2d5694e9d59a62507e7b3819e0a36faf06befb271f90781f685dde0 | 04/13/2021 08:09:01  | 04/13/2021 08:09:01 |
+6.0.0.01456.113-10.0.19041.867-2004  | 10.0.19041.867  | 2004        | amd64           | windows | sha256:3997416746b526ce202600dc79fce505b1d05594668e8cb99435a487526fb3ce | 04/13/2021 08:11:19  | 04/13/2021 08:11:19 |
+### sitecore-sfcrm-xp1-assets
+Tag                                  | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
+------------------------------------ | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+6.0-1809                             | 10.0.17763.1817 | 1809        | amd64           | windows | sha256:ec64b92da2d5694e9d59a62507e7b3819e0a36faf06befb271f90781f685dde0 | 04/13/2021 08:10:17  | 04/13/2021 08:10:17 |
+6.0-2004                             | 10.0.19041.867  | 2004        | amd64           | windows | sha256:3997416746b526ce202600dc79fce505b1d05594668e8cb99435a487526fb3ce | 04/13/2021 08:12:21  | 04/13/2021 08:12:21 |
+6.0-2009                             | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:17:26  | 04/13/2021 08:17:26 |
+6.0-20H2                             | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:18:02  | 04/13/2021 08:18:02 |
+6.0.0-1809                           | 10.0.17763.1817 | 1809        | amd64           | windows | sha256:ec64b92da2d5694e9d59a62507e7b3819e0a36faf06befb271f90781f685dde0 | 04/13/2021 08:10:06  | 04/13/2021 08:10:06 |
+6.0.0-2004                           | 10.0.19041.867  | 2004        | amd64           | windows | sha256:3997416746b526ce202600dc79fce505b1d05594668e8cb99435a487526fb3ce | 04/13/2021 08:12:09  | 04/13/2021 08:12:09 |
+6.0.0-2009                           | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:17:15  | 04/13/2021 08:17:15 |
+6.0.0-20H2                           | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:17:51  | 04/13/2021 08:17:51 |
+6.0.0.01456.109-10.0.19042.867-2009  | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:17:03  | 04/13/2021 08:17:03 |
+6.0.0.01456.109-10.0.19042.867-20H2  | 10.0.19042.867  | 2009        | amd64           | windows | sha256:baa673f163cd79653fbfecd53c64f987daf512d185625559434a4434764b8635 | 04/13/2021 08:17:41  | 04/13/2021 08:17:41 |
+6.0.0.01456.110-10.0.17763.1817-1809 | 10.0.17763.1817 | 1809        | amd64           | windows | sha256:ec64b92da2d5694e9d59a62507e7b3819e0a36faf06befb271f90781f685dde0 | 04/13/2021 08:09:49  | 04/13/2021 08:09:49 |
+6.0.0.01456.113-10.0.19041.867-2004  | 10.0.19041.867  | 2004        | amd64           | windows | sha256:3997416746b526ce202600dc79fce505b1d05594668e8cb99435a487526fb3ce | 04/13/2021 08:11:59  | 04/13/2021 08:11:59 |
 ### sitecore-sps
 Tag                               | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 --------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
@@ -6723,4 +6751,4 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.0.1-1809                            | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:57  | 08/26/2020 15:41:57 |
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 15:41:19  | 08/26/2020 15:41:19 |
 
-*This listing was automatically generated on April 05, 2021.*
+*This listing was automatically generated on April 13, 2021.*
