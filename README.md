@@ -16,6 +16,11 @@ Using this repository you can also build custom Docker images for the most recen
 - **The images built from the build folder in this repo are not supported by Sitecore.**
 - The build scripts and examples in this repository are provided and maintained by the community, with contributions and code reviews by Sitecore.
 - This repository was initially created to help consolidate efforts around Sitecore and Docker.
+- In scenarios where you or your organization require domains to be whitelisted, please see the following domains associated with the Sitecore Container Registry:
+  - scr.sitecore.com
+  - scr-data-westeurope.sitecore.com
+  - scr-data-eastus.sitecore.com
+  - scr-data-eastasia.sitecore.com
 
 ### Official Sitecore image tags
 
