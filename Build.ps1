@@ -98,7 +98,7 @@ filter WindowsFilter {
 filter SitecoreFilter {
     param([string]$Version)
 
-    if ($_.Path -like "*$Version*") {
+    if ($_.Tag -like "*$Version*") {
         $_
     }
 }
