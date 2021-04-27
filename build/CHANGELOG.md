@@ -6,6 +6,7 @@
 - [Added] PublishModuleAssetsOnly parameter (if 'true', Build.ps1 will exit after publishing module assets)
 - [Added] LinuxBuildAssetPath parameter
 - [Changed] 'SkipModuleAssets' parameter was replaced with 'IncludeModuleAssets'
+- [Fixed] SitecoreFilter was filtering based on Path; now filters based on Tag
 
 ## January 2021
 

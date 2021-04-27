@@ -98,7 +98,8 @@ filter WindowsFilter {
 filter SitecoreFilter {
     param([string]$Version)
 
-    if ($_.Path -like "*$Version*") {
+    # Sitecore 10.x is picked up via Path, 9.x is picked up via Tag
+    if ($_.Path -like "*$Version*" -or $_.Tag -like "*$Version*") {
         $_
     }
 }
