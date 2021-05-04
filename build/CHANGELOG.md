@@ -1,5 +1,9 @@
 # Changelog
 
+## May 2021
+
+- [Added] Sitecore 10.1.0 XM1 Linux SQL Images
+
 ## April 2021
 
 - [Added] Sitecore 10.1.0 images

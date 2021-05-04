@@ -1,0 +1,13 @@
+{
+  "tags": [
+    {
+      "tag": "community/sitecore-xm1-custom-mssql:10.1.0-linux",
+      "build-options": [
+        "--build-arg BASE_IMAGE=mcr.microsoft.com/mssql/server:2019-CU8-ubuntu-16.04"
+      ]
+    }
+  ],
+  "sources": [
+    "Sitecore 10.1.0 rev. 005207 (WDP XM1 packages).zip"
+  ]
+}
