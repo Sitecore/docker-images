@@ -68560,13 +68560,23 @@
         "Namespace":  "tools",
         "Tags":  [
                      {
+                         "Tag":  "10.0-1809",
+                         "Digest":  "sha256:80848b2862459ea545ed85d8bc9ea196b1871e2d8a504b677fe8fa56514e855b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "05/05/2021 15:10:54",
+                         "LastUpdateTime":  "05/05/2021 15:10:54",
+                         "OSVersion":  "10.0.17763.1879",
+                         "TargetOS":  "1809"
+                     },
+                     {
                          "Tag":  "10.0.0-1809",
-                         "Digest":  "sha256:03461598af81ade28fc83a652b6e70cbef6f2fbcfb2c8e6ec58a6046b411797e",
+                         "Digest":  "sha256:80848b2862459ea545ed85d8bc9ea196b1871e2d8a504b677fe8fa56514e855b",
                          "Architecture":  "amd64",
                          "OS":  "windows",
                          "CreatedTime":  "08/03/2020 15:20:12",
-                         "LastUpdateTime":  "08/03/2020 15:20:12",
-                         "OSVersion":  "10.0.17763.1282",
+                         "LastUpdateTime":  "05/05/2021 15:10:45",
+                         "OSVersion":  "10.0.17763.1879",
                          "TargetOS":  "1809"
                      },
                      {
@@ -68577,6 +68587,16 @@
                          "CreatedTime":  "08/03/2020 15:19:57",
                          "LastUpdateTime":  "08/03/2020 15:19:57",
                          "OSVersion":  "10.0.17763.1282",
+                         "TargetOS":  "1809"
+                     },
+                     {
+                         "Tag":  "10.0.0.113.788-10.0.17763.1879-1809",
+                         "Digest":  "sha256:80848b2862459ea545ed85d8bc9ea196b1871e2d8a504b677fe8fa56514e855b",
+                         "Architecture":  "amd64",
+                         "OS":  "windows",
+                         "CreatedTime":  "05/05/2021 15:10:06",
+                         "LastUpdateTime":  "05/05/2021 15:10:06",
+                         "OSVersion":  "10.0.17763.1879",
                          "TargetOS":  "1809"
                      },
                      {
