@@ -49,7 +49,11 @@
     },
     "Sitecore 10.1.0 rev. 005006 (WDP XPSingle packages).zip": {
         "url": "https://sitecoredev.azureedge.net/~/media/E875A311BB6A487782F5F75129C94E05.ashx?date=20210222T220247",
-        "hash": ""
+        "hash": "28A90416C6051000E9CBF44F314AA4728406E3C3C8A16014B87E6A459EA5061A"
+    },
+    "Sitecore 10.1.0 rev. 005207 (WDP XM1 packages).zip": {
+        "url":"https://sitecoredev.azureedge.net/~/media/432E6B3964B4459AAD598F1D762F644B.ashx?date=20210222T221308",
+        "hash":"54CFA1246872E8A332F25A0FD4B289B9C4E936BA7A33DBC2225B8B073C902D07"
     },
     "Sitecore 8.2 rev. 161221.zip": {
         "url": "https://sitecoredev.azureedge.net/~/media/02D2B5F95D1D4B1F894C2E3CA1194E45.ashx",
