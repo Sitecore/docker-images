@@ -17,6 +17,14 @@
       ]
     },
     {
+      "tag": "community/sitecore-xm1-custom-spe-headless-sps-mssql:10.1.0-linux",
+      "build-options": [
+        "--memory 4GB",
+        "--build-arg BASE_IMAGE=community/sitecore-xm1-custom-spe-headless-mssql:10.1.0-linux",
+        "--build-arg MODULE_ASSETS=community/modules/custom-sps-integration-xm1-assets:10.1.0-linux"
+      ]
+    },
+    {
       "tag": "community/sitecore-xm1-custom-sxa-mssql:10.1.0-linux",
       "build-options": [
         "--memory 4GB",
