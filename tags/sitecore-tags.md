@@ -8834,7 +8834,10 @@ Tag                                 | OSVersion       | TargetOS    | Architectu
 ### sitecore-razl-assets
 Tag                                   | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | -------------------- | --------------------|
+5.0-1809                              | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:c1e30c2a7a8a4ec24d830c7be53b6ecce1cded5e6e66327104b12604ce70ee09 | 06/16/2021 11:34:46  | 06/16/2021 11:34:46 |
 5.0.1-1809                            | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 13:41:57  | 08/26/2020 13:41:57 |
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 13:41:19  | 08/26/2020 13:41:19 |
+5.0.4-1809                            | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:c1e30c2a7a8a4ec24d830c7be53b6ecce1cded5e6e66327104b12604ce70ee09 | 06/16/2021 11:34:29  | 06/16/2021 11:34:29 |
+5.0.4.504.167349-10.0.17763.1757-1809 | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:c1e30c2a7a8a4ec24d830c7be53b6ecce1cded5e6e66327104b12604ce70ee09 | 06/16/2021 11:34:11  | 06/16/2021 11:34:11 |
 
-*This listing was automatically generated on June 15, 2021.*
+*This listing was automatically generated on June 16, 2021.*
