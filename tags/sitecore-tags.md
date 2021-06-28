@@ -1756,7 +1756,8 @@ This namespace includes images of the *Sitecore Content Hub (SCH)*.
 Tag           | Architecture    | OS    | Digest                                                                  | CreatedTime          | LastUpdateTime      |
 ------------- | --------------- | ----- | ----------------------------------------------------------------------- | -------------------- | --------------------|
 0.9.0-preview | amd64           | linux | sha256:03837382be928ed35673cfa7f7a1e1413385d15158b8359aee987c18221d7ce1 | 02/26/2021 14:08:52  | 02/26/2021 14:08:52 |
-latest        | amd64           | linux | sha256:03837382be928ed35673cfa7f7a1e1413385d15158b8359aee987c18221d7ce1 | 02/26/2021 14:09:10  | 02/26/2021 14:09:10 |
+1.0.0         | amd64           | linux | sha256:5d6e12028ee14104e7032dbf29a9283f2c2fb331e44a1d6668086586a39334df | 06/28/2021 13:18:42  | 06/28/2021 13:18:42 |
+latest        | amd64           | linux | sha256:5d6e12028ee14104e7032dbf29a9283f2c2fb331e44a1d6668086586a39334df | 02/26/2021 14:09:10  | 06/28/2021 13:19:08 |
 ## sxc/nonproduction
 This namespace includes supporting images for *Sitecore Experience Commerce (SXC)* supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. XC1 images with naming format e.g. *sitecore-xc1-mssql* contain SXA Storefront configuration, whereas abbreviated naming e.g. *xc1-mssql* do not contain Storefront.
 ### sitecore-xc0-mssql
