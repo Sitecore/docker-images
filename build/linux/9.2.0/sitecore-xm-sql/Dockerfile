@@ -4,7 +4,7 @@ FROM $BASE_IMAGE as builder
 
 RUN apt-get -y update \
     && apt-get -y --allow-unauthenticated install unzip \ 
-    && wget -progress=bar:force -q -O sqlpackage.zip https://go.microsoft.com/fwlink/?linkid=2087431 \
+    && wget -progress=bar:force -q -O sqlpackage.zip https://go.microsoft.com/fwlink/?linkid=2113331 \
     && unzip -qq sqlpackage.zip -d /opt/sqlpackage \
     && chmod +x /opt/sqlpackage/sqlpackage
 
