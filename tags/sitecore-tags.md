@@ -12438,4 +12438,4 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.0.4-1809                            | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:c1e30c2a7a8a4ec24d830c7be53b6ecce1cded5e6e66327104b12604ce70ee09 | 06/16/2021 11:34:29 | 06/16/2021 11:34:29|
 5.0.4.504.167349-10.0.17763.1757-1809 | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:c1e30c2a7a8a4ec24d830c7be53b6ecce1cded5e6e66327104b12604ce70ee09 | 06/16/2021 11:34:11 | 06/16/2021 11:34:11|
 
-*This listing was automatically generated on December 21, 2021.*
+*This listing was automatically generated on December 22, 2021.*
