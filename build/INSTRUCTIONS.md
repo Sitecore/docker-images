@@ -259,3 +259,20 @@ docker image prune --force
 ```
 
 >TIP: If you need to clean up **everything** you can add the option `--all` to above prune command or run `docker system prune --all --force`. Beware that both will remove **all** images.
+
+
+## Coveo for Sitecore
+
+The `-CoveoVersion` parameter allows you to include Coveo for Sitecore and specify the version you want to use. It will download the required packages from Coveo's website and build the necessary assets/images to launch a Sitecore instance with Coveo installed.
+
+This parameter is compatible with Sitecore 10.0.0 and above.
+It is recommended to use the latest Coveo for Sitecore version. Coveo provides all of the required WDP packages since version 5.0.1039.1.
+
+Example:
+```
+.\Build.ps1 -SitecoreVersion 10.1.0 -Topology xp0 -IncludeModuleAssets -CoveoVersion 5.0.1039.1
+```
+
+Note that the `-IncludeModuleAssets` parameter is mandatory when using the `-CoveoVersion` parameter.
+
+When using the `-IncludeSxa` parameter, Coveo for Sitecore SXA will also be included.

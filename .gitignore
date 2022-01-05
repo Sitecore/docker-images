@@ -15,6 +15,7 @@ windows/tests/**/data/**/*
 !windows/tests/**/data/*/.gitkeep
 
 /.vscode/
+/.idea/
 /build/tools/
 /build/docker-images.json
 

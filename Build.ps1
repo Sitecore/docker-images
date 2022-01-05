@@ -47,7 +47,10 @@ param(
     [string]$PushMode = "WhenChanged",
     [switch]$PublishModuleAssetsOnly,
     [Parameter(Mandatory = $false)]
-    [string]$LinuxBuildAssetPath = (Resolve-Path "build\linux")
+    [string]$LinuxBuildAssetPath = (Resolve-Path "build\linux"),
+    [Parameter(Mandatory = $false)]
+    [ValidatePattern('[0-9]+\.[0-9]+\.[0-9]+\.[0-9]+')]
+    [string]$CoveoVersion = ""
 )
 
 Push-Location build
@@ -68,6 +71,22 @@ if ([string]::IsNullOrEmpty($InstallSourcePath)) {
 
 $ErrorActionPreference = "STOP"
 $ProgressPreference = "SilentlyContinue"
+
+# Setup the necessary folders and files to include Coveo for Sitecore Image
+if ($CoveoVersion -ne "") {
+    Write-Host "Adjusting setup to include Coveo image..."
+
+    foreach ($scv in $SitecoreVersion) {
+        if ([int]$scv.Split(".")[0] -ge 10) {
+            .\coveo-for-sitecore-tools\Setup-Coveo-Build.ps1 `
+                -SitecoreVersion $scv `
+                -CoveoVersion $CoveoVersion `
+                -IncludeSxa:$IncludeSxa
+        }
+    }
+
+    Write-Host "Coveo for Sitecore will be included in the build"
+}
 
 # load module
 Import-Module (Join-Path $(Get-Location) "\modules\SitecoreImageBuilder") -RequiredVersion 1.0.0 -Force
@@ -303,7 +322,7 @@ else {
     exit
 }
 
-if ($PublishModuleAssetsOnly){
+if ($PublishModuleAssetsOnly) {
     SitecoreImageBuilder\Publish-LinuxModuleAssetFiles `
     -Path (Join-Path $(Get-Location) $rootFolder) `
     -InstallSourcePath $InstallSourcePath `
@@ -314,20 +333,20 @@ if ($PublishModuleAssetsOnly){
     -Verbose:$VerbosePreference
     Exit 0
 }
+
 # restore any missing packages
 SitecoreImageBuilder\Invoke-PackageRestore `
     -Path (Join-Path $(Get-Location) $rootFolder) -Destination $InstallSourcePath -Tags ($tags | Select-Object -ExpandProperty Tag) ` `
     -ExperimentalTagBehavior:(@{$true = "Include"; $false = "Skip" }[$IncludeExperimental -eq $true]) `
     -WhatIf:$WhatIfPreference
 
-if ($IncludeExperimental -or $IncludeModuleAssets)
-{
+if ($IncludeExperimental -or $IncludeModuleAssets) {
     # restore any missing experimental packages
 
     foreach ($scv in $SitecoreVersion) {
         .\Download-Module-Prerequisites.ps1 `
-        -InstallSourcePath $InstallSourcePath `
-        -SitecoreVersion $scv
+            -InstallSourcePath $InstallSourcePath `
+            -SitecoreVersion $scv
     }
 }
 

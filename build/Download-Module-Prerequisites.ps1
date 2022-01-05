@@ -51,8 +51,6 @@ $packages += $( if ($SitecoreVersion -eq "9.3.0")
             "Sitecore Connect for CMP XP for 10.0 v. 3.0.0 rev. 00134.zip"                                    = "https://sitecoredev.azureedge.net/~/media/8443DB808C834186B40D66D58499355B.ashx?date=20200916T110356"
             "Sitecore Connect for CMP XM for 10.0 v. 3.0.0 rev. 00134.zip"                                    = "https://sitecoredev.azureedge.net/~/media/36489D794FA5489CBBB78653F03F81A3.ashx?date=20200916T110356"
             "Sitecore Connect for Sitecore DAM-2.0.0.zip"                                                     = "https://sitecoredev.azureedge.net/~/media/7F118478CF78478087A1DB3EBDF9FBFE.ashx?date=20190626T140600"
-            "Coveo for Sitecore 10.0 5.0.858.1.zip"                                                           = "https://static.cloud.coveo.com/coveoforsitecore/packages/v5.0.858.1/Coveo%20for%20Sitecore%2010.0%205.0.858.1.zip"
-            "Coveo for Sitecore SXA 10.0 5.0.858.1.zip"                                                       = "https://static.cloud.coveo.com/coveoforsitecore/packages/v5.0.858.1/Coveo%20for%20Sitecore%20SXA%2010.0%205.0.858.1.zip"
             "Sitecore Horizon for Azure 10.0.1.zip"                                                           = "https://sitecoredev.azureedge.net/~/media/B1E32BBAEA0B4BCA941628A1F9C348AD.ashx?date=20201214T083840"
         }
     }
