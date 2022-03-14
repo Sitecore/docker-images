@@ -1,5 +1,9 @@
 # Changelog
 
+## December 2021
+
+- [Changed] Updated url for SQL Server on Linux Sitecore 9.2 images
+
 ## May 2021
 
 - [Added] Sitecore 10.1.0 XM1 Linux SQL Images
