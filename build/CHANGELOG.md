@@ -1,5 +1,10 @@
 # Changelog
 
+## November 2021
+
+- [Added] CoveoVersion parameter (Specifies which version of Coveo to use and includes it in the build: -CoveoVersion "x.x.x.x")
+- [Added] Coveo for Sitecore tools (\build\coveo-for-sitecore-tools)
+
 ## May 2021
 
 - [Added] Sitecore 10.1.0 XM1 Linux SQL Images
