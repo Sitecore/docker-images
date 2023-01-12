@@ -1664,7 +1664,8 @@ latest        |              |             | amd64           | linux | sha256:06
 Tag    | OSVersion    | TargetOS    | Architecture    | OS    | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ------ | ------------ | ----------- | --------------- | ----- | ----------------------------------------------------------------------- | ------------------- | -------------------|
 1.0.0  |              |             | amd64           | linux | sha256:33eb3613e4a26a27a903cb7546fe6a101fabc8e2152ae7a0ea69b82ef05f3b29 | 12/12/2022 19:20:42 | 12/12/2022 19:20:42|
-latest |              |             | amd64           | linux | sha256:33eb3613e4a26a27a903cb7546fe6a101fabc8e2152ae7a0ea69b82ef05f3b29 | 12/12/2022 19:20:57 | 12/12/2022 19:20:57|
+1.0.1  |              |             | amd64           | linux | sha256:0c3ef97fdecf0e71aba0d21e2af79a9cf8b50044b4489a9b34603debd27064e5 | 01/12/2023 14:36:36 | 01/12/2023 14:36:36|
+latest |              |             | amd64           | linux | sha256:0c3ef97fdecf0e71aba0d21e2af79a9cf8b50044b4489a9b34603debd27064e5 | 12/12/2022 19:20:57 | 01/12/2023 14:36:49|
 ## sxc/nonproduction
 This namespace includes supporting images for *Sitecore Experience Commerce (SXC)* supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. XC1 images with naming format e.g. *sitecore-xc1-mssql* contain SXA Storefront configuration, whereas abbreviated naming e.g. *xc1-mssql* do not contain Storefront.
 ### sitecore-xc0-cm
@@ -13813,7 +13814,7 @@ Tag                                         | OSVersion       | TargetOS       |
 10.0.1.004842.513-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019       | amd64           | windows | sha256:173cd247f09d31babb662e8421d45f1b848c2616071a25d5b9197a6b2a41516f | 12/15/2020 10:32:58 | 12/15/2020 10:32:58|
 10.0.1.004842.523-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019       | amd64           | windows | sha256:0504ff485c02353b715c91637c77fffebe8fd661c8fec84792e5ba3e7894bb02 | 12/15/2020 17:32:44 | 12/15/2020 17:32:44|
 10.0.1.004842.53-10.0.19042.685-2009        | 10.0.19042.685  | 20H2           | amd64           | windows | sha256:2f220f32309ea6701ce3f7a9c37d0cafc457012d65903bf20469bfa6753ded88 | 12/15/2020 19:10:51 | 12/15/2020 19:10:51|
-10.0.1.004842.567-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019       | amd64           | windows | sha256:652785faf563f2acfff83a25c056d5da544a97f91864552fb657295a421e9665 | 01/15/2021 16:56:47 | 01/15/2021 16:56:47|
+10.0.1.004842.567-10.0.17763.1697-ltsc2019  | 10.0.19042.685  | 20H2           | amd64           | windows | sha256:652785faf563f2acfff83a25c056d5da544a97f91864552fb657295a421e9665 | 01/15/2021 16:56:47 | 01/15/2021 16:56:47|
 10.0.1.004842.638-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019       | amd64           | windows | sha256:6324fa4d0306a932a88ff0fe45d376ff90a1f39173ab6ce3aed99d24b213656b | 02/15/2021 10:13:47 | 02/15/2021 10:13:47|
 10.0.1.004842.671-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019       | amd64           | windows | sha256:1150f7515d0bca1857ab5efab820bc27cb4f6aa80474acfdb43a1fe33e9ee689 | 03/12/2021 15:46:34 | 03/12/2021 15:46:34|
 10.0.1.004842.707-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019       | amd64           | windows | sha256:66b24c32513873cc0009d387295c6ed67ce0a3f6bd3457cb0b55b92739fac26b | 04/16/2021 13:54:10 | 04/16/2021 13:54:10|
