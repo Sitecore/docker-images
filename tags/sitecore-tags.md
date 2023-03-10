@@ -8729,11 +8729,6 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 1.2.98                                | N/A             | ltsc2019    | amd64           | windows | sha256:58101235088a53da747b6af9de2e4597002c19596f466c8504c02fc277c3177d | 10/18/2022 10:33:52 | 10/18/2022 10:33:52|
 1.2.98-ltsc2019                       | 10.0.17763.3532 | ltsc2019    | amd64           | windows | sha256:05864aa8ff66242490f9ee862e674542c47f0788907e7196a2967e6fea83b527 | 10/18/2022 10:29:07 | 10/18/2022 10:29:07|
 1.2.98.1705-10.0.17763.3532-ltsc2019  | 10.0.17763.3532 | ltsc2019    | amd64           | windows | sha256:05864aa8ff66242490f9ee862e674542c47f0788907e7196a2967e6fea83b527 | 10/18/2022 10:29:21 | 10/18/2022 10:29:21|
-1.3                                   | N/A             | ltsc2019    | amd64           | windows | sha256:e2b0df49454935dbce2792ad559e626ae8ee34593d613d7efb378bd7fabc3279 | 03/10/2023 06:46:01 | 03/10/2023 06:46:01|
-1.3-ltsc2019                          | 10.0.17763.4010 | ltsc2019    | amd64           | windows | sha256:6b1e6cab9a735d3e229e78957da6833264ffc39a85ce28fea2e974c92012f09e | 03/10/2023 06:42:57 | 03/10/2023 06:42:57|
-1.3.22                                | N/A             | ltsc2019    | amd64           | windows | sha256:e2b0df49454935dbce2792ad559e626ae8ee34593d613d7efb378bd7fabc3279 | 03/10/2023 06:45:58 | 03/10/2023 06:45:58|
-1.3.22-ltsc2019                       | 10.0.17763.4010 | ltsc2019    | amd64           | windows | sha256:6b1e6cab9a735d3e229e78957da6833264ffc39a85ce28fea2e974c92012f09e | 03/10/2023 06:43:08 | 03/10/2023 06:43:08|
-1.3.22.2229-10.0.17763.4010           | N/A             | ltsc2019    | amd64           | windows | sha256:e2b0df49454935dbce2792ad559e626ae8ee34593d613d7efb378bd7fabc3279 | 03/09/2023 13:56:00 | 03/09/2023 13:56:00|
 1.3.22.2229-10.0.17763.4010-ltsc2019  | 10.0.17763.4010 | ltsc2019    | amd64           | windows | sha256:6b1e6cab9a735d3e229e78957da6833264ffc39a85ce28fea2e974c92012f09e | 03/09/2023 13:54:43 | 03/09/2023 13:54:43|
 ### sitecore-xmcloud-mssql-init
 Tag                                   | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
