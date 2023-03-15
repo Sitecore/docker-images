@@ -1175,13 +1175,15 @@ Tag           | OSVersion    | TargetOS    | Architecture    | OS    | Digest   
 1.0.0         |              |             | amd64           | linux | sha256:5d6e12028ee14104e7032dbf29a9283f2c2fb331e44a1d6668086586a39334df | 06/28/2021 13:18:42 | 06/28/2021 13:18:42|
 1.1.1         |              |             | amd64           | linux | sha256:628c4bd9a45a61a9dbe147f4dfad2352acc2fab2289a5e389bea79828ea54da7 | 04/29/2022 13:56:43 | 04/29/2022 13:56:43|
 1.1.5         |              |             | amd64           | linux | sha256:06f1bd5f8af12ce86f06cb9c117f64c450b598588d31e2b1cdaf9b24c924e4c7 | 12/12/2022 19:20:13 | 12/12/2022 19:20:13|
-latest        |              |             | amd64           | linux | sha256:06f1bd5f8af12ce86f06cb9c117f64c450b598588d31e2b1cdaf9b24c924e4c7 | 02/26/2021 14:09:10 | 12/12/2022 19:20:24|
+1.1.6         |              |             | amd64           | linux | sha256:bad359df4e56d02b060de28d541a0b876fb50e272ff93ba45805aa0db19287ba | 03/15/2023 12:18:09 | 03/15/2023 12:18:09|
+latest        |              |             | amd64           | linux | sha256:bad359df4e56d02b060de28d541a0b876fb50e272ff93ba45805aa0db19287ba | 02/26/2021 14:09:10 | 03/15/2023 12:18:18|
 ### ch-one-cli
 Tag    | OSVersion    | TargetOS    | Architecture    | OS    | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ------ | ------------ | ----------- | --------------- | ----- | ----------------------------------------------------------------------- | ------------------- | -------------------|
 1.0.0  |              |             | amd64           | linux | sha256:33eb3613e4a26a27a903cb7546fe6a101fabc8e2152ae7a0ea69b82ef05f3b29 | 12/12/2022 19:20:42 | 12/12/2022 19:20:42|
 1.0.1  |              |             | amd64           | linux | sha256:0c3ef97fdecf0e71aba0d21e2af79a9cf8b50044b4489a9b34603debd27064e5 | 01/12/2023 14:36:36 | 01/12/2023 14:36:36|
-latest |              |             | amd64           | linux | sha256:0c3ef97fdecf0e71aba0d21e2af79a9cf8b50044b4489a9b34603debd27064e5 | 12/12/2022 19:20:57 | 01/12/2023 14:36:49|
+1.1.0  |              |             | amd64           | linux | sha256:fe0ea5b2ca8a12dd255407ae936edd84c3ad43cd4e35eca64a8d6447daa025e4 | 03/15/2023 12:18:32 | 03/15/2023 12:18:32|
+latest |              |             | amd64           | linux | sha256:fe0ea5b2ca8a12dd255407ae936edd84c3ad43cd4e35eca64a8d6447daa025e4 | 12/12/2022 19:20:57 | 03/15/2023 12:18:42|
 ## sxc/nonproduction
 This namespace includes supporting images for *Sitecore Experience Commerce (SXC)* supporting roles intended for development and testing. No production support is provided for images labeled as nonproduction. XC1 images with naming format e.g. *sitecore-xc1-mssql* contain SXA Storefront configuration, whereas abbreviated naming e.g. *xc1-mssql* do not contain Storefront.
 ### sitecore-xc0-cm
