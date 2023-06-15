@@ -9142,6 +9142,9 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.0.1.501.155774-10.0.17763.1397-1809 | 10.0.17763.1397 | 1809        | amd64           | windows | sha256:7d340279d4d9d9dba642819f55ec2ca53395cec8f8e1616237f585f1c38cfde8 | 08/26/2020 13:41:19 | 08/26/2020 13:41:19|
 5.0.4-1809                            | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:c1e30c2a7a8a4ec24d830c7be53b6ecce1cded5e6e66327104b12604ce70ee09 | 06/16/2021 11:34:29 | 06/16/2021 11:34:29|
 5.0.4.504.167349-10.0.17763.1757-1809 | 10.0.17763.1757 | 1809        | amd64           | windows | sha256:c1e30c2a7a8a4ec24d830c7be53b6ecce1cded5e6e66327104b12604ce70ee09 | 06/16/2021 11:34:11 | 06/16/2021 11:34:11|
+5.1-1809                              | 10.0.17763.4377 | 1809        | amd64           | windows | sha256:82bdeeb2df020cd7b1eea087c81c2cd7bfc3c4fbf18ad548c9d69ee92ad17835 | 06/15/2023 08:53:29 | 06/15/2023 08:53:29|
+5.1.0-1809                            | 10.0.17763.4377 | 1809        | amd64           | windows | sha256:82bdeeb2df020cd7b1eea087c81c2cd7bfc3c4fbf18ad548c9d69ee92ad17835 | 06/15/2023 08:53:20 | 06/15/2023 08:53:20|
+5.1.0.510.317093-10.0.17763.4377-1809 | 10.0.17763.4377 | 1809        | amd64           | windows | sha256:82bdeeb2df020cd7b1eea087c81c2cd7bfc3c4fbf18ad548c9d69ee92ad17835 | 06/15/2023 08:53:10 | 06/15/2023 08:53:10|
 ## xmcloud
 ### sitecore-xmcloud-cm
 Tag                                   | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
