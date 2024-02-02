@@ -11575,6 +11575,12 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 5.1.0-1809                            | 10.0.17763.4377 | 1809        | amd64           | windows | sha256:82bdeeb2df020cd7b1eea087c81c2cd7bfc3c4fbf18ad548c9d69ee92ad17835 | 06/15/2023 08:53:20 | 06/15/2023 08:53:20|
 5.1.0.510.317093-10.0.17763.4377-1809 | 10.0.17763.4377 | 1809        | amd64           | windows | sha256:82bdeeb2df020cd7b1eea087c81c2cd7bfc3c4fbf18ad548c9d69ee92ad17835 | 06/15/2023 08:53:10 | 06/15/2023 08:53:10|
 
+### sitecore-xmcloud-docker-tools-assets
+Tag        | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
+---------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
+1-1809     |              |             | amd64           | windows | sha256:c0f64c99b6fea79f0810f9fbae2591a0403d19d164f6ef30396146fc0be53dfa | 02/02/2024 10:38:03 | 02/02/2024 10:38:03|
+1-ltsc2022 |              |             | amd64           | windows | sha256:6397831057320e1666a5a764534893dc56f95fe61c01781fc5160cf46079097a | 02/02/2024 10:35:33 | 02/02/2024 10:35:33|
+
 ## xmcloud
 
 ### sitecore-xmcloud-cm
