@@ -11578,7 +11578,9 @@ Tag                                   | OSVersion       | TargetOS    | Architec
 ### sitecore-xmcloud-docker-tools-assets
 Tag        | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
+1          | N/A          |             | amd64           | windows | sha256:5d786e33754584b74139585f7c4299bfb93ae86e8a44df152395f417c64ac890 | 02/20/2024 09:57:59 | 02/20/2024 09:57:59|
 1-1809     |              |             | amd64           | windows | sha256:c0f64c99b6fea79f0810f9fbae2591a0403d19d164f6ef30396146fc0be53dfa | 02/02/2024 10:38:03 | 02/02/2024 10:38:03|
+1-ltsc2019 |              |             | amd64           | windows | sha256:8203af80e5a11a7f87debaddd634691ee92cfc90fff28e0a8ce3965c3e010389 | 02/20/2024 09:55:23 | 02/20/2024 09:55:23|
 1-ltsc2022 |              |             | amd64           | windows | sha256:6397831057320e1666a5a764534893dc56f95fe61c01781fc5160cf46079097a | 02/02/2024 10:35:33 | 02/02/2024 10:35:33|
 
 ## xmcloud
