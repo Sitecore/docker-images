@@ -1358,8 +1358,8 @@ Tag                  | OSVersion    | TargetOS    | Architecture    | OS      | 
 ### lighthouse-xp0-xconnect
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:efde1dedd5944c77b19f2a24391e6daa4d8ce7fc21681330f8ed9172fba4d78b | 10/23/2020 13:49:31 | 12/20/2020 21:52:16|
-10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:efde1dedd5944c77b19f2a24391e6daa4d8ce7fc21681330f8ed9172fba4d78b | 10/23/2020 13:49:14 | 12/20/2020 21:52:02|
+10.0.0-ltsc2019        | N/A          |             |                 |         | sha256:efde1dedd5944c77b19f2a24391e6daa4d8ce7fc21681330f8ed9172fba4d78b | 10/23/2020 13:49:31 | 12/20/2020 21:52:16|
+10.0.0-ltsc2019-1000.0 | N/A          |             |                 |         | sha256:efde1dedd5944c77b19f2a24391e6daa4d8ce7fc21681330f8ed9172fba4d78b | 10/23/2020 13:49:14 | 12/20/2020 21:52:02|
 10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:f4c5fcf3e09902bd63afa97c1691c84db0adcb3225799b6c7f3c29f34d43f381 | 01/06/2021 17:00:18 | 02/25/2021 02:55:34|
 10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:5425b8457aea789df71d0301a044434a124ee05714dd485ce00085a9459ab8d6 | 01/06/2021 17:00:06 | 01/19/2021 14:59:58|
 10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:f4c5fcf3e09902bd63afa97c1691c84db0adcb3225799b6c7f3c29f34d43f381 | 02/10/2021 14:20:35 | 02/25/2021 02:55:23|
