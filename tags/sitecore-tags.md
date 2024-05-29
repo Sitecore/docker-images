@@ -3310,6 +3310,9 @@ Tag                                         | OSVersion       | TargetOS    | Ar
 8.0.1521-ltsc2022                           | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:11bfe2d7322b105ff392613a0eae1acf142358007acab19c396db1dd988f7b9f | 02/03/2023 10:38:38 | 02/03/2023 10:38:38|
 8.0.1521.01521.196-10.0.20348.1129-ltsc2022 | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:11bfe2d7322b105ff392613a0eae1acf142358007acab19c396db1dd988f7b9f | 02/03/2023 10:38:25 | 02/03/2023 10:38:25|
 8.0.1521.01521.205-10.0.17763.3532-1809     | 10.0.17763.3532 | 1809        | amd64           | windows | sha256:9da2f6eec93fddce5241a5910455975e91f9319a59ba046f294d864cf599837a | 01/11/2023 09:39:16 | 01/11/2023 09:39:16|
+9.0-ltsc2022                                | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:666f893a8c404309449d7bfd9802d32c6cc179e9abf8ad09ad7cb24ccfca11ae | 05/29/2024 10:28:59 | 05/29/2024 10:28:59|
+9.0.5-ltsc2022                              | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:666f893a8c404309449d7bfd9802d32c6cc179e9abf8ad09ad7cb24ccfca11ae | 05/29/2024 10:28:45 | 05/29/2024 10:28:45|
+9.0.5.01529.612-10.0.20348.2402-ltsc2022    | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:666f893a8c404309449d7bfd9802d32c6cc179e9abf8ad09ad7cb24ccfca11ae | 05/29/2024 10:28:29 | 05/29/2024 10:28:29|
 
 ### sitecore-dcrm-xp1-assets
 Tag                                         | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3326,6 +3329,9 @@ Tag                                         | OSVersion       | TargetOS    | Ar
 8.0.1521-ltsc2022                           | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:11bfe2d7322b105ff392613a0eae1acf142358007acab19c396db1dd988f7b9f | 02/03/2023 10:39:19 | 02/03/2023 10:39:19|
 8.0.1521.01521.196-10.0.20348.1129-ltsc2022 | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:11bfe2d7322b105ff392613a0eae1acf142358007acab19c396db1dd988f7b9f | 02/03/2023 10:39:06 | 02/03/2023 10:39:06|
 8.0.1521.01521.205-10.0.17763.3532-1809     | 10.0.17763.3532 | 1809        | amd64           | windows | sha256:9da2f6eec93fddce5241a5910455975e91f9319a59ba046f294d864cf599837a | 01/11/2023 09:40:00 | 01/11/2023 09:40:00|
+9.0-ltsc2022                                | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:1f8ca9be7bc8253fe12f8455b85e035d526ac8db8d76a2a6cb4a9be67d6eaa6c | 05/29/2024 10:29:48 | 05/29/2024 10:29:48|
+9.0.5-ltsc2022                              | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:1f8ca9be7bc8253fe12f8455b85e035d526ac8db8d76a2a6cb4a9be67d6eaa6c | 05/29/2024 10:29:34 | 05/29/2024 10:29:34|
+9.0.5.01529.612-10.0.20348.2402-ltsc2022    | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:1f8ca9be7bc8253fe12f8455b85e035d526ac8db8d76a2a6cb4a9be67d6eaa6c | 05/29/2024 10:29:19 | 05/29/2024 10:29:19|
 
 ### sitecore-def-xm1-assets
 |
@@ -3346,6 +3352,9 @@ Tag                                         | OSVersion       | TargetOS    | Ar
 8.0.1631-ltsc2022                           | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:e6b205a4fe82f2b4d421fb3d4ba0aa13773129c77bcdbe681bcd5a82c5359277 | 02/03/2023 09:06:14 | 02/03/2023 09:06:14|
 8.0.1631.01631.535-10.0.20348.1129-ltsc2022 | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:e6b205a4fe82f2b4d421fb3d4ba0aa13773129c77bcdbe681bcd5a82c5359277 | 02/03/2023 09:06:00 | 02/03/2023 09:06:00|
 8.0.1631.01631.621-10.0.17763.3532-1809     | 10.0.17763.3532 | 1809        | amd64           | windows | sha256:a503b0fa6204c66ad4cab47505fa2a0683db0bd3566bf5d5a3da378583f0e12c | 01/10/2023 09:27:22 | 01/10/2023 09:27:22|
+9.0-ltsc2022                                | 10.0.20348.2461 | ltsc2022    | amd64           | windows | sha256:e8deb25b36d1b309fb83b0be9666b6175689f194b31e6792abdca09ffbbe9d43 | 05/29/2024 10:42:54 | 05/29/2024 10:42:54|
+9.0.7-ltsc2022                              | 10.0.20348.2461 | ltsc2022    | amd64           | windows | sha256:e8deb25b36d1b309fb83b0be9666b6175689f194b31e6792abdca09ffbbe9d43 | 05/29/2024 10:42:39 | 05/29/2024 10:42:39|
+9.0.7.01658.620-10.0.20348.2461-ltsc2022    | 10.0.20348.2461 | ltsc2022    | amd64           | windows | sha256:e8deb25b36d1b309fb83b0be9666b6175689f194b31e6792abdca09ffbbe9d43 | 05/29/2024 10:42:22 | 05/29/2024 10:42:22|
 
 ### sitecore-def-xp1-assets
 Tag                                         | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3362,6 +3371,9 @@ Tag                                         | OSVersion       | TargetOS    | Ar
 8.0.1631-ltsc2022                           | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:e6b205a4fe82f2b4d421fb3d4ba0aa13773129c77bcdbe681bcd5a82c5359277 | 02/03/2023 09:07:00 | 02/03/2023 09:07:00|
 8.0.1631.01631.535-10.0.20348.1129-ltsc2022 | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:e6b205a4fe82f2b4d421fb3d4ba0aa13773129c77bcdbe681bcd5a82c5359277 | 02/03/2023 09:06:47 | 02/03/2023 09:06:47|
 8.0.1631.01631.621-10.0.17763.3532-1809     | 10.0.17763.3532 | 1809        | amd64           | windows | sha256:a503b0fa6204c66ad4cab47505fa2a0683db0bd3566bf5d5a3da378583f0e12c | 01/10/2023 09:28:12 | 01/10/2023 09:28:12|
+9.0-ltsc2022                                | 10.0.20348.2461 | ltsc2022    | amd64           | windows | sha256:9752311ff59a330d5774a9fc25fdfbc0dfb3e953dfcdbd3428a21a93909981a8 | 05/29/2024 10:43:48 | 05/29/2024 10:43:48|
+9.0.7-ltsc2022                              | 10.0.20348.2461 | ltsc2022    | amd64           | windows | sha256:9752311ff59a330d5774a9fc25fdfbc0dfb3e953dfcdbd3428a21a93909981a8 | 05/29/2024 10:43:35 | 05/29/2024 10:43:35|
+9.0.7.01658.620-10.0.20348.2461-ltsc2022    | 10.0.20348.2461 | ltsc2022    | amd64           | windows | sha256:9752311ff59a330d5774a9fc25fdfbc0dfb3e953dfcdbd3428a21a93909981a8 | 05/29/2024 10:43:19 | 05/29/2024 10:43:19|
 
 ### sitecore-experience-edge-connector-xm1-assets
 Tag                                        | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3705,6 +3717,9 @@ Tag                                        | OSVersion       | TargetOS    | Arc
 8.0.1498-ltsc2022                          | 10.0.20348.1249 | ltsc2022    | amd64           | windows | sha256:6fc116e21d9ab1cd2a53de6db7370e2c6c9258c021d0e8fd45e8faef2d765b6b | 02/03/2023 10:20:55 | 02/03/2023 10:20:55|
 8.0.1498.01498.360-10.0.17763.3650-1809    | 10.0.17763.3650 | 1809        | amd64           | windows | sha256:dcf96d41824ffc75e174b74ce1cdc963ad178a3f6e7fffebc185feb539d0aed4 | 01/19/2023 10:41:40 | 01/19/2023 10:41:40|
 8.0.1498.01498.42-10.0.20348.1249-ltsc2022 | 10.0.20348.1249 | ltsc2022    | amd64           | windows | sha256:6fc116e21d9ab1cd2a53de6db7370e2c6c9258c021d0e8fd45e8faef2d765b6b | 02/03/2023 10:20:42 | 02/03/2023 10:20:42|
+9.0-ltsc2022                               | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:a8af556e8d22b69642c0db89e673666860247631ba679e638667ae9abb703620 | 05/29/2024 10:10:24 | 05/29/2024 10:10:24|
+9.0.1502-ltsc2022                          | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:a8af556e8d22b69642c0db89e673666860247631ba679e638667ae9abb703620 | 05/29/2024 10:10:09 | 05/29/2024 10:10:09|
+9.0.1502.01502.52-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:a8af556e8d22b69642c0db89e673666860247631ba679e638667ae9abb703620 | 05/29/2024 10:09:52 | 05/29/2024 10:09:52|
 
 ### sitecore-sfcrm-xp1-assets
 Tag                                        | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3721,6 +3736,9 @@ Tag                                        | OSVersion       | TargetOS    | Arc
 8.0.1498-ltsc2022                          | 10.0.20348.1249 | ltsc2022    | amd64           | windows | sha256:6fc116e21d9ab1cd2a53de6db7370e2c6c9258c021d0e8fd45e8faef2d765b6b | 02/03/2023 10:21:51 | 02/03/2023 10:21:51|
 8.0.1498.01498.360-10.0.17763.3650-1809    | 10.0.17763.3650 | 1809        | amd64           | windows | sha256:dcf96d41824ffc75e174b74ce1cdc963ad178a3f6e7fffebc185feb539d0aed4 | 01/19/2023 10:42:30 | 01/19/2023 10:42:30|
 8.0.1498.01498.42-10.0.20348.1249-ltsc2022 | 10.0.20348.1249 | ltsc2022    | amd64           | windows | sha256:6fc116e21d9ab1cd2a53de6db7370e2c6c9258c021d0e8fd45e8faef2d765b6b | 02/03/2023 10:21:38 | 02/03/2023 10:21:38|
+9.0-ltsc2022                               | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:6546340f6cef1634d54e1dccf4203f32f44eb67166a70c6ec001ff5976a400cb | 05/29/2024 10:11:17 | 05/29/2024 10:11:17|
+9.0.1502-ltsc2022                          | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:6546340f6cef1634d54e1dccf4203f32f44eb67166a70c6ec001ff5976a400cb | 05/29/2024 10:11:03 | 05/29/2024 10:11:03|
+9.0.1502.01502.52-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:6546340f6cef1634d54e1dccf4203f32f44eb67166a70c6ec001ff5976a400cb | 05/29/2024 10:10:45 | 05/29/2024 10:10:45|
 
 ### sitecore-sfmcbde-xp0-assets
 Tag                                       | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3737,6 +3755,9 @@ Tag                                       | OSVersion       | TargetOS    | Arch
 8.0.437-ltsc2022                          | 10.0.20348.1249 | ltsc2022    | amd64           | windows | sha256:16dd5d256fcf4ffaed62c62065be41b97a9ea5482b825ee8b8f7f5148654f504 | 02/03/2023 08:10:56 | 02/03/2023 08:10:56|
 8.0.437.00437.192-10.0.17763.3650-1809    | 10.0.17763.3650 | 1809        | amd64           | windows | sha256:6e5449ad5c7df2433bf296a84c8576bad01b91e6f47ffdceafcada82c0e8fff7 | 01/19/2023 08:21:55 | 01/19/2023 08:21:55|
 8.0.437.00437.36-10.0.20348.1249-ltsc2022 | 10.0.20348.1249 | ltsc2022    | amd64           | windows | sha256:16dd5d256fcf4ffaed62c62065be41b97a9ea5482b825ee8b8f7f5148654f504 | 02/03/2023 08:10:42 | 02/03/2023 08:10:42|
+9.0-ltsc2022                              | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:a3495275846bb59860b7e40e04e100cac297df32e6c467690b940955b9b32847 | 05/29/2024 10:55:03 | 05/29/2024 10:55:03|
+9.0.2-ltsc2022                            | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:a3495275846bb59860b7e40e04e100cac297df32e6c467690b940955b9b32847 | 05/29/2024 10:54:48 | 05/29/2024 10:54:48|
+9.0.2.00440.45-10.0.20348.2402-ltsc2022   | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:a3495275846bb59860b7e40e04e100cac297df32e6c467690b940955b9b32847 | 05/29/2024 10:54:30 | 05/29/2024 10:54:30|
 
 ### sitecore-sfmcbde-xp1-assets
 Tag                                       | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3753,6 +3774,9 @@ Tag                                       | OSVersion       | TargetOS    | Arch
 8.0.437-ltsc2022                          | 10.0.20348.1249 | ltsc2022    | amd64           | windows | sha256:16dd5d256fcf4ffaed62c62065be41b97a9ea5482b825ee8b8f7f5148654f504 | 02/03/2023 08:11:39 | 02/03/2023 08:11:39|
 8.0.437.00437.192-10.0.17763.3650-1809    | 10.0.17763.3650 | 1809        | amd64           | windows | sha256:6e5449ad5c7df2433bf296a84c8576bad01b91e6f47ffdceafcada82c0e8fff7 | 01/19/2023 08:22:42 | 01/19/2023 08:22:42|
 8.0.437.00437.36-10.0.20348.1249-ltsc2022 | 10.0.20348.1249 | ltsc2022    | amd64           | windows | sha256:16dd5d256fcf4ffaed62c62065be41b97a9ea5482b825ee8b8f7f5148654f504 | 02/03/2023 08:11:26 | 02/03/2023 08:11:26|
+9.0-ltsc2022                              | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:26f84c6d487d0ba3c3972f28517d9c372b57191ce8f61ecc1633e634b8e57936 | 05/29/2024 10:56:00 | 05/29/2024 10:56:00|
+9.0.2-ltsc2022                            | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:26f84c6d487d0ba3c3972f28517d9c372b57191ce8f61ecc1633e634b8e57936 | 05/29/2024 10:55:41 | 05/29/2024 10:55:41|
+9.0.2.00440.45-10.0.20348.2402-ltsc2022   | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:26f84c6d487d0ba3c3972f28517d9c372b57191ce8f61ecc1633e634b8e57936 | 05/29/2024 10:55:24 | 05/29/2024 10:55:24|
 
 ### sitecore-sfmcce-xm1-assets
 Tag                                       | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3769,6 +3793,9 @@ Tag                                       | OSVersion       | TargetOS    | Arch
 8.0.220-ltsc2022                          | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:a96bbfb51d278e5ac155fc19aa40d9cd4fadc757ce78fd78c7dbc93ae548e199 | 02/03/2023 11:01:26 | 02/03/2023 11:01:26|
 8.0.220.00220.288-10.0.17763.3532-1809    | 10.0.17763.3532 | 1809        | amd64           | windows | sha256:22baf27317ac442635b76cdfb4601c0b82e9568de6c46d4b00af96da6eee856d | 01/19/2023 08:25:16 | 01/19/2023 08:25:16|
 8.0.220.00220.48-10.0.20348.1129-ltsc2022 | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:a96bbfb51d278e5ac155fc19aa40d9cd4fadc757ce78fd78c7dbc93ae548e199 | 02/03/2023 11:01:13 | 02/03/2023 11:01:13|
+9.0-ltsc2022                              | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:c8da5fe8d06de2f6fd08bc2de834ddb5157fe8c7f1b18f4989091fb99c398d10 | 05/29/2024 10:13:18 | 05/29/2024 10:13:18|
+9.0.2-ltsc2022                            | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:c8da5fe8d06de2f6fd08bc2de834ddb5157fe8c7f1b18f4989091fb99c398d10 | 05/29/2024 10:13:03 | 05/29/2024 10:13:03|
+9.0.2.00225.66-10.0.20348.2402-ltsc2022   | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:c8da5fe8d06de2f6fd08bc2de834ddb5157fe8c7f1b18f4989091fb99c398d10 | 05/29/2024 10:12:46 | 05/29/2024 10:12:46|
 
 ### sitecore-sfmcce-xp0-assets
 Tag                                       | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3785,6 +3812,9 @@ Tag                                       | OSVersion       | TargetOS    | Arch
 8.0.220-ltsc2022                          | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:a96bbfb51d278e5ac155fc19aa40d9cd4fadc757ce78fd78c7dbc93ae548e199 | 02/03/2023 11:02:09 | 02/03/2023 11:02:09|
 8.0.220.00220.288-10.0.17763.3532-1809    | 10.0.17763.3532 | 1809        | amd64           | windows | sha256:22baf27317ac442635b76cdfb4601c0b82e9568de6c46d4b00af96da6eee856d | 01/19/2023 08:26:00 | 01/19/2023 08:26:00|
 8.0.220.00220.48-10.0.20348.1129-ltsc2022 | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:a96bbfb51d278e5ac155fc19aa40d9cd4fadc757ce78fd78c7dbc93ae548e199 | 02/03/2023 11:01:56 | 02/03/2023 11:01:56|
+9.0-ltsc2022                              | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:b5f40554c75aedd1f8e9ab27b2df6c2508f0b0967e150008fcfbdc949f0194c3 | 05/29/2024 10:14:17 | 05/29/2024 10:14:17|
+9.0.2-ltsc2022                            | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:b5f40554c75aedd1f8e9ab27b2df6c2508f0b0967e150008fcfbdc949f0194c3 | 05/29/2024 10:14:01 | 05/29/2024 10:14:01|
+9.0.2.00225.66-10.0.20348.2402-ltsc2022   | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:b5f40554c75aedd1f8e9ab27b2df6c2508f0b0967e150008fcfbdc949f0194c3 | 05/29/2024 10:13:39 | 05/29/2024 10:13:39|
 
 ### sitecore-sfmcce-xp1-assets
 Tag                                       | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -3801,6 +3831,9 @@ Tag                                       | OSVersion       | TargetOS    | Arch
 8.0.220-ltsc2022                          | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:a96bbfb51d278e5ac155fc19aa40d9cd4fadc757ce78fd78c7dbc93ae548e199 | 02/03/2023 11:02:51 | 02/03/2023 11:02:51|
 8.0.220.00220.288-10.0.17763.3532-1809    | 10.0.17763.3532 | 1809        | amd64           | windows | sha256:22baf27317ac442635b76cdfb4601c0b82e9568de6c46d4b00af96da6eee856d | 01/19/2023 08:26:44 | 01/19/2023 08:26:44|
 8.0.220.00220.48-10.0.20348.1129-ltsc2022 | 10.0.20348.1129 | ltsc2022    | amd64           | windows | sha256:a96bbfb51d278e5ac155fc19aa40d9cd4fadc757ce78fd78c7dbc93ae548e199 | 02/03/2023 11:02:39 | 02/03/2023 11:02:39|
+9.0-ltsc2022                              | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:516a3e2b219ea8be962e43b8cbb3d523e94bdad9a5a69fd265f97e42e5b818fd | 05/29/2024 10:15:14 | 05/29/2024 10:15:14|
+9.0.2-ltsc2022                            | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:516a3e2b219ea8be962e43b8cbb3d523e94bdad9a5a69fd265f97e42e5b818fd | 05/29/2024 10:14:55 | 05/29/2024 10:14:55|
+9.0.2.00225.66-10.0.20348.2402-ltsc2022   | 10.0.20348.2402 | ltsc2022    | amd64           | windows | sha256:516a3e2b219ea8be962e43b8cbb3d523e94bdad9a5a69fd265f97e42e5b818fd | 05/29/2024 10:14:38 | 05/29/2024 10:14:38|
 
 ### sitecore-spe-assets
 Tag                                | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -4108,6 +4141,9 @@ Tag                                         | OSVersion       | TargetOS        
 8.0.1631-ltsc2022                           | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:b86b3a82beed52c08784a62e8a00909f3515012eceddc1087a8b95025403b0ab | 02/03/2023 09:05:08 | 02/03/2023 09:05:08|
 8.0.1631.01631.145-10.0.20348.1487-ltsc2022 | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:b86b3a82beed52c08784a62e8a00909f3515012eceddc1087a8b95025403b0ab | 02/03/2023 09:04:53 | 02/03/2023 09:04:53|
 8.0.1631.01631.277-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:ce1edad7a34400839912d19d673eee80bd397e66002aa109edc3ae804fea8908 | 01/10/2023 09:26:23 | 01/10/2023 09:26:23|
+9.0-ltsc2022                                | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:3fadb8176f044e80cd1f8521b4591cfc21ad8580603496fd9defaa75d1ec020f | 05/29/2024 10:27:19 | 05/29/2024 10:27:19|
+9.0.7-ltsc2022                              | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:3fadb8176f044e80cd1f8521b4591cfc21ad8580603496fd9defaa75d1ec020f | 05/29/2024 10:27:05 | 05/29/2024 10:27:05|
+9.0.7.01658.215-10.0.20348.2402-ltsc2022    | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:3fadb8176f044e80cd1f8521b4591cfc21ad8580603496fd9defaa75d1ec020f | 05/29/2024 10:26:49 | 05/29/2024 10:26:49|
 
 ### spe-assets
 Tag                            | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
