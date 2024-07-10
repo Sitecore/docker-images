@@ -780,6 +780,8 @@ Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Diges
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
 10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:657ccd77ce01dc52876720e0ab65af26ebe9b2d1a42bbfcada5d37a2ce5eb90f | 06/14/2021 16:48:55 | 06/14/2021 16:48:55|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:657ccd77ce01dc52876720e0ab65af26ebe9b2d1a42bbfcada5d37a2ce5eb90f | 06/14/2021 16:48:55 | 06/14/2021 16:48:55|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:657ccd77ce01dc52876720e0ab65af26ebe9b2d1a42bbfcada5d37a2ce5eb90f | 06/14/2021 16:48:55 | 06/14/2021 16:48:55|
 
 ### sitecore-xp1-custom-sxa-headless-sps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
