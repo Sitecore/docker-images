@@ -230,8 +230,11 @@ Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Diges
 10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e71f816fda609cb87893e02b4be66f9fd95b25c069dcd5a559a625e8906130f1 | 06/14/2021 16:37:40 | 06/14/2021 16:37:40|
 
 ### sitecore-xm1-custom-sxa-cm
-|
-|
+Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
+--------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0acf7c92405affd5d3cf48b3e181009eeff8f1d389e5fd2795eaf03d15f7f935 | 10/27/2020 21:23:20 | 12/13/2020 16:21:01|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:262c30e268cccd9f052d5cf39ef29f57a7a4de5f216846468a22282dfd9cec42 | 01/08/2021 02:28:44 | 03/31/2021 21:46:24|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d7f0729e5efebea00a609b1c2c37158b71a11a81483f7ef41b4d609f3a27f47e | 06/14/2021 16:35:26 | 06/14/2021 16:35:26|
 
 ### sitecore-xm1-custom-sxa-headless1600-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
