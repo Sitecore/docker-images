@@ -14624,6 +14624,7 @@ Tag                                   | OSVersion       | TargetOS           | A
 1.6.46.3797-10.0.20348.2582-ltsc2022  | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:a2a207bcd8917e58b3100ecd6f1e451381e8135ef0d27879569545143e058945 | 07/24/2024 07:55:12 | 07/24/2024 07:55:12|
 1.6.46.3947-10.0.17763.6054           | N/A             | ltsc2019           | amd64           | windows | sha256:6adb66fde55933b108efb57050a692e98b7cf6b2e1e11cd69775c7c63af14a1f | 07/24/2024 07:56:27 | 07/24/2024 07:56:27|
 1.6.46.3947-10.0.17763.6054-ltsc2019  | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:44fdd2a10814b027e590277c6c340a575ef1d3dd33b7b036fcb0a310838c26f9 | 07/24/2024 07:49:26 | 07/24/2024 07:49:26|
+1.6.92.4022-10.0.17763.6054-ltsc2019  | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:b0251fe551f16e53d1ae14b2f0a60fae84f8ffefac291b4f11cb94093428553b | 08/13/2024 10:20:38 | 08/13/2024 10:20:38|
 
 ### sitecore-xmcloud-docker-tools
 Tag                                   | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -15771,6 +15772,7 @@ Tag                                   | OSVersion       | TargetOS           | A
 1.6.46.3797-10.0.20348.2582-ltsc2022  | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:4da4f7d488dcc332e1b807bb7caef4eb3799265cc4b628053f63e2aab3198da5 | 07/24/2024 07:55:35 | 07/24/2024 07:55:35|
 1.6.46.3947-10.0.17763.6054           | N/A             | ltsc2019           | amd64           | windows | sha256:57d9d1b33c699961921d865e787288a5218b3eece68c36d9bf32c2f6a6172631 | 07/24/2024 07:56:35 | 07/24/2024 07:56:35|
 1.6.46.3947-10.0.17763.6054-ltsc2019  | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:09324c437264b931d71e2f753563210b12e651767a0e2795fa9abc85ba7e8095 | 07/24/2024 07:49:50 | 07/24/2024 07:49:50|
+1.6.92.4022-10.0.17763.6054-ltsc2019  | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:420559b22d8e3e8f575fab2a6903849b76cc4690b71b5de8da6711340b71ddac | 08/13/2024 10:21:06 | 08/13/2024 10:21:06|
 
 ### sitecore-xmcloud-solr-init
 Tag                                   | OSVersion       | TargetOS           | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -16882,6 +16884,7 @@ Tag                                   | OSVersion       | TargetOS           | A
 1.6.46.3797-10.0.20348.2582-ltsc2022  | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:16510ac32022b08bc38e2cb6530439541fb794d406bc45ee0c59e66701317f66 | 07/24/2024 07:56:00 | 07/24/2024 07:56:00|
 1.6.46.3947-10.0.17763.6054           | N/A             | ltsc2019           | amd64           | windows | sha256:17b66871458792d94a4813e0b8897d748b195b7a70c72e93cf2f20e7a531e2b0 | 07/24/2024 07:56:59 | 07/24/2024 07:56:59|
 1.6.46.3947-10.0.17763.6054-ltsc2019  | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:f5bf480756f01fd6100ae6a5fdb5974670516880f7b2e65dc7b9e60a7abc6ba2 | 07/24/2024 07:50:19 | 07/24/2024 07:50:19|
+1.6.92.4022-10.0.17763.6054-ltsc2019  | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:7a89859bb4024e7221ae5c723e8b0e19ba4e90b18580470143305c989e20bbbe | 08/13/2024 10:21:34 | 08/13/2024 10:21:34|
 
 ### sitecore-xmcloud-solr-init-searchstax
 Tag                                   | OSVersion       | TargetOS           | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -17993,4 +17996,6 @@ Tag                                   | OSVersion       | TargetOS           | A
 1.6.46.3797-10.0.20348.2582-ltsc2022  | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:71d7d71ed311bd063cd0604bd1c6241843f89b1de40070071eaca2492dacf654 | 07/24/2024 07:56:20 | 07/24/2024 07:56:20|
 1.6.46.3947-10.0.17763.6054           | N/A             | ltsc2019           | amd64           | windows | sha256:e80702d7d0c4df1b9bff822c1953a5ec53716b87e72e1e14983f4369c731bf6b | 07/24/2024 07:56:30 | 07/24/2024 07:56:30|
 1.6.46.3947-10.0.17763.6054-ltsc2019  | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:2a14e5f64c2b06c41a75965dd77a9d7123e7f66fcb6997126d7794ed377a10f1 | 07/24/2024 07:50:39 | 07/24/2024 07:50:39|
+1.6.92.3870-10.0.20348.2582-ltsc2022  | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:60709455be190b7b0204d1ea767e6639e2a51f7dbaa713841496abcf554a6a52 | 08/13/2024 10:27:31 | 08/13/2024 10:27:31|
+1.6.92.4022-10.0.17763.6054-ltsc2019  | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:5e96be9454fa1b6245b10fda0e70727113bf4037fa6c2024979def1191f1c04b | 08/13/2024 10:21:54 | 08/13/2024 10:21:54|
 
