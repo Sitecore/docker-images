@@ -1083,7 +1083,7 @@ Tag                    | OSVersion    | TargetOS    | Architecture    | OS      
 ### lighthouse-xp0-modules-base-xconnect
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          |             |                 |         | sha256:37e8dac0afba7f035c17209c7e40591e77a7d931439676e5aa6bd6ff67b7355f | 01/06/2021 22:26:59 | 02/10/2021 17:23:49|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:37e8dac0afba7f035c17209c7e40591e77a7d931439676e5aa6bd6ff67b7355f | 01/06/2021 22:26:59 | 02/10/2021 17:23:49|
 10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:33f43aec1be273708748e06e8e69791b0db749bc87c9cbbcc4a0a7703c15f736 | 01/06/2021 22:26:41 | 01/06/2021 22:26:41|
 10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:37e8dac0afba7f035c17209c7e40591e77a7d931439676e5aa6bd6ff67b7355f | 02/02/2021 18:55:12 | 02/10/2021 17:23:39|
 
