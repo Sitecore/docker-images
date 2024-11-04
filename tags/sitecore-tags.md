@@ -20,148 +20,148 @@ Images in this namespace are module asset images built from the https://github.c
 ### custom-cmp-xm-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:b37ce87096e0b15d506193d1d2c1228b09564bb8bb1df9dcd3fdeb766c6cd30a | 10/27/2020 21:11:57 | 12/13/2020 15:44:45|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:d32c0f2265c20d80503a9d2acc8b0666549c9ec90eb0933697e70e66f2a84d93 | 01/06/2021 02:40:22 | 03/31/2021 16:40:10|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:b37ce87096e0b15d506193d1d2c1228b09564bb8bb1df9dcd3fdeb766c6cd30a | 10/27/2020 21:11:44 | 12/13/2020 15:44:42|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:d32c0f2265c20d80503a9d2acc8b0666549c9ec90eb0933697e70e66f2a84d93 | 01/06/2021 02:40:18 | 03/31/2021 16:40:06|
 
 ### custom-cmp-xp-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:cb3b733cc7d0eb6309f355737288e5627514f385f9380c9c12649c9ab687bccf | 10/23/2020 13:51:44 | 12/13/2020 15:44:13|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:2c81e721818b3bd16a32e14a16bb68eebc100ac4c6ca1037e232b6b1ab3afca9 | 01/06/2021 02:40:44 | 03/31/2021 16:40:22|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:cb3b733cc7d0eb6309f355737288e5627514f385f9380c9c12649c9ab687bccf | 10/23/2020 13:50:42 | 12/13/2020 15:44:10|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:2c81e721818b3bd16a32e14a16bb68eebc100ac4c6ca1037e232b6b1ab3afca9 | 01/06/2021 02:40:38 | 03/31/2021 16:40:19|
 
 ### custom-coveo508581-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:6ee40f07cc733f60b638bc05a24870b7d27fdcd5c2423d3e859a6919fff16960 | 02/10/2021 21:15:10 | 03/31/2021 16:45:08|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:6ee40f07cc733f60b638bc05a24870b7d27fdcd5c2423d3e859a6919fff16960 | 02/10/2021 21:15:06 | 03/31/2021 16:45:05|
 
 ### custom-coveo508581-sxa-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:3f5d01c6e1298f9ff968401d1b35a8d9dd1f49678f4cfb907fc8417bee58ec0c | 02/10/2021 21:15:34 | 03/31/2021 16:45:19|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:3f5d01c6e1298f9ff968401d1b35a8d9dd1f49678f4cfb907fc8417bee58ec0c | 02/10/2021 21:15:31 | 03/31/2021 16:45:17|
 
 ### custom-coveo-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:6ee40f07cc733f60b638bc05a24870b7d27fdcd5c2423d3e859a6919fff16960 | 02/10/2021 21:16:10 | 03/31/2021 16:44:46|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:6ee40f07cc733f60b638bc05a24870b7d27fdcd5c2423d3e859a6919fff16960 | 02/10/2021 21:14:08 | 03/31/2021 16:44:41|
 
 ### custom-coveo-sxa-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:3f5d01c6e1298f9ff968401d1b35a8d9dd1f49678f4cfb907fc8417bee58ec0c | 02/10/2021 21:15:40 | 03/31/2021 16:44:57|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:3f5d01c6e1298f9ff968401d1b35a8d9dd1f49678f4cfb907fc8417bee58ec0c | 02/10/2021 21:14:37 | 03/31/2021 16:44:53|
 
 ### custom-dam-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:2f94f72b5fc95e6dd0ddc91e483dc103a48018957de6bbfc8dd17bf186d48f76 | 10/23/2020 13:51:15 | 12/13/2020 15:45:30|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:525d9030ec7bdad9fc65e7322d7dc2cb9f5d524bc9d17e35ce548587053a0e03 | 01/06/2021 02:40:59 | 03/31/2021 16:40:35|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:2f94f72b5fc95e6dd0ddc91e483dc103a48018957de6bbfc8dd17bf186d48f76 | 10/23/2020 13:51:07 | 12/13/2020 15:45:27|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:525d9030ec7bdad9fc65e7322d7dc2cb9f5d524bc9d17e35ce548587053a0e03 | 01/06/2021 02:40:55 | 03/31/2021 16:40:31|
 
 ### custom-def-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:2805e1658eaf566d6c532dd9b73c5c7642ad9918d22a2bbab54a4bfb042e64ee | 10/23/2020 13:51:37 | 12/13/2020 15:45:00|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:d17ab3d503a3c954d100a96c681c9a649389f2d7a279c3a05245ffb9a268a89b | 01/06/2021 02:41:14 | 03/31/2021 16:40:48|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:2805e1658eaf566d6c532dd9b73c5c7642ad9918d22a2bbab54a4bfb042e64ee | 10/23/2020 13:51:34 | 12/13/2020 15:44:57|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:d17ab3d503a3c954d100a96c681c9a649389f2d7a279c3a05245ffb9a268a89b | 01/06/2021 02:41:11 | 03/31/2021 16:40:44|
 
 ### custom-def-d365-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:82cde97b27d6e3921e7ef20241e19052357800c5c31e88d958470fc7a16f01fa | 10/23/2020 13:52:01 | 12/13/2020 15:43:57|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:9a41791cb84c1509401cf1a258adb37fe616701bfd14d13d26815ad642cdc43f | 01/06/2021 02:41:29 | 03/31/2021 16:41:02|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:82cde97b27d6e3921e7ef20241e19052357800c5c31e88d958470fc7a16f01fa | 10/23/2020 13:51:59 | 12/13/2020 15:42:54|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:9a41791cb84c1509401cf1a258adb37fe616701bfd14d13d26815ad642cdc43f | 01/06/2021 02:41:25 | 03/31/2021 16:40:55|
 
 ### custom-def-ma-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:7a62b638e80b3e2ed7cb866c5e0b2a3f83ce12dfc81b01ce00f4459a939b92cb | 10/27/2020 21:12:31 | 12/13/2020 15:45:13|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:019d973bdcfd2d632595deb4da98668b4a62f2c9153e2d5f034e59854fb031ba | 01/06/2021 02:41:43 | 03/31/2021 16:42:11|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:7a62b638e80b3e2ed7cb866c5e0b2a3f83ce12dfc81b01ce00f4459a939b92cb | 10/27/2020 21:12:28 | 12/13/2020 15:45:10|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:019d973bdcfd2d632595deb4da98668b4a62f2c9153e2d5f034e59854fb031ba | 01/06/2021 02:41:40 | 03/31/2021 16:41:08|
 
 ### custom-def-sfdc-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:cf534c04abc2404d8f0aa014bc0bcf4402dd57209ad9f7839fe73e0964ee152a | 10/23/2020 13:53:28 | 12/13/2020 15:45:46|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:827e4f4ce5ddc964ef39da64737219d7d144e6e5dfbbe7ddb87fcad148ab9905 | 01/06/2021 02:42:01 | 03/31/2021 16:41:36|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:cf534c04abc2404d8f0aa014bc0bcf4402dd57209ad9f7839fe73e0964ee152a | 10/23/2020 13:52:25 | 12/13/2020 15:45:44|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:827e4f4ce5ddc964ef39da64737219d7d144e6e5dfbbe7ddb87fcad148ab9905 | 01/06/2021 02:41:59 | 03/31/2021 16:41:33|
 
 ### custom-def-ts-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:6e3ffb4b79c01b858f77b6445ac5877723b54f211bd79ef18e89be9d8677d16e | 01/06/2021 02:42:27 | 03/31/2021 16:41:51|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:6e3ffb4b79c01b858f77b6445ac5877723b54f211bd79ef18e89be9d8677d16e | 01/06/2021 02:42:23 | 03/31/2021 16:41:46|
 
 ### custom-horizon-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:a70324e26f6403269a477d7047535915b08351fe8a9fb8cf175a3d8726a5f378 | 01/06/2021 02:42:49 | 03/31/2021 16:43:06|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:a70324e26f6403269a477d7047535915b08351fe8a9fb8cf175a3d8726a5f378 | 01/06/2021 02:42:44 | 03/31/2021 16:42:01|
 
 ### custom-horizon-identity-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:f19b28f3ef74ee01585365171cfe2b15d9d1d81d432ea40950ded8c2835613f5 | 01/06/2021 02:44:02 | 03/31/2021 16:42:16|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:f19b28f3ef74ee01585365171cfe2b15d9d1d81d432ea40950ded8c2835613f5 | 01/06/2021 02:42:59 | 03/31/2021 16:42:13|
 
 ### custom-horizon-insights-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:c7cc45dab93be3217d537ee00e6949de81cd96c35bde19538f0e53a51f837c20 | 01/06/2021 02:43:18 | 03/31/2021 16:42:30|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:c7cc45dab93be3217d537ee00e6949de81cd96c35bde19538f0e53a51f837c20 | 01/06/2021 02:43:15 | 03/31/2021 16:42:27|
 
 ### custom-horizon-integration-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:7152d3a303b2783bced99a93b04a347886bf40381148de9dbba809db9a36a19e | 01/06/2021 02:43:42 | 03/31/2021 16:42:45|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:7152d3a303b2783bced99a93b04a347886bf40381148de9dbba809db9a36a19e | 01/06/2021 02:43:38 | 03/31/2021 16:42:39|
 
 ### custom-horizon-zenith-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:2564fcea6cef814af3583071ecb5b29842535352f418a5d0f87d4c3886c112f4 | 01/06/2021 02:44:03 | 03/31/2021 16:42:53|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:2564fcea6cef814af3583071ecb5b29842535352f418a5d0f87d4c3886c112f4 | 01/06/2021 02:44:00 | 03/31/2021 16:42:50|
 
 ### custom-ps-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:d1fade08d634d60e3cefa7985b3d6658b8110929764a346df0568919ce5700d7 | 10/23/2020 13:55:29 | 12/18/2020 20:51:51|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:c4b062f59ced31555d2fcd3c1ff85e8ae350a1f3badfac02f658a328cd77995f | 01/06/2021 02:44:20 | 03/31/2021 16:43:05|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:d1fade08d634d60e3cefa7985b3d6658b8110929764a346df0568919ce5700d7 | 10/23/2020 13:55:25 | 12/18/2020 20:51:25|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:c4b062f59ced31555d2fcd3c1ff85e8ae350a1f3badfac02f658a328cd77995f | 01/06/2021 02:44:15 | 03/31/2021 16:43:01|
 
 ### custom-sfcrm-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:cf534c04abc2404d8f0aa014bc0bcf4402dd57209ad9f7839fe73e0964ee152a | 10/27/2020 21:09:41 | 12/13/2020 15:43:13|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:827e4f4ce5ddc964ef39da64737219d7d144e6e5dfbbe7ddb87fcad148ab9905 | 01/06/2021 02:44:31 | 03/31/2021 16:43:14|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:cf534c04abc2404d8f0aa014bc0bcf4402dd57209ad9f7839fe73e0964ee152a | 10/27/2020 21:09:38 | 12/13/2020 15:43:09|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:827e4f4ce5ddc964ef39da64737219d7d144e6e5dfbbe7ddb87fcad148ab9905 | 01/06/2021 02:44:29 | 03/31/2021 16:43:12|
 
 ### custom-sfcrm-ts-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:d57f8dccc557ac79db407cc98acde99e1f42d2eb3a77db21ae490369d7c51931 | 10/27/2020 21:08:10 | 12/13/2020 15:42:03|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:cfd2a7fa82b0fcdb4b29388ff12530a1d56270d88b56761ac26dc51b1a00e980 | 01/06/2021 02:44:48 | 03/31/2021 16:43:26|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:d57f8dccc557ac79db407cc98acde99e1f42d2eb3a77db21ae490369d7c51931 | 10/27/2020 21:08:08 | 12/13/2020 15:41:59|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:cfd2a7fa82b0fcdb4b29388ff12530a1d56270d88b56761ac26dc51b1a00e980 | 01/06/2021 02:44:45 | 03/31/2021 16:43:23|
 
 ### custom-sfmc-bde-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:985c91fed0822778f57277e6c76e818ca03c2719271409b045000cab8fa08b59 | 10/23/2020 13:55:55 | 12/13/2020 15:43:43|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:7d902025a0a920a7d0b5dd2457b58004f6a2a1b05d72b3ccfff218a1a6514474 | 01/06/2021 02:46:06 | 03/31/2021 16:43:39|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:985c91fed0822778f57277e6c76e818ca03c2719271409b045000cab8fa08b59 | 10/23/2020 13:55:51 | 12/13/2020 15:43:40|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:7d902025a0a920a7d0b5dd2457b58004f6a2a1b05d72b3ccfff218a1a6514474 | 01/06/2021 02:45:02 | 03/31/2021 16:43:35|
 
 ### custom-sfmc-bde-ma-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:a978af6c9f2188a402eccfa4638b67d1f54b9667a2a434f7dd46b4056473f72a | 10/27/2020 21:08:40 | 12/13/2020 15:42:22|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:064506c1779b2bdfdf7dc70790372c009c64549c767ec6eb286fc88b526893be | 01/06/2021 02:46:21 | 03/31/2021 16:43:50|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:a978af6c9f2188a402eccfa4638b67d1f54b9667a2a434f7dd46b4056473f72a | 10/27/2020 21:08:38 | 12/13/2020 15:42:19|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:064506c1779b2bdfdf7dc70790372c009c64549c767ec6eb286fc88b526893be | 01/06/2021 02:45:18 | 03/31/2021 16:43:47|
 
 ### custom-sfmc-bde-ts-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:9e0f08d7971893783d167012d313b23cc2bb73b01b5ebdcdb7c25aadd4c3bb14 | 10/27/2020 21:10:39 | 12/13/2020 15:43:58|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:2a87d7f76fae318438e1d18c49f303407c3299fe7ba762cb0487c4e2949409f3 | 01/06/2021 02:45:38 | 03/31/2021 16:45:02|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:9e0f08d7971893783d167012d313b23cc2bb73b01b5ebdcdb7c25aadd4c3bb14 | 10/27/2020 21:10:36 | 12/13/2020 15:43:55|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:2a87d7f76fae318438e1d18c49f303407c3299fe7ba762cb0487c4e2949409f3 | 01/06/2021 02:45:35 | 03/31/2021 16:43:59|
 
 ### custom-sfmc-ce-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:6166b8054d1dcdd49dedf32ad035bfe7f8ecb3a634b341c02ba865f02648f49e | 10/23/2020 13:56:47 | 12/13/2020 15:43:28|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:dc08019e62d4629a5898bd870d6b7c57c8866152f77d05cf26047891a7e2acdb | 01/06/2021 02:45:52 | 03/31/2021 16:45:16|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:6166b8054d1dcdd49dedf32ad035bfe7f8ecb3a634b341c02ba865f02648f49e | 10/23/2020 13:56:21 | 12/13/2020 15:43:25|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:dc08019e62d4629a5898bd870d6b7c57c8866152f77d05cf26047891a7e2acdb | 01/06/2021 02:45:49 | 03/31/2021 16:44:13|
 
 ### custom-sitecore-docker-tools-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:87325c27959904a0d53ecab5483946a286b78981ee7be9ca125fa6b7e386aff5 | 02/19/2021 22:13:44 | 03/31/2021 16:45:30|
-10.1.0-1809 | N/A          | 1809        | amd64           | windows | sha256:2f6aa0b268e42d0e368a8bb53e3e70a772df7a7ac50b274a500f36ae11623043 | 06/14/2021 20:15:35 | 06/14/2021 20:15:35|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:87325c27959904a0d53ecab5483946a286b78981ee7be9ca125fa6b7e386aff5 | 02/19/2021 22:13:42 | 03/31/2021 16:45:28|
+10.1.0-1809 | N/A          | 1809        | amd64           | windows | sha256:2f6aa0b268e42d0e368a8bb53e3e70a772df7a7ac50b274a500f36ae11623043 | 06/14/2021 20:15:32 | 06/14/2021 20:15:32|
 
 ### custom-xgenerator-assets
 Tag         | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ----------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:636eb700e95d0da82505fed4511c74082ab039c6a95463757b40b7027af09ed6 | 10/23/2020 13:56:51 | 12/13/2020 15:42:39|
-10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:22d93807780fae0041d6fa09fd351f6181c60c2b0a8d64c281822de57621c7d8 | 01/06/2021 02:47:08 | 03/31/2021 16:44:28|
+10.0.0-1809 | N/A          | 1809        | amd64           | windows | sha256:636eb700e95d0da82505fed4511c74082ab039c6a95463757b40b7027af09ed6 | 10/23/2020 13:56:48 | 12/13/2020 15:42:36|
+10.0.1-1809 | N/A          | 1809        | amd64           | windows | sha256:22d93807780fae0041d6fa09fd351f6181c60c2b0a8d64c281822de57621c7d8 | 01/06/2021 02:46:05 | 03/31/2021 16:44:25|
 
 ## community
 Images in this namespace are built from the https://github.com/sitecore/docker-images GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
@@ -169,881 +169,881 @@ Images in this namespace are built from the https://github.com/sitecore/docker-i
 ### sitecore-custom-def-tenant-service
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ea0403ef7823de4d6ac78dd8fab2800bbaad8558b3d74be7706a2f7377043acc | 10/27/2020 21:20:12 | 12/13/2020 16:17:02|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:41fa089b7364851a7f0d4c2c10df87dccf9c9629abbc7967ab5a39ad4cf4a38b | 01/08/2021 02:24:06 | 03/31/2021 21:40:40|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ea0403ef7823de4d6ac78dd8fab2800bbaad8558b3d74be7706a2f7377043acc | 10/27/2020 21:20:07 | 12/13/2020 16:15:57|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:41fa089b7364851a7f0d4c2c10df87dccf9c9629abbc7967ab5a39ad4cf4a38b | 01/08/2021 02:24:01 | 03/31/2021 21:40:35|
 
 ### sitecore-custom-horizon-authoringhost
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0b93a17a3c982e940f39d6b2e2231ec9e51ab6b62afee9e9b94fac55d9480625 | 01/08/2021 02:25:34 | 03/31/2021 21:42:14|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0b93a17a3c982e940f39d6b2e2231ec9e51ab6b62afee9e9b94fac55d9480625 | 01/08/2021 02:24:31 | 03/31/2021 21:41:11|
 
 ### sitecore-custom-ps
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:1da308bb94d1bf664c9d5d0e2b649bb4e4eb77bbc244828f757e0de6a2d22999 | 10/23/2020 13:58:13 | 12/13/2020 16:16:21|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7387550773ee91787ea452f11d50019cce4991f08d9915391a4a750150e538e1 | 01/08/2021 02:25:57 | 03/31/2021 21:42:30|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:1da308bb94d1bf664c9d5d0e2b649bb4e4eb77bbc244828f757e0de6a2d22999 | 10/23/2020 13:58:08 | 12/13/2020 16:16:17|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7387550773ee91787ea452f11d50019cce4991f08d9915391a4a750150e538e1 | 01/08/2021 02:24:53 | 03/31/2021 21:41:27|
 
 ### sitecore-xm1-custom-spe-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7a16133cbb7bd0f1da7a46cf0460c7623807ab7cee49dc3d63489a15b6e0ed16 | 10/27/2020 21:18:42 | 12/13/2020 16:12:56|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9403d0ca79214223a101c94562ff5fe05e4296cc39064880238a994871da348a | 01/08/2021 02:25:40 | 03/31/2021 21:42:31|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:207746dd4e9658aa6c5be868ece81fa3ccebcd75e60f6d436dafe5da24d6a41d | 06/14/2021 16:32:55 | 06/14/2021 16:32:55|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7a16133cbb7bd0f1da7a46cf0460c7623807ab7cee49dc3d63489a15b6e0ed16 | 10/27/2020 21:18:35 | 12/13/2020 16:12:51|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9403d0ca79214223a101c94562ff5fe05e4296cc39064880238a994871da348a | 01/08/2021 02:25:34 | 03/31/2021 21:42:26|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:207746dd4e9658aa6c5be868ece81fa3ccebcd75e60f6d436dafe5da24d6a41d | 06/14/2021 16:31:51 | 06/14/2021 16:31:51|
 
 ### sitecore-xm1-custom-spe-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c6ad2387113ead077d4b2d6853987314411c6e0978d1f924f13cb669460131a7 | 10/27/2020 21:17:11 | 12/13/2020 16:10:24|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9e307172a0980d51a348281556eb9805fc3b05fe14fd665ea16ccec2bbf1dd40 | 01/08/2021 02:26:23 | 03/31/2021 21:43:23|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:48997306a6fb17b53cfcd08a4430ccabac9dd13251cef769f7752027b976b395 | 06/14/2021 16:30:36 | 06/14/2021 16:30:36|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c6ad2387113ead077d4b2d6853987314411c6e0978d1f924f13cb669460131a7 | 10/27/2020 21:17:07 | 12/13/2020 16:10:19|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9e307172a0980d51a348281556eb9805fc3b05fe14fd665ea16ccec2bbf1dd40 | 01/08/2021 02:26:18 | 03/31/2021 21:43:17|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:48997306a6fb17b53cfcd08a4430ccabac9dd13251cef769f7752027b976b395 | 06/14/2021 16:30:31 | 06/14/2021 16:30:31|
 
 ### sitecore-xm1-custom-spe-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e7c42c157d7bef1c345c8315eb8d14936e8778a3e55bbba22c67d4d08078125c | 10/27/2020 21:16:06 | 12/13/2020 16:05:23|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:39c14fc0951c4d7d06ab4cf9c2f2cb907135deb3bbb30956dc1e4e6feebbcc04 | 01/08/2021 02:27:29 | 03/31/2021 21:45:10|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:290cd43bdc9cbc52314222654b28b174cbaf28abeea3f04c34ee9d3ccc40a168 | 06/14/2021 16:28:48 | 06/14/2021 16:28:48|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e7c42c157d7bef1c345c8315eb8d14936e8778a3e55bbba22c67d4d08078125c | 10/27/2020 21:15:03 | 12/13/2020 16:05:15|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:39c14fc0951c4d7d06ab4cf9c2f2cb907135deb3bbb30956dc1e4e6feebbcc04 | 01/08/2021 02:27:23 | 03/31/2021 21:45:02|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:290cd43bdc9cbc52314222654b28b174cbaf28abeea3f04c34ee9d3ccc40a168 | 06/14/2021 16:28:43 | 06/14/2021 16:28:43|
 
 ### sitecore-xm1-custom-spe-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2bdb39f3853a6a8eb2026838c9b0e06f0d59e66b6ffcc4417aa74255a8d31370 | 10/27/2020 21:17:39 | 12/13/2020 16:11:55|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:388d3c61176455653f2b6943fba2ae6d8a33af2324a25e9f69d6d20733c02db8 | 01/08/2021 02:27:44 | 03/31/2021 21:46:29|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8c29343f79cd79eba39008e74b28dd7b84a87eb4490010683e3918f745b19ce0 | 06/14/2021 16:30:56 | 06/14/2021 16:30:56|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2bdb39f3853a6a8eb2026838c9b0e06f0d59e66b6ffcc4417aa74255a8d31370 | 10/27/2020 21:17:37 | 12/13/2020 16:10:51|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:388d3c61176455653f2b6943fba2ae6d8a33af2324a25e9f69d6d20733c02db8 | 01/08/2021 02:27:41 | 03/31/2021 21:45:24|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8c29343f79cd79eba39008e74b28dd7b84a87eb4490010683e3918f745b19ce0 | 06/14/2021 16:30:52 | 06/14/2021 16:30:52|
 
 ### sitecore-xm1-custom-spe-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5484c31b5db0808e9a112b916ff4dda9db4e571cd736054f1678a631206f7efa | 10/27/2020 21:24:30 | 12/13/2020 16:21:41|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:faf01bcd710c17b9a3658677d9a3c89557ee56c1b27c37116035b993ae4f9af9 | 01/08/2021 02:28:04 | 03/31/2021 21:46:41|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5484c31b5db0808e9a112b916ff4dda9db4e571cd736054f1678a631206f7efa | 10/27/2020 21:24:23 | 12/13/2020 16:21:38|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:faf01bcd710c17b9a3658677d9a3c89557ee56c1b27c37116035b993ae4f9af9 | 01/08/2021 02:28:01 | 03/31/2021 21:45:38|
 
 ### sitecore-xm1-custom-spe-sps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5607b61eee266ff11f2cecd45598e8cec6802c0cece9e7f2fe86208360672823 | 06/14/2021 16:36:20 | 06/14/2021 16:36:20|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5607b61eee266ff11f2cecd45598e8cec6802c0cece9e7f2fe86208360672823 | 06/14/2021 16:36:17 | 06/14/2021 16:36:17|
 
 ### sitecore-xm1-custom-sxa-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5b8d1f922e1322568ab2a973f14c81e870c003bdc3ec196b345c4a8ca4d12be5 | 10/27/2020 21:25:36 | 12/13/2020 16:22:46|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6a5514c035fda3b2424659998204a3c7d9a951bae855844b422001ffb8cd4c9f | 01/08/2021 02:28:28 | 03/31/2021 21:46:06|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e71f816fda609cb87893e02b4be66f9fd95b25c069dcd5a559a625e8906130f1 | 06/14/2021 16:37:46 | 06/14/2021 16:37:46|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5b8d1f922e1322568ab2a973f14c81e870c003bdc3ec196b345c4a8ca4d12be5 | 10/27/2020 21:25:29 | 12/13/2020 16:22:41|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6a5514c035fda3b2424659998204a3c7d9a951bae855844b422001ffb8cd4c9f | 01/08/2021 02:28:23 | 03/31/2021 21:46:00|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e71f816fda609cb87893e02b4be66f9fd95b25c069dcd5a559a625e8906130f1 | 06/14/2021 16:37:40 | 06/14/2021 16:37:40|
 
 ### sitecore-xm1-custom-sxa-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0acf7c92405affd5d3cf48b3e181009eeff8f1d389e5fd2795eaf03d15f7f935 | 10/27/2020 21:23:26 | 12/13/2020 16:21:06|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:262c30e268cccd9f052d5cf39ef29f57a7a4de5f216846468a22282dfd9cec42 | 01/08/2021 02:28:50 | 03/31/2021 21:46:30|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d7f0729e5efebea00a609b1c2c37158b71a11a81483f7ef41b4d609f3a27f47e | 06/14/2021 16:35:31 | 06/14/2021 16:35:31|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0acf7c92405affd5d3cf48b3e181009eeff8f1d389e5fd2795eaf03d15f7f935 | 10/27/2020 21:23:20 | 12/13/2020 16:21:01|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:262c30e268cccd9f052d5cf39ef29f57a7a4de5f216846468a22282dfd9cec42 | 01/08/2021 02:28:44 | 03/31/2021 21:46:24|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d7f0729e5efebea00a609b1c2c37158b71a11a81483f7ef41b4d609f3a27f47e | 06/14/2021 16:35:26 | 06/14/2021 16:35:26|
 
 ### sitecore-xm1-custom-sxa-headless1600-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:032a99e5b4ffddd87f4f77242ff2e1c914b87665893a94c7d061be47f24e346f | 06/14/2021 16:50:40 | 06/14/2021 16:50:40|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:032a99e5b4ffddd87f4f77242ff2e1c914b87665893a94c7d061be47f24e346f | 06/14/2021 16:50:32 | 06/14/2021 16:50:32|
 
 ### sitecore-xm1-custom-sxa-headless1600-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:35569256b8bc8e82b89587dcf0a93690900ae4615b362a8612adc3886bcdb430 | 06/14/2021 16:46:23 | 06/14/2021 16:46:23|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:35569256b8bc8e82b89587dcf0a93690900ae4615b362a8612adc3886bcdb430 | 06/14/2021 16:46:20 | 06/14/2021 16:46:20|
 
 ### sitecore-xm1-custom-sxa-headless1600-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a47baf9c9e7494be4b0bf52f929e1dbe2bdbdd339885061fc6830d7a39198c63 | 06/14/2021 16:42:26 | 06/14/2021 16:42:26|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a47baf9c9e7494be4b0bf52f929e1dbe2bdbdd339885061fc6830d7a39198c63 | 06/14/2021 16:42:23 | 06/14/2021 16:42:23|
 
 ### sitecore-xm1-custom-sxa-headless1600-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:625f8ba1e8a172c375be3963b122999ce481f81820ba9ff668888f964e96fbf6 | 06/14/2021 16:47:56 | 06/14/2021 16:47:56|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:625f8ba1e8a172c375be3963b122999ce481f81820ba9ff668888f964e96fbf6 | 06/14/2021 16:47:53 | 06/14/2021 16:47:53|
 
 ### sitecore-xm1-custom-sxa-headless1600-sps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:233995c1d77677137c792f10a46a34b307fa84104361aa6d86423075a42c7611 | 06/14/2021 16:59:20 | 06/14/2021 16:59:20|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:233995c1d77677137c792f10a46a34b307fa84104361aa6d86423075a42c7611 | 06/14/2021 16:59:17 | 06/14/2021 16:59:17|
 
 ### sitecore-xm1-custom-sxa-headless1600-sps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ea7b3d182beef0a05e54ce22d4f47b87292018ee8d028b4bc917b5a8487600a6 | 06/14/2021 16:55:54 | 06/14/2021 16:55:54|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ea7b3d182beef0a05e54ce22d4f47b87292018ee8d028b4bc917b5a8487600a6 | 06/14/2021 16:55:52 | 06/14/2021 16:55:52|
 
 ### sitecore-xm1-custom-sxa-headless1600-sps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b1a1536d16acdc37d15d176bf122ee8e7b768a97a4ef3b58d78756ace4b17f8f | 06/14/2021 17:00:20 | 06/14/2021 17:00:20|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b1a1536d16acdc37d15d176bf122ee8e7b768a97a4ef3b58d78756ace4b17f8f | 06/14/2021 17:00:18 | 06/14/2021 17:00:18|
 
 ### sitecore-xm1-custom-sxa-headless-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:032a99e5b4ffddd87f4f77242ff2e1c914b87665893a94c7d061be47f24e346f | 06/14/2021 16:50:02 | 06/14/2021 16:50:02|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:032a99e5b4ffddd87f4f77242ff2e1c914b87665893a94c7d061be47f24e346f | 06/14/2021 16:49:58 | 06/14/2021 16:49:58|
 
 ### sitecore-xm1-custom-sxa-headless-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:35569256b8bc8e82b89587dcf0a93690900ae4615b362a8612adc3886bcdb430 | 06/14/2021 16:45:49 | 06/14/2021 16:45:49|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:35569256b8bc8e82b89587dcf0a93690900ae4615b362a8612adc3886bcdb430 | 06/14/2021 16:45:44 | 06/14/2021 16:45:44|
 
 ### sitecore-xm1-custom-sxa-headless-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a47baf9c9e7494be4b0bf52f929e1dbe2bdbdd339885061fc6830d7a39198c63 | 06/14/2021 16:41:57 | 06/14/2021 16:41:57|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a47baf9c9e7494be4b0bf52f929e1dbe2bdbdd339885061fc6830d7a39198c63 | 06/14/2021 16:41:51 | 06/14/2021 16:41:51|
 
 ### sitecore-xm1-custom-sxa-headless-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:625f8ba1e8a172c375be3963b122999ce481f81820ba9ff668888f964e96fbf6 | 06/14/2021 16:47:26 | 06/14/2021 16:47:26|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:625f8ba1e8a172c375be3963b122999ce481f81820ba9ff668888f964e96fbf6 | 06/14/2021 16:47:23 | 06/14/2021 16:47:23|
 
 ### sitecore-xm1-custom-sxa-headless-sps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:233995c1d77677137c792f10a46a34b307fa84104361aa6d86423075a42c7611 | 06/14/2021 16:58:47 | 06/14/2021 16:58:47|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:233995c1d77677137c792f10a46a34b307fa84104361aa6d86423075a42c7611 | 06/14/2021 16:58:42 | 06/14/2021 16:58:42|
 
 ### sitecore-xm1-custom-sxa-headless-sps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ea7b3d182beef0a05e54ce22d4f47b87292018ee8d028b4bc917b5a8487600a6 | 06/14/2021 16:55:24 | 06/14/2021 16:55:24|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ea7b3d182beef0a05e54ce22d4f47b87292018ee8d028b4bc917b5a8487600a6 | 06/14/2021 16:55:17 | 06/14/2021 16:55:17|
 
 ### sitecore-xm1-custom-sxa-headless-sps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b1a1536d16acdc37d15d176bf122ee8e7b768a97a4ef3b58d78756ace4b17f8f | 06/14/2021 16:59:51 | 06/14/2021 16:59:51|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b1a1536d16acdc37d15d176bf122ee8e7b768a97a4ef3b58d78756ace4b17f8f | 06/14/2021 16:59:47 | 06/14/2021 16:59:47|
 
 ### sitecore-xm1-custom-sxa-jss1400-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:40cd58f387ac7de88464da9b0d1a5f07e5a543fe3069843d70fe145b8fee988f | 11/05/2020 08:07:37 | 12/13/2020 16:36:04|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:82c704490a9adc70532b6334a9d672526ad49308b055033dcadc126b6b44fb7c | 01/08/2021 02:32:16 | 03/31/2021 21:50:00|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:40cd58f387ac7de88464da9b0d1a5f07e5a543fe3069843d70fe145b8fee988f | 11/05/2020 08:07:33 | 12/13/2020 16:36:00|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:82c704490a9adc70532b6334a9d672526ad49308b055033dcadc126b6b44fb7c | 01/08/2021 02:32:11 | 03/31/2021 21:49:54|
 
 ### sitecore-xm1-custom-sxa-jss1400-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ec6a731ce2546bc6047664dc9d7d3cc51885cc905b662e37bad464aad03c03a2 | 11/05/2020 08:02:46 | 12/13/2020 16:32:31|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:16a9b9fdde01309e4d2d5b7d2e586939ab2390519a38eb11244f7a356399f818 | 01/08/2021 02:32:43 | 03/31/2021 21:50:23|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ec6a731ce2546bc6047664dc9d7d3cc51885cc905b662e37bad464aad03c03a2 | 11/05/2020 08:02:41 | 12/13/2020 16:32:25|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:16a9b9fdde01309e4d2d5b7d2e586939ab2390519a38eb11244f7a356399f818 | 01/08/2021 02:32:34 | 03/31/2021 21:50:17|
 
 ### sitecore-xm1-custom-sxa-jss1400-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6b3ea86cf7a02388adbf1a67866e7c82687ab03baddfbfd1b4895473de4495af | 11/05/2020 07:58:18 | 12/13/2020 16:29:11|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:68abf138f2ab1bb70a4bce9b342ce3337a939dae06d5a235f9dab4c450f33847 | 01/08/2021 02:33:17 | 03/31/2021 21:51:05|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6b3ea86cf7a02388adbf1a67866e7c82687ab03baddfbfd1b4895473de4495af | 11/05/2020 07:58:10 | 12/13/2020 16:29:00|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:68abf138f2ab1bb70a4bce9b342ce3337a939dae06d5a235f9dab4c450f33847 | 01/08/2021 02:33:08 | 03/31/2021 21:50:54|
 
 ### sitecore-xm1-custom-sxa-jss1400-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:94099e908ff1609069b4b834f7e776f467438a569abf5ead4437028350c0c8f4 | 11/05/2020 08:04:24 | 12/13/2020 16:33:48|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ff70b70b3f27c8ca568b00ceaec40099c581f0e1a5103f40dd2ad6abfdabb592 | 01/08/2021 02:33:29 | 03/31/2021 21:51:17|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:94099e908ff1609069b4b834f7e776f467438a569abf5ead4437028350c0c8f4 | 11/05/2020 08:04:21 | 12/13/2020 16:33:45|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ff70b70b3f27c8ca568b00ceaec40099c581f0e1a5103f40dd2ad6abfdabb592 | 01/08/2021 02:33:26 | 03/31/2021 21:51:12|
 
 ### sitecore-xm1-custom-sxa-jss1400-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fa22511b9558730022141448d67a3c066b1133db8394a33b4372eee8d6f47b46 | 11/05/2020 08:19:11 | 12/13/2020 16:46:35|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d6ec8e2cf71966e8da291dab51fd0fb020692c8aaf04c4aa7a1aa76c3d352136 | 01/08/2021 02:33:55 | 03/31/2021 21:51:43|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fa22511b9558730022141448d67a3c066b1133db8394a33b4372eee8d6f47b46 | 11/05/2020 08:19:06 | 12/13/2020 16:46:30|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d6ec8e2cf71966e8da291dab51fd0fb020692c8aaf04c4aa7a1aa76c3d352136 | 01/08/2021 02:33:50 | 03/31/2021 21:51:38|
 
 ### sitecore-xm1-custom-sxa-jss1400-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:cde1d087569a014a15e0ae49b63982aa0b818b4d8a06e5b3811591220cd98a58 | 11/05/2020 08:14:42 | 12/13/2020 16:43:17|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5a06deedc4c09334e10218bfabf7a01526431c4f9f761c9aa5e46d9d9c8dbe8f | 01/08/2021 02:34:36 | 03/31/2021 21:52:28|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:cde1d087569a014a15e0ae49b63982aa0b818b4d8a06e5b3811591220cd98a58 | 11/05/2020 08:14:33 | 12/13/2020 16:43:07|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5a06deedc4c09334e10218bfabf7a01526431c4f9f761c9aa5e46d9d9c8dbe8f | 01/08/2021 02:34:27 | 03/31/2021 21:52:17|
 
 ### sitecore-xm1-custom-sxa-jss1400-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6ee21d4c5e12a4d736b4e298fee892838fd6a6eaf98baf812d566210a9d93526 | 11/05/2020 08:21:03 | 12/13/2020 16:47:36|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9211a2cebfe2935d20fd8f748f401911c78035fb8d1ffb4c0f1a8f52298595b0 | 01/08/2021 02:34:54 | 03/31/2021 21:52:36|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6ee21d4c5e12a4d736b4e298fee892838fd6a6eaf98baf812d566210a9d93526 | 11/05/2020 08:20:59 | 12/13/2020 16:47:32|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9211a2cebfe2935d20fd8f748f401911c78035fb8d1ffb4c0f1a8f52298595b0 | 01/08/2021 02:34:50 | 03/31/2021 21:52:32|
 
 ### sitecore-xm1-custom-sxa-jss1500-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:3207d12004f59dbbd00ed3166259f2b3c193d4bc31669187ca536226f56b6a8b | 11/05/2020 08:08:10 | 12/13/2020 16:36:22|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c4b51dbf9bfae99ecb87a70154436ccd581a87af52789635d7a83645f0662b8d | 01/08/2021 02:35:19 | 03/31/2021 21:53:01|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:3207d12004f59dbbd00ed3166259f2b3c193d4bc31669187ca536226f56b6a8b | 11/05/2020 08:08:08 | 12/13/2020 16:36:19|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c4b51dbf9bfae99ecb87a70154436ccd581a87af52789635d7a83645f0662b8d | 01/08/2021 02:35:13 | 03/31/2021 21:52:55|
 
 ### sitecore-xm1-custom-sxa-jss1500-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7630a62841f7947b9691e85524190c1c5a8872a10011f88d76a66e3e1c30c820 | 11/05/2020 08:03:23 | 12/13/2020 16:32:52|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f03a1c333b3ea20fef028c1a6f6ec2187682b637d92c528bb714d05aaa2e4944 | 01/08/2021 02:35:43 | 03/31/2021 21:53:24|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7630a62841f7947b9691e85524190c1c5a8872a10011f88d76a66e3e1c30c820 | 11/05/2020 08:03:20 | 12/13/2020 16:32:49|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f03a1c333b3ea20fef028c1a6f6ec2187682b637d92c528bb714d05aaa2e4944 | 01/08/2021 02:35:38 | 03/31/2021 21:53:19|
 
 ### sitecore-xm1-custom-sxa-jss1500-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9da75ebc72c7b09e2293696d04f8401e6dd54768431830411cc2624d9fdbe8b7 | 11/05/2020 07:58:46 | 12/13/2020 16:29:21|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f90b47c03267f9f894511217697013f9a7aa4fe9e293b546335bae4cde053d51 | 01/08/2021 02:36:19 | 03/31/2021 21:55:12|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9da75ebc72c7b09e2293696d04f8401e6dd54768431830411cc2624d9fdbe8b7 | 11/05/2020 07:58:44 | 12/13/2020 16:29:18|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f90b47c03267f9f894511217697013f9a7aa4fe9e293b546335bae4cde053d51 | 01/08/2021 02:36:10 | 03/31/2021 21:54:00|
 
 ### sitecore-xm1-custom-sxa-jss1500-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:debc20edc750ccde71205243ffb4eb4c4b8e2f9e9ee9aec315041eeacc69b151 | 11/05/2020 08:04:51 | 12/13/2020 16:34:05|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8c5223f08751396e37778b4db58b95d384fa7029ab425adb473c3a20ec3bb68f | 01/08/2021 02:36:32 | 03/31/2021 21:54:21|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:debc20edc750ccde71205243ffb4eb4c4b8e2f9e9ee9aec315041eeacc69b151 | 11/05/2020 08:04:49 | 12/13/2020 16:34:02|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8c5223f08751396e37778b4db58b95d384fa7029ab425adb473c3a20ec3bb68f | 01/08/2021 02:36:29 | 03/31/2021 21:54:17|
 
 ### sitecore-xm1-custom-sxa-jss1500-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9a538256b4e85425fa8e8ea2b67fbce83b4674b211442a4cafe4c622d78a64f7 | 11/05/2020 08:34:47 | 12/13/2020 16:46:54|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:632f8b1c2c9ee764e0ad3eec6ed48d0161e3725614150637446a497a26ec4873 | 01/08/2021 02:37:06 | 03/31/2021 21:54:46|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9a538256b4e85425fa8e8ea2b67fbce83b4674b211442a4cafe4c622d78a64f7 | 11/05/2020 08:19:42 | 12/13/2020 16:46:50|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:632f8b1c2c9ee764e0ad3eec6ed48d0161e3725614150637446a497a26ec4873 | 01/08/2021 02:37:01 | 03/31/2021 21:54:41|
 
 ### sitecore-xm1-custom-sxa-jss1500-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:932bdcf37b6cd576a9fd6f13063ea6cf102a94b9798f885f83f2ef04ce5a723d | 11/05/2020 08:15:18 | 12/13/2020 16:43:28|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8a3afaf660e3d755eaf3c25015b17246404c11e32eb3dac5517be73140b8419a | 01/08/2021 02:37:43 | 03/31/2021 21:55:32|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:932bdcf37b6cd576a9fd6f13063ea6cf102a94b9798f885f83f2ef04ce5a723d | 11/05/2020 08:15:14 | 12/13/2020 16:43:25|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8a3afaf660e3d755eaf3c25015b17246404c11e32eb3dac5517be73140b8419a | 01/08/2021 02:37:34 | 03/31/2021 21:55:22|
 
 ### sitecore-xm1-custom-sxa-jss1500-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6e8b6598a4edf63e23f45eeaf59bfdb0855f62640a0168b9356aaa5f5fa61977 | 11/05/2020 08:21:31 | 12/13/2020 16:47:52|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a10e789b9d0e4779ea4150f2a703ac6485e94c3ceb404c74b032cf6b23152bbf | 01/08/2021 02:37:57 | 03/31/2021 21:55:44|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6e8b6598a4edf63e23f45eeaf59bfdb0855f62640a0168b9356aaa5f5fa61977 | 11/05/2020 08:21:29 | 12/13/2020 16:47:49|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a10e789b9d0e4779ea4150f2a703ac6485e94c3ceb404c74b032cf6b23152bbf | 01/08/2021 02:37:53 | 03/31/2021 21:55:41|
 
 ### sitecore-xm1-custom-sxa-jss-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:3207d12004f59dbbd00ed3166259f2b3c193d4bc31669187ca536226f56b6a8b | 10/27/2020 21:32:19 | 12/13/2020 16:35:41|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c92b9c3d6ceb1e4e69cd0f3fb9789a0079a2be269abfc8a89a91f0153efc693d | 01/08/2021 02:29:14 | 03/31/2021 21:46:53|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:3207d12004f59dbbd00ed3166259f2b3c193d4bc31669187ca536226f56b6a8b | 10/27/2020 21:32:15 | 12/13/2020 16:35:36|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c92b9c3d6ceb1e4e69cd0f3fb9789a0079a2be269abfc8a89a91f0153efc693d | 01/08/2021 02:29:10 | 03/31/2021 21:46:49|
 
 ### sitecore-xm1-custom-sxa-jss-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7630a62841f7947b9691e85524190c1c5a8872a10011f88d76a66e3e1c30c820 | 10/27/2020 21:29:43 | 12/13/2020 16:32:07|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0baf5ddd3ad367cafa27cc02eb7f61689704e3ce38a9a50c7a6afb532df3e82c | 01/08/2021 02:29:38 | 03/31/2021 21:47:18|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7630a62841f7947b9691e85524190c1c5a8872a10011f88d76a66e3e1c30c820 | 10/27/2020 21:29:38 | 12/13/2020 16:32:03|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0baf5ddd3ad367cafa27cc02eb7f61689704e3ce38a9a50c7a6afb532df3e82c | 01/08/2021 02:29:32 | 03/31/2021 21:47:12|
 
 ### sitecore-xm1-custom-sxa-jss-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9da75ebc72c7b09e2293696d04f8401e6dd54768431830411cc2624d9fdbe8b7 | 10/27/2020 21:28:12 | 12/13/2020 16:28:20|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:025d413042082005fdfb47f6cbc702f24a58b32a828ce3b46b7b5acd61d01d43 | 01/08/2021 02:31:36 | 03/31/2021 21:48:14|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9da75ebc72c7b09e2293696d04f8401e6dd54768431830411cc2624d9fdbe8b7 | 10/27/2020 21:28:01 | 12/13/2020 16:28:10|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:025d413042082005fdfb47f6cbc702f24a58b32a828ce3b46b7b5acd61d01d43 | 01/08/2021 02:30:12 | 03/31/2021 21:48:03|
 
 ### sitecore-xm1-custom-sxa-jss-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:debc20edc750ccde71205243ffb4eb4c4b8e2f9e9ee9aec315041eeacc69b151 | 10/27/2020 21:30:47 | 12/13/2020 16:33:27|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:826d309e3d96da1e2bef62a3293e112ea260c74c08e866346d4acaef119213b4 | 01/08/2021 02:30:35 | 03/31/2021 21:48:23|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:debc20edc750ccde71205243ffb4eb4c4b8e2f9e9ee9aec315041eeacc69b151 | 10/27/2020 21:30:43 | 12/13/2020 16:33:25|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:826d309e3d96da1e2bef62a3293e112ea260c74c08e866346d4acaef119213b4 | 01/08/2021 02:30:30 | 03/31/2021 21:48:18|
 
 ### sitecore-xm1-custom-sxa-jss-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9a538256b4e85425fa8e8ea2b67fbce83b4674b211442a4cafe4c622d78a64f7 | 10/27/2020 21:36:17 | 12/13/2020 16:46:09|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:364f7006e7dc3a0e7aa2e9977f2f1ae81199154e31c61fb8bfbcd5de794604f6 | 01/08/2021 02:30:59 | 03/31/2021 21:48:44|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9a538256b4e85425fa8e8ea2b67fbce83b4674b211442a4cafe4c622d78a64f7 | 10/27/2020 21:36:12 | 12/13/2020 16:46:03|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:364f7006e7dc3a0e7aa2e9977f2f1ae81199154e31c61fb8bfbcd5de794604f6 | 01/08/2021 02:30:54 | 03/31/2021 21:48:39|
 
 ### sitecore-xm1-custom-sxa-jss-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:932bdcf37b6cd576a9fd6f13063ea6cf102a94b9798f885f83f2ef04ce5a723d | 10/27/2020 21:35:06 | 12/13/2020 16:42:02|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c8ce0e0f6513c1da5653b9397b559ff58b2a80292780f17c60999a4c650f818b | 01/08/2021 02:32:31 | 03/31/2021 21:49:25|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:932bdcf37b6cd576a9fd6f13063ea6cf102a94b9798f885f83f2ef04ce5a723d | 10/27/2020 21:34:57 | 12/13/2020 16:41:52|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c8ce0e0f6513c1da5653b9397b559ff58b2a80292780f17c60999a4c650f818b | 01/08/2021 02:31:28 | 03/31/2021 21:49:15|
 
 ### sitecore-xm1-custom-sxa-jss-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6e8b6598a4edf63e23f45eeaf59bfdb0855f62640a0168b9356aaa5f5fa61977 | 10/27/2020 21:36:45 | 12/13/2020 16:47:14|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6de27a4dbb0e5e7950cca2362798f56652fe290afe521df4b5e0f70cc382c0f8 | 01/08/2021 02:31:50 | 03/31/2021 21:49:35|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6e8b6598a4edf63e23f45eeaf59bfdb0855f62640a0168b9356aaa5f5fa61977 | 10/27/2020 21:36:42 | 12/13/2020 16:47:11|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6de27a4dbb0e5e7950cca2362798f56652fe290afe521df4b5e0f70cc382c0f8 | 01/08/2021 02:31:47 | 03/31/2021 21:49:31|
 
 ### sitecore-xm1-custom-sxa-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:59b6c18f7b74247ab3f8ee3b11bb1f40c340069f2760ef0dc5b25a307f6de80b | 10/27/2020 21:22:20 | 12/13/2020 16:20:50|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70696ee06e961d166d361bd4488df2e7c092d1d956b5ff02554e0d9db80cac84 | 01/08/2021 02:38:15 | 03/31/2021 21:56:05|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e6793865224f210a142cc92cc8606196b68ef94454454883e670d6e2a7c60e32 | 06/14/2021 16:34:23 | 06/14/2021 16:34:23|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:59b6c18f7b74247ab3f8ee3b11bb1f40c340069f2760ef0dc5b25a307f6de80b | 10/27/2020 21:22:10 | 12/13/2020 16:19:35|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70696ee06e961d166d361bd4488df2e7c092d1d956b5ff02554e0d9db80cac84 | 01/08/2021 02:38:11 | 03/31/2021 21:55:56|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e6793865224f210a142cc92cc8606196b68ef94454454883e670d6e2a7c60e32 | 06/14/2021 16:34:17 | 06/14/2021 16:34:17|
 
 ### sitecore-xm1-custom-sxa-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c4a2d9b36e41a7f23c82379da40c02784f47d9227d0ecba7231b55719557c14a | 10/27/2020 21:23:56 | 12/13/2020 16:21:25|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8d0aca74f7d53f55a328cd0649a38877cf0d2863e072b0cc11970557db511045 | 01/08/2021 02:39:30 | 03/31/2021 21:56:13|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4af49e701b434bf763086c23acf675f4c60e8861adc5941538196401181cca25 | 06/14/2021 16:35:51 | 06/14/2021 16:35:51|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c4a2d9b36e41a7f23c82379da40c02784f47d9227d0ecba7231b55719557c14a | 10/27/2020 21:23:51 | 12/13/2020 16:21:20|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8d0aca74f7d53f55a328cd0649a38877cf0d2863e072b0cc11970557db511045 | 01/08/2021 02:38:27 | 03/31/2021 21:56:10|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4af49e701b434bf763086c23acf675f4c60e8861adc5941538196401181cca25 | 06/14/2021 16:35:46 | 06/14/2021 16:35:46|
 
 ### sitecore-xm1-custom-sxa-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7b96e8ddc8c18a7bb08dddf4959d7d8ab36c0804bdd3883ef030449c1d0bc779 | 10/27/2020 21:30:13 | 12/13/2020 16:33:12|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a3714ce573092cfec0bccb070da3800709b8624cac0617c3295d0c42603243d9 | 01/08/2021 02:38:47 | 03/31/2021 21:56:29|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7b96e8ddc8c18a7bb08dddf4959d7d8ab36c0804bdd3883ef030449c1d0bc779 | 10/27/2020 21:30:10 | 12/13/2020 16:33:07|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a3714ce573092cfec0bccb070da3800709b8624cac0617c3295d0c42603243d9 | 01/08/2021 02:38:44 | 03/31/2021 21:56:25|
 
 ### sitecore-xm1-custom-sxa-solr
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:59b25f68408ce5bf12efa262a3ee364527515859e5065a545f694724dbc9ac24 | 10/27/2020 21:16:20 | 12/13/2020 16:08:22|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9bb9614bdab0d6294750d725a932dcd0c0f86da74b8d2f793c8a074dd0849fae | 01/08/2021 02:39:09 | 03/31/2021 21:57:30|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:59b25f68408ce5bf12efa262a3ee364527515859e5065a545f694724dbc9ac24 | 10/27/2020 21:16:15 | 12/13/2020 16:08:18|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9bb9614bdab0d6294750d725a932dcd0c0f86da74b8d2f793c8a074dd0849fae | 01/08/2021 02:39:05 | 03/31/2021 21:57:24|
 
 ### sitecore-xm1-custom-sxa-solr-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a3a5135636e9add624b01321b223a5277d5b0f806d82312c4a25210b42d7250e | 10/27/2020 21:19:45 | 12/13/2020 16:15:43|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b166b7d9fc122ca2b80ce6bfb7e1a22f7b98001b4713a956a211afd93d40e01d | 01/08/2021 02:39:29 | 03/31/2021 21:57:56|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7715f6dd12da569c04a991335684494f5e8087a7ee20dc706e3f6a1b36bbc363 | 06/14/2021 16:32:58 | 06/14/2021 16:32:58|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a3a5135636e9add624b01321b223a5277d5b0f806d82312c4a25210b42d7250e | 10/27/2020 21:19:41 | 12/13/2020 16:15:39|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b166b7d9fc122ca2b80ce6bfb7e1a22f7b98001b4713a956a211afd93d40e01d | 01/08/2021 02:39:24 | 03/31/2021 21:57:52|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7715f6dd12da569c04a991335684494f5e8087a7ee20dc706e3f6a1b36bbc363 | 06/14/2021 16:32:54 | 06/14/2021 16:32:54|
 
 ### sitecore-xm1-custom-sxa-sps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e74d3d48d7fde8ba3a8d2725e94d900c8240a7be1f3ce28bc5e340122e562ed3 | 06/14/2021 16:46:56 | 06/14/2021 16:46:56|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e74d3d48d7fde8ba3a8d2725e94d900c8240a7be1f3ce28bc5e340122e562ed3 | 06/14/2021 16:46:52 | 06/14/2021 16:46:52|
 
 ### sitecore-xp0-custom-spe-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f8485287b2822901531edcdd6a8f1d9117dc39314c9d51369fd4fd7ef7914cfe | 10/23/2020 14:16:51 | 12/13/2020 15:58:54|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:1c9fbc88baa14fee2909b96b1779d5b68238f0fba7d09ac4af9efb3de4684b5f | 01/08/2021 02:39:49 | 03/31/2021 21:59:32|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7e6df5b3cec9655f26eea8a385319931b34472789cb9513fbfeb89207a6e8fd0 | 06/14/2021 16:26:45 | 06/14/2021 16:26:45|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f8485287b2822901531edcdd6a8f1d9117dc39314c9d51369fd4fd7ef7914cfe | 10/23/2020 14:16:47 | 12/13/2020 15:58:49|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:1c9fbc88baa14fee2909b96b1779d5b68238f0fba7d09ac4af9efb3de4684b5f | 01/08/2021 02:39:44 | 03/31/2021 21:59:27|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7e6df5b3cec9655f26eea8a385319931b34472789cb9513fbfeb89207a6e8fd0 | 06/14/2021 16:26:40 | 06/14/2021 16:26:40|
 
 ### sitecore-xp0-custom-spe-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5b5b4343aa70a6c6094a06dd41d54d029faf8d77ad3bd4770ac27fd9517b5135 | 10/23/2020 14:19:05 | 12/13/2020 16:05:33|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7eef0d455d015f22ce21fcd261097e307d5701be3e648e893462a1ef9fbc5492 | 01/08/2021 02:41:26 | 03/31/2021 22:01:37|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d294bd71c3fafe9a0f17adb6658987eca58c5fe0ee8d2fbd5342bcfa8b8091b8 | 06/14/2021 16:29:07 | 06/14/2021 16:29:07|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5b5b4343aa70a6c6094a06dd41d54d029faf8d77ad3bd4770ac27fd9517b5135 | 10/23/2020 14:19:03 | 12/13/2020 16:05:31|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7eef0d455d015f22ce21fcd261097e307d5701be3e648e893462a1ef9fbc5492 | 01/08/2021 02:40:18 | 03/31/2021 22:00:33|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d294bd71c3fafe9a0f17adb6658987eca58c5fe0ee8d2fbd5342bcfa8b8091b8 | 06/14/2021 16:29:04 | 06/14/2021 16:29:04|
 
 ### sitecore-xp0-custom-sxa-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:1c40dcb21b87133807de7e6491cd1b4699660d58933d7791896a9a1815e7599e | 10/23/2020 14:17:31 | 12/13/2020 16:16:54|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f304436007ab2407a213427d1275ca74d1182fba4f27c2404614d026471c0d2b | 01/08/2021 02:40:45 | 03/31/2021 22:01:15|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f386ebedbf39dfd1e21e60855e174553d15ed14130652698376ee1ddb19d23a8 | 06/14/2021 16:33:22 | 06/14/2021 16:33:22|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:1c40dcb21b87133807de7e6491cd1b4699660d58933d7791896a9a1815e7599e | 10/23/2020 14:17:24 | 12/13/2020 16:16:50|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f304436007ab2407a213427d1275ca74d1182fba4f27c2404614d026471c0d2b | 01/08/2021 02:40:40 | 03/31/2021 22:01:06|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f386ebedbf39dfd1e21e60855e174553d15ed14130652698376ee1ddb19d23a8 | 06/14/2021 16:33:17 | 06/14/2021 16:33:17|
 
 ### sitecore-xp0-custom-sxa-headless1600-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2603d6aeed30bfda4c20ef102234320cee0e931bab70791fc80adafa0ffac632 | 06/14/2021 16:39:24 | 06/14/2021 16:39:24|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2603d6aeed30bfda4c20ef102234320cee0e931bab70791fc80adafa0ffac632 | 06/14/2021 16:39:21 | 06/14/2021 16:39:21|
 
 ### sitecore-xp0-custom-sxa-headless1600-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b76e491c9a186f390f950031758715277c99917b8ea0bb7f0d3dcaba9d6f4639 | 06/14/2021 16:43:30 | 06/14/2021 16:43:30|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b76e491c9a186f390f950031758715277c99917b8ea0bb7f0d3dcaba9d6f4639 | 06/14/2021 16:43:27 | 06/14/2021 16:43:27|
 
 ### sitecore-xp0-custom-sxa-headless1600-sps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:438aef4125d25cc078d511d186fd461b398911cf895c457ec605340ddfc421e4 | 06/14/2021 16:53:32 | 06/14/2021 16:53:32|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:438aef4125d25cc078d511d186fd461b398911cf895c457ec605340ddfc421e4 | 06/14/2021 16:53:29 | 06/14/2021 16:53:29|
 
 ### sitecore-xp0-custom-sxa-headless1600-sps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d05022a67e6c3053f4e9edeefad4ae321e3ec1270d487913f42e43a883163462 | 06/14/2021 16:57:00 | 06/14/2021 16:57:00|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d05022a67e6c3053f4e9edeefad4ae321e3ec1270d487913f42e43a883163462 | 06/14/2021 16:56:57 | 06/14/2021 16:56:57|
 
 ### sitecore-xp0-custom-sxa-headless-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2603d6aeed30bfda4c20ef102234320cee0e931bab70791fc80adafa0ffac632 | 06/14/2021 16:38:50 | 06/14/2021 16:38:50|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2603d6aeed30bfda4c20ef102234320cee0e931bab70791fc80adafa0ffac632 | 06/14/2021 16:38:45 | 06/14/2021 16:38:45|
 
 ### sitecore-xp0-custom-sxa-headless-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b76e491c9a186f390f950031758715277c99917b8ea0bb7f0d3dcaba9d6f4639 | 06/14/2021 16:42:57 | 06/14/2021 16:42:57|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b76e491c9a186f390f950031758715277c99917b8ea0bb7f0d3dcaba9d6f4639 | 06/14/2021 16:42:54 | 06/14/2021 16:42:54|
 
 ### sitecore-xp0-custom-sxa-headless-sps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:438aef4125d25cc078d511d186fd461b398911cf895c457ec605340ddfc421e4 | 06/14/2021 16:52:59 | 06/14/2021 16:52:59|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:438aef4125d25cc078d511d186fd461b398911cf895c457ec605340ddfc421e4 | 06/14/2021 16:52:54 | 06/14/2021 16:52:54|
 
 ### sitecore-xp0-custom-sxa-headless-sps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d05022a67e6c3053f4e9edeefad4ae321e3ec1270d487913f42e43a883163462 | 06/14/2021 16:56:27 | 06/14/2021 16:56:27|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d05022a67e6c3053f4e9edeefad4ae321e3ec1270d487913f42e43a883163462 | 06/14/2021 16:56:24 | 06/14/2021 16:56:24|
 
 ### sitecore-xp0-custom-sxa-jss1400-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f68e9216f1953f38a182860bd084472e7e6db0b5a304772a3a8d4109197f4581 | 11/05/2020 07:53:26 | 12/13/2020 16:24:01|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:90d9a52da35f4b288a425e6e88a938a088c8ed4ca851d12b3051bbe36bc6a985 | 01/08/2021 02:43:11 | 03/31/2021 22:05:41|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f68e9216f1953f38a182860bd084472e7e6db0b5a304772a3a8d4109197f4581 | 11/05/2020 07:53:22 | 12/13/2020 16:23:56|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:90d9a52da35f4b288a425e6e88a938a088c8ed4ca851d12b3051bbe36bc6a985 | 01/08/2021 02:43:05 | 03/31/2021 22:05:35|
 
 ### sitecore-xp0-custom-sxa-jss1400-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f68e9216f1953f38a182860bd084472e7e6db0b5a304772a3a8d4109197f4581 | 11/05/2020 07:53:26 | 12/13/2020 16:24:01|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:90d9a52da35f4b288a425e6e88a938a088c8ed4ca851d12b3051bbe36bc6a985 | 01/08/2021 02:43:11 | 03/31/2021 22:05:41|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:f68e9216f1953f38a182860bd084472e7e6db0b5a304772a3a8d4109197f4581 | 11/05/2020 07:53:22 | 12/13/2020 16:23:56|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:90d9a52da35f4b288a425e6e88a938a088c8ed4ca851d12b3051bbe36bc6a985 | 01/08/2021 02:43:05 | 03/31/2021 22:05:35|
 
 ### sitecore-xp0-custom-sxa-jss1400-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2e62776679bbf542a820a63b8916e149dc19a23e63dfb958c20ed7b07cb7dd2c | 11/05/2020 07:59:33 | 12/13/2020 16:29:57|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5595699a65ee57a063b8673fed25836923a60338e40e0470f2ea225cac78ac66 | 01/08/2021 02:43:50 | 03/31/2021 22:07:50|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2e62776679bbf542a820a63b8916e149dc19a23e63dfb958c20ed7b07cb7dd2c | 11/05/2020 07:59:31 | 12/13/2020 16:29:55|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5595699a65ee57a063b8673fed25836923a60338e40e0470f2ea225cac78ac66 | 01/08/2021 02:43:39 | 03/31/2021 22:06:38|
 
 ### sitecore-xp0-custom-sxa-jss1400-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2e62776679bbf542a820a63b8916e149dc19a23e63dfb958c20ed7b07cb7dd2c | 11/05/2020 07:59:33 | 12/13/2020 16:29:57|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5595699a65ee57a063b8673fed25836923a60338e40e0470f2ea225cac78ac66 | 01/08/2021 02:43:50 | 03/31/2021 22:07:50|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2e62776679bbf542a820a63b8916e149dc19a23e63dfb958c20ed7b07cb7dd2c | 11/05/2020 07:59:31 | 12/13/2020 16:29:55|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5595699a65ee57a063b8673fed25836923a60338e40e0470f2ea225cac78ac66 | 01/08/2021 02:43:39 | 03/31/2021 22:06:38|
 
 ### sitecore-xp0-custom-sxa-jss1400-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d5007682b597712b6cd36a79dcd5aa07d11c5e5409717d8412c40f5658e39826 | 11/05/2020 08:10:49 | 12/13/2020 16:38:43|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7d27a85920aa8f5e6673f764012b94518543d558e9f3b3ec0d24c72f2399d540 | 01/08/2021 02:44:07 | 03/31/2021 22:07:23|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d5007682b597712b6cd36a79dcd5aa07d11c5e5409717d8412c40f5658e39826 | 11/05/2020 08:10:45 | 12/13/2020 16:38:38|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7d27a85920aa8f5e6673f764012b94518543d558e9f3b3ec0d24c72f2399d540 | 01/08/2021 02:44:01 | 03/31/2021 22:07:18|
 
 ### sitecore-xp0-custom-sxa-jss1400-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d5007682b597712b6cd36a79dcd5aa07d11c5e5409717d8412c40f5658e39826 | 11/05/2020 08:10:49 | 12/13/2020 16:38:43|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7d27a85920aa8f5e6673f764012b94518543d558e9f3b3ec0d24c72f2399d540 | 01/08/2021 02:44:07 | 03/31/2021 22:07:23|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d5007682b597712b6cd36a79dcd5aa07d11c5e5409717d8412c40f5658e39826 | 11/05/2020 08:10:45 | 12/13/2020 16:38:38|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7d27a85920aa8f5e6673f764012b94518543d558e9f3b3ec0d24c72f2399d540 | 01/08/2021 02:44:01 | 03/31/2021 22:07:18|
 
 ### sitecore-xp0-custom-sxa-jss1400-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:eedf7154799bfa43ea20eab076d22a756d1e2c9c442664648c8f7a6ff21f1e1c | 11/05/2020 08:16:07 | 12/13/2020 16:44:07|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:005655cea25fe39d15019cde758d6fd76f565cf45c0a54127a5b9af2cb1aa425 | 01/08/2021 02:45:10 | 03/31/2021 22:08:27|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:eedf7154799bfa43ea20eab076d22a756d1e2c9c442664648c8f7a6ff21f1e1c | 11/05/2020 08:16:02 | 12/13/2020 16:44:03|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:005655cea25fe39d15019cde758d6fd76f565cf45c0a54127a5b9af2cb1aa425 | 01/08/2021 02:44:38 | 03/31/2021 22:08:16|
 
 ### sitecore-xp0-custom-sxa-jss1400-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:eedf7154799bfa43ea20eab076d22a756d1e2c9c442664648c8f7a6ff21f1e1c | 11/05/2020 08:16:07 | 12/13/2020 16:44:07|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:005655cea25fe39d15019cde758d6fd76f565cf45c0a54127a5b9af2cb1aa425 | 01/08/2021 02:45:10 | 03/31/2021 22:08:27|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:eedf7154799bfa43ea20eab076d22a756d1e2c9c442664648c8f7a6ff21f1e1c | 11/05/2020 08:16:02 | 12/13/2020 16:44:03|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:005655cea25fe39d15019cde758d6fd76f565cf45c0a54127a5b9af2cb1aa425 | 01/08/2021 02:44:38 | 03/31/2021 22:08:16|
 
 ### sitecore-xp0-custom-sxa-jss1500-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c3a065d6884239c0e4ac4673299ee7e8617f78b17a068d836ecb1bc81c401d7c | 11/05/2020 07:54:25 | 12/13/2020 16:24:19|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ba00cf4f9f9ad6f7d383aac32294579c2a96a6f144d635d70d3cd3879a6d01e6 | 01/08/2021 02:45:07 | 03/31/2021 22:08:53|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c3a065d6884239c0e4ac4673299ee7e8617f78b17a068d836ecb1bc81c401d7c | 11/05/2020 07:54:22 | 12/13/2020 16:24:16|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ba00cf4f9f9ad6f7d383aac32294579c2a96a6f144d635d70d3cd3879a6d01e6 | 01/08/2021 02:45:01 | 03/31/2021 22:08:47|
 
 ### sitecore-xp0-custom-sxa-jss1500-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c3a065d6884239c0e4ac4673299ee7e8617f78b17a068d836ecb1bc81c401d7c | 11/05/2020 07:54:25 | 12/13/2020 16:24:19|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ba00cf4f9f9ad6f7d383aac32294579c2a96a6f144d635d70d3cd3879a6d01e6 | 01/08/2021 02:45:07 | 03/31/2021 22:08:53|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c3a065d6884239c0e4ac4673299ee7e8617f78b17a068d836ecb1bc81c401d7c | 11/05/2020 07:54:22 | 12/13/2020 16:24:16|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ba00cf4f9f9ad6f7d383aac32294579c2a96a6f144d635d70d3cd3879a6d01e6 | 01/08/2021 02:45:01 | 03/31/2021 22:08:47|
 
 ### sitecore-xp0-custom-sxa-jss1500-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 11/05/2020 08:00:06 | 12/13/2020 16:30:16|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dfbc669b0f801711e634213962670ed085bd7d959c8e43263ae6a80a93ea505d | 01/08/2021 02:45:47 | 03/31/2021 22:11:06|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 11/05/2020 08:00:03 | 12/13/2020 16:30:13|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dfbc669b0f801711e634213962670ed085bd7d959c8e43263ae6a80a93ea505d | 01/08/2021 02:45:37 | 03/31/2021 22:09:48|
 
 ### sitecore-xp0-custom-sxa-jss1500-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 11/05/2020 08:00:06 | 12/13/2020 16:30:16|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dfbc669b0f801711e634213962670ed085bd7d959c8e43263ae6a80a93ea505d | 01/08/2021 02:45:47 | 03/31/2021 22:11:06|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 11/05/2020 08:00:03 | 12/13/2020 16:30:13|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dfbc669b0f801711e634213962670ed085bd7d959c8e43263ae6a80a93ea505d | 01/08/2021 02:45:37 | 03/31/2021 22:09:48|
 
 ### sitecore-xp0-custom-sxa-jss1500-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:60ff0cf5f7a048af22033539c274068e0c08b904a6e3a663d2f930c7c6148a00 | 11/05/2020 08:11:25 | 12/13/2020 16:39:02|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:37bf2d48e78634fb4a62cbe7e13618d9becc97796da8b11d4073213a6692e7a1 | 01/08/2021 02:46:05 | 03/31/2021 22:10:24|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:60ff0cf5f7a048af22033539c274068e0c08b904a6e3a663d2f930c7c6148a00 | 11/05/2020 08:11:22 | 12/13/2020 16:38:58|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:37bf2d48e78634fb4a62cbe7e13618d9becc97796da8b11d4073213a6692e7a1 | 01/08/2021 02:46:01 | 03/31/2021 22:10:18|
 
 ### sitecore-xp0-custom-sxa-jss1500-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:60ff0cf5f7a048af22033539c274068e0c08b904a6e3a663d2f930c7c6148a00 | 11/05/2020 08:11:25 | 12/13/2020 16:39:02|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:37bf2d48e78634fb4a62cbe7e13618d9becc97796da8b11d4073213a6692e7a1 | 01/08/2021 02:46:05 | 03/31/2021 22:10:24|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:60ff0cf5f7a048af22033539c274068e0c08b904a6e3a663d2f930c7c6148a00 | 11/05/2020 08:11:22 | 12/13/2020 16:38:58|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:37bf2d48e78634fb4a62cbe7e13618d9becc97796da8b11d4073213a6692e7a1 | 01/08/2021 02:46:01 | 03/31/2021 22:10:18|
 
 ### sitecore-xp0-custom-sxa-jss1500-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 11/05/2020 08:16:58 | 12/13/2020 16:44:24|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9744fd688836db84ac47ea0e34537d890b75a9ef511419d0dd8392b94e10bdba | 01/08/2021 02:47:07 | 03/31/2021 22:12:10|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 11/05/2020 08:16:34 | 12/13/2020 16:44:21|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9744fd688836db84ac47ea0e34537d890b75a9ef511419d0dd8392b94e10bdba | 01/08/2021 02:46:56 | 03/31/2021 22:11:59|
 
 ### sitecore-xp0-custom-sxa-jss-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c3a065d6884239c0e4ac4673299ee7e8617f78b17a068d836ecb1bc81c401d7c | 10/23/2020 14:18:29 | 12/13/2020 16:23:36|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:973155328616ea801a5954ece481fdf0e2752fa5fe4fdf0e10ba3e71a6c6b484 | 01/08/2021 02:41:09 | 03/31/2021 22:01:49|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c3a065d6884239c0e4ac4673299ee7e8617f78b17a068d836ecb1bc81c401d7c | 10/23/2020 14:17:59 | 12/13/2020 16:23:32|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:973155328616ea801a5954ece481fdf0e2752fa5fe4fdf0e10ba3e71a6c6b484 | 01/08/2021 02:41:03 | 03/31/2021 22:01:42|
 
 ### sitecore-xp0-custom-sxa-jss-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 10/23/2020 14:20:36 | 12/13/2020 16:29:39|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70242870fa9bc719a4eb53f3c89949431d2a994b27d1e07504de79426e557454 | 01/08/2021 02:58:47 | 03/31/2021 22:04:18|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 10/23/2020 14:20:33 | 12/13/2020 16:29:36|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70242870fa9bc719a4eb53f3c89949431d2a994b27d1e07504de79426e557454 | 01/08/2021 02:41:43 | 03/31/2021 22:03:05|
 
 ### sitecore-xp0-custom-sxa-jss-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:60ff0cf5f7a048af22033539c274068e0c08b904a6e3a663d2f930c7c6148a00 | 10/23/2020 14:18:39 | 12/13/2020 16:38:17|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b434d4f209505a2c2d63ace6f149675696ecc91139d09a205398bbde5b8ed101 | 01/08/2021 02:42:11 | 03/31/2021 22:03:46|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:60ff0cf5f7a048af22033539c274068e0c08b904a6e3a663d2f930c7c6148a00 | 10/23/2020 14:18:35 | 12/13/2020 16:38:12|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b434d4f209505a2c2d63ace6f149675696ecc91139d09a205398bbde5b8ed101 | 01/08/2021 02:42:06 | 03/31/2021 22:03:40|
 
 ### sitecore-xp0-custom-sxa-jss-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 10/23/2020 14:21:06 | 12/13/2020 16:43:47|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:cabdee31321edf4dddff9d50682a7cef62c8e14407c91972ecbd3e693ae0dd8e | 01/08/2021 02:58:45 | 03/31/2021 22:05:08|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 10/23/2020 14:21:02 | 12/13/2020 16:43:45|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:cabdee31321edf4dddff9d50682a7cef62c8e14407c91972ecbd3e693ae0dd8e | 01/08/2021 02:42:42 | 03/31/2021 22:04:56|
 
 ### sitecore-xp0-custom-sxa-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d7c3d15c1438aaa45fbdcbec6b14f87e1577244cc0209eef428bd235053a8679 | 10/23/2020 14:19:36 | 12/13/2020 16:19:55|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5f84af5aa4f2b5da181529e6060911ab509e49388c7f76085756ca78d219a9f | 01/08/2021 02:47:19 | 03/31/2021 22:12:24|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c1081b6f2c9b995b1345d10e32f3c5ae8efc5564f5be5349a29afcf29b25f251 | 06/14/2021 16:34:41 | 06/14/2021 16:34:41|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d7c3d15c1438aaa45fbdcbec6b14f87e1577244cc0209eef428bd235053a8679 | 10/23/2020 14:19:33 | 12/13/2020 16:19:52|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5f84af5aa4f2b5da181529e6060911ab509e49388c7f76085756ca78d219a9f | 01/08/2021 02:47:15 | 03/31/2021 22:12:20|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c1081b6f2c9b995b1345d10e32f3c5ae8efc5564f5be5349a29afcf29b25f251 | 06/14/2021 16:34:38 | 06/14/2021 16:34:38|
 
 ### sitecore-xp0-custom-sxa-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d831a4b77a8c81859d16a853499bd543be2f00407bd9574fb23e41badd76ea58 | 10/23/2020 14:20:06 | 12/13/2020 16:30:34|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:224349377abbeb9c87e2c49fbdb5bcd3ce65d30a02797ff3717d20d6e2a6686c | 01/08/2021 02:49:03 | 03/31/2021 22:13:48|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d831a4b77a8c81859d16a853499bd543be2f00407bd9574fb23e41badd76ea58 | 10/23/2020 14:20:03 | 12/13/2020 16:30:31|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:224349377abbeb9c87e2c49fbdb5bcd3ce65d30a02797ff3717d20d6e2a6686c | 01/08/2021 02:47:52 | 03/31/2021 22:13:37|
 
 ### sitecore-xp0-custom-sxa-solr
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4b29f326acb7dfc7ff693fa935221a57594f67aa15764f233cf44be078064549 | 10/23/2020 14:21:35 | 12/13/2020 16:04:12|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0fedbaf248f60b78ff2ea15882941da682bd0175167c489cd49807a601ac0e7e | 01/08/2021 02:48:15 | 03/31/2021 22:14:12|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4b29f326acb7dfc7ff693fa935221a57594f67aa15764f233cf44be078064549 | 10/23/2020 14:21:32 | 12/13/2020 16:03:48|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0fedbaf248f60b78ff2ea15882941da682bd0175167c489cd49807a601ac0e7e | 01/08/2021 02:48:11 | 03/31/2021 22:14:08|
 
 ### sitecore-xp0-custom-sxa-sps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:de2c85ca5f3074371acb5695d531b4ea508e8ccc98f606e195192754d149e831 | 06/14/2021 16:44:01 | 06/14/2021 16:44:01|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:de2c85ca5f3074371acb5695d531b4ea508e8ccc98f606e195192754d149e831 | 06/14/2021 16:43:59 | 06/14/2021 16:43:59|
 
 ### sitecore-xp1-custom-spe-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:41d9705c984f61a755f5565c696e121999d981d491fbaf75ac99796ab0b41d1f | 10/23/2020 14:03:39 | 12/13/2020 16:15:01|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:303e8cf4cee2c8b8578ff8058c5cd34959cd79a2abe9fea2c3740509485aab11 | 01/08/2021 02:48:56 | 03/31/2021 22:16:38|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:53e94a97cfb006542f677ec53b8c0fa4c71cc733b173f0534362869383b94c88 | 06/14/2021 16:32:39 | 06/14/2021 16:32:39|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:41d9705c984f61a755f5565c696e121999d981d491fbaf75ac99796ab0b41d1f | 10/23/2020 14:03:33 | 12/13/2020 16:14:55|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:303e8cf4cee2c8b8578ff8058c5cd34959cd79a2abe9fea2c3740509485aab11 | 01/08/2021 02:48:50 | 03/31/2021 22:16:33|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:53e94a97cfb006542f677ec53b8c0fa4c71cc733b173f0534362869383b94c88 | 06/14/2021 16:32:34 | 06/14/2021 16:32:34|
 
 ### sitecore-xp1-custom-spe-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c5c9696f47fea4a61595262dd63a66b397318bc3922066fce1ce8e6e558b3991 | 10/23/2020 14:00:03 | 12/13/2020 16:07:50|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ea171502ff7800a3f2da9890a1fef3a94c39311f9876ea7ba2d9c81b15602808 | 01/08/2021 02:49:34 | 03/31/2021 22:18:15|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5498d45e30ecacb93175cfabdc96a14a02ead4d7090683e617af3892f45827b5 | 06/14/2021 16:29:57 | 06/14/2021 16:29:57|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c5c9696f47fea4a61595262dd63a66b397318bc3922066fce1ce8e6e558b3991 | 10/23/2020 13:59:58 | 12/13/2020 16:07:43|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ea171502ff7800a3f2da9890a1fef3a94c39311f9876ea7ba2d9c81b15602808 | 01/08/2021 02:49:30 | 03/31/2021 22:18:11|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5498d45e30ecacb93175cfabdc96a14a02ead4d7090683e617af3892f45827b5 | 06/14/2021 16:29:52 | 06/14/2021 16:29:52|
 
 ### sitecore-xp1-custom-spe-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5b5b4343aa70a6c6094a06dd41d54d029faf8d77ad3bd4770ac27fd9517b5135 | 10/23/2020 14:07:45 | 12/13/2020 16:03:30|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7eef0d455d015f22ce21fcd261097e307d5701be3e648e893462a1ef9fbc5492 | 01/08/2021 02:49:50 | 03/31/2021 22:18:30|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d294bd71c3fafe9a0f17adb6658987eca58c5fe0ee8d2fbd5342bcfa8b8091b8 | 06/14/2021 16:28:05 | 06/14/2021 16:28:05|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5b5b4343aa70a6c6094a06dd41d54d029faf8d77ad3bd4770ac27fd9517b5135 | 10/23/2020 14:06:42 | 12/13/2020 16:02:21|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7eef0d455d015f22ce21fcd261097e307d5701be3e648e893462a1ef9fbc5492 | 01/08/2021 02:49:47 | 03/31/2021 22:18:27|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d294bd71c3fafe9a0f17adb6658987eca58c5fe0ee8d2fbd5342bcfa8b8091b8 | 06/14/2021 16:27:59 | 06/14/2021 16:27:59|
 
 ### sitecore-xp1-custom-spe-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:83c1dfe641936d9ae1bf7f49f3871cc6c792e4737218a40e6483e54bf0aa6ec1 | 10/23/2020 14:11:35 | 12/13/2020 16:11:26|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:48fe5bf97cde588ed175e6fd7ed3814d56d24e0b73356f90f670f1fbd6376b7e | 01/08/2021 02:50:09 | 03/31/2021 22:18:56|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6a192d1ceb7af97e773750f7cdf7ee9df9cb9ed50da7641397ca5f7b1d3415dc | 06/14/2021 16:31:17 | 06/14/2021 16:31:17|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:83c1dfe641936d9ae1bf7f49f3871cc6c792e4737218a40e6483e54bf0aa6ec1 | 10/23/2020 14:11:31 | 12/13/2020 16:11:23|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:48fe5bf97cde588ed175e6fd7ed3814d56d24e0b73356f90f670f1fbd6376b7e | 01/08/2021 02:50:05 | 03/31/2021 22:18:52|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6a192d1ceb7af97e773750f7cdf7ee9df9cb9ed50da7641397ca5f7b1d3415dc | 06/14/2021 16:31:13 | 06/14/2021 16:31:13|
 
 ### sitecore-xp1-custom-spe-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:04f4ac6ddc40a16db5891012d43100cdad59aecc6ffd98fa996489542d0342eb | 10/23/2020 14:12:05 | 12/13/2020 16:22:19|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:04f4ac6ddc40a16db5891012d43100cdad59aecc6ffd98fa996489542d0342eb | 10/23/2020 14:12:00 | 12/13/2020 16:22:15|
 
 ### sitecore-xp1-custom-spe-sps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5bcfd9051e01418393ea61dad76854c354f45b60444d062f0313fa3c4b5820b | 06/14/2021 16:37:17 | 06/14/2021 16:37:17|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5bcfd9051e01418393ea61dad76854c354f45b60444d062f0313fa3c4b5820b | 06/14/2021 16:37:13 | 06/14/2021 16:37:13|
 
 ### sitecore-xp1-custom-sxa-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6fd69538592402242052a4d0a794d46c72c4569f30040d6151e30793a729b58f | 10/23/2020 14:04:47 | 12/13/2020 16:23:15|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2432c509535041eb4df962211827122881c6e9917a9d55f1b4eb6bc4a8cd8ed4 | 01/08/2021 02:50:33 | 03/31/2021 22:19:24|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e352f2e8997eaa1ed7f3ea6e2f7547222eb6900cbc12bb1f8c32b1ca33faaef0 | 06/14/2021 16:38:22 | 06/14/2021 16:38:22|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:6fd69538592402242052a4d0a794d46c72c4569f30040d6151e30793a729b58f | 10/23/2020 14:04:41 | 12/13/2020 16:23:08|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2432c509535041eb4df962211827122881c6e9917a9d55f1b4eb6bc4a8cd8ed4 | 01/08/2021 02:50:27 | 03/31/2021 22:19:20|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e352f2e8997eaa1ed7f3ea6e2f7547222eb6900cbc12bb1f8c32b1ca33faaef0 | 06/14/2021 16:38:16 | 06/14/2021 16:38:16|
 
 ### sitecore-xp1-custom-sxa-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:77f61be5adecb427f60cd6a4ceb41091a14046be8c4a88bc0c287ad485c0b13f | 10/23/2020 14:00:44 | 12/13/2020 16:20:33|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a32b83c2b7925065273c73a7b9bdfe1a47d8ef6aff5c4c6c0f45c54d4022cb50 | 01/08/2021 02:50:53 | 03/31/2021 22:19:55|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b9e339d607583ec039c9ddc1d199f5c3573e41b383439f0bf5fd76b782232dce | 06/14/2021 16:35:07 | 06/14/2021 16:35:07|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:77f61be5adecb427f60cd6a4ceb41091a14046be8c4a88bc0c287ad485c0b13f | 10/23/2020 14:00:39 | 12/13/2020 16:20:27|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a32b83c2b7925065273c73a7b9bdfe1a47d8ef6aff5c4c6c0f45c54d4022cb50 | 01/08/2021 02:50:48 | 03/31/2021 22:19:49|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b9e339d607583ec039c9ddc1d199f5c3573e41b383439f0bf5fd76b782232dce | 06/14/2021 16:35:02 | 06/14/2021 16:35:02|
 
 ### sitecore-xp1-custom-sxa-headless1600-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c004fa1c7f38cbc1bfc56177133e92391991afd601bd4050766eaf516038d043 | 06/14/2021 16:51:47 | 06/14/2021 16:51:47|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c004fa1c7f38cbc1bfc56177133e92391991afd601bd4050766eaf516038d043 | 06/14/2021 16:51:44 | 06/14/2021 16:51:44|
 
 ### sitecore-xp1-custom-sxa-headless1600-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:171f472df4f5dbf8aaf66b655ef550cc13508939e8875d62967e51251195c949 | 06/14/2021 16:45:13 | 06/14/2021 16:45:13|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:171f472df4f5dbf8aaf66b655ef550cc13508939e8875d62967e51251195c949 | 06/14/2021 16:45:10 | 06/14/2021 16:45:10|
 
 ### sitecore-xp1-custom-sxa-headless1600-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b76e491c9a186f390f950031758715277c99917b8ea0bb7f0d3dcaba9d6f4639 | 06/14/2021 16:41:18 | 06/14/2021 16:41:18|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b76e491c9a186f390f950031758715277c99917b8ea0bb7f0d3dcaba9d6f4639 | 06/14/2021 16:41:15 | 06/14/2021 16:41:15|
 
 ### sitecore-xp1-custom-sxa-headless1600-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:657ccd77ce01dc52876720e0ab65af26ebe9b2d1a42bbfcada5d37a2ce5eb90f | 06/14/2021 16:49:26 | 06/14/2021 16:49:26|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:657ccd77ce01dc52876720e0ab65af26ebe9b2d1a42bbfcada5d37a2ce5eb90f | 06/14/2021 16:49:24 | 06/14/2021 16:49:24|
 
 ### sitecore-xp1-custom-sxa-headless1600-sps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4a210f28fa75c1dacec6c5125dab8ecefd2d7a699b65e0c1c4e351de52c5571c | 06/14/2021 17:02:36 | 06/14/2021 17:02:36|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4a210f28fa75c1dacec6c5125dab8ecefd2d7a699b65e0c1c4e351de52c5571c | 06/14/2021 17:02:33 | 06/14/2021 17:02:33|
 
 ### sitecore-xp1-custom-sxa-headless1600-sps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fe80060021632a9a06e557f6e15a51d470b0d2fc239a2fd3c511d7e83f1a739c | 06/14/2021 16:58:12 | 06/14/2021 16:58:12|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fe80060021632a9a06e557f6e15a51d470b0d2fc239a2fd3c511d7e83f1a739c | 06/14/2021 16:58:08 | 06/14/2021 16:58:08|
 
 ### sitecore-xp1-custom-sxa-headless1600-sps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d05022a67e6c3053f4e9edeefad4ae321e3ec1270d487913f42e43a883163462 | 06/14/2021 16:54:42 | 06/14/2021 16:54:42|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d05022a67e6c3053f4e9edeefad4ae321e3ec1270d487913f42e43a883163462 | 06/14/2021 16:54:39 | 06/14/2021 16:54:39|
 
 ### sitecore-xp1-custom-sxa-headless1600-sps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:80141a8f756e38f4538a454f0f064e5a56fa277f89e3a5f16a13f757d27fa564 | 06/14/2021 17:01:25 | 06/14/2021 17:01:25|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:80141a8f756e38f4538a454f0f064e5a56fa277f89e3a5f16a13f757d27fa564 | 06/14/2021 17:01:21 | 06/14/2021 17:01:21|
 
 ### sitecore-xp1-custom-sxa-headless-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c004fa1c7f38cbc1bfc56177133e92391991afd601bd4050766eaf516038d043 | 06/14/2021 16:51:14 | 06/14/2021 16:51:14|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c004fa1c7f38cbc1bfc56177133e92391991afd601bd4050766eaf516038d043 | 06/14/2021 16:51:08 | 06/14/2021 16:51:08|
 
 ### sitecore-xp1-custom-sxa-headless-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:171f472df4f5dbf8aaf66b655ef550cc13508939e8875d62967e51251195c949 | 06/14/2021 16:44:40 | 06/14/2021 16:44:40|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:171f472df4f5dbf8aaf66b655ef550cc13508939e8875d62967e51251195c949 | 06/14/2021 16:44:35 | 06/14/2021 16:44:35|
 
 ### sitecore-xp1-custom-sxa-headless-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b76e491c9a186f390f950031758715277c99917b8ea0bb7f0d3dcaba9d6f4639 | 06/14/2021 16:40:49 | 06/14/2021 16:40:49|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b76e491c9a186f390f950031758715277c99917b8ea0bb7f0d3dcaba9d6f4639 | 06/14/2021 16:40:43 | 06/14/2021 16:40:43|
 
 ### sitecore-xp1-custom-sxa-headless-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:657ccd77ce01dc52876720e0ab65af26ebe9b2d1a42bbfcada5d37a2ce5eb90f | 06/14/2021 16:48:58 | 06/14/2021 16:48:58|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:657ccd77ce01dc52876720e0ab65af26ebe9b2d1a42bbfcada5d37a2ce5eb90f | 06/14/2021 16:48:55 | 06/14/2021 16:48:55|
 
 ### sitecore-xp1-custom-sxa-headless-sps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4a210f28fa75c1dacec6c5125dab8ecefd2d7a699b65e0c1c4e351de52c5571c | 06/14/2021 17:02:02 | 06/14/2021 17:02:02|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4a210f28fa75c1dacec6c5125dab8ecefd2d7a699b65e0c1c4e351de52c5571c | 06/14/2021 17:01:57 | 06/14/2021 17:01:57|
 
 ### sitecore-xp1-custom-sxa-headless-sps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fe80060021632a9a06e557f6e15a51d470b0d2fc239a2fd3c511d7e83f1a739c | 06/14/2021 16:57:38 | 06/14/2021 16:57:38|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fe80060021632a9a06e557f6e15a51d470b0d2fc239a2fd3c511d7e83f1a739c | 06/14/2021 16:57:33 | 06/14/2021 16:57:33|
 
 ### sitecore-xp1-custom-sxa-headless-sps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d05022a67e6c3053f4e9edeefad4ae321e3ec1270d487913f42e43a883163462 | 06/14/2021 16:54:16 | 06/14/2021 16:54:16|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d05022a67e6c3053f4e9edeefad4ae321e3ec1270d487913f42e43a883163462 | 06/14/2021 16:54:09 | 06/14/2021 16:54:09|
 
 ### sitecore-xp1-custom-sxa-headless-sps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:80141a8f756e38f4538a454f0f064e5a56fa277f89e3a5f16a13f757d27fa564 | 06/14/2021 17:01:51 | 06/14/2021 17:01:51|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:80141a8f756e38f4538a454f0f064e5a56fa277f89e3a5f16a13f757d27fa564 | 06/14/2021 17:00:49 | 06/14/2021 17:00:49|
 
 ### sitecore-xp1-custom-sxa-jss1400-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d8597ddc9a1d5c9083e978db0c2bcfdc40027f4813dfb7b30b908ad27adade23 | 11/05/2020 08:09:04 | 12/13/2020 16:37:09|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4bd5af320bf2a869f2bf394dcf52dabb0b3f5f4bb6f727ff7f89983c2bb9ac77 | 01/08/2021 02:54:05 | 03/31/2021 22:23:34|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d8597ddc9a1d5c9083e978db0c2bcfdc40027f4813dfb7b30b908ad27adade23 | 11/05/2020 08:08:58 | 12/13/2020 16:37:04|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4bd5af320bf2a869f2bf394dcf52dabb0b3f5f4bb6f727ff7f89983c2bb9ac77 | 01/08/2021 02:54:00 | 03/31/2021 22:23:27|
 
 ### sitecore-xp1-custom-sxa-jss1400-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:44ca9e41a4726df992bacf2533606d861a262c670940585705b3718d91f18692 | 11/05/2020 08:01:17 | 12/13/2020 16:31:23|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a0bc773b9bc38c4c2e18f82f9a3231a8636771cf4a001dcc145553603d763dcf | 01/08/2021 02:54:25 | 03/31/2021 22:24:13|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:44ca9e41a4726df992bacf2533606d861a262c670940585705b3718d91f18692 | 11/05/2020 08:01:13 | 12/13/2020 16:31:19|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:a0bc773b9bc38c4c2e18f82f9a3231a8636771cf4a001dcc145553603d763dcf | 01/08/2021 02:54:21 | 03/31/2021 22:23:53|
 
 ### sitecore-xp1-custom-sxa-jss1400-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2e62776679bbf542a820a63b8916e149dc19a23e63dfb958c20ed7b07cb7dd2c | 11/05/2020 07:56:31 | 12/13/2020 16:28:14|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5595699a65ee57a063b8673fed25836923a60338e40e0470f2ea225cac78ac66 | 01/08/2021 02:54:42 | 03/31/2021 22:24:16|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2e62776679bbf542a820a63b8916e149dc19a23e63dfb958c20ed7b07cb7dd2c | 11/05/2020 07:56:21 | 12/13/2020 16:26:59|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5595699a65ee57a063b8673fed25836923a60338e40e0470f2ea225cac78ac66 | 01/08/2021 02:54:39 | 03/31/2021 22:24:14|
 
 ### sitecore-xp1-custom-sxa-jss1400-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:bdfa96518409c7da521d4bb8c9ef892b284fb84f578150497068cae2e10c3b04 | 11/05/2020 08:05:54 | 12/13/2020 16:35:00|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:947f414b992b43d37d43ac8e39f27f3b8b90092c3c4f99307d8fa0768c3ab617 | 01/08/2021 02:54:58 | 03/31/2021 22:24:34|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:bdfa96518409c7da521d4bb8c9ef892b284fb84f578150497068cae2e10c3b04 | 11/05/2020 08:05:52 | 12/13/2020 16:34:57|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:947f414b992b43d37d43ac8e39f27f3b8b90092c3c4f99307d8fa0768c3ab617 | 01/08/2021 02:54:54 | 03/31/2021 22:24:30|
 
 ### sitecore-xp1-custom-sxa-jss1400-ps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0c22e1d9eddfba0fea0fd6e4949c918fba99e2b972923ba7b8e66f2f0db3575f | 11/05/2020 08:23:48 | 12/13/2020 16:49:36|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c729f1fefa687c9cee26668b24ae6f6f25c2f2c77367ea77806686cd1cabd717 | 01/08/2021 02:55:20 | 03/31/2021 22:25:05|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0c22e1d9eddfba0fea0fd6e4949c918fba99e2b972923ba7b8e66f2f0db3575f | 11/05/2020 08:23:43 | 12/13/2020 16:49:32|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c729f1fefa687c9cee26668b24ae6f6f25c2f2c77367ea77806686cd1cabd717 | 01/08/2021 02:55:16 | 03/31/2021 22:25:00|
 
 ### sitecore-xp1-custom-sxa-jss1400-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:06fa8e8162efe820ef953946175168992fc4def48d0642db5fdf40c34c2edb0a | 11/05/2020 08:17:36 | 12/13/2020 16:45:17|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d6ff026f5a539a1d327cf5c34cdfe00995157aa711dd99d5ea1161ee5039bb6c | 01/08/2021 02:55:52 | 03/31/2021 22:25:37|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:06fa8e8162efe820ef953946175168992fc4def48d0642db5fdf40c34c2edb0a | 11/05/2020 08:17:31 | 12/13/2020 16:45:13|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d6ff026f5a539a1d327cf5c34cdfe00995157aa711dd99d5ea1161ee5039bb6c | 01/08/2021 02:55:38 | 03/31/2021 22:25:32|
 
 ### sitecore-xp1-custom-sxa-jss1400-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:eedf7154799bfa43ea20eab076d22a756d1e2c9c442664648c8f7a6ff21f1e1c | 11/05/2020 08:12:57 | 12/13/2020 16:40:59|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:005655cea25fe39d15019cde758d6fd76f565cf45c0a54127a5b9af2cb1aa425 | 01/08/2021 02:55:59 | 03/31/2021 22:25:52|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:eedf7154799bfa43ea20eab076d22a756d1e2c9c442664648c8f7a6ff21f1e1c | 11/05/2020 08:12:45 | 12/13/2020 16:40:48|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:005655cea25fe39d15019cde758d6fd76f565cf45c0a54127a5b9af2cb1aa425 | 01/08/2021 02:55:57 | 03/31/2021 22:25:49|
 
 ### sitecore-xp1-custom-sxa-jss1400-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:25f00415afcbce22729536f6c1a2c099cc67092882b3c40b40dab4c46af494c3 | 11/05/2020 08:22:23 | 12/13/2020 16:48:34|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70cc57c589712ac6c743c5dd117fb50080974777639b0f5a904e3512d00e7071 | 01/08/2021 02:56:20 | 03/31/2021 22:26:20|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:25f00415afcbce22729536f6c1a2c099cc67092882b3c40b40dab4c46af494c3 | 11/05/2020 08:22:19 | 12/13/2020 16:48:29|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70cc57c589712ac6c743c5dd117fb50080974777639b0f5a904e3512d00e7071 | 01/08/2021 02:56:16 | 03/31/2021 22:26:16|
 
 ### sitecore-xp1-custom-sxa-jss1500-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:292e09b228a08a31002b1e1d5507997af5e612ade10ede00a375504bb00abddf | 11/05/2020 08:09:39 | 12/13/2020 16:37:27|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:728cefe992b3c5aabfe9967c82a40882f0e496481ac66748113c6c2156e9527b | 01/08/2021 02:56:43 | 03/31/2021 22:26:58|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:292e09b228a08a31002b1e1d5507997af5e612ade10ede00a375504bb00abddf | 11/05/2020 08:09:35 | 12/13/2020 16:37:23|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:728cefe992b3c5aabfe9967c82a40882f0e496481ac66748113c6c2156e9527b | 01/08/2021 02:56:39 | 03/31/2021 22:26:53|
 
 ### sitecore-xp1-custom-sxa-jss1500-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:efae4620e86a5a98e4b6c517e3814eafa6bbbec160cbfcb96e436eef23b2407b | 11/05/2020 08:01:52 | 12/13/2020 16:31:42|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d08678b12ddb272a0c0c7b326d5c2105bd508d458ea55111e6a1c44049e35b85 | 01/08/2021 02:57:04 | 03/31/2021 22:27:38|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:efae4620e86a5a98e4b6c517e3814eafa6bbbec160cbfcb96e436eef23b2407b | 11/05/2020 08:01:48 | 12/13/2020 16:31:39|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d08678b12ddb272a0c0c7b326d5c2105bd508d458ea55111e6a1c44049e35b85 | 01/08/2021 02:56:59 | 03/31/2021 22:27:32|
 
 ### sitecore-xp1-custom-sxa-jss1500-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 11/05/2020 07:56:58 | 12/13/2020 16:27:19|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dfbc669b0f801711e634213962670ed085bd7d959c8e43263ae6a80a93ea505d | 01/08/2021 02:57:19 | 03/31/2021 22:27:53|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 11/05/2020 07:56:55 | 12/13/2020 16:27:17|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dfbc669b0f801711e634213962670ed085bd7d959c8e43263ae6a80a93ea505d | 01/08/2021 02:57:17 | 03/31/2021 22:27:50|
 
 ### sitecore-xp1-custom-sxa-jss1500-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5a36f6f1b60f4e23cf5753576db8faf55ff741b98cf286b4a702d98c547a43c | 11/05/2020 08:06:22 | 12/13/2020 16:35:15|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:982ba2c62abd49e7b89ac27722955fc41e1a7829fe50a1e5813018053b0ffa53 | 01/08/2021 02:57:35 | 03/31/2021 22:28:10|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5a36f6f1b60f4e23cf5753576db8faf55ff741b98cf286b4a702d98c547a43c | 11/05/2020 08:06:20 | 12/13/2020 16:35:12|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:982ba2c62abd49e7b89ac27722955fc41e1a7829fe50a1e5813018053b0ffa53 | 01/08/2021 02:57:33 | 03/31/2021 22:28:06|
 
 ### sitecore-xp1-custom-sxa-jss1500-ps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:37657e927124f40a0c45eedf8fa0cb85358812ce0c957f47fd528d5ec87bc7fe | 11/05/2020 08:24:22 | 12/13/2020 16:49:56|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:05e24a3408be83a05b5def1b2dd42c02e910318b56c7f72d44685b0aa59c6f49 | 01/08/2021 02:57:59 | 03/31/2021 22:28:40|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:37657e927124f40a0c45eedf8fa0cb85358812ce0c957f47fd528d5ec87bc7fe | 11/05/2020 08:24:19 | 12/13/2020 16:49:53|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:05e24a3408be83a05b5def1b2dd42c02e910318b56c7f72d44685b0aa59c6f49 | 01/08/2021 02:57:55 | 03/31/2021 22:28:36|
 
 ### sitecore-xp1-custom-sxa-jss1500-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ef8ec4fb571c654a260ad3a38dcbf0a5d8290ce1976d0aaa5442edd222f987b6 | 11/05/2020 08:18:14 | 12/13/2020 16:45:39|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fddbe4e5f0c34ada54bf515c51499f6269fd9aac0152fd9639e576e66fbaff11 | 01/08/2021 02:58:21 | 03/31/2021 22:29:04|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ef8ec4fb571c654a260ad3a38dcbf0a5d8290ce1976d0aaa5442edd222f987b6 | 11/05/2020 08:18:11 | 12/13/2020 16:45:35|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fddbe4e5f0c34ada54bf515c51499f6269fd9aac0152fd9639e576e66fbaff11 | 01/08/2021 02:58:16 | 03/31/2021 22:28:58|
 
 ### sitecore-xp1-custom-sxa-jss1500-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 11/05/2020 08:13:23 | 12/13/2020 16:41:11|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9744fd688836db84ac47ea0e34537d890b75a9ef511419d0dd8392b94e10bdba | 01/08/2021 02:58:39 | 03/31/2021 22:29:18|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 11/05/2020 08:13:20 | 12/13/2020 16:41:08|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:9744fd688836db84ac47ea0e34537d890b75a9ef511419d0dd8392b94e10bdba | 01/08/2021 02:58:36 | 03/31/2021 22:29:15|
 
 ### sitecore-xp1-custom-sxa-jss1500-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fa160bdb95cdb549ba2f26f4f75304180ce0838a662262b7933fe0d6377f2cbf | 11/05/2020 08:22:52 | 12/13/2020 16:48:49|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7a9b83cf1ee9563cdaefdd4106dc02b18353ee73f86129bbeead68de3950cb6c | 01/08/2021 02:58:58 | 03/31/2021 22:29:36|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fa160bdb95cdb549ba2f26f4f75304180ce0838a662262b7933fe0d6377f2cbf | 11/05/2020 08:22:50 | 12/13/2020 16:48:46|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:7a9b83cf1ee9563cdaefdd4106dc02b18353ee73f86129bbeead68de3950cb6c | 01/08/2021 02:58:55 | 03/31/2021 22:29:32|
 
 ### sitecore-xp1-custom-sxa-jss1501-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dcc487b674e1fe3511c3d698bd661243f7423997ab65edb104c27d5db287589e | 01/08/2021 02:59:30 | 03/31/2021 22:30:12|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dcc487b674e1fe3511c3d698bd661243f7423997ab65edb104c27d5db287589e | 01/08/2021 02:59:28 | 03/31/2021 22:30:09|
 
 ### sitecore-xp1-custom-sxa-jss1501-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5dc48a971cb0c03a4ed14b5bad9c9ab1cb6935f3cb01c8fdd126d7c7077be6d1 | 01/08/2021 03:00:09 | 03/31/2021 22:30:33|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5dc48a971cb0c03a4ed14b5bad9c9ab1cb6935f3cb01c8fdd126d7c7077be6d1 | 01/08/2021 03:00:05 | 03/31/2021 22:30:29|
 
 ### sitecore-xp1-custom-sxa-jss1501-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70242870fa9bc719a4eb53f3c89949431d2a994b27d1e07504de79426e557454 | 01/08/2021 03:00:41 | 03/31/2021 22:30:49|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70242870fa9bc719a4eb53f3c89949431d2a994b27d1e07504de79426e557454 | 01/08/2021 03:00:39 | 03/31/2021 22:30:45|
 
 ### sitecore-xp1-custom-sxa-jss1501-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e740875068374316233920344b852d250cfb157cb61a445fe584298169b85c33 | 01/08/2021 03:01:13 | 03/31/2021 22:31:02|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e740875068374316233920344b852d250cfb157cb61a445fe584298169b85c33 | 01/08/2021 03:01:10 | 03/31/2021 22:30:59|
 
 ### sitecore-xp1-custom-sxa-jss1501-ps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d16c8838a8415f8e6425e6825cbc934714119fd7fcb266416d6e15d453156d18 | 01/08/2021 03:01:56 | 03/31/2021 22:31:26|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d16c8838a8415f8e6425e6825cbc934714119fd7fcb266416d6e15d453156d18 | 01/08/2021 03:01:53 | 03/31/2021 22:31:22|
 
 ### sitecore-xp1-custom-sxa-jss1501-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2be76ef41cd44890a31a61a86caf629ec64c906e3a1492d7a5d7b206ed3ecdc6 | 01/08/2021 03:02:34 | 03/31/2021 22:31:48|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2be76ef41cd44890a31a61a86caf629ec64c906e3a1492d7a5d7b206ed3ecdc6 | 01/08/2021 03:02:31 | 03/31/2021 22:31:43|
 
 ### sitecore-xp1-custom-sxa-jss1501-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:cabdee31321edf4dddff9d50682a7cef62c8e14407c91972ecbd3e693ae0dd8e | 01/08/2021 03:03:07 | 03/31/2021 22:32:04|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:cabdee31321edf4dddff9d50682a7cef62c8e14407c91972ecbd3e693ae0dd8e | 01/08/2021 03:03:04 | 03/31/2021 22:32:01|
 
 ### sitecore-xp1-custom-sxa-jss1501-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b048f02685e98a9fca4ad3865c0cf85acf89277cab04a1bb32240817363ceff5 | 01/08/2021 03:03:37 | 03/31/2021 22:32:25|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b048f02685e98a9fca4ad3865c0cf85acf89277cab04a1bb32240817363ceff5 | 01/08/2021 03:03:35 | 03/31/2021 22:32:21|
 
 ### sitecore-xp1-custom-sxa-jss-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:292e09b228a08a31002b1e1d5507997af5e612ade10ede00a375504bb00abddf | 10/23/2020 14:05:18 | 12/13/2020 16:36:46|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dcc487b674e1fe3511c3d698bd661243f7423997ab65edb104c27d5db287589e | 01/08/2021 02:51:15 | 03/31/2021 22:20:23|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:292e09b228a08a31002b1e1d5507997af5e612ade10ede00a375504bb00abddf | 10/23/2020 14:05:13 | 12/13/2020 16:36:42|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dcc487b674e1fe3511c3d698bd661243f7423997ab65edb104c27d5db287589e | 01/08/2021 02:51:10 | 03/31/2021 22:20:17|
 
 ### sitecore-xp1-custom-sxa-jss-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:efae4620e86a5a98e4b6c517e3814eafa6bbbec160cbfcb96e436eef23b2407b | 10/23/2020 14:02:52 | 12/13/2020 16:31:01|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5dc48a971cb0c03a4ed14b5bad9c9ab1cb6935f3cb01c8fdd126d7c7077be6d1 | 01/08/2021 02:51:37 | 03/31/2021 22:21:03|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:efae4620e86a5a98e4b6c517e3814eafa6bbbec160cbfcb96e436eef23b2407b | 10/23/2020 14:02:25 | 12/13/2020 16:30:56|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:5dc48a971cb0c03a4ed14b5bad9c9ab1cb6935f3cb01c8fdd126d7c7077be6d1 | 01/08/2021 02:51:32 | 03/31/2021 22:20:56|
 
 ### sitecore-xp1-custom-sxa-jss-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 10/23/2020 14:11:44 | 12/13/2020 16:26:10|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70242870fa9bc719a4eb53f3c89949431d2a994b27d1e07504de79426e557454 | 01/08/2021 02:58:54 | 03/31/2021 22:21:23|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8b09f5778463466e02f54a61b4d310343da31bf4f498e4181a76f5e6b8bf560c | 10/23/2020 14:09:40 | 12/13/2020 16:26:07|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:70242870fa9bc719a4eb53f3c89949431d2a994b27d1e07504de79426e557454 | 01/08/2021 02:51:50 | 03/31/2021 22:21:20|
 
 ### sitecore-xp1-custom-sxa-jss-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5a36f6f1b60f4e23cf5753576db8faf55ff741b98cf286b4a702d98c547a43c | 10/23/2020 14:14:29 | 12/13/2020 16:34:41|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e740875068374316233920344b852d250cfb157cb61a445fe584298169b85c33 | 01/08/2021 02:52:13 | 03/31/2021 22:21:45|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5a36f6f1b60f4e23cf5753576db8faf55ff741b98cf286b4a702d98c547a43c | 10/23/2020 14:14:27 | 12/13/2020 16:34:38|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e740875068374316233920344b852d250cfb157cb61a445fe584298169b85c33 | 01/08/2021 02:52:07 | 03/31/2021 22:21:38|
 
 ### sitecore-xp1-custom-sxa-jss-ps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:37657e927124f40a0c45eedf8fa0cb85358812ce0c957f47fd528d5ec87bc7fe | 10/23/2020 14:05:52 | 12/13/2020 16:49:14|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d16c8838a8415f8e6425e6825cbc934714119fd7fcb266416d6e15d453156d18 | 01/08/2021 02:52:33 | 03/31/2021 22:22:09|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:37657e927124f40a0c45eedf8fa0cb85358812ce0c957f47fd528d5ec87bc7fe | 10/23/2020 14:05:48 | 12/13/2020 16:49:10|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d16c8838a8415f8e6425e6825cbc934714119fd7fcb266416d6e15d453156d18 | 01/08/2021 02:52:29 | 03/31/2021 22:22:04|
 
 ### sitecore-xp1-custom-sxa-jss-ps-cm
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ef8ec4fb571c654a260ad3a38dcbf0a5d8290ce1976d0aaa5442edd222f987b6 | 10/23/2020 14:03:05 | 12/13/2020 16:44:53|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2be76ef41cd44890a31a61a86caf629ec64c906e3a1492d7a5d7b206ed3ecdc6 | 01/08/2021 02:52:58 | 03/31/2021 22:22:31|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:ef8ec4fb571c654a260ad3a38dcbf0a5d8290ce1976d0aaa5442edd222f987b6 | 10/23/2020 14:03:00 | 12/13/2020 16:44:48|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:2be76ef41cd44890a31a61a86caf629ec64c906e3a1492d7a5d7b206ed3ecdc6 | 01/08/2021 02:52:53 | 03/31/2021 22:22:27|
 
 ### sitecore-xp1-custom-sxa-jss-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 10/23/2020 14:12:34 | 12/13/2020 16:39:56|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:cabdee31321edf4dddff9d50682a7cef62c8e14407c91972ecbd3e693ae0dd8e | 01/08/2021 02:58:15 | 03/31/2021 22:22:49|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d9bf668b14371a43afe923997d5ef7059c3857e11761f13cd59697c552eed745 | 10/23/2020 14:10:36 | 12/13/2020 16:39:52|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:cabdee31321edf4dddff9d50682a7cef62c8e14407c91972ecbd3e693ae0dd8e | 01/08/2021 02:53:11 | 03/31/2021 22:22:46|
 
 ### sitecore-xp1-custom-sxa-jss-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fa160bdb95cdb549ba2f26f4f75304180ce0838a662262b7933fe0d6377f2cbf | 10/23/2020 14:15:02 | 12/13/2020 16:48:12|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b048f02685e98a9fca4ad3865c0cf85acf89277cab04a1bb32240817363ceff5 | 01/08/2021 02:53:42 | 03/31/2021 22:23:07|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:fa160bdb95cdb549ba2f26f4f75304180ce0838a662262b7933fe0d6377f2cbf | 10/23/2020 14:14:58 | 12/13/2020 16:48:09|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:b048f02685e98a9fca4ad3865c0cf85acf89277cab04a1bb32240817363ceff5 | 01/08/2021 02:53:37 | 03/31/2021 22:23:02|
 
 ### sitecore-xp1-custom-sxa-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d7c3d15c1438aaa45fbdcbec6b14f87e1577244cc0209eef428bd235053a8679 | 10/23/2020 14:08:00 | 12/13/2020 16:18:25|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5f84af5aa4f2b5da181529e6060911ab509e49388c7f76085756ca78d219a9f | 01/08/2021 03:03:59 | 03/31/2021 22:32:48|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c1081b6f2c9b995b1345d10e32f3c5ae8efc5564f5be5349a29afcf29b25f251 | 06/14/2021 16:33:55 | 06/14/2021 16:33:55|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d7c3d15c1438aaa45fbdcbec6b14f87e1577244cc0209eef428bd235053a8679 | 10/23/2020 14:07:46 | 12/13/2020 16:18:21|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:e5f84af5aa4f2b5da181529e6060911ab509e49388c7f76085756ca78d219a9f | 01/08/2021 03:03:57 | 03/31/2021 22:32:44|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:c1081b6f2c9b995b1345d10e32f3c5ae8efc5564f5be5349a29afcf29b25f251 | 06/14/2021 16:33:49 | 06/14/2021 16:33:49|
 
 ### sitecore-xp1-custom-sxa-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:eeadbb900f006e11e087ab19262669d275e7e91416d7f87030e41f426d243457 | 10/23/2020 14:13:46 | 12/13/2020 16:22:03|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d00231bd1dab00346b7e9a898ae397400523ddf8e9e4ce0bdfe2a62408f9e0a8 | 01/08/2021 03:04:15 | 03/31/2021 22:33:05|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8eb9a04aee44bf912980e9f1a4cea6937a22c6f1751ae350447316a5311e49c0 | 06/14/2021 16:36:46 | 06/14/2021 16:36:46|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:eeadbb900f006e11e087ab19262669d275e7e91416d7f87030e41f426d243457 | 10/23/2020 14:13:22 | 12/13/2020 16:21:58|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d00231bd1dab00346b7e9a898ae397400523ddf8e9e4ce0bdfe2a62408f9e0a8 | 01/08/2021 03:04:13 | 03/31/2021 22:33:01|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:8eb9a04aee44bf912980e9f1a4cea6937a22c6f1751ae350447316a5311e49c0 | 06/14/2021 16:36:42 | 06/14/2021 16:36:42|
 
 ### sitecore-xp1-custom-sxa-ps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:843e88b2bb619ca139ef4e51c59d1184ccb1c523c4b78f894827140429724a33 | 10/27/2020 21:33:26 | 12/13/2020 16:37:53|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:26fb48351b4f3ce529aab45714c54bf106956ffa3014615e5248cb80842bc3bb | 01/08/2021 03:04:38 | 03/31/2021 22:33:30|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:843e88b2bb619ca139ef4e51c59d1184ccb1c523c4b78f894827140429724a33 | 10/27/2020 21:33:21 | 12/13/2020 16:37:48|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:26fb48351b4f3ce529aab45714c54bf106956ffa3014615e5248cb80842bc3bb | 01/08/2021 03:04:34 | 03/31/2021 22:33:26|
 
 ### sitecore-xp1-custom-sxa-ps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d831a4b77a8c81859d16a853499bd543be2f00407bd9574fb23e41badd76ea58 | 10/23/2020 14:08:57 | 12/13/2020 16:26:25|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:224349377abbeb9c87e2c49fbdb5bcd3ce65d30a02797ff3717d20d6e2a6686c | 01/08/2021 03:04:56 | 03/31/2021 22:33:46|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:d831a4b77a8c81859d16a853499bd543be2f00407bd9574fb23e41badd76ea58 | 10/23/2020 14:08:45 | 12/13/2020 16:25:14|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:224349377abbeb9c87e2c49fbdb5bcd3ce65d30a02797ff3717d20d6e2a6686c | 01/08/2021 03:04:53 | 03/31/2021 22:33:43|
 
 ### sitecore-xp1-custom-sxa-ps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:1b704941d64049c68a80f14529c624ccdaa3cb04d9665f2edc1b74368b336959 | 10/23/2020 14:13:55 | 12/13/2020 16:34:24|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dea0c986979eca7604020e7649bc4f6c1850805cd81d917824fa1425d84cb8a7 | 01/08/2021 03:05:13 | 03/31/2021 22:34:01|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:1b704941d64049c68a80f14529c624ccdaa3cb04d9665f2edc1b74368b336959 | 10/23/2020 14:13:52 | 12/13/2020 16:34:21|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:dea0c986979eca7604020e7649bc4f6c1850805cd81d917824fa1425d84cb8a7 | 01/08/2021 03:05:09 | 03/31/2021 22:33:58|
 
 ### sitecore-xp1-custom-sxa-solr
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4b29f326acb7dfc7ff693fa935221a57594f67aa15764f233cf44be078064549 | 10/23/2020 14:15:45 | 12/13/2020 16:15:17|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0fedbaf248f60b78ff2ea15882941da682bd0175167c489cd49807a601ac0e7e | 01/08/2021 03:05:30 | 03/31/2021 22:34:17|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:4b29f326acb7dfc7ff693fa935221a57594f67aa15764f233cf44be078064549 | 10/23/2020 14:15:34 | 12/13/2020 16:15:14|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:0fedbaf248f60b78ff2ea15882941da682bd0175167c489cd49807a601ac0e7e | 01/08/2021 03:05:26 | 03/31/2021 22:34:13|
 
 ### sitecore-xp1-custom-sxa-solr-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:3f428c9f339ea95a0dab13787324b933f2b876f8da92a24aa97df7a2743f2358 | 10/23/2020 14:16:17 | 12/13/2020 16:04:22|
-10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:488e66fa229efc74d6b1722ca6413b00d5927b478d12849c053f12bc0766f95b | 01/08/2021 03:05:51 | 03/31/2021 22:34:44|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:049e322321f86e85bb640b4e4eeb7c7c714ffb0f08d726c2042fe87eaf291da6 | 06/14/2021 16:28:29 | 06/14/2021 16:28:29|
+10.0.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:3f428c9f339ea95a0dab13787324b933f2b876f8da92a24aa97df7a2743f2358 | 10/23/2020 14:16:13 | 12/13/2020 16:04:18|
+10.0.1-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:488e66fa229efc74d6b1722ca6413b00d5927b478d12849c053f12bc0766f95b | 01/08/2021 03:05:44 | 03/31/2021 22:34:40|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:049e322321f86e85bb640b4e4eeb7c7c714ffb0f08d726c2042fe87eaf291da6 | 06/14/2021 16:28:20 | 06/14/2021 16:28:20|
 
 ### sitecore-xp1-custom-sxa-sps-cd
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:11998ce4c0de0a198dd77d4c1a7e30f5f8826c842fd870dcb7ceb0d8cca0938c | 06/14/2021 16:52:24 | 06/14/2021 16:52:24|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:11998ce4c0de0a198dd77d4c1a7e30f5f8826c842fd870dcb7ceb0d8cca0938c | 06/14/2021 16:52:20 | 06/14/2021 16:52:20|
 
 ### sitecore-xp1-custom-sxa-sps-mssql
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:de2c85ca5f3074371acb5695d531b4ea508e8ccc98f606e195192754d149e831 | 06/14/2021 16:40:09 | 06/14/2021 16:40:09|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:de2c85ca5f3074371acb5695d531b4ea508e8ccc98f606e195192754d149e831 | 06/14/2021 16:40:02 | 06/14/2021 16:40:02|
 
 ### sitecore-xp1-custom-sxa-sps-mssql-init
 Tag             | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 --------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:55a68e66721110ae55c19e3ad9d9fdf086204c0ba92a57fee95969261fa22e99 | 06/14/2021 16:48:27 | 06/14/2021 16:48:27|
+10.1.0-ltsc2019 | N/A          | ltsc2019    | amd64           | windows | sha256:55a68e66721110ae55c19e3ad9d9fdf086204c0ba92a57fee95969261fa22e99 | 06/14/2021 16:48:24 | 06/14/2021 16:48:24|
 
 ## demo/base
 Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Base GitHub repository and are base images for the /demo/lighthouse images. They are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
@@ -1051,64 +1051,64 @@ Images in this namespace are built from the https://github.com/sitecore/Sitecore
 ### lighthouse-hotfixes
 Tag                | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ------------------ | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-1809        | N/A          | 1809        | amd64           | windows | sha256:76eeac46d393375551818d8af30de2bddd64dbf08957e623ca499687b23084b3 | 01/12/2021 20:12:34 | 02/19/2021 19:29:27|
-10.0.1-1809-1001.0 | N/A          | 1809        | amd64           | windows | sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f | 01/12/2021 20:12:20 | 01/12/2021 20:12:20|
-10.0.1-1809-1001.1 | N/A          | 1809        | amd64           | windows | sha256:76eeac46d393375551818d8af30de2bddd64dbf08957e623ca499687b23084b3 | 02/19/2021 19:29:17 | 02/19/2021 19:29:17|
+10.0.1-1809        | N/A          | 1809        | amd64           | windows | sha256:76eeac46d393375551818d8af30de2bddd64dbf08957e623ca499687b23084b3 | 01/12/2021 20:12:32 | 02/19/2021 19:29:24|
+10.0.1-1809-1001.0 | N/A          | 1809        | amd64           | windows | sha256:40324858bf02f1488cd6c8097c11bcb181870fbc3dbc026f943bf47f25df3a7f | 01/12/2021 20:12:16 | 01/12/2021 20:12:16|
+10.0.1-1809-1001.1 | N/A          | 1809        | amd64           | windows | sha256:76eeac46d393375551818d8af30de2bddd64dbf08957e623ca499687b23084b3 | 02/19/2021 19:29:13 | 02/19/2021 19:29:13|
 
 ### lighthouse-xp0-modules-base-cm
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:7e0554ed542b131d81b31cd6463ca6e89a5d4b64e8122bf7e42a8b8b466bf85c | 10/27/2020 21:06:49 | 12/23/2020 02:13:48|
-10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:7e0554ed542b131d81b31cd6463ca6e89a5d4b64e8122bf7e42a8b8b466bf85c | 10/27/2020 21:06:34 | 12/23/2020 02:13:36|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:761fb88ee8c441252fc9c54acaf6aa20541ed92a7f9e621a486744dce83ac0eb | 01/06/2021 22:24:35 | 02/10/2021 17:22:03|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:ff2fd966c00dea39003ff5e3f3a78fe42fd9eeb362a86ca94a0b6220eb842bff | 01/06/2021 22:24:33 | 01/06/2021 22:24:33|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:761fb88ee8c441252fc9c54acaf6aa20541ed92a7f9e621a486744dce83ac0eb | 02/02/2021 18:48:50 | 02/10/2021 17:21:59|
+10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:7e0554ed542b131d81b31cd6463ca6e89a5d4b64e8122bf7e42a8b8b466bf85c | 10/27/2020 21:06:46 | 12/23/2020 02:13:44|
+10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:7e0554ed542b131d81b31cd6463ca6e89a5d4b64e8122bf7e42a8b8b466bf85c | 10/27/2020 21:06:28 | 12/23/2020 02:13:31|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:761fb88ee8c441252fc9c54acaf6aa20541ed92a7f9e621a486744dce83ac0eb | 01/06/2021 22:24:30 | 02/10/2021 17:21:58|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:ff2fd966c00dea39003ff5e3f3a78fe42fd9eeb362a86ca94a0b6220eb842bff | 01/06/2021 22:24:16 | 01/06/2021 22:24:16|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:761fb88ee8c441252fc9c54acaf6aa20541ed92a7f9e621a486744dce83ac0eb | 02/02/2021 18:48:33 | 02/10/2021 17:21:42|
 
 ### lighthouse-xp0-modules-base-id
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:92346952e58365e057b6139639d73e454bd99f6aa31eb082a78a2c46ffeefade | 01/06/2021 22:25:14 | 02/10/2021 17:22:25|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:9903273dd8d81395f107e501102eda886d1a1e8d724dcdad1d94ed4dc81b585a | 01/06/2021 22:24:59 | 01/06/2021 22:24:59|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:92346952e58365e057b6139639d73e454bd99f6aa31eb082a78a2c46ffeefade | 02/02/2021 18:49:53 | 02/10/2021 17:22:15|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:92346952e58365e057b6139639d73e454bd99f6aa31eb082a78a2c46ffeefade | 01/06/2021 22:25:12 | 02/10/2021 17:22:22|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:9903273dd8d81395f107e501102eda886d1a1e8d724dcdad1d94ed4dc81b585a | 01/06/2021 22:24:55 | 01/06/2021 22:24:55|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:92346952e58365e057b6139639d73e454bd99f6aa31eb082a78a2c46ffeefade | 02/02/2021 18:49:50 | 02/10/2021 17:22:12|
 
 ### lighthouse-xp0-modules-base-mssql
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:8d5a67b3d3329abc024a68a34bb07f567a755dd476e74a20ede954770d0c5557 | 10/27/2020 21:21:56 | 12/23/2020 02:09:39|
-10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:8d5a67b3d3329abc024a68a34bb07f567a755dd476e74a20ede954770d0c5557 | 10/27/2020 21:21:50 | 12/23/2020 02:09:34|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:c7d4fcf8f659f929814c97d6b5828239a633bcb4e6a515f2db993e5463304150 | 01/06/2021 22:27:17 | 02/10/2021 17:24:29|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:96ba22a971cc70d86dcd6ce83f9ffbd41823bc4f60ae7705d3930551f5ff8de5 | 01/06/2021 22:27:15 | 01/06/2021 22:27:15|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:c7d4fcf8f659f929814c97d6b5828239a633bcb4e6a515f2db993e5463304150 | 02/02/2021 18:54:37 | 02/10/2021 17:24:29|
+10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:8d5a67b3d3329abc024a68a34bb07f567a755dd476e74a20ede954770d0c5557 | 10/27/2020 21:05:52 | 12/23/2020 02:09:36|
+10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:8d5a67b3d3329abc024a68a34bb07f567a755dd476e74a20ede954770d0c5557 | 10/27/2020 21:05:33 | 12/23/2020 02:09:23|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:c7d4fcf8f659f929814c97d6b5828239a633bcb4e6a515f2db993e5463304150 | 01/06/2021 22:26:13 | 02/10/2021 17:23:26|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:96ba22a971cc70d86dcd6ce83f9ffbd41823bc4f60ae7705d3930551f5ff8de5 | 01/06/2021 22:25:59 | 01/06/2021 22:25:59|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:c7d4fcf8f659f929814c97d6b5828239a633bcb4e6a515f2db993e5463304150 | 02/02/2021 18:54:26 | 02/10/2021 17:23:13|
 
 ### lighthouse-xp0-modules-base-xconnect
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:37e8dac0afba7f035c17209c7e40591e77a7d931439676e5aa6bd6ff67b7355f | 01/06/2021 22:27:01 | 02/10/2021 17:23:52|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:33f43aec1be273708748e06e8e69791b0db749bc87c9cbbcc4a0a7703c15f736 | 01/06/2021 22:26:45 | 01/06/2021 22:26:45|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:37e8dac0afba7f035c17209c7e40591e77a7d931439676e5aa6bd6ff67b7355f | 02/02/2021 18:55:16 | 02/10/2021 17:23:43|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:37e8dac0afba7f035c17209c7e40591e77a7d931439676e5aa6bd6ff67b7355f | 01/06/2021 22:26:59 | 02/10/2021 17:23:49|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:33f43aec1be273708748e06e8e69791b0db749bc87c9cbbcc4a0a7703c15f736 | 01/06/2021 22:26:41 | 01/06/2021 22:26:41|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:37e8dac0afba7f035c17209c7e40591e77a7d931439676e5aa6bd6ff67b7355f | 02/02/2021 18:55:12 | 02/10/2021 17:23:39|
 
 ### lighthouse-xp0-modules-base-xdbautomationworker
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:528521bd6b597bbb4ec3d976f7b770cbe225be7394d99f5a64b2bd33e1c5230c | 01/06/2021 22:27:45 | 02/10/2021 17:24:17|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:81aa2578658389ad13b4d4b34d63111cb0b8d286396af4e2dcd49473345151fb | 01/06/2021 22:27:29 | 01/06/2021 22:27:29|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:528521bd6b597bbb4ec3d976f7b770cbe225be7394d99f5a64b2bd33e1c5230c | 02/02/2021 18:56:00 | 02/10/2021 17:24:08|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:528521bd6b597bbb4ec3d976f7b770cbe225be7394d99f5a64b2bd33e1c5230c | 01/06/2021 22:27:43 | 02/10/2021 17:24:15|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:81aa2578658389ad13b4d4b34d63111cb0b8d286396af4e2dcd49473345151fb | 01/06/2021 22:27:25 | 01/06/2021 22:27:25|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:528521bd6b597bbb4ec3d976f7b770cbe225be7394d99f5a64b2bd33e1c5230c | 02/02/2021 18:55:56 | 02/10/2021 17:24:04|
 
 ### lighthouse-xp0-modules-base-xdbsearchworker
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:31eefc4ae99487dd98c4651f61e87647408a0a642182e34ec9915eb62253b76e | 01/06/2021 22:28:27 | 02/10/2021 17:24:48|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:26a7615b7cba7a43c0e6415c3c526200e6d330896ac63068266c3eab363fc407 | 01/06/2021 22:28:11 | 01/06/2021 22:28:11|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:31eefc4ae99487dd98c4651f61e87647408a0a642182e34ec9915eb62253b76e | 02/02/2021 18:56:36 | 02/10/2021 17:24:35|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:31eefc4ae99487dd98c4651f61e87647408a0a642182e34ec9915eb62253b76e | 01/06/2021 22:28:24 | 02/10/2021 17:24:47|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:26a7615b7cba7a43c0e6415c3c526200e6d330896ac63068266c3eab363fc407 | 01/06/2021 22:28:07 | 01/06/2021 22:28:07|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:31eefc4ae99487dd98c4651f61e87647408a0a642182e34ec9915eb62253b76e | 02/02/2021 18:56:32 | 02/10/2021 17:24:33|
 
 ### lighthouse-xp1-modules-base-cd
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:94d98f3a4c7f53b59bc22202a54900a8d590d547718359c6359bf9e65257aba0 | 10/27/2020 21:08:18 | 12/23/2020 02:15:01|
-10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:94d98f3a4c7f53b59bc22202a54900a8d590d547718359c6359bf9e65257aba0 | 10/27/2020 21:07:23 | 12/23/2020 02:14:51|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:51f0be95306299b7221a3c896fc801bd45406f90aba89284524161724ec2cf95 | 01/06/2021 22:29:42 | 02/10/2021 17:25:47|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:616107a2382b44c67f585be721912672f7dd7a05aec3d636efd555e3a78abc1d | 01/06/2021 22:29:35 | 01/06/2021 22:29:35|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:51f0be95306299b7221a3c896fc801bd45406f90aba89284524161724ec2cf95 | 02/02/2021 18:59:23 | 02/10/2021 17:25:46|
+10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:94d98f3a4c7f53b59bc22202a54900a8d590d547718359c6359bf9e65257aba0 | 10/27/2020 21:07:35 | 12/23/2020 02:14:57|
+10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:94d98f3a4c7f53b59bc22202a54900a8d590d547718359c6359bf9e65257aba0 | 10/27/2020 21:07:18 | 12/23/2020 02:14:45|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:51f0be95306299b7221a3c896fc801bd45406f90aba89284524161724ec2cf95 | 01/06/2021 22:29:38 | 02/10/2021 17:25:43|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:616107a2382b44c67f585be721912672f7dd7a05aec3d636efd555e3a78abc1d | 01/06/2021 22:29:06 | 01/06/2021 22:29:06|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:51f0be95306299b7221a3c896fc801bd45406f90aba89284524161724ec2cf95 | 02/02/2021 18:59:07 | 02/10/2021 17:25:29|
 
 ## demo
 Images in this namespace are built from the https://github.com/sitecore/Sitecore.Demo.Platform GitHub repository and are meant to support non-production training, experimentation, and demonstration scenarios. Support for these images is community-driven and not provided by Sitecore Support. Please see the GitHub repository for more details.
@@ -1116,117 +1116,117 @@ Images in this namespace are built from the https://github.com/sitecore/Sitecore
 ### edge-authoringhost
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:3ddb35dc8d079979bb457e0a346f793cc500b4080b47eef2cf5f8fba42e7248c | 04/28/2022 11:10:43 | 04/28/2022 11:10:43|
-10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:3ddb35dc8d079979bb457e0a346f793cc500b4080b47eef2cf5f8fba42e7248c | 04/28/2022 11:10:19 | 04/28/2022 11:10:19|
+10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:3ddb35dc8d079979bb457e0a346f793cc500b4080b47eef2cf5f8fba42e7248c | 04/28/2022 11:10:41 | 04/28/2022 11:10:41|
+10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:3ddb35dc8d079979bb457e0a346f793cc500b4080b47eef2cf5f8fba42e7248c | 04/28/2022 11:10:17 | 04/28/2022 11:10:17|
 
 ### edge-cdp
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:0663feda921a6ab24915d669730525ca596638cec93d6380f6178899bedb1ff8 | 04/28/2022 11:12:05 | 04/28/2022 11:12:05|
-10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:0663feda921a6ab24915d669730525ca596638cec93d6380f6178899bedb1ff8 | 04/28/2022 11:12:37 | 04/28/2022 11:12:37|
+10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:0663feda921a6ab24915d669730525ca596638cec93d6380f6178899bedb1ff8 | 04/28/2022 11:11:55 | 04/28/2022 11:11:55|
+10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:0663feda921a6ab24915d669730525ca596638cec93d6380f6178899bedb1ff8 | 04/28/2022 11:11:35 | 04/28/2022 11:11:35|
 
 ### edge-cm
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:415e9f63ea2bace06aed8305333f77fbb9a2c0a5c4fdac4dd5e5c04bf86fcc6f | 04/28/2022 11:13:52 | 04/28/2022 11:13:52|
-10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:415e9f63ea2bace06aed8305333f77fbb9a2c0a5c4fdac4dd5e5c04bf86fcc6f | 04/28/2022 11:14:13 | 04/28/2022 11:14:13|
+10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:415e9f63ea2bace06aed8305333f77fbb9a2c0a5c4fdac4dd5e5c04bf86fcc6f | 04/28/2022 11:13:31 | 04/28/2022 11:13:31|
+10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:415e9f63ea2bace06aed8305333f77fbb9a2c0a5c4fdac4dd5e5c04bf86fcc6f | 04/28/2022 11:13:10 | 04/28/2022 11:13:10|
 
 ### edge-id
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:4a92818b2cd2b14681dc26f2bda239729534bd4f6d979add5f3b54704851faa2 | 04/28/2022 11:14:17 | 04/28/2022 11:14:17|
-10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:4a92818b2cd2b14681dc26f2bda239729534bd4f6d979add5f3b54704851faa2 | 04/28/2022 11:13:58 | 04/28/2022 11:13:58|
+10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:4a92818b2cd2b14681dc26f2bda239729534bd4f6d979add5f3b54704851faa2 | 04/28/2022 11:14:15 | 04/28/2022 11:14:15|
+10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:4a92818b2cd2b14681dc26f2bda239729534bd4f6d979add5f3b54704851faa2 | 04/28/2022 11:13:55 | 04/28/2022 11:13:55|
 
 ### edge-init
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:9fc525d7639047c353bf0f83ae9f6c5be9e05e3189e828ec27cc321d7e662418 | 04/28/2022 11:16:22 | 04/28/2022 11:16:22|
-10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:9fc525d7639047c353bf0f83ae9f6c5be9e05e3189e828ec27cc321d7e662418 | 04/28/2022 11:16:20 | 04/28/2022 11:16:20|
+10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:9fc525d7639047c353bf0f83ae9f6c5be9e05e3189e828ec27cc321d7e662418 | 04/28/2022 11:16:19 | 04/28/2022 11:16:19|
+10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:9fc525d7639047c353bf0f83ae9f6c5be9e05e3189e828ec27cc321d7e662418 | 04/28/2022 11:15:08 | 04/28/2022 11:15:08|
 
 ### edge-mssql-init
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:e0a77f1a65551978cf05cd19e0a6c56b9d8c93abbd9b585c3254b52e0676756f | 04/28/2022 11:17:08 | 04/28/2022 11:17:08|
-10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:e0a77f1a65551978cf05cd19e0a6c56b9d8c93abbd9b585c3254b52e0676756f | 04/28/2022 11:16:50 | 04/28/2022 11:16:50|
+10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:e0a77f1a65551978cf05cd19e0a6c56b9d8c93abbd9b585c3254b52e0676756f | 04/28/2022 11:17:06 | 04/28/2022 11:17:06|
+10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:e0a77f1a65551978cf05cd19e0a6c56b9d8c93abbd9b585c3254b52e0676756f | 04/28/2022 11:16:45 | 04/28/2022 11:16:45|
 
 ### edge-rendering
 Tag                | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ------------------ | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.2.0-1809        | N/A          | 1809        | amd64           | windows | sha256:4a16ee8bdae1a29decbc37a59b0c743360b44db88f6464b861996f3a09d0c5e1 | 04/28/2022 11:17:56 | 04/28/2022 11:17:56|
-10.2.0-1809-1020.0 | N/A          | 1809        | amd64           | windows | sha256:4a16ee8bdae1a29decbc37a59b0c743360b44db88f6464b861996f3a09d0c5e1 | 04/28/2022 11:17:39 | 04/28/2022 11:17:39|
+10.2.0-1809        | N/A          | 1809        | amd64           | windows | sha256:4a16ee8bdae1a29decbc37a59b0c743360b44db88f6464b861996f3a09d0c5e1 | 04/28/2022 11:17:54 | 04/28/2022 11:17:54|
+10.2.0-1809-1020.0 | N/A          | 1809        | amd64           | windows | sha256:4a16ee8bdae1a29decbc37a59b0c743360b44db88f6464b861996f3a09d0c5e1 | 04/28/2022 11:17:33 | 04/28/2022 11:17:33|
 
 ### edge-solr-init
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:520c4f614d8ecb211b36e2136ab9869a44a784bb1a4d3d3d7c9afc26aad3fead | 04/28/2022 11:18:42 | 04/28/2022 11:18:42|
-10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:520c4f614d8ecb211b36e2136ab9869a44a784bb1a4d3d3d7c9afc26aad3fead | 04/28/2022 11:18:22 | 04/28/2022 11:18:22|
+10.2.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:520c4f614d8ecb211b36e2136ab9869a44a784bb1a4d3d3d7c9afc26aad3fead | 04/28/2022 11:18:40 | 04/28/2022 11:18:40|
+10.2.0-ltsc2019-1020.0 | N/A          | ltsc2019    | amd64           | windows | sha256:520c4f614d8ecb211b36e2136ab9869a44a784bb1a4d3d3d7c9afc26aad3fead | 04/28/2022 11:18:19 | 04/28/2022 11:18:19|
 
 ### lighthouse-authoringhost
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:38f1c93b16fc7619e785fddb1646f1355954b06e678dd2c273ba3b001ab71ae4 | 01/06/2021 16:47:06 | 02/25/2021 02:29:11|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:eaa8f394d6a3d6381d0692aaeee4793bc2b20a286f2d78d9dc3920df0621ba97 | 01/06/2021 16:47:46 | 01/10/2021 20:07:43|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:38f1c93b16fc7619e785fddb1646f1355954b06e678dd2c273ba3b001ab71ae4 | 02/10/2021 13:42:47 | 02/25/2021 02:29:02|
-10.1.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:7f8820ce7497cbedb3079a5bda75cb246ab8967fcb1946d0f23862df6d54b3e6 | 07/05/2021 17:27:35 | 07/05/2021 17:27:35|
-10.1.0-ltsc2019-1010.0 | N/A          | ltsc2019    | amd64           | windows | sha256:7f8820ce7497cbedb3079a5bda75cb246ab8967fcb1946d0f23862df6d54b3e6 | 07/05/2021 17:27:21 | 07/05/2021 17:27:21|
-10.2-ltsc2019          |              |             | amd64           | windows | sha256:3ddb35dc8d079979bb457e0a346f793cc500b4080b47eef2cf5f8fba42e7248c | 04/28/2022 11:08:15 | 04/28/2022 11:08:15|
-10.2-ltsc2019-1020.0   |              |             | amd64           | windows | sha256:3ddb35dc8d079979bb457e0a346f793cc500b4080b47eef2cf5f8fba42e7248c | 04/28/2022 11:07:58 | 04/28/2022 11:07:58|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:38f1c93b16fc7619e785fddb1646f1355954b06e678dd2c273ba3b001ab71ae4 | 01/06/2021 16:47:03 | 02/25/2021 02:29:08|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:eaa8f394d6a3d6381d0692aaeee4793bc2b20a286f2d78d9dc3920df0621ba97 | 01/06/2021 16:46:44 | 01/10/2021 20:07:38|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:38f1c93b16fc7619e785fddb1646f1355954b06e678dd2c273ba3b001ab71ae4 | 02/10/2021 13:42:42 | 02/25/2021 02:28:59|
+10.1.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:7f8820ce7497cbedb3079a5bda75cb246ab8967fcb1946d0f23862df6d54b3e6 | 07/05/2021 17:27:33 | 07/05/2021 17:27:33|
+10.1.0-ltsc2019-1010.0 | N/A          | ltsc2019    | amd64           | windows | sha256:7f8820ce7497cbedb3079a5bda75cb246ab8967fcb1946d0f23862df6d54b3e6 | 07/05/2021 17:27:18 | 07/05/2021 17:27:18|
+10.2-ltsc2019          |              |             | amd64           | windows | sha256:3ddb35dc8d079979bb457e0a346f793cc500b4080b47eef2cf5f8fba42e7248c | 04/28/2022 11:08:13 | 04/28/2022 11:08:13|
+10.2-ltsc2019-1020.0   |              |             | amd64           | windows | sha256:3ddb35dc8d079979bb457e0a346f793cc500b4080b47eef2cf5f8fba42e7248c | 04/28/2022 11:07:55 | 04/28/2022 11:07:55|
 
 ### lighthouse-id
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:469304063526bb277914bdb8be9e1aca0b9d0b10bf104f64c0f99d490d2714d1 | 10/23/2020 13:26:10 | 12/20/2020 21:23:09|
-10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:469304063526bb277914bdb8be9e1aca0b9d0b10bf104f64c0f99d490d2714d1 | 10/23/2020 13:25:55 | 12/20/2020 21:22:59|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:54bb9a3e9d1d362663ea0bc3fcf4164230737fe82c574f7a6712c54346635313 | 01/06/2021 16:48:18 | 02/25/2021 02:35:39|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:c581c92e882a7bd28e4222038f89c8bb9569081af394e34bd45b8d535a196d30 | 01/06/2021 16:48:07 | 01/19/2021 14:46:24|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:54bb9a3e9d1d362663ea0bc3fcf4164230737fe82c574f7a6712c54346635313 | 02/10/2021 13:51:34 | 02/25/2021 02:34:40|
-10.1.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:5c055716d1679e53077bb33f7c8ed2d993d9e590e60cc5c85dd679191e3a81bb | 07/05/2021 17:28:28 | 11/22/2021 23:59:45|
-10.1.0-ltsc2019-1010.0 | N/A          | ltsc2019    | amd64           | windows | sha256:5c055716d1679e53077bb33f7c8ed2d993d9e590e60cc5c85dd679191e3a81bb | 07/05/2021 17:28:16 | 11/22/2021 23:59:28|
-10.2-ltsc2019          |              |             | amd64           | windows | sha256:43f3301b183647f948b9d441779946d17ee26842c4553ac0650adf912fed4acf | 04/28/2022 10:47:32 | 04/28/2022 10:47:32|
-10.2-ltsc2019-1020.0   |              |             | amd64           | windows | sha256:43f3301b183647f948b9d441779946d17ee26842c4553ac0650adf912fed4acf | 04/28/2022 10:45:34 | 04/28/2022 10:45:34|
+10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:469304063526bb277914bdb8be9e1aca0b9d0b10bf104f64c0f99d490d2714d1 | 10/23/2020 13:26:07 | 12/20/2020 21:23:07|
+10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:469304063526bb277914bdb8be9e1aca0b9d0b10bf104f64c0f99d490d2714d1 | 10/23/2020 13:25:50 | 12/20/2020 21:22:53|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:54bb9a3e9d1d362663ea0bc3fcf4164230737fe82c574f7a6712c54346635313 | 01/06/2021 16:48:15 | 02/25/2021 02:35:36|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:c581c92e882a7bd28e4222038f89c8bb9569081af394e34bd45b8d535a196d30 | 01/06/2021 16:48:03 | 01/19/2021 14:46:19|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:54bb9a3e9d1d362663ea0bc3fcf4164230737fe82c574f7a6712c54346635313 | 02/10/2021 13:51:30 | 02/25/2021 02:34:35|
+10.1.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:5c055716d1679e53077bb33f7c8ed2d993d9e590e60cc5c85dd679191e3a81bb | 07/05/2021 17:28:26 | 11/22/2021 23:59:43|
+10.1.0-ltsc2019-1010.0 | N/A          | ltsc2019    | amd64           | windows | sha256:5c055716d1679e53077bb33f7c8ed2d993d9e590e60cc5c85dd679191e3a81bb | 07/05/2021 17:28:11 | 11/22/2021 23:59:24|
+10.2-ltsc2019          |              |             | amd64           | windows | sha256:43f3301b183647f948b9d441779946d17ee26842c4553ac0650adf912fed4acf | 04/28/2022 10:47:29 | 04/28/2022 10:47:29|
+10.2-ltsc2019-1020.0   |              |             | amd64           | windows | sha256:43f3301b183647f948b9d441779946d17ee26842c4553ac0650adf912fed4acf | 04/28/2022 10:45:26 | 04/28/2022 10:45:26|
 
 ### lighthouse-init
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:e650f44cb148a30d93a0fb562b48f7ea99f68c909eb90381d5668fe09b0ceefe | 10/23/2020 13:27:17 | 12/20/2020 21:24:18|
-10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:e650f44cb148a30d93a0fb562b48f7ea99f68c909eb90381d5668fe09b0ceefe | 10/23/2020 13:28:00 | 12/20/2020 21:24:06|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:db001922c562725dec5372a1d8323e24d9b1c99ad8c06c4526c51e5d06464ec0 | 01/06/2021 16:48:51 | 02/25/2021 02:36:31|
-10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:af4f2c051d2fff4a5ea7d747fb27105123e6b67c27934510c3a0434e0ad88e6a | 01/06/2021 16:48:39 | 01/19/2021 14:49:24|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:db001922c562725dec5372a1d8323e24d9b1c99ad8c06c4526c51e5d06464ec0 | 02/10/2021 13:52:44 | 02/25/2021 02:36:32|
-10.1.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:291ee539b8b9da2f821adb242a85226d4ba21b46079cf694a83c51966201ef0b | 07/05/2021 17:30:06 | 11/23/2021 00:00:54|
-10.1.0-ltsc2019-1010.0 | N/A          | ltsc2019    | amd64           | windows | sha256:291ee539b8b9da2f821adb242a85226d4ba21b46079cf694a83c51966201ef0b | 07/05/2021 17:29:53 | 11/23/2021 00:00:42|
-10.2-ltsc2019          |              |             | amd64           | windows | sha256:6ce706c9040a83cfea4a227a2d8dd817e6038b99b41948b94fb9df09f44e6985 | 04/28/2022 11:09:03 | 04/28/2022 11:09:03|
-10.2-ltsc2019-1020.0   |              |             | amd64           | windows | sha256:6ce706c9040a83cfea4a227a2d8dd817e6038b99b41948b94fb9df09f44e6985 | 04/28/2022 11:08:48 | 04/28/2022 11:08:48|
+10.0.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:e650f44cb148a30d93a0fb562b48f7ea99f68c909eb90381d5668fe09b0ceefe | 10/23/2020 13:27:13 | 12/20/2020 21:24:15|
+10.0.0-ltsc2019-1000.0 | N/A          | ltsc2019    | amd64           | windows | sha256:e650f44cb148a30d93a0fb562b48f7ea99f68c909eb90381d5668fe09b0ceefe | 10/23/2020 13:26:56 | 12/20/2020 21:24:01|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:db001922c562725dec5372a1d8323e24d9b1c99ad8c06c4526c51e5d06464ec0 | 01/06/2021 16:48:47 | 02/25/2021 02:36:28|
+10.0.1-ltsc2019-1001.0 | N/A          | ltsc2019    | amd64           | windows | sha256:af4f2c051d2fff4a5ea7d747fb27105123e6b67c27934510c3a0434e0ad88e6a | 01/06/2021 16:48:34 | 01/19/2021 14:48:20|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:db001922c562725dec5372a1d8323e24d9b1c99ad8c06c4526c51e5d06464ec0 | 02/10/2021 13:52:38 | 02/25/2021 02:36:17|
+10.1.0-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:291ee539b8b9da2f821adb242a85226d4ba21b46079cf694a83c51966201ef0b | 07/05/2021 17:29:04 | 11/23/2021 00:00:52|
+10.1.0-ltsc2019-1010.0 | N/A          | ltsc2019    | amd64           | windows | sha256:291ee539b8b9da2f821adb242a85226d4ba21b46079cf694a83c51966201ef0b | 07/05/2021 17:28:49 | 11/23/2021 00:00:35|
+10.2-ltsc2019          |              |             | amd64           | windows | sha256:6ce706c9040a83cfea4a227a2d8dd817e6038b99b41948b94fb9df09f44e6985 | 04/28/2022 11:09:00 | 04/28/2022 11:09:00|
+10.2-ltsc2019-1020.0   |              |             | amd64           | windows | sha256:6ce706c9040a83cfea4a227a2d8dd817e6038b99b41948b94fb9df09f44e6985 | 04/28/2022 11:08:43 | 04/28/2022 11:08:43|
 
 ### lighthouse-jss-app
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:8e8aa9252510be58c8e01f6109e02ef61b63623ed1b6d2197ca2da15b0fbb110 | 02/10/2021 14:38:21 | 02/10/2021 14:38:21|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:8e8aa9252510be58c8e01f6109e02ef61b63623ed1b6d2197ca2da15b0fbb110 | 02/10/2021 14:38:58 | 02/10/2021 14:38:58|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:8e8aa9252510be58c8e01f6109e02ef61b63623ed1b6d2197ca2da15b0fbb110 | 02/10/2021 14:38:10 | 02/10/2021 14:38:10|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:8e8aa9252510be58c8e01f6109e02ef61b63623ed1b6d2197ca2da15b0fbb110 | 02/10/2021 14:37:49 | 02/10/2021 14:37:49|
 
 ### lighthouse-jss-authoringhost
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:74d716e620e55d45a575d8cfd7ae18b70c146b415db3ad2e2d83194c7126fe5c | 02/10/2021 14:44:29 | 02/10/2021 14:44:29|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:74d716e620e55d45a575d8cfd7ae18b70c146b415db3ad2e2d83194c7126fe5c | 02/10/2021 14:44:14 | 02/10/2021 14:44:14|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:74d716e620e55d45a575d8cfd7ae18b70c146b415db3ad2e2d83194c7126fe5c | 02/10/2021 14:44:27 | 02/10/2021 14:44:27|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:74d716e620e55d45a575d8cfd7ae18b70c146b415db3ad2e2d83194c7126fe5c | 02/10/2021 14:44:08 | 02/10/2021 14:44:08|
 
 ### lighthouse-jss-id
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:8229b1deda5432349ecc8084a345779234ca6cff0e70302d8d77d432d9f5641e | 02/10/2021 14:23:30 | 02/10/2021 14:23:30|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:8229b1deda5432349ecc8084a345779234ca6cff0e70302d8d77d432d9f5641e | 02/10/2021 14:23:09 | 02/10/2021 14:23:09|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:8229b1deda5432349ecc8084a345779234ca6cff0e70302d8d77d432d9f5641e | 02/10/2021 14:23:28 | 02/10/2021 14:23:28|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:8229b1deda5432349ecc8084a345779234ca6cff0e70302d8d77d432d9f5641e | 02/10/2021 14:23:04 | 02/10/2021 14:23:04|
 
 ### lighthouse-jss-init
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:de4b53f627f798ded647def08eff8c496933b026d5a919ccca4c14fddb69d006 | 02/10/2021 14:42:31 | 02/10/2021 14:42:31|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:de4b53f627f798ded647def08eff8c496933b026d5a919ccca4c14fddb69d006 | 02/10/2021 14:42:17 | 02/10/2021 14:42:17|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:de4b53f627f798ded647def08eff8c496933b026d5a919ccca4c14fddb69d006 | 02/10/2021 14:42:28 | 02/10/2021 14:42:28|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:de4b53f627f798ded647def08eff8c496933b026d5a919ccca4c14fddb69d006 | 02/10/2021 14:42:11 | 02/10/2021 14:42:11|
 
 ### lighthouse-jss-kiosk
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ---------------------- | ------------ | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:5a874795cab1338e734e42c403d7294ff68caeea7799d74626c6e901a1ec9e54 | 02/10/2021 14:39:53 | 02/10/2021 14:39:53|
-10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:5a874795cab1338e734e42c403d7294ff68caeea7799d74626c6e901a1ec9e54 | 02/10/2021 14:39:39 | 02/10/2021 14:39:39|
+10.0.1-ltsc2019        | N/A          | ltsc2019    | amd64           | windows | sha256:5a874795cab1338e734e42c403d7294ff68caeea7799d74626c6e901a1ec9e54 | 02/10/2021 14:39:50 | 02/10/2021 14:39:50|
+10.0.1-ltsc2019-1001.1 | N/A          | ltsc2019    | amd64           | windows | sha256:5a874795cab1338e734e42c403d7294ff68caeea7799d74626c6e901a1ec9e54 | 02/10/2021 14:39:33 | 02/10/2021 14:39:33|
 
 ### lighthouse-jss-mssql
 Tag                    | OSVersion    | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
@@ -5560,711 +5560,710 @@ Tag                                         | OSVersion       | TargetOS        
 ### sitecore-xm1-cd
 Tag                                         | OSVersion       | TargetOS           | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ------------------------------------------- | --------------- | ------------------ | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0                                        |                 |                    | amd64           | windows | sha256:312e79023c8a38062cca6ded257d25b5a4ed02d7d74506df0b9ed8d92872c1ed | 08/18/2021 19:09:59 | 08/30/2023 07:22:00|
-10.0-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:18f219697755f8f60bd58595a75512c9d488936508ea064632a91e169cdb1af8 | 12/15/2020 09:59:48 | 10/15/2024 14:31:54|
-10.0.0-ltsc2019                             | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:0c38cd0b60e068b7783a16850709a62dc24991590e57ce9a62eabab576de3437 | 08/03/2020 12:53:36 | 06/21/2021 09:08:02|
-10.0.0.004346.318-10.0.17763.1282-ltsc2019  | 10.0.17763.1282 | ltsc2019           | amd64           | windows | sha256:c8cd3149eafabd05302287af29aab5f06d699147b51a7c65d39c2b142e6a6b7b | 08/03/2020 12:53:34 | 08/03/2020 12:53:34|
-10.0.0.004346.337-10.0.17763.1339-ltsc2019  | 10.0.17763.1339 | ltsc2019           | amd64           | windows | sha256:e605fe117d3bdef317d0efd6b4fb01eadcbf53702a545918f8e3354b53c6a768 | 08/03/2020 18:33:41 | 08/03/2020 18:33:41|
-10.0.0.004346.371-10.0.17763.1397-ltsc2019  | 10.0.17763.1397 | ltsc2019           | amd64           | windows | sha256:721c1f5499c49c040757bd2b9632b5d74d918b2c0806409224e4d67a55bdcd71 | 08/25/2020 09:24:11 | 08/25/2020 09:24:11|
-10.0.0.004346.412-10.0.17763.1457-ltsc2019  | 10.0.17763.1457 | ltsc2019           | amd64           | windows | sha256:9ba0f7e9f70478f38dd07b6f7cf8271210f8b3fdb3f6b5e57e77a8b4d064f5da | 09/15/2020 08:22:01 | 09/15/2020 08:22:01|
-10.0.0.004346.444-10.0.17763.1518-ltsc2019  | 10.0.17763.1518 | ltsc2019           | amd64           | windows | sha256:fea409f37a5481798971507e4f5a64fb6c4404f928c5a14fbba4b1bf507b95bf | 10/22/2020 19:52:04 | 10/22/2020 19:52:04|
-10.0.0.004346.477-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019           | amd64           | windows | sha256:b16a927a1a1bea25283835e91dfb589e8e3651f958aebf0d6463b7dbfc3efe96 | 11/18/2020 10:48:51 | 11/18/2020 10:48:51|
-10.0.0.004346.520-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019           | amd64           | windows | sha256:e3e7f9bafc73d48711586186bfcbcecd88a05ccb5d5452086d70cdea1ef6808d | 12/14/2020 08:19:12 | 12/14/2020 08:19:12|
-10.0.0.004346.566-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:ec71df6c47ef925e723e5706752cab2cd908f14d5a8b763df0dd3971d8b4c63c | 01/15/2021 11:49:23 | 01/15/2021 11:49:23|
-10.0.0.004346.636-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:d2ec26112210e0b61914b98e2723efb1945cd5d898481c1699147029f890492e | 02/14/2021 16:02:49 | 02/14/2021 16:02:49|
-10.0.0.004346.670-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:52f66370ba2529d29eec21ab4d6ae749ad8af4786beab59cd6340716b12ef004 | 03/12/2021 09:46:32 | 03/12/2021 09:46:32|
-10.0.0.004346.705-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:6e9321776d60f96a3113d82368d4eed5d205dac510ca15f0cd0c1b0603f8d4db | 04/16/2021 05:59:15 | 04/16/2021 05:59:15|
-10.0.0.004346.779-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:59e94ce04b8d14241bb4730cb05a60d963c4753ef4c4e2bd54ecbc31f8193494 | 05/18/2021 06:19:27 | 05/18/2021 06:19:27|
-10.0.0.004346.837-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:0c38cd0b60e068b7783a16850709a62dc24991590e57ce9a62eabab576de3437 | 06/21/2021 09:07:57 | 06/21/2021 09:07:57|
-10.0.1-ltsc2019                             | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:d122b1c60c193aded400fbd4778959399de85ebb9ca6ab1e29eeae0480688f4a | 12/15/2020 09:59:34 | 07/20/2021 12:50:05|
-10.0.1.004842.513-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019           | amd64           | windows | sha256:3e1d3586af0abb3b4ed478d8a40f0006a6a5fc0114a693642410c1deaed6a8db | 12/15/2020 09:59:22 | 12/15/2020 09:59:22|
-10.0.1.004842.523-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019           | amd64           | windows | sha256:e351c6d6fafb57175450c19aa4a427037b4e538b3765d419283989124d9c70bd | 12/15/2020 17:08:53 | 12/15/2020 17:08:53|
-10.0.1.004842.567-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:4b774e08a1b080006957225577abdde092baaca5594372aa189800fc7dc86f7a | 01/15/2021 16:37:38 | 01/15/2021 16:37:38|
-10.0.1.004842.638-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:ac04f4353dc244da81082d2f89e24e9d938023e5ec75184eacdf8782aa52e893 | 02/15/2021 09:50:54 | 02/15/2021 09:50:54|
-10.0.1.004842.671-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:43f9e4b20222f8994571b562b4bdff1084e01734e49f0fdaa9d39dfbe118856d | 03/12/2021 15:30:10 | 03/12/2021 15:30:10|
-10.0.1.004842.707-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:ba821db4a8097ed61dd80402691d643de3f90378acd48dbf769b9e36ae5ca6a4 | 04/16/2021 13:17:33 | 04/16/2021 13:17:33|
-10.0.1.004842.781-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:fd6d24b7e84b4f0789739e7e14bb36c561328ce11db4ebc3b6446cb78a87ed5c | 05/18/2021 10:43:51 | 05/18/2021 10:43:51|
-10.0.1.004842.842-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:233eaf75ca8da5a3c60201a664fa8e2502fa76988d0424c7fa2e2444bd3a8e6c | 06/21/2021 11:52:04 | 06/21/2021 11:52:04|
-10.0.1.004842.889-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:d122b1c60c193aded400fbd4778959399de85ebb9ca6ab1e29eeae0480688f4a | 07/20/2021 12:49:59 | 07/20/2021 12:49:59|
-10.0.2                                      |                 |                    | amd64           | windows | sha256:edaa8bc35745a027867ce76f0abfa551f669e40df0c3b0bce8c469d1901c05e5 | 08/18/2021 19:13:25 | 08/30/2023 08:33:07|
-10.0.2-ltsc2019                             | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:66b49c006f5e49d6f6d55fcb4ea641da1cf3869c2769b2abd015c45e875715b1 | 06/30/2021 11:55:48 | 09/29/2021 12:13:40|
-10.0.2.006052.851-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:04341f1017b7d614c99d806ee57c96bdc07ac2c90d0fd8acc72f6021ee63a6fb | 06/30/2021 11:55:41 | 06/30/2021 11:55:41|
-10.0.2.006052.890-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:7b1973b6f2421b783fb82106cdef6288c513b8a72224ea3fe7c25814cf6f8db8 | 07/21/2021 07:12:49 | 07/21/2021 07:12:49|
-10.0.2.006052.918-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019           | amd64           | windows | sha256:f656dea7000b98fd591be4de514e455da74be72be9e8d806cbd3c4f2171a7f89 | 08/18/2021 15:38:18 | 08/18/2021 15:38:18|
-10.0.2.006052.980-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:66b49c006f5e49d6f6d55fcb4ea641da1cf3869c2769b2abd015c45e875715b1 | 09/29/2021 12:14:06 | 09/29/2021 12:14:06|
-10.0.3                                      |                 |                    | amd64           | windows | sha256:312e79023c8a38062cca6ded257d25b5a4ed02d7d74506df0b9ed8d92872c1ed | 10/07/2021 10:44:04 | 08/30/2023 08:43:00|
-10.0.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:18f219697755f8f60bd58595a75512c9d488936508ea064632a91e169cdb1af8 | 10/07/2021 07:30:31 | 10/15/2024 14:31:44|
-10.0.3.006577.1025-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:80d79bf41cfb4aaa43c4c4a9497c1e4f7f1fe9a1029edf75d7f3bda31bb466b8 | 10/19/2021 13:29:36 | 10/19/2021 13:29:36|
-10.0.3.006577.1062-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:5458a3735fdf0f5f3e39088a784c11cd1d4cd4cef120401770a9e1f4c45c9c8d | 11/12/2021 07:57:10 | 11/12/2021 07:57:10|
-10.0.3.006577.1119-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:0f741b026d4920610fa187fdac41f76347d6934ce222c3c67cbba9348d2c25d3 | 12/16/2021 19:05:03 | 12/16/2021 19:05:03|
-10.0.3.006577.1155-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:ffdae146c24270a6bd5289bbfbb16f53790bda071840e95a53ff1b4147b5dd9d | 01/18/2022 15:26:41 | 01/18/2022 15:26:41|
-10.0.3.006577.1199-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:36111c37a80268a903d3b9d00ebeb9bc473336f91d882b948bb76954e7120669 | 02/16/2022 08:22:19 | 02/16/2022 08:22:19|
-10.0.3.006577.1256-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:29585ebb743b66e18e7ffabc13ba1c71c11aa476fe4b306202f54ad9cf9114df | 03/16/2022 19:19:21 | 03/16/2022 19:19:21|
-10.0.3.006577.1298-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:ce72cabb786c7c35f15fe635a497ffa845f221132883e7ce768da048fd0686cb | 04/17/2022 19:51:53 | 04/17/2022 19:51:53|
-10.0.3.006577.1319-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:d7846f05d8f2b80da2689139bee620e9ffe188e07fdc8b00a51d7d76bce4cd26 | 05/20/2022 12:35:29 | 05/20/2022 12:35:29|
-10.0.3.006577.1344-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:bf554ee2499f2bf22e99b5d7fd748f0481e44eab5114cfaf4311f0e363923465 | 06/24/2022 16:09:19 | 06/24/2022 16:09:19|
-10.0.3.006577.1385-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:95ee75f3901f1ac6cf6b323f78a231841a441ce0bee48ebc1df7b2d14d0e887a | 07/21/2022 13:11:44 | 07/21/2022 13:11:44|
-10.0.3.006577.1401-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:248d4eb3f6f704dbf53928e5ab1ddc243ca8e865b00923586891407d661508b4 | 08/15/2022 12:09:19 | 08/15/2022 12:09:19|
-10.0.3.006577.1462-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:7a505d24d9ba98d50d37386fc6b606355809ca5ebb1930a79b7cfa572d7e6efe | 09/22/2022 17:31:26 | 09/22/2022 17:31:26|
-10.0.3.006577.1485-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:92ed4e32d13975dfc6f407fe908d7bef94cdb4e56bb286c94b55d2beae740c4c | 10/19/2022 14:41:44 | 10/19/2022 14:41:44|
-10.0.3.006577.1532-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:14606a352b0ef3891cd82c6dcfef54f46c7f3f35cc6bf356afdb2e4a5104e917 | 12/12/2022 12:02:49 | 12/12/2022 12:02:49|
-10.0.3.006577.1546-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:a4c2d788679639ebf6964a86597eaf02c2769f9e3998cb07777aea8dbb81d4bc | 12/27/2022 13:00:49 | 12/27/2022 13:00:49|
-10.0.3.006577.1683-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:f70efe7adc06bc20261b948b3a06c54526576ecec752df7d2a2bd27939f237e6 | 02/21/2023 23:43:57 | 02/21/2023 23:43:57|
-10.0.3.006577.1716-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:f28e96efde58c285d55ba5d5f9ed1a419d4c8a9118412ac155e1bdfed8ca3f58 | 03/23/2023 08:15:45 | 03/23/2023 08:15:45|
-10.0.3.006577.1753-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:4783bd6e69aac5a4491b2baa2cd7487949e339f8345f258c5997d8a5b21e7985 | 04/24/2023 13:14:52 | 04/24/2023 13:14:52|
-10.0.3.006577.1800-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:15c063477b5fe528b5644be0108b56d259d156b67f447eb9b9e741e1b420862c | 05/31/2023 12:07:38 | 05/31/2023 12:07:38|
-10.0.3.006577.1877-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:822926e6c260c630b5073ae0dfb2f655ec2c5ca8ac3058d69948f105643d4e22 | 06/29/2023 16:51:43 | 06/29/2023 16:51:43|
-10.0.3.006577.1909-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:7f07f22e3513c4a9b6b273aa67a35da2964272a14c7f3dc949f86f73254ad1cd | 07/21/2023 22:18:11 | 07/21/2023 22:18:11|
-10.0.3.006577.1940-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:7f932f04668eeacf3fd5048b8cd175c66bbec3cd50e227792ccb171ad31f6d7e | 08/29/2023 16:27:28 | 08/29/2023 16:27:28|
-10.0.3.006577.1990-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:87f9c1dd37d8c4f621a23c6df90797899a783df3711bd4cfe839e560e06720e9 | 09/25/2023 08:44:37 | 09/25/2023 08:44:37|
-10.0.3.006577.2020-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:134aa5802005afa16e3d2a133663ca8d66750f705b24fbea2b771f5fc91b8738 | 10/17/2023 23:34:56 | 10/17/2023 23:34:56|
-10.0.3.006577.2061-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:c13029ca4ba20d2ee50e408e0b9ae6ef55bede370d3c542768b657fb5db6c333 | 11/21/2023 21:19:59 | 11/21/2023 21:19:59|
-10.0.3.006577.2089-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:8a75206075c8e37566bf54c031a26ed1a38c749d2c73c353ffa2635cf80b4edf | 12/21/2023 09:42:50 | 12/21/2023 09:42:50|
-10.0.3.006577.2106-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:3395984359559cb8c309b6d2746fb3380fbc819e891525e837450e5823087f6b | 01/18/2024 02:21:15 | 01/18/2024 02:21:15|
-10.0.3.006577.2144-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:499e7f0f6134a5a18e7f02617b1512b6aa57805323f443b04a986942f652a518 | 02/21/2024 11:38:18 | 02/21/2024 11:38:18|
-10.0.3.006577.2193-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:a718124d5539400e94adec4c7abc75d28027ec604b3fa647969d75ea42146de9 | 03/21/2024 11:14:09 | 03/21/2024 11:14:09|
-10.0.3.006577.2245-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:e3afded74e155b0b2c2dba87a4ef3bf9d4a213d61d097c78daa601911d22048c | 04/16/2024 16:08:49 | 04/16/2024 16:08:49|
-10.0.3.006577.2278-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:c587d305cc94bf523c0d3a018c4a621aa72c10253c9e1b703c7fc99ba90f5cc5 | 05/20/2024 09:25:56 | 05/20/2024 09:25:56|
-10.0.3.006577.2321-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:e6369f765df65dea94cbf7c69aeedbf78ede96aab913d4e2c4b823b412ecece2 | 06/19/2024 00:45:24 | 06/19/2024 00:45:24|
-10.0.3.006577.2357-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:bfb1690d1d22a0c2111317ad4d59e31a1a9007af1acd112641e703fa10c03f6d | 07/22/2024 20:59:42 | 07/22/2024 20:59:42|
-10.0.3.006577.2399-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:8ed9fb4c313142ac92d11a6abe07e2d937c130e16be78a4c065fa25fa052eea0 | 08/22/2024 09:43:24 | 08/22/2024 09:43:24|
-10.0.3.006577.2514-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:498649b26495551852f9373393adb80306765466c4c56f36ab6ef934939e013e | 09/18/2024 08:22:55 | 09/18/2024 08:22:55|
-10.0.3.006577.2531-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:18f219697755f8f60bd58595a75512c9d488936508ea064632a91e169cdb1af8 | 10/15/2024 14:31:40 | 10/15/2024 14:31:40|
-10.0.3.006577.992-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:e3050d6195595fb724930e61a7cee09e4ef88fc0ed550c07def2d8670452f9bd | 10/07/2021 07:30:25 | 10/07/2021 07:30:25|
-10.1                                        |                 |                    | amd64           | windows | sha256:f3b983f9623adf094986f176e8b648ae60186f59f9c6df7ddccfc92137357b8f | 08/18/2021 10:27:40 | 08/30/2023 10:41:26|
-10.1-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:5ae1dcbce552513e430ca1f47a393ae5164bd0c49b6056df55f48b531546c645 | 02/25/2021 06:40:43 | 10/17/2024 16:04:18|
-10.1.0                                      |                 |                    | amd64           | windows | sha256:fa2b453676e42e353a8966876d681757fa0f58e2d71b05407e0714f107faaf2d | 09/22/2022 16:40:02 | 08/30/2023 10:45:24|
-10.1.0-ltsc2019                             | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:b6d0d8ff8f6a737caf38d98b5b8a3fccab3a0b6b5563b74974c68f36683a4dd9 | 02/25/2021 06:41:24 | 10/24/2023 13:48:21|
-10.1.0.005207.626-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:b4ffa5d4a8a2cb394fb841f08f691b5b7e9ec224b060eaf0cc2fbc3cd62417a2 | 02/25/2021 06:41:14 | 02/25/2021 06:41:14|
-10.1.0.005207.643-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:a689e4954b27121ddc8847e64d4a3f6f4b444cf1fc5dc8c7dfdefefdfa765b11 | 02/26/2021 07:25:37 | 02/26/2021 07:25:37|
-10.1.0.005207.673-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:b6d0d8ff8f6a737caf38d98b5b8a3fccab3a0b6b5563b74974c68f36683a4dd9 | 03/12/2021 19:20:12 | 03/12/2021 19:20:12|
-10.1.0.005207.708-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:311bb69131797318edb2ba80d8734eabd0b69d0d7e6d604d9fe82d05bcfe7759 | 04/19/2021 12:30:39 | 04/19/2021 12:30:39|
-10.1.0.005207.782-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:04f0c66f120f1f8f73b989871fa9a9bddf9cbba3af76af825c4d7b0fb8e0a811 | 05/18/2021 15:14:49 | 05/18/2021 15:14:49|
-10.1.0.005207.844-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:77033a7303f4e6b83a8e0cbddf372e298347440d0071e8d2e13be7ec60ec093c | 06/21/2021 16:42:16 | 06/21/2021 16:42:16|
-10.1.1                                      |                 |                    | amd64           | windows | sha256:35cf21f7cd6c5e87ada7b32b97474c2d0515bbd65056f8b1f500d25e671359b3 | 08/18/2021 10:28:23 | 08/30/2023 11:12:27|
-10.1.1-ltsc2019                             | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:91b22429f0dd527a3f793fe6bff72f4a7f33fb89d2678610c2913cbe66ba15ad | 06/10/2021 09:50:29 | 09/30/2021 06:45:58|
-10.1.1.005862.821-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:95f1ee0e42d795335ff48f275b01b39794a6d752562e12ecce1abe119c33243f | 06/10/2021 09:50:26 | 06/10/2021 09:50:26|
-10.1.1.005862.846-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:d64c94f3facba63501fc93ade1bc9fc092e8b91a57f4b778f2f642f05ec6b43d | 06/21/2021 21:26:29 | 06/21/2021 21:26:29|
-10.1.1.005862.891-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:baaaf6f2ca9e7030849ee916efe09fd948f710461c179c62c1736d991bdf41a6 | 07/22/2021 08:49:28 | 07/22/2021 08:49:28|
-10.1.1.005862.921-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019           | amd64           | windows | sha256:199a8dbd6e52b7aad4ffee59227d0f839c03289b040bd3df572ee40a7e20c71b | 08/18/2021 07:37:46 | 08/18/2021 07:37:46|
-10.1.1.005862.982-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:91b22429f0dd527a3f793fe6bff72f4a7f33fb89d2678610c2913cbe66ba15ad | 09/30/2021 06:45:43 | 09/30/2021 06:45:43|
-10.1.2                                      |                 |                    | amd64           | windows | sha256:f3b983f9623adf094986f176e8b648ae60186f59f9c6df7ddccfc92137357b8f | 10/11/2021 09:57:55 | 08/30/2023 11:22:48|
-10.1.2-ltsc2019                             | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:3ec7ee2ebc67b8da928042cc8154bb217d227a6671d5def0a6435b712fbffdb5 | 10/11/2021 07:31:39 | 08/12/2023 00:42:54|
-10.1.2.006578.1027-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:d05ce4765ce2825df4e66bac2f6fd7dda054ebaaf37abd89a7bb4c96ba299d1f | 10/19/2021 22:21:31 | 10/19/2021 22:21:31|
-10.1.2.006578.1063-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:71434331ddee1ba02b1d31823401da4a1fca883e87ccc0ed0097c3679f28b382 | 11/14/2021 19:16:31 | 11/14/2021 19:16:31|
-10.1.2.006578.1121-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:ce0618260e71d766169107cc20b0829cc1191253830a2b541a89a0688e1a9659 | 12/17/2021 09:04:15 | 12/17/2021 09:04:15|
-10.1.2.006578.1156-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:605b4467a2dd212f03065b480426c9fcb7fe5669a2d033a19b90ded1bbcf8d29 | 01/19/2022 08:01:17 | 01/19/2022 08:01:17|
-10.1.2.006578.1200-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:62b33de95a0a6659653cf00ad0dfd59784a3812c1ebc478665910bffa290bb6c | 02/15/2022 16:57:00 | 02/15/2022 16:57:00|
-10.1.2.006578.1264-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:ce6374af611d3ce029f19c741093bb52ee7549058cea7578b9f801045574a9bb | 03/15/2022 21:34:06 | 03/15/2022 21:34:06|
-10.1.2.006578.1299-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:4076ffb5a479ba64d9ba6afbd4f0644688f564b8c11f0b895fe452b34a78c137 | 04/19/2022 02:01:18 | 04/19/2022 02:01:18|
-10.1.2.006578.1326-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:04d7b726365301bff6c630717709a464e5f937c286a3cfc2f3f673fdd7502f3b | 05/20/2022 16:45:12 | 05/20/2022 16:45:12|
-10.1.2.006578.1345-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:b0d48d128dcd3a5a3f8fa958aba8c499d0669dc2f8f86c1d957bed6a986d9124 | 06/24/2022 11:19:19 | 06/24/2022 11:19:19|
-10.1.2.006578.1380-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:290e19cb17eb93838ca92b0ec3253848941db3e8fea0a3100b147a38d1a09be1 | 07/21/2022 20:50:06 | 07/21/2022 20:50:06|
-10.1.2.006578.1404-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:244c5505942baac2a71735292cd7a7d1bb1b02ecec6c201a735f65138d1d82e5 | 08/15/2022 17:39:40 | 08/15/2022 17:39:40|
-10.1.2.006578.1455-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:bd5aa1c15d82da25e3b391158fd624140f7ed3e0edd8ed0828b4d0bb3b453ed4 | 09/25/2022 10:28:23 | 09/25/2022 10:28:23|
-10.1.2.006578.1488-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:d85a426a6276629095b9ff5d98586eaf6bda62646bcc94ae18ae131a52d0e8a7 | 10/19/2022 22:45:40 | 10/19/2022 22:45:40|
-10.1.2.006578.1523-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:f1b3ed775d903a6a98b93f46dd3605b43f5d8c845e8201300516d125fa852a08 | 12/08/2022 11:07:57 | 12/08/2022 11:07:57|
-10.1.2.006578.1547-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:09b2eb4de6142fac2477d523c6c3be9608e91938faf9e8674eb54d6280f61cdc | 12/27/2022 13:45:06 | 12/27/2022 13:45:06|
-10.1.2.006578.1663-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:c186b01ec917ac8fe4a3aadd24e0cb62d9243e80acb90d69a1a721c9ef96190d | 02/10/2023 19:06:40 | 02/10/2023 19:06:40|
-10.1.2.006578.1679-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:118938f5d48f11c29f55d571a9a2c8f96728fcfca8c8a8c09995d926162fb7f1 | 02/23/2023 15:55:24 | 02/23/2023 15:55:24|
-10.1.2.006578.1718-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:d39d9e03bd8ac20bb6e542f7f4719088a3d7437cc190fcd4cb6d59d5d6c4c662 | 03/22/2023 17:24:03 | 03/22/2023 17:24:03|
-10.1.2.006578.1754-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:dec44d26ca1776ed30d4f9fc22c8b7302cf3eaae24807e9099efab2eb0d965cf | 04/25/2023 14:40:18 | 04/25/2023 14:40:18|
-10.1.2.006578.1803-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:9529ff0e58593355cf89884d31ce40e3b183b631ac2f492fd6ccbebf9e9046cf | 05/31/2023 14:43:30 | 05/31/2023 14:43:30|
-10.1.2.006578.1875-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:e700c94815057e4083f14e4d1f348a12c42d5c4d09a6c8048197899b7e5d695b | 06/29/2023 13:17:48 | 06/29/2023 13:17:48|
-10.1.2.006578.1916-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:eba32adba634fed4fb99fb3dd1e2b39d4156233612bcd4b437a35fa71a7b6177 | 07/24/2023 15:37:00 | 07/24/2023 15:37:00|
-10.1.2.006578.1939-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:3ec7ee2ebc67b8da928042cc8154bb217d227a6671d5def0a6435b712fbffdb5 | 08/12/2023 00:42:13 | 08/12/2023 00:42:13|
-10.1.2.006578.993-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:68c670fc3fe1303eefc2200130ef188151c07cdf01502315e65169d8c3d7473a | 10/11/2021 07:31:32 | 10/11/2021 07:31:32|
-10.1.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:5ae1dcbce552513e430ca1f47a393ae5164bd0c49b6056df55f48b531546c645 | 09/06/2023 22:01:07 | 10/17/2024 16:04:02|
-10.1.3.009558.1962-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:d45ea2d501bd591881f9e2c7cac54db3b60ee44f6328ac645d0adb7568e3849e | 09/06/2023 22:00:57 | 09/06/2023 22:00:57|
-10.1.3.009558.1987-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:b736e2e55103f00baa03c6e7e3ae742ec37e5caf87cd14922f6ca96ee9a0180e | 09/21/2023 12:35:55 | 09/21/2023 12:35:55|
-10.1.3.009558.2013-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:89f162f74a0441f272df67693a027f3239eb8c445ced43d5e9fb00c8dc65ec3c | 10/13/2023 13:32:34 | 10/13/2023 13:32:34|
-10.1.3.009558.2052-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:902ac99b2f297e09211e65df277b7f48a430cc0c34e29bc2909f86de8167a7de | 11/17/2023 12:09:58 | 11/17/2023 12:09:58|
-10.1.3.009558.2079-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:240ee6ffba70753d8b2e78c2e91649eae9a245fff0a93418535e61905da7df86 | 12/14/2023 14:22:30 | 12/14/2023 14:22:30|
-10.1.3.009558.2115-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:8921fe858393b593a69c52e252a8e6831c814741d333c8cd8008bcfe5b71fa51 | 01/16/2024 08:14:40 | 01/16/2024 08:14:40|
-10.1.3.009558.2160-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:445ae7741ce97606f0b50d20e53e734da6e419e242dc9e3d4e25632e93a6a205 | 02/24/2024 00:36:34 | 02/24/2024 00:36:34|
-10.1.3.009558.2197-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:eee11bcfcd90be7c9add57d3fe990c80fed7df1d24b2a587c695d295d42a4093 | 03/19/2024 19:51:25 | 03/19/2024 19:51:25|
-10.1.3.009558.2254-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:541461919bb331d6259517d01dddb578d10aba7454f62198f6012c5e1f51a6c3 | 04/17/2024 21:53:20 | 04/17/2024 21:53:20|
-10.1.3.009558.2279-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:b457448b931d944591d706fc66f670dcdd7a03f7efe4ec131dc41f531e860ad7 | 05/27/2024 17:18:45 | 05/27/2024 17:18:45|
-10.1.3.009558.2327-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:7c1535dcde7ebe92ed6d03fa568888086d6666916d183c85ffc24fe20f75bb72 | 06/19/2024 01:36:25 | 06/19/2024 01:36:25|
-10.1.3.009558.2353-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:8c40588a3cb2222578670fc75e788c0b25682c87b9f5dc519ef12226c3416663 | 08/01/2024 09:11:50 | 08/01/2024 09:11:50|
-10.1.3.009558.2407-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:fa2b5adb04dd0232a11d3a8b26b3bfba93ad79a8c0c1fdca1e7dc4864d1e8781 | 08/21/2024 10:08:54 | 08/21/2024 10:08:54|
-10.1.3.009558.2517-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:3d5e86a0c856ba47ce83f8350dfbfbc985dd006a3f9718480cba46b2cbedcbdf | 09/18/2024 22:30:23 | 09/18/2024 22:30:23|
-10.1.3.009558.2532-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:5ae1dcbce552513e430ca1f47a393ae5164bd0c49b6056df55f48b531546c645 | 10/17/2024 16:04:02 | 10/17/2024 16:04:02|
-10.2                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:c8bfb28df6f61e20661c383b3203bacbbce4bd84582ef0685210dfa70aeaf42e | 11/04/2021 10:13:11 | 10/11/2024 23:23:43|
-10.2-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:65abb39ae5ae012031a525cd7c8bebe9687107654fd7a93fca532e52d5d17791 | 11/04/2021 08:06:55 | 10/11/2024 22:55:17|
-10.2-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:8c6e3d4582012d3fb826440d7a14ccf7e7623fc9d6fb4b1384e93429ccb52c4e | 02/15/2023 05:02:56 | 10/11/2024 22:45:05|
-10.2.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:4b67119a7a2424db23fa872f1eb60eecafaa5f7dd6f57aca3941909f7e028480 | 11/04/2021 10:13:26 | 09/01/2023 09:21:06|
-10.2.0-ltsc2019                             | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:806ac19be4a99586242f1d73793f98ac779349c7e88ea93a6d52c633581be827 | 11/04/2021 08:07:30 | 08/14/2023 17:28:50|
-10.2.0-ltsc2022                             | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:e194f6e3517750fdf6db002b05e80e9ce7d4384a317dace885c15d4aaba7999c | 02/15/2023 05:03:30 | 08/14/2023 17:52:21|
-10.2.0.006766.1033-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:2fa7e11594c138fda85aa69dc9972b536fa8197b93008341023803f5496890bc | 11/04/2021 08:07:13 | 11/04/2021 08:07:13|
-10.2.0.006766.1064-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:5ffdea81bd62e411aaf8299b8cac0c7e61009ee0ce242c20da3b2816d39292ac | 11/15/2021 07:57:52 | 11/15/2021 07:57:52|
-10.2.0.006766.1123-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:910a1093b5af16b35a02ef297867a2e16434ce7ddb4bc17e06fc159b84fec27c | 12/17/2021 15:02:56 | 12/17/2021 15:02:56|
-10.2.0.006766.1157-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:94fde40849ff9b2ba5fb8e3e1931ff544ec17be32f9b2d13d1c2e420c6a0910b | 01/19/2022 14:46:25 | 01/19/2022 14:46:25|
-10.2.0.006766.1202-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:55f900fba6ad8c809f3deb0f314edaf47b3c08ddded5e452b808feda20032ab4 | 02/17/2022 14:50:29 | 02/17/2022 14:50:29|
-10.2.0.006766.1259-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:b2fecd61e2cef052ea323ade1028186bbdb3cec0fb51735db2bbce4d841a5dc4 | 03/15/2022 12:38:09 | 03/15/2022 12:38:09|
-10.2.0.006766.1300-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:b32772d1524fed5e81ca3f6530169c9a95da4aef5cb69d5b4d3f14dde995ce8b | 04/20/2022 11:24:09 | 04/20/2022 11:24:09|
-10.2.0.006766.1327-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:9c3125b1e163f7bd03310d7c80c224addfa55fc8657f59ffa154b3fd12c05ed3 | 05/24/2022 13:46:22 | 05/24/2022 13:46:22|
-10.2.0.006766.1358-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:66be2c23db9b77755b41b373cdc25b3da1f19eab1204a1b67f2ef2350a74df4e | 06/23/2022 19:16:28 | 06/23/2022 19:16:28|
-10.2.0.006766.1381-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:3036d59096bbb54b11618e44519a376ecad88f3b2930447790a79b7fba773394 | 07/22/2022 09:58:26 | 07/22/2022 09:58:26|
-10.2.0.006766.1406-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:bf5fa54e41435575090e65c6dc9446958024fb07821b7047f0cd1cdc85c97674 | 08/16/2022 08:35:20 | 08/16/2022 08:35:20|
-10.2.0.006766.1460-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:e9e875c162887986151b54d0db5b6fba57e08fadc63377b2a76615a1025bede2 | 09/23/2022 15:02:58 | 09/23/2022 15:02:58|
-10.2.0.006766.1487-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:41914636be05030597af13666e7b5bee1a70e197a516c64435491bbeb32dcefe | 10/24/2022 09:09:36 | 10/24/2022 09:09:36|
-10.2.0.006766.1527-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:1a278b558261db512ddfae2ea27132f90682161c292312fd307b3bcca03ad94f | 12/12/2022 01:35:50 | 12/12/2022 01:35:50|
-10.2.0.006766.1554-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:b92ced69d7d9f853b2df9c9aafc7f3b178ebd3dd758c31c0abf148f0015ba068 | 12/27/2022 19:00:49 | 12/27/2022 19:00:49|
-10.2.0.006766.1659-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:e3fec0c693c0a626582cb47358de5f7e02b1ef28dcbab44c9d7724f0301f756b | 02/15/2023 05:15:28 | 01/17/2024 16:57:39|
-10.2.0.006766.1682-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:eb08b10031a12b04a9750d0f1c6a3e31816116d7b7af7e5740609a97c544ac8d | 02/24/2023 07:53:09 | 01/17/2024 17:01:04|
-10.2.0.006766.1717-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:690befdac61df0e037b340401fae4f6b3680334a817e239f381e8cd7ebbe48f2 | 03/23/2023 09:06:06 | 01/17/2024 17:03:57|
-10.2.0.006766.1755-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:ba121e33f0d0ec85b39a78fb6f84c62ce11282e5d095a3a1b3fe4ce56441dcfd | 04/23/2023 12:56:18 | 01/17/2024 17:07:22|
-10.2.0.006766.1804-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:b679d6e873b794e127c1c069aa71c7bc35a12e7425a3271f321b581eb79009ab | 06/01/2023 12:19:22 | 01/17/2024 17:10:49|
-10.2.0.006766.1873-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:860f65db2b29d41d9a873958010f5127b2a3bfbf14fdabd7592048118b2c4d85 | 06/29/2023 10:42:55 | 06/29/2023 10:42:55|
-10.2.0.006766.1911-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:edb9b911b3052155c89ae62f24698c096c3c3bc469b6e2c7acfad19890c333e2 | 07/31/2023 14:14:45 | 07/31/2023 14:14:45|
-10.2.0.006766.1938-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:806ac19be4a99586242f1d73793f98ac779349c7e88ea93a6d52c633581be827 | 08/14/2023 17:29:26 | 08/14/2023 17:29:26|
-10.2.0.006766.627-10.0.20348.1487-ltsc2022  | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:85c1d340951b7be27798c1001c83a6cded21bd445e612514d20d00d27c1ed6ca | 02/15/2023 05:03:18 | 02/15/2023 05:03:18|
-10.2.0.006766.649-10.0.20348.1547-ltsc2022  | 10.0.20348.1547 | ltsc2022           | amd64           | windows | sha256:27fec46715f25c6bbe3ec0b0c76eb9a3dadf45bc7f9215c0882d72b75402b725 | 02/24/2023 07:40:12 | 02/24/2023 07:40:12|
-10.2.0.006766.685-10.0.20348.1607-ltsc2022  | 10.0.20348.1607 | ltsc2022           | amd64           | windows | sha256:3e2595ca8f60aa5d56033ccd5ced5a84f039b63ce03fad26f0073736e15a0dfc | 03/23/2023 09:06:29 | 03/23/2023 09:06:29|
-10.2.0.006766.718-10.0.20348.1668-ltsc2022  | 10.0.20348.1668 | ltsc2022           | amd64           | windows | sha256:1192d3b59120352513d848fcfdb24ec6d526e43a222bc7d3f135c107608dc72f | 04/23/2023 12:44:23 | 04/23/2023 12:44:23|
-10.2.0.006766.767-10.0.20348.1726-ltsc2022  | 10.0.20348.1726 | ltsc2022           | amd64           | windows | sha256:c1cd18083d042a854ec23e18ba99df1c87e72f7fa6ab34ca0873a84edddea53b | 06/01/2023 12:10:10 | 06/01/2023 12:10:10|
-10.2.0.006766.806-10.0.20348.1787-ltsc2022  | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:61c06899c9b26253920102cba481fb8f322672dd697fef30f653d1c653d80573 | 06/29/2023 10:34:15 | 06/29/2023 10:34:15|
-10.2.0.006766.849-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:39fbb79bd12410c8c3782ce68ac198166f92c0b3f2d2ff406f822819893621d8 | 07/31/2023 14:09:00 | 07/31/2023 14:09:00|
-10.2.0.006766.873-10.0.20348.1906-ltsc2022  | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:e194f6e3517750fdf6db002b05e80e9ce7d4384a317dace885c15d4aaba7999c | 08/14/2023 17:51:57 | 08/14/2023 17:51:57|
-10.2.1                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:df86f76d7cf5c46f7532aedb0953ec4cd011dfc0b64c4bd2539ebeda4e2d4576 | 08/31/2023 17:01:14 | 05/28/2024 14:57:46|
-10.2.1-ltsc2019                             | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:09bc118db2126bdd3b66c78ab5c8e63d47cfa01f25cb42ade9082a33ebf88841 | 08/31/2023 16:26:28 | 05/28/2024 14:07:39|
-10.2.1-ltsc2022                             | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:1569a256f97855b2febab9e9216b1b853aead2d943f9c7d4bb576f8e38f6985f | 08/31/2023 16:21:04 | 05/28/2024 14:06:10|
-10.2.1.009559.1013-10.0.20348.2159-ltsc2022 | 10.0.20348.2159 | ltsc2022           | amd64           | windows | sha256:3ad97a71d1d2bc9d3fb81d194569f7c3bb52eb41cb8e10f369c7c475eca14bdb | 12/18/2023 14:20:05 | 12/18/2023 14:20:05|
-10.2.1.009559.1030-10.0.20348.2227-ltsc2022 | 10.0.20348.2227 | ltsc2022           | amd64           | windows | sha256:1e15afc88add82a14c7f3f948fa74f3ffcf05dcfb8e0f16ca24e62b46111c792 | 01/18/2024 11:44:55 | 01/18/2024 11:44:55|
-10.2.1.009559.1077-10.0.20348.2322-ltsc2022 | 10.0.20348.2322 | ltsc2022           | amd64           | windows | sha256:a1cc173a46cb1d54f2e92347a07b12554fa5b210b4394ace445f82b3c68c5fb3 | 03/05/2024 10:00:31 | 03/05/2024 10:00:31|
-10.2.1.009559.1122-10.0.20348.2340-ltsc2022 | 10.0.20348.2340 | ltsc2022           | amd64           | windows | sha256:c15361459ae51b14c7ea040a7e7c399689662dc0b8d63f32229bb593f0686953 | 03/19/2024 10:42:21 | 03/19/2024 10:42:21|
-10.2.1.009559.1161-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:34f685acb0fed789c6ed97d53c8346f7dcfe6a79dc92fc4e333cbc397334f359 | 04/15/2024 14:19:22 | 04/15/2024 14:19:22|
-10.2.1.009559.1193-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:1569a256f97855b2febab9e9216b1b853aead2d943f9c7d4bb576f8e38f6985f | 05/28/2024 14:06:01 | 05/28/2024 14:06:01|
-10.2.1.009559.1934-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:e971820aca2cb9509215727da16bfdc677cc0093489f673b49b69abddbbf3bbf | 08/31/2023 16:25:35 | 08/31/2023 16:25:35|
-10.2.1.009559.1983-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:071ddef62e30de07eef21022bd0fe6a28582f98da321db1662a0f578ef715274 | 09/22/2023 09:43:52 | 09/22/2023 09:43:52|
-10.2.1.009559.2017-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:a7f7c7f1a18564858bd5d0eae6b3c94fddaf8854da321b3decc47a9357f146c4 | 10/17/2023 07:37:49 | 10/17/2023 07:37:49|
-10.2.1.009559.2054-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:fc7a37c00dc37b07e433e7f8a8d92221245218eea19ff2b19ac05e51f06b06eb | 11/17/2023 19:34:41 | 11/17/2023 19:34:41|
-10.2.1.009559.2085-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:0ccd7c9c1286cf91f53d8cacc229823e34c963319c797a425bc4e41d1862b562 | 12/18/2023 14:34:43 | 12/18/2023 14:34:43|
-10.2.1.009559.2103-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:a3d09030a57548d22bc825d104d05cd0e030f6e6f1bf5fe322699ccc9811dbec | 01/18/2024 11:48:55 | 01/18/2024 11:48:55|
-10.2.1.009559.2156-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:a728b897acbd7c5e6fbf931dfda662e9988eed9cc89b7b0c8a81ba7535e5bee5 | 03/05/2024 10:12:56 | 03/05/2024 10:12:56|
-10.2.1.009559.2196-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:880c3141f6c7b8ce3e9e0dea186b6b87e25313926d4c026eff019162b605c175 | 03/19/2024 10:46:34 | 03/19/2024 10:46:34|
-10.2.1.009559.2249-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:cfa9669dc1786f2eaf306e73c1224a631def842b5ad339a016536bcf69966ade | 04/15/2024 14:24:12 | 04/15/2024 14:24:12|
-10.2.1.009559.2281-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:09bc118db2126bdd3b66c78ab5c8e63d47cfa01f25cb42ade9082a33ebf88841 | 05/28/2024 14:07:30 | 05/28/2024 14:07:30|
-10.2.1.009559.870-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:bcd259b2619fc12738ec83ada3dea7b078e4b19126cb3e9a8880134b5d3f483a | 08/31/2023 16:21:21 | 08/31/2023 16:21:21|
-10.2.1.009559.915-10.0.20348.1970-ltsc2022  | 10.0.20348.1970 | ltsc2022           | amd64           | windows | sha256:1fd72d8234509b38c4625da56f484f212e0bdcc840fe5aa8e55b808db702d434 | 09/22/2023 09:34:39 | 09/22/2023 09:34:39|
-10.2.1.009559.948-10.0.20348.2031-ltsc2022  | 10.0.20348.2031 | ltsc2022           | amd64           | windows | sha256:95df81cb124cd6163daa580082234f614986ab104aa1727f5cd416e3fae1a85f | 10/17/2023 07:27:54 | 10/17/2023 07:27:54|
-10.2.1.009559.986-10.0.20348.2113-ltsc2022  | 10.0.20348.2113 | ltsc2022           | amd64           | windows | sha256:54ca4304a445aad6ca542e1f689ddff6a937ee7680a858a8952b960f9c312325 | 11/17/2023 19:20:52 | 11/17/2023 19:20:52|
-10.2.2                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:c8bfb28df6f61e20661c383b3203bacbbce4bd84582ef0685210dfa70aeaf42e | 07/01/2024 22:52:26 | 10/11/2024 23:26:36|
-10.2.2-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:65abb39ae5ae012031a525cd7c8bebe9687107654fd7a93fca532e52d5d17791 | 07/01/2024 22:08:08 | 10/11/2024 22:55:08|
-10.2.2-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:8c6e3d4582012d3fb826440d7a14ccf7e7623fc9d6fb4b1384e93429ccb52c4e | 07/01/2024 21:54:07 | 10/11/2024 22:44:54|
-10.2.2.010645.1224-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:67b581d4779432a72fe03bc63d141684eb67f00ec85d8cfe5d95822c7affdd8a | 07/01/2024 21:54:00 | 07/01/2024 21:54:00|
-10.2.2.010645.1261-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:2e139ae9d38d934a7d5a95fe943fdff4ea8ce1556903c3e3b74c8328ab24d55e | 07/18/2024 08:46:17 | 07/18/2024 08:46:17|
-10.2.2.010645.1305-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:45d6fbec74212812cb41a699d56f82dc6787f41752e931168e42e3977b23665f | 08/21/2024 10:51:33 | 08/21/2024 10:51:33|
-10.2.2.010645.1415-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:3c2d605ad8a21167bb2ecd3cd0536eb9c10ecab526536fb02b257cbcb0c3be84 | 09/18/2024 09:49:13 | 09/18/2024 09:49:13|
-10.2.2.010645.1430-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:8c6e3d4582012d3fb826440d7a14ccf7e7623fc9d6fb4b1384e93429ccb52c4e | 10/11/2024 22:44:49 | 10/11/2024 22:44:49|
-10.2.2.010645.2318-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:f4103e89a88437bc0ac1efe7415cabd9595bbf74097495192ff72016a46945d8 | 07/01/2024 22:08:00 | 07/01/2024 22:08:00|
-10.2.2.010645.2352-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:bbf95e369d03c2b4b32f29a781adcbd312bfba7127c0abc0705f159be414308f | 07/18/2024 08:38:40 | 07/18/2024 08:38:40|
-10.2.2.010645.2401-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:4c3e9b4adf95d3e254c3a3a832a29e652eec8c52ca37b52d586f135031ef7228 | 08/21/2024 10:44:30 | 08/21/2024 10:44:30|
-10.2.2.010645.2511-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:0fb25a87820feffaf679a14e6847a5c5f1a93c2e7c38b7ca96e682f709100ebe | 09/18/2024 10:07:47 | 09/18/2024 10:07:47|
-10.2.2.010645.2530-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:65abb39ae5ae012031a525cd7c8bebe9687107654fd7a93fca532e52d5d17791 | 10/11/2024 22:55:08 | 10/11/2024 22:55:08|
-10.3                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:a4c64722dde5d4208e18f60e9a73e7e7d18f93acd7c3ebf052372eb33fa586aa | 02/15/2023 11:38:21 | 10/14/2024 16:17:29|
-10.3-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:d22e7301da07f9213a8160f2c324498de1e4d562ab466d9096abec821982562d | 12/01/2022 16:39:50 | 10/14/2024 15:47:18|
-10.3-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:06fcf1c846720cabdfc491b9312bc52025fb217890dd67630b9ec81b1d880ae1 | 02/15/2023 10:59:26 | 10/14/2024 15:36:31|
-10.3.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:ca5dbd3af3849f0ff5828354a4b5ff1405f7a5800b9c9353e064d38e9d4c5a4a | 02/15/2023 11:37:39 | 09/01/2023 08:15:36|
-10.3.0-ltsc2019                             | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:dd5597a5f0f3282273bc223c396cddb008c19e31b4f20c62d72c9bcb090bec81 | 12/01/2022 16:40:21 | 06/28/2023 19:35:13|
-10.3.0-ltsc2022                             | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:063d756bb14d2df93873429cd9c7b6f47c6cd2083ca02c80fb8e2ed3514d4ce1 | 02/15/2023 10:59:10 | 06/28/2023 19:30:01|
-10.3.0.008463.1499-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:1dbe8ecb8e8d146c107f2989760ec476f098e8d54bcdd32ae8cfa12f211bfa6f | 12/01/2022 16:40:08 | 12/01/2022 16:40:08|
-10.3.0.008463.1528-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:9594b7d5c01ba82a64927a50e51a57aa6e891a60f8145afe6164fba5a75f12e7 | 12/12/2022 02:16:31 | 12/12/2022 02:16:31|
-10.3.0.008463.1556-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:3fdbbcad13d39b128eb8bde405db804a61ef28ec8c1185df6cc3698f23d79411 | 12/27/2022 19:44:48 | 12/27/2022 19:44:48|
-10.3.0.008463.1656-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:3e1b95c3bef43846f872aa5bca0cd2cf6f217cd20809374c2da698efd1485c39 | 02/15/2023 11:00:01 | 02/15/2023 11:00:01|
-10.3.0.008463.1681-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:7eef3778e277a26a4204f492db149e6260b13c606ab4977ff414ca7370ec79ff | 02/23/2023 06:08:42 | 02/23/2023 06:08:42|
-10.3.0.008463.1719-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:4a676d5ce2b6338bf3b2063ee7f7e70fe14012265a21aaabd37433db6636e7db | 03/23/2023 01:02:00 | 03/23/2023 01:02:00|
-10.3.0.008463.1758-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:e04b9bc22f8bbd9b41017e456825068cfcb523525a0b26bed8b1a0912a06bd37 | 04/23/2023 12:23:50 | 04/23/2023 12:23:50|
-10.3.0.008463.1808-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:f865f0d6b965cfe2dd78d2c4bdea4183b4681953cf9de33ea6b28c5b0c31a6a4 | 06/01/2023 09:03:07 | 06/01/2023 09:03:07|
-10.3.0.008463.1872-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:dd5597a5f0f3282273bc223c396cddb008c19e31b4f20c62d72c9bcb090bec81 | 06/28/2023 19:35:04 | 06/28/2023 19:35:04|
-10.3.0.008463.629-10.0.20348.1487-ltsc2022  | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:ea680d1fd8612ed255a5d34fa793990a0abcb27684bd4090cf724685b49b49f3 | 02/15/2023 10:59:02 | 02/15/2023 10:59:02|
-10.3.0.008463.647-10.0.20348.1547-ltsc2022  | 10.0.20348.1547 | ltsc2022           | amd64           | windows | sha256:9579c19c4061525815bcf8d9576d803474e09b3d48b87002f8a7268954119833 | 02/23/2023 06:07:56 | 02/23/2023 06:07:56|
-10.3.0.008463.688-10.0.20348.1607-ltsc2022  | 10.0.20348.1607 | ltsc2022           | amd64           | windows | sha256:68acb8478f9c77113ccfb428c713be724560a9f1b9d3e0ac6c4a6da0047c6802 | 03/23/2023 01:00:01 | 03/23/2023 01:00:01|
-10.3.0.008463.722-10.0.20348.1668-ltsc2022  | 10.0.20348.1668 | ltsc2022           | amd64           | windows | sha256:12aae3459808fafa28178b2f6cfe0f1920702c13056d475530b20d8ee2ff3636 | 04/23/2023 12:11:16 | 04/23/2023 12:11:16|
-10.3.0.008463.771-10.0.20348.1726-ltsc2022  | 10.0.20348.1726 | ltsc2022           | amd64           | windows | sha256:866d98ab20036dcc168b8522de71b3827f5392c9cb448e23d41d20bd9466c59c | 06/01/2023 09:05:54 | 06/01/2023 09:05:54|
-10.3.0.008463.805-10.0.20348.1787-ltsc2022  | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:063d756bb14d2df93873429cd9c7b6f47c6cd2083ca02c80fb8e2ed3514d4ce1 | 06/28/2023 19:30:33 | 06/28/2023 19:30:33|
-10.3.1                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:4cf469792e6c583c359ae77cdc65076f1901d8d9621c5ea62fdd127701bf4068 | 08/01/2023 11:53:17 | 07/30/2024 10:30:45|
-10.3.1-ltsc2019                             | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:4d8bfe94c4691b62980d66dc5ef87b9829bacabb7411cca3c98b2d67b7f8e7a0 | 08/01/2023 10:10:56 | 07/30/2024 09:53:29|
-10.3.1-ltsc2022                             | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:62a4f79e60f53ed7f9098855503732e610083fc2fbb02152f31d0ee0b915a6d3 | 08/01/2023 10:12:17 | 07/30/2024 09:55:26|
-10.3.1.009452.1014-10.0.20348.2159-ltsc2022 | 10.0.20348.2159 | ltsc2022           | amd64           | windows | sha256:77563cd11e2609f726c5b7a0515c9e9e05d1149df1633e82bb0d3d1bf0cd497b | 12/21/2023 00:00:20 | 12/21/2023 00:00:20|
-10.3.1.009452.1029-10.0.20348.2227-ltsc2022 | 10.0.20348.2227 | ltsc2022           | amd64           | windows | sha256:18010d0f661777749afadf75dd692dd61a6b663c6d32fe4ad9aa422bb1b7c9d8 | 01/12/2024 20:41:02 | 01/12/2024 20:41:02|
-10.3.1.009452.1071-10.0.20348.2322-ltsc2022 | 10.0.20348.2322 | ltsc2022           | amd64           | windows | sha256:1c08356bd79b61d7dc027134d504ef1acef80fe37f2343680194b807f733b201 | 02/22/2024 15:08:43 | 02/22/2024 15:08:43|
-10.3.1.009452.1127-10.0.20348.2340-ltsc2022 | 10.0.20348.2340 | ltsc2022           | amd64           | windows | sha256:0de5deae997daf8e87b46f5778b103f38af967b85c59ee6ea470e44af98024e8 | 03/19/2024 23:03:25 | 03/19/2024 23:03:25|
-10.3.1.009452.1163-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:d8198acb1a35b903be1ba351d169fdf2830a2821de43182a5ffc2da2570c2cc7 | 04/16/2024 15:20:55 | 04/16/2024 15:20:55|
-10.3.1.009452.1202-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:c6df10d72bb914415243dc76196581ab03d76f4e9465ee32b3ee22c0f6a2b292 | 05/27/2024 16:22:48 | 05/27/2024 16:22:48|
-10.3.1.009452.1232-10.0.20348.2527-ltsc2022 | 10.0.20348.2527 | ltsc2022           | amd64           | windows | sha256:8ee1d00d21bc1c5851bf9c75845c7ee90e6cf89ff8f8d551bb3971e73d6a92d3 | 07/01/2024 08:26:10 | 07/01/2024 08:26:10|
-10.3.1.009452.1260-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:62a4f79e60f53ed7f9098855503732e610083fc2fbb02152f31d0ee0b915a6d3 | 07/30/2024 09:55:19 | 07/30/2024 09:55:19|
-10.3.1.009452.1907-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:cc8dbcc62064e803cba95c982c11590ee9956d18907d4032108cee20d29d929f | 08/01/2023 10:10:45 | 08/01/2023 10:10:45|
-10.3.1.009452.1944-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:d081dd1335f54edb52d3c013b46746543a844ca11a61e5f778bfffb5b243eb4e | 08/17/2023 19:33:45 | 08/17/2023 19:33:45|
-10.3.1.009452.1977-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:1c11fe759af18cd8171ccd726067ed991732a62ab70a28f37c4ead67ce21bfb7 | 09/20/2023 11:12:59 | 09/20/2023 11:12:59|
-10.3.1.009452.2019-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:b4bbe0a0d6d00f6d0008a583182729c0971c172ce3b51569597717bd805cad25 | 10/17/2023 19:14:01 | 10/17/2023 19:14:01|
-10.3.1.009452.2055-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:60d08e9fcc914b88a3e668d93c46bd4144cde73565f8bac558f29bf40cb1a585 | 11/21/2023 12:43:59 | 11/21/2023 12:43:59|
-10.3.1.009452.2086-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:2ffaca0373686605002fef0eb7fb7b8a9de9a599f103314b257bd2e26f693792 | 12/21/2023 00:07:04 | 12/21/2023 00:07:04|
-10.3.1.009452.2102-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:55327d2797c1ce1145f8a159265778fff9fda8a2045f8e1b48654f6908eaea90 | 01/12/2024 20:48:44 | 01/12/2024 20:48:44|
-10.3.1.009452.2151-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:f3eed51022e12f199de5d0a8a1c54948539ea9d4fac80390d1c39f01226111c4 | 02/22/2024 15:13:02 | 02/22/2024 15:13:02|
-10.3.1.009452.2201-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:840f1f31e9e20390466a71c67350ec37c578ad6446c19de0b82f8e9d36315667 | 03/19/2024 23:08:11 | 03/19/2024 23:08:11|
-10.3.1.009452.2251-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:1536ba6bebd8dbf733b357df5d2ff4f7ed6988d543b84948ad5d990c0bb7fecf | 04/16/2024 15:22:19 | 04/16/2024 15:22:19|
-10.3.1.009452.2294-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:138f25af5902dd517ca3e61bc1cd116ee7921b645b4988d158e7ea14e0a91ab7 | 05/27/2024 16:22:32 | 05/27/2024 16:22:32|
-10.3.1.009452.2325-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:58a15ebdb019137e2512921eec89e8e6b648c36fbb3d2490bc1548cbd1d068ec | 07/01/2024 08:57:10 | 07/01/2024 08:57:10|
-10.3.1.009452.2351-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:4d8bfe94c4691b62980d66dc5ef87b9829bacabb7411cca3c98b2d67b7f8e7a0 | 07/30/2024 09:53:14 | 07/30/2024 09:53:14|
-10.3.1.009452.845-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:76fd445479b597085531a0a23fd2eb80246b0f7b81e2b939fe86f56a90bb1263 | 08/01/2023 10:12:07 | 08/01/2023 10:12:07|
-10.3.1.009452.879-10.0.20348.1906-ltsc2022  | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:ab7138918cbfc9a22db441c46445c5d060c596d8a47c08522a7d5bb51c83c2cf | 08/17/2023 19:22:02 | 08/17/2023 19:22:02|
-10.3.1.009452.909-10.0.20348.1970-ltsc2022  | 10.0.20348.1970 | ltsc2022           | amd64           | windows | sha256:94f23209e59000a0d2426e2812f818fb2866217d59ec1e9d069793fd8d44ba2b | 09/20/2023 11:11:20 | 09/20/2023 11:11:20|
-10.3.1.009452.950-10.0.20348.2031-ltsc2022  | 10.0.20348.2031 | ltsc2022           | amd64           | windows | sha256:706bccc028b674757b25dc9047db800151f7da39476b07c837065b99d4c78395 | 10/17/2023 19:12:46 | 10/17/2023 19:12:46|
-10.3.1.009452.987-10.0.20348.2113-ltsc2022  | 10.0.20348.2113 | ltsc2022           | amd64           | windows | sha256:16e49ec83b0f4b604fe4a68ac70afd93fe76c7709d3b8823f2d0196fc64479d2 | 11/21/2023 12:42:17 | 11/21/2023 12:42:17|
-10.3.2                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:a4c64722dde5d4208e18f60e9a73e7e7d18f93acd7c3ebf052372eb33fa586aa | 08/15/2024 22:57:08 | 10/14/2024 16:14:51|
-10.3.2-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:d22e7301da07f9213a8160f2c324498de1e4d562ab466d9096abec821982562d | 08/15/2024 22:25:42 | 10/14/2024 15:47:09|
-10.3.2-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:06fcf1c846720cabdfc491b9312bc52025fb217890dd67630b9ec81b1d880ae1 | 08/15/2024 22:14:47 | 10/14/2024 15:36:19|
-10.3.2.010837.1282-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:f270052188891f4e35348aa52434d9fe36b60c04435a90cafde2343622b8a640 | 08/15/2024 22:14:42 | 08/15/2024 22:14:42|
-10.3.2.010837.1309-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:c0df2ae659f8f7fd22b69b7ef174e784d7121b30d53c9ffd70d9f1533f4185b2 | 08/21/2024 17:11:49 | 08/21/2024 17:11:49|
-10.3.2.010837.1414-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:f88310acc60bb90c7d7a77d35f524ed04138eda0c08532701d17132d53db8e78 | 09/18/2024 08:36:34 | 09/18/2024 08:36:34|
-10.3.2.010837.1438-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:06fcf1c846720cabdfc491b9312bc52025fb217890dd67630b9ec81b1d880ae1 | 10/14/2024 15:36:09 | 10/14/2024 15:36:09|
-10.3.2.010837.2376-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:36a4898868dc7a2fdf0f3ee08f96d001dbf34ec4d74f4391d8ff7e1dbc927a59 | 08/15/2024 22:25:38 | 08/15/2024 22:25:38|
-10.3.2.010837.2405-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:30f3890d7480e3deab0548d007f184483ccbc3cb4dc60c90b2c56f6b63d2a68d | 08/21/2024 17:12:23 | 08/21/2024 17:12:23|
-10.3.2.010837.2510-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:d7f16aac6c5638b1fa213abd49b311bdd3a98d26449b3bc59a365b868e6e4f21 | 09/18/2024 09:02:04 | 09/18/2024 09:02:04|
-10.3.2.010837.2538-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:d22e7301da07f9213a8160f2c324498de1e4d562ab466d9096abec821982562d | 10/14/2024 15:47:07 | 10/14/2024 15:47:07|
-10.4                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:b70b6e68fb917c2f16be54d02555653334d1412908ab6ebe140f1193477714fd | 06/07/2024 15:12:24 | 10/12/2024 11:48:32|
-10.4-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:ce789406d093efcd765892257e719a595bcf19b05f80783f011b87bd78280413 | 06/07/2024 13:21:07 | 10/12/2024 11:19:17|
-10.4-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:373702931ee5468903dbd27b837f102888e36b266e118a8c41c8cb00f0dbb2a2 | 04/17/2024 15:03:39 | 10/12/2024 11:14:38|
-10.4.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:b70b6e68fb917c2f16be54d02555653334d1412908ab6ebe140f1193477714fd | 06/07/2024 02:23:59 | 10/12/2024 11:49:19|
-10.4.0-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:ce789406d093efcd765892257e719a595bcf19b05f80783f011b87bd78280413 | 06/07/2024 01:42:48 | 10/12/2024 11:19:05|
-10.4.0-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:373702931ee5468903dbd27b837f102888e36b266e118a8c41c8cb00f0dbb2a2 | 04/17/2024 15:03:22 | 10/12/2024 11:14:23|
-10.4.0.010422.1166-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:9499a0885be05c58d47e59e6c182f136af921a099db9271d9a2cdb77cafaf2fe | 04/17/2024 15:03:18 | 04/17/2024 15:03:18|
-10.4.0.010422.1207-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:5ef1d71023b4c8329c1e18fe13b9c3f3a92ca16e6cf17aba1cae33bd4e76279b | 06/07/2024 01:37:25 | 06/07/2024 01:37:25|
-10.4.0.010422.1239-10.0.20348.2527-ltsc2022 | 10.0.20348.2527 | ltsc2022           | amd64           | windows | sha256:095cb8e86198f54163fda63bcf43d2491b0bb00d81dbe619b8e5d5e830f98863 | 06/27/2024 14:29:43 | 06/27/2024 14:29:43|
-10.4.0.010422.1259-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:e69094dbbaa13b800a210c9a0dfc21a3ab8c95444e699c8c321243c86741e4e3 | 07/22/2024 13:18:34 | 07/22/2024 13:18:34|
-10.4.0.010422.1298-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:25cc85c14b5cb655ae6021e6011d1d8729a79059d6e00d864bb1fff51386a826 | 08/21/2024 11:36:04 | 08/21/2024 11:36:04|
-10.4.0.010422.1413-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:5f0933b2e140228f2c08ef9c03bac12bc9979a0d80fa453631bb4e0b66a7d220 | 09/18/2024 09:16:31 | 09/18/2024 09:16:31|
-10.4.0.010422.1437-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:373702931ee5468903dbd27b837f102888e36b266e118a8c41c8cb00f0dbb2a2 | 10/12/2024 11:14:21 | 10/12/2024 11:14:21|
-10.4.0.010422.2299-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:a8ad86c4c2a58f205b81466a7749467403e86eba7717b8cc0b1ea31460683bd2 | 06/07/2024 01:42:42 | 06/07/2024 01:42:42|
-10.4.0.010422.2331-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:c81cf1fe13d82cc2d3a09d57e1b52978822e2c21796a4eade527ee4528d8a515 | 06/27/2024 14:23:04 | 06/27/2024 14:23:04|
-10.4.0.010422.2350-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:55bcb8f1105fd2544d51fa09c6359cfb49f5c043544ec9bcd714729a728625bf | 07/22/2024 13:23:34 | 07/22/2024 13:23:34|
-10.4.0.010422.2394-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:69f8d61ebc6313de1c8bcfddc62d8a0b44dbf456168e70420a1a1c70f5597d48 | 08/21/2024 11:37:05 | 08/21/2024 11:37:05|
-10.4.0.010422.2509-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:77554257b137147156c98c9435366c1ec9c12b6ebf3e92ec9cc6535c30f2857e | 09/18/2024 09:29:23 | 09/18/2024 09:29:23|
-10.4.0.010422.2537-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:ce789406d093efcd765892257e719a595bcf19b05f80783f011b87bd78280413 | 10/12/2024 11:19:02 | 10/12/2024 11:19:02|
+10.0                                        |                 |                    | amd64           | windows | sha256:312e79023c8a38062cca6ded257d25b5a4ed02d7d74506df0b9ed8d92872c1ed | 08/18/2021 19:09:57 | 08/30/2023 07:21:58|
+10.0-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:18f219697755f8f60bd58595a75512c9d488936508ea064632a91e169cdb1af8 | 12/15/2020 09:59:45 | 10/15/2024 14:31:51|
+10.0.0-ltsc2019                             | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:0c38cd0b60e068b7783a16850709a62dc24991590e57ce9a62eabab576de3437 | 08/03/2020 12:51:33 | 06/21/2021 09:06:59|
+10.0.0.004346.318-10.0.17763.1282-ltsc2019  | 10.0.17763.1282 | ltsc2019           | amd64           | windows | sha256:c8cd3149eafabd05302287af29aab5f06d699147b51a7c65d39c2b142e6a6b7b | 08/03/2020 12:51:21 | 08/03/2020 12:51:21|
+10.0.0.004346.337-10.0.17763.1339-ltsc2019  | 10.0.17763.1339 | ltsc2019           | amd64           | windows | sha256:e605fe117d3bdef317d0efd6b4fb01eadcbf53702a545918f8e3354b53c6a768 | 08/03/2020 18:32:09 | 08/03/2020 18:32:09|
+10.0.0.004346.371-10.0.17763.1397-ltsc2019  | 10.0.17763.1397 | ltsc2019           | amd64           | windows | sha256:721c1f5499c49c040757bd2b9632b5d74d918b2c0806409224e4d67a55bdcd71 | 08/25/2020 09:22:24 | 08/25/2020 09:22:24|
+10.0.0.004346.412-10.0.17763.1457-ltsc2019  | 10.0.17763.1457 | ltsc2019           | amd64           | windows | sha256:9ba0f7e9f70478f38dd07b6f7cf8271210f8b3fdb3f6b5e57e77a8b4d064f5da | 09/15/2020 08:20:53 | 09/15/2020 08:20:53|
+10.0.0.004346.444-10.0.17763.1518-ltsc2019  | 10.0.17763.1518 | ltsc2019           | amd64           | windows | sha256:fea409f37a5481798971507e4f5a64fb6c4404f928c5a14fbba4b1bf507b95bf | 10/22/2020 19:49:47 | 10/22/2020 19:49:47|
+10.0.0.004346.477-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019           | amd64           | windows | sha256:b16a927a1a1bea25283835e91dfb589e8e3651f958aebf0d6463b7dbfc3efe96 | 11/18/2020 10:47:48 | 11/18/2020 10:47:48|
+10.0.0.004346.520-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019           | amd64           | windows | sha256:e3e7f9bafc73d48711586186bfcbcecd88a05ccb5d5452086d70cdea1ef6808d | 12/14/2020 08:18:04 | 12/14/2020 08:18:04|
+10.0.0.004346.566-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:ec71df6c47ef925e723e5706752cab2cd908f14d5a8b763df0dd3971d8b4c63c | 01/15/2021 11:47:35 | 01/15/2021 11:47:35|
+10.0.0.004346.636-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:d2ec26112210e0b61914b98e2723efb1945cd5d898481c1699147029f890492e | 02/14/2021 16:02:35 | 02/14/2021 16:02:35|
+10.0.0.004346.670-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:52f66370ba2529d29eec21ab4d6ae749ad8af4786beab59cd6340716b12ef004 | 03/12/2021 09:45:13 | 03/12/2021 09:45:13|
+10.0.0.004346.705-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:6e9321776d60f96a3113d82368d4eed5d205dac510ca15f0cd0c1b0603f8d4db | 04/16/2021 05:57:27 | 04/16/2021 05:57:27|
+10.0.0.004346.779-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:59e94ce04b8d14241bb4730cb05a60d963c4753ef4c4e2bd54ecbc31f8193494 | 05/18/2021 06:18:14 | 05/18/2021 06:18:14|
+10.0.0.004346.837-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:0c38cd0b60e068b7783a16850709a62dc24991590e57ce9a62eabab576de3437 | 06/21/2021 09:06:42 | 06/21/2021 09:06:42|
+10.0.1-ltsc2019                             | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:d122b1c60c193aded400fbd4778959399de85ebb9ca6ab1e29eeae0480688f4a | 12/15/2020 09:59:30 | 07/20/2021 12:49:02|
+10.0.1.004842.513-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019           | amd64           | windows | sha256:3e1d3586af0abb3b4ed478d8a40f0006a6a5fc0114a693642410c1deaed6a8db | 12/15/2020 09:59:17 | 12/15/2020 09:59:17|
+10.0.1.004842.523-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019           | amd64           | windows | sha256:e351c6d6fafb57175450c19aa4a427037b4e538b3765d419283989124d9c70bd | 12/15/2020 17:07:49 | 12/15/2020 17:07:49|
+10.0.1.004842.567-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:4b774e08a1b080006957225577abdde092baaca5594372aa189800fc7dc86f7a | 01/15/2021 16:36:34 | 01/15/2021 16:36:34|
+10.0.1.004842.638-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:ac04f4353dc244da81082d2f89e24e9d938023e5ec75184eacdf8782aa52e893 | 02/15/2021 09:49:50 | 02/15/2021 09:49:50|
+10.0.1.004842.671-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:43f9e4b20222f8994571b562b4bdff1084e01734e49f0fdaa9d39dfbe118856d | 03/12/2021 15:29:08 | 03/12/2021 15:29:08|
+10.0.1.004842.707-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:ba821db4a8097ed61dd80402691d643de3f90378acd48dbf769b9e36ae5ca6a4 | 04/16/2021 13:16:22 | 04/16/2021 13:16:22|
+10.0.1.004842.781-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:fd6d24b7e84b4f0789739e7e14bb36c561328ce11db4ebc3b6446cb78a87ed5c | 05/18/2021 10:43:38 | 05/18/2021 10:43:38|
+10.0.1.004842.842-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:233eaf75ca8da5a3c60201a664fa8e2502fa76988d0424c7fa2e2444bd3a8e6c | 06/21/2021 11:51:01 | 06/21/2021 11:51:01|
+10.0.1.004842.889-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:d122b1c60c193aded400fbd4778959399de85ebb9ca6ab1e29eeae0480688f4a | 07/20/2021 12:48:45 | 07/20/2021 12:48:45|
+10.0.2                                      |                 |                    | amd64           | windows | sha256:edaa8bc35745a027867ce76f0abfa551f669e40df0c3b0bce8c469d1901c05e5 | 08/18/2021 19:13:24 | 08/30/2023 08:33:05|
+10.0.2-ltsc2019                             | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:66b49c006f5e49d6f6d55fcb4ea641da1cf3869c2769b2abd015c45e875715b1 | 06/30/2021 11:55:45 | 09/29/2021 12:12:32|
+10.0.2.006052.851-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:04341f1017b7d614c99d806ee57c96bdc07ac2c90d0fd8acc72f6021ee63a6fb | 06/30/2021 11:55:28 | 06/30/2021 11:55:28|
+10.0.2.006052.890-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:7b1973b6f2421b783fb82106cdef6288c513b8a72224ea3fe7c25814cf6f8db8 | 07/21/2021 07:12:38 | 07/21/2021 07:12:38|
+10.0.2.006052.918-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019           | amd64           | windows | sha256:f656dea7000b98fd591be4de514e455da74be72be9e8d806cbd3c4f2171a7f89 | 08/18/2021 15:37:15 | 08/18/2021 15:37:15|
+10.0.2.006052.980-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:66b49c006f5e49d6f6d55fcb4ea641da1cf3869c2769b2abd015c45e875715b1 | 09/29/2021 12:12:17 | 09/29/2021 12:12:17|
+10.0.3                                      |                 |                    | amd64           | windows | sha256:312e79023c8a38062cca6ded257d25b5a4ed02d7d74506df0b9ed8d92872c1ed | 10/07/2021 10:44:03 | 08/30/2023 08:42:59|
+10.0.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:18f219697755f8f60bd58595a75512c9d488936508ea064632a91e169cdb1af8 | 10/07/2021 07:30:28 | 10/15/2024 14:31:41|
+10.0.3.006577.1025-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:80d79bf41cfb4aaa43c4c4a9497c1e4f7f1fe9a1029edf75d7f3bda31bb466b8 | 10/19/2021 13:27:49 | 10/19/2021 13:27:49|
+10.0.3.006577.1062-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:5458a3735fdf0f5f3e39088a784c11cd1d4cd4cef120401770a9e1f4c45c9c8d | 11/12/2021 07:55:22 | 11/12/2021 07:55:22|
+10.0.3.006577.1119-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:0f741b026d4920610fa187fdac41f76347d6934ce222c3c67cbba9348d2c25d3 | 12/16/2021 19:03:49 | 12/16/2021 19:03:49|
+10.0.3.006577.1155-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:ffdae146c24270a6bd5289bbfbb16f53790bda071840e95a53ff1b4147b5dd9d | 01/18/2022 15:24:40 | 01/18/2022 15:24:40|
+10.0.3.006577.1199-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:36111c37a80268a903d3b9d00ebeb9bc473336f91d882b948bb76954e7120669 | 02/16/2022 08:23:32 | 02/16/2022 08:23:32|
+10.0.3.006577.1256-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:29585ebb743b66e18e7ffabc13ba1c71c11aa476fe4b306202f54ad9cf9114df | 03/16/2022 19:19:11 | 03/16/2022 19:19:11|
+10.0.3.006577.1298-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:ce72cabb786c7c35f15fe635a497ffa845f221132883e7ce768da048fd0686cb | 04/17/2022 19:50:39 | 04/17/2022 19:50:39|
+10.0.3.006577.1319-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:d7846f05d8f2b80da2689139bee620e9ffe188e07fdc8b00a51d7d76bce4cd26 | 05/20/2022 12:33:40 | 05/20/2022 12:33:40|
+10.0.3.006577.1344-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:bf554ee2499f2bf22e99b5d7fd748f0481e44eab5114cfaf4311f0e363923465 | 06/24/2022 16:08:14 | 06/24/2022 16:08:14|
+10.0.3.006577.1385-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:95ee75f3901f1ac6cf6b323f78a231841a441ce0bee48ebc1df7b2d14d0e887a | 07/21/2022 13:10:41 | 07/21/2022 13:10:41|
+10.0.3.006577.1401-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:248d4eb3f6f704dbf53928e5ab1ddc243ca8e865b00923586891407d661508b4 | 08/15/2022 12:08:16 | 08/15/2022 12:08:16|
+10.0.3.006577.1462-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:7a505d24d9ba98d50d37386fc6b606355809ca5ebb1930a79b7cfa572d7e6efe | 09/22/2022 17:30:21 | 09/22/2022 17:30:21|
+10.0.3.006577.1485-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:92ed4e32d13975dfc6f407fe908d7bef94cdb4e56bb286c94b55d2beae740c4c | 10/19/2022 14:40:42 | 10/19/2022 14:40:42|
+10.0.3.006577.1532-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:14606a352b0ef3891cd82c6dcfef54f46c7f3f35cc6bf356afdb2e4a5104e917 | 12/12/2022 12:01:46 | 12/12/2022 12:01:46|
+10.0.3.006577.1546-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:a4c2d788679639ebf6964a86597eaf02c2769f9e3998cb07777aea8dbb81d4bc | 12/27/2022 12:59:45 | 12/27/2022 12:59:45|
+10.0.3.006577.1683-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:f70efe7adc06bc20261b948b3a06c54526576ecec752df7d2a2bd27939f237e6 | 02/21/2023 23:42:54 | 02/21/2023 23:42:54|
+10.0.3.006577.1716-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:f28e96efde58c285d55ba5d5f9ed1a419d4c8a9118412ac155e1bdfed8ca3f58 | 03/23/2023 08:14:41 | 03/23/2023 08:14:41|
+10.0.3.006577.1753-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:4783bd6e69aac5a4491b2baa2cd7487949e339f8345f258c5997d8a5b21e7985 | 04/24/2023 13:11:35 | 04/24/2023 13:11:35|
+10.0.3.006577.1800-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:15c063477b5fe528b5644be0108b56d259d156b67f447eb9b9e741e1b420862c | 05/31/2023 12:06:36 | 05/31/2023 12:06:36|
+10.0.3.006577.1877-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:822926e6c260c630b5073ae0dfb2f655ec2c5ca8ac3058d69948f105643d4e22 | 06/29/2023 16:51:31 | 06/29/2023 16:51:31|
+10.0.3.006577.1909-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:7f07f22e3513c4a9b6b273aa67a35da2964272a14c7f3dc949f86f73254ad1cd | 07/21/2023 22:17:09 | 07/21/2023 22:17:09|
+10.0.3.006577.1940-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:7f932f04668eeacf3fd5048b8cd175c66bbec3cd50e227792ccb171ad31f6d7e | 08/29/2023 16:26:26 | 08/29/2023 16:26:26|
+10.0.3.006577.1990-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:87f9c1dd37d8c4f621a23c6df90797899a783df3711bd4cfe839e560e06720e9 | 09/25/2023 08:43:34 | 09/25/2023 08:43:34|
+10.0.3.006577.2020-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:134aa5802005afa16e3d2a133663ca8d66750f705b24fbea2b771f5fc91b8738 | 10/17/2023 23:33:54 | 10/17/2023 23:33:54|
+10.0.3.006577.2061-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:c13029ca4ba20d2ee50e408e0b9ae6ef55bede370d3c542768b657fb5db6c333 | 11/21/2023 21:19:20 | 11/21/2023 21:19:20|
+10.0.3.006577.2089-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:8a75206075c8e37566bf54c031a26ed1a38c749d2c73c353ffa2635cf80b4edf | 12/21/2023 09:41:47 | 12/21/2023 09:41:47|
+10.0.3.006577.2106-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:3395984359559cb8c309b6d2746fb3380fbc819e891525e837450e5823087f6b | 01/18/2024 02:20:12 | 01/18/2024 02:20:12|
+10.0.3.006577.2144-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:499e7f0f6134a5a18e7f02617b1512b6aa57805323f443b04a986942f652a518 | 02/21/2024 11:37:15 | 02/21/2024 11:37:15|
+10.0.3.006577.2193-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:a718124d5539400e94adec4c7abc75d28027ec604b3fa647969d75ea42146de9 | 03/21/2024 11:13:01 | 03/21/2024 11:13:01|
+10.0.3.006577.2245-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:e3afded74e155b0b2c2dba87a4ef3bf9d4a213d61d097c78daa601911d22048c | 04/16/2024 16:08:37 | 04/16/2024 16:08:37|
+10.0.3.006577.2278-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:c587d305cc94bf523c0d3a018c4a621aa72c10253c9e1b703c7fc99ba90f5cc5 | 05/20/2024 09:25:45 | 05/20/2024 09:25:45|
+10.0.3.006577.2321-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:e6369f765df65dea94cbf7c69aeedbf78ede96aab913d4e2c4b823b412ecece2 | 06/19/2024 00:45:10 | 06/19/2024 00:45:10|
+10.0.3.006577.2357-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:bfb1690d1d22a0c2111317ad4d59e31a1a9007af1acd112641e703fa10c03f6d | 07/22/2024 20:59:30 | 07/22/2024 20:59:30|
+10.0.3.006577.2399-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:8ed9fb4c313142ac92d11a6abe07e2d937c130e16be78a4c065fa25fa052eea0 | 08/22/2024 09:43:12 | 08/22/2024 09:43:12|
+10.0.3.006577.2514-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:498649b26495551852f9373393adb80306765466c4c56f36ab6ef934939e013e | 09/18/2024 08:22:43 | 09/18/2024 08:22:43|
+10.0.3.006577.2531-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:18f219697755f8f60bd58595a75512c9d488936508ea064632a91e169cdb1af8 | 10/15/2024 14:31:27 | 10/15/2024 14:31:27|
+10.0.3.006577.992-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:e3050d6195595fb724930e61a7cee09e4ef88fc0ed550c07def2d8670452f9bd | 10/07/2021 07:30:12 | 10/07/2021 07:30:12|
+10.1                                        |                 |                    | amd64           | windows | sha256:f3b983f9623adf094986f176e8b648ae60186f59f9c6df7ddccfc92137357b8f | 08/18/2021 10:27:38 | 08/30/2023 10:41:23|
+10.1-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:5ae1dcbce552513e430ca1f47a393ae5164bd0c49b6056df55f48b531546c645 | 02/25/2021 06:40:32 | 10/17/2024 16:04:15|
+10.1.0                                      |                 |                    | amd64           | windows | sha256:fa2b453676e42e353a8966876d681757fa0f58e2d71b05407e0714f107faaf2d | 09/22/2022 16:40:00 | 08/30/2023 10:45:21|
+10.1.0-ltsc2019                             | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:b6d0d8ff8f6a737caf38d98b5b8a3fccab3a0b6b5563b74974c68f36683a4dd9 | 02/25/2021 06:40:22 | 10/24/2023 13:48:19|
+10.1.0.005207.626-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:b4ffa5d4a8a2cb394fb841f08f691b5b7e9ec224b060eaf0cc2fbc3cd62417a2 | 02/25/2021 06:40:11 | 02/25/2021 06:40:11|
+10.1.0.005207.643-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:a689e4954b27121ddc8847e64d4a3f6f4b444cf1fc5dc8c7dfdefefdfa765b11 | 02/26/2021 07:24:34 | 02/26/2021 07:24:34|
+10.1.0.005207.673-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:b6d0d8ff8f6a737caf38d98b5b8a3fccab3a0b6b5563b74974c68f36683a4dd9 | 03/12/2021 19:18:59 | 03/12/2021 19:18:59|
+10.1.0.005207.708-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:311bb69131797318edb2ba80d8734eabd0b69d0d7e6d604d9fe82d05bcfe7759 | 04/19/2021 12:29:26 | 04/19/2021 12:29:26|
+10.1.0.005207.782-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:04f0c66f120f1f8f73b989871fa9a9bddf9cbba3af76af825c4d7b0fb8e0a811 | 05/18/2021 15:13:47 | 05/18/2021 15:13:47|
+10.1.0.005207.844-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:77033a7303f4e6b83a8e0cbddf372e298347440d0071e8d2e13be7ec60ec093c | 06/21/2021 16:41:12 | 06/21/2021 16:41:12|
+10.1.1                                      |                 |                    | amd64           | windows | sha256:35cf21f7cd6c5e87ada7b32b97474c2d0515bbd65056f8b1f500d25e671359b3 | 08/18/2021 10:28:22 | 08/30/2023 11:12:24|
+10.1.1-ltsc2019                             | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:91b22429f0dd527a3f793fe6bff72f4a7f33fb89d2678610c2913cbe66ba15ad | 06/10/2021 09:49:27 | 09/30/2021 06:44:55|
+10.1.1.005862.821-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:95f1ee0e42d795335ff48f275b01b39794a6d752562e12ecce1abe119c33243f | 06/10/2021 09:49:16 | 06/10/2021 09:49:16|
+10.1.1.005862.846-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:d64c94f3facba63501fc93ade1bc9fc092e8b91a57f4b778f2f642f05ec6b43d | 06/21/2021 21:26:17 | 06/21/2021 21:26:17|
+10.1.1.005862.891-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:baaaf6f2ca9e7030849ee916efe09fd948f710461c179c62c1736d991bdf41a6 | 07/22/2021 08:48:25 | 07/22/2021 08:48:25|
+10.1.1.005862.921-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019           | amd64           | windows | sha256:199a8dbd6e52b7aad4ffee59227d0f839c03289b040bd3df572ee40a7e20c71b | 08/18/2021 07:35:58 | 08/18/2021 07:35:58|
+10.1.1.005862.982-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:91b22429f0dd527a3f793fe6bff72f4a7f33fb89d2678610c2913cbe66ba15ad | 09/30/2021 06:44:40 | 09/30/2021 06:44:40|
+10.1.2                                      |                 |                    | amd64           | windows | sha256:f3b983f9623adf094986f176e8b648ae60186f59f9c6df7ddccfc92137357b8f | 10/11/2021 09:57:53 | 08/30/2023 11:22:45|
+10.1.2-ltsc2019                             | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:3ec7ee2ebc67b8da928042cc8154bb217d227a6671d5def0a6435b712fbffdb5 | 10/11/2021 07:31:36 | 08/12/2023 00:41:51|
+10.1.2.006578.1027-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:d05ce4765ce2825df4e66bac2f6fd7dda054ebaaf37abd89a7bb4c96ba299d1f | 10/19/2021 22:20:28 | 10/19/2021 22:20:28|
+10.1.2.006578.1063-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:71434331ddee1ba02b1d31823401da4a1fca883e87ccc0ed0097c3679f28b382 | 11/14/2021 19:16:21 | 11/14/2021 19:16:21|
+10.1.2.006578.1121-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:ce0618260e71d766169107cc20b0829cc1191253830a2b541a89a0688e1a9659 | 12/17/2021 09:03:05 | 12/17/2021 09:03:05|
+10.1.2.006578.1156-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:605b4467a2dd212f03065b480426c9fcb7fe5669a2d033a19b90ded1bbcf8d29 | 01/19/2022 08:00:00 | 01/19/2022 08:00:00|
+10.1.2.006578.1200-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:62b33de95a0a6659653cf00ad0dfd59784a3812c1ebc478665910bffa290bb6c | 02/15/2022 16:55:14 | 02/15/2022 16:55:14|
+10.1.2.006578.1264-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:ce6374af611d3ce029f19c741093bb52ee7549058cea7578b9f801045574a9bb | 03/15/2022 21:32:56 | 03/15/2022 21:32:56|
+10.1.2.006578.1299-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:4076ffb5a479ba64d9ba6afbd4f0644688f564b8c11f0b895fe452b34a78c137 | 04/19/2022 02:01:07 | 04/19/2022 02:01:07|
+10.1.2.006578.1326-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:04d7b726365301bff6c630717709a464e5f937c286a3cfc2f3f673fdd7502f3b | 05/20/2022 16:44:09 | 05/20/2022 16:44:09|
+10.1.2.006578.1345-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:b0d48d128dcd3a5a3f8fa958aba8c499d0669dc2f8f86c1d957bed6a986d9124 | 06/24/2022 11:18:16 | 06/24/2022 11:18:16|
+10.1.2.006578.1380-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:290e19cb17eb93838ca92b0ec3253848941db3e8fea0a3100b147a38d1a09be1 | 07/21/2022 20:49:38 | 07/21/2022 20:49:38|
+10.1.2.006578.1404-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:244c5505942baac2a71735292cd7a7d1bb1b02ecec6c201a735f65138d1d82e5 | 08/15/2022 17:38:37 | 08/15/2022 17:38:37|
+10.1.2.006578.1455-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:bd5aa1c15d82da25e3b391158fd624140f7ed3e0edd8ed0828b4d0bb3b453ed4 | 09/25/2022 10:27:20 | 09/25/2022 10:27:20|
+10.1.2.006578.1488-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:d85a426a6276629095b9ff5d98586eaf6bda62646bcc94ae18ae131a52d0e8a7 | 10/19/2022 22:44:37 | 10/19/2022 22:44:37|
+10.1.2.006578.1523-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:f1b3ed775d903a6a98b93f46dd3605b43f5d8c845e8201300516d125fa852a08 | 12/08/2022 11:06:55 | 12/08/2022 11:06:55|
+10.1.2.006578.1547-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:09b2eb4de6142fac2477d523c6c3be9608e91938faf9e8674eb54d6280f61cdc | 12/27/2022 13:44:03 | 12/27/2022 13:44:03|
+10.1.2.006578.1663-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:c186b01ec917ac8fe4a3aadd24e0cb62d9243e80acb90d69a1a721c9ef96190d | 02/10/2023 19:05:38 | 02/10/2023 19:05:38|
+10.1.2.006578.1679-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:118938f5d48f11c29f55d571a9a2c8f96728fcfca8c8a8c09995d926162fb7f1 | 02/23/2023 15:54:18 | 02/23/2023 15:54:18|
+10.1.2.006578.1718-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:d39d9e03bd8ac20bb6e542f7f4719088a3d7437cc190fcd4cb6d59d5d6c4c662 | 03/22/2023 17:23:00 | 03/22/2023 17:23:00|
+10.1.2.006578.1754-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:dec44d26ca1776ed30d4f9fc22c8b7302cf3eaae24807e9099efab2eb0d965cf | 04/25/2023 14:39:16 | 04/25/2023 14:39:16|
+10.1.2.006578.1803-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:9529ff0e58593355cf89884d31ce40e3b183b631ac2f492fd6ccbebf9e9046cf | 05/31/2023 14:42:28 | 05/31/2023 14:42:28|
+10.1.2.006578.1875-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:e700c94815057e4083f14e4d1f348a12c42d5c4d09a6c8048197899b7e5d695b | 06/29/2023 13:16:46 | 06/29/2023 13:16:46|
+10.1.2.006578.1916-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:eba32adba634fed4fb99fb3dd1e2b39d4156233612bcd4b437a35fa71a7b6177 | 07/24/2023 15:35:57 | 07/24/2023 15:35:57|
+10.1.2.006578.1939-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:3ec7ee2ebc67b8da928042cc8154bb217d227a6671d5def0a6435b712fbffdb5 | 08/12/2023 00:41:36 | 08/12/2023 00:41:36|
+10.1.2.006578.993-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:68c670fc3fe1303eefc2200130ef188151c07cdf01502315e65169d8c3d7473a | 10/11/2021 07:31:12 | 10/11/2021 07:31:12|
+10.1.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:5ae1dcbce552513e430ca1f47a393ae5164bd0c49b6056df55f48b531546c645 | 09/06/2023 22:00:05 | 10/17/2024 16:04:04|
+10.1.3.009558.1962-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:d45ea2d501bd591881f9e2c7cac54db3b60ee44f6328ac645d0adb7568e3849e | 09/06/2023 21:59:55 | 09/06/2023 21:59:55|
+10.1.3.009558.1987-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:b736e2e55103f00baa03c6e7e3ae742ec37e5caf87cd14922f6ca96ee9a0180e | 09/21/2023 12:34:53 | 09/21/2023 12:34:53|
+10.1.3.009558.2013-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:89f162f74a0441f272df67693a027f3239eb8c445ced43d5e9fb00c8dc65ec3c | 10/13/2023 13:31:31 | 10/13/2023 13:31:31|
+10.1.3.009558.2052-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:902ac99b2f297e09211e65df277b7f48a430cc0c34e29bc2909f86de8167a7de | 11/17/2023 12:09:48 | 11/17/2023 12:09:48|
+10.1.3.009558.2079-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:240ee6ffba70753d8b2e78c2e91649eae9a245fff0a93418535e61905da7df86 | 12/14/2023 14:21:28 | 12/14/2023 14:21:28|
+10.1.3.009558.2115-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:8921fe858393b593a69c52e252a8e6831c814741d333c8cd8008bcfe5b71fa51 | 01/16/2024 08:13:37 | 01/16/2024 08:13:37|
+10.1.3.009558.2160-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:445ae7741ce97606f0b50d20e53e734da6e419e242dc9e3d4e25632e93a6a205 | 02/24/2024 00:35:31 | 02/24/2024 00:35:31|
+10.1.3.009558.2197-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:eee11bcfcd90be7c9add57d3fe990c80fed7df1d24b2a587c695d295d42a4093 | 03/19/2024 19:50:23 | 03/19/2024 19:50:23|
+10.1.3.009558.2254-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:541461919bb331d6259517d01dddb578d10aba7454f62198f6012c5e1f51a6c3 | 04/17/2024 21:53:06 | 04/17/2024 21:53:06|
+10.1.3.009558.2279-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:b457448b931d944591d706fc66f670dcdd7a03f7efe4ec131dc41f531e860ad7 | 05/27/2024 17:18:35 | 05/27/2024 17:18:35|
+10.1.3.009558.2327-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:7c1535dcde7ebe92ed6d03fa568888086d6666916d183c85ffc24fe20f75bb72 | 06/19/2024 01:36:14 | 06/19/2024 01:36:14|
+10.1.3.009558.2353-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:8c40588a3cb2222578670fc75e788c0b25682c87b9f5dc519ef12226c3416663 | 08/01/2024 09:11:38 | 08/01/2024 09:11:38|
+10.1.3.009558.2407-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:fa2b5adb04dd0232a11d3a8b26b3bfba93ad79a8c0c1fdca1e7dc4864d1e8781 | 08/21/2024 10:08:41 | 08/21/2024 10:08:41|
+10.1.3.009558.2517-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:3d5e86a0c856ba47ce83f8350dfbfbc985dd006a3f9718480cba46b2cbedcbdf | 09/18/2024 22:30:12 | 09/18/2024 22:30:12|
+10.1.3.009558.2532-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:5ae1dcbce552513e430ca1f47a393ae5164bd0c49b6056df55f48b531546c645 | 10/17/2024 16:03:48 | 10/17/2024 16:03:48|
+10.2                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:c8bfb28df6f61e20661c383b3203bacbbce4bd84582ef0685210dfa70aeaf42e | 11/04/2021 10:13:09 | 10/11/2024 23:23:40|
+10.2-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:65abb39ae5ae012031a525cd7c8bebe9687107654fd7a93fca532e52d5d17791 | 11/04/2021 08:06:43 | 10/11/2024 22:55:14|
+10.2-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:8c6e3d4582012d3fb826440d7a14ccf7e7623fc9d6fb4b1384e93429ccb52c4e | 02/15/2023 05:02:41 | 10/11/2024 22:45:03|
+10.2.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:4b67119a7a2424db23fa872f1eb60eecafaa5f7dd6f57aca3941909f7e028480 | 11/04/2021 10:13:25 | 09/01/2023 09:21:05|
+10.2.0-ltsc2019                             | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:806ac19be4a99586242f1d73793f98ac779349c7e88ea93a6d52c633581be827 | 11/04/2021 08:06:27 | 08/14/2023 17:28:38|
+10.2.0-ltsc2022                             | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:e194f6e3517750fdf6db002b05e80e9ce7d4384a317dace885c15d4aaba7999c | 02/15/2023 05:02:28 | 08/14/2023 17:51:19|
+10.2.0.006766.1033-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:2fa7e11594c138fda85aa69dc9972b536fa8197b93008341023803f5496890bc | 11/04/2021 08:06:11 | 11/04/2021 08:06:11|
+10.2.0.006766.1064-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:5ffdea81bd62e411aaf8299b8cac0c7e61009ee0ce242c20da3b2816d39292ac | 11/15/2021 07:56:50 | 11/15/2021 07:56:50|
+10.2.0.006766.1123-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:910a1093b5af16b35a02ef297867a2e16434ce7ddb4bc17e06fc159b84fec27c | 12/17/2021 15:02:44 | 12/17/2021 15:02:44|
+10.2.0.006766.1157-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:94fde40849ff9b2ba5fb8e3e1931ff544ec17be32f9b2d13d1c2e420c6a0910b | 01/19/2022 14:45:22 | 01/19/2022 14:45:22|
+10.2.0.006766.1202-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:55f900fba6ad8c809f3deb0f314edaf47b3c08ddded5e452b808feda20032ab4 | 02/17/2022 14:49:26 | 02/17/2022 14:49:26|
+10.2.0.006766.1259-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:b2fecd61e2cef052ea323ade1028186bbdb3cec0fb51735db2bbce4d841a5dc4 | 03/15/2022 12:36:57 | 03/15/2022 12:36:57|
+10.2.0.006766.1300-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:b32772d1524fed5e81ca3f6530169c9a95da4aef5cb69d5b4d3f14dde995ce8b | 04/20/2022 11:23:06 | 04/20/2022 11:23:06|
+10.2.0.006766.1327-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:9c3125b1e163f7bd03310d7c80c224addfa55fc8657f59ffa154b3fd12c05ed3 | 05/24/2022 13:45:20 | 05/24/2022 13:45:20|
+10.2.0.006766.1358-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:66be2c23db9b77755b41b373cdc25b3da1f19eab1204a1b67f2ef2350a74df4e | 06/23/2022 19:15:23 | 06/23/2022 19:15:23|
+10.2.0.006766.1381-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:3036d59096bbb54b11618e44519a376ecad88f3b2930447790a79b7fba773394 | 07/22/2022 09:57:15 | 07/22/2022 09:57:15|
+10.2.0.006766.1406-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:bf5fa54e41435575090e65c6dc9446958024fb07821b7047f0cd1cdc85c97674 | 08/16/2022 08:34:16 | 08/16/2022 08:34:16|
+10.2.0.006766.1460-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:e9e875c162887986151b54d0db5b6fba57e08fadc63377b2a76615a1025bede2 | 09/23/2022 15:01:53 | 09/23/2022 15:01:53|
+10.2.0.006766.1487-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:41914636be05030597af13666e7b5bee1a70e197a516c64435491bbeb32dcefe | 10/24/2022 09:09:25 | 10/24/2022 09:09:25|
+10.2.0.006766.1527-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:1a278b558261db512ddfae2ea27132f90682161c292312fd307b3bcca03ad94f | 12/12/2022 01:34:48 | 12/12/2022 01:34:48|
+10.2.0.006766.1554-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:b92ced69d7d9f853b2df9c9aafc7f3b178ebd3dd758c31c0abf148f0015ba068 | 12/27/2022 19:00:34 | 12/27/2022 19:00:34|
+10.2.0.006766.1659-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:e3fec0c693c0a626582cb47358de5f7e02b1ef28dcbab44c9d7724f0301f756b | 02/15/2023 05:14:23 | 01/17/2024 16:57:36|
+10.2.0.006766.1682-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:eb08b10031a12b04a9750d0f1c6a3e31816116d7b7af7e5740609a97c544ac8d | 02/24/2023 07:52:06 | 01/17/2024 17:01:00|
+10.2.0.006766.1717-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:690befdac61df0e037b340401fae4f6b3680334a817e239f381e8cd7ebbe48f2 | 03/23/2023 09:05:04 | 01/17/2024 17:03:53|
+10.2.0.006766.1755-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:ba121e33f0d0ec85b39a78fb6f84c62ce11282e5d095a3a1b3fe4ce56441dcfd | 04/23/2023 12:55:16 | 01/17/2024 17:07:20|
+10.2.0.006766.1804-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:b679d6e873b794e127c1c069aa71c7bc35a12e7425a3271f321b581eb79009ab | 06/01/2023 12:18:20 | 01/17/2024 17:10:46|
+10.2.0.006766.1873-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:860f65db2b29d41d9a873958010f5127b2a3bfbf14fdabd7592048118b2c4d85 | 06/29/2023 10:41:53 | 06/29/2023 10:41:53|
+10.2.0.006766.1911-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:edb9b911b3052155c89ae62f24698c096c3c3bc469b6e2c7acfad19890c333e2 | 07/31/2023 14:13:42 | 07/31/2023 14:13:42|
+10.2.0.006766.1938-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:806ac19be4a99586242f1d73793f98ac779349c7e88ea93a6d52c633581be827 | 08/14/2023 17:28:24 | 08/14/2023 17:28:24|
+10.2.0.006766.627-10.0.20348.1487-ltsc2022  | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:85c1d340951b7be27798c1001c83a6cded21bd445e612514d20d00d27c1ed6ca | 02/15/2023 05:02:14 | 02/15/2023 05:02:14|
+10.2.0.006766.649-10.0.20348.1547-ltsc2022  | 10.0.20348.1547 | ltsc2022           | amd64           | windows | sha256:27fec46715f25c6bbe3ec0b0c76eb9a3dadf45bc7f9215c0882d72b75402b725 | 02/24/2023 07:39:47 | 02/24/2023 07:39:47|
+10.2.0.006766.685-10.0.20348.1607-ltsc2022  | 10.0.20348.1607 | ltsc2022           | amd64           | windows | sha256:3e2595ca8f60aa5d56033ccd5ced5a84f039b63ce03fad26f0073736e15a0dfc | 03/23/2023 09:05:26 | 03/23/2023 09:05:26|
+10.2.0.006766.718-10.0.20348.1668-ltsc2022  | 10.0.20348.1668 | ltsc2022           | amd64           | windows | sha256:1192d3b59120352513d848fcfdb24ec6d526e43a222bc7d3f135c107608dc72f | 04/23/2023 12:43:20 | 04/23/2023 12:43:20|
+10.2.0.006766.767-10.0.20348.1726-ltsc2022  | 10.0.20348.1726 | ltsc2022           | amd64           | windows | sha256:c1cd18083d042a854ec23e18ba99df1c87e72f7fa6ab34ca0873a84edddea53b | 06/01/2023 12:09:08 | 06/01/2023 12:09:08|
+10.2.0.006766.806-10.0.20348.1787-ltsc2022  | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:61c06899c9b26253920102cba481fb8f322672dd697fef30f653d1c653d80573 | 06/29/2023 10:33:12 | 06/29/2023 10:33:12|
+10.2.0.006766.849-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:39fbb79bd12410c8c3782ce68ac198166f92c0b3f2d2ff406f822819893621d8 | 07/31/2023 14:07:58 | 07/31/2023 14:07:58|
+10.2.0.006766.873-10.0.20348.1906-ltsc2022  | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:e194f6e3517750fdf6db002b05e80e9ce7d4384a317dace885c15d4aaba7999c | 08/14/2023 17:50:55 | 08/14/2023 17:50:55|
+10.2.1                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:df86f76d7cf5c46f7532aedb0953ec4cd011dfc0b64c4bd2539ebeda4e2d4576 | 08/31/2023 17:01:13 | 05/28/2024 14:57:44|
+10.2.1-ltsc2019                             | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:09bc118db2126bdd3b66c78ab5c8e63d47cfa01f25cb42ade9082a33ebf88841 | 08/31/2023 16:25:26 | 05/28/2024 14:07:36|
+10.2.1-ltsc2022                             | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:1569a256f97855b2febab9e9216b1b853aead2d943f9c7d4bb576f8e38f6985f | 08/31/2023 16:20:52 | 05/28/2024 14:06:07|
+10.2.1.009559.1013-10.0.20348.2159-ltsc2022 | 10.0.20348.2159 | ltsc2022           | amd64           | windows | sha256:3ad97a71d1d2bc9d3fb81d194569f7c3bb52eb41cb8e10f369c7c475eca14bdb | 12/18/2023 14:19:03 | 12/18/2023 14:19:03|
+10.2.1.009559.1030-10.0.20348.2227-ltsc2022 | 10.0.20348.2227 | ltsc2022           | amd64           | windows | sha256:1e15afc88add82a14c7f3f948fa74f3ffcf05dcfb8e0f16ca24e62b46111c792 | 01/18/2024 11:43:52 | 01/18/2024 11:43:52|
+10.2.1.009559.1077-10.0.20348.2322-ltsc2022 | 10.0.20348.2322 | ltsc2022           | amd64           | windows | sha256:a1cc173a46cb1d54f2e92347a07b12554fa5b210b4394ace445f82b3c68c5fb3 | 03/05/2024 09:59:29 | 03/05/2024 09:59:29|
+10.2.1.009559.1122-10.0.20348.2340-ltsc2022 | 10.0.20348.2340 | ltsc2022           | amd64           | windows | sha256:c15361459ae51b14c7ea040a7e7c399689662dc0b8d63f32229bb593f0686953 | 03/19/2024 10:41:20 | 03/19/2024 10:41:20|
+10.2.1.009559.1161-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:34f685acb0fed789c6ed97d53c8346f7dcfe6a79dc92fc4e333cbc397334f359 | 04/15/2024 14:19:14 | 04/15/2024 14:19:14|
+10.2.1.009559.1193-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:1569a256f97855b2febab9e9216b1b853aead2d943f9c7d4bb576f8e38f6985f | 05/28/2024 14:05:49 | 05/28/2024 14:05:49|
+10.2.1.009559.1934-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:e971820aca2cb9509215727da16bfdc677cc0093489f673b49b69abddbbf3bbf | 08/31/2023 16:24:21 | 08/31/2023 16:24:21|
+10.2.1.009559.1983-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:071ddef62e30de07eef21022bd0fe6a28582f98da321db1662a0f578ef715274 | 09/22/2023 09:42:50 | 09/22/2023 09:42:50|
+10.2.1.009559.2017-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:a7f7c7f1a18564858bd5d0eae6b3c94fddaf8854da321b3decc47a9357f146c4 | 10/17/2023 07:36:48 | 10/17/2023 07:36:48|
+10.2.1.009559.2054-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:fc7a37c00dc37b07e433e7f8a8d92221245218eea19ff2b19ac05e51f06b06eb | 11/17/2023 19:33:39 | 11/17/2023 19:33:39|
+10.2.1.009559.2085-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:0ccd7c9c1286cf91f53d8cacc229823e34c963319c797a425bc4e41d1862b562 | 12/18/2023 14:33:41 | 12/18/2023 14:33:41|
+10.2.1.009559.2103-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:a3d09030a57548d22bc825d104d05cd0e030f6e6f1bf5fe322699ccc9811dbec | 01/18/2024 11:47:52 | 01/18/2024 11:47:52|
+10.2.1.009559.2156-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:a728b897acbd7c5e6fbf931dfda662e9988eed9cc89b7b0c8a81ba7535e5bee5 | 03/05/2024 10:11:53 | 03/05/2024 10:11:53|
+10.2.1.009559.2196-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:880c3141f6c7b8ce3e9e0dea186b6b87e25313926d4c026eff019162b605c175 | 03/19/2024 10:45:31 | 03/19/2024 10:45:31|
+10.2.1.009559.2249-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:cfa9669dc1786f2eaf306e73c1224a631def842b5ad339a016536bcf69966ade | 04/15/2024 14:23:57 | 04/15/2024 14:23:57|
+10.2.1.009559.2281-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:09bc118db2126bdd3b66c78ab5c8e63d47cfa01f25cb42ade9082a33ebf88841 | 05/28/2024 14:07:19 | 05/28/2024 14:07:19|
+10.2.1.009559.870-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:bcd259b2619fc12738ec83ada3dea7b078e4b19126cb3e9a8880134b5d3f483a | 08/31/2023 16:20:18 | 08/31/2023 16:20:18|
+10.2.1.009559.915-10.0.20348.1970-ltsc2022  | 10.0.20348.1970 | ltsc2022           | amd64           | windows | sha256:1fd72d8234509b38c4625da56f484f212e0bdcc840fe5aa8e55b808db702d434 | 09/22/2023 09:33:27 | 09/22/2023 09:33:27|
+10.2.1.009559.948-10.0.20348.2031-ltsc2022  | 10.0.20348.2031 | ltsc2022           | amd64           | windows | sha256:95df81cb124cd6163daa580082234f614986ab104aa1727f5cd416e3fae1a85f | 10/17/2023 07:24:36 | 10/17/2023 07:24:36|
+10.2.1.009559.986-10.0.20348.2113-ltsc2022  | 10.0.20348.2113 | ltsc2022           | amd64           | windows | sha256:54ca4304a445aad6ca542e1f689ddff6a937ee7680a858a8952b960f9c312325 | 11/17/2023 19:19:50 | 11/17/2023 19:19:50|
+10.2.2                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:c8bfb28df6f61e20661c383b3203bacbbce4bd84582ef0685210dfa70aeaf42e | 07/01/2024 22:52:24 | 10/11/2024 23:26:35|
+10.2.2-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:65abb39ae5ae012031a525cd7c8bebe9687107654fd7a93fca532e52d5d17791 | 07/01/2024 22:08:05 | 10/11/2024 22:55:05|
+10.2.2-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:8c6e3d4582012d3fb826440d7a14ccf7e7623fc9d6fb4b1384e93429ccb52c4e | 07/01/2024 21:54:08 | 10/11/2024 22:44:50|
+10.2.2.010645.1224-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:67b581d4779432a72fe03bc63d141684eb67f00ec85d8cfe5d95822c7affdd8a | 07/01/2024 21:53:47 | 07/01/2024 21:53:47|
+10.2.2.010645.1261-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:2e139ae9d38d934a7d5a95fe943fdff4ea8ce1556903c3e3b74c8328ab24d55e | 07/18/2024 08:46:06 | 07/18/2024 08:46:06|
+10.2.2.010645.1305-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:45d6fbec74212812cb41a699d56f82dc6787f41752e931168e42e3977b23665f | 08/21/2024 10:51:22 | 08/21/2024 10:51:22|
+10.2.2.010645.1415-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:3c2d605ad8a21167bb2ecd3cd0536eb9c10ecab526536fb02b257cbcb0c3be84 | 09/18/2024 09:49:02 | 09/18/2024 09:49:02|
+10.2.2.010645.1430-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:8c6e3d4582012d3fb826440d7a14ccf7e7623fc9d6fb4b1384e93429ccb52c4e | 10/11/2024 22:44:37 | 10/11/2024 22:44:37|
+10.2.2.010645.2318-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:f4103e89a88437bc0ac1efe7415cabd9595bbf74097495192ff72016a46945d8 | 07/01/2024 22:07:48 | 07/01/2024 22:07:48|
+10.2.2.010645.2352-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:bbf95e369d03c2b4b32f29a781adcbd312bfba7127c0abc0705f159be414308f | 07/18/2024 08:38:29 | 07/18/2024 08:38:29|
+10.2.2.010645.2401-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:4c3e9b4adf95d3e254c3a3a832a29e652eec8c52ca37b52d586f135031ef7228 | 08/21/2024 10:44:16 | 08/21/2024 10:44:16|
+10.2.2.010645.2511-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:0fb25a87820feffaf679a14e6847a5c5f1a93c2e7c38b7ca96e682f709100ebe | 09/18/2024 10:07:36 | 09/18/2024 10:07:36|
+10.2.2.010645.2530-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:65abb39ae5ae012031a525cd7c8bebe9687107654fd7a93fca532e52d5d17791 | 10/11/2024 22:54:56 | 10/11/2024 22:54:56|
+10.3                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:a4c64722dde5d4208e18f60e9a73e7e7d18f93acd7c3ebf052372eb33fa586aa | 02/15/2023 11:38:19 | 10/14/2024 16:17:27|
+10.3-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:d22e7301da07f9213a8160f2c324498de1e4d562ab466d9096abec821982562d | 12/01/2022 16:39:31 | 10/14/2024 15:47:16|
+10.3-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:06fcf1c846720cabdfc491b9312bc52025fb217890dd67630b9ec81b1d880ae1 | 02/15/2023 10:58:21 | 10/14/2024 15:36:28|
+10.3.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:ca5dbd3af3849f0ff5828354a4b5ff1405f7a5800b9c9353e064d38e9d4c5a4a | 02/15/2023 11:37:37 | 09/01/2023 08:15:35|
+10.3.0-ltsc2019                             | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:dd5597a5f0f3282273bc223c396cddb008c19e31b4f20c62d72c9bcb090bec81 | 12/01/2022 16:39:17 | 06/28/2023 19:34:11|
+10.3.0-ltsc2022                             | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:063d756bb14d2df93873429cd9c7b6f47c6cd2083ca02c80fb8e2ed3514d4ce1 | 02/15/2023 10:58:08 | 06/28/2023 19:29:57|
+10.3.0.008463.1499-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:1dbe8ecb8e8d146c107f2989760ec476f098e8d54bcdd32ae8cfa12f211bfa6f | 12/01/2022 16:39:04 | 12/01/2022 16:39:04|
+10.3.0.008463.1528-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:9594b7d5c01ba82a64927a50e51a57aa6e891a60f8145afe6164fba5a75f12e7 | 12/12/2022 02:15:27 | 12/12/2022 02:15:27|
+10.3.0.008463.1556-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:3fdbbcad13d39b128eb8bde405db804a61ef28ec8c1185df6cc3698f23d79411 | 12/27/2022 19:43:44 | 12/27/2022 19:43:44|
+10.3.0.008463.1656-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:3e1b95c3bef43846f872aa5bca0cd2cf6f217cd20809374c2da698efd1485c39 | 02/15/2023 10:58:59 | 02/15/2023 10:58:59|
+10.3.0.008463.1681-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:7eef3778e277a26a4204f492db149e6260b13c606ab4977ff414ca7370ec79ff | 02/23/2023 06:07:38 | 02/23/2023 06:07:38|
+10.3.0.008463.1719-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:4a676d5ce2b6338bf3b2063ee7f7e70fe14012265a21aaabd37433db6636e7db | 03/23/2023 01:00:57 | 03/23/2023 01:00:57|
+10.3.0.008463.1758-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:e04b9bc22f8bbd9b41017e456825068cfcb523525a0b26bed8b1a0912a06bd37 | 04/23/2023 12:22:47 | 04/23/2023 12:22:47|
+10.3.0.008463.1808-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:f865f0d6b965cfe2dd78d2c4bdea4183b4681953cf9de33ea6b28c5b0c31a6a4 | 06/01/2023 09:02:04 | 06/01/2023 09:02:04|
+10.3.0.008463.1872-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:dd5597a5f0f3282273bc223c396cddb008c19e31b4f20c62d72c9bcb090bec81 | 06/28/2023 19:34:01 | 06/28/2023 19:34:01|
+10.3.0.008463.629-10.0.20348.1487-ltsc2022  | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:ea680d1fd8612ed255a5d34fa793990a0abcb27684bd4090cf724685b49b49f3 | 02/15/2023 10:57:53 | 02/15/2023 10:57:53|
+10.3.0.008463.647-10.0.20348.1547-ltsc2022  | 10.0.20348.1547 | ltsc2022           | amd64           | windows | sha256:9579c19c4061525815bcf8d9576d803474e09b3d48b87002f8a7268954119833 | 02/23/2023 06:06:51 | 02/23/2023 06:06:51|
+10.3.0.008463.688-10.0.20348.1607-ltsc2022  | 10.0.20348.1607 | ltsc2022           | amd64           | windows | sha256:68acb8478f9c77113ccfb428c713be724560a9f1b9d3e0ac6c4a6da0047c6802 | 03/23/2023 00:58:55 | 03/23/2023 00:58:55|
+10.3.0.008463.722-10.0.20348.1668-ltsc2022  | 10.0.20348.1668 | ltsc2022           | amd64           | windows | sha256:12aae3459808fafa28178b2f6cfe0f1920702c13056d475530b20d8ee2ff3636 | 04/23/2023 12:10:14 | 04/23/2023 12:10:14|
+10.3.0.008463.771-10.0.20348.1726-ltsc2022  | 10.0.20348.1726 | ltsc2022           | amd64           | windows | sha256:866d98ab20036dcc168b8522de71b3827f5392c9cb448e23d41d20bd9466c59c | 06/01/2023 09:04:51 | 06/01/2023 09:04:51|
+10.3.0.008463.805-10.0.20348.1787-ltsc2022  | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:063d756bb14d2df93873429cd9c7b6f47c6cd2083ca02c80fb8e2ed3514d4ce1 | 06/28/2023 19:29:30 | 06/28/2023 19:29:30|
+10.3.1                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:4cf469792e6c583c359ae77cdc65076f1901d8d9621c5ea62fdd127701bf4068 | 08/01/2023 11:53:14 | 07/30/2024 10:30:43|
+10.3.1-ltsc2019                             | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:4d8bfe94c4691b62980d66dc5ef87b9829bacabb7411cca3c98b2d67b7f8e7a0 | 08/01/2023 10:09:53 | 07/30/2024 09:53:26|
+10.3.1-ltsc2022                             | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:62a4f79e60f53ed7f9098855503732e610083fc2fbb02152f31d0ee0b915a6d3 | 08/01/2023 10:11:14 | 07/30/2024 09:55:27|
+10.3.1.009452.1014-10.0.20348.2159-ltsc2022 | 10.0.20348.2159 | ltsc2022           | amd64           | windows | sha256:77563cd11e2609f726c5b7a0515c9e9e05d1149df1633e82bb0d3d1bf0cd497b | 12/20/2023 23:59:17 | 12/20/2023 23:59:17|
+10.3.1.009452.1029-10.0.20348.2227-ltsc2022 | 10.0.20348.2227 | ltsc2022           | amd64           | windows | sha256:18010d0f661777749afadf75dd692dd61a6b663c6d32fe4ad9aa422bb1b7c9d8 | 01/12/2024 20:39:59 | 01/12/2024 20:39:59|
+10.3.1.009452.1071-10.0.20348.2322-ltsc2022 | 10.0.20348.2322 | ltsc2022           | amd64           | windows | sha256:1c08356bd79b61d7dc027134d504ef1acef80fe37f2343680194b807f733b201 | 02/22/2024 15:07:41 | 02/22/2024 15:07:41|
+10.3.1.009452.1127-10.0.20348.2340-ltsc2022 | 10.0.20348.2340 | ltsc2022           | amd64           | windows | sha256:0de5deae997daf8e87b46f5778b103f38af967b85c59ee6ea470e44af98024e8 | 03/19/2024 23:02:22 | 03/19/2024 23:02:22|
+10.3.1.009452.1163-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:d8198acb1a35b903be1ba351d169fdf2830a2821de43182a5ffc2da2570c2cc7 | 04/16/2024 15:20:42 | 04/16/2024 15:20:42|
+10.3.1.009452.1202-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:c6df10d72bb914415243dc76196581ab03d76f4e9465ee32b3ee22c0f6a2b292 | 05/27/2024 16:22:37 | 05/27/2024 16:22:37|
+10.3.1.009452.1232-10.0.20348.2527-ltsc2022 | 10.0.20348.2527 | ltsc2022           | amd64           | windows | sha256:8ee1d00d21bc1c5851bf9c75845c7ee90e6cf89ff8f8d551bb3971e73d6a92d3 | 07/01/2024 08:25:55 | 07/01/2024 08:25:55|
+10.3.1.009452.1260-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:62a4f79e60f53ed7f9098855503732e610083fc2fbb02152f31d0ee0b915a6d3 | 07/30/2024 09:55:07 | 07/30/2024 09:55:07|
+10.3.1.009452.1907-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:cc8dbcc62064e803cba95c982c11590ee9956d18907d4032108cee20d29d929f | 08/01/2023 10:09:43 | 08/01/2023 10:09:43|
+10.3.1.009452.1944-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:d081dd1335f54edb52d3c013b46746543a844ca11a61e5f778bfffb5b243eb4e | 08/17/2023 19:32:42 | 08/17/2023 19:32:42|
+10.3.1.009452.1977-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:1c11fe759af18cd8171ccd726067ed991732a62ab70a28f37c4ead67ce21bfb7 | 09/20/2023 11:12:23 | 09/20/2023 11:12:23|
+10.3.1.009452.2019-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:b4bbe0a0d6d00f6d0008a583182729c0971c172ce3b51569597717bd805cad25 | 10/17/2023 19:12:59 | 10/17/2023 19:12:59|
+10.3.1.009452.2055-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:60d08e9fcc914b88a3e668d93c46bd4144cde73565f8bac558f29bf40cb1a585 | 11/21/2023 12:42:57 | 11/21/2023 12:42:57|
+10.3.1.009452.2086-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:2ffaca0373686605002fef0eb7fb7b8a9de9a599f103314b257bd2e26f693792 | 12/21/2023 00:06:02 | 12/21/2023 00:06:02|
+10.3.1.009452.2102-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:55327d2797c1ce1145f8a159265778fff9fda8a2045f8e1b48654f6908eaea90 | 01/12/2024 20:47:42 | 01/12/2024 20:47:42|
+10.3.1.009452.2151-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:f3eed51022e12f199de5d0a8a1c54948539ea9d4fac80390d1c39f01226111c4 | 02/22/2024 15:12:54 | 02/22/2024 15:12:54|
+10.3.1.009452.2201-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:840f1f31e9e20390466a71c67350ec37c578ad6446c19de0b82f8e9d36315667 | 03/19/2024 23:07:09 | 03/19/2024 23:07:09|
+10.3.1.009452.2251-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:1536ba6bebd8dbf733b357df5d2ff4f7ed6988d543b84948ad5d990c0bb7fecf | 04/16/2024 15:22:06 | 04/16/2024 15:22:06|
+10.3.1.009452.2294-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:138f25af5902dd517ca3e61bc1cd116ee7921b645b4988d158e7ea14e0a91ab7 | 05/27/2024 16:22:19 | 05/27/2024 16:22:19|
+10.3.1.009452.2325-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:58a15ebdb019137e2512921eec89e8e6b648c36fbb3d2490bc1548cbd1d068ec | 07/01/2024 08:56:56 | 07/01/2024 08:56:56|
+10.3.1.009452.2351-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:4d8bfe94c4691b62980d66dc5ef87b9829bacabb7411cca3c98b2d67b7f8e7a0 | 07/30/2024 09:53:03 | 07/30/2024 09:53:03|
+10.3.1.009452.845-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:76fd445479b597085531a0a23fd2eb80246b0f7b81e2b939fe86f56a90bb1263 | 08/01/2023 10:11:04 | 08/01/2023 10:11:04|
+10.3.1.009452.879-10.0.20348.1906-ltsc2022  | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:ab7138918cbfc9a22db441c46445c5d060c596d8a47c08522a7d5bb51c83c2cf | 08/17/2023 19:20:58 | 08/17/2023 19:20:58|
+10.3.1.009452.909-10.0.20348.1970-ltsc2022  | 10.0.20348.1970 | ltsc2022           | amd64           | windows | sha256:94f23209e59000a0d2426e2812f818fb2866217d59ec1e9d069793fd8d44ba2b | 09/20/2023 11:10:16 | 09/20/2023 11:10:16|
+10.3.1.009452.950-10.0.20348.2031-ltsc2022  | 10.0.20348.2031 | ltsc2022           | amd64           | windows | sha256:706bccc028b674757b25dc9047db800151f7da39476b07c837065b99d4c78395 | 10/17/2023 19:11:42 | 10/17/2023 19:11:42|
+10.3.1.009452.987-10.0.20348.2113-ltsc2022  | 10.0.20348.2113 | ltsc2022           | amd64           | windows | sha256:16e49ec83b0f4b604fe4a68ac70afd93fe76c7709d3b8823f2d0196fc64479d2 | 11/21/2023 12:41:15 | 11/21/2023 12:41:15|
+10.3.2                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:a4c64722dde5d4208e18f60e9a73e7e7d18f93acd7c3ebf052372eb33fa586aa | 08/15/2024 22:57:06 | 10/14/2024 16:14:49|
+10.3.2-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:d22e7301da07f9213a8160f2c324498de1e4d562ab466d9096abec821982562d | 08/15/2024 22:25:40 | 10/14/2024 15:47:06|
+10.3.2-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:06fcf1c846720cabdfc491b9312bc52025fb217890dd67630b9ec81b1d880ae1 | 08/15/2024 22:14:45 | 10/14/2024 15:36:16|
+10.3.2.010837.1282-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:f270052188891f4e35348aa52434d9fe36b60c04435a90cafde2343622b8a640 | 08/15/2024 22:14:28 | 08/15/2024 22:14:28|
+10.3.2.010837.1309-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:c0df2ae659f8f7fd22b69b7ef174e784d7121b30d53c9ffd70d9f1533f4185b2 | 08/21/2024 17:11:37 | 08/21/2024 17:11:37|
+10.3.2.010837.1414-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:f88310acc60bb90c7d7a77d35f524ed04138eda0c08532701d17132d53db8e78 | 09/18/2024 08:36:18 | 09/18/2024 08:36:18|
+10.3.2.010837.1438-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:06fcf1c846720cabdfc491b9312bc52025fb217890dd67630b9ec81b1d880ae1 | 10/14/2024 15:35:57 | 10/14/2024 15:35:57|
+10.3.2.010837.2376-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:36a4898868dc7a2fdf0f3ee08f96d001dbf34ec4d74f4391d8ff7e1dbc927a59 | 08/15/2024 22:25:27 | 08/15/2024 22:25:27|
+10.3.2.010837.2405-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:30f3890d7480e3deab0548d007f184483ccbc3cb4dc60c90b2c56f6b63d2a68d | 08/21/2024 17:12:05 | 08/21/2024 17:12:05|
+10.3.2.010837.2510-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:d7f16aac6c5638b1fa213abd49b311bdd3a98d26449b3bc59a365b868e6e4f21 | 09/18/2024 09:01:52 | 09/18/2024 09:01:52|
+10.3.2.010837.2538-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:d22e7301da07f9213a8160f2c324498de1e4d562ab466d9096abec821982562d | 10/14/2024 15:46:54 | 10/14/2024 15:46:54|
+10.4                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:b70b6e68fb917c2f16be54d02555653334d1412908ab6ebe140f1193477714fd | 06/07/2024 15:12:22 | 10/12/2024 11:48:30|
+10.4-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:ce789406d093efcd765892257e719a595bcf19b05f80783f011b87bd78280413 | 06/07/2024 13:21:09 | 10/12/2024 11:19:14|
+10.4-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:373702931ee5468903dbd27b837f102888e36b266e118a8c41c8cb00f0dbb2a2 | 04/17/2024 15:03:37 | 10/12/2024 11:14:36|
+10.4.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:b70b6e68fb917c2f16be54d02555653334d1412908ab6ebe140f1193477714fd | 06/07/2024 02:23:57 | 10/12/2024 11:49:18|
+10.4.0-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:ce789406d093efcd765892257e719a595bcf19b05f80783f011b87bd78280413 | 06/07/2024 01:42:45 | 10/12/2024 11:19:01|
+10.4.0-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:373702931ee5468903dbd27b837f102888e36b266e118a8c41c8cb00f0dbb2a2 | 04/17/2024 15:03:19 | 10/12/2024 11:14:20|
+10.4.0.010422.1166-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:9499a0885be05c58d47e59e6c182f136af921a099db9271d9a2cdb77cafaf2fe | 04/17/2024 15:03:01 | 04/17/2024 15:03:01|
+10.4.0.010422.1207-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:5ef1d71023b4c8329c1e18fe13b9c3f3a92ca16e6cf17aba1cae33bd4e76279b | 06/07/2024 01:37:13 | 06/07/2024 01:37:13|
+10.4.0.010422.1239-10.0.20348.2527-ltsc2022 | 10.0.20348.2527 | ltsc2022           | amd64           | windows | sha256:095cb8e86198f54163fda63bcf43d2491b0bb00d81dbe619b8e5d5e830f98863 | 06/27/2024 14:29:29 | 06/27/2024 14:29:29|
+10.4.0.010422.1259-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:e69094dbbaa13b800a210c9a0dfc21a3ab8c95444e699c8c321243c86741e4e3 | 07/22/2024 13:18:05 | 07/22/2024 13:18:05|
+10.4.0.010422.1298-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:25cc85c14b5cb655ae6021e6011d1d8729a79059d6e00d864bb1fff51386a826 | 08/21/2024 11:35:52 | 08/21/2024 11:35:52|
+10.4.0.010422.1413-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:5f0933b2e140228f2c08ef9c03bac12bc9979a0d80fa453631bb4e0b66a7d220 | 09/18/2024 09:15:28 | 09/18/2024 09:15:28|
+10.4.0.010422.1437-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:373702931ee5468903dbd27b837f102888e36b266e118a8c41c8cb00f0dbb2a2 | 10/12/2024 11:14:09 | 10/12/2024 11:14:09|
+10.4.0.010422.2299-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:a8ad86c4c2a58f205b81466a7749467403e86eba7717b8cc0b1ea31460683bd2 | 06/07/2024 01:42:30 | 06/07/2024 01:42:30|
+10.4.0.010422.2331-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:c81cf1fe13d82cc2d3a09d57e1b52978822e2c21796a4eade527ee4528d8a515 | 06/27/2024 14:22:52 | 06/27/2024 14:22:52|
+10.4.0.010422.2350-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:55bcb8f1105fd2544d51fa09c6359cfb49f5c043544ec9bcd714729a728625bf | 07/22/2024 13:23:22 | 07/22/2024 13:23:22|
+10.4.0.010422.2394-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:69f8d61ebc6313de1c8bcfddc62d8a0b44dbf456168e70420a1a1c70f5597d48 | 08/21/2024 11:36:52 | 08/21/2024 11:36:52|
+10.4.0.010422.2509-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:77554257b137147156c98c9435366c1ec9c12b6ebf3e92ec9cc6535c30f2857e | 09/18/2024 09:29:10 | 09/18/2024 09:29:10|
+10.4.0.010422.2537-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:ce789406d093efcd765892257e719a595bcf19b05f80783f011b87bd78280413 | 10/12/2024 11:18:51 | 10/12/2024 11:18:51|
 
 ### sitecore-xm1-cm
 Tag                                         | OSVersion       | TargetOS           | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ------------------------------------------- | --------------- | ------------------ | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0                                        |                 |                    | amd64           | windows | sha256:d6ef8249b280669c6f96a0d7f0da2b4c4863110ef40808f6e6d051dc65374441 | 08/18/2021 19:12:29 | 08/30/2023 13:54:38|
-10.0-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:945b9779caa76d622553c6e60090df9a4f612812a946f23b7183a5892ef8da9f | 12/15/2020 10:01:09 | 10/15/2024 14:33:12|
-10.0.0-ltsc2019                             | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:60683542370155ee5146bd20c50277a98a6fb483e795ee93f8c491bd92c69269 | 08/03/2020 12:54:57 | 06/21/2021 09:09:58|
-10.0.0.004346.231-10.0.19042.928-20H2       | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:0eb8abd8d0f15273cd54dc11831ee268fef3dcfe881c14acaefb414c468e7e0e | 04/16/2021 07:07:53 | 04/16/2021 07:07:53|
-10.0.0.004346.318-10.0.17763.1282-ltsc2019  | 10.0.17763.1282 | ltsc2019           | amd64           | windows | sha256:084985817c61a6ac369acd98502a3364e7a6aa386affb98cda8b1fbc9c94616c | 08/03/2020 12:53:58 | 08/03/2020 12:53:58|
-10.0.0.004346.337-10.0.17763.1339-ltsc2019  | 10.0.17763.1339 | ltsc2019           | amd64           | windows | sha256:90dcd49fe74b4525f258c332375fd558d33003da4d2deedb5eb9b9a43bdb6386 | 08/03/2020 18:34:29 | 08/03/2020 18:34:29|
-10.0.0.004346.371-10.0.17763.1397-ltsc2019  | 10.0.17763.1397 | ltsc2019           | amd64           | windows | sha256:74a3e88307f40266a4caf98e8466235cc8be384e9246fd04636a0990bb0455db | 08/25/2020 09:24:31 | 08/25/2020 09:24:31|
-10.0.0.004346.412-10.0.17763.1457-ltsc2019  | 10.0.17763.1457 | ltsc2019           | amd64           | windows | sha256:0006967e39475032b19b5fa905cb6fee95c2532ce8933b1e94edc7f9410dcf8f | 09/15/2020 08:23:28 | 09/15/2020 08:23:28|
-10.0.0.004346.444-10.0.17763.1518-ltsc2019  | 10.0.17763.1518 | ltsc2019           | amd64           | windows | sha256:4fc7c6b9493c1d82afbcd3e366fa49573ebb9baf06b0376c47ff87523a13d56d | 10/22/2020 19:52:10 | 10/22/2020 19:52:10|
-10.0.0.004346.477-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019           | amd64           | windows | sha256:178a99aa6dc4ea3ae4946179316c2ff1427906fd36a2e0918091e10423dbbde4 | 11/18/2020 10:51:13 | 11/18/2020 10:51:13|
-10.0.0.004346.520-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019           | amd64           | windows | sha256:45343612b4a4c979de14112549ee00f8d505ea7003a1262a58baae9b4b02f874 | 12/14/2020 08:19:33 | 12/14/2020 08:19:33|
-10.0.0.004346.566-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:183cb89759e249d3e7f4f483afd8740db97cd963a5c3b407a2d4b47ec8057280 | 01/15/2021 11:49:18 | 01/15/2021 11:49:18|
-10.0.0.004346.636-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:d5bde4a700ca2111e6518175da76760881240050883cfc252ef966bc7ce666c6 | 02/14/2021 16:06:21 | 02/14/2021 16:06:21|
-10.0.0.004346.670-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:64f86ef01c93996722d2322ca14d42db17b8b6a29a14bed3d0d742714a576caa | 03/12/2021 09:47:37 | 03/12/2021 09:47:37|
-10.0.0.004346.705-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:e34c0666b1c6f37acf6582e426e76286b81272678a3bb46d9114b379f4596d87 | 04/16/2021 05:59:39 | 04/16/2021 05:59:39|
-10.0.0.004346.779-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:0d5f01880625217227051fa73375bb922825ef737b0d71d7acd077d7344b607a | 05/18/2021 06:23:05 | 05/18/2021 06:23:05|
-10.0.0.004346.837-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:60683542370155ee5146bd20c50277a98a6fb483e795ee93f8c491bd92c69269 | 06/21/2021 09:09:50 | 06/21/2021 09:09:50|
-10.0.1-ltsc2019                             | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:1a39af6c60151e194360f9cfdccede5a6ca938bd2dad94ba514731486bfaa77b | 12/15/2020 10:00:50 | 07/20/2021 12:52:09|
-10.0.1.004842.513-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019           | amd64           | windows | sha256:a42e272614d6d9d2aa9f8bff78934920fbfb9e6a64c92b300918d6595aede297 | 12/15/2020 10:00:35 | 12/15/2020 10:00:35|
-10.0.1.004842.523-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019           | amd64           | windows | sha256:ec7a7e1e6aa9ff45a97d266ac3079c4914d91a3ce41eb753f1ae4a8961add856 | 12/15/2020 17:10:37 | 12/15/2020 17:10:37|
-10.0.1.004842.567-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:9f33d77c6953f6b041310e96d27df0f0f1b05cdc71691f7934df957d46cd3df0 | 01/15/2021 16:38:26 | 01/15/2021 16:38:26|
-10.0.1.004842.638-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:d627268d02678bdb1e763b7aa99c270dbb63a9592fa30aa89c8cabd6b70e6315 | 02/15/2021 09:51:27 | 02/15/2021 09:51:27|
-10.0.1.004842.671-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:1fba145153a087f9de968446375f2e680941caeb6a6b8efcbd4158dbae586736 | 03/12/2021 15:31:15 | 03/12/2021 15:31:15|
-10.0.1.004842.707-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:4a5eeb4dd6e90bfc5d62a8282e83044fd8c44fba85f245f9049c51f2f82c3f5f | 04/16/2021 13:24:00 | 04/16/2021 13:24:00|
-10.0.1.004842.781-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:ed8b9dcecac69641da2d004e2884dcfc6ad1199becfb78bdb6d87f6af13748e4 | 05/18/2021 10:50:16 | 05/18/2021 10:50:16|
-10.0.1.004842.842-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:d882ba038a375c8dc6f0d80ad13133ddbb6c5a922f14c5da117ec87a62cd2e89 | 06/21/2021 11:54:10 | 06/21/2021 11:54:10|
-10.0.1.004842.889-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:1a39af6c60151e194360f9cfdccede5a6ca938bd2dad94ba514731486bfaa77b | 07/20/2021 12:52:06 | 07/20/2021 12:52:06|
-10.0.2                                      |                 |                    | amd64           | windows | sha256:ccef4fb82fae971b838dcab6e80ba650b97990aad7bccd29405ec0601337d328 | 08/18/2021 19:11:36 | 08/30/2023 16:36:11|
-10.0.2-ltsc2019                             | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:7484494409f0520506335c7ead7931558033851234bad0fc01aa7a34870a1a9e | 06/30/2021 11:58:23 | 09/29/2021 12:15:16|
-10.0.2.006052.851-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:454d1f2318c9e6c989a77cd03cf4fd06813c3241eb9027dc522b3d4b5a75e4d4 | 06/30/2021 11:58:34 | 06/30/2021 11:58:34|
-10.0.2.006052.890-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:704999a3555436792f9833ac9429358315cf001d79bf5ab22917eaec0ba65963 | 07/21/2021 07:14:49 | 07/21/2021 07:14:49|
-10.0.2.006052.918-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019           | amd64           | windows | sha256:55f65d9d31812d146801c529e4ed87b630ffdbaf7b14753c20b7099e447cd4ad | 08/18/2021 15:40:11 | 08/18/2021 15:40:11|
-10.0.2.006052.980-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:7484494409f0520506335c7ead7931558033851234bad0fc01aa7a34870a1a9e | 09/29/2021 12:15:01 | 09/29/2021 12:15:01|
-10.0.3                                      |                 |                    | amd64           | windows | sha256:d6ef8249b280669c6f96a0d7f0da2b4c4863110ef40808f6e6d051dc65374441 | 10/07/2021 10:44:24 | 08/30/2023 16:45:47|
-10.0.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:945b9779caa76d622553c6e60090df9a4f612812a946f23b7183a5892ef8da9f | 10/07/2021 07:32:21 | 10/15/2024 14:32:59|
-10.0.3.006577.1025-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:c5d6b8d5243e2d30ff4092120798d53dfdf91f196c3d1d7b1ee2aaf8a45a9120 | 10/19/2021 13:31:47 | 10/19/2021 13:31:47|
-10.0.3.006577.1062-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:c0a6d57e073904340fa606327abde01ebfaf93f080136525a4a9f0b1b072c7cf | 11/12/2021 07:57:20 | 11/12/2021 07:57:20|
-10.0.3.006577.1119-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:7d0e50822c671a382a4d9186f321ab17a904217073da93b56a7aad9bc6f13e2b | 12/16/2021 19:11:08 | 12/16/2021 19:11:08|
-10.0.3.006577.1155-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:46133171aa7720ff2da702bfbe50fccd82801e0ae31a11557b3ffc70e4b52cab | 01/18/2022 15:32:23 | 01/18/2022 15:32:23|
-10.0.3.006577.1199-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:bbc98b455ff488994fedd719ff256902dc9d869005698f39c0d8fc7adab9dceb | 02/16/2022 08:31:23 | 02/16/2022 08:31:23|
-10.0.3.006577.1256-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:35634104f138c5b5680ba870bae36fd8deba7f840a2ffafb6b5eff8e00deff95 | 03/16/2022 19:20:35 | 03/16/2022 19:20:35|
-10.0.3.006577.1298-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:f16ed48e0cec6cff813c1df226ef82cf8264630f531bcebab4434dd728e522ab | 04/17/2022 19:58:00 | 04/17/2022 19:58:00|
-10.0.3.006577.1319-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:d5b27ee5bccfe1002574440d3ad846265310e4ee1654e5048d394f6b9af26b54 | 05/20/2022 12:40:49 | 05/20/2022 12:40:49|
-10.0.3.006577.1344-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:4fecf6242b15734fc2af14d532ded5fd259c5ad4646b9caa39e5d9bcfa35b459 | 06/24/2022 16:14:27 | 06/24/2022 16:14:27|
-10.0.3.006577.1385-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:946d8279b704e9765ceea0e0c6758697bde4df9d38ef281723cf6d2deb8a7db9 | 07/21/2022 13:13:29 | 07/21/2022 13:13:29|
-10.0.3.006577.1401-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:b015f3ea298fb34892e26aa40a7b4d801f8fd7d79d1dd7fa7bfbb5584d25abe0 | 08/15/2022 12:15:41 | 08/15/2022 12:15:41|
-10.0.3.006577.1462-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:030b9011688452936595d6b3a6f41b549cba6e98f334b3670c76593234a56735 | 09/22/2022 17:33:20 | 09/22/2022 17:33:20|
-10.0.3.006577.1485-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:99817e974db045e1d78515dbd5c4cfc1938f4267eee8ee1801d35097b54d4997 | 10/19/2022 14:43:30 | 10/19/2022 14:43:30|
-10.0.3.006577.1532-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:1f0de7775bb67548d785fbd0ad79320207324af96bd956e32998ada41cc0b20d | 12/12/2022 12:04:24 | 12/12/2022 12:04:24|
-10.0.3.006577.1546-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:41d0bb6e56bf7e71adba2a874016d6d2ee6ca036ca3e468ae9de9fb38990ae8b | 12/27/2022 13:02:25 | 12/27/2022 13:02:25|
-10.0.3.006577.1683-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:4f587933d75d301aa8096be7925ce2fc85a1664e25f24c4633fd171fa7ad1f49 | 02/21/2023 23:45:09 | 08/31/2023 09:29:33|
-10.0.3.006577.1716-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:a679b3ae80223b0a8d5a8d77e0a89f96806411815cd318dbcd09e5bccc530ec6 | 03/23/2023 08:16:59 | 08/31/2023 09:32:56|
-10.0.3.006577.1753-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:977de90d758c55e655c0e947127ac18ccc57ec5915411c3add1f329786ae5dce | 04/24/2023 13:13:57 | 08/31/2023 09:36:19|
-10.0.3.006577.1800-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:551b1c445f059e0c3690c456902a6ca5f9858adabdbf89b07731f5f7e38ebd44 | 05/31/2023 12:09:50 | 08/31/2023 09:39:42|
-10.0.3.006577.1877-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:ecea029c760d274c6fd71c44165e154ba1d6027af436b94d63f8d55af310e852 | 06/29/2023 16:53:53 | 06/29/2023 16:53:53|
-10.0.3.006577.1909-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:ff4feef4607fc4462355911487ab9b81931979fd842a7d1abf45c4fffe87d103 | 07/21/2023 22:19:27 | 07/21/2023 22:19:27|
-10.0.3.006577.1940-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:b250e514e5c2237f3594a8e1d8224df64dc3b9428c985c790a3a380e29ae323c | 08/29/2023 16:28:51 | 08/29/2023 16:28:51|
-10.0.3.006577.1990-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:a6d8263da10628aa471c967f6d64c171e72ce20c75e77ac7e5d579ef3c190e75 | 09/25/2023 08:45:47 | 09/25/2023 08:45:47|
-10.0.3.006577.2020-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:d86dc022b65ebcda78efe695b73a67f474f485f790212e6fc4b7e67023820b4c | 10/17/2023 23:36:22 | 10/17/2023 23:36:22|
-10.0.3.006577.2061-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:19193c406193c53bccf727eacff00198bd7bf1877fa91691ef4da49eb7933237 | 11/21/2023 21:21:57 | 11/21/2023 21:21:57|
-10.0.3.006577.2089-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:a1ff61ac89e954552057ad3f7cc921d6924e73c57ec5fa8dff050d1ae1c14d1b | 12/21/2023 09:44:24 | 12/21/2023 09:44:24|
-10.0.3.006577.2106-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:9b866089eec408198ad876cfa2ca21d07dc8cc24faf0e2fa6be33a90b8def4a8 | 01/18/2024 02:22:55 | 01/18/2024 02:22:55|
-10.0.3.006577.2144-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:776ff358ced88ce0c8079ba566924a8ced70f12a08e37fe706d76dd0fa21aec1 | 02/21/2024 11:39:57 | 02/21/2024 11:39:57|
-10.0.3.006577.2193-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:91121b1a20417fe8930f3560640fa3c8f13f2bb106d9a60632f2aa64678dae42 | 03/21/2024 11:15:39 | 03/21/2024 11:15:39|
-10.0.3.006577.2245-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:4fd38895d30f29fe745f20049974dff0ae4137f61918658024aa7095ddfdc65e | 04/16/2024 16:10:58 | 04/16/2024 16:10:58|
-10.0.3.006577.2278-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:32ca397436526ec1fb7194373bc7890cc3a4b1f3eef60c648efcbaaedc3284ba | 05/20/2024 09:27:42 | 05/20/2024 09:27:42|
-10.0.3.006577.2321-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:d46818072a58ebf53bb0049148ffdfe0448ede3225f371a353b97b5b562a153c | 06/19/2024 00:46:56 | 06/19/2024 00:46:56|
-10.0.3.006577.2357-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:3dc4d377a16c33db536b9b10f49ed99dad431ca7deb96782530768fc9d7372b5 | 07/22/2024 21:01:06 | 07/22/2024 21:01:06|
-10.0.3.006577.2399-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:57befad2072f3a13582189f0599d488a5a21ca5aa930ed9315ec32fe1d982dad | 08/22/2024 09:44:32 | 08/22/2024 09:44:32|
-10.0.3.006577.2514-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:4ababd2ea9844ba15e2dbf1ac5ec02c8f06ad616c261e3d2f4c0af4cdfcef03f | 09/18/2024 08:24:29 | 09/18/2024 08:24:29|
-10.0.3.006577.2531-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:945b9779caa76d622553c6e60090df9a4f612812a946f23b7183a5892ef8da9f | 10/15/2024 14:32:52 | 10/15/2024 14:32:52|
-10.0.3.006577.992-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:a5c73f1459241b2a5a2075ba72a8eea50993a563eaa30c59f8d1035acf9ab32b | 10/07/2021 07:32:12 | 10/07/2021 07:32:12|
-10.1                                        |                 |                    | amd64           | windows | sha256:f035967c13b0bd8e3cbf48d1feb73470d1321aec490ea5f2bcd925ad9ac56d5e | 08/18/2021 10:28:53 | 08/30/2023 18:44:01|
-10.1-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:b0419f77131a4954b2b6f7075a036a4769bec488c79a4a9e4bfa07127404b5b7 | 02/25/2021 06:41:52 | 10/17/2024 16:05:50|
-10.1.0                                      |                 |                    | amd64           | windows | sha256:1057a614507491a5e79e1acbde9ec08d0dc113697c1953c7588bdf60736b5d82 | 09/22/2022 16:36:59 | 08/30/2023 18:48:02|
-10.1.0-ltsc2019                             | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:c3171ac438eac46609b93e9abafbac6b60452a0118eb532cc0545360bf0bfd2e | 02/25/2021 06:41:42 | 10/24/2023 13:49:23|
-10.1.0.005207.626-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:0ab259a6b7f52e826dd661a8967b8664d5ce895fd692dd332ae907462d0b3bd4 | 02/25/2021 06:41:40 | 02/25/2021 06:41:40|
-10.1.0.005207.643-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:9c70e915bb68079af4ebf6e7f7f5222d575abd6a830a4ccc1c3dca42e90c0d74 | 02/26/2021 07:27:05 | 02/26/2021 07:27:05|
-10.1.0.005207.673-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:c3171ac438eac46609b93e9abafbac6b60452a0118eb532cc0545360bf0bfd2e | 03/12/2021 19:26:30 | 03/12/2021 19:26:30|
-10.1.0.005207.708-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:b16e56964b3e08ec7a4bc59e1fde52de5113c9aaf8fd4a79b74232609aa67eb0 | 04/19/2021 12:35:14 | 04/19/2021 12:35:14|
-10.1.0.005207.782-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:21cab3d34b477bcb602a98a29c92d44b3e64f6fed347ca2923949e6e1faea58b | 05/18/2021 15:18:11 | 05/18/2021 15:18:11|
-10.1.0.005207.844-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:bcda6798b1779f103b3837700a660c7de736313f3ad07b08df6e478998d418f9 | 06/21/2021 16:44:30 | 06/21/2021 16:44:30|
-10.1.1                                      |                 |                    | amd64           | windows | sha256:6da4fcf2e9aa86d09d93c8db873eb820aa898417d2e573bf523306600aa0c5d9 | 08/18/2021 10:26:42 | 08/31/2023 10:29:36|
-10.1.1-ltsc2019                             | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:db4c5e3c39aec33c8f94f69b5d1034a7f59a871c95da93836bc37fc4ef3d62ea | 06/10/2021 09:53:10 | 09/30/2021 06:47:43|
-10.1.1.005862.821-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:d9174794689ce32347f6a509f1fbfb9e0fcf3f1054f36ea108205ff6214daf01 | 06/10/2021 09:53:08 | 06/10/2021 09:53:08|
-10.1.1.005862.846-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:b5e7ab83239f4a2a6616be6f9ede8255f15f0d3942c59540e7bc1fc584ef4788 | 06/21/2021 21:34:24 | 06/21/2021 21:34:24|
-10.1.1.005862.891-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:c3ddf6816c265ed121c4c62e3c8af7d9e713111790bd58b56a28f26a78047596 | 07/22/2021 08:51:40 | 07/22/2021 08:51:40|
-10.1.1.005862.921-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019           | amd64           | windows | sha256:c2fbf3d3e65429357db467e06bec03147e80c1764657498a04c649df04f15c8d | 08/18/2021 07:38:21 | 08/18/2021 07:38:21|
-10.1.1.005862.982-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:db4c5e3c39aec33c8f94f69b5d1034a7f59a871c95da93836bc37fc4ef3d62ea | 09/30/2021 06:47:28 | 09/30/2021 06:47:28|
-10.1.2                                      |                 |                    | amd64           | windows | sha256:f035967c13b0bd8e3cbf48d1feb73470d1321aec490ea5f2bcd925ad9ac56d5e | 10/11/2021 09:58:06 | 08/31/2023 10:39:34|
-10.1.2-ltsc2019                             | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:33f26d3b7da21b84e0e548e86a51683d4d1273951c1348287dea0edbbf522c54 | 10/11/2021 07:34:48 | 08/12/2023 00:44:22|
-10.1.2.006578.1027-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:2a632b1f0c26f52103f67f55afa2c1b8c44447a58440f8de14c279a588a027ce | 10/19/2021 22:23:26 | 10/19/2021 22:23:26|
-10.1.2.006578.1063-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:5dead2ff76da00e84d2963e923ffb04a120a4724e5d9938e7eab9d59c1f26a52 | 11/14/2021 19:20:06 | 11/14/2021 19:20:06|
-10.1.2.006578.1121-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:8be89927ec54c14873547841fdefcfc0ff377f56fcf60505df6944e272a3b0d2 | 12/17/2021 09:08:02 | 12/17/2021 09:08:02|
-10.1.2.006578.1156-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:3965fa4f418791b80591d823dc1bca3796c3fb4c43a6eb22b82e037235517281 | 01/19/2022 08:03:52 | 01/19/2022 08:03:52|
-10.1.2.006578.1200-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:969337ac6644a8c63830a9f5735917594ec270c9baceaa6f1d2c883a38790ae5 | 02/15/2022 17:02:16 | 02/15/2022 17:02:16|
-10.1.2.006578.1264-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:ac5a9fbcad956a3ce01b1ac9b636d174ee6b9e18dbfc98f561462dfff07855cd | 03/15/2022 21:38:36 | 03/15/2022 21:38:36|
-10.1.2.006578.1299-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:9efde4fc0f0f5d4475c207e04b1014ffdf11e8e50847519a3c79cf876490b60b | 04/19/2022 02:02:34 | 04/19/2022 02:02:34|
-10.1.2.006578.1326-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:a53754b33b099fa8846535491b18d4576a13446a3aa9d3f627e2f7fd40421180 | 05/20/2022 16:46:24 | 05/20/2022 16:46:24|
-10.1.2.006578.1345-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:0d52ce0d509e5d75d79ad1a689fd0efd493231eb3763cbdbfb241499cf9e5017 | 06/24/2022 11:21:00 | 06/24/2022 11:21:00|
-10.1.2.006578.1380-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:ac0800e4db786a9436257bd6c7829f3da75fb3f36f66cc31750dbf1c4f13552a | 07/21/2022 20:52:31 | 07/21/2022 20:52:31|
-10.1.2.006578.1404-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:585b2b49e85dd2238f41b2f62412010c773e5513bc13686c046332b60af2b751 | 08/15/2022 17:39:53 | 08/15/2022 17:39:53|
-10.1.2.006578.1455-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:fb39baad2a7a62b0694e82212a67a5d7e15145132a2aef28229d304f1cbe17ce | 09/25/2022 10:30:10 | 09/25/2022 10:30:10|
-10.1.2.006578.1488-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:069cc3c197b311eadee95320ebe240d40277d753aa4576997d228f67b1546fa0 | 10/19/2022 22:47:22 | 10/19/2022 22:47:22|
-10.1.2.006578.1523-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:5379e4962db7b0adc8c5919b3e8cb362b0cdb9bda06ac4027bd427a2ed6d02a5 | 12/08/2022 11:09:26 | 12/08/2022 11:09:26|
-10.1.2.006578.1547-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:98316cda83184b16f960952c7120ba6d5155e11d6654aa81978866feccadf7d3 | 12/27/2022 13:46:29 | 12/27/2022 13:46:29|
-10.1.2.006578.1663-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:eb000da66ae61be6570e1f5e1b3dc7fcc7c4c0d176889e15176d0bf256e7ed8c | 02/10/2023 19:07:47 | 08/31/2023 11:12:03|
-10.1.2.006578.1679-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:12de0c26b40d752bdfd9a86d8ad193c87df820dfa1e33942ff2fcbf475eefbc1 | 02/23/2023 15:56:40 | 08/31/2023 11:12:31|
-10.1.2.006578.1718-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:09b28fad5f930c5df48eef915506791fa3c3b63b2b2aa954bec5458212c1a006 | 03/22/2023 17:25:33 | 08/31/2023 11:13:00|
-10.1.2.006578.1754-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:098950203a68b8133b23663141d3a780fd5a12cd08ffa575e9cba71bc535bb9d | 04/25/2023 14:41:34 | 08/31/2023 11:13:30|
-10.1.2.006578.1803-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:3d511203d73a9c29d27215e6cf4c54eecc8621554b99e2466769c049f8109593 | 05/31/2023 14:45:00 | 08/31/2023 11:13:57|
-10.1.2.006578.1875-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:4a2cffd408099f04550eace5996ffd20b3e68fd69aaf3d5ccca82458b12a3ee2 | 06/29/2023 13:19:22 | 06/29/2023 13:19:22|
-10.1.2.006578.1916-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:f442be1e29d44e9f30905706f8a71c21ada146659ed0ac92c610aa6209ed3b4e | 07/24/2023 15:38:35 | 07/24/2023 15:38:35|
-10.1.2.006578.1939-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:33f26d3b7da21b84e0e548e86a51683d4d1273951c1348287dea0edbbf522c54 | 08/12/2023 00:44:08 | 08/12/2023 00:44:08|
-10.1.2.006578.993-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:d5e3352c0c91ae15e8b571a45b7781bc2f986df026425d5674f3c844a0049d27 | 10/11/2021 07:34:32 | 10/11/2021 07:34:32|
-10.1.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:b0419f77131a4954b2b6f7075a036a4769bec488c79a4a9e4bfa07127404b5b7 | 09/06/2023 22:02:24 | 10/17/2024 16:05:39|
-10.1.3.009558.1962-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:28eef8527814ef5676c7e8eb0bddca0d5825ffffa28107f013b1b3fbe7d5895a | 09/06/2023 22:03:45 | 09/06/2023 22:03:45|
-10.1.3.009558.1987-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:913f61d8cb3fcef269cbeb2553ea74456d8b707f00d461c42acb9926eeb81a1e | 09/21/2023 12:37:02 | 09/21/2023 12:37:02|
-10.1.3.009558.2013-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:c86ebbfe5b322d43ce22e4bc640e09aad7bbab46656aa0298a38bf86af2824e3 | 10/13/2023 13:33:56 | 10/13/2023 13:33:56|
-10.1.3.009558.2052-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:e7d5a2d7fe582f4201ebad99e084cc832823f7278685434b994b6866e75dc9c5 | 11/17/2023 12:11:34 | 11/17/2023 12:11:34|
-10.1.3.009558.2079-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:b42967013397f60f44ff1561e680c428cd16a3060a17dd54c722e5d3c03c8bde | 12/14/2023 14:24:09 | 12/14/2023 14:24:09|
-10.1.3.009558.2115-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:7c70b48ad273b5dc92b59240f151bc63660e6b84e53f04743e69777b25b3b1b6 | 01/16/2024 08:16:16 | 01/16/2024 08:16:16|
-10.1.3.009558.2160-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:b4fdae6f00f9b43dec8d66b3c56b664014cd859a23264ce4e3a422c031ca6d5d | 02/24/2024 00:38:05 | 02/24/2024 00:38:05|
-10.1.3.009558.2197-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:08626138287dab37c0044416227724b9b26330fa566633cfc99f310af7f54302 | 03/19/2024 19:52:55 | 03/19/2024 19:52:55|
-10.1.3.009558.2254-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:9c8650aa4f1320929fa517fdf5716cebdc4a6690af5e0b8eed5ed3c43bd0ebbe | 04/17/2024 21:54:55 | 04/17/2024 21:54:55|
-10.1.3.009558.2279-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:9e12c8d6addb6573333111a90f7e708d465d96afb2eacc80807608810326369a | 05/27/2024 17:20:04 | 05/27/2024 17:20:04|
-10.1.3.009558.2327-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:23ba86fe15547f24f988c05391a86d5a038069e1b90a1d07dd07913c48ef0552 | 06/19/2024 01:37:53 | 06/19/2024 01:37:53|
-10.1.3.009558.2353-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:34ac6b23b6c6452ff5985ecfec0f95f9e60dfff56b277922fde89ae0b2adb98d | 08/01/2024 09:13:21 | 08/01/2024 09:13:21|
-10.1.3.009558.2407-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:9ddd0309c83ea436b8501aef112a9ac23f09a4cbeead666d7906a7af68aff5a4 | 08/21/2024 10:09:59 | 08/21/2024 10:09:59|
-10.1.3.009558.2517-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:32dcb2eecdc8f3bc94ee54cd6bb3db0d31d2a2c4c5a9b9135700eab44c18b5b0 | 09/18/2024 22:31:55 | 09/18/2024 22:31:55|
-10.1.3.009558.2532-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:b0419f77131a4954b2b6f7075a036a4769bec488c79a4a9e4bfa07127404b5b7 | 10/17/2024 16:05:27 | 10/17/2024 16:05:27|
-10.2                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:2421a05c7a8800b6a7c22e8411ec2bc52ce6a2cf68fb7ed6c1ce3d6936c94d24 | 11/04/2021 10:16:40 | 10/11/2024 23:24:51|
-10.2-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:316db16816903e73e9b7cf2fb09fb34f8d4e72e234d32d2d7a62d33c466a72b9 | 11/04/2021 08:08:48 | 10/11/2024 22:56:27|
-10.2-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:ee7a3f88e38abf1978528226097b755e6dc4459cec2a5a1068d317b2d304ee68 | 02/15/2023 05:03:57 | 10/11/2024 22:46:10|
-10.2.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:70c5024d632798c63d7a147cd656c248fd8dd312048bfd54bd87125bc03f2a5a | 11/04/2021 10:16:21 | 09/01/2023 09:20:12|
-10.2.0-ltsc2019                             | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:bbd5095f15582afba39c7cac8a5560956d09993ff5792545f7851e23510a22df | 11/04/2021 08:09:24 | 08/14/2023 17:30:30|
-10.2.0-ltsc2022                             | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:71a96f2530c57cb34f49ac46b2e4e41452afafa6e991e5e2b1d22bc05b39ebb6 | 02/15/2023 05:04:32 | 08/14/2023 17:52:42|
-10.2.0.006766.1033-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:3c4095f4ead80c146ccbfa76277f3b0ba72faf03d97bf30a5b8e78529aee21dd | 11/04/2021 08:09:07 | 11/04/2021 08:09:07|
-10.2.0.006766.1064-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:82294ab519c8d79fdb75741483305e835be4b1e36be1a973bb39a3db19e37600 | 11/15/2021 07:59:52 | 11/15/2021 07:59:52|
-10.2.0.006766.1123-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:cdd76362ed84031b4ac20c85e7f7b4d92b879bca6ea638d9404e9b9a83e79d14 | 12/17/2021 15:10:54 | 12/17/2021 15:10:54|
-10.2.0.006766.1157-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:2dd255616c4ab5a4228c204d7c34b9541a9fa3ccac42c91ff5122119487630a6 | 01/19/2022 14:48:13 | 01/19/2022 14:48:13|
-10.2.0.006766.1202-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:a5099cdb5c751433566fc001d0a016cce72d5bba4c219aa3c0fdb9f1c6aacb7f | 02/17/2022 14:52:18 | 02/17/2022 14:52:18|
-10.2.0.006766.1259-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:bc126aa306da2da15de8010a1aaa8ce385621668eccac10e2294e006eb747ca9 | 03/15/2022 12:41:04 | 03/15/2022 12:41:04|
-10.2.0.006766.1300-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:d2d544dbbe4b0629b653e54b6e4be2764b702d8dffd645ac39f0a4be7df9e822 | 04/20/2022 11:25:56 | 04/20/2022 11:25:56|
-10.2.0.006766.1327-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:a8631baec32f6deb6a2fe3d798c66aaffa61bb70412a07c4851ee47ad798ef94 | 05/24/2022 13:48:13 | 05/24/2022 13:48:13|
-10.2.0.006766.1358-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:6efdebf94d577f8069f64e9ce1bb15f35c95ba5216794ee2cfa14353d86d12d6 | 06/23/2022 19:18:15 | 06/23/2022 19:18:15|
-10.2.0.006766.1381-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:afe4e0307e70f98e8e625ea660965c99fa401dcd49057956b24f79e0bf7d5034 | 07/22/2022 10:00:04 | 07/22/2022 10:00:04|
-10.2.0.006766.1406-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:389cb9ff25ddc31677943c5d42f8fa316da312cf64656f80c9823e3408a57bb3 | 08/16/2022 08:37:26 | 08/16/2022 08:37:26|
-10.2.0.006766.1460-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:889ba7beb58da74e537099560f8c543eaa7c90ef7f41289028e95712a9dfcb15 | 09/23/2022 15:04:48 | 09/23/2022 15:04:48|
-10.2.0.006766.1487-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:8dcf06bdd48277c2f822e3832a93b32671333cf840177be184808bde40477ef2 | 10/24/2022 09:12:13 | 10/24/2022 09:12:13|
-10.2.0.006766.1527-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:42d85a123338a15dddafb60a347f11769f2ec7570be8b48a7926c377cc1fea30 | 12/12/2022 01:37:12 | 12/12/2022 01:37:12|
-10.2.0.006766.1554-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:d960f2814f176355c23a11d13399cf53aa08a9fdf436380010107ee65c9064e4 | 12/27/2022 19:03:08 | 12/27/2022 19:03:08|
-10.2.0.006766.1659-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:d864c663417c3dc0faa38a67d71603e6fcf60b87d55c29544f3064b08b8efdd1 | 02/15/2023 05:16:47 | 08/31/2023 12:52:26|
-10.2.0.006766.1682-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:f15210c4d33d25e50c21fd998bec22b1580c8b09cfd5bf98bd53484be6363b6b | 02/24/2023 07:54:32 | 08/31/2023 12:55:48|
-10.2.0.006766.1717-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:b6703526bded6b5cee0eede2823044f71a88380aeac35adb25274562269e2679 | 03/23/2023 09:07:21 | 08/31/2023 12:59:13|
-10.2.0.006766.1755-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:4ade5d1ffd57e32fc828f5951dc22504252b4ee3740228f7e5aa735f35b6685c | 04/23/2023 12:57:34 | 08/31/2023 13:02:58|
-10.2.0.006766.1804-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:c016b7b64d661be09d5b30e8cdf99a4467486367515435900fd0483aafcb3d09 | 06/01/2023 12:23:12 | 08/31/2023 13:06:23|
-10.2.0.006766.1873-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:6e9d2428f1299324689a092bd59e7dfad1c1e45da0847e63e5d648da20086819 | 06/29/2023 10:44:27 | 06/29/2023 10:44:27|
-10.2.0.006766.1911-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:93dfb011d35be815d554028b983d012a7a375361d575f51fc8de176c28f398f2 | 07/31/2023 14:16:50 | 07/31/2023 14:16:50|
-10.2.0.006766.1938-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:bbd5095f15582afba39c7cac8a5560956d09993ff5792545f7851e23510a22df | 08/14/2023 17:31:03 | 08/14/2023 17:31:03|
-10.2.0.006766.627-10.0.20348.1487-ltsc2022  | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:400aa422957648bb63413beebb0af4a900c8958c628a51e7fad2ec4456476ed3 | 02/15/2023 05:04:21 | 02/15/2023 05:04:21|
-10.2.0.006766.649-10.0.20348.1547-ltsc2022  | 10.0.20348.1547 | ltsc2022           | amd64           | windows | sha256:ca303a98d8ee1846b52b4295674f02fda66bff900fbc32f958bba663e0bcff60 | 02/24/2023 07:41:56 | 02/24/2023 07:41:56|
-10.2.0.006766.685-10.0.20348.1607-ltsc2022  | 10.0.20348.1607 | ltsc2022           | amd64           | windows | sha256:c51e58f79f4f259c5a81da49e415ab817d8a95cb490d2130817ff98049e67166 | 03/23/2023 09:07:47 | 03/23/2023 09:07:47|
-10.2.0.006766.718-10.0.20348.1668-ltsc2022  | 10.0.20348.1668 | ltsc2022           | amd64           | windows | sha256:9fe0c69a5f8be9f4042b011efc6c2a3a78a7fb642231f809d7f8ffe83f0e7617 | 04/23/2023 12:45:50 | 04/23/2023 12:45:50|
-10.2.0.006766.767-10.0.20348.1726-ltsc2022  | 10.0.20348.1726 | ltsc2022           | amd64           | windows | sha256:6a2b4839b68d80b5e59c98f8d4585ccabe9a672562c6c4c68b6ce9ee74740cee | 06/01/2023 12:11:24 | 06/01/2023 12:11:24|
-10.2.0.006766.806-10.0.20348.1787-ltsc2022  | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:38dfd7c0fd60b995e9520a1e5ac9ac9b259f0d133d45d1a74be9e9a4b04b54f3 | 06/29/2023 10:35:31 | 06/29/2023 10:35:31|
-10.2.0.006766.849-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:ad601daffbd8277b2c95a7376dc4ada789453bb3ab7a64e0017c0c37dffa9361 | 07/31/2023 14:10:10 | 07/31/2023 14:10:10|
-10.2.0.006766.873-10.0.20348.1906-ltsc2022  | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:71a96f2530c57cb34f49ac46b2e4e41452afafa6e991e5e2b1d22bc05b39ebb6 | 08/14/2023 17:52:36 | 08/14/2023 17:52:36|
-10.2.1                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:063bc0ca31caa2b86dc7cad29dda148f055c2a459108363e9db9afb27bf248a9 | 08/31/2023 17:01:28 | 05/28/2024 14:58:17|
-10.2.1-ltsc2019                             | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:b73b798c529d3f8de6a14b93f4e9e2be6b74a2d68c3fa04b3fa867fc5805ba3f | 08/31/2023 16:28:18 | 05/28/2024 14:09:14|
-10.2.1-ltsc2022                             | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:37806470a6a8f08241fe3a1e497092e5b712671afed75b5cfe6b572441dd8593 | 08/31/2023 16:24:04 | 05/28/2024 14:07:39|
-10.2.1.009559.1013-10.0.20348.2159-ltsc2022 | 10.0.20348.2159 | ltsc2022           | amd64           | windows | sha256:a0f8805c620ae0da1d66d0e161b6ddb97275e1e0b1bd72d97555970eeec3d9ac | 12/18/2023 14:23:37 | 12/18/2023 14:23:37|
-10.2.1.009559.1030-10.0.20348.2227-ltsc2022 | 10.0.20348.2227 | ltsc2022           | amd64           | windows | sha256:665ea70d0da6bc4c45c1a373d27468b51873305e9a8934ca43db599268111ff2 | 01/18/2024 11:46:47 | 01/18/2024 11:46:47|
-10.2.1.009559.1077-10.0.20348.2322-ltsc2022 | 10.0.20348.2322 | ltsc2022           | amd64           | windows | sha256:6a286cccd4c2a9b7c9441a5c31458065a4148a5ec63a5b50c301947c0161bc56 | 03/05/2024 10:02:03 | 03/05/2024 10:02:03|
-10.2.1.009559.1122-10.0.20348.2340-ltsc2022 | 10.0.20348.2340 | ltsc2022           | amd64           | windows | sha256:69fb4952fb64eddf0ab16ae12440e67fc8d6280a35570cac3e3b94bcbebdd5ce | 03/19/2024 10:43:50 | 03/19/2024 10:43:50|
-10.2.1.009559.1161-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:0e516c394a11b3ef3f3780eef22f7ef114b1045df37dcbd0b1027c9117f5372e | 04/15/2024 14:21:24 | 04/15/2024 14:21:24|
-10.2.1.009559.1193-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:37806470a6a8f08241fe3a1e497092e5b712671afed75b5cfe6b572441dd8593 | 05/28/2024 14:07:30 | 05/28/2024 14:07:30|
-10.2.1.009559.1934-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:53e39098a42dcfa4c6cfd7cc7d9c4ccc209fe462ef485bfa5f70323e86d2b101 | 08/31/2023 16:29:12 | 08/31/2023 16:29:12|
-10.2.1.009559.1983-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:8878a998a3293547523f6b1ae87965323c561a89996b87a8fc36cedc3e166263 | 09/22/2023 09:45:12 | 09/22/2023 09:45:12|
-10.2.1.009559.2017-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:b5b0174b574ff56f80bc91919baf445bf138469c9607a5bab6eacf11c93186d7 | 10/17/2023 07:39:01 | 10/17/2023 07:39:01|
-10.2.1.009559.2054-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:5dd32154ad337ac54a68765e9f516699ed443959c1d2ca9f5b5475a6d5bb8f68 | 11/17/2023 19:36:12 | 11/17/2023 19:36:12|
-10.2.1.009559.2085-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:b4ebb0b631183d3df01499c9092015ed6011336913a3e07acc62f085104457fc | 12/18/2023 14:36:41 | 12/18/2023 14:36:41|
-10.2.1.009559.2103-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:0fe2376dd07f35e340f176165fa1109f29a02734bca1f59ce35dc6797da0e80f | 01/18/2024 11:50:31 | 01/18/2024 11:50:31|
-10.2.1.009559.2156-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:816485f86d0a418bc08eabb7be48a964861a66ef5af2cfafc0212854f2fa0eec | 03/05/2024 10:14:33 | 03/05/2024 10:14:33|
-10.2.1.009559.2196-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:c9546ffc8b76d365e5598e34a609eb5381d02452961830d01aa7a896e931921a | 03/19/2024 10:48:11 | 03/19/2024 10:48:11|
-10.2.1.009559.2249-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:548801fac03ec38c2901f443ab79f7e5d98fce353bd2bc2b0a0de03dfa2e289f | 04/15/2024 14:25:58 | 04/15/2024 14:25:58|
-10.2.1.009559.2281-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:b73b798c529d3f8de6a14b93f4e9e2be6b74a2d68c3fa04b3fa867fc5805ba3f | 05/28/2024 14:09:05 | 05/28/2024 14:09:05|
-10.2.1.009559.870-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:15cc9416b5be4c5b2e1419c05ac5739153cff4ccc580fbbb1923d508891e7bad | 08/31/2023 16:23:59 | 08/31/2023 16:23:59|
-10.2.1.009559.915-10.0.20348.1970-ltsc2022  | 10.0.20348.1970 | ltsc2022           | amd64           | windows | sha256:a548af0ad2a17c362a6720b44ad4d547b26871a77973cdad0aec72c901245457 | 09/22/2023 09:34:48 | 09/22/2023 09:34:48|
-10.2.1.009559.948-10.0.20348.2031-ltsc2022  | 10.0.20348.2031 | ltsc2022           | amd64           | windows | sha256:7d2c46e263fc09130705b2b8d052ce3114ffcb1ce019654cdf8c00bcebca979c | 10/17/2023 07:26:33 | 10/17/2023 07:26:33|
-10.2.1.009559.986-10.0.20348.2113-ltsc2022  | 10.0.20348.2113 | ltsc2022           | amd64           | windows | sha256:0d358c9bfaf7253b5d05aab0ad87e2046dda408cfbb501b9d3918864f97308fc | 11/17/2023 19:22:06 | 11/17/2023 19:22:06|
-10.2.2                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:2421a05c7a8800b6a7c22e8411ec2bc52ce6a2cf68fb7ed6c1ce3d6936c94d24 | 07/01/2024 22:54:39 | 10/11/2024 23:26:12|
-10.2.2-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:316db16816903e73e9b7cf2fb09fb34f8d4e72e234d32d2d7a62d33c466a72b9 | 07/01/2024 22:09:37 | 10/11/2024 22:56:18|
-10.2.2-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:ee7a3f88e38abf1978528226097b755e6dc4459cec2a5a1068d317b2d304ee68 | 07/01/2024 21:55:35 | 10/11/2024 22:45:58|
-10.2.2.010645.1224-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:952c59d85052924998308e638f6a894c235742aa8e126b4b3f13d547e4a9970a | 07/01/2024 21:55:27 | 07/01/2024 21:55:27|
-10.2.2.010645.1261-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:db1722e6b35c158909e628b82a0ff46f3b7650e93cd4627fc06ed2e4a7a6a220 | 07/18/2024 08:48:13 | 07/18/2024 08:48:13|
-10.2.2.010645.1305-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:2f4990aec891dcac01ff7d45988c535865a26da6f8590a386e69497df0badb9b | 08/21/2024 10:52:57 | 08/21/2024 10:52:57|
-10.2.2.010645.1415-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:c574b31a3d97781cfc094bc6dc15f949c04b8547d5b6b3d2af067cdc3893c0da | 09/18/2024 09:50:31 | 09/18/2024 09:50:31|
-10.2.2.010645.1430-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:ee7a3f88e38abf1978528226097b755e6dc4459cec2a5a1068d317b2d304ee68 | 10/11/2024 22:45:55 | 10/11/2024 22:45:55|
-10.2.2.010645.2318-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:0e6a3a7a446b8e72ec0a7e9b5d5009f97d169b4717ad409dfb93e42458a1335e | 07/01/2024 22:09:29 | 07/01/2024 22:09:29|
-10.2.2.010645.2352-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:135a809dd998381797ac398f781568c1561b61276b7c4b2ed2eeeaa491176a1b | 07/18/2024 08:39:37 | 07/18/2024 08:39:37|
-10.2.2.010645.2401-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:6dbde1e6c52afc593f59e38d6f2dc98ba5070419b288e2b65ab3074b96d91be3 | 08/21/2024 10:46:02 | 08/21/2024 10:46:02|
-10.2.2.010645.2511-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:85e3f83dd0456ff01e27e9d8f648eea3a697b01bdfaa4850220195fd48261570 | 09/18/2024 10:09:13 | 09/18/2024 10:09:13|
-10.2.2.010645.2530-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:316db16816903e73e9b7cf2fb09fb34f8d4e72e234d32d2d7a62d33c466a72b9 | 10/11/2024 22:56:15 | 10/11/2024 22:56:15|
-10.3                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:4589a674e1a9ece10540304ad7783864596521bec0649e3d95a0900fe2e015b9 | 02/15/2023 11:37:48 | 10/14/2024 16:15:52|
-10.3-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:7d1d93b3330692c709db1f4e8c1cd170660465e601afcb3d9064943f3cc0de30 | 12/01/2022 16:41:30 | 10/14/2024 15:48:25|
-10.3-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:09a2b5a4d29229700e5fd7c19cf304d5fa4bfcf4dc1f9bd4f7bf01a2161e25b3 | 02/15/2023 11:00:18 | 10/14/2024 15:37:36|
-10.3.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:12b3d7088a56bc6e29798e95645812cadcd2215c4ce95904f28b0a8c0891e37a | 02/15/2023 11:39:19 | 09/01/2023 08:14:31|
-10.3.0-ltsc2019                             | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:024fbb6f912c7533763016debf3a5e13032bcd04701f0746774a661283e8fef2 | 12/01/2022 16:40:56 | 06/28/2023 19:36:26|
-10.3.0-ltsc2022                             | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:fa3921198ecf23708de822fb07f50b7c480f6686d741cef7a41c3890b5a0f708 | 02/15/2023 11:00:54 | 06/28/2023 19:32:38|
-10.3.0.008463.1499-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:4d9274b506be714cc65b1e0c72aab851395de00aa27620353445d0830921d168 | 12/01/2022 16:40:57 | 12/01/2022 16:40:57|
-10.3.0.008463.1528-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:4094f8b46c0fc2b46f1a1475e880cb2d90b9c3dea0440a037423bcf7bc8c891c | 12/12/2022 02:17:54 | 12/12/2022 02:17:54|
-10.3.0.008463.1556-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:5884e5f4c91340e9f12600a59df943dc9ca61cc1fc7778a5c0a3f36a3c6caeca | 12/27/2022 19:46:09 | 12/27/2022 19:46:09|
-10.3.0.008463.1656-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:f047e968cd5df48643748d500d739d4a3bebe8105808b4e46c0399703a1a7ed8 | 02/15/2023 11:01:32 | 08/31/2023 13:26:31|
-10.3.0.008463.1681-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:f0fa98a0a49303fe44e3c9706d23695df5c635b98e0712556c37dd9339333274 | 02/23/2023 06:10:01 | 08/31/2023 13:27:01|
-10.3.0.008463.1719-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:5a4e9c034aabcd0ada48ad6b599b78685720762c6aa292b00a169141a98a4d83 | 03/23/2023 01:03:17 | 08/31/2023 13:27:33|
-10.3.0.008463.1758-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:1707a67f992f2d6e9b2f63bc70fc4aab9661ae98793345cb6a43b641575c5624 | 04/23/2023 12:25:17 | 08/31/2023 13:28:04|
-10.3.0.008463.1808-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:6e68b62113469bec1d5c3abad92e0cc0b3433015828f527b6352bfeca7dfe32b | 06/01/2023 09:04:05 | 08/31/2023 13:28:35|
-10.3.0.008463.1872-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:024fbb6f912c7533763016debf3a5e13032bcd04701f0746774a661283e8fef2 | 06/28/2023 19:36:16 | 06/28/2023 19:36:16|
-10.3.0.008463.629-10.0.20348.1487-ltsc2022  | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:4230a835afc10369ffaf28198a5b75af488117fa99c43e468d366dd9fd66fe73 | 02/15/2023 11:00:36 | 02/15/2023 11:00:36|
-10.3.0.008463.647-10.0.20348.1547-ltsc2022  | 10.0.20348.1547 | ltsc2022           | amd64           | windows | sha256:9cfc6f0cd03abc6d953c0ce2347621f81c679bec618373d62cc829802666ee50 | 02/23/2023 06:08:55 | 02/23/2023 06:08:55|
-10.3.0.008463.688-10.0.20348.1607-ltsc2022  | 10.0.20348.1607 | ltsc2022           | amd64           | windows | sha256:6be38a3d5453c957319d57ebddd527e1b5be3da05f6aa439e0c64932b1130108 | 03/23/2023 01:00:43 | 03/23/2023 01:00:43|
-10.3.0.008463.722-10.0.20348.1668-ltsc2022  | 10.0.20348.1668 | ltsc2022           | amd64           | windows | sha256:4df9f6321f2727319d78bfaef8c2068aa1390ce595552507d7c9f88535095959 | 04/23/2023 12:12:15 | 04/23/2023 12:12:15|
-10.3.0.008463.771-10.0.20348.1726-ltsc2022  | 10.0.20348.1726 | ltsc2022           | amd64           | windows | sha256:8c29b291f710e843c63152112e7118a97ac0f0a6c212882b9024de4f8b3a6d45 | 06/01/2023 09:07:26 | 06/01/2023 09:07:26|
-10.3.0.008463.805-10.0.20348.1787-ltsc2022  | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:fa3921198ecf23708de822fb07f50b7c480f6686d741cef7a41c3890b5a0f708 | 06/28/2023 19:32:29 | 06/28/2023 19:32:29|
-10.3.1                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:2df09da24cf7c991e3b3d1fe7070a53abbf8a7111bb357c50755f053676a2ae9 | 08/01/2023 11:55:05 | 07/30/2024 10:35:00|
-10.3.1-ltsc2019                             | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:b1c64643f869b8a4b43094332f5fc8c7fa17fd6159971a069d1b3e0e62e5110c | 08/01/2023 10:12:24 | 07/30/2024 09:54:51|
-10.3.1-ltsc2022                             | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:37405293f1a84a121f0c16f94df74b30c4fcf58bde7ab9ec92519d41b36a0c91 | 08/01/2023 10:13:29 | 07/30/2024 09:57:41|
-10.3.1.009452.1014-10.0.20348.2159-ltsc2022 | 10.0.20348.2159 | ltsc2022           | amd64           | windows | sha256:a275b6008d971042457ac8b7c21a74df8d6f3bfe0fe9f2db10bcbc268ef7c554 | 12/21/2023 00:01:49 | 12/21/2023 00:01:49|
-10.3.1.009452.1029-10.0.20348.2227-ltsc2022 | 10.0.20348.2227 | ltsc2022           | amd64           | windows | sha256:b1555c8c21a236a89a7f9565c11359956e38a4a45768b73408c80d9ca9f468da | 01/12/2024 20:42:13 | 01/12/2024 20:42:13|
-10.3.1.009452.1071-10.0.20348.2322-ltsc2022 | 10.0.20348.2322 | ltsc2022           | amd64           | windows | sha256:77cf38495f36751b26dc33a48f04d413496d382ec618df4578ecc1c5d1a41a73 | 02/22/2024 15:10:12 | 02/22/2024 15:10:12|
-10.3.1.009452.1127-10.0.20348.2340-ltsc2022 | 10.0.20348.2340 | ltsc2022           | amd64           | windows | sha256:158c3ae87578de283e4ad7d9bc0989bed125a671f855867fa804d15874f106a6 | 03/19/2024 23:05:00 | 03/19/2024 23:05:00|
-10.3.1.009452.1163-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:71b78c418f4c7755e44c655a8cdf76271480375fb28c352efcfb08938e181f27 | 04/16/2024 15:22:26 | 04/16/2024 15:22:26|
-10.3.1.009452.1202-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:e2901e775313ddcf95547b8850d3633b54873e7c2a54e2cebc612571c403bbf2 | 05/27/2024 16:24:39 | 05/27/2024 16:24:39|
-10.3.1.009452.1232-10.0.20348.2527-ltsc2022 | 10.0.20348.2527 | ltsc2022           | amd64           | windows | sha256:6d8fcc9b7b97e037387eaede14823793bea09eaa96f5edeb2470cd0b3a49327a | 07/01/2024 08:27:37 | 07/01/2024 08:27:37|
-10.3.1.009452.1260-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:37405293f1a84a121f0c16f94df74b30c4fcf58bde7ab9ec92519d41b36a0c91 | 07/30/2024 09:56:44 | 07/30/2024 09:56:44|
-10.3.1.009452.1907-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:d0139fa47ef200cc9e1e07e3b603c44c3d7a9fa347dc2aee4a630de69d5cf6c4 | 08/01/2023 10:12:15 | 08/01/2023 10:12:15|
-10.3.1.009452.1944-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:51f3e306f8a53e45d930ac28f53a35e4df6a5810e37a4d4a72483b0a57e7c3f8 | 08/17/2023 19:35:14 | 08/17/2023 19:35:14|
-10.3.1.009452.1977-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:fbde66ceec287c7063430680fac04c06bb81ccdcdda67b9233e60ba5ca7fbad2 | 09/20/2023 11:14:44 | 09/20/2023 11:14:44|
-10.3.1.009452.2019-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:e74c6d902e644bf2b2e19c7e78c720dea8683cb39f20ec76f9768a4569ef5e68 | 10/17/2023 19:15:29 | 10/17/2023 19:15:29|
-10.3.1.009452.2055-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:4ed1a5b1e956ce8646a2da03c96932511065c38557f1a96a744f148aa90897a3 | 11/21/2023 12:45:44 | 11/21/2023 12:45:44|
-10.3.1.009452.2086-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:e4de1099fd9a9ca20da8524d2e51500e7401b7abccc459ab1fc3e6bb427c2da1 | 12/21/2023 00:08:59 | 12/21/2023 00:08:59|
-10.3.1.009452.2102-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:258220df7ebb900712f4ce93f5a713f81dfc7bd3bdb6919c9cad557112c9fe89 | 01/12/2024 20:50:22 | 01/12/2024 20:50:22|
-10.3.1.009452.2151-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:912fd3ccab9cf6dfb960e51ff1849ade1c82906d8566f908861313ab2f29abd3 | 02/22/2024 15:15:41 | 02/22/2024 15:15:41|
-10.3.1.009452.2201-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:a6d79b49772a824ca1adbc493accc6d55426bb47e3d2f5dd17247b9b327721c8 | 03/19/2024 23:10:02 | 03/19/2024 23:10:02|
-10.3.1.009452.2251-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:afe52ecf411bee3156449c338bffe8789a865203702915d694086faa9dfbec6f | 04/16/2024 15:24:01 | 04/16/2024 15:24:01|
-10.3.1.009452.2294-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:1dfb25ad2976d5a2b05669b151298c8698dbed37d4b9849760fe69123f812d6d | 05/27/2024 16:24:31 | 05/27/2024 16:24:31|
-10.3.1.009452.2325-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:6c5ce46f972411db31081c8deb97b57a52312391fcfd9d1a22182cb4ae7291b8 | 07/01/2024 08:58:41 | 07/01/2024 08:58:41|
-10.3.1.009452.2351-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:b1c64643f869b8a4b43094332f5fc8c7fa17fd6159971a069d1b3e0e62e5110c | 07/30/2024 09:54:51 | 07/30/2024 09:54:51|
-10.3.1.009452.845-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:d1702683ec846b02955514470cb1306815383872c05d080eb1939476713cc44c | 08/01/2023 10:13:17 | 08/01/2023 10:13:17|
-10.3.1.009452.879-10.0.20348.1906-ltsc2022  | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:6b78fc78e2f159b613a96cc29a191f8fe3bed46c9251bae508a9177f2748eb61 | 08/17/2023 19:22:12 | 08/17/2023 19:22:12|
-10.3.1.009452.909-10.0.20348.1970-ltsc2022  | 10.0.20348.1970 | ltsc2022           | amd64           | windows | sha256:ebda258e9d57d047bbcface0b74c4d4b7347a3440c1ad4bc1ea4394f296a5db8 | 09/20/2023 11:12:31 | 09/20/2023 11:12:31|
-10.3.1.009452.950-10.0.20348.2031-ltsc2022  | 10.0.20348.2031 | ltsc2022           | amd64           | windows | sha256:7c89b80d45f8755c1ac5624a83b11cc963334a4f5f6d3faa7a3c3bb873fdc919 | 10/17/2023 19:14:05 | 10/17/2023 19:14:05|
-10.3.1.009452.987-10.0.20348.2113-ltsc2022  | 10.0.20348.2113 | ltsc2022           | amd64           | windows | sha256:4ef4861b2c150d0bef5929817a93451745535569d10f3bf526e488a42ab736e1 | 11/21/2023 12:43:49 | 11/21/2023 12:43:49|
-10.3.2                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:4589a674e1a9ece10540304ad7783864596521bec0649e3d95a0900fe2e015b9 | 08/15/2024 23:01:03 | 10/14/2024 16:17:53|
-10.3.2-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:7d1d93b3330692c709db1f4e8c1cd170660465e601afcb3d9064943f3cc0de30 | 08/15/2024 22:26:58 | 10/14/2024 15:49:16|
-10.3.2-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:09a2b5a4d29229700e5fd7c19cf304d5fa4bfcf4dc1f9bd4f7bf01a2161e25b3 | 08/15/2024 22:15:48 | 10/14/2024 15:37:23|
-10.3.2.010837.1282-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:2a17378a86ade1a10bb7343b91d02eb32100737c198a1ad29c07665078d67dee | 08/15/2024 22:15:43 | 08/15/2024 22:15:43|
-10.3.2.010837.1309-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:8c42ce1ef2c1e2127036b1c34684cebd6047b589a2871f9e8a8dcc59e7bd16ca | 08/21/2024 17:12:55 | 08/21/2024 17:12:55|
-10.3.2.010837.1414-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:6eabb8ce214253eb57159d709ad1439af468ead66540825b9ef4cec55fd04bb5 | 09/18/2024 08:38:28 | 09/18/2024 08:38:28|
-10.3.2.010837.1438-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:09a2b5a4d29229700e5fd7c19cf304d5fa4bfcf4dc1f9bd4f7bf01a2161e25b3 | 10/14/2024 15:37:22 | 10/14/2024 15:37:22|
-10.3.2.010837.2376-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:eee6ac72fb3ac829b6c14f83853d3d4c18279b7614bb48b332dcacce2ffcbcf3 | 08/15/2024 22:26:59 | 08/15/2024 22:26:59|
-10.3.2.010837.2405-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:f30ca4cca092ad97c63071c38fbc645c8517ac02c92a0c9923877adddcfad17d | 08/21/2024 17:13:41 | 08/21/2024 17:13:41|
-10.3.2.010837.2510-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:c458ea2f0e7d50b53ec5abb3b8627273977d842f6374cd0d0ea5b54ed72ca8a0 | 09/18/2024 09:03:11 | 09/18/2024 09:03:11|
-10.3.2.010837.2538-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:7d1d93b3330692c709db1f4e8c1cd170660465e601afcb3d9064943f3cc0de30 | 10/14/2024 15:48:19 | 10/14/2024 15:48:19|
-10.4                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:843201caef5ac6465e848fb10c4d61464c49e058017c661b11b7ef8fc9620f50 | 06/07/2024 02:22:45 | 10/12/2024 11:48:25|
-10.4-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:a83d63d77e873dd1db554bc5a4ae3fd269db70571a3d79935193d1dd38b3085a | 06/07/2024 01:44:48 | 10/12/2024 11:20:30|
-10.4-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:e1087785ada968682acc61096bb0a8db452695771650a89186814477938f2d43 | 04/17/2024 15:04:54 | 10/12/2024 11:15:55|
-10.4.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:843201caef5ac6465e848fb10c4d61464c49e058017c661b11b7ef8fc9620f50 | 06/07/2024 02:21:38 | 10/12/2024 11:47:39|
-10.4.0-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:a83d63d77e873dd1db554bc5a4ae3fd269db70571a3d79935193d1dd38b3085a | 06/07/2024 01:44:28 | 10/12/2024 11:20:20|
-10.4.0-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:e1087785ada968682acc61096bb0a8db452695771650a89186814477938f2d43 | 04/17/2024 15:04:37 | 10/12/2024 11:15:45|
-10.4.0.010422.1166-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:853c9984c1397026504a62358e351659253e8606d63e1ba27a08858bc85f9047 | 04/17/2024 15:04:30 | 04/17/2024 15:04:30|
-10.4.0.010422.1207-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:f0c053221959cb2957b182f3e65b0edef7a3952d050518e28d9030fbef01cbe1 | 06/07/2024 01:38:57 | 06/07/2024 01:38:57|
-10.4.0.010422.1239-10.0.20348.2527-ltsc2022 | 10.0.20348.2527 | ltsc2022           | amd64           | windows | sha256:49a772384181ba4602c30faad71cfb13e2c7618153070574f878a1b7b450e432 | 06/27/2024 14:31:24 | 06/27/2024 14:31:24|
-10.4.0.010422.1259-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:d3febdf107f423a8d1a38eafb1ef104005579a9f9a0eb8844c0d221c89fe2754 | 07/22/2024 13:19:45 | 07/22/2024 13:19:45|
-10.4.0.010422.1298-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:b6429dfa25b03b1713111ba97bfcf7017e141d8f922196623593c4e08b3c454f | 08/21/2024 11:37:35 | 08/21/2024 11:37:35|
-10.4.0.010422.1413-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:576e8b65f6559d2f2005a6b8cbca58f6da1733f67336e512897cfac4dcc2a35a | 09/18/2024 09:16:45 | 09/18/2024 09:16:45|
-10.4.0.010422.1437-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:e1087785ada968682acc61096bb0a8db452695771650a89186814477938f2d43 | 10/12/2024 11:15:41 | 10/12/2024 11:15:41|
-10.4.0.010422.2299-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:9c9ee8da3f1bd6513354ff1f781f1ac1d64f26c991046f49f4e306b5f553474b | 06/07/2024 01:44:07 | 06/07/2024 01:44:07|
-10.4.0.010422.2331-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:7c42841dc8370f8584ac543f6534a5c12fea3aae6a907ac2059fe90fa4074c67 | 06/27/2024 14:24:21 | 06/27/2024 14:24:21|
-10.4.0.010422.2350-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:bef0e8deb6bf3368d6506922b24b420f457596b7ed9356f2e9a5f82e429db736 | 07/22/2024 16:27:31 | 07/22/2024 16:27:31|
-10.4.0.010422.2394-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:cc6f7c510d52caf0de7a353f06441937899956a7054fc2e5b8eb136820eb6dce | 08/21/2024 11:38:39 | 08/21/2024 11:38:39|
-10.4.0.010422.2509-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:d225b20c8f3d992c6b9afd3070b818892cb2ab9db5e7c2939822da03aa3c1d84 | 09/18/2024 09:30:19 | 09/18/2024 09:30:19|
-10.4.0.010422.2537-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:a83d63d77e873dd1db554bc5a4ae3fd269db70571a3d79935193d1dd38b3085a | 10/12/2024 11:20:13 | 10/12/2024 11:20:13|
+10.0                                        |                 |                    | amd64           | windows | sha256:d6ef8249b280669c6f96a0d7f0da2b4c4863110ef40808f6e6d051dc65374441 | 08/18/2021 19:12:29 | 08/30/2023 13:54:35|
+10.0-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:945b9779caa76d622553c6e60090df9a4f612812a946f23b7183a5892ef8da9f | 12/15/2020 10:01:03 | 10/15/2024 14:33:09|
+10.0.0-ltsc2019                             | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:60683542370155ee5146bd20c50277a98a6fb483e795ee93f8c491bd92c69269 | 08/03/2020 12:52:54 | 06/21/2021 09:08:55|
+10.0.0.004346.318-10.0.17763.1282-ltsc2019  | 10.0.17763.1282 | ltsc2019           | amd64           | windows | sha256:084985817c61a6ac369acd98502a3364e7a6aa386affb98cda8b1fbc9c94616c | 08/03/2020 12:52:43 | 08/03/2020 12:52:43|
+10.0.0.004346.337-10.0.17763.1339-ltsc2019  | 10.0.17763.1339 | ltsc2019           | amd64           | windows | sha256:90dcd49fe74b4525f258c332375fd558d33003da4d2deedb5eb9b9a43bdb6386 | 08/03/2020 18:33:16 | 08/03/2020 18:33:16|
+10.0.0.004346.371-10.0.17763.1397-ltsc2019  | 10.0.17763.1397 | ltsc2019           | amd64           | windows | sha256:74a3e88307f40266a4caf98e8466235cc8be384e9246fd04636a0990bb0455db | 08/25/2020 09:23:17 | 08/25/2020 09:23:17|
+10.0.0.004346.412-10.0.17763.1457-ltsc2019  | 10.0.17763.1457 | ltsc2019           | amd64           | windows | sha256:0006967e39475032b19b5fa905cb6fee95c2532ce8933b1e94edc7f9410dcf8f | 09/15/2020 08:22:16 | 09/15/2020 08:22:16|
+10.0.0.004346.444-10.0.17763.1518-ltsc2019  | 10.0.17763.1518 | ltsc2019           | amd64           | windows | sha256:4fc7c6b9493c1d82afbcd3e366fa49573ebb9baf06b0376c47ff87523a13d56d | 10/22/2020 19:51:06 | 10/22/2020 19:51:06|
+10.0.0.004346.477-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019           | amd64           | windows | sha256:178a99aa6dc4ea3ae4946179316c2ff1427906fd36a2e0918091e10423dbbde4 | 11/18/2020 10:50:00 | 11/18/2020 10:50:00|
+10.0.0.004346.520-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019           | amd64           | windows | sha256:45343612b4a4c979de14112549ee00f8d505ea7003a1262a58baae9b4b02f874 | 12/14/2020 08:19:20 | 12/14/2020 08:19:20|
+10.0.0.004346.566-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:183cb89759e249d3e7f4f483afd8740db97cd963a5c3b407a2d4b47ec8057280 | 01/15/2021 11:49:06 | 01/15/2021 11:49:06|
+10.0.0.004346.636-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:d5bde4a700ca2111e6518175da76760881240050883cfc252ef966bc7ce666c6 | 02/14/2021 16:03:52 | 02/14/2021 16:03:52|
+10.0.0.004346.670-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:64f86ef01c93996722d2322ca14d42db17b8b6a29a14bed3d0d742714a576caa | 03/12/2021 09:46:22 | 03/12/2021 09:46:22|
+10.0.0.004346.705-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:e34c0666b1c6f37acf6582e426e76286b81272678a3bb46d9114b379f4596d87 | 04/16/2021 05:58:28 | 04/16/2021 05:58:28|
+10.0.0.004346.779-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:0d5f01880625217227051fa73375bb922825ef737b0d71d7acd077d7344b607a | 05/18/2021 06:22:52 | 05/18/2021 06:22:52|
+10.0.0.004346.837-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:60683542370155ee5146bd20c50277a98a6fb483e795ee93f8c491bd92c69269 | 06/21/2021 09:08:38 | 06/21/2021 09:08:38|
+10.0.1-ltsc2019                             | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:1a39af6c60151e194360f9cfdccede5a6ca938bd2dad94ba514731486bfaa77b | 12/15/2020 10:00:48 | 07/20/2021 12:51:07|
+10.0.1.004842.513-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019           | amd64           | windows | sha256:a42e272614d6d9d2aa9f8bff78934920fbfb9e6a64c92b300918d6595aede297 | 12/15/2020 10:00:31 | 12/15/2020 10:00:31|
+10.0.1.004842.523-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019           | amd64           | windows | sha256:ec7a7e1e6aa9ff45a97d266ac3079c4914d91a3ce41eb753f1ae4a8961add856 | 12/15/2020 17:09:33 | 12/15/2020 17:09:33|
+10.0.1.004842.567-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:9f33d77c6953f6b041310e96d27df0f0f1b05cdc71691f7934df957d46cd3df0 | 01/15/2021 16:38:13 | 01/15/2021 16:38:13|
+10.0.1.004842.638-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:d627268d02678bdb1e763b7aa99c270dbb63a9592fa30aa89c8cabd6b70e6315 | 02/15/2021 09:51:14 | 02/15/2021 09:51:14|
+10.0.1.004842.671-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:1fba145153a087f9de968446375f2e680941caeb6a6b8efcbd4158dbae586736 | 03/12/2021 15:30:11 | 03/12/2021 15:30:11|
+10.0.1.004842.707-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:4a5eeb4dd6e90bfc5d62a8282e83044fd8c44fba85f245f9049c51f2f82c3f5f | 04/16/2021 13:22:47 | 04/16/2021 13:22:47|
+10.0.1.004842.781-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:ed8b9dcecac69641da2d004e2884dcfc6ad1199becfb78bdb6d87f6af13748e4 | 05/18/2021 10:49:13 | 05/18/2021 10:49:13|
+10.0.1.004842.842-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:d882ba038a375c8dc6f0d80ad13133ddbb6c5a922f14c5da117ec87a62cd2e89 | 06/21/2021 11:53:07 | 06/21/2021 11:53:07|
+10.0.1.004842.889-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:1a39af6c60151e194360f9cfdccede5a6ca938bd2dad94ba514731486bfaa77b | 07/20/2021 12:50:51 | 07/20/2021 12:50:51|
+10.0.2                                      |                 |                    | amd64           | windows | sha256:ccef4fb82fae971b838dcab6e80ba650b97990aad7bccd29405ec0601337d328 | 08/18/2021 19:11:34 | 08/30/2023 16:36:08|
+10.0.2-ltsc2019                             | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:7484494409f0520506335c7ead7931558033851234bad0fc01aa7a34870a1a9e | 06/30/2021 11:58:12 | 09/29/2021 12:14:13|
+10.0.2.006052.851-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:454d1f2318c9e6c989a77cd03cf4fd06813c3241eb9027dc522b3d4b5a75e4d4 | 06/30/2021 11:57:30 | 06/30/2021 11:57:30|
+10.0.2.006052.890-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:704999a3555436792f9833ac9429358315cf001d79bf5ab22917eaec0ba65963 | 07/21/2021 07:14:37 | 07/21/2021 07:14:37|
+10.0.2.006052.918-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019           | amd64           | windows | sha256:55f65d9d31812d146801c529e4ed87b630ffdbaf7b14753c20b7099e447cd4ad | 08/18/2021 15:39:08 | 08/18/2021 15:39:08|
+10.0.2.006052.980-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:7484494409f0520506335c7ead7931558033851234bad0fc01aa7a34870a1a9e | 09/29/2021 12:13:58 | 09/29/2021 12:13:58|
+10.0.3                                      |                 |                    | amd64           | windows | sha256:d6ef8249b280669c6f96a0d7f0da2b4c4863110ef40808f6e6d051dc65374441 | 10/07/2021 10:44:23 | 08/30/2023 16:45:45|
+10.0.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:945b9779caa76d622553c6e60090df9a4f612812a946f23b7183a5892ef8da9f | 10/07/2021 07:32:18 | 10/15/2024 14:32:56|
+10.0.3.006577.1025-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:c5d6b8d5243e2d30ff4092120798d53dfdf91f196c3d1d7b1ee2aaf8a45a9120 | 10/19/2021 13:30:44 | 10/19/2021 13:30:44|
+10.0.3.006577.1062-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:c0a6d57e073904340fa606327abde01ebfaf93f080136525a4a9f0b1b072c7cf | 11/12/2021 07:57:07 | 11/12/2021 07:57:07|
+10.0.3.006577.1119-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:7d0e50822c671a382a4d9186f321ab17a904217073da93b56a7aad9bc6f13e2b | 12/16/2021 19:10:56 | 12/16/2021 19:10:56|
+10.0.3.006577.1155-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:46133171aa7720ff2da702bfbe50fccd82801e0ae31a11557b3ffc70e4b52cab | 01/18/2022 15:30:59 | 01/18/2022 15:30:59|
+10.0.3.006577.1199-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:bbc98b455ff488994fedd719ff256902dc9d869005698f39c0d8fc7adab9dceb | 02/16/2022 08:30:14 | 02/16/2022 08:30:14|
+10.0.3.006577.1256-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:35634104f138c5b5680ba870bae36fd8deba7f840a2ffafb6b5eff8e00deff95 | 03/16/2022 19:20:26 | 03/16/2022 19:20:26|
+10.0.3.006577.1298-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:f16ed48e0cec6cff813c1df226ef82cf8264630f531bcebab4434dd728e522ab | 04/17/2022 19:56:58 | 04/17/2022 19:56:58|
+10.0.3.006577.1319-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:d5b27ee5bccfe1002574440d3ad846265310e4ee1654e5048d394f6b9af26b54 | 05/20/2022 12:40:33 | 05/20/2022 12:40:33|
+10.0.3.006577.1344-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:4fecf6242b15734fc2af14d532ded5fd259c5ad4646b9caa39e5d9bcfa35b459 | 06/24/2022 16:13:24 | 06/24/2022 16:13:24|
+10.0.3.006577.1385-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:946d8279b704e9765ceea0e0c6758697bde4df9d38ef281723cf6d2deb8a7db9 | 07/21/2022 13:12:26 | 07/21/2022 13:12:26|
+10.0.3.006577.1401-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:b015f3ea298fb34892e26aa40a7b4d801f8fd7d79d1dd7fa7bfbb5584d25abe0 | 08/15/2022 12:14:38 | 08/15/2022 12:14:38|
+10.0.3.006577.1462-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:030b9011688452936595d6b3a6f41b549cba6e98f334b3670c76593234a56735 | 09/22/2022 17:32:09 | 09/22/2022 17:32:09|
+10.0.3.006577.1485-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:99817e974db045e1d78515dbd5c4cfc1938f4267eee8ee1801d35097b54d4997 | 10/19/2022 14:42:27 | 10/19/2022 14:42:27|
+10.0.3.006577.1532-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:1f0de7775bb67548d785fbd0ad79320207324af96bd956e32998ada41cc0b20d | 12/12/2022 12:03:20 | 12/12/2022 12:03:20|
+10.0.3.006577.1546-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:41d0bb6e56bf7e71adba2a874016d6d2ee6ca036ca3e468ae9de9fb38990ae8b | 12/27/2022 13:01:22 | 12/27/2022 13:01:22|
+10.0.3.006577.1683-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:4f587933d75d301aa8096be7925ce2fc85a1664e25f24c4633fd171fa7ad1f49 | 02/21/2023 23:44:06 | 08/31/2023 09:29:26|
+10.0.3.006577.1716-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:a679b3ae80223b0a8d5a8d77e0a89f96806411815cd318dbcd09e5bccc530ec6 | 03/23/2023 08:15:56 | 08/31/2023 09:32:53|
+10.0.3.006577.1753-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:977de90d758c55e655c0e947127ac18ccc57ec5915411c3add1f329786ae5dce | 04/24/2023 13:12:55 | 08/31/2023 09:36:15|
+10.0.3.006577.1800-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:551b1c445f059e0c3690c456902a6ca5f9858adabdbf89b07731f5f7e38ebd44 | 05/31/2023 12:08:03 | 08/31/2023 09:39:39|
+10.0.3.006577.1877-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:ecea029c760d274c6fd71c44165e154ba1d6027af436b94d63f8d55af310e852 | 06/29/2023 16:52:50 | 06/29/2023 16:52:50|
+10.0.3.006577.1909-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:ff4feef4607fc4462355911487ab9b81931979fd842a7d1abf45c4fffe87d103 | 07/21/2023 22:18:25 | 07/21/2023 22:18:25|
+10.0.3.006577.1940-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:b250e514e5c2237f3594a8e1d8224df64dc3b9428c985c790a3a380e29ae323c | 08/29/2023 16:27:50 | 08/29/2023 16:27:50|
+10.0.3.006577.1990-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:a6d8263da10628aa471c967f6d64c171e72ce20c75e77ac7e5d579ef3c190e75 | 09/25/2023 08:44:45 | 09/25/2023 08:44:45|
+10.0.3.006577.2020-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:d86dc022b65ebcda78efe695b73a67f474f485f790212e6fc4b7e67023820b4c | 10/17/2023 23:35:20 | 10/17/2023 23:35:20|
+10.0.3.006577.2061-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:19193c406193c53bccf727eacff00198bd7bf1877fa91691ef4da49eb7933237 | 11/21/2023 21:20:54 | 11/21/2023 21:20:54|
+10.0.3.006577.2089-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:a1ff61ac89e954552057ad3f7cc921d6924e73c57ec5fa8dff050d1ae1c14d1b | 12/21/2023 09:43:21 | 12/21/2023 09:43:21|
+10.0.3.006577.2106-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:9b866089eec408198ad876cfa2ca21d07dc8cc24faf0e2fa6be33a90b8def4a8 | 01/18/2024 02:21:52 | 01/18/2024 02:21:52|
+10.0.3.006577.2144-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:776ff358ced88ce0c8079ba566924a8ced70f12a08e37fe706d76dd0fa21aec1 | 02/21/2024 11:38:55 | 02/21/2024 11:38:55|
+10.0.3.006577.2193-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:91121b1a20417fe8930f3560640fa3c8f13f2bb106d9a60632f2aa64678dae42 | 03/21/2024 11:14:36 | 03/21/2024 11:14:36|
+10.0.3.006577.2245-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:4fd38895d30f29fe745f20049974dff0ae4137f61918658024aa7095ddfdc65e | 04/16/2024 16:10:18 | 04/16/2024 16:10:18|
+10.0.3.006577.2278-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:32ca397436526ec1fb7194373bc7890cc3a4b1f3eef60c648efcbaaedc3284ba | 05/20/2024 09:27:30 | 05/20/2024 09:27:30|
+10.0.3.006577.2321-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:d46818072a58ebf53bb0049148ffdfe0448ede3225f371a353b97b5b562a153c | 06/19/2024 00:46:45 | 06/19/2024 00:46:45|
+10.0.3.006577.2357-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:3dc4d377a16c33db536b9b10f49ed99dad431ca7deb96782530768fc9d7372b5 | 07/22/2024 21:00:51 | 07/22/2024 21:00:51|
+10.0.3.006577.2399-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:57befad2072f3a13582189f0599d488a5a21ca5aa930ed9315ec32fe1d982dad | 08/22/2024 09:44:22 | 08/22/2024 09:44:22|
+10.0.3.006577.2514-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:4ababd2ea9844ba15e2dbf1ac5ec02c8f06ad616c261e3d2f4c0af4cdfcef03f | 09/18/2024 08:24:13 | 09/18/2024 08:24:13|
+10.0.3.006577.2531-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:945b9779caa76d622553c6e60090df9a4f612812a946f23b7183a5892ef8da9f | 10/15/2024 14:32:42 | 10/15/2024 14:32:42|
+10.0.3.006577.992-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:a5c73f1459241b2a5a2075ba72a8eea50993a563eaa30c59f8d1035acf9ab32b | 10/07/2021 07:32:01 | 10/07/2021 07:32:01|
+10.1                                        |                 |                    | amd64           | windows | sha256:f035967c13b0bd8e3cbf48d1feb73470d1321aec490ea5f2bcd925ad9ac56d5e | 08/18/2021 10:28:52 | 08/30/2023 18:43:58|
+10.1-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:b0419f77131a4954b2b6f7075a036a4769bec488c79a4a9e4bfa07127404b5b7 | 02/25/2021 06:41:48 | 10/17/2024 16:05:48|
+10.1.0                                      |                 |                    | amd64           | windows | sha256:1057a614507491a5e79e1acbde9ec08d0dc113697c1953c7588bdf60736b5d82 | 09/22/2022 16:36:58 | 08/30/2023 18:48:00|
+10.1.0-ltsc2019                             | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:c3171ac438eac46609b93e9abafbac6b60452a0118eb532cc0545360bf0bfd2e | 02/25/2021 06:41:39 | 10/24/2023 13:49:20|
+10.1.0.005207.626-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019           | amd64           | windows | sha256:0ab259a6b7f52e826dd661a8967b8664d5ce895fd692dd332ae907462d0b3bd4 | 02/25/2021 06:41:28 | 02/25/2021 06:41:28|
+10.1.0.005207.643-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019           | amd64           | windows | sha256:9c70e915bb68079af4ebf6e7f7f5222d575abd6a830a4ccc1c3dca42e90c0d74 | 02/26/2021 07:26:02 | 02/26/2021 07:26:02|
+10.1.0.005207.673-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019           | amd64           | windows | sha256:c3171ac438eac46609b93e9abafbac6b60452a0118eb532cc0545360bf0bfd2e | 03/12/2021 19:24:27 | 03/12/2021 19:24:27|
+10.1.0.005207.708-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019           | amd64           | windows | sha256:b16e56964b3e08ec7a4bc59e1fde52de5113c9aaf8fd4a79b74232609aa67eb0 | 04/19/2021 12:34:00 | 04/19/2021 12:34:00|
+10.1.0.005207.782-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:21cab3d34b477bcb602a98a29c92d44b3e64f6fed347ca2923949e6e1faea58b | 05/18/2021 15:16:07 | 05/18/2021 15:16:07|
+10.1.0.005207.844-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:bcda6798b1779f103b3837700a660c7de736313f3ad07b08df6e478998d418f9 | 06/21/2021 16:43:28 | 06/21/2021 16:43:28|
+10.1.1                                      |                 |                    | amd64           | windows | sha256:6da4fcf2e9aa86d09d93c8db873eb820aa898417d2e573bf523306600aa0c5d9 | 08/18/2021 10:26:40 | 08/31/2023 10:29:33|
+10.1.1-ltsc2019                             | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:db4c5e3c39aec33c8f94f69b5d1034a7f59a871c95da93836bc37fc4ef3d62ea | 06/10/2021 09:52:08 | 09/30/2021 06:46:40|
+10.1.1.005862.821-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019           | amd64           | windows | sha256:d9174794689ce32347f6a509f1fbfb9e0fcf3f1054f36ea108205ff6214daf01 | 06/10/2021 09:51:56 | 06/10/2021 09:51:56|
+10.1.1.005862.846-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019           | amd64           | windows | sha256:b5e7ab83239f4a2a6616be6f9ede8255f15f0d3942c59540e7bc1fc584ef4788 | 06/21/2021 21:32:20 | 06/21/2021 21:32:20|
+10.1.1.005862.891-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019           | amd64           | windows | sha256:c3ddf6816c265ed121c4c62e3c8af7d9e713111790bd58b56a28f26a78047596 | 07/22/2021 08:50:37 | 07/22/2021 08:50:37|
+10.1.1.005862.921-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019           | amd64           | windows | sha256:c2fbf3d3e65429357db467e06bec03147e80c1764657498a04c649df04f15c8d | 08/18/2021 07:37:18 | 08/18/2021 07:37:18|
+10.1.1.005862.982-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:db4c5e3c39aec33c8f94f69b5d1034a7f59a871c95da93836bc37fc4ef3d62ea | 09/30/2021 06:46:25 | 09/30/2021 06:46:25|
+10.1.2                                      |                 |                    | amd64           | windows | sha256:f035967c13b0bd8e3cbf48d1feb73470d1321aec490ea5f2bcd925ad9ac56d5e | 10/11/2021 09:58:04 | 08/31/2023 10:39:32|
+10.1.2-ltsc2019                             | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:33f26d3b7da21b84e0e548e86a51683d4d1273951c1348287dea0edbbf522c54 | 10/11/2021 07:33:45 | 08/12/2023 00:43:20|
+10.1.2.006578.1027-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:2a632b1f0c26f52103f67f55afa2c1b8c44447a58440f8de14c279a588a027ce | 10/19/2021 22:22:23 | 10/19/2021 22:22:23|
+10.1.2.006578.1063-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:5dead2ff76da00e84d2963e923ffb04a120a4724e5d9938e7eab9d59c1f26a52 | 11/14/2021 19:19:56 | 11/14/2021 19:19:56|
+10.1.2.006578.1121-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:8be89927ec54c14873547841fdefcfc0ff377f56fcf60505df6944e272a3b0d2 | 12/17/2021 09:06:59 | 12/17/2021 09:06:59|
+10.1.2.006578.1156-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:3965fa4f418791b80591d823dc1bca3796c3fb4c43a6eb22b82e037235517281 | 01/19/2022 08:02:50 | 01/19/2022 08:02:50|
+10.1.2.006578.1200-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:969337ac6644a8c63830a9f5735917594ec270c9baceaa6f1d2c883a38790ae5 | 02/15/2022 17:02:06 | 02/15/2022 17:02:06|
+10.1.2.006578.1264-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:ac5a9fbcad956a3ce01b1ac9b636d174ee6b9e18dbfc98f561462dfff07855cd | 03/15/2022 21:37:33 | 03/15/2022 21:37:33|
+10.1.2.006578.1299-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:9efde4fc0f0f5d4475c207e04b1014ffdf11e8e50847519a3c79cf876490b60b | 04/19/2022 02:02:25 | 04/19/2022 02:02:25|
+10.1.2.006578.1326-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:a53754b33b099fa8846535491b18d4576a13446a3aa9d3f627e2f7fd40421180 | 05/20/2022 16:45:22 | 05/20/2022 16:45:22|
+10.1.2.006578.1345-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:0d52ce0d509e5d75d79ad1a689fd0efd493231eb3763cbdbfb241499cf9e5017 | 06/24/2022 11:19:57 | 06/24/2022 11:19:57|
+10.1.2.006578.1380-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:ac0800e4db786a9436257bd6c7829f3da75fb3f36f66cc31750dbf1c4f13552a | 07/21/2022 20:51:28 | 07/21/2022 20:51:28|
+10.1.2.006578.1404-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:585b2b49e85dd2238f41b2f62412010c773e5513bc13686c046332b60af2b751 | 08/15/2022 17:39:43 | 08/15/2022 17:39:43|
+10.1.2.006578.1455-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:fb39baad2a7a62b0694e82212a67a5d7e15145132a2aef28229d304f1cbe17ce | 09/25/2022 10:29:07 | 09/25/2022 10:29:07|
+10.1.2.006578.1488-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:069cc3c197b311eadee95320ebe240d40277d753aa4576997d228f67b1546fa0 | 10/19/2022 22:46:19 | 10/19/2022 22:46:19|
+10.1.2.006578.1523-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:5379e4962db7b0adc8c5919b3e8cb362b0cdb9bda06ac4027bd427a2ed6d02a5 | 12/08/2022 11:08:23 | 12/08/2022 11:08:23|
+10.1.2.006578.1547-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:98316cda83184b16f960952c7120ba6d5155e11d6654aa81978866feccadf7d3 | 12/27/2022 13:45:26 | 12/27/2022 13:45:26|
+10.1.2.006578.1663-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:eb000da66ae61be6570e1f5e1b3dc7fcc7c4c0d176889e15176d0bf256e7ed8c | 02/10/2023 19:06:43 | 08/31/2023 11:11:59|
+10.1.2.006578.1679-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:12de0c26b40d752bdfd9a86d8ad193c87df820dfa1e33942ff2fcbf475eefbc1 | 02/23/2023 15:55:37 | 08/31/2023 11:12:28|
+10.1.2.006578.1718-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:09b28fad5f930c5df48eef915506791fa3c3b63b2b2aa954bec5458212c1a006 | 03/22/2023 17:24:28 | 08/31/2023 11:12:58|
+10.1.2.006578.1754-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:098950203a68b8133b23663141d3a780fd5a12cd08ffa575e9cba71bc535bb9d | 04/25/2023 14:40:31 | 08/31/2023 11:13:27|
+10.1.2.006578.1803-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:3d511203d73a9c29d27215e6cf4c54eecc8621554b99e2466769c049f8109593 | 05/31/2023 14:43:57 | 08/31/2023 11:13:54|
+10.1.2.006578.1875-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:4a2cffd408099f04550eace5996ffd20b3e68fd69aaf3d5ccca82458b12a3ee2 | 06/29/2023 13:18:09 | 06/29/2023 13:18:09|
+10.1.2.006578.1916-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:f442be1e29d44e9f30905706f8a71c21ada146659ed0ac92c610aa6209ed3b4e | 07/24/2023 15:37:33 | 07/24/2023 15:37:33|
+10.1.2.006578.1939-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:33f26d3b7da21b84e0e548e86a51683d4d1273951c1348287dea0edbbf522c54 | 08/12/2023 00:43:06 | 08/12/2023 00:43:06|
+10.1.2.006578.993-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019           | amd64           | windows | sha256:d5e3352c0c91ae15e8b571a45b7781bc2f986df026425d5674f3c844a0049d27 | 10/11/2021 07:33:28 | 10/11/2021 07:33:28|
+10.1.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:b0419f77131a4954b2b6f7075a036a4769bec488c79a4a9e4bfa07127404b5b7 | 09/06/2023 22:01:22 | 10/17/2024 16:05:36|
+10.1.3.009558.1962-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:28eef8527814ef5676c7e8eb0bddca0d5825ffffa28107f013b1b3fbe7d5895a | 09/06/2023 22:01:12 | 09/06/2023 22:01:12|
+10.1.3.009558.1987-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:913f61d8cb3fcef269cbeb2553ea74456d8b707f00d461c42acb9926eeb81a1e | 09/21/2023 12:36:00 | 09/21/2023 12:36:00|
+10.1.3.009558.2013-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:c86ebbfe5b322d43ce22e4bc640e09aad7bbab46656aa0298a38bf86af2824e3 | 10/13/2023 13:32:53 | 10/13/2023 13:32:53|
+10.1.3.009558.2052-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:e7d5a2d7fe582f4201ebad99e084cc832823f7278685434b994b6866e75dc9c5 | 11/17/2023 12:11:25 | 11/17/2023 12:11:25|
+10.1.3.009558.2079-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:b42967013397f60f44ff1561e680c428cd16a3060a17dd54c722e5d3c03c8bde | 12/14/2023 14:23:07 | 12/14/2023 14:23:07|
+10.1.3.009558.2115-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:7c70b48ad273b5dc92b59240f151bc63660e6b84e53f04743e69777b25b3b1b6 | 01/16/2024 08:15:13 | 01/16/2024 08:15:13|
+10.1.3.009558.2160-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:b4fdae6f00f9b43dec8d66b3c56b664014cd859a23264ce4e3a422c031ca6d5d | 02/24/2024 00:37:02 | 02/24/2024 00:37:02|
+10.1.3.009558.2197-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:08626138287dab37c0044416227724b9b26330fa566633cfc99f310af7f54302 | 03/19/2024 19:51:52 | 03/19/2024 19:51:52|
+10.1.3.009558.2254-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:9c8650aa4f1320929fa517fdf5716cebdc4a6690af5e0b8eed5ed3c43bd0ebbe | 04/17/2024 21:54:42 | 04/17/2024 21:54:42|
+10.1.3.009558.2279-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:9e12c8d6addb6573333111a90f7e708d465d96afb2eacc80807608810326369a | 05/27/2024 17:19:53 | 05/27/2024 17:19:53|
+10.1.3.009558.2327-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:23ba86fe15547f24f988c05391a86d5a038069e1b90a1d07dd07913c48ef0552 | 06/19/2024 01:37:41 | 06/19/2024 01:37:41|
+10.1.3.009558.2353-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:34ac6b23b6c6452ff5985ecfec0f95f9e60dfff56b277922fde89ae0b2adb98d | 08/01/2024 09:13:10 | 08/01/2024 09:13:10|
+10.1.3.009558.2407-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:9ddd0309c83ea436b8501aef112a9ac23f09a4cbeead666d7906a7af68aff5a4 | 08/21/2024 10:09:44 | 08/21/2024 10:09:44|
+10.1.3.009558.2517-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:32dcb2eecdc8f3bc94ee54cd6bb3db0d31d2a2c4c5a9b9135700eab44c18b5b0 | 09/18/2024 22:31:39 | 09/18/2024 22:31:39|
+10.1.3.009558.2532-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:b0419f77131a4954b2b6f7075a036a4769bec488c79a4a9e4bfa07127404b5b7 | 10/17/2024 16:05:16 | 10/17/2024 16:05:16|
+10.2                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:2421a05c7a8800b6a7c22e8411ec2bc52ce6a2cf68fb7ed6c1ce3d6936c94d24 | 11/04/2021 10:16:37 | 10/11/2024 23:24:49|
+10.2-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:316db16816903e73e9b7cf2fb09fb34f8d4e72e234d32d2d7a62d33c466a72b9 | 11/04/2021 08:08:36 | 10/11/2024 22:56:24|
+10.2-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:ee7a3f88e38abf1978528226097b755e6dc4459cec2a5a1068d317b2d304ee68 | 02/15/2023 05:03:43 | 10/11/2024 22:46:07|
+10.2.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:70c5024d632798c63d7a147cd656c248fd8dd312048bfd54bd87125bc03f2a5a | 11/04/2021 10:16:19 | 09/01/2023 09:20:11|
+10.2.0-ltsc2019                             | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:bbd5095f15582afba39c7cac8a5560956d09993ff5792545f7851e23510a22df | 11/04/2021 08:08:20 | 08/14/2023 17:30:21|
+10.2.0-ltsc2022                             | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:71a96f2530c57cb34f49ac46b2e4e41452afafa6e991e5e2b1d22bc05b39ebb6 | 02/15/2023 05:03:29 | 08/14/2023 17:52:40|
+10.2.0.006766.1033-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019           | amd64           | windows | sha256:3c4095f4ead80c146ccbfa76277f3b0ba72faf03d97bf30a5b8e78529aee21dd | 11/04/2021 08:08:04 | 11/04/2021 08:08:04|
+10.2.0.006766.1064-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019           | amd64           | windows | sha256:82294ab519c8d79fdb75741483305e835be4b1e36be1a973bb39a3db19e37600 | 11/15/2021 07:58:50 | 11/15/2021 07:58:50|
+10.2.0.006766.1123-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019           | amd64           | windows | sha256:cdd76362ed84031b4ac20c85e7f7b4d92b879bca6ea638d9404e9b9a83e79d14 | 12/17/2021 15:09:44 | 12/17/2021 15:09:44|
+10.2.0.006766.1157-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019           | amd64           | windows | sha256:2dd255616c4ab5a4228c204d7c34b9541a9fa3ccac42c91ff5122119487630a6 | 01/19/2022 14:47:11 | 01/19/2022 14:47:11|
+10.2.0.006766.1202-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019           | amd64           | windows | sha256:a5099cdb5c751433566fc001d0a016cce72d5bba4c219aa3c0fdb9f1c6aacb7f | 02/17/2022 14:51:15 | 02/17/2022 14:51:15|
+10.2.0.006766.1259-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019           | amd64           | windows | sha256:bc126aa306da2da15de8010a1aaa8ce385621668eccac10e2294e006eb747ca9 | 03/15/2022 12:40:01 | 03/15/2022 12:40:01|
+10.2.0.006766.1300-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019           | amd64           | windows | sha256:d2d544dbbe4b0629b653e54b6e4be2764b702d8dffd645ac39f0a4be7df9e822 | 04/20/2022 11:24:54 | 04/20/2022 11:24:54|
+10.2.0.006766.1327-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019           | amd64           | windows | sha256:a8631baec32f6deb6a2fe3d798c66aaffa61bb70412a07c4851ee47ad798ef94 | 05/24/2022 13:47:11 | 05/24/2022 13:47:11|
+10.2.0.006766.1358-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019           | amd64           | windows | sha256:6efdebf94d577f8069f64e9ce1bb15f35c95ba5216794ee2cfa14353d86d12d6 | 06/23/2022 19:17:11 | 06/23/2022 19:17:11|
+10.2.0.006766.1381-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019           | amd64           | windows | sha256:afe4e0307e70f98e8e625ea660965c99fa401dcd49057956b24f79e0bf7d5034 | 07/22/2022 09:59:02 | 07/22/2022 09:59:02|
+10.2.0.006766.1406-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019           | amd64           | windows | sha256:389cb9ff25ddc31677943c5d42f8fa316da312cf64656f80c9823e3408a57bb3 | 08/16/2022 08:36:21 | 08/16/2022 08:36:21|
+10.2.0.006766.1460-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019           | amd64           | windows | sha256:889ba7beb58da74e537099560f8c543eaa7c90ef7f41289028e95712a9dfcb15 | 09/23/2022 15:03:46 | 09/23/2022 15:03:46|
+10.2.0.006766.1487-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:8dcf06bdd48277c2f822e3832a93b32671333cf840177be184808bde40477ef2 | 10/24/2022 09:11:11 | 10/24/2022 09:11:11|
+10.2.0.006766.1527-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:42d85a123338a15dddafb60a347f11769f2ec7570be8b48a7926c377cc1fea30 | 12/12/2022 01:36:09 | 12/12/2022 01:36:09|
+10.2.0.006766.1554-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:d960f2814f176355c23a11d13399cf53aa08a9fdf436380010107ee65c9064e4 | 12/27/2022 19:02:05 | 12/27/2022 19:02:05|
+10.2.0.006766.1659-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:d864c663417c3dc0faa38a67d71603e6fcf60b87d55c29544f3064b08b8efdd1 | 02/15/2023 05:15:44 | 08/31/2023 12:52:24|
+10.2.0.006766.1682-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:f15210c4d33d25e50c21fd998bec22b1580c8b09cfd5bf98bd53484be6363b6b | 02/24/2023 07:53:26 | 08/31/2023 12:55:45|
+10.2.0.006766.1717-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:b6703526bded6b5cee0eede2823044f71a88380aeac35adb25274562269e2679 | 03/23/2023 09:06:19 | 08/31/2023 12:59:11|
+10.2.0.006766.1755-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:4ade5d1ffd57e32fc828f5951dc22504252b4ee3740228f7e5aa735f35b6685c | 04/23/2023 12:56:31 | 08/31/2023 13:02:42|
+10.2.0.006766.1804-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:c016b7b64d661be09d5b30e8cdf99a4467486367515435900fd0483aafcb3d09 | 06/01/2023 12:19:44 | 08/31/2023 13:06:20|
+10.2.0.006766.1873-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:6e9d2428f1299324689a092bd59e7dfad1c1e45da0847e63e5d648da20086819 | 06/29/2023 10:43:24 | 06/29/2023 10:43:24|
+10.2.0.006766.1911-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:93dfb011d35be815d554028b983d012a7a375361d575f51fc8de176c28f398f2 | 07/31/2023 14:15:47 | 07/31/2023 14:15:47|
+10.2.0.006766.1938-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:bbd5095f15582afba39c7cac8a5560956d09993ff5792545f7851e23510a22df | 08/14/2023 17:30:01 | 08/14/2023 17:30:01|
+10.2.0.006766.627-10.0.20348.1487-ltsc2022  | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:400aa422957648bb63413beebb0af4a900c8958c628a51e7fad2ec4456476ed3 | 02/15/2023 05:03:16 | 02/15/2023 05:03:16|
+10.2.0.006766.649-10.0.20348.1547-ltsc2022  | 10.0.20348.1547 | ltsc2022           | amd64           | windows | sha256:ca303a98d8ee1846b52b4295674f02fda66bff900fbc32f958bba663e0bcff60 | 02/24/2023 07:40:53 | 02/24/2023 07:40:53|
+10.2.0.006766.685-10.0.20348.1607-ltsc2022  | 10.0.20348.1607 | ltsc2022           | amd64           | windows | sha256:c51e58f79f4f259c5a81da49e415ab817d8a95cb490d2130817ff98049e67166 | 03/23/2023 09:06:43 | 03/23/2023 09:06:43|
+10.2.0.006766.718-10.0.20348.1668-ltsc2022  | 10.0.20348.1668 | ltsc2022           | amd64           | windows | sha256:9fe0c69a5f8be9f4042b011efc6c2a3a78a7fb642231f809d7f8ffe83f0e7617 | 04/23/2023 12:44:49 | 04/23/2023 12:44:49|
+10.2.0.006766.767-10.0.20348.1726-ltsc2022  | 10.0.20348.1726 | ltsc2022           | amd64           | windows | sha256:6a2b4839b68d80b5e59c98f8d4585ccabe9a672562c6c4c68b6ce9ee74740cee | 06/01/2023 12:10:22 | 06/01/2023 12:10:22|
+10.2.0.006766.806-10.0.20348.1787-ltsc2022  | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:38dfd7c0fd60b995e9520a1e5ac9ac9b259f0d133d45d1a74be9e9a4b04b54f3 | 06/29/2023 10:34:29 | 06/29/2023 10:34:29|
+10.2.0.006766.849-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:ad601daffbd8277b2c95a7376dc4ada789453bb3ab7a64e0017c0c37dffa9361 | 07/31/2023 14:09:08 | 07/31/2023 14:09:08|
+10.2.0.006766.873-10.0.20348.1906-ltsc2022  | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:71a96f2530c57cb34f49ac46b2e4e41452afafa6e991e5e2b1d22bc05b39ebb6 | 08/14/2023 17:52:28 | 08/14/2023 17:52:28|
+10.2.1                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:063bc0ca31caa2b86dc7cad29dda148f055c2a459108363e9db9afb27bf248a9 | 08/31/2023 17:01:27 | 05/28/2024 14:58:15|
+10.2.1-ltsc2019                             | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:b73b798c529d3f8de6a14b93f4e9e2be6b74a2d68c3fa04b3fa867fc5805ba3f | 08/31/2023 16:28:08 | 05/28/2024 14:09:11|
+10.2.1-ltsc2022                             | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:37806470a6a8f08241fe3a1e497092e5b712671afed75b5cfe6b572441dd8593 | 08/31/2023 16:23:01 | 05/28/2024 14:07:35|
+10.2.1.009559.1013-10.0.20348.2159-ltsc2022 | 10.0.20348.2159 | ltsc2022           | amd64           | windows | sha256:a0f8805c620ae0da1d66d0e161b6ddb97275e1e0b1bd72d97555970eeec3d9ac | 12/18/2023 14:20:19 | 12/18/2023 14:20:19|
+10.2.1.009559.1030-10.0.20348.2227-ltsc2022 | 10.0.20348.2227 | ltsc2022           | amd64           | windows | sha256:665ea70d0da6bc4c45c1a373d27468b51873305e9a8934ca43db599268111ff2 | 01/18/2024 11:45:44 | 01/18/2024 11:45:44|
+10.2.1.009559.1077-10.0.20348.2322-ltsc2022 | 10.0.20348.2322 | ltsc2022           | amd64           | windows | sha256:6a286cccd4c2a9b7c9441a5c31458065a4148a5ec63a5b50c301947c0161bc56 | 03/05/2024 10:01:01 | 03/05/2024 10:01:01|
+10.2.1.009559.1122-10.0.20348.2340-ltsc2022 | 10.0.20348.2340 | ltsc2022           | amd64           | windows | sha256:69fb4952fb64eddf0ab16ae12440e67fc8d6280a35570cac3e3b94bcbebdd5ce | 03/19/2024 10:42:42 | 03/19/2024 10:42:42|
+10.2.1.009559.1161-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:0e516c394a11b3ef3f3780eef22f7ef114b1045df37dcbd0b1027c9117f5372e | 04/15/2024 14:21:15 | 04/15/2024 14:21:15|
+10.2.1.009559.1193-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:37806470a6a8f08241fe3a1e497092e5b712671afed75b5cfe6b572441dd8593 | 05/28/2024 14:07:18 | 05/28/2024 14:07:18|
+10.2.1.009559.1934-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:53e39098a42dcfa4c6cfd7cc7d9c4ccc209fe462ef485bfa5f70323e86d2b101 | 08/31/2023 16:27:10 | 08/31/2023 16:27:10|
+10.2.1.009559.1983-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:8878a998a3293547523f6b1ae87965323c561a89996b87a8fc36cedc3e166263 | 09/22/2023 09:44:10 | 09/22/2023 09:44:10|
+10.2.1.009559.2017-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:b5b0174b574ff56f80bc91919baf445bf138469c9607a5bab6eacf11c93186d7 | 10/17/2023 07:37:59 | 10/17/2023 07:37:59|
+10.2.1.009559.2054-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:5dd32154ad337ac54a68765e9f516699ed443959c1d2ca9f5b5475a6d5bb8f68 | 11/17/2023 19:35:10 | 11/17/2023 19:35:10|
+10.2.1.009559.2085-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:b4ebb0b631183d3df01499c9092015ed6011336913a3e07acc62f085104457fc | 12/18/2023 14:35:39 | 12/18/2023 14:35:39|
+10.2.1.009559.2103-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:0fe2376dd07f35e340f176165fa1109f29a02734bca1f59ce35dc6797da0e80f | 01/18/2024 11:49:29 | 01/18/2024 11:49:29|
+10.2.1.009559.2156-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:816485f86d0a418bc08eabb7be48a964861a66ef5af2cfafc0212854f2fa0eec | 03/05/2024 10:13:30 | 03/05/2024 10:13:30|
+10.2.1.009559.2196-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:c9546ffc8b76d365e5598e34a609eb5381d02452961830d01aa7a896e931921a | 03/19/2024 10:47:08 | 03/19/2024 10:47:08|
+10.2.1.009559.2249-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:548801fac03ec38c2901f443ab79f7e5d98fce353bd2bc2b0a0de03dfa2e289f | 04/15/2024 14:25:50 | 04/15/2024 14:25:50|
+10.2.1.009559.2281-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:b73b798c529d3f8de6a14b93f4e9e2be6b74a2d68c3fa04b3fa867fc5805ba3f | 05/28/2024 14:08:55 | 05/28/2024 14:08:55|
+10.2.1.009559.870-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:15cc9416b5be4c5b2e1419c05ac5739153cff4ccc580fbbb1923d508891e7bad | 08/31/2023 16:22:47 | 08/31/2023 16:22:47|
+10.2.1.009559.915-10.0.20348.1970-ltsc2022  | 10.0.20348.1970 | ltsc2022           | amd64           | windows | sha256:a548af0ad2a17c362a6720b44ad4d547b26871a77973cdad0aec72c901245457 | 09/22/2023 09:34:38 | 09/22/2023 09:34:38|
+10.2.1.009559.948-10.0.20348.2031-ltsc2022  | 10.0.20348.2031 | ltsc2022           | amd64           | windows | sha256:7d2c46e263fc09130705b2b8d052ce3114ffcb1ce019654cdf8c00bcebca979c | 10/17/2023 07:25:31 | 10/17/2023 07:25:31|
+10.2.1.009559.986-10.0.20348.2113-ltsc2022  | 10.0.20348.2113 | ltsc2022           | amd64           | windows | sha256:0d358c9bfaf7253b5d05aab0ad87e2046dda408cfbb501b9d3918864f97308fc | 11/17/2023 19:21:03 | 11/17/2023 19:21:03|
+10.2.2                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:2421a05c7a8800b6a7c22e8411ec2bc52ce6a2cf68fb7ed6c1ce3d6936c94d24 | 07/01/2024 22:54:34 | 10/11/2024 23:26:11|
+10.2.2-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:316db16816903e73e9b7cf2fb09fb34f8d4e72e234d32d2d7a62d33c466a72b9 | 07/01/2024 22:09:34 | 10/11/2024 22:56:15|
+10.2.2-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:ee7a3f88e38abf1978528226097b755e6dc4459cec2a5a1068d317b2d304ee68 | 07/01/2024 21:55:33 | 10/11/2024 22:45:54|
+10.2.2.010645.1224-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:952c59d85052924998308e638f6a894c235742aa8e126b4b3f13d547e4a9970a | 07/01/2024 21:55:15 | 07/01/2024 21:55:15|
+10.2.2.010645.1261-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:db1722e6b35c158909e628b82a0ff46f3b7650e93cd4627fc06ed2e4a7a6a220 | 07/18/2024 08:48:00 | 07/18/2024 08:48:00|
+10.2.2.010645.1305-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:2f4990aec891dcac01ff7d45988c535865a26da6f8590a386e69497df0badb9b | 08/21/2024 10:52:42 | 08/21/2024 10:52:42|
+10.2.2.010645.1415-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:c574b31a3d97781cfc094bc6dc15f949c04b8547d5b6b3d2af067cdc3893c0da | 09/18/2024 09:50:19 | 09/18/2024 09:50:19|
+10.2.2.010645.1430-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:ee7a3f88e38abf1978528226097b755e6dc4459cec2a5a1068d317b2d304ee68 | 10/11/2024 22:45:42 | 10/11/2024 22:45:42|
+10.2.2.010645.2318-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:0e6a3a7a446b8e72ec0a7e9b5d5009f97d169b4717ad409dfb93e42458a1335e | 07/01/2024 22:09:18 | 07/01/2024 22:09:18|
+10.2.2.010645.2352-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:135a809dd998381797ac398f781568c1561b61276b7c4b2ed2eeeaa491176a1b | 07/18/2024 08:39:24 | 07/18/2024 08:39:24|
+10.2.2.010645.2401-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:6dbde1e6c52afc593f59e38d6f2dc98ba5070419b288e2b65ab3074b96d91be3 | 08/21/2024 10:45:48 | 08/21/2024 10:45:48|
+10.2.2.010645.2511-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:85e3f83dd0456ff01e27e9d8f648eea3a697b01bdfaa4850220195fd48261570 | 09/18/2024 10:09:00 | 09/18/2024 10:09:00|
+10.2.2.010645.2530-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:316db16816903e73e9b7cf2fb09fb34f8d4e72e234d32d2d7a62d33c466a72b9 | 10/11/2024 22:56:05 | 10/11/2024 22:56:05|
+10.3                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:4589a674e1a9ece10540304ad7783864596521bec0649e3d95a0900fe2e015b9 | 02/15/2023 11:37:46 | 10/14/2024 16:15:49|
+10.3-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:7d1d93b3330692c709db1f4e8c1cd170660465e601afcb3d9064943f3cc0de30 | 12/01/2022 16:41:26 | 10/14/2024 15:48:21|
+10.3-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:09a2b5a4d29229700e5fd7c19cf304d5fa4bfcf4dc1f9bd4f7bf01a2161e25b3 | 02/15/2023 11:00:01 | 10/14/2024 15:37:32|
+10.3.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:12b3d7088a56bc6e29798e95645812cadcd2215c4ce95904f28b0a8c0891e37a | 02/15/2023 11:39:17 | 09/01/2023 08:14:29|
+10.3.0-ltsc2019                             | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:024fbb6f912c7533763016debf3a5e13032bcd04701f0746774a661283e8fef2 | 12/01/2022 16:40:52 | 06/28/2023 19:35:24|
+10.3.0-ltsc2022                             | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:fa3921198ecf23708de822fb07f50b7c480f6686d741cef7a41c3890b5a0f708 | 02/15/2023 10:59:48 | 06/28/2023 19:31:35|
+10.3.0.008463.1499-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019           | amd64           | windows | sha256:4d9274b506be714cc65b1e0c72aab851395de00aa27620353445d0830921d168 | 12/01/2022 16:40:38 | 12/01/2022 16:40:38|
+10.3.0.008463.1528-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019           | amd64           | windows | sha256:4094f8b46c0fc2b46f1a1475e880cb2d90b9c3dea0440a037423bcf7bc8c891c | 12/12/2022 02:16:51 | 12/12/2022 02:16:51|
+10.3.0.008463.1556-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019           | amd64           | windows | sha256:5884e5f4c91340e9f12600a59df943dc9ca61cc1fc7778a5c0a3f36a3c6caeca | 12/27/2022 19:45:06 | 12/27/2022 19:45:06|
+10.3.0.008463.1656-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019           | amd64           | windows | sha256:f047e968cd5df48643748d500d739d4a3bebe8105808b4e46c0399703a1a7ed8 | 02/15/2023 11:00:29 | 08/31/2023 13:26:27|
+10.3.0.008463.1681-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019           | amd64           | windows | sha256:f0fa98a0a49303fe44e3c9706d23695df5c635b98e0712556c37dd9339333274 | 02/23/2023 06:08:57 | 08/31/2023 13:26:58|
+10.3.0.008463.1719-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019           | amd64           | windows | sha256:5a4e9c034aabcd0ada48ad6b599b78685720762c6aa292b00a169141a98a4d83 | 03/23/2023 01:02:15 | 08/31/2023 13:27:30|
+10.3.0.008463.1758-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019           | amd64           | windows | sha256:1707a67f992f2d6e9b2f63bc70fc4aab9661ae98793345cb6a43b641575c5624 | 04/23/2023 12:24:14 | 08/31/2023 13:28:01|
+10.3.0.008463.1808-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019           | amd64           | windows | sha256:6e68b62113469bec1d5c3abad92e0cc0b3433015828f527b6352bfeca7dfe32b | 06/01/2023 09:03:03 | 08/31/2023 13:28:31|
+10.3.0.008463.1872-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019           | amd64           | windows | sha256:024fbb6f912c7533763016debf3a5e13032bcd04701f0746774a661283e8fef2 | 06/28/2023 19:35:14 | 06/28/2023 19:35:14|
+10.3.0.008463.629-10.0.20348.1487-ltsc2022  | 10.0.20348.1487 | ltsc2022           | amd64           | windows | sha256:4230a835afc10369ffaf28198a5b75af488117fa99c43e468d366dd9fd66fe73 | 02/15/2023 10:59:34 | 02/15/2023 10:59:34|
+10.3.0.008463.647-10.0.20348.1547-ltsc2022  | 10.0.20348.1547 | ltsc2022           | amd64           | windows | sha256:9cfc6f0cd03abc6d953c0ce2347621f81c679bec618373d62cc829802666ee50 | 02/23/2023 06:07:53 | 02/23/2023 06:07:53|
+10.3.0.008463.688-10.0.20348.1607-ltsc2022  | 10.0.20348.1607 | ltsc2022           | amd64           | windows | sha256:6be38a3d5453c957319d57ebddd527e1b5be3da05f6aa439e0c64932b1130108 | 03/23/2023 01:00:07 | 03/23/2023 01:00:07|
+10.3.0.008463.722-10.0.20348.1668-ltsc2022  | 10.0.20348.1668 | ltsc2022           | amd64           | windows | sha256:4df9f6321f2727319d78bfaef8c2068aa1390ce595552507d7c9f88535095959 | 04/23/2023 12:11:12 | 04/23/2023 12:11:12|
+10.3.0.008463.771-10.0.20348.1726-ltsc2022  | 10.0.20348.1726 | ltsc2022           | amd64           | windows | sha256:8c29b291f710e843c63152112e7118a97ac0f0a6c212882b9024de4f8b3a6d45 | 06/01/2023 09:06:24 | 06/01/2023 09:06:24|
+10.3.0.008463.805-10.0.20348.1787-ltsc2022  | 10.0.20348.1787 | ltsc2022           | amd64           | windows | sha256:fa3921198ecf23708de822fb07f50b7c480f6686d741cef7a41c3890b5a0f708 | 06/28/2023 19:31:24 | 06/28/2023 19:31:24|
+10.3.1                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:2df09da24cf7c991e3b3d1fe7070a53abbf8a7111bb357c50755f053676a2ae9 | 08/01/2023 11:55:04 | 07/30/2024 10:34:59|
+10.3.1-ltsc2019                             | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:b1c64643f869b8a4b43094332f5fc8c7fa17fd6159971a069d1b3e0e62e5110c | 08/01/2023 10:11:21 | 07/30/2024 09:54:48|
+10.3.1-ltsc2022                             | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:37405293f1a84a121f0c16f94df74b30c4fcf58bde7ab9ec92519d41b36a0c91 | 08/01/2023 10:12:26 | 07/30/2024 09:56:38|
+10.3.1.009452.1014-10.0.20348.2159-ltsc2022 | 10.0.20348.2159 | ltsc2022           | amd64           | windows | sha256:a275b6008d971042457ac8b7c21a74df8d6f3bfe0fe9f2db10bcbc268ef7c554 | 12/21/2023 00:00:47 | 12/21/2023 00:00:47|
+10.3.1.009452.1029-10.0.20348.2227-ltsc2022 | 10.0.20348.2227 | ltsc2022           | amd64           | windows | sha256:b1555c8c21a236a89a7f9565c11359956e38a4a45768b73408c80d9ca9f468da | 01/12/2024 20:41:11 | 01/12/2024 20:41:11|
+10.3.1.009452.1071-10.0.20348.2322-ltsc2022 | 10.0.20348.2322 | ltsc2022           | amd64           | windows | sha256:77cf38495f36751b26dc33a48f04d413496d382ec618df4578ecc1c5d1a41a73 | 02/22/2024 15:09:10 | 02/22/2024 15:09:10|
+10.3.1.009452.1127-10.0.20348.2340-ltsc2022 | 10.0.20348.2340 | ltsc2022           | amd64           | windows | sha256:158c3ae87578de283e4ad7d9bc0989bed125a671f855867fa804d15874f106a6 | 03/19/2024 23:03:57 | 03/19/2024 23:03:57|
+10.3.1.009452.1163-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:71b78c418f4c7755e44c655a8cdf76271480375fb28c352efcfb08938e181f27 | 04/16/2024 15:22:13 | 04/16/2024 15:22:13|
+10.3.1.009452.1202-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:e2901e775313ddcf95547b8850d3633b54873e7c2a54e2cebc612571c403bbf2 | 05/27/2024 16:24:26 | 05/27/2024 16:24:26|
+10.3.1.009452.1232-10.0.20348.2527-ltsc2022 | 10.0.20348.2527 | ltsc2022           | amd64           | windows | sha256:6d8fcc9b7b97e037387eaede14823793bea09eaa96f5edeb2470cd0b3a49327a | 07/01/2024 08:27:25 | 07/01/2024 08:27:25|
+10.3.1.009452.1260-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:37405293f1a84a121f0c16f94df74b30c4fcf58bde7ab9ec92519d41b36a0c91 | 07/30/2024 09:56:27 | 07/30/2024 09:56:27|
+10.3.1.009452.1907-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019           | amd64           | windows | sha256:d0139fa47ef200cc9e1e07e3b603c44c3d7a9fa347dc2aee4a630de69d5cf6c4 | 08/01/2023 10:11:11 | 08/01/2023 10:11:11|
+10.3.1.009452.1944-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019           | amd64           | windows | sha256:51f3e306f8a53e45d930ac28f53a35e4df6a5810e37a4d4a72483b0a57e7c3f8 | 08/17/2023 19:34:10 | 08/17/2023 19:34:10|
+10.3.1.009452.1977-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019           | amd64           | windows | sha256:fbde66ceec287c7063430680fac04c06bb81ccdcdda67b9233e60ba5ca7fbad2 | 09/20/2023 11:13:41 | 09/20/2023 11:13:41|
+10.3.1.009452.2019-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019           | amd64           | windows | sha256:e74c6d902e644bf2b2e19c7e78c720dea8683cb39f20ec76f9768a4569ef5e68 | 10/17/2023 19:14:26 | 10/17/2023 19:14:26|
+10.3.1.009452.2055-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019           | amd64           | windows | sha256:4ed1a5b1e956ce8646a2da03c96932511065c38557f1a96a744f148aa90897a3 | 11/21/2023 12:44:41 | 11/21/2023 12:44:41|
+10.3.1.009452.2086-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019           | amd64           | windows | sha256:e4de1099fd9a9ca20da8524d2e51500e7401b7abccc459ab1fc3e6bb427c2da1 | 12/21/2023 00:07:56 | 12/21/2023 00:07:56|
+10.3.1.009452.2102-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019           | amd64           | windows | sha256:258220df7ebb900712f4ce93f5a713f81dfc7bd3bdb6919c9cad557112c9fe89 | 01/12/2024 20:49:19 | 01/12/2024 20:49:19|
+10.3.1.009452.2151-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019           | amd64           | windows | sha256:912fd3ccab9cf6dfb960e51ff1849ade1c82906d8566f908861313ab2f29abd3 | 02/22/2024 15:14:39 | 02/22/2024 15:14:39|
+10.3.1.009452.2201-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019           | amd64           | windows | sha256:a6d79b49772a824ca1adbc493accc6d55426bb47e3d2f5dd17247b9b327721c8 | 03/19/2024 23:09:00 | 03/19/2024 23:09:00|
+10.3.1.009452.2251-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019           | amd64           | windows | sha256:afe52ecf411bee3156449c338bffe8789a865203702915d694086faa9dfbec6f | 04/16/2024 15:23:49 | 04/16/2024 15:23:49|
+10.3.1.009452.2294-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:1dfb25ad2976d5a2b05669b151298c8698dbed37d4b9849760fe69123f812d6d | 05/27/2024 16:24:19 | 05/27/2024 16:24:19|
+10.3.1.009452.2325-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:6c5ce46f972411db31081c8deb97b57a52312391fcfd9d1a22182cb4ae7291b8 | 07/01/2024 08:58:28 | 07/01/2024 08:58:28|
+10.3.1.009452.2351-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:b1c64643f869b8a4b43094332f5fc8c7fa17fd6159971a069d1b3e0e62e5110c | 07/30/2024 09:54:37 | 07/30/2024 09:54:37|
+10.3.1.009452.845-10.0.20348.1850-ltsc2022  | 10.0.20348.1850 | ltsc2022           | amd64           | windows | sha256:d1702683ec846b02955514470cb1306815383872c05d080eb1939476713cc44c | 08/01/2023 10:12:15 | 08/01/2023 10:12:15|
+10.3.1.009452.879-10.0.20348.1906-ltsc2022  | 10.0.20348.1906 | ltsc2022           | amd64           | windows | sha256:6b78fc78e2f159b613a96cc29a191f8fe3bed46c9251bae508a9177f2748eb61 | 08/17/2023 19:22:01 | 08/17/2023 19:22:01|
+10.3.1.009452.909-10.0.20348.1970-ltsc2022  | 10.0.20348.1970 | ltsc2022           | amd64           | windows | sha256:ebda258e9d57d047bbcface0b74c4d4b7347a3440c1ad4bc1ea4394f296a5db8 | 09/20/2023 11:11:13 | 09/20/2023 11:11:13|
+10.3.1.009452.950-10.0.20348.2031-ltsc2022  | 10.0.20348.2031 | ltsc2022           | amd64           | windows | sha256:7c89b80d45f8755c1ac5624a83b11cc963334a4f5f6d3faa7a3c3bb873fdc919 | 10/17/2023 19:12:56 | 10/17/2023 19:12:56|
+10.3.1.009452.987-10.0.20348.2113-ltsc2022  | 10.0.20348.2113 | ltsc2022           | amd64           | windows | sha256:4ef4861b2c150d0bef5929817a93451745535569d10f3bf526e488a42ab736e1 | 11/21/2023 12:42:46 | 11/21/2023 12:42:46|
+10.3.2                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:4589a674e1a9ece10540304ad7783864596521bec0649e3d95a0900fe2e015b9 | 08/15/2024 23:01:05 | 10/14/2024 16:17:51|
+10.3.2-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:7d1d93b3330692c709db1f4e8c1cd170660465e601afcb3d9064943f3cc0de30 | 08/15/2024 22:26:55 | 10/14/2024 15:48:13|
+10.3.2-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:09a2b5a4d29229700e5fd7c19cf304d5fa4bfcf4dc1f9bd4f7bf01a2161e25b3 | 08/15/2024 22:15:45 | 10/14/2024 15:37:20|
+10.3.2.010837.1282-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:2a17378a86ade1a10bb7343b91d02eb32100737c198a1ad29c07665078d67dee | 08/15/2024 22:15:32 | 08/15/2024 22:15:32|
+10.3.2.010837.1309-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:8c42ce1ef2c1e2127036b1c34684cebd6047b589a2871f9e8a8dcc59e7bd16ca | 08/21/2024 17:12:43 | 08/21/2024 17:12:43|
+10.3.2.010837.1414-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:6eabb8ce214253eb57159d709ad1439af468ead66540825b9ef4cec55fd04bb5 | 09/18/2024 08:38:17 | 09/18/2024 08:38:17|
+10.3.2.010837.1438-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:09a2b5a4d29229700e5fd7c19cf304d5fa4bfcf4dc1f9bd4f7bf01a2161e25b3 | 10/14/2024 15:37:08 | 10/14/2024 15:37:08|
+10.3.2.010837.2376-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:eee6ac72fb3ac829b6c14f83853d3d4c18279b7614bb48b332dcacce2ffcbcf3 | 08/15/2024 22:26:45 | 08/15/2024 22:26:45|
+10.3.2.010837.2405-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:f30ca4cca092ad97c63071c38fbc645c8517ac02c92a0c9923877adddcfad17d | 08/21/2024 17:13:29 | 08/21/2024 17:13:29|
+10.3.2.010837.2510-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:c458ea2f0e7d50b53ec5abb3b8627273977d842f6374cd0d0ea5b54ed72ca8a0 | 09/18/2024 09:02:58 | 09/18/2024 09:02:58|
+10.3.2.010837.2538-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:7d1d93b3330692c709db1f4e8c1cd170660465e601afcb3d9064943f3cc0de30 | 10/14/2024 15:48:03 | 10/14/2024 15:48:03|
+10.4                                        | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:843201caef5ac6465e848fb10c4d61464c49e058017c661b11b7ef8fc9620f50 | 06/07/2024 02:22:43 | 10/12/2024 11:48:23|
+10.4-ltsc2019                               | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:a83d63d77e873dd1db554bc5a4ae3fd269db70571a3d79935193d1dd38b3085a | 06/07/2024 01:44:44 | 10/12/2024 11:20:27|
+10.4-ltsc2022                               | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:e1087785ada968682acc61096bb0a8db452695771650a89186814477938f2d43 | 04/17/2024 15:04:52 | 10/12/2024 11:15:53|
+10.4.0                                      | N/A             | ltsc2019, ltsc2022 | amd64           | windows | sha256:843201caef5ac6465e848fb10c4d61464c49e058017c661b11b7ef8fc9620f50 | 06/07/2024 02:21:37 | 10/12/2024 11:47:37|
+10.4.0-ltsc2019                             | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:a83d63d77e873dd1db554bc5a4ae3fd269db70571a3d79935193d1dd38b3085a | 06/07/2024 01:44:25 | 10/12/2024 11:20:17|
+10.4.0-ltsc2022                             | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:e1087785ada968682acc61096bb0a8db452695771650a89186814477938f2d43 | 04/17/2024 15:04:34 | 10/12/2024 11:15:42|
+10.4.0.010422.1166-10.0.20348.2402-ltsc2022 | 10.0.20348.2402 | ltsc2022           | amd64           | windows | sha256:853c9984c1397026504a62358e351659253e8606d63e1ba27a08858bc85f9047 | 04/17/2024 15:04:17 | 04/17/2024 15:04:17|
+10.4.0.010422.1207-10.0.20348.2461-ltsc2022 | 10.0.20348.2461 | ltsc2022           | amd64           | windows | sha256:f0c053221959cb2957b182f3e65b0edef7a3952d050518e28d9030fbef01cbe1 | 06/07/2024 01:38:45 | 06/07/2024 01:38:45|
+10.4.0.010422.1239-10.0.20348.2527-ltsc2022 | 10.0.20348.2527 | ltsc2022           | amd64           | windows | sha256:49a772384181ba4602c30faad71cfb13e2c7618153070574f878a1b7b450e432 | 06/27/2024 14:31:02 | 06/27/2024 14:31:02|
+10.4.0.010422.1259-10.0.20348.2582-ltsc2022 | 10.0.20348.2582 | ltsc2022           | amd64           | windows | sha256:d3febdf107f423a8d1a38eafb1ef104005579a9f9a0eb8844c0d221c89fe2754 | 07/22/2024 13:19:34 | 07/22/2024 13:19:34|
+10.4.0.010422.1298-10.0.20348.2655-ltsc2022 | 10.0.20348.2655 | ltsc2022           | amd64           | windows | sha256:b6429dfa25b03b1713111ba97bfcf7017e141d8f922196623593c4e08b3c454f | 08/21/2024 11:37:23 | 08/21/2024 11:37:23|
+10.4.0.010422.1413-10.0.20348.2700-ltsc2022 | 10.0.20348.2700 | ltsc2022           | amd64           | windows | sha256:576e8b65f6559d2f2005a6b8cbca58f6da1733f67336e512897cfac4dcc2a35a | 09/18/2024 09:16:34 | 09/18/2024 09:16:34|
+10.4.0.010422.1437-10.0.20348.2762-ltsc2022 | 10.0.20348.2762 | ltsc2022           | amd64           | windows | sha256:e1087785ada968682acc61096bb0a8db452695771650a89186814477938f2d43 | 10/12/2024 11:15:30 | 10/12/2024 11:15:30|
+10.4.0.010422.2299-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019           | amd64           | windows | sha256:9c9ee8da3f1bd6513354ff1f781f1ac1d64f26c991046f49f4e306b5f553474b | 06/07/2024 01:43:56 | 06/07/2024 01:43:56|
+10.4.0.010422.2331-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019           | amd64           | windows | sha256:7c42841dc8370f8584ac543f6534a5c12fea3aae6a907ac2059fe90fa4074c67 | 06/27/2024 14:24:09 | 06/27/2024 14:24:09|
+10.4.0.010422.2350-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019           | amd64           | windows | sha256:bef0e8deb6bf3368d6506922b24b420f457596b7ed9356f2e9a5f82e429db736 | 07/22/2024 16:27:24 | 07/22/2024 16:27:24|
+10.4.0.010422.2394-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019           | amd64           | windows | sha256:cc6f7c510d52caf0de7a353f06441937899956a7054fc2e5b8eb136820eb6dce | 08/21/2024 11:38:25 | 08/21/2024 11:38:25|
+10.4.0.010422.2509-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019           | amd64           | windows | sha256:d225b20c8f3d992c6b9afd3070b818892cb2ab9db5e7c2939822da03aa3c1d84 | 09/18/2024 09:30:09 | 09/18/2024 09:30:09|
+10.4.0.010422.2537-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019           | amd64           | windows | sha256:a83d63d77e873dd1db554bc5a4ae3fd269db70571a3d79935193d1dd38b3085a | 10/12/2024 11:20:01 | 10/12/2024 11:20:01|
 
 ### sitecore-xm1-mssql
 Tag                                         | OSVersion       | TargetOS    | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
 ------------------------------------------- | --------------- | ----------- | --------------- | ------- | ----------------------------------------------------------------------- | ------------------- | -------------------|
-10.0                                        |                 |             | amd64           | windows | sha256:99f6d4af11499e617c3de86fb7a2f924163ee95c1cd3e2861e9962f420c97c16 | 08/18/2021 19:09:45 | 08/31/2023 06:00:52|
-10.0-ltsc2019                               | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:eb3804a9b353a1a1da44bb4150c5d8070306f4ad791dc20cfcef791bb0e8ae6f | 12/15/2020 10:02:05 | 10/15/2024 14:34:01|
-10.0.0-ltsc2019                             | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:ef875d9785f59f4e12e20784fb4ea7f23970ad842533abd861233bfd19f06032 | 08/03/2020 12:53:46 | 06/21/2021 09:10:08|
-10.0.0.004346.318-10.0.17763.1282-ltsc2019  | 10.0.17763.1282 | ltsc2019    | amd64           | windows | sha256:5b710f794f3922a71c7f8d325b0320eca8cda97e85cd4c7d7f3acdbad61302e4 | 08/03/2020 12:53:37 | 08/03/2020 12:53:37|
-10.0.0.004346.337-10.0.17763.1339-ltsc2019  | 10.0.17763.1339 | ltsc2019    | amd64           | windows | sha256:0377680b3331cc40d0de2260f45b505f32a01bd3326489659587e4b0f73d74cf | 08/03/2020 18:35:07 | 08/03/2020 18:35:07|
-10.0.0.004346.371-10.0.17763.1397-ltsc2019  | 10.0.17763.1397 | ltsc2019    | amd64           | windows | sha256:3829b6fafca5205fc6488f08149a1f4e0795be7065ce0159d9ed8cb79742416d | 08/25/2020 09:26:01 | 08/25/2020 09:26:01|
-10.0.0.004346.412-10.0.17763.1457-ltsc2019  | 10.0.17763.1457 | ltsc2019    | amd64           | windows | sha256:a7286bb7e8d5709d67ace17e76f246207a089afb06edfc35a95aad3dabcb01cb | 09/15/2020 08:23:04 | 09/15/2020 08:23:04|
-10.0.0.004346.444-10.0.17763.1518-ltsc2019  | 10.0.17763.1518 | ltsc2019    | amd64           | windows | sha256:8c4322e69ef96d74a613b3c9d769959e8c5620716148abb823c79d87c3b4b76d | 10/22/2020 19:52:57 | 10/22/2020 19:52:57|
-10.0.0.004346.477-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019    | amd64           | windows | sha256:8cad029e6b97476859e028699568f625ead279e13f651706a3284f9d44c8d1a2 | 11/18/2020 10:52:55 | 11/18/2020 10:52:55|
-10.0.0.004346.520-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019    | amd64           | windows | sha256:a0112886b30ec97fc821b5de359ad1374996e222f0b3c079ee9bed922584b4cb | 12/14/2020 08:20:17 | 12/14/2020 08:20:17|
-10.0.0.004346.566-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019    | amd64           | windows | sha256:fa670e2c501b1c0590b736f523588eff04e0cb67ae9c546c0a8a2c1fa685107e | 01/15/2021 11:50:09 | 01/15/2021 11:50:09|
-10.0.0.004346.636-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019    | amd64           | windows | sha256:d137a141e4345689dff0f79c9ef51e6d76a8a9b5ebf355ad2eab87a18b462cd5 | 02/14/2021 16:05:44 | 02/14/2021 16:05:44|
-10.0.0.004346.670-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019    | amd64           | windows | sha256:cc2e61fcaed7e0d7802226ce53502d2f7f35a414a4c629d8cacf1f74f28ac7a4 | 03/12/2021 09:48:15 | 03/12/2021 09:48:15|
-10.0.0.004346.705-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019    | amd64           | windows | sha256:95d222d838a66df270033ec1ad3af48560f6db83569a0912a8bd84c3dc2c0a0b | 04/16/2021 06:00:14 | 04/16/2021 06:00:14|
-10.0.0.004346.779-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019    | amd64           | windows | sha256:36db764249a30b9c952963d896ff4f0872b6e9e9fdc81069ef9da49930f2bf74 | 05/18/2021 06:24:22 | 05/18/2021 06:24:22|
-10.0.0.004346.837-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:ef875d9785f59f4e12e20784fb4ea7f23970ad842533abd861233bfd19f06032 | 06/21/2021 09:09:55 | 06/21/2021 09:09:55|
-10.0.1-ltsc2019                             | 10.0.17763.2061 | ltsc2019    | amd64           | windows | sha256:aefd60a62a487af8eace9db817171d5941dadb68388633788d153cc7e63b0793 | 12/15/2020 10:01:50 | 07/20/2021 12:53:17|
-10.0.1.004842.513-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019    | amd64           | windows | sha256:34fd595118c252403c6396515dedd5420931c1f06798b5bea431f025246349ee | 12/15/2020 10:01:36 | 12/15/2020 10:01:36|
-10.0.1.004842.523-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019    | amd64           | windows | sha256:fc0f1522ba033a762c9d98f8f8f2854620ec3792cebc60fad7076bfbb89e21f4 | 12/15/2020 17:11:42 | 12/15/2020 17:11:42|
-10.0.1.004842.567-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019    | amd64           | windows | sha256:3729b17b42582fa14ed77fff1dbc945baec4ff966235993e351fb5aa7e8c4d9e | 01/15/2021 16:40:07 | 01/15/2021 16:40:07|
-10.0.1.004842.638-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019    | amd64           | windows | sha256:a1de20544977161a6c7747121686af66fb3e8b22a38e347d4a41dfffa53186c3 | 02/15/2021 09:52:30 | 02/15/2021 09:52:30|
-10.0.1.004842.671-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019    | amd64           | windows | sha256:dc059e4033213609bb3d30f8bf41c78f8f527646d5a67d9f7970992111e9b5e2 | 03/12/2021 15:31:56 | 03/12/2021 15:31:56|
-10.0.1.004842.707-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019    | amd64           | windows | sha256:ad9e2d77f538838e1dc9ceec6b676b1d589f396a222df744df4cd98957670c63 | 04/16/2021 13:26:19 | 04/16/2021 13:26:19|
-10.0.1.004842.781-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019    | amd64           | windows | sha256:88d846141f0869b84762932d3ab54b1ab7b9f5f7a1020faf634d557e0da88408 | 05/18/2021 10:51:53 | 05/18/2021 10:51:53|
-10.0.1.004842.842-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:e66958846d1692fe8a57dcc448ff75d7a6cc48836e22c4a787fddd9bc3cf8207 | 06/21/2021 11:55:33 | 06/21/2021 11:55:33|
-10.0.1.004842.889-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019    | amd64           | windows | sha256:aefd60a62a487af8eace9db817171d5941dadb68388633788d153cc7e63b0793 | 07/20/2021 12:53:05 | 07/20/2021 12:53:05|
-10.0.2                                      |                 |             | amd64           | windows | sha256:04d9db9e955a94cde018434efc43a188671f7ed5ecb25ed195bac19a95a6ebec | 08/18/2021 19:12:02 | 08/31/2023 06:52:02|
-10.0.2-ltsc2019                             | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:16c56c56082f8d9606039524d18a25fade9eed7b8fd0d25b9fa64d9ebc2b42ab | 06/30/2021 12:00:40 | 09/29/2021 12:16:32|
-10.0.2.006052.851-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:3246464f81b36523ea6955ff11efdc6932a73cee190eec919d82b31b56243246 | 06/30/2021 12:01:16 | 06/30/2021 12:01:16|
-10.0.2.006052.890-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019    | amd64           | windows | sha256:974bcb56a21936721be30603987e2de8bec31b98163fc88ab5036b1a2a41401e | 07/21/2021 07:16:29 | 07/21/2021 07:16:29|
-10.0.2.006052.918-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019    | amd64           | windows | sha256:9ab903d1c5a52c3f5ce23d098f31040cb34b363cf2006b4e3286ef509fcd8013 | 08/18/2021 15:41:33 | 08/18/2021 15:41:33|
-10.0.2.006052.980-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:16c56c56082f8d9606039524d18a25fade9eed7b8fd0d25b9fa64d9ebc2b42ab | 09/29/2021 12:16:17 | 09/29/2021 12:16:17|
-10.0.3                                      |                 |             | amd64           | windows | sha256:99f6d4af11499e617c3de86fb7a2f924163ee95c1cd3e2861e9962f420c97c16 | 10/07/2021 10:43:45 | 08/31/2023 06:59:43|
-10.0.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:eb3804a9b353a1a1da44bb4150c5d8070306f4ad791dc20cfcef791bb0e8ae6f | 10/07/2021 07:34:39 | 10/15/2024 14:33:51|
-10.0.3.006577.1025-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019    | amd64           | windows | sha256:8bfdc76b3e51b02f88248600bc6e97f76b2b5938f76c27bc5c7fb7fd07353b20 | 10/19/2021 13:33:09 | 10/19/2021 13:33:09|
-10.0.3.006577.1062-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019    | amd64           | windows | sha256:3fbf942ad35730984fb817a8bf5520a27e23231f6855b996f45a9006aca52077 | 11/12/2021 07:58:31 | 11/12/2021 07:58:31|
-10.0.3.006577.1119-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019    | amd64           | windows | sha256:67c5b3a538d2a7ca1e9b6de82af00b6c5a99fcba484a3f16b694f6f8a9871810 | 12/16/2021 19:18:37 | 12/16/2021 19:18:37|
-10.0.3.006577.1155-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019    | amd64           | windows | sha256:4102925cb6e3e2329f61ddcba5428749e3d88ba1634e48d18d07f268362106db | 01/18/2022 15:38:27 | 01/18/2022 15:38:27|
-10.0.3.006577.1199-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019    | amd64           | windows | sha256:d7caaa140bee5ef0155298464df4df2ab1225389747066ba797d5fced3b4e5c1 | 02/16/2022 08:36:53 | 02/16/2022 08:36:53|
-10.0.3.006577.1256-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019    | amd64           | windows | sha256:83e09f53f1d1a13042801ad66a00cecb69f603faa06b9ac3f0c962cac900c746 | 03/16/2022 19:22:28 | 03/16/2022 19:22:28|
-10.0.3.006577.1298-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019    | amd64           | windows | sha256:aa1fe7d6e5677616f4733d55508d4f7b2d897aeb7b2c9a711863c138ebc9ce72 | 04/17/2022 19:59:02 | 04/17/2022 19:59:02|
-10.0.3.006577.1319-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019    | amd64           | windows | sha256:056617579c7d60c17e0e00d20f7cb3ae064eac9255f4d5aa0fb787104f3126c1 | 05/20/2022 12:47:01 | 05/20/2022 12:47:01|
-10.0.3.006577.1344-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019    | amd64           | windows | sha256:253c378f9ec5e9ee867a63f86c9c0a1793c0a2fca4365d2e08af2fdb1712cddd | 06/24/2022 16:15:34 | 06/24/2022 16:15:34|
-10.0.3.006577.1385-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019    | amd64           | windows | sha256:c7bf9247087927140a2fc1b5479010cec7cf19769dc38e241ed0c62ae37c8ca2 | 07/21/2022 13:14:41 | 07/21/2022 13:14:41|
-10.0.3.006577.1401-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019    | amd64           | windows | sha256:471031aa9ede27ee1b2b1d334966436012968a0875459806c8396f429a5e1317 | 08/15/2022 12:16:06 | 08/15/2022 12:16:06|
-10.0.3.006577.1462-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019    | amd64           | windows | sha256:c8dc84fe7392b60fa3f39d3473b4560813d96c895a68574bc22480fa4164e9e5 | 09/22/2022 17:33:56 | 09/22/2022 17:33:56|
-10.0.3.006577.1485-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019    | amd64           | windows | sha256:58bdfbed119d356afe4a25de8883ed369080eb16c8065a742ffae621ba9ebe25 | 10/19/2022 14:44:40 | 10/19/2022 14:44:40|
-10.0.3.006577.1532-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019    | amd64           | windows | sha256:b6a54918fdad97c43dfdc87e40494e3ec90ab87ee69cada6108aa6a4419ad484 | 12/12/2022 12:05:32 | 12/12/2022 12:05:32|
-10.0.3.006577.1546-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019    | amd64           | windows | sha256:3e8222b00031f1fc0e12051297782cdbbd683c0e488b01a3368f035ff9958708 | 12/27/2022 13:03:34 | 12/27/2022 13:03:34|
-10.0.3.006577.1683-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019    | amd64           | windows | sha256:a7a22c90f14c96bb2375d2fc595443bc49f1c9b89db8f2013a5dc88a1b1a075a | 02/21/2023 23:46:05 | 02/21/2023 23:46:05|
-10.0.3.006577.1716-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019    | amd64           | windows | sha256:e910992f635084aa7f57f651f8b263b8a6f4283c3c80aa853db357127127dbcb | 03/23/2023 08:17:54 | 03/23/2023 08:17:54|
-10.0.3.006577.1753-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019    | amd64           | windows | sha256:bc33a99a38863bd5339e35be0f3e66f5ccc8e47ad102f82dca683ad1395a3b19 | 04/24/2023 13:14:06 | 04/24/2023 13:14:06|
-10.0.3.006577.1800-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019    | amd64           | windows | sha256:2800b4624bf72184a7017cc56e88dda3229ee732eafd7a8d883c708ed778b7fe | 05/31/2023 12:10:08 | 05/31/2023 12:10:08|
-10.0.3.006577.1877-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019    | amd64           | windows | sha256:75a48695bd54b2c5c052f38a97d3f019eb8695cad7a727b4bfb5d361d77b0651 | 06/29/2023 16:54:58 | 06/29/2023 16:54:58|
-10.0.3.006577.1909-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019    | amd64           | windows | sha256:07b030942863048c2502ea1f26a9cf3a0d40e3f60d0e91c2db2fb4002ae6b51a | 07/21/2023 22:19:25 | 07/21/2023 22:19:25|
-10.0.3.006577.1940-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019    | amd64           | windows | sha256:641ddeef45bd27183e2be5d6f30d92a78c703e01fa90d845472c24fce4851868 | 08/29/2023 16:28:56 | 08/29/2023 16:28:56|
-10.0.3.006577.1990-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019    | amd64           | windows | sha256:283a0211f594c9b73ab9e7a0a82121ad915b2fcd6df97b22b9634ba9fdf64cb3 | 09/25/2023 08:46:50 | 09/25/2023 08:46:50|
-10.0.3.006577.2020-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019    | amd64           | windows | sha256:9c9b2ef852412783f37d6206d093d168fe83c95df84e2207638e8b81e58b0d39 | 10/17/2023 23:36:20 | 10/17/2023 23:36:20|
-10.0.3.006577.2061-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019    | amd64           | windows | sha256:1cfdf6799b109b366a7f8f9c26544f0cd24644f2476578938e83467695d93422 | 11/21/2023 21:22:13 | 11/21/2023 21:22:13|
-10.0.3.006577.2089-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019    | amd64           | windows | sha256:dceb2726a13d507355bcbaa78750920768eba999c09c76fc5c658dcc1a5fa29d | 12/21/2023 09:45:40 | 12/21/2023 09:45:40|
-10.0.3.006577.2106-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019    | amd64           | windows | sha256:2e3d2db74cb93d886521a62560c6613af0c77f88264f9a0667ea65af8a609000 | 01/18/2024 02:24:17 | 01/18/2024 02:24:17|
-10.0.3.006577.2144-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019    | amd64           | windows | sha256:9815559156f411325331de7ca3f2c5d456e6093b50c0e61fc540dc0bfea9ba66 | 02/21/2024 11:41:16 | 02/21/2024 11:41:16|
-10.0.3.006577.2193-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019    | amd64           | windows | sha256:e34a981965a474af29e7edf0d2f65e96e3428e865ef81f01938775d330293d02 | 03/21/2024 11:16:07 | 03/21/2024 11:16:07|
-10.0.3.006577.2245-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019    | amd64           | windows | sha256:c7665e47da9d5ce038c9c808033e287ee91ae57daa03bb3749ea6a9451a492c8 | 04/16/2024 16:11:43 | 04/16/2024 16:11:43|
-10.0.3.006577.2278-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019    | amd64           | windows | sha256:c76f4f3986cc4575c92788999e6e1d00f25c97256bae5cba823a0fe8fab511b1 | 05/20/2024 09:29:02 | 05/20/2024 09:29:02|
-10.0.3.006577.2321-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019    | amd64           | windows | sha256:408444754f60995d9c68a447f044123286b133f9227baaaff4626bea4257d4e4 | 06/19/2024 00:48:07 | 06/19/2024 00:48:07|
-10.0.3.006577.2357-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019    | amd64           | windows | sha256:bd8e95b503884a9f73085c4ccce20e6c4750298d607bc83adfce575666e5f287 | 07/22/2024 21:01:57 | 07/22/2024 21:01:57|
-10.0.3.006577.2399-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019    | amd64           | windows | sha256:2986226cd11a59182f22270d0a296ed4ce4ee0f230893069a212d146497a6095 | 08/22/2024 09:45:25 | 08/22/2024 09:45:25|
-10.0.3.006577.2514-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019    | amd64           | windows | sha256:809790981e0e7487e99fa5e86f9e9bfdf255502992cac17dd6cc97beb4a531c0 | 09/18/2024 08:25:17 | 09/18/2024 08:25:17|
-10.0.3.006577.2531-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:eb3804a9b353a1a1da44bb4150c5d8070306f4ad791dc20cfcef791bb0e8ae6f | 10/15/2024 14:33:45 | 10/15/2024 14:33:45|
-10.0.3.006577.992-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:3bb79822d096a39e267c4f9712f4e32feea6a8efd2938d54124a13219c433236 | 10/07/2021 07:34:24 | 10/07/2021 07:34:24|
-10.1                                        |                 |             | amd64           | windows | sha256:ec41754e51893c66a3443273228183a87f0ec687d8ff835ca87029997f557a36 | 08/18/2021 10:29:06 | 08/31/2023 07:56:49|
-10.1-ltsc2019                               | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:69c4bc4083a841fc459dd829c0916db578e781f005076433e2256b0483f4554b | 02/25/2021 06:42:36 | 10/17/2024 16:06:43|
-10.1.0                                      |                 |             | amd64           | windows | sha256:c32f9eaa050b98e3afdcdaee2218f28a62851ee17b5ede309be4bc51bd67c89f | 09/22/2022 16:38:41 | 08/31/2023 08:00:32|
-10.1.0-ltsc2019                             | 10.0.17763.1817 | ltsc2019    | amd64           | windows | sha256:b59cf1378f8eb6fbe837b93e6492424c4d68368f1f02b84d3222b2f13239ebd3 | 02/25/2021 06:42:27 | 10/24/2023 13:50:01|
-10.1.0.005207.626-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019    | amd64           | windows | sha256:8e3f5fa869805d86eea35cf6b0230a5def2dba859d0a617317c09e7413bc7c8c | 02/25/2021 06:42:18 | 02/25/2021 06:42:18|
-10.1.0.005207.643-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019    | amd64           | windows | sha256:6bc557ff659525cd4d8530ec78eb58a2cdc5b1cf24bf87ca3934b53fd9d43f73 | 02/26/2021 07:26:53 | 02/26/2021 07:26:53|
-10.1.0.005207.673-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019    | amd64           | windows | sha256:b59cf1378f8eb6fbe837b93e6492424c4d68368f1f02b84d3222b2f13239ebd3 | 03/12/2021 19:26:02 | 03/12/2021 19:26:02|
-10.1.0.005207.708-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019    | amd64           | windows | sha256:0267064b5e060cf8d5d31745ad885c750de2cb85a332d8f33a51e5cac480c3be | 04/19/2021 12:35:53 | 04/19/2021 12:35:53|
-10.1.0.005207.782-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019    | amd64           | windows | sha256:94df14a150d0b296319ae0d44db3b823ba549906f4b714f117119a9f84cd7f21 | 05/18/2021 15:17:43 | 05/18/2021 15:17:43|
-10.1.0.005207.844-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:064e6e95b2dd96b16fe5bc4d3476554f3215ff7174c81822b70d7349648d1f76 | 06/21/2021 16:44:41 | 06/21/2021 16:44:41|
-10.1.1                                      |                 |             | amd64           | windows | sha256:13b5c80d1d74ac1743db37eea63b3c73d1d8a86a6e1839be492c5871b707010c | 08/18/2021 10:29:09 | 08/31/2023 08:06:28|
-10.1.1-ltsc2019                             | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:c6025098c6839067ef4e51a053678eb5a2b9017576264194ae3988afe97008be | 06/10/2021 09:53:40 | 09/30/2021 06:47:44|
-10.1.1.005862.821-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019    | amd64           | windows | sha256:a419089442cc1b0240f5ec18a002288b5f87046311a4bb49c615b0e5070ecea0 | 06/10/2021 09:53:31 | 06/10/2021 09:53:31|
-10.1.1.005862.846-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:92ba379b89e0a8f0e5490ecab77e142e09278a74485d941c12ab9d787fd1d9f4 | 06/21/2021 21:34:46 | 06/21/2021 21:34:46|
-10.1.1.005862.891-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019    | amd64           | windows | sha256:a54d23fc8bd9b26ed0523617162e7db07bd305dc2c72becc5773f4e2fecf8b24 | 07/22/2021 08:51:46 | 07/22/2021 08:51:46|
-10.1.1.005862.921-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019    | amd64           | windows | sha256:c6ba8097e1e952e586a74e6ba3fca940cd2c621d8fa2e678595f72337849145f | 08/18/2021 07:38:18 | 08/18/2021 07:38:18|
-10.1.1.005862.982-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:c6025098c6839067ef4e51a053678eb5a2b9017576264194ae3988afe97008be | 09/30/2021 06:47:31 | 09/30/2021 06:47:31|
-10.1.2                                      |                 |             | amd64           | windows | sha256:ec41754e51893c66a3443273228183a87f0ec687d8ff835ca87029997f557a36 | 10/11/2021 09:58:43 | 08/31/2023 08:10:44|
-10.1.2-ltsc2019                             | 10.0.17763.4737 | ltsc2019    | amd64           | windows | sha256:e19fcfb2ae9fd74c0231deb77bf1b476e6cd50f86c03f2654f9e92acaa48f64c | 10/11/2021 07:35:01 | 08/12/2023 00:45:18|
-10.1.2.006578.1027-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019    | amd64           | windows | sha256:e54c6bc9138bc741dd4c166897380fb7c6812239f8e1b75dd02753b0b598556d | 10/19/2021 22:24:36 | 10/19/2021 22:24:36|
-10.1.2.006578.1063-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019    | amd64           | windows | sha256:567e017841bf478fa4e336ff7c29b22be5a9c89684322c8516b68473b097572b | 11/14/2021 19:21:15 | 11/14/2021 19:21:15|
-10.1.2.006578.1121-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019    | amd64           | windows | sha256:13300772cb127e881ab21adf589314c3e74bbc081ededc4efa0961233475553b | 12/17/2021 09:08:21 | 12/17/2021 09:08:21|
-10.1.2.006578.1156-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019    | amd64           | windows | sha256:de05a01736669fc148d53c14a952e1e5f3fc13449da32ed0550df1a62d27fa5b | 01/19/2022 08:04:01 | 01/19/2022 08:04:01|
-10.1.2.006578.1200-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019    | amd64           | windows | sha256:cf04387d83427eeec5c2211ee3909a9176b78d59ecb8a468a74d0ffc46e109fd | 02/15/2022 17:09:09 | 02/15/2022 17:09:09|
-10.1.2.006578.1264-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019    | amd64           | windows | sha256:f2d6e6aed7145c011a7c33c2e76b5ca713534e831bd11f83b4e74240f8c97c34 | 03/15/2022 21:38:50 | 03/15/2022 21:38:50|
-10.1.2.006578.1299-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019    | amd64           | windows | sha256:237277afc9f34eb3f89c7416a7f1c7b204c719f75fa6b84ebab0fb290bbe2d31 | 04/19/2022 02:03:26 | 04/19/2022 02:03:26|
-10.1.2.006578.1326-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019    | amd64           | windows | sha256:5729fc8c0e92c4e71035420c37667cf2f2ff154889f1300b5d210e88398a02d0 | 05/20/2022 16:46:21 | 05/20/2022 16:46:21|
-10.1.2.006578.1345-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019    | amd64           | windows | sha256:4b1387c103ae4857b43c832c1c52706d47d88b80f4f94353d569ceebd7dee4b8 | 06/24/2022 11:21:02 | 06/24/2022 11:21:02|
-10.1.2.006578.1380-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019    | amd64           | windows | sha256:d4959c197020694b3873678a2d3abb3000b89c8563881ce05099301fab71013f | 07/21/2022 20:53:29 | 07/21/2022 20:53:29|
-10.1.2.006578.1404-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019    | amd64           | windows | sha256:e9dc03393faafcba1460deb66c78f56a6f772c1cc1e925d9167ffaf5126bace3 | 08/15/2022 17:41:46 | 08/15/2022 17:41:46|
-10.1.2.006578.1455-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019    | amd64           | windows | sha256:eacf63d8d0e41d093daa8984be2d6e6b6e32ada52ddb73c164a236c354dbfdd5 | 09/25/2022 10:31:13 | 09/25/2022 10:31:13|
-10.1.2.006578.1488-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019    | amd64           | windows | sha256:a93dfa890f5348f5789947b41888f5e6ec7df7395b6cb9c78922502dd7e00f21 | 10/19/2022 22:47:25 | 10/19/2022 22:47:25|
-10.1.2.006578.1523-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019    | amd64           | windows | sha256:893d99d647328aa96e0ede0045870bd70e33145dfaa7b9f670577bdfaaa16197 | 12/08/2022 11:10:20 | 12/08/2022 11:10:20|
-10.1.2.006578.1547-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019    | amd64           | windows | sha256:b3b6ac6b13947209aa6faed32784f60f1c8d88726ced1d7118388ee2ae9283d3 | 12/27/2022 13:46:25 | 12/27/2022 13:46:25|
-10.1.2.006578.1663-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019    | amd64           | windows | sha256:81171edf64112f58fb75ecc8ba562661bb7f00215cfe59e9175649293c3565ee | 02/10/2023 19:08:39 | 02/10/2023 19:08:39|
-10.1.2.006578.1679-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019    | amd64           | windows | sha256:24c94979a86735eb155fcbae15853508f9b27d50ac6f18e1f2856d4ec59e45a1 | 02/23/2023 15:56:33 | 02/23/2023 15:56:33|
-10.1.2.006578.1718-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019    | amd64           | windows | sha256:908aaa617976df7568689b281be219ab4611228922ad45edaec37bcbab4d597c | 03/22/2023 17:25:20 | 03/22/2023 17:25:20|
-10.1.2.006578.1754-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019    | amd64           | windows | sha256:09d79d789f9fcacbfdae3daef2f8eddc708f232648bad0f1786cce1e4a7b9644 | 04/25/2023 14:42:22 | 04/25/2023 14:42:22|
-10.1.2.006578.1803-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019    | amd64           | windows | sha256:a06f3434228b83f83ef9665e19532dff0c583d9c2dbb5eea21614cd39ab4af24 | 05/31/2023 14:45:53 | 05/31/2023 14:45:53|
-10.1.2.006578.1875-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019    | amd64           | windows | sha256:7681d4bf5953c9a51e2abdf00d06dcbc632305fc2928e8529a6c04844ba7b91f | 06/29/2023 13:20:25 | 06/29/2023 13:20:25|
-10.1.2.006578.1916-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019    | amd64           | windows | sha256:1fb801ab7208603ebcf82bd2dd9032b84e5a0da0be413e3e3ad3d052ff41b220 | 07/24/2023 15:39:02 | 07/24/2023 15:39:02|
-10.1.2.006578.1939-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019    | amd64           | windows | sha256:e19fcfb2ae9fd74c0231deb77bf1b476e6cd50f86c03f2654f9e92acaa48f64c | 08/12/2023 00:45:05 | 08/12/2023 00:45:05|
-10.1.2.006578.993-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:1d2662be68c0af3d16dfac8e866dd36831d4d2d6be4edb3d5967f1561daeb630 | 10/11/2021 07:34:47 | 10/11/2021 07:34:47|
-10.1.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:69c4bc4083a841fc459dd829c0916db578e781f005076433e2256b0483f4554b | 09/06/2023 22:03:07 | 10/17/2024 16:06:32|
-10.1.3.009558.1962-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019    | amd64           | windows | sha256:407d2ea401c59e93317bf6055caa8105c564433492d1dcc2ad268cd6abca8787 | 09/06/2023 22:02:58 | 09/06/2023 22:02:58|
-10.1.3.009558.1987-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019    | amd64           | windows | sha256:d11b27ba575548c076c2432da97638ede03354c661ccd1f08231c506a91c2209 | 09/21/2023 12:37:49 | 09/21/2023 12:37:49|
-10.1.3.009558.2013-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019    | amd64           | windows | sha256:9607cf8518dacb312ed31b61435e740e1a81f96d251cf7eccec480b54f7e67fa | 10/13/2023 13:34:44 | 10/13/2023 13:34:44|
-10.1.3.009558.2052-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019    | amd64           | windows | sha256:0130261c03d3c88a0eb8c3d3c2e766d4a931e06e4ee203d7eced945e0d5c40f9 | 11/17/2023 12:12:38 | 11/17/2023 12:12:38|
-10.1.3.009558.2079-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019    | amd64           | windows | sha256:040b43e5d92a01b898bc5f9b60459e0107309ec51ec09093e939f6fa9cdd860c | 12/14/2023 14:25:11 | 12/14/2023 14:25:11|
-10.1.3.009558.2115-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019    | amd64           | windows | sha256:b9bd1b888fd5459716ec3ffcfcb02903de8f54c42008bde2e442420d2d7e2e33 | 01/16/2024 08:17:26 | 01/16/2024 08:17:26|
-10.1.3.009558.2160-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019    | amd64           | windows | sha256:9dd43f819385ffe8975d2de540872feb78ac2203ce012335e300271a79e5a6da | 02/24/2024 00:38:26 | 02/24/2024 00:38:26|
-10.1.3.009558.2197-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019    | amd64           | windows | sha256:d914e22f7e773f69df4b95b6e746234990029dcd88053c702f18c668999795d3 | 03/19/2024 19:54:03 | 03/19/2024 19:54:03|
-10.1.3.009558.2254-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019    | amd64           | windows | sha256:25d882f50c0e2503401a39358ecc47154eadc4d2db0dfd6a9984e843c6c1c461 | 04/17/2024 21:56:13 | 04/17/2024 21:56:13|
-10.1.3.009558.2279-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019    | amd64           | windows | sha256:09af692ee1fb0139778aa58ed8c9b47616cb4d3118cdacbff39bb07d6341b9cb | 05/27/2024 17:20:54 | 05/27/2024 17:20:54|
-10.1.3.009558.2327-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019    | amd64           | windows | sha256:4c11203d53aec049f33325aec40e31a532bc8adeac964a22398784513337a410 | 06/19/2024 01:38:50 | 06/19/2024 01:38:50|
-10.1.3.009558.2353-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019    | amd64           | windows | sha256:a91524d6cd852fbfa33b82c7816a23d04320915a47ab07b6179a132374efaec8 | 08/01/2024 09:14:14 | 08/01/2024 09:14:14|
-10.1.3.009558.2407-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019    | amd64           | windows | sha256:39c00cb9faf81d64542ed4736ec7dd3d33c73695721bd15b785e4be2b0f228f7 | 08/21/2024 10:10:41 | 08/21/2024 10:10:41|
-10.1.3.009558.2517-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019    | amd64           | windows | sha256:1af2eb946ded825ef493ab53d5af3715ab21f1302a6beed9a68ca3a06c7affff | 09/18/2024 22:32:33 | 09/18/2024 22:32:33|
-10.1.3.009558.2532-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:69c4bc4083a841fc459dd829c0916db578e781f005076433e2256b0483f4554b | 10/17/2024 16:06:23 | 10/17/2024 16:06:23|
+10.0                                        |                 |             | amd64           | windows | sha256:99f6d4af11499e617c3de86fb7a2f924163ee95c1cd3e2861e9962f420c97c16 | 08/18/2021 19:09:43 | 08/31/2023 06:00:49|
+10.0-ltsc2019                               | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:eb3804a9b353a1a1da44bb4150c5d8070306f4ad791dc20cfcef791bb0e8ae6f | 12/15/2020 10:02:01 | 10/15/2024 14:33:59|
+10.0.0-ltsc2019                             | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:ef875d9785f59f4e12e20784fb4ea7f23970ad842533abd861233bfd19f06032 | 08/03/2020 12:53:43 | 06/21/2021 09:10:06|
+10.0.0.004346.318-10.0.17763.1282-ltsc2019  | 10.0.17763.1282 | ltsc2019    | amd64           | windows | sha256:5b710f794f3922a71c7f8d325b0320eca8cda97e85cd4c7d7f3acdbad61302e4 | 08/03/2020 12:53:29 | 08/03/2020 12:53:29|
+10.0.0.004346.337-10.0.17763.1339-ltsc2019  | 10.0.17763.1339 | ltsc2019    | amd64           | windows | sha256:0377680b3331cc40d0de2260f45b505f32a01bd3326489659587e4b0f73d74cf | 08/03/2020 18:33:59 | 08/03/2020 18:33:59|
+10.0.0.004346.371-10.0.17763.1397-ltsc2019  | 10.0.17763.1397 | ltsc2019    | amd64           | windows | sha256:3829b6fafca5205fc6488f08149a1f4e0795be7065ce0159d9ed8cb79742416d | 08/25/2020 09:24:54 | 08/25/2020 09:24:54|
+10.0.0.004346.412-10.0.17763.1457-ltsc2019  | 10.0.17763.1457 | ltsc2019    | amd64           | windows | sha256:a7286bb7e8d5709d67ace17e76f246207a089afb06edfc35a95aad3dabcb01cb | 09/15/2020 08:22:58 | 09/15/2020 08:22:58|
+10.0.0.004346.444-10.0.17763.1518-ltsc2019  | 10.0.17763.1518 | ltsc2019    | amd64           | windows | sha256:8c4322e69ef96d74a613b3c9d769959e8c5620716148abb823c79d87c3b4b76d | 10/22/2020 19:51:53 | 10/22/2020 19:51:53|
+10.0.0.004346.477-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019    | amd64           | windows | sha256:8cad029e6b97476859e028699568f625ead279e13f651706a3284f9d44c8d1a2 | 11/18/2020 10:50:53 | 11/18/2020 10:50:53|
+10.0.0.004346.520-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019    | amd64           | windows | sha256:a0112886b30ec97fc821b5de359ad1374996e222f0b3c079ee9bed922584b4cb | 12/14/2020 08:20:10 | 12/14/2020 08:20:10|
+10.0.0.004346.566-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019    | amd64           | windows | sha256:fa670e2c501b1c0590b736f523588eff04e0cb67ae9c546c0a8a2c1fa685107e | 01/15/2021 11:50:03 | 01/15/2021 11:50:03|
+10.0.0.004346.636-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019    | amd64           | windows | sha256:d137a141e4345689dff0f79c9ef51e6d76a8a9b5ebf355ad2eab87a18b462cd5 | 02/14/2021 16:04:37 | 02/14/2021 16:04:37|
+10.0.0.004346.670-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019    | amd64           | windows | sha256:cc2e61fcaed7e0d7802226ce53502d2f7f35a414a4c629d8cacf1f74f28ac7a4 | 03/12/2021 09:47:10 | 03/12/2021 09:47:10|
+10.0.0.004346.705-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019    | amd64           | windows | sha256:95d222d838a66df270033ec1ad3af48560f6db83569a0912a8bd84c3dc2c0a0b | 04/16/2021 05:59:07 | 04/16/2021 05:59:07|
+10.0.0.004346.779-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019    | amd64           | windows | sha256:36db764249a30b9c952963d896ff4f0872b6e9e9fdc81069ef9da49930f2bf74 | 05/18/2021 06:24:15 | 05/18/2021 06:24:15|
+10.0.0.004346.837-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:ef875d9785f59f4e12e20784fb4ea7f23970ad842533abd861233bfd19f06032 | 06/21/2021 09:09:49 | 06/21/2021 09:09:49|
+10.0.1-ltsc2019                             | 10.0.17763.2061 | ltsc2019    | amd64           | windows | sha256:aefd60a62a487af8eace9db817171d5941dadb68388633788d153cc7e63b0793 | 12/15/2020 10:01:47 | 07/20/2021 12:52:15|
+10.0.1.004842.513-10.0.17763.1577-ltsc2019  | 10.0.17763.1577 | ltsc2019    | amd64           | windows | sha256:34fd595118c252403c6396515dedd5420931c1f06798b5bea431f025246349ee | 12/15/2020 10:01:32 | 12/15/2020 10:01:32|
+10.0.1.004842.523-10.0.17763.1637-ltsc2019  | 10.0.17763.1637 | ltsc2019    | amd64           | windows | sha256:fc0f1522ba033a762c9d98f8f8f2854620ec3792cebc60fad7076bfbb89e21f4 | 12/15/2020 17:10:38 | 12/15/2020 17:10:38|
+10.0.1.004842.567-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019    | amd64           | windows | sha256:3729b17b42582fa14ed77fff1dbc945baec4ff966235993e351fb5aa7e8c4d9e | 01/15/2021 16:39:04 | 01/15/2021 16:39:04|
+10.0.1.004842.638-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019    | amd64           | windows | sha256:a1de20544977161a6c7747121686af66fb3e8b22a38e347d4a41dfffa53186c3 | 02/15/2021 09:52:15 | 02/15/2021 09:52:15|
+10.0.1.004842.671-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019    | amd64           | windows | sha256:dc059e4033213609bb3d30f8bf41c78f8f527646d5a67d9f7970992111e9b5e2 | 03/12/2021 15:30:53 | 03/12/2021 15:30:53|
+10.0.1.004842.707-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019    | amd64           | windows | sha256:ad9e2d77f538838e1dc9ceec6b676b1d589f396a222df744df4cd98957670c63 | 04/16/2021 13:25:17 | 04/16/2021 13:25:17|
+10.0.1.004842.781-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019    | amd64           | windows | sha256:88d846141f0869b84762932d3ab54b1ab7b9f5f7a1020faf634d557e0da88408 | 05/18/2021 10:50:51 | 05/18/2021 10:50:51|
+10.0.1.004842.842-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:e66958846d1692fe8a57dcc448ff75d7a6cc48836e22c4a787fddd9bc3cf8207 | 06/21/2021 11:54:31 | 06/21/2021 11:54:31|
+10.0.1.004842.889-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019    | amd64           | windows | sha256:aefd60a62a487af8eace9db817171d5941dadb68388633788d153cc7e63b0793 | 07/20/2021 12:52:00 | 07/20/2021 12:52:00|
+10.0.2                                      |                 |             | amd64           | windows | sha256:04d9db9e955a94cde018434efc43a188671f7ed5ecb25ed195bac19a95a6ebec | 08/18/2021 19:12:01 | 08/31/2023 06:52:00|
+10.0.2-ltsc2019                             | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:16c56c56082f8d9606039524d18a25fade9eed7b8fd0d25b9fa64d9ebc2b42ab | 06/30/2021 12:00:33 | 09/29/2021 12:15:30|
+10.0.2.006052.851-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:3246464f81b36523ea6955ff11efdc6932a73cee190eec919d82b31b56243246 | 06/30/2021 12:00:12 | 06/30/2021 12:00:12|
+10.0.2.006052.890-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019    | amd64           | windows | sha256:974bcb56a21936721be30603987e2de8bec31b98163fc88ab5036b1a2a41401e | 07/21/2021 07:16:23 | 07/21/2021 07:16:23|
+10.0.2.006052.918-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019    | amd64           | windows | sha256:9ab903d1c5a52c3f5ce23d098f31040cb34b363cf2006b4e3286ef509fcd8013 | 08/18/2021 15:40:31 | 08/18/2021 15:40:31|
+10.0.2.006052.980-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:16c56c56082f8d9606039524d18a25fade9eed7b8fd0d25b9fa64d9ebc2b42ab | 09/29/2021 12:15:14 | 09/29/2021 12:15:14|
+10.0.3                                      |                 |             | amd64           | windows | sha256:99f6d4af11499e617c3de86fb7a2f924163ee95c1cd3e2861e9962f420c97c16 | 10/07/2021 10:43:44 | 08/31/2023 06:59:41|
+10.0.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:eb3804a9b353a1a1da44bb4150c5d8070306f4ad791dc20cfcef791bb0e8ae6f | 10/07/2021 07:33:37 | 10/15/2024 14:33:49|
+10.0.3.006577.1025-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019    | amd64           | windows | sha256:8bfdc76b3e51b02f88248600bc6e97f76b2b5938f76c27bc5c7fb7fd07353b20 | 10/19/2021 13:32:07 | 10/19/2021 13:32:07|
+10.0.3.006577.1062-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019    | amd64           | windows | sha256:3fbf942ad35730984fb817a8bf5520a27e23231f6855b996f45a9006aca52077 | 11/12/2021 07:58:23 | 11/12/2021 07:58:23|
+10.0.3.006577.1119-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019    | amd64           | windows | sha256:67c5b3a538d2a7ca1e9b6de82af00b6c5a99fcba484a3f16b694f6f8a9871810 | 12/16/2021 19:17:30 | 12/16/2021 19:17:30|
+10.0.3.006577.1155-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019    | amd64           | windows | sha256:4102925cb6e3e2329f61ddcba5428749e3d88ba1634e48d18d07f268362106db | 01/18/2022 15:37:11 | 01/18/2022 15:37:11|
+10.0.3.006577.1199-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019    | amd64           | windows | sha256:d7caaa140bee5ef0155298464df4df2ab1225389747066ba797d5fced3b4e5c1 | 02/16/2022 08:36:48 | 02/16/2022 08:36:48|
+10.0.3.006577.1256-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019    | amd64           | windows | sha256:83e09f53f1d1a13042801ad66a00cecb69f603faa06b9ac3f0c962cac900c746 | 03/16/2022 19:21:26 | 03/16/2022 19:21:26|
+10.0.3.006577.1298-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019    | amd64           | windows | sha256:aa1fe7d6e5677616f4733d55508d4f7b2d897aeb7b2c9a711863c138ebc9ce72 | 04/17/2022 19:58:00 | 04/17/2022 19:58:00|
+10.0.3.006577.1319-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019    | amd64           | windows | sha256:056617579c7d60c17e0e00d20f7cb3ae064eac9255f4d5aa0fb787104f3126c1 | 05/20/2022 12:46:54 | 05/20/2022 12:46:54|
+10.0.3.006577.1344-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019    | amd64           | windows | sha256:253c378f9ec5e9ee867a63f86c9c0a1793c0a2fca4365d2e08af2fdb1712cddd | 06/24/2022 16:14:32 | 06/24/2022 16:14:32|
+10.0.3.006577.1385-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019    | amd64           | windows | sha256:c7bf9247087927140a2fc1b5479010cec7cf19769dc38e241ed0c62ae37c8ca2 | 07/21/2022 13:13:39 | 07/21/2022 13:13:39|
+10.0.3.006577.1401-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019    | amd64           | windows | sha256:471031aa9ede27ee1b2b1d334966436012968a0875459806c8396f429a5e1317 | 08/15/2022 12:15:59 | 08/15/2022 12:15:59|
+10.0.3.006577.1462-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019    | amd64           | windows | sha256:c8dc84fe7392b60fa3f39d3473b4560813d96c895a68574bc22480fa4164e9e5 | 09/22/2022 17:33:47 | 09/22/2022 17:33:47|
+10.0.3.006577.1485-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019    | amd64           | windows | sha256:58bdfbed119d356afe4a25de8883ed369080eb16c8065a742ffae621ba9ebe25 | 10/19/2022 14:43:38 | 10/19/2022 14:43:38|
+10.0.3.006577.1532-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019    | amd64           | windows | sha256:b6a54918fdad97c43dfdc87e40494e3ec90ab87ee69cada6108aa6a4419ad484 | 12/12/2022 12:04:29 | 12/12/2022 12:04:29|
+10.0.3.006577.1546-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019    | amd64           | windows | sha256:3e8222b00031f1fc0e12051297782cdbbd683c0e488b01a3368f035ff9958708 | 12/27/2022 13:02:32 | 12/27/2022 13:02:32|
+10.0.3.006577.1683-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019    | amd64           | windows | sha256:a7a22c90f14c96bb2375d2fc595443bc49f1c9b89db8f2013a5dc88a1b1a075a | 02/21/2023 23:45:03 | 02/21/2023 23:45:03|
+10.0.3.006577.1716-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019    | amd64           | windows | sha256:e910992f635084aa7f57f651f8b263b8a6f4283c3c80aa853db357127127dbcb | 03/23/2023 08:16:50 | 03/23/2023 08:16:50|
+10.0.3.006577.1753-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019    | amd64           | windows | sha256:bc33a99a38863bd5339e35be0f3e66f5ccc8e47ad102f82dca683ad1395a3b19 | 04/24/2023 13:14:00 | 04/24/2023 13:14:00|
+10.0.3.006577.1800-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019    | amd64           | windows | sha256:2800b4624bf72184a7017cc56e88dda3229ee732eafd7a8d883c708ed778b7fe | 05/31/2023 12:09:06 | 05/31/2023 12:09:06|
+10.0.3.006577.1877-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019    | amd64           | windows | sha256:75a48695bd54b2c5c052f38a97d3f019eb8695cad7a727b4bfb5d361d77b0651 | 06/29/2023 16:53:56 | 06/29/2023 16:53:56|
+10.0.3.006577.1909-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019    | amd64           | windows | sha256:07b030942863048c2502ea1f26a9cf3a0d40e3f60d0e91c2db2fb4002ae6b51a | 07/21/2023 22:19:20 | 07/21/2023 22:19:20|
+10.0.3.006577.1940-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019    | amd64           | windows | sha256:641ddeef45bd27183e2be5d6f30d92a78c703e01fa90d845472c24fce4851868 | 08/29/2023 16:28:52 | 08/29/2023 16:28:52|
+10.0.3.006577.1990-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019    | amd64           | windows | sha256:283a0211f594c9b73ab9e7a0a82121ad915b2fcd6df97b22b9634ba9fdf64cb3 | 09/25/2023 08:45:49 | 09/25/2023 08:45:49|
+10.0.3.006577.2020-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019    | amd64           | windows | sha256:9c9b2ef852412783f37d6206d093d168fe83c95df84e2207638e8b81e58b0d39 | 10/17/2023 23:36:16 | 10/17/2023 23:36:16|
+10.0.3.006577.2061-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019    | amd64           | windows | sha256:1cfdf6799b109b366a7f8f9c26544f0cd24644f2476578938e83467695d93422 | 11/21/2023 21:22:09 | 11/21/2023 21:22:09|
+10.0.3.006577.2089-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019    | amd64           | windows | sha256:dceb2726a13d507355bcbaa78750920768eba999c09c76fc5c658dcc1a5fa29d | 12/21/2023 09:44:38 | 12/21/2023 09:44:38|
+10.0.3.006577.2106-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019    | amd64           | windows | sha256:2e3d2db74cb93d886521a62560c6613af0c77f88264f9a0667ea65af8a609000 | 01/18/2024 02:23:14 | 01/18/2024 02:23:14|
+10.0.3.006577.2144-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019    | amd64           | windows | sha256:9815559156f411325331de7ca3f2c5d456e6093b50c0e61fc540dc0bfea9ba66 | 02/21/2024 11:40:14 | 02/21/2024 11:40:14|
+10.0.3.006577.2193-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019    | amd64           | windows | sha256:e34a981965a474af29e7edf0d2f65e96e3428e865ef81f01938775d330293d02 | 03/21/2024 11:16:02 | 03/21/2024 11:16:02|
+10.0.3.006577.2245-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019    | amd64           | windows | sha256:c7665e47da9d5ce038c9c808033e287ee91ae57daa03bb3749ea6a9451a492c8 | 04/16/2024 16:11:37 | 04/16/2024 16:11:37|
+10.0.3.006577.2278-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019    | amd64           | windows | sha256:c76f4f3986cc4575c92788999e6e1d00f25c97256bae5cba823a0fe8fab511b1 | 05/20/2024 09:28:47 | 05/20/2024 09:28:47|
+10.0.3.006577.2321-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019    | amd64           | windows | sha256:408444754f60995d9c68a447f044123286b133f9227baaaff4626bea4257d4e4 | 06/19/2024 00:48:00 | 06/19/2024 00:48:00|
+10.0.3.006577.2357-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019    | amd64           | windows | sha256:bd8e95b503884a9f73085c4ccce20e6c4750298d607bc83adfce575666e5f287 | 07/22/2024 21:01:51 | 07/22/2024 21:01:51|
+10.0.3.006577.2399-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019    | amd64           | windows | sha256:2986226cd11a59182f22270d0a296ed4ce4ee0f230893069a212d146497a6095 | 08/22/2024 09:45:19 | 08/22/2024 09:45:19|
+10.0.3.006577.2514-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019    | amd64           | windows | sha256:809790981e0e7487e99fa5e86f9e9bfdf255502992cac17dd6cc97beb4a531c0 | 09/18/2024 08:25:12 | 09/18/2024 08:25:12|
+10.0.3.006577.2531-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:eb3804a9b353a1a1da44bb4150c5d8070306f4ad791dc20cfcef791bb0e8ae6f | 10/15/2024 14:33:38 | 10/15/2024 14:33:38|
+10.0.3.006577.992-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:3bb79822d096a39e267c4f9712f4e32feea6a8efd2938d54124a13219c433236 | 10/07/2021 07:33:22 | 10/07/2021 07:33:22|
+10.1                                        |                 |             | amd64           | windows | sha256:ec41754e51893c66a3443273228183a87f0ec687d8ff835ca87029997f557a36 | 08/18/2021 10:29:05 | 08/31/2023 07:56:47|
+10.1-ltsc2019                               | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:69c4bc4083a841fc459dd829c0916db578e781f005076433e2256b0483f4554b | 02/25/2021 06:42:33 | 10/17/2024 16:06:40|
+10.1.0                                      |                 |             | amd64           | windows | sha256:c32f9eaa050b98e3afdcdaee2218f28a62851ee17b5ede309be4bc51bd67c89f | 09/22/2022 16:38:39 | 08/31/2023 08:00:30|
+10.1.0-ltsc2019                             | 10.0.17763.1817 | ltsc2019    | amd64           | windows | sha256:b59cf1378f8eb6fbe837b93e6492424c4d68368f1f02b84d3222b2f13239ebd3 | 02/25/2021 06:42:24 | 10/24/2023 13:49:58|
+10.1.0.005207.626-10.0.17763.1697-ltsc2019  | 10.0.17763.1697 | ltsc2019    | amd64           | windows | sha256:8e3f5fa869805d86eea35cf6b0230a5def2dba859d0a617317c09e7413bc7c8c | 02/25/2021 06:42:12 | 02/25/2021 06:42:12|
+10.1.0.005207.643-10.0.17763.1757-ltsc2019  | 10.0.17763.1757 | ltsc2019    | amd64           | windows | sha256:6bc557ff659525cd4d8530ec78eb58a2cdc5b1cf24bf87ca3934b53fd9d43f73 | 02/26/2021 07:26:48 | 02/26/2021 07:26:48|
+10.1.0.005207.673-10.0.17763.1817-ltsc2019  | 10.0.17763.1817 | ltsc2019    | amd64           | windows | sha256:b59cf1378f8eb6fbe837b93e6492424c4d68368f1f02b84d3222b2f13239ebd3 | 03/12/2021 19:25:57 | 03/12/2021 19:25:57|
+10.1.0.005207.708-10.0.17763.1879-ltsc2019  | 10.0.17763.1879 | ltsc2019    | amd64           | windows | sha256:0267064b5e060cf8d5d31745ad885c750de2cb85a332d8f33a51e5cac480c3be | 04/19/2021 12:35:48 | 04/19/2021 12:35:48|
+10.1.0.005207.782-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019    | amd64           | windows | sha256:94df14a150d0b296319ae0d44db3b823ba549906f4b714f117119a9f84cd7f21 | 05/18/2021 15:17:39 | 05/18/2021 15:17:39|
+10.1.0.005207.844-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:064e6e95b2dd96b16fe5bc4d3476554f3215ff7174c81822b70d7349648d1f76 | 06/21/2021 16:44:36 | 06/21/2021 16:44:36|
+10.1.1                                      |                 |             | amd64           | windows | sha256:13b5c80d1d74ac1743db37eea63b3c73d1d8a86a6e1839be492c5871b707010c | 08/18/2021 10:29:08 | 08/31/2023 08:06:25|
+10.1.1-ltsc2019                             | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:c6025098c6839067ef4e51a053678eb5a2b9017576264194ae3988afe97008be | 06/10/2021 09:53:38 | 09/30/2021 06:47:42|
+10.1.1.005862.821-10.0.17763.1935-ltsc2019  | 10.0.17763.1935 | ltsc2019    | amd64           | windows | sha256:a419089442cc1b0240f5ec18a002288b5f87046311a4bb49c615b0e5070ecea0 | 06/10/2021 09:53:27 | 06/10/2021 09:53:27|
+10.1.1.005862.846-10.0.17763.1999-ltsc2019  | 10.0.17763.1999 | ltsc2019    | amd64           | windows | sha256:92ba379b89e0a8f0e5490ecab77e142e09278a74485d941c12ab9d787fd1d9f4 | 06/21/2021 21:34:28 | 06/21/2021 21:34:28|
+10.1.1.005862.891-10.0.17763.2061-ltsc2019  | 10.0.17763.2061 | ltsc2019    | amd64           | windows | sha256:a54d23fc8bd9b26ed0523617162e7db07bd305dc2c72becc5773f4e2fecf8b24 | 07/22/2021 08:51:41 | 07/22/2021 08:51:41|
+10.1.1.005862.921-10.0.17763.2114-ltsc2019  | 10.0.17763.2114 | ltsc2019    | amd64           | windows | sha256:c6ba8097e1e952e586a74e6ba3fca940cd2c621d8fa2e678595f72337849145f | 08/18/2021 07:38:13 | 08/18/2021 07:38:13|
+10.1.1.005862.982-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:c6025098c6839067ef4e51a053678eb5a2b9017576264194ae3988afe97008be | 09/30/2021 06:47:27 | 09/30/2021 06:47:27|
+10.1.2                                      |                 |             | amd64           | windows | sha256:ec41754e51893c66a3443273228183a87f0ec687d8ff835ca87029997f557a36 | 10/11/2021 09:58:41 | 08/31/2023 08:10:41|
+10.1.2-ltsc2019                             | 10.0.17763.4737 | ltsc2019    | amd64           | windows | sha256:e19fcfb2ae9fd74c0231deb77bf1b476e6cd50f86c03f2654f9e92acaa48f64c | 10/11/2021 07:34:59 | 08/12/2023 00:44:15|
+10.1.2.006578.1027-10.0.17763.2237-ltsc2019 | 10.0.17763.2237 | ltsc2019    | amd64           | windows | sha256:e54c6bc9138bc741dd4c166897380fb7c6812239f8e1b75dd02753b0b598556d | 10/19/2021 22:23:33 | 10/19/2021 22:23:33|
+10.1.2.006578.1063-10.0.17763.2300-ltsc2019 | 10.0.17763.2300 | ltsc2019    | amd64           | windows | sha256:567e017841bf478fa4e336ff7c29b22be5a9c89684322c8516b68473b097572b | 11/14/2021 19:21:10 | 11/14/2021 19:21:10|
+10.1.2.006578.1121-10.0.17763.2366-ltsc2019 | 10.0.17763.2366 | ltsc2019    | amd64           | windows | sha256:13300772cb127e881ab21adf589314c3e74bbc081ededc4efa0961233475553b | 12/17/2021 09:08:16 | 12/17/2021 09:08:16|
+10.1.2.006578.1156-10.0.17763.2452-ltsc2019 | 10.0.17763.2452 | ltsc2019    | amd64           | windows | sha256:de05a01736669fc148d53c14a952e1e5f3fc13449da32ed0550df1a62d27fa5b | 01/19/2022 08:03:57 | 01/19/2022 08:03:57|
+10.1.2.006578.1200-10.0.17763.2565-ltsc2019 | 10.0.17763.2565 | ltsc2019    | amd64           | windows | sha256:cf04387d83427eeec5c2211ee3909a9176b78d59ecb8a468a74d0ffc46e109fd | 02/15/2022 17:09:04 | 02/15/2022 17:09:04|
+10.1.2.006578.1264-10.0.17763.2686-ltsc2019 | 10.0.17763.2686 | ltsc2019    | amd64           | windows | sha256:f2d6e6aed7145c011a7c33c2e76b5ca713534e831bd11f83b4e74240f8c97c34 | 03/15/2022 21:38:44 | 03/15/2022 21:38:44|
+10.1.2.006578.1299-10.0.17763.2803-ltsc2019 | 10.0.17763.2803 | ltsc2019    | amd64           | windows | sha256:237277afc9f34eb3f89c7416a7f1c7b204c719f75fa6b84ebab0fb290bbe2d31 | 04/19/2022 02:03:22 | 04/19/2022 02:03:22|
+10.1.2.006578.1326-10.0.17763.2928-ltsc2019 | 10.0.17763.2928 | ltsc2019    | amd64           | windows | sha256:5729fc8c0e92c4e71035420c37667cf2f2ff154889f1300b5d210e88398a02d0 | 05/20/2022 16:46:16 | 05/20/2022 16:46:16|
+10.1.2.006578.1345-10.0.17763.3046-ltsc2019 | 10.0.17763.3046 | ltsc2019    | amd64           | windows | sha256:4b1387c103ae4857b43c832c1c52706d47d88b80f4f94353d569ceebd7dee4b8 | 06/24/2022 11:20:57 | 06/24/2022 11:20:57|
+10.1.2.006578.1380-10.0.17763.3165-ltsc2019 | 10.0.17763.3165 | ltsc2019    | amd64           | windows | sha256:d4959c197020694b3873678a2d3abb3000b89c8563881ce05099301fab71013f | 07/21/2022 20:52:26 | 07/21/2022 20:52:26|
+10.1.2.006578.1404-10.0.17763.3287-ltsc2019 | 10.0.17763.3287 | ltsc2019    | amd64           | windows | sha256:e9dc03393faafcba1460deb66c78f56a6f772c1cc1e925d9167ffaf5126bace3 | 08/15/2022 17:40:44 | 08/15/2022 17:40:44|
+10.1.2.006578.1455-10.0.17763.3406-ltsc2019 | 10.0.17763.3406 | ltsc2019    | amd64           | windows | sha256:eacf63d8d0e41d093daa8984be2d6e6b6e32ada52ddb73c164a236c354dbfdd5 | 09/25/2022 10:30:12 | 09/25/2022 10:30:12|
+10.1.2.006578.1488-10.0.17763.3532-ltsc2019 | 10.0.17763.3532 | ltsc2019    | amd64           | windows | sha256:a93dfa890f5348f5789947b41888f5e6ec7df7395b6cb9c78922502dd7e00f21 | 10/19/2022 22:47:21 | 10/19/2022 22:47:21|
+10.1.2.006578.1523-10.0.17763.3650-ltsc2019 | 10.0.17763.3650 | ltsc2019    | amd64           | windows | sha256:893d99d647328aa96e0ede0045870bd70e33145dfaa7b9f670577bdfaaa16197 | 12/08/2022 11:09:17 | 12/08/2022 11:09:17|
+10.1.2.006578.1547-10.0.17763.3770-ltsc2019 | 10.0.17763.3770 | ltsc2019    | amd64           | windows | sha256:b3b6ac6b13947209aa6faed32784f60f1c8d88726ced1d7118388ee2ae9283d3 | 12/27/2022 13:46:21 | 12/27/2022 13:46:21|
+10.1.2.006578.1663-10.0.17763.3887-ltsc2019 | 10.0.17763.3887 | ltsc2019    | amd64           | windows | sha256:81171edf64112f58fb75ecc8ba562661bb7f00215cfe59e9175649293c3565ee | 02/10/2023 19:07:37 | 02/10/2023 19:07:37|
+10.1.2.006578.1679-10.0.17763.4010-ltsc2019 | 10.0.17763.4010 | ltsc2019    | amd64           | windows | sha256:24c94979a86735eb155fcbae15853508f9b27d50ac6f18e1f2856d4ec59e45a1 | 02/23/2023 15:56:28 | 02/23/2023 15:56:28|
+10.1.2.006578.1718-10.0.17763.4131-ltsc2019 | 10.0.17763.4131 | ltsc2019    | amd64           | windows | sha256:908aaa617976df7568689b281be219ab4611228922ad45edaec37bcbab4d597c | 03/22/2023 17:25:12 | 03/22/2023 17:25:12|
+10.1.2.006578.1754-10.0.17763.4252-ltsc2019 | 10.0.17763.4252 | ltsc2019    | amd64           | windows | sha256:09d79d789f9fcacbfdae3daef2f8eddc708f232648bad0f1786cce1e4a7b9644 | 04/25/2023 14:41:19 | 04/25/2023 14:41:19|
+10.1.2.006578.1803-10.0.17763.4377-ltsc2019 | 10.0.17763.4377 | ltsc2019    | amd64           | windows | sha256:a06f3434228b83f83ef9665e19532dff0c583d9c2dbb5eea21614cd39ab4af24 | 05/31/2023 14:44:51 | 05/31/2023 14:44:51|
+10.1.2.006578.1875-10.0.17763.4499-ltsc2019 | 10.0.17763.4499 | ltsc2019    | amd64           | windows | sha256:7681d4bf5953c9a51e2abdf00d06dcbc632305fc2928e8529a6c04844ba7b91f | 06/29/2023 13:20:21 | 06/29/2023 13:20:21|
+10.1.2.006578.1916-10.0.17763.4645-ltsc2019 | 10.0.17763.4645 | ltsc2019    | amd64           | windows | sha256:1fb801ab7208603ebcf82bd2dd9032b84e5a0da0be413e3e3ad3d052ff41b220 | 07/24/2023 15:38:57 | 07/24/2023 15:38:57|
+10.1.2.006578.1939-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019    | amd64           | windows | sha256:e19fcfb2ae9fd74c0231deb77bf1b476e6cd50f86c03f2654f9e92acaa48f64c | 08/12/2023 00:44:03 | 08/12/2023 00:44:03|
+10.1.2.006578.993-10.0.17763.2183-ltsc2019  | 10.0.17763.2183 | ltsc2019    | amd64           | windows | sha256:1d2662be68c0af3d16dfac8e866dd36831d4d2d6be4edb3d5967f1561daeb630 | 10/11/2021 07:34:42 | 10/11/2021 07:34:42|
+10.1.3-ltsc2019                             | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:69c4bc4083a841fc459dd829c0916db578e781f005076433e2256b0483f4554b | 09/06/2023 22:02:04 | 10/17/2024 16:06:29|
+10.1.3.009558.1962-10.0.17763.4737-ltsc2019 | 10.0.17763.4737 | ltsc2019    | amd64           | windows | sha256:407d2ea401c59e93317bf6055caa8105c564433492d1dcc2ad268cd6abca8787 | 09/06/2023 22:01:55 | 09/06/2023 22:01:55|
+10.1.3.009558.1987-10.0.17763.4851-ltsc2019 | 10.0.17763.4851 | ltsc2019    | amd64           | windows | sha256:d11b27ba575548c076c2432da97638ede03354c661ccd1f08231c506a91c2209 | 09/21/2023 12:36:46 | 09/21/2023 12:36:46|
+10.1.3.009558.2013-10.0.17763.4974-ltsc2019 | 10.0.17763.4974 | ltsc2019    | amd64           | windows | sha256:9607cf8518dacb312ed31b61435e740e1a81f96d251cf7eccec480b54f7e67fa | 10/13/2023 13:33:42 | 10/13/2023 13:33:42|
+10.1.3.009558.2052-10.0.17763.5122-ltsc2019 | 10.0.17763.5122 | ltsc2019    | amd64           | windows | sha256:0130261c03d3c88a0eb8c3d3c2e766d4a931e06e4ee203d7eced945e0d5c40f9 | 11/17/2023 12:12:33 | 11/17/2023 12:12:33|
+10.1.3.009558.2079-10.0.17763.5206-ltsc2019 | 10.0.17763.5206 | ltsc2019    | amd64           | windows | sha256:040b43e5d92a01b898bc5f9b60459e0107309ec51ec09093e939f6fa9cdd860c | 12/14/2023 14:24:09 | 12/14/2023 14:24:09|
+10.1.3.009558.2115-10.0.17763.5329-ltsc2019 | 10.0.17763.5329 | ltsc2019    | amd64           | windows | sha256:b9bd1b888fd5459716ec3ffcfcb02903de8f54c42008bde2e442420d2d7e2e33 | 01/16/2024 08:16:24 | 01/16/2024 08:16:24|
+10.1.3.009558.2160-10.0.17763.5458-ltsc2019 | 10.0.17763.5458 | ltsc2019    | amd64           | windows | sha256:9dd43f819385ffe8975d2de540872feb78ac2203ce012335e300271a79e5a6da | 02/24/2024 00:38:21 | 02/24/2024 00:38:21|
+10.1.3.009558.2197-10.0.17763.5576-ltsc2019 | 10.0.17763.5576 | ltsc2019    | amd64           | windows | sha256:d914e22f7e773f69df4b95b6e746234990029dcd88053c702f18c668999795d3 | 03/19/2024 19:53:01 | 03/19/2024 19:53:01|
+10.1.3.009558.2254-10.0.17763.5696-ltsc2019 | 10.0.17763.5696 | ltsc2019    | amd64           | windows | sha256:25d882f50c0e2503401a39358ecc47154eadc4d2db0dfd6a9984e843c6c1c461 | 04/17/2024 21:56:08 | 04/17/2024 21:56:08|
+10.1.3.009558.2279-10.0.17763.5820-ltsc2019 | 10.0.17763.5820 | ltsc2019    | amd64           | windows | sha256:09af692ee1fb0139778aa58ed8c9b47616cb4d3118cdacbff39bb07d6341b9cb | 05/27/2024 17:20:48 | 05/27/2024 17:20:48|
+10.1.3.009558.2327-10.0.17763.5936-ltsc2019 | 10.0.17763.5936 | ltsc2019    | amd64           | windows | sha256:4c11203d53aec049f33325aec40e31a532bc8adeac964a22398784513337a410 | 06/19/2024 01:38:45 | 06/19/2024 01:38:45|
+10.1.3.009558.2353-10.0.17763.6054-ltsc2019 | 10.0.17763.6054 | ltsc2019    | amd64           | windows | sha256:a91524d6cd852fbfa33b82c7816a23d04320915a47ab07b6179a132374efaec8 | 08/01/2024 09:14:09 | 08/01/2024 09:14:09|
+10.1.3.009558.2407-10.0.17763.6189-ltsc2019 | 10.0.17763.6189 | ltsc2019    | amd64           | windows | sha256:39c00cb9faf81d64542ed4736ec7dd3d33c73695721bd15b785e4be2b0f228f7 | 08/21/2024 10:10:36 | 08/21/2024 10:10:36|
+10.1.3.009558.2517-10.0.17763.6293-ltsc2019 | 10.0.17763.6293 | ltsc2019    | amd64           | windows | sha256:1af2eb946ded825ef493ab53d5af3715ab21f1302a6beed9a68ca3a06c7affff | 09/18/2024 22:32:28 | 09/18/2024 22:32:28|
+10.1.3.009558.2532-10.0.17763.6414-ltsc2019 | 10.0.17763.6414 | ltsc2019    | amd64           | windows | sha256:69c4bc4083a841fc459dd829c0916db578e781f005076433e2256b0483f4554b | 10/17/2024 16:06:18 | 10/17/2024 16:06:18|
 
 ### sitecore-xm1-mssql-init
 Tag                                         | OSVersion       | TargetOS           | Architecture    | OS      | Digest                                                                  | CreatedTime         | LastUpdateTime     |
