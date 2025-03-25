@@ -1,5 +1,9 @@
 # Changelog
 
+## Feburary 2023
+
+- [Changed] Updated mkcert.exe to version 1.4.4
+
 ## November 2021
 
 - [Added] CoveoVersion parameter (Specifies which version of Coveo to use and includes it in the build: -CoveoVersion "x.x.x.x")
