@@ -44896,16 +44896,6 @@
                          "OS":  "windows"
                      },
                      {
-                         "Tag":  "8.0.37.442-10.0.17763.9020-ltsc2019",
-                         "Digest":  "sha256:fe818e1c536961a24d72a518d2cedabccfb5b433c66ce6d3b972d0f9dd801c95",
-                         "CreatedTime":  "08/04/2026 05:58:55",
-                         "LastUpdateTime":  "08/04/2026 05:58:55",
-                         "OSVersion":  "10.0.17763.9020",
-                         "TargetOS":  "ltsc2019",
-                         "Architecture":  "amd64",
-                         "OS":  "windows"
-                     },
-                     {
                          "Tag":  "9.0",
                          "Digest":  "sha256:e9e64101e5a6933fdb59ed6ae953fb1fecf31c8a175f78e3d14612caa0630210",
                          "CreatedTime":  "08/05/2026 05:39:00",
