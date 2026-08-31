@@ -3,7 +3,7 @@
 
 These instructions will help you understand how to **build custom images** derived from the official Sitecore v10 images as well as how to build full Sitecore images using legacy (pre v10) assets.
 
-> **For detailed documentation on how to get started running Sitecore version 10 or above in a containerized environment, please see the [official documentation](https://containers.doc.sitecore.com/docs/intro)**
+> **For detailed documentation on how to get started running Sitecore version 10 or above in a containerized environment, please see the [official documentation](https://doc.sitecore.com/xp/en/developers/102/developer-tools/containers-in-sitecore-development.html)**
 
 ## Tagging and Windows versions
 
