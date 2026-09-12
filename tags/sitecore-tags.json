@@ -263766,8 +263766,8 @@
                          "Digest":  "sha256:49dd00b642cac1af07eaf21c8b288b0af2b22b8a7ebb99b03411bec487be573c",
                          "CreatedTime":  "05/26/2026 10:27:22",
                          "LastUpdateTime":  "05/26/2026 10:27:22",
-                         "OSVersion":  "N/A",
-                         "TargetOS":  "ltsc2019, ltsc2022, ltsc2025",
+                         "OSVersion":  "10.0.17763.8755",
+                         "TargetOS":  "ltsc2019",
                          "Architecture":  "amd64",
                          "OS":  "windows"
                      },
