@@ -43898,7 +43898,7 @@
                          "Digest":  "sha256:999b88c144bbc347dddfd248bf4d76d9f030db293c9221d92f71d57d22cc7f72",
                          "CreatedTime":  "08/14/2023 17:48:22",
                          "LastUpdateTime":  "08/14/2023 17:48:22",
-                         "OSVersion":  "10.0.20348.1906",
+                         "OSVersion":  "10.0.20348.1850",
                          "TargetOS":  "ltsc2022",
                          "Architecture":  "amd64",
                          "OS":  "windows"
