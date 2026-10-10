@@ -121590,7 +121590,7 @@
                          "Digest":  "sha256:54751333875308364e71e704407fbb89816c5b67af7cceb4e03c6361f5b47efb",
                          "CreatedTime":  "01/15/2021 16:44:58",
                          "LastUpdateTime":  "01/15/2021 16:44:58",
-                         "OSVersion":  "10.0.17763.1637",
+                         "OSVersion":  "10.0.17763.1697",
                          "TargetOS":  "ltsc2019",
                          "Architecture":  "amd64",
                          "OS":  "windows"
@@ -121600,7 +121600,7 @@
                          "Digest":  "sha256:071994a21847cdb6c7c54eb028c863bb40fec9c65c5c1617ac69f6f4955901e4",
                          "CreatedTime":  "02/15/2021 09:58:39",
                          "LastUpdateTime":  "02/15/2021 09:58:39",
-                         "OSVersion":  "10.0.17763.1637",
+                         "OSVersion":  "10.0.17763.1757",
                          "TargetOS":  "ltsc2019",
                          "Architecture":  "amd64",
                          "OS":  "windows"
