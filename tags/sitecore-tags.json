@@ -29011,10 +29011,10 @@
                      },
                      {
                          "Tag":  "5.0-ltsc2019",
-                         "Digest":  "sha256:e730326fdf1f3168a844e6cce5529e884be97bebbe6fe12b86af8a1587dfc52a",
+                         "Digest":  "sha256:415b9eeb07e9602d7fdb20954fd71d79c90b848b97e24043aee70ef65d52bb63",
                          "CreatedTime":  "03/12/2021 11:57:50",
-                         "LastUpdateTime":  "10/02/2026 12:56:21",
-                         "OSVersion":  "10.0.17763.9245",
+                         "LastUpdateTime":  "10/22/2026 04:04:44",
+                         "OSVersion":  "10.0.17763.9376",
                          "TargetOS":  "ltsc2019",
                          "Architecture":  "amd64",
                          "OS":  "windows"
@@ -29041,10 +29041,10 @@
                      },
                      {
                          "Tag":  "5.0.0-ltsc2019",
-                         "Digest":  "sha256:e730326fdf1f3168a844e6cce5529e884be97bebbe6fe12b86af8a1587dfc52a",
+                         "Digest":  "sha256:415b9eeb07e9602d7fdb20954fd71d79c90b848b97e24043aee70ef65d52bb63",
                          "CreatedTime":  "03/12/2021 11:57:38",
-                         "LastUpdateTime":  "10/02/2026 12:56:09",
-                         "OSVersion":  "10.0.17763.9245",
+                         "LastUpdateTime":  "10/22/2026 04:04:28",
+                         "OSVersion":  "10.0.17763.9376",
                          "TargetOS":  "ltsc2019",
                          "Architecture":  "amd64",
                          "OS":  "windows"
@@ -29635,6 +29635,16 @@
                          "CreatedTime":  "10/02/2026 12:55:56",
                          "LastUpdateTime":  "10/02/2026 12:55:56",
                          "OSVersion":  "10.0.17763.9245",
+                         "TargetOS":  "ltsc2019",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
+                         "Tag":  "5.0.0.806-10.0.17763.9376-ltsc2019",
+                         "Digest":  "sha256:415b9eeb07e9602d7fdb20954fd71d79c90b848b97e24043aee70ef65d52bb63",
+                         "CreatedTime":  "10/22/2026 04:04:11",
+                         "LastUpdateTime":  "10/22/2026 04:04:11",
+                         "OSVersion":  "10.0.17763.9376",
                          "TargetOS":  "ltsc2019",
                          "Architecture":  "amd64",
                          "OS":  "windows"
