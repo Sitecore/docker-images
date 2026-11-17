@@ -36919,11 +36919,11 @@
                      },
                      {
                          "Tag":  "2019",
-                         "Digest":  "sha256:4de9b59da402d4a836de87c18453254840a14d1acd45f4864ae43c5a8af11b71",
+                         "Digest":  "sha256:70de1e1a44d9ed1723df0e8b103c006b5f183372177df58720903c9f897c908c",
                          "CreatedTime":  "06/18/2024 14:21:28",
-                         "LastUpdateTime":  "10/19/2026 11:06:45",
+                         "LastUpdateTime":  "11/17/2026 06:27:23",
                          "OSVersion":  "N/A",
-                         "TargetOS":  "ltsc2019, ltsc2022",
+                         "TargetOS":  "ltsc2019, ltsc2022, ltsc2025",
                          "Architecture":  "amd64",
                          "OS":  "windows"
                      },
@@ -37448,6 +37448,16 @@
                          "OS":  "windows"
                      },
                      {
+                         "Tag":  "2019-000052.157-10.0.26100.33674-ltsc2025",
+                         "Digest":  "sha256:5d83677b7fa30cbcca7d34b8a1e7309526928d3ebe737c2a6292b85400c7ef9e",
+                         "CreatedTime":  "11/17/2026 06:15:47",
+                         "LastUpdateTime":  "11/17/2026 06:15:47",
+                         "OSVersion":  "10.0.26100.33674",
+                         "TargetOS":  "ltsc2025",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
                          "Tag":  "2019-ltsc2019",
                          "Digest":  "sha256:9c39a3cd7629bc9211803728134f4da8406159b433874a4aff464b7c49fadb44",
                          "CreatedTime":  "06/18/2024 14:14:17",
@@ -37468,12 +37478,22 @@
                          "OS":  "windows"
                      },
                      {
+                         "Tag":  "2019-ltsc2025",
+                         "Digest":  "sha256:5d83677b7fa30cbcca7d34b8a1e7309526928d3ebe737c2a6292b85400c7ef9e",
+                         "CreatedTime":  "11/17/2026 06:16:00",
+                         "LastUpdateTime":  "11/17/2026 06:16:00",
+                         "OSVersion":  "10.0.26100.33674",
+                         "TargetOS":  "ltsc2025",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
                          "Tag":  "2022",
-                         "Digest":  "sha256:bbd88babf0368a5407d00e301d2ca0bfd9b87b6ac26888ca5a0a6f73ff43c44f",
+                         "Digest":  "sha256:8b470a6c1d35af6d6aa89906d1ee72154b24f495921a06fbd19bf4b7039e189f",
                          "CreatedTime":  "06/07/2024 02:24:20",
-                         "LastUpdateTime":  "10/19/2026 11:06:40",
+                         "LastUpdateTime":  "11/17/2026 06:27:17",
                          "OSVersion":  "N/A",
-                         "TargetOS":  "ltsc2019, ltsc2022",
+                         "TargetOS":  "ltsc2019, ltsc2022, ltsc2025",
                          "Architecture":  "amd64",
                          "OS":  "windows"
                      },
@@ -38028,6 +38048,16 @@
                          "OS":  "windows"
                      },
                      {
+                         "Tag":  "2022-000052.157-10.0.26100.33674-ltsc2025",
+                         "Digest":  "sha256:3c4eb537caa0fec59838d1ebf10be7c65c3e12122a682a1c61017bf3a41d00d3",
+                         "CreatedTime":  "11/17/2026 06:17:38",
+                         "LastUpdateTime":  "11/17/2026 06:17:38",
+                         "OSVersion":  "10.0.26100.33674",
+                         "TargetOS":  "ltsc2025",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
                          "Tag":  "2022-ltsc2019",
                          "Digest":  "sha256:0fbf3d179fdf79b92f1d7854156996f650cabf3864598b87c4f3abb8fec6d888",
                          "CreatedTime":  "06/07/2024 01:36:54",
@@ -38044,6 +38074,16 @@
                          "LastUpdateTime":  "10/19/2026 10:48:22",
                          "OSVersion":  "10.0.20348.5761",
                          "TargetOS":  "ltsc2022",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
+                         "Tag":  "2022-ltsc2025",
+                         "Digest":  "sha256:3c4eb537caa0fec59838d1ebf10be7c65c3e12122a682a1c61017bf3a41d00d3",
+                         "CreatedTime":  "11/17/2026 06:17:49",
+                         "LastUpdateTime":  "11/17/2026 06:17:49",
+                         "OSVersion":  "10.0.26100.33674",
+                         "TargetOS":  "ltsc2025",
                          "Architecture":  "amd64",
                          "OS":  "windows"
                      },
@@ -42005,11 +42045,21 @@
                      },
                      {
                          "Tag":  "9.10.1",
-                         "Digest":  "sha256:086f67cba2ffc320a35ef7623666037f57f12e731c864939f1ecaecc5dcc36e5",
+                         "Digest":  "sha256:784271a2f4ea9456edd9af278af96e2d41bcd9fbc47d1fd8e9dd38e8fcbe34ff",
                          "CreatedTime":  "10/30/2026 11:13:26",
-                         "LastUpdateTime":  "10/30/2026 11:13:26",
+                         "LastUpdateTime":  "11/17/2026 06:27:39",
                          "OSVersion":  "N/A",
-                         "TargetOS":  "ltsc2019, ltsc2022",
+                         "TargetOS":  "ltsc2019, ltsc2022, ltsc2025",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
+                         "Tag":  "9.10.1-000052.157-10.0.26100.33674-ltsc2025",
+                         "Digest":  "sha256:d29549bf45441e392adf539049ba572834909733c629372a734c252e120fa936",
+                         "CreatedTime":  "11/17/2026 06:18:34",
+                         "LastUpdateTime":  "11/17/2026 06:18:34",
+                         "OSVersion":  "10.0.26100.33674",
+                         "TargetOS":  "ltsc2025",
                          "Architecture":  "amd64",
                          "OS":  "windows"
                      },
@@ -42050,6 +42100,16 @@
                          "LastUpdateTime":  "10/30/2026 11:00:35",
                          "OSVersion":  "10.0.20348.5761",
                          "TargetOS":  "ltsc2022",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
+                         "Tag":  "9.10.1-ltsc2025",
+                         "Digest":  "sha256:d29549bf45441e392adf539049ba572834909733c629372a734c252e120fa936",
+                         "CreatedTime":  "11/17/2026 06:18:46",
+                         "LastUpdateTime":  "11/17/2026 06:18:46",
+                         "OSVersion":  "10.0.26100.33674",
+                         "TargetOS":  "ltsc2025",
                          "Architecture":  "amd64",
                          "OS":  "windows"
                      },
