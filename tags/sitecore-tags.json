@@ -24204,6 +24204,16 @@
                          "OS":  "windows"
                      },
                      {
+                         "Tag":  "22.0",
+                         "Digest":  "sha256:6f93514defa352cf2ede028e79c91a365d98ae3b083dfdd9631c0a218acc7af0",
+                         "CreatedTime":  "11/27/2026 03:11:39",
+                         "LastUpdateTime":  "11/27/2026 03:11:39",
+                         "OSVersion":  "N/A",
+                         "TargetOS":  "ltsc2022, ltsc2025",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
                          "Tag":  "22.0-1809",
                          "Digest":  "sha256:26a0f74821162c952fdb2b0d25bdd20e49d1780d1f78034e68ce5ac1feaebedd",
                          "CreatedTime":  "06/18/2024 08:02:32",
@@ -24650,6 +24660,16 @@
                          "OS":  "windows"
                      },
                      {
+                         "Tag":  "22.0",
+                         "Digest":  "sha256:dbc60a3b4eb40a7cfa3af07ef65d28a2c8eabe508521cfa7b15482ae2df84b79",
+                         "CreatedTime":  "11/27/2026 03:11:34",
+                         "LastUpdateTime":  "11/27/2026 03:11:34",
+                         "OSVersion":  "N/A",
+                         "TargetOS":  "ltsc2022, ltsc2025",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
                          "Tag":  "22.0-1809",
                          "Digest":  "sha256:b98e2fa4f91c1b66bf15135eba8b34ba6191cd54f22c18c07be03ca1320da51c",
                          "CreatedTime":  "06/18/2024 08:03:35",
@@ -25092,6 +25112,16 @@
                          "LastUpdateTime":  "04/26/2023 09:31:34",
                          "OSVersion":  "10.0.17763.4252",
                          "TargetOS":  "1809",
+                         "Architecture":  "amd64",
+                         "OS":  "windows"
+                     },
+                     {
+                         "Tag":  "22.0",
+                         "Digest":  "sha256:69e639cafeb42dc8264d4a990bddca52497737d614fdf9af13020567d0b92775",
+                         "CreatedTime":  "11/27/2026 03:11:44",
+                         "LastUpdateTime":  "11/27/2026 03:11:44",
+                         "OSVersion":  "N/A",
+                         "TargetOS":  "ltsc2022, ltsc2025",
                          "Architecture":  "amd64",
                          "OS":  "windows"
                      },
